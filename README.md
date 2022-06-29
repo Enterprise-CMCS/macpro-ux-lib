@@ -31,14 +31,14 @@ console.log(helloWorld());
 
 ## Overview
 
-TODO.  Fill out the package's concept and intended audience, etc.
+TODO. Fill out the package's concept and intended audience, etc.
 
 ## Contributing
 
-TODO.  Explain how developers can submit issues, open PRs, etc.
+TODO. Explain how developers can submit issues, open PRs, etc.
 
 ## License
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/License-CC0--1.0--Universal-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
 
 See [LICENSE](LICENSE) for full details.
