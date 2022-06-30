@@ -37,7 +37,7 @@
     "@types/styled-components": "^5.1.25",
     "@uswds/uswds": "^3.0.2",
     "babel-loader": "^8.2.5",
-    "css-loader": "5.2.7",
+    "css-loader": "6.7.1",
     "jest": "^28.1.1",
     "jest-environment-jsdom": "^28.1.1",
     "react": "^18.2.0",
