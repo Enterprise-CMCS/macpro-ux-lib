@@ -7,8 +7,8 @@
   <a href="https://www.npmjs.com/package/macpro-ux-lib">
     <img alt="npm latest version" src="https://img.shields.io/npm/v/macpro-ux-lib/latest.svg">
   </a>
-  <a href="https://codeclimate.com/github/cmsgov/macpro-ux-lib/maintainability">
-    <img alt="Maintainability" src="https://api.codeclimate.com/v1/badges/20f59ef91bd30565c424/maintainability">
+  <a href="https://codeclimate.com/github/CMSgov/macpro-ux-lib/maintainability">
+    <img src="https://api.codeclimate.com/v1/badges/7aa40b9f69c550a8cf72/maintainability" />
   </a>
   <a href="https://github.com/semantic-release/semantic-release">
     <img alt="semantic-release: angular" src="https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release">
