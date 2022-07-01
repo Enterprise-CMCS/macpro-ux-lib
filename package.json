@@ -47,7 +47,7 @@
     "rollup-plugin-typescript2": "^0.32.1",
     "sass": "^1.53.0",
     "sass-loader": "10.1.1",
-    "style-loader": "2.0.0",
+    "style-loader": "3.3.1",
     "styled-components": "^5.3.5",
     "ts-jest": "^28.0.5",
     "ts-node": "^10.8.1",
