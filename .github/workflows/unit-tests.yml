@@ -1,6 +1,12 @@
 name: Test Coverage
 
-on: [pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   coverage-report:
