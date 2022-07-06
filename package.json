@@ -15,7 +15,7 @@
     "prepublishOnly": "npm run build"
   },
   "publishConfig": {
-    "@cms-gov:registry": "https://npm.pkg.github.com"
+    "@cmsgov:registry": "https://npm.pkg.github.com"
   },
   "engines": {
     "node": ">=10.0"
