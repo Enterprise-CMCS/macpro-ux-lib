@@ -9,16 +9,10 @@ concurrency:
   group: ${{ github.ref }}-release
 
 permissions:
-  # actions: read|write|none
-  # checks: read|write|none
   contents: write
-  # deployments: read|write|none
   issues: write
   packages: write
   pull-requests: write
-  # repository-projects: write
-  # security-events: read|write|none
-  # statuses: read|write|none
 
 jobs:
   Release:
@@ -42,4 +36,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
