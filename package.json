@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "Common UX libraries packaged for easier distribution throughout CMS.",
-  "main": "index.js",
+  "main": "build/index.js",
+  "module": "build/index.es.js",
+  "files": ["build"],
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
