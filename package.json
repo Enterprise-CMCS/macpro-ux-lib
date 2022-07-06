@@ -1,11 +1,13 @@
 {
   "name": "@cmsgov/macpro-ux-lib",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
   "description": "Common UX libraries packaged for easier distribution throughout CMS.",
   "main": "build/index.js",
   "module": "build/index.es.js",
-  "files": ["build"],
+  "files": [
+    "build"
+  ],
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
