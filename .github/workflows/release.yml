@@ -9,16 +9,16 @@ concurrency:
   group: ${{ github.ref }}-release
 
 permissions:
-  # actions: read|write|none
-  # checks: read|write|none
-  # contents: read|write|none
-  # deployments: read|write|none
+  actions: write
+  checks: write
+  contents: write
+  deployments: write
   issues: write
   packages: write
   pull-requests: write
   repository-projects: write
-  # security-events: read|write|none
-  # statuses: read|write|none
+  security-events: write
+  statuses: write
 
 jobs:
   Release:
