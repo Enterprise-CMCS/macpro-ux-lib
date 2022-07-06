@@ -11,7 +11,11 @@
     "build-storybook": "build-storybook",
     "test": "jest",
     "coverage": "jest --coverage",
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "@cms-gov:registry": "https://npm.pkg.github.com"
   },
   "engines": {
     "node": ">=10.0"
