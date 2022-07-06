@@ -9,6 +9,4 @@ interface Props {
 //   return <button className="usa-button">{text}</button>;
 // };
 
-export const Button = styled.button`
-  font-size: ${({ theme }) => theme.font.sm};
-`;
+export const Button = styled.button``;
