@@ -15,12 +15,11 @@
     "node": ">=10.0"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.1",
-    "@semantic-release/git": "^10.0.1",
-    "semantic-release": "^19.0.3",
     "@babel/core": "^7.18.5",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
@@ -48,6 +47,7 @@
     "rollup-plugin-typescript2": "^0.32.1",
     "sass": "^1.53.0",
     "sass-loader": "10.1.1",
+    "semantic-release": "^19.0.3",
     "style-loader": "2.0.0",
     "styled-components": "^5.3.5",
     "ts-jest": "^28.0.5",
@@ -84,5 +84,8 @@
   "author": {
     "name": "Center for Medicare & Medicaid Services",
     "url": "https://www.cms.gov/"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.1168.0"
   }
 }
