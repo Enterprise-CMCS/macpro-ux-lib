@@ -16,7 +16,7 @@ permissions:
   issues: write
   packages: write
   pull-requests: write
-  # repository-projects: read|write|none
+  repository-projects: write
   # security-events: read|write|none
   # statuses: read|write|none
 
