@@ -13,7 +13,7 @@ jobs:
       - run: npm ci
       - run: npm run coverage
       - name: publish test coverage to code climate
-        if: env.CC_TEST_REPORTER_ID != ''
+        if: always() && env.CC_TEST_REPORTER_ID != ''
         uses: paambaati/codeclimate-action@v2.7.5
         env:
           CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
