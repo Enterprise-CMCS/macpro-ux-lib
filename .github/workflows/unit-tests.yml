@@ -21,7 +21,8 @@ jobs:
           path: |
             **/node_modules
           key: ${{ runner.os }}-modules-test-coverage-${{ hashFiles('package-lock.json') }}
-      - run: |
+      - name: install
+        run: |
           if [ ! -d "node_modules" ]; then # If we don't have any node_modules (CircleCI cache miss scenario), run yarn install --frozen-lockfile.  Otherwise, we're all set, do nothing.
             npm ci
           fi
