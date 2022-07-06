@@ -64,7 +64,7 @@
   },
   "release": {
     "branches": [
-      "main"
+      "github-packages"
     ],
     "plugins": [
       "@semantic-release/commit-analyzer",
