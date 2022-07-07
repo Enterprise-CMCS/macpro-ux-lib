@@ -1,6 +1,6 @@
 {
   "name": "@cmsgov/macpro-ux-lib",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "private": true,
   "description": "Common UX libraries packaged for easier distribution throughout CMS.",
   "main": "build/index.js",
