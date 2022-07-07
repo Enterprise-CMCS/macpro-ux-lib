@@ -5,6 +5,15 @@
 
 * add missing types ([f98bfb8](https://github.com/cmsgov/macpro-ux-lib/commit/f98bfb8bab096d16afea969959ee3e6ae91f31b4))
 * add missing typescript types ([1eac8f5](https://github.com/cmsgov/macpro-ux-lib/commit/1eac8f5f264c64c22ae3dde18cc4ed218aea655d))
+* change version number ([f1b8aa4](https://github.com/cmsgov/macpro-ux-lib/commit/f1b8aa4a03f5d66d58abd6a624ab91c1fdb64aa1))
+
+## [1.0.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.0...v1.0.1) (2022-07-07)
+
+
+### Bug Fixes
+
+* add missing types ([f98bfb8](https://github.com/cmsgov/macpro-ux-lib/commit/f98bfb8bab096d16afea969959ee3e6ae91f31b4))
+* add missing typescript types ([1eac8f5](https://github.com/cmsgov/macpro-ux-lib/commit/1eac8f5f264c64c22ae3dde18cc4ed218aea655d))
 
 # 1.0.0 (2022-07-01)
 
