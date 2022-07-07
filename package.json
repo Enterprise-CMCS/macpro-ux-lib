@@ -5,24 +5,25 @@
   "description": "Common UX libraries packaged for easier distribution throughout CMS.",
   "main": "build/index.js",
   "module": "build/index.es.js",
-  "files": ["build"],
+  "files": [
+    "build"
+  ],
   "scripts": {
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "test": "jest",
     "coverage": "jest --coverage",
-    "build": "rollup -c"
+    "build": "tsc && rollup -c"
   },
   "engines": {
     "node": ">=10.0"
   },
   "devDependencies": {
-    "@semantic-release/changelog": "^6.0.1",
-    "@semantic-release/git": "^10.0.1",
-    "semantic-release": "^19.0.3",
     "@babel/core": "^7.18.5",
     "@rollup/plugin-commonjs": "^22.0.1",
     "@rollup/plugin-node-resolve": "^13.3.0",
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/git": "^10.0.1",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-interactions": "^6.5.9",
@@ -46,10 +47,12 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "rollup": "^2.75.7",
+    "rollup-plugin-import-css": "^3.0.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.32.1",
     "sass": "^1.53.0",
     "sass-loader": "10.1.1",
+    "semantic-release": "^19.0.3",
     "style-loader": "2.0.0",
     "styled-components": "^5.3.5",
     "ts-jest": "^28.0.5",
