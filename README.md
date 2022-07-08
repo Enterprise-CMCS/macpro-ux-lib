@@ -1,5 +1,4 @@
 <h1 align="center" style="border-bottom: none;"> macpro-ux-lib</h1>
-
 <h3 align="center">Common UX libraries packaged for easier distribution throughout CMS.</h3>
 <p align="center">
   <a href="https://cmsgov.github.io/macpro-ux-lib/">
