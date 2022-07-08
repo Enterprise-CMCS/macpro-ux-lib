@@ -12,7 +12,11 @@
     "build-storybook": "build-storybook",
     "test": "jest",
     "coverage": "jest --coverage",
-    "build": "tsc && rollup -c"
+    "build": "tsc && rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "engines": {
     "node": ">=10.0"
