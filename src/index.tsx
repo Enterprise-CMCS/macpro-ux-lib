@@ -1,3 +1,5 @@
+import "./assets/css/styles.css";
+
 import { Button } from "./components/Button/Button";
 import { Typography } from "./components/Typography/Typography";
 
