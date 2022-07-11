@@ -4,6 +4,14 @@
 ### Bug Fixes
 
 * **remove theme:** remove styled-components and theming ([d143314](https://github.com/cmsgov/macpro-ux-lib/commit/d1433142f5251efbde679b1b34cbd67f215298e4))
+* **version-issue:** fix issue with version ([808a18b](https://github.com/cmsgov/macpro-ux-lib/commit/808a18bbd7063e676487ce32a32b16b0b6fc04ee))
+
+## [1.0.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.0...v1.0.1) (2022-07-11)
+
+
+### Bug Fixes
+
+* **remove theme:** remove styled-components and theming ([d143314](https://github.com/cmsgov/macpro-ux-lib/commit/d1433142f5251efbde679b1b34cbd67f215298e4))
 
 # 1.0.0 (2022-07-08)
 
