@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 
 // Here we can set all providers for themes, stores and other stuff
 const AllTheProviders = ({ children }: { children: JSX.Element }) => {
-  return <div>{children}</div>;
+  return <>{children}</>;
 };
 
 const customRender = (

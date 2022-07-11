@@ -1,5 +1,5 @@
 import React from "react";
-import { screen, render } from "test-setup";
+import { screen, render } from "../../test-setup";
 import { Button } from "./Button";
 
 describe("Tests for the button component.", () => {

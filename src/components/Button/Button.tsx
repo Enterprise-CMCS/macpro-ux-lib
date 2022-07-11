@@ -1,12 +1,11 @@
 import React from "react";
-import styled from "styled-components";
 
-interface Props {
-  text: string;
-}
+type Props = {} & JSX.IntrinsicElements["button"];
 
-// export const Button = ({ text }: Props) => {
-//   return <button className="usa-button">{text}</button>;
-// };
-
-export const Button = styled.button``;
+export const Button: React.FC<Props> = ({ children, ...rest }) => {
+  return (
+    <button {...rest} className="usa-button">
+      {children}
+    </button>
+  );
+};

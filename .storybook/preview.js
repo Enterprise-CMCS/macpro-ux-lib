@@ -1,6 +1,3 @@
-import React from "react";
-import { ThemeProvider } from "../src/theme/ThemeProvider";
-import { defaultTheme } from "../src/theme/theme";
 import "../src/assets/css/styles.css";
 
 export const parameters = {
@@ -12,11 +9,3 @@ export const parameters = {
     },
   },
 };
-
-export const decorators = [
-  (Story) => (
-    <ThemeProvider theme={defaultTheme}>
-      <Story />
-    </ThemeProvider>
-  ),
-];

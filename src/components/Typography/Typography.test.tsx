@@ -1,5 +1,5 @@
 import React from "react";
-import { screen, render } from "test-setup";
+import { screen, render } from "../../test-setup";
 import { Typography } from "./Typography";
 
 describe("Tests for the typography component.", () => {
