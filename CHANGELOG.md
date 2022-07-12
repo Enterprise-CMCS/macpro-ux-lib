@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.2...v1.0.3) (2022-07-11)
+
+
+### Bug Fixes
+
+* **add-css:** add css back in ([c4d23af](https://github.com/cmsgov/macpro-ux-lib/commit/c4d23af8e4201307e97d2d8346aa0071b099cb43))
+
 ## [1.0.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.1...v1.0.2) (2022-07-11)
 
 
