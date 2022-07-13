@@ -29,13 +29,16 @@
 
 ---
 
-### See the [Storybook docs](https://cmsgov.github.io/macpro-ux-lib/) for details.
+### See the [Storybook docs](https://cmsgov.github.io/macpro-ux-lib/) for a preview of the component library.
 
 ---
 
-## Usage
-
 ## Overview
+
+This is a React implementation of USWDS 3.0 in conjuction with some MACPRO theming. This library is meant to be consumed for implementing a USWDS compliant web application in React. For more information about USWDS and their design principles refer to the below link.
+[USWDS Design Standards](https://designsystem.digital.gov/design-principles/)
+
+## Usage and Getting Started
 
 ## Contributing
 
