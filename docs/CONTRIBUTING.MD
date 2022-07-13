@@ -22,7 +22,7 @@ git checkout -b add-radio-button
 ```
 cd macpro-ux-lib
 npm install
-npm storybook
+npm run storybook
 ```
 
 After running the aformentioned code you will be able to preview any changes you make to the component library in storybook. For more on storybook reference their documentation.
