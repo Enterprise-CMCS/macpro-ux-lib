@@ -71,6 +71,13 @@ Found a bug, want to help with updating the docs or maybe you want to help add a
 
 You can view and example implementation of the app [here](./examples/create-react-app/)
 
+Below is an example of what the button component will look like.
+
+<iframe
+  src="https://cmsgov.github.io/macpro-ux-lib/?path=/story/uswds-base-button--primary&full=1&shortcuts=false&singleStory=true"
+  width="800"
+  height="260"
+></iframe>
 ## License
 
 [![License](https://img.shields.io/badge/License-CC0--1.0--Universal-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
