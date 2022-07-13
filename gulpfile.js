@@ -25,4 +25,3 @@ uswds.paths.dist.theme = "./src/assets/theme";
 
 exports.init = uswds.init;
 exports.compile = uswds.compile;
-exports.watch = uswds.watch;
