@@ -1,5 +1,5 @@
 <h1 align="center" style="border-bottom: none;"> macpro-ux-lib</h1>
-<h3 align="center">Common UX libraries packaged for easier distribution throughout CMS.</h3>
+<h3 align="center">Common UI/UX Library built on USWDS 3.0 and packaged for easier distribution throughout CMS.</h3>
 <p align="center">
   <a href="https://cmsgov.github.io/macpro-ux-lib/">
     <img alt="Storybook" src="https://img.shields.io/badge/Storybook-Docs-pink.svg">
@@ -35,19 +35,11 @@
 
 ## Usage
 
-```
-import { helloWorld } from 'macpro-ux-lib';
-
-console.log(helloWorld());
-```
-
 ## Overview
-
-TODO. Fill out the package's concept and intended audience, etc.
 
 ## Contributing
 
-TODO. Explain how developers can submit issues, open PRs, etc.
+## Examples
 
 ## License
 
