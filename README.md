@@ -69,6 +69,8 @@ Found a bug, want to help with updating the docs or maybe you want to help add a
 
 ## Examples
 
+You can view and example implementation of the app [here](./examples/create-react-app/);
+
 ## License
 
 [![License](https://img.shields.io/badge/License-CC0--1.0--Universal-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
