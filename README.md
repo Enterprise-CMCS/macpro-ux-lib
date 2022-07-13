@@ -69,7 +69,7 @@ Found a bug, want to help with updating the docs or maybe you want to help add a
 
 ## Examples
 
-You can view and example implementation of the app [here](./examples/create-react-app/);
+You can view and example implementation of the app [here](./examples/create-react-app/)
 
 ## License
 
