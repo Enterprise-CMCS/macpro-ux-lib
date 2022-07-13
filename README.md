@@ -39,6 +39,8 @@
 
 ## Contributing
 
+Found a bug, want to help with updating the docs or maybe you want to help add a feature. Refer to our contribution documentation for more information: [Documentation](./docs/CONTRIBUTING.MD)
+
 ## Examples
 
 ## License
