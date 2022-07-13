@@ -9,10 +9,10 @@
   ],
   "scripts": {
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "gulp init && build-storybook",
+    "build-storybook": "gulp compile && build-storybook",
     "test": "jest",
     "coverage": "jest --coverage",
-    "build": "gulp init && tsc && rollup -c",
+    "build": "gulp compile && tsc && rollup -c",
     "prepublishOnly": "npm run build",
     "compileCss": "gulp compileSass"
   },
