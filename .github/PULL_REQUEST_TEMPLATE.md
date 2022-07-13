@@ -17,4 +17,5 @@ _List any other information that you think is important... a post-merge activity
 #### Pull Request Creator Checklist
 
 - [ ] It is documented what type of request this is.
-- [ ] This PR and linked issues(s) are a complete description of the changeset.
+- [ ] There is a detailed description for the purpose of this PR.
+- [ ] This PR is in line with the intention of this Project
