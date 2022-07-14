@@ -29,7 +29,7 @@
 
 ---
 
-### See the [Storybook docs](https://cmsgov.github.io/macpro-ux-lib/) for a preview of the component library.
+### See the [Storybook](https://cmsgov.github.io/macpro-ux-lib/) for a preview of the component library.
 
 ---
 
