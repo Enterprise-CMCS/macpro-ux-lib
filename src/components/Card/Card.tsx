@@ -1,43 +1,6 @@
 import { Button } from "../Button/Button";
 import React, { PropsWithChildren } from "react";
 
-// Props
-interface Props {
-  cardHeaderText: string;
-  showCardMedia?: boolean;
-  cardMediaSource?: string;
-  cardMediaAltText?: string;
-  cardBodyTextContent: string;
-  cardFooterContent: string;
-}
-
-export const Card: React.FC<Props> = ({
-  cardHeaderText,
-  cardMediaSource,
-  cardMediaAltText,
-  cardBodyTextContent,
-  cardFooterContent,
-  showCardMedia = false,
-}) => {
-  return (
-    <CardContainer>
-      <CardHeader>{cardHeaderText}</CardHeader>
-      {showCardMedia && cardMediaSource && (
-        <CardMedia
-          imageSource={cardMediaSource}
-          altText={cardMediaAltText ?? ""}
-        />
-      )}
-      <CardBody>
-        <CardBodyText>{cardBodyTextContent}</CardBodyText>
-      </CardBody>
-      <CardFooter>
-        <Button>{cardFooterContent}</Button>
-      </CardFooter>
-    </CardContainer>
-  );
-};
-
 export const CardContainer: React.FC<PropsWithChildren> = ({ children }) => {
   return <div className="usa-card__container">{children}</div>;
 };

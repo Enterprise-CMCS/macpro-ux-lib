@@ -2,7 +2,6 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import {
-  Card,
   CardBody,
   CardBodyText,
   CardContainer,
@@ -12,58 +11,46 @@ import {
 } from "./Card";
 import { Button } from "../Button/Button";
 
-const BasicCardTemplate = ({}) => (
+// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
+export default {
+  title: "USWDS/Base/Card",
+};
+
+// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
+
+const Template = ({
+  cardBodyTextContent,
+  cardFooterContent,
+  cardHeaderText,
+  cardMediaAltText,
+  cardMediaSource,
+  showCardMedia,
+}) => (
   <CardContainer>
-    <CardHeader>Testing</CardHeader>
-    <CardMedia
-      imageSource="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
-      altText="Generic"
-    />
+    <CardHeader>{cardHeaderText}</CardHeader>
+    {showCardMedia && cardMediaSource && (
+      <CardMedia
+        imageSource={cardMediaSource}
+        altText={cardMediaAltText ?? ""}
+      />
+    )}
     <CardBody>
-      <CardBodyText>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-      </CardBodyText>
+      <CardBodyText>{cardBodyTextContent}</CardBodyText>
     </CardBody>
     <CardFooter>
-      <Button>Visit</Button>
+      <Button>{cardFooterContent}</Button>
     </CardFooter>
   </CardContainer>
 );
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
-export default {
-  title: "USWDS/Base/Card",
-  component: Card,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {
-    cardBodyTextContent: {
-      defaultValue: "Testing",
-    },
-    cardFooterContent: {
-      defaultValue: "Visit",
-    },
-    cardHeaderText: {
-      defaultValue: "Testing",
-    },
-    cardMediaAltText: {
-      defaultValue: "Generic",
-    },
-    cardMediaSource: {
-      defaultValue:
-        "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
-    },
-    showCardMedia: {
-      defaultValue: false,
-    },
-  },
-} as ComponentMeta<typeof Card>;
-
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-
-const Template: ComponentStory<typeof Card> = ({ ...args }) => (
-  <Card {...args} />
-);
-
 export const BasicCard = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-BasicCard.args = {};
+BasicCard.args = {
+  cardBodyTextContent: "This is a card body text.",
+  cardFooterContent: "Visit",
+  cardHeaderText: "Card Header",
+  cardMediaAltText: "Card Media Alt Text",
+  cardMediaSource:
+    "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
+  showCardMedia: true,
+};
