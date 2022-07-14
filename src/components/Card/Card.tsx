@@ -2,33 +2,47 @@ import { Button } from "../Button/Button";
 import React, { PropsWithChildren } from "react";
 
 // Props
-type Props = {};
+interface Props {
+  cardHeaderText: string;
+  showCardMedia?: boolean;
+  cardMediaSource?: string;
+  cardMediaAltText?: string;
+  cardBodyTextContent: string;
+  cardFooterContent: string;
+}
 
-export const Card: React.FC<PropsWithChildren<Props>> = ({ children }) => {
+export const Card: React.FC<Props> = ({
+  cardHeaderText,
+  cardMediaSource,
+  cardMediaAltText,
+  cardBodyTextContent,
+  cardFooterContent,
+  showCardMedia = false,
+}) => {
   return (
     <CardContainer>
-      <CardHeader>Testing</CardHeader>
+      <CardHeader>{cardHeaderText}</CardHeader>
+      {showCardMedia && cardMediaSource && (
+        <CardMedia
+          imageSource={cardMediaSource}
+          altText={cardMediaAltText ?? ""}
+        />
+      )}
       <CardBody>
-        <CardBodyText>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-        </CardBodyText>
+        <CardBodyText>{cardBodyTextContent}</CardBodyText>
       </CardBody>
       <CardFooter>
-        <Button>Visit</Button>
+        <Button>{cardFooterContent}</Button>
       </CardFooter>
     </CardContainer>
   );
 };
 
-export const CardContainer: React.FC<PropsWithChildren<Props>> = ({
-  children,
-}) => {
+export const CardContainer: React.FC<PropsWithChildren> = ({ children }) => {
   return <div className="usa-card__container">{children}</div>;
 };
 
-export const CardHeader: React.FC<PropsWithChildren<Props>> = ({
-  children,
-}) => {
+export const CardHeader: React.FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className="usa-card__header">
       <h2 className="usa-card__heading">{children}</h2>
@@ -36,19 +50,15 @@ export const CardHeader: React.FC<PropsWithChildren<Props>> = ({
   );
 };
 
-export const CardBody: React.FC<PropsWithChildren<Props>> = ({ children }) => {
+export const CardBody: React.FC<PropsWithChildren> = ({ children }) => {
   return <div className="usa-card__body">{children}</div>;
 };
 
-export const CardBodyText: React.FC<PropsWithChildren<Props>> = ({
-  children,
-}) => {
+export const CardBodyText: React.FC<PropsWithChildren> = ({ children }) => {
   return <p className="usa-card__text">{children}</p>;
 };
 
-export const CardFooter: React.FC<PropsWithChildren<Props>> = ({
-  children,
-}) => {
+export const CardFooter: React.FC<PropsWithChildren> = ({ children }) => {
   return <div className="usa-card__footer">{children}</div>;
 };
 
