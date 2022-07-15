@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import {
+  Card,
   CardBody,
   CardBodyText,
   CardContainer,
@@ -24,23 +25,31 @@ const Template = ({
   cardHeaderText,
   cardMediaAltText,
   cardMediaSource,
+  cardMediaRight,
+  insetMedia,
   showCardMedia,
+  moveImageInFlow,
+  isFlagLayout,
 }) => (
-  <CardContainer>
-    <CardHeader>{cardHeaderText}</CardHeader>
-    {showCardMedia && cardMediaSource && (
-      <CardMedia
-        imageSource={cardMediaSource}
-        altText={cardMediaAltText ?? ""}
-      />
-    )}
-    <CardBody>
-      <CardBodyText>{cardBodyTextContent}</CardBodyText>
-    </CardBody>
-    <CardFooter>
-      <Button>{cardFooterContent}</Button>
-    </CardFooter>
-  </CardContainer>
+  <Card type={isFlagLayout ? "flag" : "normal"} mediaRight={cardMediaRight}>
+    <CardContainer>
+      <CardHeader>{cardHeaderText}</CardHeader>
+      {showCardMedia && cardMediaSource && (
+        <CardMedia
+          exdent={moveImageInFlow}
+          imageSource={cardMediaSource}
+          altText={cardMediaAltText ?? ""}
+          insetMedia={insetMedia}
+        />
+      )}
+      <CardBody>
+        <CardBodyText>{cardBodyTextContent}</CardBodyText>
+      </CardBody>
+      <CardFooter>
+        <Button>{cardFooterContent}</Button>
+      </CardFooter>
+    </CardContainer>
+  </Card>
 );
 
 export const BasicCard = Template.bind({});
@@ -53,4 +62,8 @@ BasicCard.args = {
   cardMediaSource:
     "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
   showCardMedia: true,
+  moveImageInFlow: false,
+  isFlagLayout: false,
+  insetMedia: false,
+  cardMediaRight: false,
 };
