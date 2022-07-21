@@ -7,24 +7,24 @@ import { Button } from "./Button";
 export default {
   title: "USWDS/Base/Button",
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    children: {
-      defaultValue: "Testing",
+    buttonVariation: {
+      defaultValue: "primary",
+      description: "This is the style prop for the button",
+    },
+    buttonText: {
+      defaultValue: "Click",
+      buttonText: "This is the text prop for the button",
     },
   },
+  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as ComponentMeta<typeof Button>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = ({ children, ...args }) => (
-  <Button {...args} className="usa-button">
-    {children}
-  </Button>
-);
+const Template: ComponentStory<typeof Button> = ({
+  buttonVariation,
+  buttonText,
+}) => <Button buttonVariation={buttonVariation} buttonText={buttonText} />;
 
 export const Primary = Template.bind({});
 export const Secondary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  text: "Test Button",
-};
