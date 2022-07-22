@@ -1,8 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Button } from "./Button";
-import { screen, userEvent, waitFor } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
 
 export default {
   title: "USWDS/Base/Button",
@@ -41,12 +39,6 @@ const Template: ComponentStory<typeof Button> = ({ buttonText, ...rest }) => (
 export const PrimaryButton = Template.bind({});
 PrimaryButton.args = {
   buttonVariation: "primary",
-};
-
-PrimaryButton.play = async ({ args }) => {
-  await userEvent.click(screen.getByText("Button"));
-
-  await waitFor(() => expect(args.onClick).toHaveBeenCalled());
 };
 
 export const SecondaryButton = Template.bind({});
