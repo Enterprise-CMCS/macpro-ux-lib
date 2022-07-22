@@ -17,17 +17,38 @@ export default {
     disabled: {
       defaultValue: false,
       control: "boolean",
+      description: "This prop determines whether or not a button is enabled",
     },
-    onClick: { action: "clicked" },
+    icon: {
+      description: "Handles the icon to render in the button",
+    },
+    shiftIconLeft: {
+      description:
+        "Determines if a rendered icon should render on the left side",
+    },
+    largeButton: {
+      description: "This prop determines whether a large button is required",
+    },
+    ariaLabel: {
+      description:
+        "This prop overwrites the aria label of the button element that will be read on screen readers",
+    },
+    onClick: {
+      description: "This prop handles its behavior when the button is clicked",
+      action: "clicked",
+    },
     type: {
       defaultValue: "button",
       options: ["submit", "reset", "button"],
       control: { type: "select" },
+      description: "This prop handles its behavior when the button is clicked",
     },
     target: {
-      defaultValue: "button",
+      defaultValue: "_self",
       options: ["_blank", "_self", "_parent", "_top"],
       control: { type: "select" },
+      description:
+        "This prop specifies a name or a keyword that indicates where to display the response that is received after clicking the button",
     },
   },
 } as ComponentMeta<typeof Button>;

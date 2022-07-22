@@ -2,13 +2,14 @@ import React from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["button"];
 
-// Props
 interface Props extends IntrinsicElements {
   buttonText: string;
   buttonVariation?: ButtonVariation;
   disabled?: boolean;
   icon?: boolean;
   shiftIconLeft?: boolean;
+  ariaLabel?: string;
+  largeButton?: boolean;
 }
 
 type ButtonVariation =
@@ -19,7 +20,6 @@ type ButtonVariation =
   | "inverse"
   | "base"
   | "link"
-  | "big"
   | "outline";
 
 const ButtonVariationConversion: { [key: string]: string } = {
@@ -30,7 +30,6 @@ const ButtonVariationConversion: { [key: string]: string } = {
   inverse: "outline usa-button--inverse",
   base: "base",
   link: "unstyled",
-  big: "big",
   outline: "outline text-black",
 };
 
@@ -39,14 +38,20 @@ export const Button: React.FC<Props> = ({
   buttonText,
   shiftIconLeft,
   icon,
+  ariaLabel,
+  largeButton,
   ...rest
 }) => {
   const buttonVariationType =
     ButtonVariationConversion[buttonVariation || ""] ?? "";
   return (
     <button
+      data-testid="button"
       {...rest}
-      className={`usa-button usa-button--${buttonVariationType}`}
+      aria-label={ariaLabel || `${buttonText} button`}
+      className={`usa-button usa-button--${buttonVariationType} ${
+        largeButton ? "usa-button--big" : ""
+      }`}
     >
       {shiftIconLeft && icon && <span className="margin-right-1">+</span>}
       <span>{buttonText}</span>
