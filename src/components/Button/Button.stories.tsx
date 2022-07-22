@@ -1,9 +1,9 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-
 import { Button } from "./Button";
+import { screen, userEvent, waitFor } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "USWDS/Base/Button",
   component: Button,
@@ -13,18 +13,55 @@ export default {
       description: "This is the style prop for the button",
     },
     buttonText: {
-      defaultValue: "Click",
-      buttonText: "This is the text prop for the button",
+      defaultValue: "Button",
+      description: "This is the text prop for the button",
+    },
+    disabled: {
+      defaultValue: false,
+      control: "boolean",
+    },
+    onClick: { action: "clicked" },
+    type: {
+      defaultValue: "button",
+      options: ["submit", "reset", "button"],
+      control: { type: "select" },
+    },
+    target: {
+      defaultValue: "button",
+      options: ["_blank", "_self", "_parent", "_top"],
+      control: { type: "select" },
     },
   },
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
 } as ComponentMeta<typeof Button>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = ({
-  buttonVariation,
-  buttonText,
-}) => <Button buttonVariation={buttonVariation} buttonText={buttonText} />;
+const Template: ComponentStory<typeof Button> = ({ buttonText, ...rest }) => (
+  <Button buttonText={buttonText} {...rest} />
+);
 
-export const Primary = Template.bind({});
-export const Secondary = Template.bind({});
+export const PrimaryButton = Template.bind({});
+PrimaryButton.args = {
+  buttonVariation: "primary",
+};
+
+PrimaryButton.play = async ({ args }) => {
+  await userEvent.click(screen.getByText("Button"));
+
+  await waitFor(() => expect(args.onClick).toHaveBeenCalled());
+};
+
+export const SecondaryButton = Template.bind({});
+SecondaryButton.args = { buttonVariation: "secondary" };
+export const ErrorButton = Template.bind({});
+ErrorButton.args = { buttonVariation: "error" };
+export const SuccessButton = Template.bind({});
+SuccessButton.args = { buttonVariation: "success" };
+export const InverseButton = Template.bind({});
+InverseButton.args = { buttonVariation: "inverse" };
+export const BaseButton = Template.bind({});
+BaseButton.args = { buttonVariation: "base" };
+export const LinkButton = Template.bind({});
+LinkButton.args = { buttonVariation: "link" };
+export const BigButton = Template.bind({});
+BigButton.args = { buttonVariation: "big" };
+export const OutlineButton = Template.bind({});
+OutlineButton.args = { buttonVariation: "outline" };
