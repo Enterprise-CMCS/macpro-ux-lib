@@ -12,6 +12,20 @@ interface Props extends IntrinsicElements {
   largeButton?: boolean;
 }
 
+/**
+ * TextInput Component
+ * @param {string}  buttonText          This is the style prop for the button.
+ * @param {string}  buttonVariation     This is the text prop for the button.
+ * @param {string}  disabled            Determines whether or not a button is enabled.
+ * @param {string}  icon                Handles the icon to render in the button.
+ * @param {boolean} shiftIconLeft       Determines if a rendered icon should render on the left side.
+ * @param {boolean} ariaLabel           Overwrites the aria label of the button element that will be read on screen readers.
+ * @param {string}  largeButton         Determines whether a large button is required.
+ * @param {string}  button              Type of specified button.
+ * @param {string}  onClick:            Handles its behavior when the button is clicked.
+ * @param {string}  target              Specifies a name or a keyword that indicates where to display the response that is received after clicking the button.
+ */
+
 type ButtonVariation =
   | "primary"
   | "secondary"
