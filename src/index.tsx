@@ -1,6 +1,7 @@
 import "./assets/css/styles.css";
 
 import { Button } from "./components/Button/Button";
+import { Icon } from "./components/Icon/Icon";
 import { Typography } from "./components/Typography/Typography";
 import {
   CardBody,
@@ -20,4 +21,5 @@ export {
   CardFooter,
   CardHeader,
   CardMedia,
+  Icon,
 };
