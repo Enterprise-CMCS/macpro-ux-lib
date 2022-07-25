@@ -75,6 +75,6 @@ BaseButton.args = { buttonVariation: "base" };
 export const LinkButton = Template.bind({});
 LinkButton.args = { buttonVariation: "link" };
 export const BigButton = Template.bind({});
-BigButton.args = { buttonVariation: "big" };
+BigButton.args = { largeButton: true };
 export const OutlineButton = Template.bind({});
 OutlineButton.args = { buttonVariation: "outline" };

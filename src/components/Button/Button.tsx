@@ -27,7 +27,7 @@ const ButtonVariationConversion: { [key: string]: string } = {
   secondary: "outline",
   error: "secondary",
   success: " bg-green",
-  inverse: "outline usa-button--inverse",
+  inverse: "outline text-gray-70 bg-base-lighter",
   base: "base",
   link: "unstyled",
   outline: "outline text-black",
