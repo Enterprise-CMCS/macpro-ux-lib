@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
-// import { generateId } from "utils/generateId";
+import { generateId } from "../../utils";
 
-type IntrinsicElements = JSX.IntrinsicElements["p"];
-
-interface Props extends IntrinsicElements {
+interface Props {
   errorMessage?: string;
   fieldName: string;
   initialValue?: string;
@@ -44,11 +42,6 @@ export const TextInput: React.FC<Props> = ({
 }) => {
   const [inputValue, setInputValue] = useState<string>(initialValue ?? "");
   const [id, setId] = useState<number>(0);
-
-  // TODO: call from utils - import not working
-  const generateId = (digits: number = 6): number => {
-    return Math.trunc(Math.random() * Math.pow(10, digits));
-  };
 
   useEffect(() => {
     setId(generateId());
