@@ -1,6 +1,6 @@
 import React from "react";
-import { fireEvent, screen, render } from "../../test-setup";
 import { Button } from "./Button";
+import { cleanAttributes, fireEvent, screen, render } from "../../test-setup";
 
 describe("Tests for the button component.", () => {
   const mockChangeFn = jest.fn();
@@ -35,5 +35,23 @@ describe("Tests for the button component.", () => {
     expect(buttonComp).toHaveTextContent("Disabled Button");
     expect(buttonComp).toBeDisabled();
     expect(buttonComp).toHaveAttribute("aria-label", "disabled big button");
+  });
+
+  describe("compontent snapshots", () => {
+    it("default", () => {
+      const { container } = render(
+        <Button
+          data-testid="button"
+          disabled={true}
+          buttonText="Disabled Button"
+          onClick={mockChangeFn}
+          ariaLabel="disabled big button"
+          largeButton
+          buttonVariation="inverse"
+        />
+      );
+      cleanAttributes(container, [""]);
+      expect(container).toMatchSnapshot();
+    });
   });
 });

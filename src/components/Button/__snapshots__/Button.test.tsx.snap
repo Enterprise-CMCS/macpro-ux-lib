@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for the button component. compontent snapshots default 1`] = `
+<div>
+  <button
+    aria-label="disabled big button"
+    class="usa-button usa-button--outline text-gray-70 bg-base-lighter usa-button--big"
+    data-testid="button"
+    disabled=""
+  >
+    <span>
+      Disabled Button
+    </span>
+  </button>
+</div>
+`;
