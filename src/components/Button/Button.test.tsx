@@ -11,17 +11,11 @@ describe("Tests for the button component.", () => {
     );
   });
 
-  it("Should render", () => {
+  it("Should render and be ", () => {
     const buttonComp = screen.getByTestId("button");
-
+    fireEvent.click(buttonComp);
     expect(buttonComp).toBeInTheDocument();
     expect(buttonComp).toHaveTextContent("Button");
-  });
-
-  it("Check that the helper text renders", () => {
-    const buttonComp = screen.getByTestId("button");
-
-    fireEvent.click(buttonComp);
     expect(mockChangeFn).toHaveBeenCalled();
   });
 });

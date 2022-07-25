@@ -46,7 +46,6 @@ export const Button: React.FC<Props> = ({
     ButtonVariationConversion[buttonVariation || ""] ?? "";
   return (
     <button
-      data-testid="button"
       {...rest}
       aria-label={ariaLabel || `${buttonText} button`}
       className={`usa-button usa-button--${buttonVariationType} ${
