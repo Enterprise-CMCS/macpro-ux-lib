@@ -6,6 +6,7 @@ type IntrinsicElements = JSX.IntrinsicElements["p"];
 interface Props extends IntrinsicElements {
   errorMessage?: string;
   fieldName: string;
+  initialValue?: string;
   inputError?: boolean;
   inputFilter?: RegExp;
   inputSuccess?: boolean;
@@ -14,35 +15,34 @@ interface Props extends IntrinsicElements {
   prefix?: string;
   required?: boolean;
   suffix?: string;
-  value?: string;
 }
 /**
  * TextInput Component
  * @param {string}  label          Field label.
  * @param {string}  fieldName      Name of the input field.
  * @param {string}  [errorMessage] Error message text displayed when inputError === true.
+ * @param {string}  [initialValue] Optional default input value.
  * @param {boolean} [inputError]   Triggers error message and error styling.
  * @param {boolean} [inputSuccess] Trigger success styling.
  * @param {string}  [placeholder]  Input field placeholder text.
  * @param {string}  [prefix]       Text to be displayed at the front of input field. Not stored in value. Ex: currency indicator.
  * @param {boolean} [required]     Adds semantic required attr and appends an * to the end of the input label.
  * @param {string}  [suffix]       Text to be displayed at the end of input field. Not stored in value. Ex: mass indicator (lbs, fl oz)
- * @param {string}  [value]        Optional default input value.
  */
 export const TextInput: React.FC<Props> = ({
   label,
+  errorMessage,
   fieldName,
+  initialValue,
   inputError,
   inputFilter = /.*/i,
+  inputSuccess = false,
   placeholder,
   prefix,
-  errorMessage,
   required = false,
-  inputSuccess = false,
   suffix,
-  value,
 }) => {
-  const [inputValue, setInputValue] = useState<string>(value ?? "");
+  const [inputValue, setInputValue] = useState<string>(initialValue ?? "");
   const [id, setId] = useState<number>(0);
 
   // TODO: call from utils - import not working
