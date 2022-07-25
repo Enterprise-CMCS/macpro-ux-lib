@@ -5,17 +5,35 @@ import { Button } from "./Button";
 describe("Tests for the button component.", () => {
   const mockChangeFn = jest.fn();
 
-  beforeAll(() => {
+  it("Should render and fire a callback", () => {
     render(
       <Button data-testid="button" buttonText="Button" onClick={mockChangeFn} />
     );
-  });
-
-  it("Should render and be ", () => {
     const buttonComp = screen.getByTestId("button");
+
     fireEvent.click(buttonComp);
     expect(buttonComp).toBeInTheDocument();
     expect(buttonComp).toHaveTextContent("Button");
     expect(mockChangeFn).toHaveBeenCalled();
+  });
+
+  it("Should render a disabled button with an aria label of disabled big button", () => {
+    render(
+      <Button
+        data-testid="button"
+        disabled
+        buttonText="Disabled Button"
+        onClick={mockChangeFn}
+        ariaLabel="disabled big button"
+        largeButton
+        buttonVariation="inverse"
+      />
+    );
+    const buttonComp = screen.getByTestId("button");
+
+    expect(buttonComp).toBeInTheDocument();
+    expect(buttonComp).toHaveTextContent("Disabled Button");
+    expect(buttonComp).toBeDisabled();
+    expect(buttonComp).toHaveAttribute("aria-label", "disabled big button");
   });
 });
