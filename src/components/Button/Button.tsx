@@ -13,7 +13,7 @@ interface Props extends IntrinsicElements {
 }
 
 /**
- * TextInput Component
+ * Button Component
  * @param {string}  [buttonText]        Renders the text contained in the button.
  * @param {string}  buttonVariation     Renders the style of the button.
  * @param {string}  disabled            Determines whether or not a button is enabled.
@@ -48,12 +48,12 @@ const ButtonVariationConversion: { [key: string]: string } = {
 };
 
 export const Button: React.FC<Props> = ({
-  buttonVariation,
+  buttonVariation = "primary",
   buttonText,
   shiftIconLeft,
   icon,
   ariaLabel,
-  largeButton,
+  largeButton = false,
   ...rest
 }) => {
   const buttonVariationType =

@@ -7,7 +7,6 @@ export default {
   component: Button,
   argTypes: {
     buttonVariation: {
-      defaultValue: "primary",
       description: "Renders the style of the button",
     },
     buttonText: {
@@ -17,14 +16,16 @@ export default {
     disabled: {
       defaultValue: false,
       control: "boolean",
-      description: "Determines whether or not a button is enabled",
+      description: "Determines whether or not a button is disabled",
     },
     icon: {
+      defaultValue: false,
       description: "Handles the icon to render in the button",
     },
     shiftIconLeft: {
+      defaultValue: false,
       description:
-        "Determines if a rendered icon should render on the left side",
+        "Determines if a rendered icon should render on the left side, the icon prop needs to be true as well",
     },
     largeButton: {
       description: "Determines whether a large button is required",
