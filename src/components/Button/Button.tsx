@@ -14,8 +14,8 @@ interface Props extends IntrinsicElements {
 
 /**
  * TextInput Component
- * @param {string}  buttonText          This is the style prop for the button.
- * @param {string}  buttonVariation     This is the text prop for the button.
+ * @param {string}  [buttonText]        Renders the text contained in the button.
+ * @param {string}  buttonVariation     Renders the style of the button.
  * @param {string}  disabled            Determines whether or not a button is enabled.
  * @param {string}  icon                Handles the icon to render in the button.
  * @param {boolean} shiftIconLeft       Determines if a rendered icon should render on the left side.

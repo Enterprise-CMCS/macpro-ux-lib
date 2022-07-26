@@ -8,11 +8,11 @@ export default {
   argTypes: {
     buttonVariation: {
       defaultValue: "primary",
-      description: "This is the style prop for the button",
+      description: "Renders the style of the button",
     },
     buttonText: {
       defaultValue: "Button",
-      description: "This is the text prop for the button",
+      description: "Renders the text contained in the button",
     },
     disabled: {
       defaultValue: false,
