@@ -48,9 +48,10 @@ describe("Tests for the button component.", () => {
           ariaLabel="disabled big button"
           largeButton
           buttonVariation="inverse"
+          id="button"
         />
       );
-      cleanAttributes(container, [""]);
+      cleanAttributes(container, ["button"]);
       expect(container).toMatchSnapshot();
     });
   });
