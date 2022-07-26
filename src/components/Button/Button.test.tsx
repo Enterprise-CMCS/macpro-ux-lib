@@ -42,16 +42,13 @@ describe("Tests for the button component.", () => {
       const { container } = render(
         <Button
           data-testid="button"
-          disabled={true}
           buttonText="Disabled Button"
           onClick={mockChangeFn}
           ariaLabel="disabled big button"
           largeButton
           buttonVariation="inverse"
-          id="button"
         />
       );
-      cleanAttributes(container, ["button"]);
       expect(container).toMatchSnapshot();
     });
   });
