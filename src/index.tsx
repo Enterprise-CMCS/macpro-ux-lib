@@ -11,10 +11,10 @@ import {
   CardHeader,
   CardMedia,
 } from "./components/Card/Card";
+import { TextInput } from "components/TextInput/TextInput";
 
 export {
   Button,
-  Typography,
   CardBody,
   CardBodyText,
   CardContainer,
@@ -22,4 +22,6 @@ export {
   CardHeader,
   CardMedia,
   Icon,
+  TextInput,
+  Typography,
 };
