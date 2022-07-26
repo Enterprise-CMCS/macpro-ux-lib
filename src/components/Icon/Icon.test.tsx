@@ -4,7 +4,7 @@ import { Icon } from "./Icon";
 
 describe("Tests for the Icon component.", () => {
   beforeAll(() => {
-    render(<Icon>Testing</Icon>);
+    render(<Icon iconChoice="accessibility_new" />);
   });
 
   it("Should render", () => {
