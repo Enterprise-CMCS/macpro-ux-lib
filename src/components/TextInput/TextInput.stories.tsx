@@ -8,7 +8,52 @@ export default {
   component: TextInput,
   argTypes: {
     label: {
-      defaultValue: null,
+      defaultValue: undefined,
+      description: "Field label.",
+    },
+    fieldName: {
+      defaultValue: undefined,
+      description: "Name of the input field.",
+    },
+    errorMessage: {
+      defaultValue: undefined,
+      description: "Error message text displayed when inputError === true.",
+    },
+    initialValue: {
+      defaultValue: undefined,
+      description: "Optional default input value.",
+    },
+    inputError: {
+      defaultValue: false,
+      description: "Triggers error message and error styling.",
+    },
+    inputFilter: {
+      defaultValue: undefined,
+      description:
+        "Used to limit input values. If a RegExp is not provided, all input types are allowed.",
+    },
+    inputSuccess: {
+      defaultValue: false,
+      description: "Trigger success styling.",
+    },
+    placeholder: {
+      defaultValue: undefined,
+      description: "Input field placeholder text.",
+    },
+    prefix: {
+      defaultValue: undefined,
+      description:
+        "Text to be displayed at the front of input field. Not stored in value. Ex: currency indicator.",
+    },
+    required: {
+      defaultValue: false,
+      description:
+        "Adds semantic required attr and appends an * to the end of the input label.",
+    },
+    suffix: {
+      defaultValue: undefined,
+      description:
+        "Text to be displayed at the end of input field. Not stored in value. Ex: mass indicator (lbs, fl oz)",
     },
   },
 } as ComponentMeta<typeof TextInput>;
@@ -55,7 +100,7 @@ RequiredAndError.args = {
 Success.args = {
   errorMessage: "",
   fieldName: "input-type-text",
-  label: "Input Label",
+  label: "Field with Success Indicator",
   placeholder: "Placeholder Text",
   inputSuccess: true,
 };

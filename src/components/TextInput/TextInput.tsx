@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { generateId } from "../../utils";
 
-interface Props {
+type IntrinsicElements = JSX.IntrinsicElements["input"];
+
+interface Props extends IntrinsicElements {
   errorMessage?: string;
   fieldName: string;
   initialValue?: string;
@@ -21,6 +23,7 @@ interface Props {
  * @param {string}  [errorMessage] Error message text displayed when inputError === true.
  * @param {string}  [initialValue] Optional default input value.
  * @param {boolean} [inputError]   Triggers error message and error styling.
+ * @param {RegExp}  [inputFilter]  Used to limit input values. If a RegExp is not provided, all input types are allowed.
  * @param {boolean} [inputSuccess] Trigger success styling.
  * @param {string}  [placeholder]  Input field placeholder text.
  * @param {string}  [prefix]       Text to be displayed at the front of input field. Not stored in value. Ex: currency indicator.
@@ -32,13 +35,14 @@ export const TextInput: React.FC<Props> = ({
   errorMessage,
   fieldName,
   initialValue,
-  inputError,
-  inputFilter = /.*/i,
+  inputError = false,
+  inputFilter,
   inputSuccess = false,
   placeholder,
   prefix,
   required = false,
   suffix,
+  ...rest
 }) => {
   const [inputValue, setInputValue] = useState<string>(initialValue ?? "");
   const [id, setId] = useState<number>(0);
@@ -48,7 +52,9 @@ export const TextInput: React.FC<Props> = ({
   }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (inputFilter.test(e.target.value)) {
+    if (inputFilter && inputFilter.test(e.target.value)) {
+      setInputValue(e.target.value);
+    } else if (!inputFilter) {
       setInputValue(e.target.value);
     }
   };
@@ -92,6 +98,7 @@ export const TextInput: React.FC<Props> = ({
           placeholder={placeholder}
           required={required}
           value={inputValue}
+          {...rest}
         />
         {suffix && (
           <span className="usa-input-suffix" aria-hidden="true">
