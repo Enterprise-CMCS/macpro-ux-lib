@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "./Button";
-import { cleanAttributes, fireEvent, screen, render } from "../../test-setup";
+import { fireEvent, screen, render } from "../../test-setup";
 
 describe("Tests for the button component.", () => {
   const mockChangeFn = jest.fn();
@@ -38,15 +38,28 @@ describe("Tests for the button component.", () => {
   });
 
   describe("compontent snapshots", () => {
-    it("default", () => {
+    it("primary big disabled", () => {
       const { container } = render(
         <Button
           data-testid="button"
-          buttonText="Disabled Button"
+          buttonText="Big Inverse Button"
           onClick={mockChangeFn}
-          ariaLabel="disabled big button"
+          ariaLabel="big inverse button"
           largeButton
           buttonVariation="inverse"
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+
+    it("secondary button", () => {
+      const { container } = render(
+        <Button
+          data-testid="button"
+          buttonText="Button"
+          onClick={mockChangeFn}
+          ariaLabel="Secondary button"
+          buttonVariation="secondary"
         />
       );
       expect(container).toMatchSnapshot();

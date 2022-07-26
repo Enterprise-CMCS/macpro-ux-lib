@@ -1,4 +1,24 @@
 version: "2"
+checks:
+  argument-count:
+    enabled: false
+  complex-logic:
+    enabled: false
+  method-lines:
+    config:
+      threshold: 300
+  file-lines:
+    config:
+      threshold: 1000
+  method-complexity:
+    config:
+      threshold: 20
+  return-statements:
+    enabled: false
+  similar-code:
+    enabled: false
+  identical-code:
+    enabled: false
 exclude_patterns:
   ############################################
   ## Code Climate's default exclude patterns
@@ -16,7 +36,6 @@ exclude_patterns:
   - "**/vendor/"
   - "**/*_test.go"
   - "**/*.d.ts"
-  - "**/test-setup.tsx"
   ############################################
 
   ############################################

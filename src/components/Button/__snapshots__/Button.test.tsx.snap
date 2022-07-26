@@ -1,14 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for the button component. compontent snapshots default 1`] = `
+exports[`Tests for the button component. compontent snapshots primary big disabled 1`] = `
 <div>
   <button
-    aria-label="disabled big button"
+    aria-label="big inverse button"
     class="usa-button usa-button--outline text-gray-70 bg-base-lighter usa-button--big"
     data-testid="button"
   >
     <span>
-      Disabled Button
+      Big Inverse Button
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Tests for the button component. compontent snapshots secondary button 1`] = `
+<div>
+  <button
+    aria-label="Secondary button"
+    class="usa-button usa-button--outline "
+    data-testid="button"
+  >
+    <span>
+      Button
     </span>
   </button>
 </div>
