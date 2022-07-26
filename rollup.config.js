@@ -5,6 +5,7 @@ import typescript from "rollup-plugin-typescript2";
 import copy from "rollup-plugin-copy";
 import postcss from "rollup-plugin-postcss";
 import path from "path";
+import image from "@rollup/plugin-image";
 
 const packageJson = require("./package.json");
 
@@ -36,5 +37,6 @@ export default {
     copy({
       targets: [{ src: "src/assets/*", dest: "build/assets" }],
     }),
+    image(),
   ],
 };
