@@ -41,5 +41,4 @@ exclude_patterns:
   ############################################
   ## Additional exclude patterns
   - src/assets
-  - src/test-setup.tsx
   ############################################
