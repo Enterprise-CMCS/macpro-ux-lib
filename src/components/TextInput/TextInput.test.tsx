@@ -1,5 +1,11 @@
 import React from "react";
-import { cleanAttributes, screen, render } from "../../test-setup";
+import {
+  cleanAttributes,
+  screen,
+  render,
+  getByLabelText,
+  getByText,
+} from "../../test-setup";
 import fireEvent from "@testing-library/user-event";
 import { TextInput } from "./TextInput";
 
@@ -87,6 +93,30 @@ describe("TextInput component", () => {
     const comp = screen.getByLabelText("Testing Input");
     fireEvent.type(comp, "abc123");
     expect(comp).toHaveDisplayValue("123");
+  });
+
+  it("should add 'usa-focus' on focus'", () => {
+    const { container } = render(
+      <TextInput
+        label="Testing Input"
+        fieldName="testing-input"
+        errorMessage="Click me to unfocus input"
+        inputError
+        required
+      />
+    );
+    // Should not exist on render
+    expect(container.querySelectorAll(".usa-focus").length).toBe(0);
+
+    // Should exist onFocus
+    const input = getByLabelText(container, "Testing Input*");
+    fireEvent.click(input);
+    expect(container.querySelectorAll(".usa-focus").length).toBe(1);
+
+    // Should not onBlur
+    const escape = getByText(container, "Click me to unfocus input");
+    fireEvent.click(escape);
+    expect(container.querySelectorAll(".usa-focus").length).toBe(0);
   });
 
   describe("compontent snapshots", () => {
