@@ -127,4 +127,32 @@ describe("Checkbox", () => {
       expect(testForm).toHaveTextContent("This is the tile description.");
     });
   });
+
+  describe("Snapshot tests", () => {
+    it("renders default Checkbox as expected", () => {
+      const { container } = render(
+        <Checkbox
+          id="check-default"
+          label="Default Checkbox"
+          name="test-checkbox"
+          value="default-checkbox"
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+
+    it("renders tile Checkbox as expected", () => {
+      const { container } = render(
+        <Checkbox
+          id="check-tile"
+          isTile={true}
+          label="Tile Checkbox"
+          name="test-checkbox"
+          tileDescription="This is the tile description."
+          value="tile-checkbox"
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+  });
 });
