@@ -1,5 +1,11 @@
 import React from "react";
-import { cleanAttributes, screen, render } from "../../test-setup";
+import {
+  cleanAttributes,
+  screen,
+  render,
+  getByLabelText,
+  getByText,
+} from "../../test-setup";
 import fireEvent from "@testing-library/user-event";
 import { TextArea } from "./TextArea";
 
@@ -95,6 +101,30 @@ describe("TextArea component", () => {
       const counter = container.getElementsByClassName("usa-hint")[0];
       expect(counter.innerHTML).toBe("You have used: 4 / 50");
     });
+  });
+
+  it("should add 'usa-focus' on focus'", () => {
+    const { container } = render(
+      <TextArea
+        label="Testing Input"
+        fieldName="testing-input"
+        errorMessage="Click me to unfocus input"
+        inputError
+        required
+      />
+    );
+    // Should not exist on render
+    const textArea = getByLabelText(container, "Testing Input*");
+    expect(textArea.className.includes("usa-focus")).toBe(false);
+
+    // Should exist onFocus
+    fireEvent.click(textArea);
+    expect(textArea.className.includes("usa-focus")).toBe(true);
+
+    // Should not onBlur
+    const escape = getByText(container, "Click me to unfocus input");
+    fireEvent.click(escape);
+    expect(textArea.className.includes("usa-focus")).toBe(false);
   });
 
   it("should render with a default value", () => {

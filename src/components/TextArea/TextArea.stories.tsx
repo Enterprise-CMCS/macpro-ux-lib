@@ -6,13 +6,18 @@ import { TextArea } from "./TextArea";
 export default {
   title: "USWDS/Base/TextArea",
   component: TextArea,
+  args: {
+    label: "Input Label",
+    fieldName: "input-type-text",
+    inputError: false,
+    inputSuccess: false,
+    required: false,
+  },
   argTypes: {
     label: {
-      defaultValue: "Input Label",
       description: "Field label.",
     },
     fieldName: {
-      defaultValue: "input-type-text",
       description: "Name of the input field.",
     },
     characterCountMessage: {

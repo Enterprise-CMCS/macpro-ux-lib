@@ -47,6 +47,7 @@ export const TextArea: React.FC<Props> = ({
   required = false,
   ...rest
 }) => {
+  const [focused, setFocused] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>(initialValue ?? "");
   const [id, setId] = useState<number>(0);
 
@@ -93,11 +94,13 @@ export const TextArea: React.FC<Props> = ({
         aria-describedby={`${inputError ? "input-error-message" : ""}`}
         className={`usa-textarea${inputError ? " usa-input-group--error" : ""}${
           inputSuccess ? " usa-input--success" : ""
-        }`}
+        }${focused ? " usa-focus" : ""}`}
         id={`input-type-textarea-${id}`}
         maxLength={maxLength}
         name={fieldName}
+        onBlur={() => setFocused(false)}
         onChange={handleChange}
+        onFocus={() => setFocused(true)}
         placeholder={placeholder}
         required={required}
         value={inputValue}
