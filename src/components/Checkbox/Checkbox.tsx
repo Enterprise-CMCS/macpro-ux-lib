@@ -9,14 +9,22 @@ interface Props {
   value?: string;
 }
 
+/**
+ * Checkbox Component
+ * @param {string}  id                A unique identifier for the input.
+ * @param {string}  label             Label text that appears to the right of the Checkbox.
+ * @param {string}  name              Name of the input element.
+ * @param {boolean} [isTile]          Use the tile variation of the Checkbox.
+ * @param {string}  [tileDescription] Text that can be used to describe the label in more detail. Activates the tile variation automatically.
+ * @param {string}  [value]             Value of the input element.
+ */
 export const Checkbox: React.FC<Props> = ({
   id,
-  isTile = false,
+  isTile,
   label,
   name,
   tileDescription,
   value,
-  ...rest
 }) => {
   if (isTile) {
     return (
@@ -26,6 +34,7 @@ export const Checkbox: React.FC<Props> = ({
           id={id}
           type="checkbox"
           name={name}
+          value={value}
         />
         <label className="usa-checkbox__label" htmlFor={id}>
           {label}
@@ -43,6 +52,7 @@ export const Checkbox: React.FC<Props> = ({
           id={id}
           type="checkbox"
           name={name}
+          value={value}
         />
         <label className="usa-checkbox__label" htmlFor={id}>
           {label}
