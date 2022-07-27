@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compontent snapshots accessibility new icon 1`] = `
+<div>
+  <svg
+    aria-hidden="true"
+    aria-label="accessibility new icon"
+    class="usa-icon--size-3"
+    role="img"
+  >
+    <use
+      href="sprite.svg#accessibility_new"
+    />
+  </svg>
+</div>
+`;
+
+exports[`compontent snapshots accessibility new icon that is not purely decorative 1`] = `
+<div>
+  <svg
+    aria-hidden="false"
+    aria-label="Add Button"
+    class="usa-icon--size-5"
+    role="button"
+  >
+    <use
+      href="sprite.svg#add"
+    />
+  </svg>
+</div>
+`;

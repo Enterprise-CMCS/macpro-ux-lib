@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardMedia,
 } from "./components/Card/Card";
+import { Icon } from "./components/Icon/Icon";
 import { Logo } from "components/Logo/Logo";
 import { TextArea } from "components/TextArea/TextArea";
 import { TextInput } from "components/TextInput/TextInput";
@@ -22,6 +23,7 @@ export {
   CardFooter,
   CardHeader,
   CardMedia,
+  Icon,
   Logo,
   TextArea,
   TextInput,
