@@ -44,6 +44,7 @@ export const TextInput: React.FC<Props> = ({
   suffix,
   ...rest
 }) => {
+  const [focused, setFocused] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>(initialValue ?? "");
   const [id, setId] = useState<number>(0);
 
@@ -82,7 +83,9 @@ export const TextInput: React.FC<Props> = ({
       <div
         className={`usa-input-group${
           inputError ? " usa-input-group--error" : ""
-        }${inputSuccess ? " usa-input--success" : ""}`}
+        }${inputSuccess ? " usa-input--success" : ""}${
+          focused ? " usa-focus" : ""
+        }`}
       >
         {prefix && (
           <span className="usa-input-prefix" aria-hidden="true">
@@ -94,7 +97,9 @@ export const TextInput: React.FC<Props> = ({
           className={`usa-input`}
           id={`input-type-text-${id}`}
           name={fieldName}
+          onBlur={() => setFocused(false)}
           onChange={handleChange}
+          onFocus={() => setFocused(true)}
           placeholder={placeholder}
           required={required}
           value={inputValue}

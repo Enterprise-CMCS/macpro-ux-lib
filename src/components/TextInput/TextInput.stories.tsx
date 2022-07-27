@@ -6,13 +6,18 @@ import { TextInput } from "./TextInput";
 export default {
   title: "USWDS/Base/TextInput",
   component: TextInput,
+  args: {
+    label: "Input Label",
+    fieldName: "input-type-text",
+    inputError: false,
+    inputSuccess: false,
+    required: false,
+  },
   argTypes: {
     label: {
-      defaultValue: "Input Label",
       description: "Field label.",
     },
     fieldName: {
-      defaultValue: "input-type-text",
       description: "Name of the input field.",
     },
     errorMessage: {
@@ -75,7 +80,6 @@ PrefixAndSuffix.args = {
 
 RequiredAndError.args = {
   errorMessage: "Helpful Error Message",
-  fieldName: "input-type-text",
   inputError: true,
   label: "Required Input Field",
   placeholder: "Placeholder Text",
