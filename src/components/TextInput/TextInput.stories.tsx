@@ -6,13 +6,18 @@ import { TextInput } from "./TextInput";
 export default {
   title: "USWDS/Base/TextInput",
   component: TextInput,
+  args: {
+    label: "Input Label",
+    fieldName: "input-type-text",
+    inputError: false,
+    inputSuccess: false,
+    required: false,
+  },
   argTypes: {
     label: {
-      defaultValue: "Input Label",
       description: "Field label.",
     },
     fieldName: {
-      defaultValue: "input-type-text",
       description: "Name of the input field.",
     },
     errorMessage: {
@@ -22,7 +27,6 @@ export default {
       description: "Optional default input value.",
     },
     inputError: {
-      defaultValue: false,
       description: "Triggers error message and error styling.",
     },
     inputFilter: {
@@ -30,7 +34,6 @@ export default {
         "Used to limit input values. If a RegExp is not provided, all input types are allowed.",
     },
     inputSuccess: {
-      defaultValue: false,
       description: "Trigger success styling.",
     },
     placeholder: {
@@ -41,7 +44,6 @@ export default {
         "Text to be displayed at the front of input field. Not stored in value. Ex: currency indicator.",
     },
     required: {
-      defaultValue: false,
       description:
         "Adds semantic required attr and appends an * to the end of the input label.",
     },
