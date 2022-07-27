@@ -7,11 +7,9 @@ export default {
   component: Checkbox,
   argTypes: {
     label: {
-      defaultValue: "",
-      description: "The label text that appears to the right of the checkbox.",
+      description: "The label text that appears to the right of the Checkbox.",
     },
     tileDescription: {
-      defaultValue: null,
       description:
         "Optional text that can be used to describe the label in more detail. Activates the tile variation automatically.",
     },
