@@ -10,6 +10,7 @@ exports[`Checkbox Snapshot tests renders default Checkbox as expected 1`] = `
       id="check-default"
       name="test-checkbox"
       type="checkbox"
+      value="default-checkbox"
     />
     <label
       class="usa-checkbox__label"
@@ -31,6 +32,7 @@ exports[`Checkbox Snapshot tests renders tile Checkbox as expected 1`] = `
       id="check-tile"
       name="test-checkbox"
       type="checkbox"
+      value="tile-checkbox"
     />
     <label
       class="usa-checkbox__label"
