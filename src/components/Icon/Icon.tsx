@@ -1,9 +1,11 @@
 import React from "react";
+import { iconChoices } from "./IconChoices";
 
+type IconChoices = typeof iconChoices[number];
 type IntrinsicElements = JSX.IntrinsicElements["svg"];
 
 interface Props extends IntrinsicElements {
-  name: string;
+  name: IconChoices;
   iconSize?: IconSize;
   ariaHidden?: boolean;
   role?: string;
