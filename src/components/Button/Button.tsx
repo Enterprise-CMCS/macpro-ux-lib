@@ -14,16 +14,16 @@ interface Props extends IntrinsicElements {
 
 /**
  * Button Component
- * @param {string}  [buttonText]        Renders the text contained in the button.
- * @param {string}  buttonVariation     Renders the style of the button.
- * @param {boolean} disabled            Determines whether or not a button is enabled.
- * @param {Icon}    icon                Handles the icon to render in the button.
- * @param {boolean} shiftIconLeft       Determines if a rendered icon should render on the left side.
- * @param {boolean} ariaLabel           Overwrites the aria label of the button element that will be read on screen readers.
- * @param {boolean} largeButton         Determines whether a large button is required.
- * @param {string}  button              Type of specified button.
- * @param {Event}   onClick:            Handles its behavior when the button is clicked.
- * @param {string}  target              Specifies a name or a keyword that indicates where to display the response that is received after clicking the button.
+ * @param {string}  buttonText            Renders the text contained in the button.
+ * @param {string}  [buttonVariation]     Renders the style of the button.
+ * @param {boolean} [disabled]            Determines whether or not a button is enabled.
+ * @param {Icon}    [icon]                Handles the icon to render in the button.
+ * @param {boolean} [shiftIconLeft]       Determines if a rendered icon should render on the left side.
+ * @param {boolean} [ariaLabel]           Overwrites the aria label of the button element that will be read on screen readers.
+ * @param {boolean} [largeButton]         Determines whether a large button is required.
+ * @param {string}  [button]              Type of specified button.
+ * @param {Event}   [onClick]            Handles its behavior when the button is clicked.
+ * @param {string}  [target]              Specifies a name or a keyword that indicates where to display the response that is received after clicking the button.
  */
 
 type ButtonVariation =
