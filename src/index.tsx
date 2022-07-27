@@ -1,8 +1,6 @@
 import "./assets/css/styles.css";
 
 import { Button } from "./components/Button/Button";
-import { Icon } from "./components/Icon/Icon";
-import { Typography } from "./components/Typography/Typography";
 import {
   CardBody,
   CardBodyText,
@@ -11,7 +9,9 @@ import {
   CardHeader,
   CardMedia,
 } from "./components/Card/Card";
+import { Icon } from "./components/Icon/Icon";
 import { TextInput } from "components/TextInput/TextInput";
+import { Typography } from "./components/Typography/Typography";
 
 export {
   Button,
