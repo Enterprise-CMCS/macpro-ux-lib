@@ -18,7 +18,7 @@ export const Checkbox: React.FC<Props> = ({
   value,
   ...rest
 }) => {
-  if (tileDescription) {
+  if (isTile) {
     return (
       <div className="usa-checkbox">
         <input
