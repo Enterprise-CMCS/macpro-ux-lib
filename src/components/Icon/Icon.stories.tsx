@@ -12,17 +12,17 @@ export default {
         "String used to specify the size of the icon, a number between 3-9",
     },
     name: {
-      description: "Determines which icon that needs to be rendered",
+      description: `Determines which icon that needs to be rendered from: https://designsystem.digital.gov/components/icon/`,
       options: iconChoices,
       control: { type: "select" },
     },
     ariaHidden: {
       description:
-        "If the icon is redundant and used solely as visual decorative enhancement, leave prop as default true",
+        "If the icon is redundant and used solely as visual decorative enhancement",
     },
     role: {
       description:
-        "If the icon is redundant and used solely as visual decorative enhancement, leave prop as default img role.",
+        "Determines the role of the icon. If the icon is redundant and used solely as visual decorative enhancement, leave prop as default img role.",
     },
     ariaLabel: {
       description:

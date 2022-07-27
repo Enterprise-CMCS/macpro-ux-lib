@@ -32,9 +32,11 @@ export const Icon: React.FC<Props> = ({
   const iconName = name.replace(/_/g, " ");
   return (
     <svg
-      aria-label={ariaLabel || `${iconName} Icon`}
+      aria-label={ariaLabel || `${iconName} icon`}
       {...rest}
       className={`usa-icon--size-${iconSize}`}
+      aria-hidden={ariaHidden}
+      role={role}
     >
       <use href={`sprite.svg#${name}`}></use>
     </svg>
