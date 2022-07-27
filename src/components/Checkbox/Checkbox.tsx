@@ -2,14 +2,16 @@ import React from "react";
 
 interface Props {
   id: string;
+  isTile?: boolean;
   label: string;
   name: string;
   tileDescription?: string;
-  value: string;
+  value?: string;
 }
 
 export const Checkbox: React.FC<Props> = ({
   id,
+  isTile = false,
   label,
   name,
   tileDescription,
