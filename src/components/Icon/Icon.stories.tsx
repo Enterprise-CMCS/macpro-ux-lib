@@ -3,41 +3,42 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Icon } from "./Icon";
 import { iconChoices } from "./IconChoices";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "USWDS/Base/Icon",
   component: Icon,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     iconSize: {
       description:
         "String used to specify the size of the icon, a number between 3-9",
     },
-    iconChoice: {
+    name: {
       description: "Determines which icon that needs to be rendered",
       options: iconChoices,
       control: { type: "select" },
     },
     ariaHidden: {
       description:
-        "If the icon is redundant and used solely as visual progressive enhancement, leave prop as default true",
+        "If the icon is redundant and used solely as visual decorative enhancement, leave prop as default true",
     },
     role: {
       description:
-        "If the icon is redundant and used solely as visual progressive enhancement, leave prop as default img role.",
+        "If the icon is redundant and used solely as visual decorative enhancement, leave prop as default img role.",
+    },
+    ariaLabel: {
+      description:
+        "Accessible icon name used by screen readers and other assistive technologies. Provide when icon is not merely decorative",
     },
   },
   args: {
-    iconChoice: "accessibility_new",
-    iconSize: "3",
+    name: "accessibility_new",
+    iconSize: 3,
     ariaHidden: true,
     role: "img",
   },
 } as ComponentMeta<typeof Icon>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Icon> = ({ iconChoice, ...rest }) => (
-  <Icon iconChoice={iconChoice} {...rest} />
+const Template: ComponentStory<typeof Icon> = ({ name, ...rest }) => (
+  <Icon name={name} {...rest} />
 );
 
 export const Default = Template.bind({});
