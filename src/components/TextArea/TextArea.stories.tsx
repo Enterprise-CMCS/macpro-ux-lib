@@ -1,11 +1,11 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { TextInput } from "./TextInput";
+import { TextArea } from "./TextArea";
 
 export default {
-  title: "USWDS/Base/TextInput",
-  component: TextInput,
+  title: "USWDS/Base/TextArea",
+  component: TextArea,
   args: {
     label: "Input Label",
     fieldName: "input-type-text",
@@ -19,6 +19,10 @@ export default {
     },
     fieldName: {
       description: "Name of the input field.",
+    },
+    characterCountMessage: {
+      description:
+        "Sets a message preceding the character count when showCharacterCount === true.",
     },
     errorMessage: {
       description: "Error message text displayed when inputError === true.",
@@ -36,46 +40,37 @@ export default {
     inputSuccess: {
       description: "Trigger success styling.",
     },
+    maxLength: {
+      description: "Maximum number of characters the textarea can receive.",
+    },
     placeholder: {
       description: "Input field placeholder text.",
-    },
-    prefix: {
-      description:
-        "Text to be displayed at the front of input field. Not stored in value. Ex: currency indicator.",
     },
     required: {
       description:
         "Adds semantic required attr and appends an * to the end of the input label.",
     },
-    suffix: {
-      description:
-        "Text to be displayed at the end of input field. Not stored in value. Ex: mass indicator (lbs, fl oz)",
-    },
   },
-} as ComponentMeta<typeof TextInput>;
+} as ComponentMeta<typeof TextArea>;
 
-const Template: ComponentStory<typeof TextInput> = ({ ...rest }) => (
-  <TextInput {...rest} />
+const Template: ComponentStory<typeof TextArea> = ({ ...rest }) => (
+  <TextArea {...rest} />
 );
 
 export const Default = Template.bind({});
-export const InputFilter = Template.bind({});
-export const PrefixAndSuffix = Template.bind({});
+export const CharachterCount = Template.bind({});
 export const RequiredAndError = Template.bind({});
 export const Success = Template.bind({});
+export const InputFilter = Template.bind({});
 Default.args = {};
 
-InputFilter.args = {
-  label: "This field only accepts a numerical input",
-  placeholder: "Numbers only",
-  inputFilter: /^-?\d*$/i,
-};
-
-PrefixAndSuffix.args = {
-  label: "A field with a prefix and a suffix",
-  placeholder: "Enter the number of lbs.",
-  prefix: "#",
-  suffix: "lbs.",
+CharachterCount.args = {
+  placeholder: "Placeholder Text",
+  characterCountMessage: "Available remaining characters: ",
+  initialValue:
+    "Wait... how long is this message?\n\n33 characters? I'm running out of space!",
+  showCharacterCount: true,
+  maxLength: 500,
 };
 
 RequiredAndError.args = {
@@ -88,6 +83,11 @@ RequiredAndError.args = {
 
 Success.args = {
   label: "Field with Success Indicator",
-  placeholder: "Placeholder Text",
+  initialValue: "This is a good value!",
   inputSuccess: true,
+};
+
+InputFilter.args = {
+  placeholder: "This field only accepts a numerical input",
+  inputFilter: /^-?\d*$/i,
 };

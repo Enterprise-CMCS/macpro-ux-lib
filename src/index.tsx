@@ -10,6 +10,7 @@ import {
   CardMedia,
 } from "./components/Card/Card";
 import { Icon } from "./components/Icon/Icon";
+import { TextArea } from "components/TextArea/TextArea";
 import { TextInput } from "components/TextInput/TextInput";
 import { Typography } from "./components/Typography/Typography";
 
@@ -22,6 +23,7 @@ export {
   CardHeader,
   CardMedia,
   Icon,
+  TextArea,
   TextInput,
   Typography,
 };
