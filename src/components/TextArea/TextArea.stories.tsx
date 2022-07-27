@@ -8,49 +8,40 @@ export default {
   component: TextArea,
   argTypes: {
     label: {
-      defaultValue: undefined,
+      defaultValue: "Input Label",
       description: "Field label.",
     },
     fieldName: {
-      defaultValue: undefined,
+      defaultValue: "input-type-text",
       description: "Name of the input field.",
     },
     characterCountMessage: {
-      defaultValue: undefined,
       description:
         "Sets a message preceding the character count when showCharacterCount === true.",
     },
     errorMessage: {
-      defaultValue: undefined,
       description: "Error message text displayed when inputError === true.",
     },
     initialValue: {
-      defaultValue: undefined,
       description: "Optional default input value.",
     },
     inputError: {
-      defaultValue: false,
       description: "Triggers error message and error styling.",
     },
     inputFilter: {
-      defaultValue: undefined,
       description:
         "Used to limit input values. If a RegExp is not provided, all input types are allowed.",
     },
     inputSuccess: {
-      defaultValue: false,
       description: "Trigger success styling.",
     },
     maxLength: {
-      defaultValue: undefined,
       description: "Maximum number of characters the textarea can receive.",
     },
     placeholder: {
-      defaultValue: undefined,
       description: "Input field placeholder text.",
     },
     required: {
-      defaultValue: false,
       description:
         "Adds semantic required attr and appends an * to the end of the input label.",
     },
@@ -66,14 +57,9 @@ export const CharachterCount = Template.bind({});
 export const RequiredAndError = Template.bind({});
 export const Success = Template.bind({});
 export const InputFilter = Template.bind({});
-Default.args = {
-  fieldName: "input-type-text",
-  label: "Input Label",
-};
+Default.args = {};
 
 CharachterCount.args = {
-  fieldName: "input-type-text",
-  label: "Required Input Field",
   placeholder: "Placeholder Text",
   characterCountMessage: "Available remaining characters: ",
   initialValue:
@@ -84,7 +70,6 @@ CharachterCount.args = {
 
 RequiredAndError.args = {
   errorMessage: "Helpful Error Message",
-  fieldName: "input-type-text",
   inputError: true,
   label: "Required Input Field",
   placeholder: "Placeholder Text",
@@ -92,16 +77,12 @@ RequiredAndError.args = {
 };
 
 Success.args = {
-  errorMessage: "",
-  fieldName: "input-type-text",
   label: "Field with Success Indicator",
-  placeholder: "Placeholder Text",
+  initialValue: "This is a good value!",
   inputSuccess: true,
 };
 
 InputFilter.args = {
-  fieldName: "input-type-text",
-  label: "This field only accepts a numerical input",
-  placeholder: "Numbers only",
+  placeholder: "This field only accepts a numerical input",
   inputFilter: /^-?\d*$/i,
 };
