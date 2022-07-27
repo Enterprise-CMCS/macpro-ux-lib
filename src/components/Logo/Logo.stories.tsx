@@ -52,7 +52,7 @@ const Template: ComponentStory<typeof Logo> = ({ ...rest }) => (
 
 export const SVGLogo = Template.bind({});
 export const PNGLogo = Template.bind({});
-export const LogoFromURL = Template.bind({});
+export const ExternalSourceLogo = Template.bind({});
 SVGLogo.args = {
   source: svgLogo,
 };
@@ -61,7 +61,7 @@ PNGLogo.args = {
   source: pngLogo,
 };
 
-LogoFromURL.args = {
+ExternalSourceLogo.args = {
   source: "https://www.cms.gov/themes/custom/cms_evo/logo.svg",
   altText:
     "This logo is hosted on CMS.gov. If you're reading this the image has likely been moved.",
