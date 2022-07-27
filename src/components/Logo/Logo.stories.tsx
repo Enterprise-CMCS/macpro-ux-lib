@@ -17,27 +17,28 @@ export default {
   },
   argTypes: {
     altText: {
-      description: "Alternate image text",
+      description: "Alternate image text.",
     },
     ariaHidden: {
       description: "Describes the image for a screen reader.",
     },
     ariaLabel: {
-      description: "Source of the logo image.",
+      description:
+        "Describes the role of an element in programs that can make use of it.",
     },
     className: {
       description:
         "Determines whether or not the element is hidden from a screen reader.",
     },
     height: {
-      description: "Optional additional className for the logo container",
+      description: "Optional additional className for the logo container.",
     },
     role: {
       description: "Height parameter for logo in # of pixels.",
     },
     source: {
       description:
-        "Describes the role of an element in programs that can make use of it",
+        "Source of the logo image. This can be an image file or a web address pointing to an image.",
     },
     width: {
       description: "Width parameter for logo in # of pixels.",
@@ -49,12 +50,19 @@ const Template: ComponentStory<typeof Logo> = ({ ...rest }) => (
   <Logo {...rest} />
 );
 
-export const Default = Template.bind({});
-export const PNGDefault = Template.bind({});
-Default.args = {
+export const SVGLogo = Template.bind({});
+export const PNGLogo = Template.bind({});
+export const LogoFromURL = Template.bind({});
+SVGLogo.args = {
   source: svgLogo,
 };
 
-PNGDefault.args = {
+PNGLogo.args = {
   source: pngLogo,
+};
+
+LogoFromURL.args = {
+  source: "https://www.cms.gov/themes/custom/cms_evo/logo.svg",
+  altText:
+    "This logo is hosted on CMS.gov. If you're reading this the image has likely been moved.",
 };

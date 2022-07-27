@@ -1,19 +1,22 @@
 import React from "react";
-import { screen, render } from "../../test-setup";
+import { render } from "../../test-setup";
+
+import { Logo } from "./Logo";
 import pngLogo from "../../assets/img/logos/cms_logo.png";
 import svgLogo from "../../assets/img/logos/cms_logo.svg";
-import { Logo } from "./Logo";
 
 describe("Tests for the button component.", () => {
   it("Should render an svg", () => {
-    render(
+    const { container } = render(
       <Logo altText="CMS.gov Logo" ariaLabel="CMS.gov Logo" source={svgLogo} />
     );
+    expect(container).toMatchSnapshot();
   });
 
   it("Should render a png", () => {
-    render(
+    const { container } = render(
       <Logo altText="CMS.gov Logo" ariaLabel="CMS.gov Logo" source={pngLogo} />
     );
+    expect(container).toMatchSnapshot();
   });
 });

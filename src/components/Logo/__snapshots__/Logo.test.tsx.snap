@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for the button component. Should render a png 1`] = `
+<div>
+  <div
+    aria-label="CMS.gov Logo"
+    class="application-logo-container undefined"
+    role="img"
+  >
+    <img
+      alt="CMS.gov Logo"
+      aria-hidden="false"
+      src="[object Object]"
+      width="200"
+    />
+  </div>
+</div>
+`;
+
+exports[`Tests for the button component. Should render an svg 1`] = `
+<div>
+  <div
+    aria-label="CMS.gov Logo"
+    class="application-logo-container undefined"
+    role="img"
+  >
+    <img
+      alt="CMS.gov Logo"
+      aria-hidden="false"
+      src="[object Object]"
+      width="200"
+    />
+  </div>
+</div>
+`;

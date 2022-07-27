@@ -15,13 +15,13 @@ interface Props extends IntrinsicElements {
 
 /**
  * Logo Component
- * @param {string} altText        Alternate image text
+ * @param {string} altText        Alternate image text.
  * @param {string} ariaLabel      Describes the image for a screen reader.
- * @param {string} source         Source of the logo image.
+ * @param {string} source         Source of the logo image. This can be an image file or a web address pointing to an image.
  * @param {string} [ariaHidden]   Determines whether or not the element is hidden from a screen reader.
- * @param {string} [className]    Optional additional className for the logo container
+ * @param {string} [className]    Optional additional className for the logo container.
  * @param {string} [height]       Height parameter for logo in # of pixels.
- * @param {string} [role]         Describes the role of an element in programs that can make use of it
+ * @param {string} [role]         Describes the role of an element in programs that can make use of it.
  * @param {string} [width]        Width parameter for logo in # of pixels.
  */
 
