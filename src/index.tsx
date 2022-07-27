@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardMedia,
 } from "./components/Card/Card";
+import { TextArea } from "components/TextArea/TextArea";
 import { TextInput } from "components/TextInput/TextInput";
 import { Typography } from "./components/Typography/Typography";
 
@@ -20,6 +21,7 @@ export {
   CardFooter,
   CardHeader,
   CardMedia,
+  TextArea,
   TextInput,
   Typography,
 };
