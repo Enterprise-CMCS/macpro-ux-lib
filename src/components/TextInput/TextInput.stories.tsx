@@ -8,19 +8,17 @@ export default {
   component: TextInput,
   argTypes: {
     label: {
-      defaultValue: undefined,
+      defaultValue: "Input Label",
       description: "Field label.",
     },
     fieldName: {
-      defaultValue: undefined,
+      defaultValue: "input-type-text",
       description: "Name of the input field.",
     },
     errorMessage: {
-      defaultValue: undefined,
       description: "Error message text displayed when inputError === true.",
     },
     initialValue: {
-      defaultValue: undefined,
       description: "Optional default input value.",
     },
     inputError: {
@@ -28,7 +26,6 @@ export default {
       description: "Triggers error message and error styling.",
     },
     inputFilter: {
-      defaultValue: undefined,
       description:
         "Used to limit input values. If a RegExp is not provided, all input types are allowed.",
     },
@@ -37,11 +34,9 @@ export default {
       description: "Trigger success styling.",
     },
     placeholder: {
-      defaultValue: undefined,
       description: "Input field placeholder text.",
     },
     prefix: {
-      defaultValue: undefined,
       description:
         "Text to be displayed at the front of input field. Not stored in value. Ex: currency indicator.",
     },
@@ -51,7 +46,6 @@ export default {
         "Adds semantic required attr and appends an * to the end of the input label.",
     },
     suffix: {
-      defaultValue: undefined,
       description:
         "Text to be displayed at the end of input field. Not stored in value. Ex: mass indicator (lbs, fl oz)",
     },
@@ -67,21 +61,16 @@ export const InputFilter = Template.bind({});
 export const PrefixAndSuffix = Template.bind({});
 export const RequiredAndError = Template.bind({});
 export const Success = Template.bind({});
-Default.args = {
-  fieldName: "input-type-text",
-  label: "Input Label",
-};
+
+Default.args = {};
 
 InputFilter.args = {
-  fieldName: "input-type-text",
   label: "This field only accepts a numerical input",
   placeholder: "Numbers only",
   inputFilter: /^-?\d*$/i,
 };
 
 PrefixAndSuffix.args = {
-  errorMessage: "Helpful Error Message",
-  fieldName: "input-type-text",
   label: "A field with a prefix and a suffix",
   placeholder: "Enter the number of lbs.",
   prefix: "#",
@@ -90,7 +79,6 @@ PrefixAndSuffix.args = {
 
 RequiredAndError.args = {
   errorMessage: "Helpful Error Message",
-  fieldName: "input-type-text",
   inputError: true,
   label: "Required Input Field",
   placeholder: "Placeholder Text",
@@ -98,8 +86,6 @@ RequiredAndError.args = {
 };
 
 Success.args = {
-  errorMessage: "",
-  fieldName: "input-type-text",
   label: "Field with Success Indicator",
   placeholder: "Placeholder Text",
   inputSuccess: true,
