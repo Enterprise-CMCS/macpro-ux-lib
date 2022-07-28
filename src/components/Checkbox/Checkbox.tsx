@@ -1,6 +1,8 @@
 import React from "react";
 
-interface Props {
+type IntrinsicElements = JSX.IntrinsicElements["input"];
+
+interface Props extends IntrinsicElements {
   id: string;
   isTile?: boolean;
   label: string;
