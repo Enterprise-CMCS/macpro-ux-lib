@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - fix-deply
+      - fix-deploy
 
 concurrency:
   group: ${{ github.ref }}-storybook
