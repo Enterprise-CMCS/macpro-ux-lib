@@ -26,38 +26,27 @@ export const Checkbox: React.FC<Props> = ({
   tileDescription,
   value,
 }) => {
-  if (isTile) {
-    return (
-      <div className="usa-checkbox">
-        <input
-          className="usa-checkbox__input usa-checkbox__input--tile"
-          id={id}
-          type="checkbox"
-          name={name}
-          value={value}
-        />
-        <label className="usa-checkbox__label" htmlFor={id}>
-          {label}
+  return (
+    <div className="usa-checkbox">
+      <input
+        className={
+          isTile
+            ? "usa-checkbox__input usa-checkbox__input--tile"
+            : "usa-checkbox__input"
+        }
+        id={id}
+        type="checkbox"
+        name={name}
+        value={value}
+      />
+      <label className="usa-checkbox__label" htmlFor={id}>
+        {label}
+        {isTile && (
           <span className="usa-checkbox__label-description">
             {tileDescription}
           </span>
-        </label>
-      </div>
-    );
-  } else {
-    return (
-      <div className="usa-checkbox">
-        <input
-          className="usa-checkbox__input"
-          id={id}
-          type="checkbox"
-          name={name}
-          value={value}
-        />
-        <label className="usa-checkbox__label" htmlFor={id}>
-          {label}
-        </label>
-      </div>
-    );
-  }
+        )}
+      </label>
+    </div>
+  );
 };
