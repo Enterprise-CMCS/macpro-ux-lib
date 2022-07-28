@@ -10,20 +10,16 @@ export default {
       description: "Renders the style of the button",
     },
     buttonText: {
-      defaultValue: "Button",
       description: "Renders the text contained in the button",
     },
     disabled: {
-      defaultValue: false,
       control: "boolean",
       description: "Determines whether or not a button is disabled",
     },
-    icon: {
-      defaultValue: false,
-      description: "Handles the icon to render in the button",
+    iconName: {
+      description: `Determines which icon that needs to be rendered from: https://designsystem.digital.gov/components/icon/`,
     },
     shiftIconLeft: {
-      defaultValue: false,
       description:
         "Determines if a rendered icon should render on the left side, the icon prop needs to be true as well",
     },
@@ -39,18 +35,25 @@ export default {
       action: "clicked",
     },
     type: {
-      defaultValue: "button",
       options: ["submit", "reset", "button"],
       control: { type: "select" },
       description: "Type of specified button",
     },
     target: {
-      defaultValue: "_self",
       options: ["_blank", "_self", "_parent", "_top"],
       control: { type: "select" },
       description:
         "Specifies a name or a keyword that indicates where to display the response that is received after clicking the button",
     },
+  },
+  args: {
+    buttonText: "Button",
+    buttonVariation: "primary",
+    disabled: false,
+    iconName: undefined,
+    shiftIconLeft: false,
+    type: "button",
+    target: "_self",
   },
 } as ComponentMeta<typeof Button>;
 

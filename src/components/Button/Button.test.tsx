@@ -56,10 +56,11 @@ describe("Tests for the button component.", () => {
       const { container } = render(
         <Button
           data-testid="button"
-          buttonText="Button"
+          buttonText="Submit"
           onClick={mockChangeFn}
           ariaLabel="Secondary button"
           buttonVariation="secondary"
+          iconName=""
         />
       );
       expect(container).toMatchSnapshot();
