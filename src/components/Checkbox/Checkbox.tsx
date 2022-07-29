@@ -34,14 +34,15 @@ export const Checkbox: React.FC<Props> = ({
   tileDescription,
   value,
 }) => {
-  const [checked, setChecked] = useState(false);
+  const [isChecked, setChecked] = useState(checked);
   const handleChange = () => {
-    setChecked(!checked);
+    setChecked(!isChecked);
   };
 
   return (
     <div className="usa-checkbox">
       <input
+        checked={isChecked}
         className={
           isTile
             ? "usa-checkbox__input usa-checkbox__input--tile"
@@ -61,8 +62,8 @@ export const Checkbox: React.FC<Props> = ({
           </span>
         )}
       </label>
-      {checked && children && children.length > 0 && !isTile && (
-        <div className="border-left-05 border-primary margin-left-1 margin-top-1 padding-left-205">
+      {isChecked && children?.length && !isTile && (
+        <div className="border-left-05 border-primary margin-left-1 margin-top-0 padding-left-205">
           {children}
         </div>
       )}
