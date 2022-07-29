@@ -16,13 +16,17 @@ export default {
       control: "boolean",
       description: "Determines whether or not a button is disabled",
     },
+    onClick: {
+      description: "Handles button behavior when clicked",
+      action: "clicked",
+    },
     iconName: {
       description:
-        "Determines which icon that needs to be rendered from: https://designsystem.digital.gov/components/icon/. Use the icons listed name, for example: 'accessibility_new'",
+        "Determines which icon that needs to be rendered from: https://designsystem.digital.gov/components/icon/. Use the icon's listed name, for example: 'accessibility_new'",
     },
     shiftIconLeft: {
       description:
-        "Determines if a rendered icon should render on the left side, the icon prop needs to be true as well",
+        "Determines if a rendered icon should render on the left side, the iconName prop needs to be filled",
     },
     largeButton: {
       description: "Determines whether a large button is required",
@@ -30,10 +34,6 @@ export default {
     ariaLabel: {
       description:
         "Overwrites the aria label of the button element that will be read on screen readers",
-    },
-    onClick: {
-      description: "Handles its behavior when the button is clicked",
-      action: "clicked",
     },
     type: {
       options: ["submit", "reset", "button"],
@@ -51,6 +51,7 @@ export default {
     buttonText: "Button",
     buttonVariation: "primary",
     disabled: false,
+    onClick: undefined,
     iconName: undefined,
     shiftIconLeft: false,
     type: "button",
