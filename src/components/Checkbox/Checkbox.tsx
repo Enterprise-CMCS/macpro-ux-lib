@@ -51,7 +51,7 @@ export const Checkbox: React.FC<Props> = ({
       />
       <label className="usa-checkbox__label" htmlFor={id}>
         {label}
-        {isTile && (
+        {isTile && tileDescription && (
           <span className="usa-checkbox__label-description">
             {tileDescription}
           </span>
