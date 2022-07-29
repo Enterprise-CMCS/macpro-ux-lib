@@ -33,6 +33,7 @@ export const Checkbox: React.FC<Props> = ({
   name,
   tileDescription,
   value,
+  ...rest
 }) => {
   const [isChecked, setChecked] = useState(checked);
   const handleChange = () => {
@@ -53,6 +54,7 @@ export const Checkbox: React.FC<Props> = ({
         type="checkbox"
         name={name}
         value={value}
+        {...rest}
       />
       <label className="usa-checkbox__label" htmlFor={id}>
         {label}
