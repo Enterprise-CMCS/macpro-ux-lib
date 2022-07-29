@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 import { Checkbox } from "./Checkbox";
+import { TextArea } from "../TextArea/TextArea";
 
 export default {
   title: "USWDS/Base/Checkbox",
@@ -42,10 +43,67 @@ const Template: ComponentStory<typeof Checkbox> = ({ ...rest }) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  id: "check-historical-truth",
-  label: "Sojourner Truth",
-  name: "historical-figures",
-  value: "sojourner-truth",
+  id: "checkbox-item-default",
+  label: "Checkbox Item",
+  name: "checkbox",
+  value: "checkbox-item",
+};
+
+export const Checked = Template.bind({});
+Checked.args = {
+  checked: true,
+  id: "checkbox-item-checked",
+  label: "Checkbox Item",
+  name: "checkbox",
+  value: "checkbox-item",
+};
+
+export const Disabled = Template.bind({});
+Disabled.args = {
+  id: "checkbox-item-disabled",
+  label: "Checkbox Item",
+  name: "checkbox",
+  value: "checkbox-item",
+  disabled: true,
+};
+
+export const Child = Template.bind({});
+Child.args = {
+  checked: true,
+  id: "checkbox-item-child",
+  label: "Checkbox Item",
+  name: "checkbox",
+  value: "checkbox-item",
+  children: [<TextArea label="Text input label" fieldName="text-input" />],
+};
+
+export const Children = Template.bind({});
+Children.args = {
+  checked: true,
+  id: "checkbox-item-child",
+  label: "Checkbox Item",
+  name: "checkbox",
+  value: "checkbox-item",
+  children: [
+    <Checkbox
+      id="checkbox-item-child-1"
+      label="Checkbox Item Child 1"
+      name="checkbox-child"
+      children={[
+        <TextArea label="Text input label" fieldName="text-input-label" />,
+      ]}
+    />,
+    <Checkbox
+      id="checkbox-item-child-2"
+      label="Checkbox Item Child 2"
+      name="checkbox-child"
+    />,
+    <Checkbox
+      id="checkbox-item-child-3"
+      label="Checkbox Item Child 3"
+      name="checkbox-child"
+    />,
+  ],
 };
 
 export const Tile = Template.bind({});
