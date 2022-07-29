@@ -7,7 +7,7 @@ export default {
   component: Checkbox,
   argTypes: {
     id: {
-      description: " unique identifier for the input.",
+      description: "A unique identifier for the input.",
     },
     isTile: {
       description: "Use the tile variation of the Checkbox.",
