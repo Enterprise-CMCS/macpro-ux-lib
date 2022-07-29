@@ -38,6 +38,26 @@ describe("Tests for the button component.", () => {
     expect(buttonComp).toHaveAttribute("aria-label", "disabled big button");
   });
 
+  it("Should render a button with an aria label of shift icon left", () => {
+    const wrapper = render(
+      <Button
+        data-testid="button"
+        buttonText="Test Button"
+        onClick={mockChangeFn}
+        ariaLabel="shift icon left"
+        shiftIconLeft
+        buttonVariation="base"
+        iconName="add"
+      />
+    );
+    const buttonComp = screen.getByTestId("button");
+
+    expect(buttonComp).toBeInTheDocument();
+    expect(buttonComp).toHaveTextContent("Test Button");
+    expect(buttonComp).toHaveClass("usa-button--base");
+    expect(buttonComp).toHaveAttribute("aria-label", "shift icon left");
+  });
+
   describe("compontent snapshots", () => {
     it("primary big disabled", () => {
       const { container } = render(

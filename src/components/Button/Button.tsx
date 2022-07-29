@@ -58,8 +58,7 @@ export const Button: React.FC<Props> = ({
   disabled = false,
   ...rest
 }) => {
-  const buttonVariationType =
-    ButtonVariationConversion[buttonVariation || ""] ?? "";
+  const buttonVariationType = ButtonVariationConversion[buttonVariation] ?? "";
   return (
     <button
       disabled={disabled}
