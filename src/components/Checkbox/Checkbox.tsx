@@ -14,6 +14,7 @@ interface Props extends IntrinsicElements {
 
 /**
  * Checkbox Component
+ * @param {Array}   children          An array of child elements to appear when checked.
  * @param {string}  id                A unique identifier for the input.
  * @param {string}  label             Label text that appears to the right of the Checkbox.
  * @param {string}  name              Name of the input element.
