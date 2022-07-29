@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
 interface Props extends IntrinsicElements {
+  children?: JSX.Element[];
   id: string;
   isTile?: boolean;
   label: string;
@@ -21,6 +22,7 @@ interface Props extends IntrinsicElements {
  * @param {string}  [value]             Value of the input element.
  */
 export const Checkbox: React.FC<Props> = ({
+  children,
   id,
   isTile,
   label,
@@ -28,6 +30,11 @@ export const Checkbox: React.FC<Props> = ({
   tileDescription,
   value,
 }) => {
+  const [checked, setChecked] = useState(false);
+  const handleChange = () => {
+    setChecked(!checked);
+  };
+
   return (
     <div className="usa-checkbox">
       <input
@@ -37,6 +44,7 @@ export const Checkbox: React.FC<Props> = ({
             : "usa-checkbox__input"
         }
         id={id}
+        onChange={handleChange}
         type="checkbox"
         name={name}
         value={value}
@@ -49,6 +57,11 @@ export const Checkbox: React.FC<Props> = ({
           </span>
         )}
       </label>
+      {checked && children && children.length > 0 && !isTile && (
+        <div className="border-left-05 border-primary margin-left-1 margin-top-1 padding-left-205">
+          {children}
+        </div>
+      )}
     </div>
   );
 };
