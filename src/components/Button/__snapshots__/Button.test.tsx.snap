@@ -4,10 +4,12 @@ exports[`Tests for the button component. compontent snapshots primary big disabl
 <div>
   <button
     aria-label="big inverse button"
-    class="usa-button usa-button--outline text-gray-70 bg-base-lighter usa-button--big"
+    class="display-flex usa-button usa-button--outline text-gray-70 bg-base-lighter usa-button--big"
     data-testid="button"
   >
-    <span>
+    <span
+      class="padding-top-05 padding-x-05"
+    >
       Big Inverse Button
     </span>
   </button>
@@ -18,12 +20,27 @@ exports[`Tests for the button component. compontent snapshots secondary button 1
 <div>
   <button
     aria-label="Secondary button"
-    class="usa-button usa-button--outline "
+    class="display-flex usa-button usa-button--outline "
     data-testid="button"
   >
-    <span>
+    <span
+      class="padding-top-05 padding-x-05"
+    >
       Submit
     </span>
+    <div>
+      <svg
+        aria-hidden="true"
+        aria-label="add icon"
+        class="usa-icon--size-3"
+        fill="currentColor"
+        role="img"
+      >
+        <use
+          href="sprite.svg#add"
+        />
+      </svg>
+    </div>
   </button>
 </div>
 `;

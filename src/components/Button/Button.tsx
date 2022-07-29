@@ -70,7 +70,7 @@ export const Button: React.FC<Props> = ({
       }`}
     >
       {shiftIconLeft && iconName && <Icon name={iconName} />}
-      <span>{buttonText}</span>
+      <span className="padding-top-05 padding-x-05">{buttonText}</span>
       {iconName && !shiftIconLeft && (
         <div>
           <Icon name={iconName} />
