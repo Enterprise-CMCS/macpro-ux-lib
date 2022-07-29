@@ -22,7 +22,7 @@ exports[`Tests for the button component. compontent snapshots secondary button 1
     data-testid="button"
   >
     <span>
-      Button
+      Submit
     </span>
   </button>
 </div>
