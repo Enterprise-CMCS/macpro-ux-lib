@@ -86,22 +86,31 @@ Children.args = {
   value: "checkbox-item",
   children: [
     <Checkbox
+      checked={true}
       id="checkbox-item-child-1"
-      label="Checkbox Item Child 1"
+      label="Checkbox Item"
       name="checkbox-child"
       children={[
         <TextArea label="Text input label" fieldName="text-input-label" />,
       ]}
     />,
     <Checkbox
+      checked={true}
       id="checkbox-item-child-2"
-      label="Checkbox Item Child 2"
+      label="Checkbox Item"
       name="checkbox-child"
-    />,
-    <Checkbox
-      id="checkbox-item-child-3"
-      label="Checkbox Item Child 3"
-      name="checkbox-child"
+      children={[
+        <TextArea label="Text input label" fieldName="text-input-label" />,
+        <Checkbox
+          checked={true}
+          id="checkbox-item-child-3"
+          label="Checkbox Item"
+          name="checkbox-child"
+          children={[
+            <TextArea label="Text input label" fieldName="text-input-label" />,
+          ]}
+        />,
+      ]}
     />,
   ],
 };

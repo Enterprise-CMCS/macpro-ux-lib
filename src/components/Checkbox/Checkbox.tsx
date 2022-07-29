@@ -65,7 +65,7 @@ export const Checkbox: React.FC<Props> = ({
         )}
       </label>
       {isChecked && children?.length && !isTile && (
-        <div className="border-left-05 border-primary margin-left-1 margin-top-0 padding-left-205">
+        <div className="border-left-05 border-primary margin-left-1 padding-left-205">
           {children}
         </div>
       )}
