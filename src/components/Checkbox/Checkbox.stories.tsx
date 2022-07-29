@@ -46,15 +46,6 @@ Default.args = {
   value: "checkbox-item",
 };
 
-export const Checked = Template.bind({});
-Checked.args = {
-  checked: true,
-  id: "checkbox-item-checked",
-  label: "Checkbox Item",
-  name: "checkbox",
-  value: "checkbox-item",
-};
-
 export const Disabled = Template.bind({});
 Disabled.args = {
   id: "checkbox-item-disabled",
