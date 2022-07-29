@@ -27,6 +27,7 @@ describe("Tests for the button component.", () => {
         ariaLabel="disabled big button"
         largeButton
         buttonVariation="inverse"
+        iconName="add"
       />
     );
     const buttonComp = screen.getByTestId("button");
@@ -60,7 +61,7 @@ describe("Tests for the button component.", () => {
           onClick={mockChangeFn}
           ariaLabel="Secondary button"
           buttonVariation="secondary"
-          iconName=""
+          iconName="add"
         />
       );
       expect(container).toMatchSnapshot();

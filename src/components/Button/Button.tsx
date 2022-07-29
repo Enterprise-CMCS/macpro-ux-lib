@@ -65,13 +65,17 @@ export const Button: React.FC<Props> = ({
       disabled={disabled}
       {...rest}
       aria-label={ariaLabel || `${buttonText} button`}
-      className={`usa-button usa-button--${buttonVariationType} ${
+      className={`display-flex usa-button usa-button--${buttonVariationType} ${
         largeButton ? "usa-button--big" : ""
       }`}
     >
       {shiftIconLeft && iconName && <Icon name={iconName} />}
       <span>{buttonText}</span>
-      {iconName && !shiftIconLeft && <Icon name={iconName} />}
+      {iconName && !shiftIconLeft && (
+        <div>
+          <Icon name={iconName} />
+        </div>
+      )}
     </button>
   );
 };

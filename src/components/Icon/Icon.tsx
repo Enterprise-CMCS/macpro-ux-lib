@@ -39,6 +39,7 @@ export const Icon: React.FC<Props> = ({
       className={`usa-icon--size-${iconSize}`}
       aria-hidden={ariaHidden}
       role={role}
+      fill="currentColor"
     >
       <use href={`sprite.svg#${name}`}></use>
     </svg>

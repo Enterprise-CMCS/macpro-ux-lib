@@ -17,7 +17,8 @@ export default {
       description: "Determines whether or not a button is disabled",
     },
     iconName: {
-      description: `Determines which icon that needs to be rendered from: https://designsystem.digital.gov/components/icon/`,
+      description:
+        "Determines which icon that needs to be rendered from: https://designsystem.digital.gov/components/icon/. Use the icons listed name, for example: 'accessibility_new'",
     },
     shiftIconLeft: {
       description:
@@ -66,6 +67,8 @@ PrimaryButton.args = {
   buttonVariation: "primary",
 };
 
+export const PrimaryButtonWithIcon = Template.bind({});
+PrimaryButtonWithIcon.args = { buttonVariation: "primary", iconName: "add" };
 export const SecondaryButton = Template.bind({});
 SecondaryButton.args = { buttonVariation: "secondary" };
 export const ErrorButton = Template.bind({});
