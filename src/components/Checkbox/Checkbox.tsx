@@ -22,7 +22,7 @@ interface Props extends IntrinsicElements {
  * @param {boolean} [checked]         Set the initial checked state.
  * @param {boolean} [isTile]          Use the tile variation of the Checkbox.
  * @param {string}  [tileDescription] Text that can be used to describe the label in more detail. Activates the tile variation automatically.
- * @param {string}  [value]             Value of the input element.
+ * @param {string}  [value]           Value of the input element.
  */
 export const Checkbox: React.FC<Props> = ({
   checked = false,
