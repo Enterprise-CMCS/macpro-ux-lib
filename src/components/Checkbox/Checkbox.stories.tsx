@@ -114,11 +114,42 @@ Children.args = {
 
 export const Tile = Template.bind({});
 Tile.args = {
-  id: "check-historical-truth-2",
+  id: "check-tile",
   isTile: true,
-  label: "Sojourner Truth",
-  name: "historical-figures-2",
-  value: "sojourner-truth",
+  label: "Checkbox Item",
+  name: "check-tile-0",
+  value: "tile",
+};
+
+export const InactiveTitle = Template.bind({});
+InactiveTitle.args = {
+  disabled: true,
+  id: "check-tile",
+  isTile: true,
+  label: "Checkbox Item",
+  name: "check-tile-0",
+  value: "tile",
+};
+
+export const TileWithDescription = Template.bind({});
+TileWithDescription.args = {
+  id: "check-tile-description",
+  isTile: true,
+  label: "Checkbox Item",
+  name: "check-tile-desc-0",
+  value: "tile-children",
+  tileDescription:
+    "This is optional text that can be used to describe the label in more detail.",
+};
+
+export const InactiveTileWithDescription = Template.bind({});
+InactiveTileWithDescription.args = {
+  disabled: true,
+  id: "check-tile-description",
+  isTile: true,
+  label: "Checkbox Item",
+  name: "check-tile-desc-0",
+  value: "tile-children",
   tileDescription:
     "This is optional text that can be used to describe the label in more detail.",
 };
