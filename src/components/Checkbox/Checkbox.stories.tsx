@@ -7,9 +7,6 @@ export default {
   title: "USWDS/Base/Checkbox",
   component: Checkbox,
   argTypes: {
-    checked: {
-      description: "Controls the checkbox's initial state.",
-    },
     id: {
       description: "A unique identifier for the input.",
     },
