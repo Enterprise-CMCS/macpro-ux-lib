@@ -1,69 +1,49 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import {
-  Card,
-  CardBody,
-  CardBodyText,
-  CardContainer,
-  CardFooter,
-  CardHeader,
-  CardMedia,
-} from "./Card";
+import { Card } from "./Card";
 import { Button } from "../Button/Button";
+import { TextInput } from "../TextInput/TextInput";
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: "USWDS/Base/Card",
-};
+  component: Card,
+  args: {
+    headerText: "A Basic Card",
+  },
+  argTypes: {},
+} as ComponentMeta<typeof Card>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-
-const Template = ({
-  cardBodyTextContent,
-  cardFooterContent,
-  cardHeaderText,
-  cardMediaAltText,
-  cardMediaSource,
-  cardMediaRight,
-  insetMedia,
-  showCardMedia,
-  moveImageInFlow,
-  isFlagLayout,
-}) => (
-  <Card type={isFlagLayout ? "flag" : "normal"} mediaRight={cardMediaRight}>
-    <CardContainer>
-      <CardHeader>{cardHeaderText}</CardHeader>
-      {showCardMedia && cardMediaSource && (
-        <CardMedia
-          exdent={moveImageInFlow}
-          imageSource={cardMediaSource}
-          altText={cardMediaAltText ?? ""}
-          insetMedia={insetMedia}
-        />
-      )}
-      <CardBody>
-        <CardBodyText>{cardBodyTextContent}</CardBodyText>
-      </CardBody>
-      <CardFooter>
-        <Button>{cardFooterContent}</Button>
-      </CardFooter>
-    </CardContainer>
-  </Card>
+const Template: ComponentStory<typeof Card> = ({ children, ...rest }) => (
+  <Card {...rest}>{children}</Card>
 );
 
+export const Default = Template.bind({});
 export const BasicCard = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
+export const FlagCard = Template.bind({});
+
+Default.args = {
+  bodyText: "It does not have much content.",
+  altText: "Card Media Alt Text",
+};
+
 BasicCard.args = {
-  cardBodyTextContent: "This is a card body text.",
-  cardFooterContent: "Visit",
-  cardHeaderText: "Card Header",
-  cardMediaAltText: "Card Media Alt Text",
-  cardMediaSource:
+  bodyText: "This card has an image, a button, and a little text.",
+  children: <Button>Button Text</Button>,
+  imageSource:
     "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
-  showCardMedia: true,
-  moveImageInFlow: false,
-  isFlagLayout: false,
-  insetMedia: false,
-  cardMediaRight: false,
+};
+
+FlagCard.args = {
+  bodyText: "This card uses the flag layout, and uses the insetMedia prop.",
+  children: (
+    <TextInput
+      label="This TextInput is a Child"
+      fieldName="text-input-in-card"
+    />
+  ),
+  flagLayout: true,
+  imageSource:
+    "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
+  insetMedia: true,
 };
