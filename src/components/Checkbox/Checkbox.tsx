@@ -15,11 +15,11 @@ interface Props extends IntrinsicElements {
 
 /**
  * Checkbox Component
- * @param {Array}   children          An array of child elements to appear when checked.
  * @param {string}  id                A unique identifier for the input.
  * @param {string}  label             Label text that appears to the right of the Checkbox.
  * @param {string}  name              Name of the input element.
  * @param {boolean} [checked]         Set the initial checked state.
+ * @param {Array}   [children]        An array of child elements to appear when checked.
  * @param {boolean} [isTile]          Use the tile variation of the Checkbox.
  * @param {string}  [tileDescription] Text that can be used to describe the label in more detail. Activates the tile variation automatically.
  * @param {string}  [value]           Value of the input element.
