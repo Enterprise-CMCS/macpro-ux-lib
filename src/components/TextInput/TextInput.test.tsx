@@ -46,19 +46,6 @@ describe("TextInput component", () => {
     });
   });
 
-  it("should render with a default value", () => {
-    const value = "My name is Tom Riddle";
-    render(
-      <TextInput
-        label="Testing Input"
-        fieldName="testing-input"
-        initialValue={value}
-      />
-    );
-    const comp = screen.getByLabelText("Testing Input");
-    expect(comp).toHaveDisplayValue(value);
-  });
-
   it("should show an error message", () => {
     const errorMessage = "My name is Tom Riddle";
     render(
@@ -136,7 +123,6 @@ describe("TextInput component", () => {
           fieldName="testing-input"
           errorMessage={errorMessage}
           required
-          placeholder="Can you place this?"
         />
       );
       cleanAttributes(container, ["input-type-text"]);

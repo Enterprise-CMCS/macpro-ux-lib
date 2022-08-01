@@ -6,12 +6,10 @@ type IntrinsicElements = JSX.IntrinsicElements["input"];
 interface Props extends IntrinsicElements {
   errorMessage?: string;
   fieldName: string;
-  initialValue?: string;
   inputError?: boolean;
   inputFilter?: RegExp;
   inputSuccess?: boolean;
   label: string;
-  placeholder?: string;
   prefix?: string;
   required?: boolean;
   suffix?: string;
@@ -21,11 +19,9 @@ interface Props extends IntrinsicElements {
  * @param {string}  label          Field label.
  * @param {string}  fieldName      Name of the input field.
  * @param {string}  [errorMessage] Error message text displayed when inputError === true.
- * @param {string}  [initialValue] Optional default input value.
  * @param {boolean} [inputError]   Triggers error message and error styling.
  * @param {RegExp}  [inputFilter]  Used to limit input values. If a RegExp is not provided, all input types are allowed.
  * @param {boolean} [inputSuccess] Trigger success styling.
- * @param {string}  [placeholder]  Input field placeholder text.
  * @param {string}  [prefix]       Text to be displayed at the front of input field. Not stored in value. Ex: currency indicator.
  * @param {boolean} [required]     Adds semantic required attr and appends an * to the end of the input label.
  * @param {string}  [suffix]       Text to be displayed at the end of input field. Not stored in value. Ex: mass indicator (lbs, fl oz)
@@ -34,18 +30,16 @@ export const TextInput: React.FC<Props> = ({
   label,
   errorMessage,
   fieldName,
-  initialValue,
   inputError = false,
   inputFilter,
   inputSuccess = false,
-  placeholder,
   prefix,
   required = false,
   suffix,
   ...rest
 }) => {
   const [focused, setFocused] = useState<boolean>(false);
-  const [inputValue, setInputValue] = useState<string>(initialValue ?? "");
+  const [inputValue, setInputValue] = useState<string>("");
   const [id, setId] = useState<number>(0);
 
   useEffect(() => {
@@ -69,7 +63,7 @@ export const TextInput: React.FC<Props> = ({
         htmlFor={`input-type-text-${id}`}
       >
         {label}
-        {required ? "*" : ""}
+        {required && <span style={{ color: "#E51C3E" }}>*</span>}
       </label>
       {inputError && (
         <span
@@ -100,7 +94,6 @@ export const TextInput: React.FC<Props> = ({
           onBlur={() => setFocused(false)}
           onChange={handleChange}
           onFocus={() => setFocused(true)}
-          placeholder={placeholder}
           required={required}
           value={inputValue}
           {...rest}
