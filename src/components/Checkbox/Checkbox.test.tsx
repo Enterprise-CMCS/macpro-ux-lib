@@ -141,6 +141,27 @@ describe("Checkbox", () => {
       expect(container).toMatchSnapshot();
     });
 
+    it("renders default Checkbox with children as expected", () => {
+      const { container } = render(
+        <Checkbox
+          checked={true}
+          id="checkbox-with-children"
+          label="Checkbox with Children"
+          name="checkbox"
+          value="with-children"
+          children={[
+            <Checkbox
+              id="checkbox-item-child-1"
+              label="Child 1"
+              name="checkbox-children"
+              value="child-1"
+            />,
+          ]}
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+
     it("renders tile Checkbox as expected", () => {
       const { container } = render(
         <Checkbox
