@@ -31,7 +31,11 @@ exports[`TextArea component compontent snapshots required and error 1`] = `
       for="input-type-textarea"
     >
       Testing TextArea
-      *
+      <span
+        style="color: rgb(229, 28, 62);"
+      >
+        *
+      </span>
     </label>
     <textarea
       aria-describedby=""
