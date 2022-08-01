@@ -8,5 +8,6 @@ export default {
   coveragePathIgnorePatterns: ["test-setup.tsx"],
   transform: {
     "^.+\\.(ts|tsx)$": "ts-jest", // That one tells Jest to use ts-jest when dealing with TypeScript files
+    "^.+\\.(png|svg)$": "<rootDir>/imgTransform.js", // handle for images
   },
 };
