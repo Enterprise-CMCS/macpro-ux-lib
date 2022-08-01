@@ -10,7 +10,7 @@ interface Props extends IntrinsicElements {
   ariaHidden?: boolean;
   role?: string;
   ariaLabel?: string;
-  renderWhiteIcon?: boolean;
+  color?: string;
 }
 
 type IconSize = 3 | 4 | 5 | 6 | 7 | 8 | 9;
@@ -22,7 +22,7 @@ type IconSize = 3 | 4 | 5 | 6 | 7 | 8 | 9;
  * @param {boolean} [ariaHidden]          Determines whether or not the element is hidden from a screen reader.
  * @param {string}  [role]                Describes the role of an element in programs that can make use of it
  * @param {string}  [ariaLabel]           Error message text displayed when inputError === true.
- * @param {boolean} [renderWhiteIcon]      Renders a white icon instead of the default black icon.
+ * @param {color}   [string]              Color of Icon that is rendered, defaults to black.
  */
 
 export const Icon: React.FC<Props> = ({
@@ -31,8 +31,7 @@ export const Icon: React.FC<Props> = ({
   role = "img",
   ariaHidden = true,
   ariaLabel,
-  renderWhiteIcon = false,
-  color,
+  color = "black",
   ...rest
 }) => {
   const iconName = name.replace(/_/g, " ");
@@ -40,12 +39,11 @@ export const Icon: React.FC<Props> = ({
     <svg
       aria-label={ariaLabel || `${iconName} icon`}
       {...rest}
-      className={`usa-icon--size-${iconSize}${
-        renderWhiteIcon && !color ? " text-white" : ""
-      }`}
+      className={`usa-icon--size-${iconSize}`}
       aria-hidden={ariaHidden}
       role={role}
       fill="currentColor"
+      color={color}
     >
       <use href={`sprite.svg#${name}`}></use>
     </svg>

@@ -28,8 +28,8 @@ export default {
       description:
         "Accessible icon name used by screen readers and other assistive technologies. Provide when icon is not merely decorative",
     },
-    renderWhiteIcon: {
-      description: "Renders a white icon instead of the default black icon",
+    color: {
+      description: "Color of Icon that is rendered, defaults to black",
     },
   },
   args: {
@@ -37,7 +37,7 @@ export default {
     iconSize: 3,
     ariaHidden: true,
     role: "img",
-    renderWhiteIcon: false,
+    color: "black",
   },
 } as ComponentMeta<typeof Icon>;
 

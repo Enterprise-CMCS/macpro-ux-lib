@@ -6,6 +6,7 @@ exports[`compontent snapshots accessibility new icon 1`] = `
     aria-hidden="true"
     aria-label="accessibility new icon"
     class="usa-icon--size-3"
+    color="black"
     fill="currentColor"
     role="img"
   >
@@ -22,6 +23,7 @@ exports[`compontent snapshots accessibility new icon that is not purely decorati
     aria-hidden="false"
     aria-label="Add Button"
     class="usa-icon--size-5"
+    color="black"
     fill="currentColor"
     role="button"
   >
