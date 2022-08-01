@@ -39,7 +39,7 @@ describe("Tests for the button component.", () => {
   });
 
   it("Should render a button with an aria label of shift icon left", () => {
-    const wrapper = render(
+    render(
       <Button
         data-testid="button"
         buttonText="Test Button"
