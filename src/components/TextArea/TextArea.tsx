@@ -7,13 +7,11 @@ interface Props extends IntrinsicElements {
   characterCountMessage?: string;
   errorMessage?: string;
   fieldName: string;
-  initialValue?: string;
   inputError?: boolean;
   inputFilter?: RegExp;
   inputSuccess?: boolean;
   label: string;
   maxLength?: number;
-  placeholder?: string;
   showCharacterCount?: boolean;
   required?: boolean;
 }
@@ -23,12 +21,10 @@ interface Props extends IntrinsicElements {
  * @param {string}  fieldName               Name of the input field.
  * @param {string}  [characterCountMessage] Sets a message preceding the character count when showCharacterCount === true.
  * @param {string}  [errorMessage]          Error message text displayed when inputError === true.
- * @param {string}  [initialValue]          Optional default input value.
  * @param {boolean} [inputError]            Triggers error message and error styling.
  * @param {RegExp}  [inputFilter]           Used to limit input values. If a RegExp is not provided, all input types are allowed.
  * @param {boolean} [inputSuccess]          Trigger success styling.
  * @param {number}  [maxLength]             Maximum number of characters the textarea can receive.
- * @param {string}  [placeholder]           Input field placeholder text.
  * @param {boolean} [showCharacterCount]    Shows the character counter. If maxlength is set, character count is shown as a fraction.
  * @param {boolean} [required]              Adds semantic required attr and appends an * to the end of the input label.
  */
@@ -37,18 +33,16 @@ export const TextArea: React.FC<Props> = ({
   fieldName,
   characterCountMessage,
   errorMessage,
-  initialValue,
   inputError = false,
   inputFilter,
   inputSuccess = false,
   maxLength,
-  placeholder,
   showCharacterCount = false,
   required = false,
   ...rest
 }) => {
   const [focused, setFocused] = useState<boolean>(false);
-  const [inputValue, setInputValue] = useState<string>(initialValue ?? "");
+  const [inputValue, setInputValue] = useState<string>("");
   const [id, setId] = useState<number>(0);
 
   useEffect(() => {
@@ -72,7 +66,7 @@ export const TextArea: React.FC<Props> = ({
         htmlFor={`input-type-textarea-${id}`}
       >
         {label}
-        {required ? "*" : ""}
+        {required && <span style={{ color: "#E51C3E" }}>*</span>}
       </label>
       {inputError && (
         <span
@@ -85,7 +79,7 @@ export const TextArea: React.FC<Props> = ({
       )}
       {showCharacterCount && (
         <span className="usa-hint">
-          {characterCountMessage}
+          {characterCountMessage ? `${characterCountMessage} ` : ""}
           {inputValue.length}
           {maxLength !== undefined && ` / ${maxLength}`}
         </span>
@@ -101,7 +95,6 @@ export const TextArea: React.FC<Props> = ({
         onBlur={() => setFocused(false)}
         onChange={handleChange}
         onFocus={() => setFocused(true)}
-        placeholder={placeholder}
         required={required}
         value={inputValue}
         {...rest}

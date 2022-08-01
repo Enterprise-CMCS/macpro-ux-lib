@@ -28,12 +28,17 @@ export default {
       description:
         "Accessible icon name used by screen readers and other assistive technologies. Provide when icon is not merely decorative",
     },
+    color: {
+      description:
+        "Color of Icon that is rendered, defaults to black. Refer to this documentation to possible color propery values: https://developer.mozilla.org/en-US/docs/Web/CSS/color",
+    },
   },
   args: {
     name: "accessibility_new",
     iconSize: 3,
     ariaHidden: true,
     role: "img",
+    color: "black",
   },
 } as ComponentMeta<typeof Icon>;
 
