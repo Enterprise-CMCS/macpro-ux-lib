@@ -63,6 +63,65 @@ describe("Checkbox", () => {
     });
   });
 
+  describe("CheckBox with children", () => {
+    beforeEach(() => {
+      render(
+        <form data-testid="test-form">
+          <Checkbox
+            id="checkbox-with-children"
+            label="Checkbox with Children"
+            name="checkbox"
+            value="with-children"
+            children={[
+              <Checkbox
+                id="checkbox-item-child-1"
+                label="Child 1"
+                name="checkbox-children"
+                value="child-1"
+              />,
+              <Checkbox
+                id="checkbox-item-child-2"
+                label="Child 2"
+                name="checkbox-children"
+                value="child-2"
+              />,
+            ]}
+          />
+        </form>
+      );
+    });
+
+    it("shows the child element", () => {
+      const cb = screen.getByLabelText("Checkbox with Children");
+      fireEvent.click(cb);
+      expect(cb).toBeChecked();
+
+      const child = screen.getByLabelText("Child 1");
+      expect(child).toBeInTheDocument();
+    });
+
+    it("has the expected form value when children are selected", () => {
+      const testForm = screen.getByTestId("test-form");
+      const cb = screen.getByLabelText("Checkbox with Children");
+      fireEvent.click(cb);
+
+      const child = screen.getByLabelText("Child 1");
+      const child2 = screen.getByLabelText("Child 2");
+
+      expect(testForm).toHaveFormValues({ checkbox: true });
+
+      fireEvent.click(child);
+      expect(child).toBeChecked();
+      expect(testForm).toHaveFormValues({ "checkbox-children": ["child-1"] });
+
+      fireEvent.click(child2);
+      expect(child2).toBeChecked();
+      expect(testForm).toHaveFormValues({
+        "checkbox-children": ["child-1", "child-2"],
+      });
+    });
+  });
+
   describe("Tile", () => {
     beforeEach(() => {
       render(
