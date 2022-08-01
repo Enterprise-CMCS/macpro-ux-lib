@@ -40,7 +40,7 @@ export const Logo: React.FC<Props> = ({
     <div
       role={role}
       aria-label={ariaLabel}
-      className={`application-logo-container ${className}`}
+      className={`application-logo-container ${className ?? ""}`}
     >
       <img
         alt={altText}

@@ -20,21 +20,21 @@ export default {
       description: "Alternate image text.",
     },
     ariaHidden: {
-      description: "Describes the image for a screen reader.",
-    },
-    ariaLabel: {
-      description:
-        "Describes the role of an element in programs that can make use of it.",
-    },
-    className: {
       description:
         "Determines whether or not the element is hidden from a screen reader.",
     },
-    height: {
+    ariaLabel: {
+      description: "Describes the image for a screen reader.",
+    },
+    className: {
       description: "Optional additional className for the logo container.",
     },
-    role: {
+    height: {
       description: "Height parameter for logo in # of pixels.",
+    },
+    role: {
+      description:
+        "Describes the role of an element in programs that can make use of it.",
     },
     source: {
       description:
