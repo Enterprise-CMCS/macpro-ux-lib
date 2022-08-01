@@ -1,10 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for the button component. Should render a png 1`] = `
+exports[`Tests for the button component. Should render a png and have unique className 1`] = `
 <div>
   <div
     aria-label="CMS.gov Logo"
-    class="application-logo-container undefined"
+    class="application-logo-container beep-boop"
     role="img"
   >
     <img
@@ -21,7 +21,7 @@ exports[`Tests for the button component. Should render an svg 1`] = `
 <div>
   <div
     aria-label="CMS.gov Logo"
-    class="application-logo-container undefined"
+    class="application-logo-container "
     role="img"
   >
     <img

@@ -13,9 +13,14 @@ describe("Tests for the button component.", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("Should render a png", () => {
+  it("Should render a png and have unique className", () => {
     const { container } = render(
-      <Logo altText="CMS.gov Logo" ariaLabel="CMS.gov Logo" source={pngLogo} />
+      <Logo
+        altText="CMS.gov Logo"
+        ariaLabel="CMS.gov Logo"
+        source={pngLogo}
+        className={"beep-boop"}
+      />
     );
     expect(container).toMatchSnapshot();
   });
