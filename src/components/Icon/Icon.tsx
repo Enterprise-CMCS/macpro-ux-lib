@@ -22,7 +22,7 @@ type IconSize = 3 | 4 | 5 | 6 | 7 | 8 | 9;
  * @param {boolean} [ariaHidden]          Determines whether or not the element is hidden from a screen reader.
  * @param {string}  [role]                Describes the role of an element in programs that can make use of it
  * @param {string}  [ariaLabel]           Error message text displayed when inputError === true.
- * @param {boolean} [renderWhiteIcon]      Renders a white icon instead of the defaul black icon.
+ * @param {boolean} [renderWhiteIcon]      Renders a white icon instead of the default black icon.
  */
 
 export const Icon: React.FC<Props> = ({
@@ -32,6 +32,7 @@ export const Icon: React.FC<Props> = ({
   ariaHidden = true,
   ariaLabel,
   renderWhiteIcon = false,
+  color,
   ...rest
 }) => {
   const iconName = name.replace(/_/g, " ");
@@ -40,7 +41,7 @@ export const Icon: React.FC<Props> = ({
       aria-label={ariaLabel || `${iconName} icon`}
       {...rest}
       className={`usa-icon--size-${iconSize} ${
-        renderWhiteIcon ? "text-white" : ""
+        renderWhiteIcon && !color ? "text-white" : ""
       }`}
       aria-hidden={ariaHidden}
       role={role}
