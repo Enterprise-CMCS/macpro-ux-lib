@@ -10,7 +10,7 @@ interface Props extends IntrinsicElements {
   ariaHidden?: boolean;
   role?: string;
   ariaLabel?: string;
-  renderWhiteIcon: boolean;
+  renderWhiteIcon?: boolean;
 }
 
 type IconSize = 3 | 4 | 5 | 6 | 7 | 8 | 9;
