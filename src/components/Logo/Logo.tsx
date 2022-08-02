@@ -43,7 +43,11 @@ export const Logo: React.FC<Props> = ({
       aria-label={ariaLabel || altText}
       className={`application-logo-container ${className ?? ""}`}
     >
-      {!source && <Typography as="h2">{altText}</Typography>}
+      {!source && (
+        <Typography as="h2" className="usa-logo__text">
+          {altText}
+        </Typography>
+      )}
       {source && (
         <img
           alt={altText}
