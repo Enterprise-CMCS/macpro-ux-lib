@@ -11,7 +11,27 @@ export default {
   args: {
     headerText: "A Basic Card",
   },
-  argTypes: {},
+  argTypes: {
+    alignContent: {
+      description:
+        "String prop that aligns card content left, right, or center.",
+    },
+    altText: { description: "Image alt text." },
+    bodyText: { description: "Text for the card body." },
+    flagLayout: {
+      description: "Controls the style of the card (normal or flag).",
+    },
+    flagRight: { description: "Controls how the flag content is aligned." },
+    headerFirst: {
+      description:
+        "Sets header at top of card, drops media below. This value will override flagLayout.",
+    },
+    headerText: { description: "Card header text." },
+    imageSource: { description: "Source of image file to be used in card." },
+    insetMedia: {
+      description: "Set a border of whitespace around card content.",
+    },
+  },
 } as ComponentMeta<typeof Card>;
 
 const Template: ComponentStory<typeof Card> = ({ children, ...rest }) => (

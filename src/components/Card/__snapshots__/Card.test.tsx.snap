@@ -190,7 +190,7 @@ exports[`Card component component snapshots media and child component in flag la
 </div>
 `;
 
-exports[`Card component component snapshots media with inset and header exdent 1`] = `
+exports[`Card component component snapshots media with inset and header first 1`] = `
 <div>
   <div
     class="usa-card  "

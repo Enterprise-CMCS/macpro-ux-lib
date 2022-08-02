@@ -4,9 +4,9 @@ interface Props {
   alignContent?: "left" | "right" | "center";
   altText?: string;
   bodyText?: string;
-  exdent?: boolean;
   flagLayout?: boolean;
   flagRight?: boolean;
+  headerFirst?: boolean;
   headerText?: string;
   imageSource?: string;
   insetMedia?: boolean;
@@ -17,10 +17,10 @@ interface Props {
  * @param {string}    [alignContent]  String prop that aligns card content left, right, or center.
  * @param {string}    [altText]       Image alt text.
  * @param {string}    [bodyText]      Text for the card body.
- * @param {boolean}   [exdent]        Sets header at top of card, drops media below. This value will override flagLayout.
  * @param {boolean}   [flagLayout]    Controls the style of the card (normal or flag).
  * @param {boolean}   [flagRight]     Controls how the flag content is aligned.
- * @param {string}    [headerText]      Card header text.
+ * @param {boolean}   [headerFirst]   Sets header at top of card, drops media below. This value will override flagLayout.
+ * @param {string}    [headerText]    Card header text.
  * @param {string}    [imageSource]   Source of image file to be used in card.
  * @param {boolean}   [insetMedia]    Set a border of whitespace around card content.
  */
@@ -30,7 +30,7 @@ export const Card: React.FC<PropsWithChildren<Props>> = ({
   altText,
   bodyText,
   children,
-  exdent,
+  headerFirst,
   flagLayout,
   flagRight,
   headerText,
@@ -52,7 +52,7 @@ export const Card: React.FC<PropsWithChildren<Props>> = ({
         {imageSource && (
           <div
             className={`usa-card__media${
-              exdent ? "--exdent" : ""
+              headerFirst ? "--exdent" : ""
             } ${insetMediaMod}`}
           >
             <div className="usa-card__img">

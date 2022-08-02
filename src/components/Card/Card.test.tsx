@@ -88,7 +88,7 @@ describe("Card component", () => {
       expect(container).toMatchSnapshot();
     });
 
-    it("media with inset and header exdent", () => {
+    it("media with inset and header first", () => {
       const { container } = render(
         <Card
           headerText="Card Header Text"
@@ -96,7 +96,7 @@ describe("Card component", () => {
           imageSource="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
           altText="Card Media Alt Text"
           insetMedia
-          exdent
+          headerFirst
         >
           <Button>Visit</Button>
         </Card>
