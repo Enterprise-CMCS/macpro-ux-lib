@@ -68,11 +68,15 @@ export const Button: React.FC<Props> = ({
         largeButton ? "usa-button--big" : ""
       }`}
     >
-      {shiftIconLeft && iconName && <Icon name={iconName} />}
-      <span className="padding-top-05 padding-x-05">{buttonText}</span>
+      {shiftIconLeft && iconName && (
+        <Icon name={iconName} color="curentColor" />
+      )}
+      <span className={`padding-x-05${iconName ? " padding-top-05" : ""}`}>
+        {buttonText}
+      </span>
       {iconName && !shiftIconLeft && (
         <div>
-          <Icon name={iconName} />
+          <Icon name={iconName} color="curentColor" />
         </div>
       )}
     </button>
