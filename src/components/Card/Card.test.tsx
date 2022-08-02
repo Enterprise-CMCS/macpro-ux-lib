@@ -13,7 +13,7 @@ describe("Card component", () => {
   it("Should render with children", () => {
     render(
       <Card headerText="Card Header Text" bodyText="Card Body Text">
-        <Button>Visit</Button>
+        <Button buttonText="Visit" />
       </Card>
     );
 
@@ -51,7 +51,7 @@ describe("Card component", () => {
           imageSource="https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg"
           altText="Card Media Alt Text"
         >
-          <Button>Visit</Button>
+          <Button buttonText="Visit" />
         </Card>
       );
       expect(container).toMatchSnapshot();
@@ -66,7 +66,7 @@ describe("Card component", () => {
           altText="Card Media Alt Text"
           flagLayout
         >
-          <Button>Visit</Button>
+          <Button buttonText="Visit" />
         </Card>
       );
       expect(container).toMatchSnapshot();
@@ -82,7 +82,7 @@ describe("Card component", () => {
           flagLayout
           flagRight
         >
-          <Button>Visit</Button>
+          <Button buttonText="Visit" />
         </Card>
       );
       expect(container).toMatchSnapshot();
@@ -98,7 +98,7 @@ describe("Card component", () => {
           insetMedia
           headerFirst
         >
-          <Button>Visit</Button>
+          <Button buttonText="Visit" />
         </Card>
       );
       expect(container).toMatchSnapshot();

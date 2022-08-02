@@ -1,5 +1,11 @@
 import React from "react";
-import { cleanAttributes, screen, render } from "../../test-setup";
+import {
+  cleanAttributes,
+  screen,
+  render,
+  getByLabelText,
+  getByText,
+} from "../../test-setup";
 import fireEvent from "@testing-library/user-event";
 import { TextInput } from "./TextInput";
 
@@ -40,19 +46,6 @@ describe("TextInput component", () => {
     });
   });
 
-  it("should render with a default value", () => {
-    const value = "My name is Tom Riddle";
-    render(
-      <TextInput
-        label="Testing Input"
-        fieldName="testing-input"
-        initialValue={value}
-      />
-    );
-    const comp = screen.getByLabelText("Testing Input");
-    expect(comp).toHaveDisplayValue(value);
-  });
-
   it("should show an error message", () => {
     const errorMessage = "My name is Tom Riddle";
     render(
@@ -89,6 +82,30 @@ describe("TextInput component", () => {
     expect(comp).toHaveDisplayValue("123");
   });
 
+  it("should add 'usa-focus' on focus'", () => {
+    const { container } = render(
+      <TextInput
+        label="Testing Input"
+        fieldName="testing-input"
+        errorMessage="Click me to unfocus input"
+        inputError
+        required
+      />
+    );
+    // Should not exist on render
+    expect(container.querySelectorAll(".usa-focus").length).toBe(0);
+
+    // Should exist onFocus
+    const input = getByLabelText(container, "Testing Input*");
+    fireEvent.click(input);
+    expect(container.querySelectorAll(".usa-focus").length).toBe(1);
+
+    // Should not onBlur
+    const escape = getByText(container, "Click me to unfocus input");
+    fireEvent.click(escape);
+    expect(container.querySelectorAll(".usa-focus").length).toBe(0);
+  });
+
   describe("compontent snapshots", () => {
     it("default", () => {
       const { container } = render(
@@ -106,7 +123,6 @@ describe("TextInput component", () => {
           fieldName="testing-input"
           errorMessage={errorMessage}
           required
-          placeholder="Can you place this?"
         />
       );
       cleanAttributes(container, ["input-type-text"]);

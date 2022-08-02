@@ -1,11 +1,11 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { TextInput } from "./TextInput";
+import { TextArea } from "./TextArea";
 
 export default {
-  title: "USWDS/Base/TextInput",
-  component: TextInput,
+  title: "USWDS/Base/TextArea",
+  component: TextArea,
   args: {
     label: "Input Label",
     fieldName: "input-type-text",
@@ -20,6 +20,10 @@ export default {
     fieldName: {
       description: "Name of the input field.",
     },
+    characterCountMessage: {
+      description:
+        "Sets a message preceding the character count when showCharacterCount === true.",
+    },
     errorMessage: {
       description: "Error message text displayed when inputError === true.",
     },
@@ -33,36 +37,31 @@ export default {
     inputSuccess: {
       description: "Trigger success styling.",
     },
-    prefix: {
-      description:
-        "Text to be displayed at the front of input field. Not stored in value. Ex: currency indicator.",
+    maxLength: {
+      description: "Maximum number of characters the textarea can receive.",
     },
     required: {
       description:
         "Adds semantic required attr and appends an * to the end of the input label.",
     },
-    suffix: {
-      description:
-        "Text to be displayed at the end of input field. Not stored in value. Ex: mass indicator (lbs, fl oz)",
-    },
   },
-} as ComponentMeta<typeof TextInput>;
+} as ComponentMeta<typeof TextArea>;
 
-const Template: ComponentStory<typeof TextInput> = ({ ...rest }) => (
-  <TextInput {...rest} />
+const Template: ComponentStory<typeof TextArea> = ({ ...rest }) => (
+  <TextArea {...rest} />
 );
 
 export const Default = Template.bind({});
-export const PrefixSuffixAndFilter = Template.bind({});
+export const CharachterCount = Template.bind({});
 export const RequiredAndError = Template.bind({});
 export const Success = Template.bind({});
+export const InputFilter = Template.bind({});
 Default.args = {};
 
-PrefixSuffixAndFilter.args = {
-  inputFilter: /^-?\d*$/i,
-  label: "This Field Only Accepts Numbers",
-  prefix: "#",
-  suffix: "lbs.",
+CharachterCount.args = {
+  characterCountMessage: "Available remaining characters:",
+  showCharacterCount: true,
+  maxLength: 500,
 };
 
 RequiredAndError.args = {
@@ -74,5 +73,11 @@ RequiredAndError.args = {
 
 Success.args = {
   label: "Field with Success Indicator",
+  initialValue: "This is a good value!",
   inputSuccess: true,
+};
+
+InputFilter.args = {
+  label: "This field only accepts a numerical input",
+  inputFilter: /^-?\d*$/i,
 };
