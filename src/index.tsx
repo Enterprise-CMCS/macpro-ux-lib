@@ -1,4 +1,5 @@
 import "./assets/css/styles.css";
+import "./assets/js/uswds.min.js";
 
 import { Button } from "./components/Button/Button";
 import {
