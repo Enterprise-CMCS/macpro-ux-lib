@@ -27,9 +27,6 @@ export default {
     errorMessage: {
       description: "Error message text displayed when inputError === true.",
     },
-    initialValue: {
-      description: "Optional default input value.",
-    },
     inputError: {
       description: "Triggers error message and error styling.",
     },
@@ -42,9 +39,6 @@ export default {
     },
     maxLength: {
       description: "Maximum number of characters the textarea can receive.",
-    },
-    placeholder: {
-      description: "Input field placeholder text.",
     },
     required: {
       description:
@@ -65,10 +59,7 @@ export const InputFilter = Template.bind({});
 Default.args = {};
 
 CharachterCount.args = {
-  placeholder: "Placeholder Text",
-  characterCountMessage: "Available remaining characters: ",
-  initialValue:
-    "Wait... how long is this message?\n\n33 characters? I'm running out of space!",
+  characterCountMessage: "Available remaining characters:",
   showCharacterCount: true,
   maxLength: 500,
 };
@@ -77,7 +68,6 @@ RequiredAndError.args = {
   errorMessage: "Helpful Error Message",
   inputError: true,
   label: "Required Input Field",
-  placeholder: "Placeholder Text",
   required: true,
 };
 
@@ -88,6 +78,6 @@ Success.args = {
 };
 
 InputFilter.args = {
-  placeholder: "This field only accepts a numerical input",
+  label: "This field only accepts a numerical input",
   inputFilter: /^-?\d*$/i,
 };
