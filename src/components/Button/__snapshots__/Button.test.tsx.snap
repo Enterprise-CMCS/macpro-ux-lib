@@ -8,7 +8,7 @@ exports[`Tests for the button component. compontent snapshots primary big disabl
     data-testid="button"
   >
     <span
-      class="padding-top-05 padding-x-05"
+      class="padding-x-05"
     >
       Big Inverse Button
     </span>
@@ -24,7 +24,7 @@ exports[`Tests for the button component. compontent snapshots secondary button 1
     data-testid="button"
   >
     <span
-      class="padding-top-05 padding-x-05"
+      class="padding-x-05 padding-top-05"
     >
       Submit
     </span>
@@ -33,6 +33,7 @@ exports[`Tests for the button component. compontent snapshots secondary button 1
         aria-hidden="true"
         aria-label="add icon"
         class="usa-icon--size-3"
+        color="curentColor"
         fill="currentColor"
         role="img"
       >
