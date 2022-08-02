@@ -71,16 +71,16 @@ describe("Checkbox", () => {
             id="checkbox-with-children"
             label="Checkbox with Children"
             name="checkbox"
-            value="with-children"
+            value="checkbox-with-children"
             children={[
               <Checkbox
-                id="checkbox-item-child-1"
+                id="child-1"
                 label="Child 1"
                 name="checkbox-children"
                 value="child-1"
               />,
               <Checkbox
-                id="checkbox-item-child-2"
+                id="child-2"
                 label="Child 2"
                 name="checkbox-children"
                 value="child-2"
