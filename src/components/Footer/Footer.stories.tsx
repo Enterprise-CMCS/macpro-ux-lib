@@ -5,15 +5,8 @@ import { Footer } from "./Footer";
 export default {
   title: "USWDS/Base/Footer",
   component: Footer,
-  argTypes: {
-    iconSize: {
-      description:
-        "String used to specify the size of the icon, a number between 3-9",
-    },
-  },
-  args: {
-    name: "accessibility_new",
-  },
+  argTypes: {},
+  args: {},
 } as ComponentMeta<typeof Footer>;
 
 const Template: ComponentStory<typeof Footer> = ({ ...rest }) => (
