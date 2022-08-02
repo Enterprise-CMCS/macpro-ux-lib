@@ -60,10 +60,10 @@ describe("TextArea component", () => {
           label="Testing TextArea"
           fieldName="testing-textarea"
           showCharacterCount
-          initialValue="four"
         />
       );
       const comp = screen.getByLabelText("Testing TextArea");
+      fireEvent.type(comp, "four");
       expect(comp).toHaveDisplayValue("four");
       const counter = container.getElementsByClassName("usa-hint")[0];
       expect(counter.innerHTML).toBe("4");
@@ -76,10 +76,10 @@ describe("TextArea component", () => {
           fieldName="testing-textarea"
           showCharacterCount
           maxLength={50}
-          initialValue="four"
         />
       );
       const comp = screen.getByLabelText("Testing TextArea");
+      fireEvent.type(comp, "four");
       expect(comp).toHaveDisplayValue("four");
       const counter = container.getElementsByClassName("usa-hint")[0];
       expect(counter.innerHTML).toBe("4 / 50");
@@ -90,13 +90,13 @@ describe("TextArea component", () => {
         <TextArea
           label="Testing TextArea"
           fieldName="testing-textarea"
-          characterCountMessage="You have used: "
+          characterCountMessage="You have used:"
           showCharacterCount
           maxLength={50}
-          initialValue="four"
         />
       );
       const comp = screen.getByLabelText("Testing TextArea");
+      fireEvent.type(comp, "four");
       expect(comp).toHaveDisplayValue("four");
       const counter = container.getElementsByClassName("usa-hint")[0];
       expect(counter.innerHTML).toBe("You have used: 4 / 50");
@@ -125,19 +125,6 @@ describe("TextArea component", () => {
     const escape = getByText(container, "Click me to unfocus input");
     fireEvent.click(escape);
     expect(textArea.className.includes("usa-focus")).toBe(false);
-  });
-
-  it("should render with a default value", () => {
-    const value = "My name is Tom Riddle";
-    render(
-      <TextArea
-        label="Testing TextArea"
-        fieldName="testing-textarea"
-        initialValue={value}
-      />
-    );
-    const comp = screen.getByLabelText("Testing TextArea");
-    expect(comp).toHaveDisplayValue(value);
   });
 
   it("should show an error message", () => {

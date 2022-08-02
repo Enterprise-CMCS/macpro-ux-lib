@@ -23,9 +23,6 @@ export default {
     errorMessage: {
       description: "Error message text displayed when inputError === true.",
     },
-    initialValue: {
-      description: "Optional default input value.",
-    },
     inputError: {
       description: "Triggers error message and error styling.",
     },
@@ -35,9 +32,6 @@ export default {
     },
     inputSuccess: {
       description: "Trigger success styling.",
-    },
-    placeholder: {
-      description: "Input field placeholder text.",
     },
     prefix: {
       description:
@@ -59,21 +53,14 @@ const Template: ComponentStory<typeof TextInput> = ({ ...rest }) => (
 );
 
 export const Default = Template.bind({});
-export const InputFilter = Template.bind({});
-export const PrefixAndSuffix = Template.bind({});
+export const PrefixSuffixAndFilter = Template.bind({});
 export const RequiredAndError = Template.bind({});
 export const Success = Template.bind({});
 Default.args = {};
 
-InputFilter.args = {
-  label: "This field only accepts a numerical input",
-  placeholder: "Numbers only",
+PrefixSuffixAndFilter.args = {
   inputFilter: /^-?\d*$/i,
-};
-
-PrefixAndSuffix.args = {
-  label: "A field with a prefix and a suffix",
-  placeholder: "Enter the number of lbs.",
+  label: "This Field Only Accepts Numbers",
   prefix: "#",
   suffix: "lbs.",
 };
@@ -82,12 +69,10 @@ RequiredAndError.args = {
   errorMessage: "Helpful Error Message",
   inputError: true,
   label: "Required Input Field",
-  placeholder: "Placeholder Text",
   required: true,
 };
 
 Success.args = {
   label: "Field with Success Indicator",
-  placeholder: "Placeholder Text",
   inputSuccess: true,
 };

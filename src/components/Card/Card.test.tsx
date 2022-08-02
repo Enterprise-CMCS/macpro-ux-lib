@@ -25,7 +25,7 @@ describe("Tests for the button component.", () => {
           <CardBodyText>Card Body Text</CardBodyText>
         </CardBody>
         <CardFooter>
-          <Button>Visit</Button>
+          <Button buttonText="Visit" />
         </CardFooter>
       </CardContainer>
     );
