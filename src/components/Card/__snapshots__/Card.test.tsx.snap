@@ -76,9 +76,14 @@ exports[`Card component component snapshots media and child component 1`] = `
         class="usa-card__footer"
       >
         <button
-          class="usa-button"
+          aria-label="Visit button"
+          class="display-flex usa-button usa-button-- "
         >
-          Visit
+          <span
+            class="padding-x-05"
+          >
+            Visit
+          </span>
         </button>
       </div>
     </div>
@@ -128,9 +133,14 @@ exports[`Card component component snapshots media and child component in flag 1`
         class="usa-card__footer"
       >
         <button
-          class="usa-button"
+          aria-label="Visit button"
+          class="display-flex usa-button usa-button-- "
         >
-          Visit
+          <span
+            class="padding-x-05"
+          >
+            Visit
+          </span>
         </button>
       </div>
     </div>
@@ -180,9 +190,14 @@ exports[`Card component component snapshots media and child component in flag la
         class="usa-card__footer"
       >
         <button
-          class="usa-button"
+          aria-label="Visit button"
+          class="display-flex usa-button usa-button-- "
         >
-          Visit
+          <span
+            class="padding-x-05"
+          >
+            Visit
+          </span>
         </button>
       </div>
     </div>
@@ -232,9 +247,14 @@ exports[`Card component component snapshots media with inset and header first 1`
         class="usa-card__footer"
       >
         <button
-          class="usa-button"
+          aria-label="Visit button"
+          class="display-flex usa-button usa-button-- "
         >
-          Visit
+          <span
+            class="padding-x-05"
+          >
+            Visit
+          </span>
         </button>
       </div>
     </div>
