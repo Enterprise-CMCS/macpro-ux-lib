@@ -49,7 +49,7 @@ Default.args = {
 
 BasicCard.args = {
   bodyText: "This card has an image, a button, and a little text.",
-  children: <Button>Button Text</Button>,
+  children: <Button buttonText="Button Text" />,
   imageSource:
     "https://designsystem.digital.gov/img/introducing-uswds-2-0/built-to-grow--alt.jpg",
 };
