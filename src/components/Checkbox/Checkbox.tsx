@@ -28,7 +28,7 @@ export const Checkbox: React.FC<Props> = ({
   checked = false,
   children,
   id,
-  isTile,
+  isTile = false,
   label,
   name,
   tileDescription,
