@@ -15,4 +15,30 @@ const Template: ComponentStory<typeof Header> = ({ ...rest }) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  navData: [
+    {
+      buttonText: "Current Section",
+      current: true,
+      columns: [
+        [
+          { text: "one", href: "www.com" },
+          { text: "two", href: "www.com" },
+        ],
+        [
+          { text: "three", href: "www.com" },
+          { text: "four", href: "www.com" },
+        ],
+      ],
+    },
+    {
+      buttonText: "Section",
+      columns: [
+        [
+          { text: "five", href: "www.com" },
+          { text: "six", href: "www.com" },
+        ],
+      ],
+    },
+  ],
+};
