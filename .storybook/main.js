@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   stories: [
     "../src/components/**/*.stories.mdx",
@@ -11,4 +13,13 @@ module.exports = {
   ],
   framework: "@storybook/react",
   staticDirs: ['../src', '../src/assets/img'],
+
+  webpackFinal: async (config) => {
+    config.resolve.modules = [
+      ...(config.resolve.modules || []),
+      path.resolve(__dirname, "../src"),
+    ];
+
+    return config;
+  },
 };
