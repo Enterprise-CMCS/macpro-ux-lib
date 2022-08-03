@@ -6,7 +6,11 @@ export default {
   title: "USWDS/Base/Footer",
   component: Footer,
   argTypes: {},
-  args: {},
+  args: {
+    emailAddress: "sample@cms.hhs.gov",
+    address: "7500 Security Boulevard Baltimore, MD 21244",
+    altFooter: false,
+  },
 } as ComponentMeta<typeof Footer>;
 
 const Template: ComponentStory<typeof Footer> = ({ ...rest }) => (
