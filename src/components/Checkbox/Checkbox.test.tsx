@@ -1,4 +1,5 @@
 import { Checkbox } from "./Checkbox";
+import { TextArea } from "../TextArea/TextArea";
 import { render, screen } from "../../test-setup";
 import fireEvent from "@testing-library/user-event";
 import React from "react";
@@ -118,6 +119,47 @@ describe("Checkbox", () => {
       expect(child2).toBeChecked();
       expect(testForm).toHaveFormValues({
         "checkbox-children": ["child-1", "child-2"],
+      });
+    });
+  });
+
+  describe("Checkbox with at TextArea", () => {
+    beforeEach(() => {
+      render(
+        <form data-testid="test-form">
+          <Checkbox
+            id="checkbox-with-children"
+            label="Checkbox with Children"
+            name="checkbox"
+            value="checkbox-with-children"
+            children={[
+              <TextArea label="Child TextArea" fieldName="child-textArea" />,
+            ]}
+          />
+        </form>
+      );
+    });
+
+    it("shows the child TextArea", () => {
+      const cb = screen.getByLabelText("Checkbox with Children");
+      fireEvent.click(cb);
+      expect(cb).toBeChecked();
+
+      const child = screen.getByLabelText("Child TextArea");
+      expect(child).toBeInTheDocument();
+    });
+
+    it("passes TextArea data to form as expected", () => {
+      const testText = "This is the test text.";
+      const testForm = screen.getByTestId("test-form");
+      const cb = screen.getByLabelText("Checkbox with Children");
+      fireEvent.click(cb);
+
+      const child = screen.getByLabelText("Child TextArea");
+
+      fireEvent.type(child, testText);
+      expect(testForm).toHaveFormValues({
+        "child-textArea": testText,
       });
     });
   });
