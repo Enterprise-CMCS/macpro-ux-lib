@@ -1,4 +1,6 @@
 import React from "react";
+import { generateId } from "utils";
+import { Logo } from "components/Logo/Logo";
 
 interface Props {}
 
@@ -10,8 +12,9 @@ export const Header: React.FC<Props> = ({ ...rest }) => {
         <div className="usa-navbar">
           <div className="usa-logo" id="basic-logo">
             <em className="usa-logo__text">
-              <a href="javascript:void(0)" title="<Project title>">
-                &lt;Project title&gt;
+              {/* TODO: This should be a prop */}
+              <a href="" title="Project Title">
+                <Logo altText="Project Title" />
               </a>
             </em>
           </div>
@@ -26,185 +29,86 @@ export const Header: React.FC<Props> = ({ ...rest }) => {
             </button>
 
             <ul className="usa-nav__primary usa-accordion">
-              <li className="usa-nav__primary-item">
-                <button
-                  type="button"
-                  className="usa-accordion__button usa-nav__link usa-current"
-                  aria-expanded="false"
-                  aria-controls="extended-mega-nav-section-one"
-                >
-                  <span>&lt;Current section&gt;</span>
-                </button>
-                <div
-                  id="extended-mega-nav-section-one"
-                  className="usa-nav__submenu usa-megamenu"
-                >
-                  <div className="grid-row grid-gap-4">
-                    <div className="usa-col">
-                      <ul className="usa-nav__submenu-list">
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="usa-col">
-                      <ul className="usa-nav__submenu-list">
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">
-                            &lt;A very long navigation link that goes onto two
-                            lines&gt;
-                          </a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="usa-col">
-                      <ul className="usa-nav__submenu-list">
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="usa-col">
-                      <ul className="usa-nav__submenu-list">
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </li>
-
-              <li className="usa-nav__primary-item">
-                <button
-                  type="button"
-                  className="usa-accordion__button usa-nav__link"
-                  aria-expanded="false"
-                  aria-controls="extended-mega-nav-section-two"
-                >
-                  <span>&lt;Section&gt;</span>
-                </button>
-                <div
-                  id="extended-mega-nav-section-two"
-                  className="usa-nav__submenu usa-megamenu"
-                  hidden
-                >
-                  <div className="grid-row grid-gap-4">
-                    <div className="usa-col">
-                      <ul className="usa-nav__submenu-list">
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="usa-col">
-                      <ul className="usa-nav__submenu-list">
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">
-                            &lt;A very long navigation link that goes onto two
-                            lines&gt;
-                          </a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="usa-col">
-                      <ul className="usa-nav__submenu-list">
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="usa-col">
-                      <ul className="usa-nav__submenu-list">
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-
-                        <li className="usa-nav__submenu-item">
-                          <a href="">&lt;Navigation link&gt;</a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </li>
+              {[
+                { buttonText: "Current Section", current: true },
+                { buttonText: "Section" },
+              ].map((section) => {
+                return <NavSection section={section} />;
+              })}
             </ul>
-
-            <div className="usa-nav__secondary usa-header--extended">
-              <ul className="usa-nav__secondary-links">
-                <li className="usa-nav__secondary-item">
-                  <a href="javascript:void(0);">Secondary link</a>
-                </li>
-                <li className="usa-nav__secondary-item">
-                  <a href="javascript:void(0);" className="usa-current">
-                    Another secondary link
-                  </a>
-                </li>
-              </ul>
-            </div>
           </div>
         </nav>
       </header>
+    </>
+  );
+};
+
+interface SubMenuColumnProps {
+  links: { text: string; href: string }[];
+}
+
+const SubMenuColumn: React.FC<SubMenuColumnProps> = ({ links }) => {
+  return (
+    <div className="usa-col">
+      <ul className="usa-nav__submenu-list">
+        {links.map((link) => {
+          return (
+            <li className="usa-nav__submenu-item">
+              <a href={link.href}>{link.text}</a>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
+
+interface NavSectionProps {
+  section: {
+    buttonText: string;
+    current?: boolean;
+  };
+}
+
+const NavSection: React.FC<NavSectionProps> = ({ section }) => {
+  const { buttonText, current } = section;
+  const id = generateId();
+  return (
+    <>
+      <li className="usa-nav__primary-item">
+        <button
+          type="button"
+          className={`usa-accordion__button usa-nav__link ${
+            current ? "usa-current" : ""
+          }`}
+          aria-expanded="false"
+          aria-controls={`extended-mega-nav-section-${id}`}
+        >
+          <span>{buttonText}</span>
+        </button>
+        <div
+          id={`extended-mega-nav-section-${id}`}
+          className="usa-nav__submenu usa-megamenu"
+          hidden
+        >
+          <div className="grid-row grid-gap-4">
+            {/* For each... */}
+            <SubMenuColumn
+              links={[
+                { text: "one", href: "www.com" },
+                { text: "two", href: "www.com" },
+              ]}
+            />
+
+            <SubMenuColumn
+              links={[
+                { text: "one", href: "www.com" },
+                { text: "two", href: "www.com" },
+              ]}
+            />
+          </div>
+        </div>
+      </li>
     </>
   );
 };
