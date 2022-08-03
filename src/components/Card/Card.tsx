@@ -1,68 +1,69 @@
-import { Button } from "../Button/Button";
 import React, { PropsWithChildren } from "react";
 
-interface CardProps {
-  type?: "normal" | "flag";
-  mediaRight?: boolean;
-}
-
-export const Card: React.FC<PropsWithChildren<CardProps>> = ({
-  children,
-  type = "normal",
-  mediaRight = false,
-}) => {
-  const styleClass = type === "normal" ? "" : "usa-card--flag";
-  const mediaRightMod = mediaRight ? "usa-card--media-right" : "";
-
-  return (
-    <div className={`usa-card ${styleClass} ${mediaRightMod}`}>{children}</div>
-  );
-};
-
-export const CardContainer: React.FC<PropsWithChildren> = ({ children }) => {
-  return <div className="usa-card__container">{children}</div>;
-};
-
-export const CardHeader: React.FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <div className="usa-card__header">
-      <h2 className="usa-card__heading">{children}</h2>
-    </div>
-  );
-};
-
-export const CardBody: React.FC<PropsWithChildren> = ({ children }) => {
-  return <div className="usa-card__body">{children}</div>;
-};
-
-export const CardBodyText: React.FC<PropsWithChildren> = ({ children }) => {
-  return <p className="usa-card__text">{children}</p>;
-};
-
-export const CardFooter: React.FC<PropsWithChildren> = ({ children }) => {
-  return <div className="usa-card__footer">{children}</div>;
-};
-
-interface CardMediaProps {
-  imageSource: string;
-  altText: string;
-  exdent?: boolean;
+interface Props {
+  alignContent?: "left" | "right" | "center";
+  altText?: string;
+  bodyText?: string;
+  flagLayout?: boolean;
+  flagRight?: boolean;
+  headerFirst?: boolean;
+  headerText?: string;
+  imageSource?: string;
   insetMedia?: boolean;
 }
 
-export const CardMedia: React.FC<CardMediaProps> = ({
-  imageSource,
+/**
+ * Card Component
+ * @param {string}    [alignContent]  String prop that aligns card content left, right, or center.
+ * @param {string}    [altText]       Image alt text.
+ * @param {string}    [bodyText]      Text for the card body.
+ * @param {boolean}   [flagLayout]    Controls the style of the card (normal or flag).
+ * @param {boolean}   [flagRight]     Controls how the flag content is aligned.
+ * @param {boolean}   [headerFirst]   Sets header at top of card, drops media below. This value will override flagLayout.
+ * @param {string}    [headerText]    Card header text.
+ * @param {string}    [imageSource]   Source of image file to be used in card.
+ * @param {boolean}   [insetMedia]    Set a border of whitespace around card content.
+ */
+
+export const Card: React.FC<PropsWithChildren<Props>> = ({
+  alignContent,
   altText,
-  exdent,
-  insetMedia = false,
+  bodyText,
+  children,
+  headerFirst,
+  flagLayout,
+  flagRight,
+  headerText,
+  imageSource,
+  insetMedia,
+  ...rest
 }) => {
-  const exdentMod = exdent ? "--exdent" : "";
+  const cardStyle = flagLayout ? "usa-card--flag" : "";
+  const mediaRight = flagRight ? "usa-card--media-right" : "";
   const insetMediaMod = insetMedia ? "usa-card__media--inset" : "";
 
   return (
-    <div className={`usa-card__media${exdentMod} ${insetMediaMod}`}>
-      <div className="usa-card__img">
-        <img src={imageSource} alt={altText} />
+    <div className={`usa-card ${cardStyle} ${mediaRight}`} {...rest}>
+      <div className="usa-card__container" style={{ textAlign: alignContent }}>
+        <div className="usa-card__header">
+          <h2 className="usa-card__heading">{headerText}</h2>
+        </div>
+
+        {imageSource && (
+          <div
+            className={`usa-card__media${
+              headerFirst ? "--exdent" : ""
+            } ${insetMediaMod}`}
+          >
+            <div className="usa-card__img">
+              <img src={imageSource} alt={altText} />
+            </div>
+          </div>
+        )}
+        <div className="usa-card__body">
+          <p className="usa-card__text">{bodyText}</p>
+        </div>
+        <div className="usa-card__footer">{children}</div>
       </div>
     </div>
   );
