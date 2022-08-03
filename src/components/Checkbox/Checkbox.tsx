@@ -5,6 +5,7 @@ type IntrinsicElements = JSX.IntrinsicElements["input"];
 interface Props extends IntrinsicElements {
   checked?: boolean;
   children?: JSX.Element[];
+  disabled?: boolean;
   id: string;
   isTile?: boolean;
   label: string;
@@ -20,6 +21,7 @@ interface Props extends IntrinsicElements {
  * @param {string}  name              Name of the input element.
  * @param {boolean} [checked]         Set the initial checked state.
  * @param {Array}   [children]        An array of child elements to appear when checked.
+ * @param {boolean} [disabled]        Sets the checkbox to its disabled state.
  * @param {boolean} [isTile]          Use the tile variation of the Checkbox.
  * @param {string}  [tileDescription] Text that can be used to describe the label in more detail. Activates the tile variation automatically.
  * @param {string}  [value]           Value of the input element.
@@ -27,6 +29,7 @@ interface Props extends IntrinsicElements {
 export const Checkbox: React.FC<Props> = ({
   checked = false,
   children,
+  disabled = false,
   id,
   isTile = false,
   label,
@@ -49,6 +52,7 @@ export const Checkbox: React.FC<Props> = ({
             ? "usa-checkbox__input usa-checkbox__input--tile"
             : "usa-checkbox__input"
         }
+        disabled={disabled}
         id={id}
         onChange={handleChange}
         type="checkbox"

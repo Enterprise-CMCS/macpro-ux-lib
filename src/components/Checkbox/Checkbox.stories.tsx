@@ -29,6 +29,7 @@ export default {
   },
   args: {
     checked: false,
+    disabled: false,
     isTile: false,
     tileDescription: "",
   },
