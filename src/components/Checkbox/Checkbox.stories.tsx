@@ -31,6 +31,7 @@ export default {
     checked: false,
     disabled: false,
     isTile: false,
+    label: "Checkbox Item",
     tileDescription: "",
   },
 } as ComponentMeta<typeof Checkbox>;
@@ -42,7 +43,6 @@ const Template: ComponentStory<typeof Checkbox> = ({ ...rest }) => (
 export const Default = Template.bind({});
 Default.args = {
   id: "checkbox-item-default",
-  label: "Checkbox Item",
   name: "checkbox",
   value: "checkbox-item",
 };
@@ -60,7 +60,6 @@ export const Child = Template.bind({});
 Child.args = {
   checked: true,
   id: "checkbox-item-child",
-  label: "Checkbox Item",
   name: "checkbox",
   value: "checkbox-item",
   children: [<TextArea label="Text input label" fieldName="text-input" />],
@@ -70,7 +69,6 @@ export const MultipleChildren = Template.bind({});
 MultipleChildren.args = {
   checked: true,
   id: "checkbox-item",
-  label: "Checkbox Item",
   name: "checkbox",
   value: "checkbox-item",
   children: [
@@ -114,7 +112,6 @@ export const Tile = Template.bind({});
 Tile.args = {
   id: "check-tile",
   isTile: true,
-  label: "Checkbox Item",
   name: "check-tile-0",
   value: "tile",
 };
@@ -124,7 +121,6 @@ InactiveTitle.args = {
   disabled: true,
   id: "check-tile",
   isTile: true,
-  label: "Checkbox Item",
   name: "check-tile-0",
   value: "tile",
 };
@@ -133,7 +129,6 @@ export const TileWithDescription = Template.bind({});
 TileWithDescription.args = {
   id: "check-tile-description",
   isTile: true,
-  label: "Checkbox Item",
   name: "check-tile-desc-0",
   value: "tile-children",
   tileDescription:
@@ -145,7 +140,6 @@ InactiveTileWithDescription.args = {
   disabled: true,
   id: "check-tile-description",
   isTile: true,
-  label: "Checkbox Item",
   name: "check-tile-desc-0",
   value: "tile-children",
   tileDescription:
