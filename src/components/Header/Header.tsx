@@ -1,4 +1,6 @@
-import React from "react";
+import "./Header.css";
+
+import React, { PropsWithChildren } from "react";
 import { Button } from "components/Button/Button";
 import { Logo, LogoProps } from "components/Logo/Logo";
 
@@ -10,9 +12,12 @@ const SubMenuColumn: React.FC<SubMenuColumnProps> = ({ links }) => {
   return (
     <div className="usa-col">
       <ul className="usa-nav__submenu-list">
-        {links.map((link) => {
+        {links.map((link, idx) => {
           return (
-            <li className="usa-nav__submenu-item">
+            <li
+              className="usa-nav__submenu-item"
+              key={`usa-nav__submenu-item-${idx}`}
+            >
               <a href={link.href}>{link.text}</a>
             </li>
           );
@@ -74,7 +79,8 @@ interface HeaderProps extends IntrinsicElements {
   navData: NavSection[];
 }
 
-export const Header: React.FC<HeaderProps> = ({
+export const Header: React.FC<PropsWithChildren<HeaderProps>> = ({
+  children,
   logoProps,
   navData,
   ...rest
@@ -83,13 +89,15 @@ export const Header: React.FC<HeaderProps> = ({
     <>
       <div className="usa-overlay"></div>
       <header className="usa-header usa-header--extended">
-        <div className="usa-navbar">
-          <div className="usa-logo" id="basic-logo">
-            <a href="" title="Project Title">
-              <Logo {...logoProps} />
-            </a>
+        <div className="usa-navbar-container">
+          <div className="usa-navbar">
+            <div className="usa-logo" id="basic-logo">
+              <a href="" title="Project Title">
+                <Logo {...logoProps} />
+              </a>
+            </div>
+            <Button buttonText="Menu" className="usa-menu-btn" />
           </div>
-          <Button buttonText="Menu" className="usa-menu-btn" />
         </div>
         <nav aria-label="Primary navigation" className="usa-nav" {...rest}>
           <div className="usa-nav__inner">
@@ -105,6 +113,9 @@ export const Header: React.FC<HeaderProps> = ({
                 );
               })}
             </ul>
+            <div className="usa-nav__secondary usa-header--extended">
+              {children}
+            </div>
           </div>
         </nav>
       </header>

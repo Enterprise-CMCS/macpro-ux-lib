@@ -1,6 +1,8 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
+import { ActionsMenu } from "./ActionsMenu";
+// import { Button } from "components/Button/Button";
 import { Header } from "./Header";
 
 export default {
@@ -10,25 +12,38 @@ export default {
   argTypes: {},
 } as ComponentMeta<typeof Header>;
 
-const Template: ComponentStory<typeof Header> = ({ ...rest }) => (
-  <Header {...rest} />
+const Template: ComponentStory<typeof Header> = ({ children, ...rest }) => (
+  <Header {...rest}>{children}</Header>
 );
 
 export const Default = Template.bind({});
 Default.args = {
-  logoProps: { altText: "Project Title" },
+  logoProps: {
+    altText: "CMS.gov Project",
+    // source: "https://www.cms.gov/themes/custom/cms_evo/logo.svg",
+  },
+  children: <ActionsMenu />,
+  // children: <Button buttonText="test" />,
   navData: [
     {
       buttonText: "Current Section",
       current: true,
       columns: [
         [
-          { text: "one", href: "www.com" },
-          { text: "two", href: "www.com" },
+          { text: "Navigational Link", href: "" },
+          { text: "Navigational Link", href: "" },
+          { text: "Navigational Link", href: "" },
+          { text: "Navigational Link", href: "" },
+        ],
+        [{ text: "Navigational Link", href: "" }],
+        [
+          { text: "Navigational Link", href: "" },
+          { text: "Navigational Link", href: "" },
+          { text: "Navigational Link", href: "" },
         ],
         [
-          { text: "three", href: "www.com" },
-          { text: "four", href: "www.com" },
+          { text: "Navigational Link", href: "" },
+          { text: "Navigational Link", href: "" },
         ],
       ],
     },
@@ -36,8 +51,13 @@ Default.args = {
       buttonText: "Section",
       columns: [
         [
-          { text: "five", href: "www.com" },
-          { text: "six", href: "www.com" },
+          { text: "Navigational Link", href: "" },
+          { text: "Navigational Link", href: "" },
+          { text: "Navigational Link", href: "" },
+          { text: "Navigational Link", href: "" },
+          { text: "Navigational Link", href: "" },
+          { text: "Navigational Link", href: "" },
+          { text: "Navigational Link", href: "" },
         ],
       ],
     },
