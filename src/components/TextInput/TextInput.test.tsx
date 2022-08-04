@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  cleanAttributes,
-  screen,
-  render,
-  getByLabelText,
-  getByText,
-} from "../../test-setup";
+import { screen, render, getByLabelText, getByText } from "../../test-setup";
 import fireEvent from "@testing-library/user-event";
 import { TextInput } from "./TextInput";
 
@@ -16,6 +10,7 @@ describe("TextInput component", () => {
     beforeEach(() => {
       render(
         <TextInput
+          id="test-input"
           label="Testing Input"
           fieldName="testing-input"
           errorMessage={errorMessage}
@@ -50,6 +45,7 @@ describe("TextInput component", () => {
     const errorMessage = "My name is Tom Riddle";
     render(
       <TextInput
+        id="test-input"
         label="Testing Input"
         fieldName="testing-input"
         errorMessage={errorMessage}
@@ -61,7 +57,12 @@ describe("TextInput component", () => {
 
   it("should be required", () => {
     render(
-      <TextInput label="Testing Input" fieldName="testing-input" required />
+      <TextInput
+        id="test-input"
+        label="Testing Input"
+        fieldName="testing-input"
+        required
+      />
     );
     const comp = screen.getByLabelText("Testing Input*");
     expect(comp).toBeInTheDocument();
@@ -72,6 +73,7 @@ describe("TextInput component", () => {
     const filter = new RegExp(/^-?\d*$/i);
     render(
       <TextInput
+        id="test-input"
         label="Testing Input"
         fieldName="testing-input"
         inputFilter={filter}
@@ -85,6 +87,7 @@ describe("TextInput component", () => {
   it("should add 'usa-focus' on focus'", () => {
     const { container } = render(
       <TextInput
+        id="test-input"
         label="Testing Input"
         fieldName="testing-input"
         errorMessage="Click me to unfocus input"
@@ -109,9 +112,12 @@ describe("TextInput component", () => {
   describe("compontent snapshots", () => {
     it("default", () => {
       const { container } = render(
-        <TextInput label="Testing Input" fieldName="testing-input" />
+        <TextInput
+          id="test-input"
+          label="Testing Input"
+          fieldName="testing-input"
+        />
       );
-      cleanAttributes(container, ["input-type-text"]);
       expect(container).toMatchSnapshot();
     });
 
@@ -119,38 +125,38 @@ describe("TextInput component", () => {
       const errorMessage = "My name is Tom Riddle";
       const { container } = render(
         <TextInput
+          id="test-input"
           label="Testing Input"
           fieldName="testing-input"
           errorMessage={errorMessage}
           required
         />
       );
-      cleanAttributes(container, ["input-type-text"]);
       expect(container).toMatchSnapshot();
     });
 
     it("success", () => {
       const { container } = render(
         <TextInput
+          id="test-input"
           label="Testing Input"
           fieldName="testing-input"
           inputSuccess
         />
       );
-      cleanAttributes(container, ["input-type-text"]);
       expect(container).toMatchSnapshot();
     });
 
     it("prefix and suffix", () => {
       const { container } = render(
         <TextInput
+          id="test-input"
           label="Testing Input"
           fieldName="testing-input"
           prefix="$"
           suffix="lbs."
         />
       );
-      cleanAttributes(container, ["input-type-text"]);
       expect(container).toMatchSnapshot();
     });
   });
