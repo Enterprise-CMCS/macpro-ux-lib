@@ -64,6 +64,7 @@ Child.args = {
   value: "checkbox-item",
   children: [
     <TextArea
+      key="text-input-1"
       id="test-input-1"
       label="Text input label"
       fieldName="text-input"
@@ -87,6 +88,7 @@ MultipleChildren.args = {
       children={[
         <TextArea
           id="test-input-2"
+          key="test-input-2"
           label="Child 1's TextArea"
           fieldName="child-1-textArea"
         />,
@@ -101,17 +103,20 @@ MultipleChildren.args = {
       children={[
         <TextArea
           id="test-input-3"
+          key="test-input-3"
           label="Child 2's TextArea"
           fieldName="child-2-textArea"
         />,
         <Checkbox
           checked={true}
           id="checkbox-item-child-3"
+          key="checkbox-item-child-3"
           label="Child 2's Child"
           name="second-child"
           value="child-2-child"
           children={[
             <TextArea
+              key="test-input-4"
               id="test-input-4"
               label="Child 2's Child TextArea"
               fieldName="child-2-child-textArea"

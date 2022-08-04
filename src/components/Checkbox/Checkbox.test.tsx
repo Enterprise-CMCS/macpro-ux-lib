@@ -265,6 +265,7 @@ describe("Checkbox", () => {
               label="Child 1"
               name="checkbox-children"
               value="child-1"
+              key="checkbox-item-child-1"
             />,
           ]}
         />
