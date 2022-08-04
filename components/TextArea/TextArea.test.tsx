@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  cleanAttributes,
-  screen,
-  render,
-  getByLabelText,
-  getByText,
-} from "../../test-setup";
+import { screen, render, getByLabelText, getByText } from "../../test-setup";
 import fireEvent from "@testing-library/user-event";
 import { TextArea } from "./TextArea";
 
@@ -17,6 +11,7 @@ describe("TextArea component", () => {
     beforeEach(() => {
       render(
         <TextArea
+          id="test-input-area"
           label="Testing TextArea"
           fieldName="testing-textarea"
           errorMessage={errorMessage}
@@ -57,6 +52,7 @@ describe("TextArea component", () => {
     it("should render with the character counter", () => {
       const { container } = render(
         <TextArea
+          id="test-input-area"
           label="Testing TextArea"
           fieldName="testing-textarea"
           showCharacterCount
@@ -72,6 +68,7 @@ describe("TextArea component", () => {
     it("should render character counter as a fraction", () => {
       const { container } = render(
         <TextArea
+          id="test-input-area"
           label="Testing TextArea"
           fieldName="testing-textarea"
           showCharacterCount
@@ -88,6 +85,7 @@ describe("TextArea component", () => {
     it("should render character counter with message", () => {
       const { container } = render(
         <TextArea
+          id="test-input-area"
           label="Testing TextArea"
           fieldName="testing-textarea"
           characterCountMessage="You have used:"
@@ -106,6 +104,7 @@ describe("TextArea component", () => {
   it("should add 'usa-focus' on focus'", () => {
     const { container } = render(
       <TextArea
+        id="test-input-area"
         label="Testing Input"
         fieldName="testing-input"
         errorMessage="Click me to unfocus input"
@@ -131,6 +130,7 @@ describe("TextArea component", () => {
     const errorMessage = "My name is Tom Riddle";
     render(
       <TextArea
+        id="test-input-area"
         label="Testing TextArea"
         fieldName="testing-textarea"
         errorMessage={errorMessage}
@@ -143,6 +143,7 @@ describe("TextArea component", () => {
   it("should be required", () => {
     render(
       <TextArea
+        id="test-input-area"
         label="Testing TextArea"
         fieldName="testing-textarea"
         required
@@ -157,6 +158,7 @@ describe("TextArea component", () => {
     const filter = new RegExp(/^-?\d*$/i);
     render(
       <TextArea
+        id="test-input-area"
         label="Testing TextArea"
         fieldName="testing-textarea"
         inputFilter={filter}
@@ -170,15 +172,19 @@ describe("TextArea component", () => {
   describe("compontent snapshots", () => {
     it("default", () => {
       const { container } = render(
-        <TextArea label="Testing TextArea" fieldName="testing-textarea" />
+        <TextArea
+          id="test-input-area"
+          label="Testing TextArea"
+          fieldName="testing-textarea"
+        />
       );
-      cleanAttributes(container, ["input-type-textarea"]);
       expect(container).toMatchSnapshot();
     });
     it("required and error", () => {
       const errorMessage = "My name is Tom Riddle";
       const { container } = render(
         <TextArea
+          id="test-input-area"
           label="Testing TextArea"
           fieldName="testing-textarea"
           errorMessage={errorMessage}
@@ -186,18 +192,17 @@ describe("TextArea component", () => {
           placeholder="Can you place this?"
         />
       );
-      cleanAttributes(container, ["input-type-textarea"]);
       expect(container).toMatchSnapshot();
     });
     it("success", () => {
       const { container } = render(
         <TextArea
+          id="test-input-area"
           label="Testing TextArea"
           fieldName="testing-textarea"
           inputSuccess
         />
       );
-      cleanAttributes(container, ["input-type-textarea"]);
       expect(container).toMatchSnapshot();
     });
   });

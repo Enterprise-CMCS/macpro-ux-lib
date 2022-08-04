@@ -70,18 +70,21 @@ describe("Checkbox", () => {
         <form data-testid="test-form">
           <Checkbox
             id="checkbox-with-children"
+            key="checkbox-with-children"
             label="Checkbox with Children"
             name="checkbox"
             value="checkbox-with-children"
             children={[
               <Checkbox
                 id="child-1"
+                key="child-1"
                 label="Child 1"
                 name="checkbox-children"
                 value="child-1"
               />,
               <Checkbox
                 id="child-2"
+                key="child-2"
                 label="Child 2"
                 name="checkbox-children"
                 value="child-2"
@@ -133,7 +136,12 @@ describe("Checkbox", () => {
             name="checkbox"
             value="checkbox-with-children"
             children={[
-              <TextArea label="Child TextArea" fieldName="child-textArea" />,
+              <TextArea
+                key="textarea-child"
+                id="test-input-area"
+                label="Child TextArea"
+                fieldName="child-textArea"
+              />,
             ]}
           />
         </form>
@@ -246,6 +254,7 @@ describe("Checkbox", () => {
       const { container } = render(
         <Checkbox
           checked={true}
+          key="test1"
           id="checkbox-with-children"
           label="Checkbox with Children"
           name="checkbox"
@@ -256,6 +265,7 @@ describe("Checkbox", () => {
               label="Child 1"
               name="checkbox-children"
               value="child-1"
+              key="checkbox-item-child-1"
             />,
           ]}
         />
@@ -266,6 +276,7 @@ describe("Checkbox", () => {
     it("renders tile Checkbox as expected", () => {
       const { container } = render(
         <Checkbox
+          key="test2"
           id="check-tile"
           isTile={true}
           label="Tile Checkbox"
