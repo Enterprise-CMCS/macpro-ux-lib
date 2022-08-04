@@ -20,4 +20,27 @@ i.e.
 ----------------------------------------
 */
 
-@use "uswds-core" as *;
+.cms-primary-background {
+  background-color: #0071bc;
+}
+
+.cms-primary-text {
+  color: #0071bc;
+  box-shadow: #0071bc;
+}
+
+.usa-button--outline {
+  background-color: #d6d7d9;
+  box-shadow: none;
+  &:hover:enabled {
+    background-color: #f1f1f1;
+  }
+  &:active {
+    background-color: #ffffff;
+  }
+  &:disabled {
+    background-color: #5b616a;
+  }
+}
+
+// @use "uswds-core" as *;

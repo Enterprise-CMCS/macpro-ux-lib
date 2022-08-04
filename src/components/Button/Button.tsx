@@ -38,11 +38,11 @@ type ButtonVariation =
   | "outline";
 
 const ButtonVariationConversion: { [key: string]: string } = {
-  primary: "",
-  secondary: "outline",
+  primary: " cms-primary-background ",
+  secondary: "outline cms-primary-text",
   error: "secondary",
   success: " bg-green",
-  inverse: "outline text-gray-70 bg-base-lighter",
+  inverse: "outline text-black shadow-none  bg-base-lighter",
   base: "base",
   link: "unstyled",
   outline: "outline text-black",
