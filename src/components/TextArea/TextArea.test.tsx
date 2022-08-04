@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  cleanAttributes,
-  screen,
-  render,
-  getByLabelText,
-  getByText,
-} from "../../test-setup";
+import { screen, render, getByLabelText, getByText } from "../../test-setup";
 import fireEvent from "@testing-library/user-event";
 import { TextArea } from "./TextArea";
 
@@ -184,7 +178,6 @@ describe("TextArea component", () => {
           fieldName="testing-textarea"
         />
       );
-      cleanAttributes(container, ["input-type-textarea"]);
       expect(container).toMatchSnapshot();
     });
     it("required and error", () => {
@@ -199,7 +192,6 @@ describe("TextArea component", () => {
           placeholder="Can you place this?"
         />
       );
-      cleanAttributes(container, ["input-type-textarea"]);
       expect(container).toMatchSnapshot();
     });
     it("success", () => {
@@ -211,7 +203,6 @@ describe("TextArea component", () => {
           inputSuccess
         />
       );
-      cleanAttributes(container, ["input-type-textarea"]);
       expect(container).toMatchSnapshot();
     });
   });

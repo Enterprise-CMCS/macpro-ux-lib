@@ -7,14 +7,14 @@ exports[`TextArea component compontent snapshots default 1`] = `
   >
     <label
       class="usa-label"
-      for="input-type-textarea-test-input"
+      for="input-type-textarea-test-input-area"
     >
       Testing TextArea
     </label>
     <textarea
       aria-describedby=""
       class="usa-textarea"
-      id="input-type-textarea-test-input"
+      id="input-type-textarea-test-input-area"
       name="testing-textarea"
     />
   </div>
@@ -28,7 +28,7 @@ exports[`TextArea component compontent snapshots required and error 1`] = `
   >
     <label
       class="usa-label"
-      for="input-type-textarea-test-input"
+      for="input-type-textarea-test-input-area"
     >
       Testing TextArea
       <span
@@ -40,7 +40,7 @@ exports[`TextArea component compontent snapshots required and error 1`] = `
     <textarea
       aria-describedby=""
       class="usa-textarea"
-      id="input-type-textarea-test-input"
+      id="input-type-textarea-test-input-area"
       name="testing-textarea"
       placeholder="Can you place this?"
       required=""
@@ -56,14 +56,14 @@ exports[`TextArea component compontent snapshots success 1`] = `
   >
     <label
       class="usa-label"
-      for="input-type-textarea-test-input"
+      for="input-type-textarea-test-input-area"
     >
       Testing TextArea
     </label>
     <textarea
       aria-describedby=""
       class="usa-textarea usa-input--success"
-      id="input-type-textarea-test-input"
+      id="input-type-textarea-test-input-area"
       name="testing-textarea"
     />
   </div>

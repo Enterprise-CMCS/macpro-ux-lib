@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  cleanAttributes,
-  screen,
-  render,
-  getByLabelText,
-  getByText,
-} from "../../test-setup";
+import { screen, render, getByLabelText, getByText } from "../../test-setup";
 import fireEvent from "@testing-library/user-event";
 import { TextInput } from "./TextInput";
 
@@ -124,7 +118,6 @@ describe("TextInput component", () => {
           fieldName="testing-input"
         />
       );
-      cleanAttributes(container, ["input-type-text"]);
       expect(container).toMatchSnapshot();
     });
 
@@ -139,7 +132,6 @@ describe("TextInput component", () => {
           required
         />
       );
-      cleanAttributes(container, ["input-type-text"]);
       expect(container).toMatchSnapshot();
     });
 
@@ -152,7 +144,6 @@ describe("TextInput component", () => {
           inputSuccess
         />
       );
-      cleanAttributes(container, ["input-type-text"]);
       expect(container).toMatchSnapshot();
     });
 
@@ -166,7 +157,6 @@ describe("TextInput component", () => {
           suffix="lbs."
         />
       );
-      cleanAttributes(container, ["input-type-text"]);
       expect(container).toMatchSnapshot();
     });
   });
