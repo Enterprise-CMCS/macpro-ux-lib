@@ -70,9 +70,11 @@ RequiredAndError.args = {
   inputError: true,
   label: "Required Input Field",
   required: true,
+  id: "required-and-error-textarea",
 };
 
 Success.args = {
   label: "Field with Success Indicator",
   inputSuccess: true,
+  id: "success-textarea",
 };
