@@ -3,7 +3,7 @@ import { Typography } from "../Typography/Typography";
 
 type IntrinsicElements = JSX.IntrinsicElements["img"];
 
-interface Props extends IntrinsicElements {
+export interface LogoProps extends IntrinsicElements {
   altText: string;
   ariaHidden?: boolean;
   ariaLabel?: string;
@@ -26,7 +26,7 @@ interface Props extends IntrinsicElements {
  * @param {string} [width]        Width parameter for logo in # of pixels.
  */
 
-export const Logo: React.FC<Props> = ({
+export const Logo: React.FC<LogoProps> = ({
   altText,
   ariaHidden = false,
   ariaLabel,

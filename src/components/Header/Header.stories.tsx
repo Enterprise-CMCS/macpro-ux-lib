@@ -16,6 +16,7 @@ const Template: ComponentStory<typeof Header> = ({ ...rest }) => (
 
 export const Default = Template.bind({});
 Default.args = {
+  logoProps: { altText: "Project Title" },
   navData: [
     {
       buttonText: "Current Section",

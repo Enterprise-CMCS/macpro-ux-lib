@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "components/Button/Button";
-import { Logo } from "components/Logo/Logo";
+import { Logo, LogoProps } from "components/Logo/Logo";
 
 interface SubMenuColumnProps {
   links: { text: string; href: string }[];
@@ -33,7 +33,7 @@ interface NavSectionProps {
   index: number;
 }
 
-const NavSection = ({ section, index }: NavSectionProps) => {
+const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
   const { buttonText, current } = section;
   return (
     <>
@@ -70,21 +70,23 @@ const NavSection = ({ section, index }: NavSectionProps) => {
 type IntrinsicElements = JSX.IntrinsicElements["nav"];
 
 interface HeaderProps extends IntrinsicElements {
+  logoProps: LogoProps;
   navData: NavSection[];
 }
 
-export const Header: React.FC<HeaderProps> = ({ navData, ...rest }) => {
+export const Header: React.FC<HeaderProps> = ({
+  logoProps,
+  navData,
+  ...rest
+}) => {
   return (
     <>
       <div className="usa-overlay"></div>
       <header className="usa-header usa-header--extended">
         <div className="usa-navbar">
           <div className="usa-logo" id="basic-logo">
-            {
-              // TODO: This should be a prop
-            }
             <a href="" title="Project Title">
-              <Logo altText="Project Title" />
+              <Logo {...logoProps} />
             </a>
           </div>
           <Button buttonText="Menu" className="usa-menu-btn" />
