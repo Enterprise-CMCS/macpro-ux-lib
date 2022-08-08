@@ -22,7 +22,28 @@ Default.args = {
     altText: "CMS.gov Project",
     // source: "https://www.cms.gov/themes/custom/cms_evo/logo.svg",
   },
-  children: <ActionsMenu />,
+  children: (
+    <ActionsMenu
+      name="My Account"
+      links={[
+        {
+          text: "Manage Profile",
+          iconName: "person",
+          onClick: () => console.log("Manage Profile"),
+        },
+        {
+          text: "Request Role Change",
+          iconName: "people",
+          onClick: () => console.log("Request Role Change"),
+        },
+        {
+          text: "Log Out",
+          iconName: "logout",
+          onClick: () => console.log("Log Out"),
+        },
+      ]}
+    />
+  ),
   // children: <Button buttonText="test" />,
   navData: [
     {

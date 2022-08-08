@@ -1,44 +1,46 @@
 import "./ActionsMenu.css";
 
 import React from "react";
-import { Icon } from "components/Icon/Icon";
+import { Icon, IconChoice } from "components/Icon/Icon";
 
-export const ActionsMenu: React.FC = () => {
+interface Props {
+  name: string;
+  links: {
+    href?: string;
+    iconName?: IconChoice;
+    onClick?: () => any;
+    text: string;
+  }[];
+}
+
+export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <menu className="user-actions-menu">
-      <div className="menu-label" onClick={() => setIsOpen(!isOpen)}>
-        My Account
+    <div className="user-actions-container">
+      <span className="menu-label" onClick={() => setIsOpen(!isOpen)}>
+        {name}
         <Icon
           aria-hidden="true"
           name={isOpen ? "arrow_drop_up" : "arrow_drop_down"}
           color="#fff"
         />
-      </div>
-      <ul
-        className="user-actions-drop-down usa-nav__secondary-links"
+      </span>
+      <menu
+        className="user-actions-menu usa-nav__secondary-links"
         style={isOpen ? { display: "block" } : {}}
       >
-        <li key="1">
-          <a onClick={() => console.log("PING")}>
-            <Icon name="person" color="#fff" />
-            Manage Profile
-          </a>
-        </li>
-        <li key="2">
-          <a onClick={() => console.log("PING")}>
-            <Icon name="people" color="#fff" />
-            Request Role Change
-          </a>
-        </li>
-        <li key="3">
-          <a onClick={() => console.log("PING")}>
-            <Icon name="logout" color="#fff" />
-            Log Out
-          </a>
-        </li>
-      </ul>
-    </menu>
+        {links.map((link, idx) => {
+          return (
+            <li key={idx}>
+              <a href={link.href} onClick={link.onClick}>
+                {link.iconName && <Icon name={link.iconName} color="#fff" />}
+                {link.text}
+              </a>
+            </li>
+          );
+        })}
+      </menu>
+    </div>
   );
 };

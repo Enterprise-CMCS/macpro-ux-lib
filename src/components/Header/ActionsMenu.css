@@ -1,24 +1,28 @@
-.user-actions-drop-down li {
+.user-actions-menu li {
   cursor: pointer;
   margin-bottom: 10px;
 }
 
-.user-actions-drop-down li a {
+.user-actions-menu a {
   align-items: center;
   display: flex;
   flex-direction: row;
 }
-.user-actions-drop-down li a,
+.user-actions-menu a,
 .menu-label {
   font-size: 1.06rem;
 }
 
+.user-actions-menu svg {
+  margin-right: 10px;
+}
+
 @media only screen and (min-width: 64em) {
-  .user-actions-menu {
+  .user-actions-container {
     color: #fff;
   }
 
-  .user-actions-menu .menu-label {
+  .user-actions-container .menu-label {
     align-items: center;
     cursor: pointer;
     display: flex;
@@ -27,7 +31,7 @@
     position: relative;
   }
 
-  .user-actions-drop-down {
+  .user-actions-menu {
     background-color: #0071bc;
     flex-direction: flex-start;
     left: 25px;
@@ -36,54 +40,46 @@
     width: 250px;
   }
 
-  .user-actions-drop-down li {
+  .user-actions-menu li {
     padding: 5px 15px 5px;
   }
 
-  .user-actions-drop-down li a {
-    color: #fff;
-  }
-
-  .user-actions-drop-down li a svg {
-    color: #fff;
-    margin-right: 10px;
-  }
-
-  .user-actions-drop-down li a:hover {
+  .user-actions-menu a,
+  .user-actions-menu a:hover {
     color: #fff;
     text-decoration: unset;
   }
 
-  .user-actions-drop-down {
+  .user-actions-menu {
     display: none;
     padding-top: 20px;
   }
 }
 
 @media only screen and (max-width: 64em) {
-  .user-actions-menu {
+  .user-actions-container {
     padding: 0;
   }
-  .user-actions-menu a {
+  .user-actions-container a {
     padding: 12px 16px;
   }
-  .user-actions-drop-down {
+  .user-actions-menu {
     display: block;
   }
 
-  .user-actions-drop-down li {
+  .user-actions-menu li {
     margin: 0;
     border-top: 1px solid #dfe1e2;
   }
 
-  .user-actions-drop-down li a:hover,
-  .user-actions-drop-down li a:hover svg {
+  .user-actions-menu a:hover,
+  .user-actions-menu a:hover svg {
     color: #005ea2;
     background-color: #f0f0f0;
     text-decoration: none;
   }
 
-  .user-actions-drop-down li a svg {
+  .user-actions-menu li a svg {
     color: #565c65;
   }
 }
