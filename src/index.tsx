@@ -1,5 +1,5 @@
 import "./assets/css/styles.css";
-import "../src/assets/theme/styles.scss";
+import "./assets/theme/styles.scss";
 
 import { Button } from "./components/Button/Button";
 import { Card } from "./components/Card/Card";
