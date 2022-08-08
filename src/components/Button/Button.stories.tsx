@@ -86,3 +86,5 @@ export const BigButton = Template.bind({});
 BigButton.args = { largeButton: true };
 export const OutlineButton = Template.bind({});
 OutlineButton.args = { buttonVariation: "outline" };
+export const SecondaryOutlineButton = Template.bind({});
+SecondaryOutlineButton.args = { buttonVariation: "secondary-outline" };
