@@ -18,3 +18,5 @@ const Template: ComponentStory<typeof Footer> = ({ ...rest }) => (
 );
 
 export const Default = Template.bind({});
+export const altFooter = Template.bind({});
+altFooter.args = { altFooter: true };

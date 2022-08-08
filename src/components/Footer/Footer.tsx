@@ -8,21 +8,21 @@ type IntrinsicElements = JSX.IntrinsicElements["footer"];
 
 interface Props extends IntrinsicElements {
   emailAddress: string;
-  address: string;
+  address?: string;
   altFooter?: boolean;
 }
 
 /**
  * Footer Component
  * @param {string}   emailAddress       Determines which icon that needs to be rendered.
- * @param {string}   address            String used to specify the size of the icon, a number between 3-9.
+ * @param {string}   [address]            String used to specify the size of the icon, a number between 3-9.
  * @param {boolean}  [altFooter]        Determines whether or not the element is hidden from a screen reader.
  */
 
 export const Footer: React.FC<Props> = ({
   altFooter = false,
   emailAddress,
-  address,
+  address = "7500 Security Boulevard Baltimore, MD 21244",
   ...rest
 }) => {
   return altFooter ? (
