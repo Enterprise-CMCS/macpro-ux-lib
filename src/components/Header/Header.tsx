@@ -1,11 +1,11 @@
-import "./Header.css";
+import "./Header.scss";
 
 import React, { PropsWithChildren } from "react";
 import { Button } from "components/Button/Button";
 import { Logo, LogoProps } from "components/Logo/Logo";
 
 interface SubMenuColumnProps {
-  links: { text: string; href: string }[];
+  links: { text: string; href?: string; onClick?: () => any }[];
 }
 
 const SubMenuColumn: React.FC<SubMenuColumnProps> = ({ links }) => {
@@ -18,7 +18,9 @@ const SubMenuColumn: React.FC<SubMenuColumnProps> = ({ links }) => {
               className="usa-nav__submenu-item"
               key={`usa-nav__submenu-item-${idx}`}
             >
-              <a href={link.href}>{link.text}</a>
+              <a href={link.href} onClick={link.onClick}>
+                {link.text}
+              </a>
             </li>
           );
         })}
@@ -30,7 +32,7 @@ const SubMenuColumn: React.FC<SubMenuColumnProps> = ({ links }) => {
 interface NavSection {
   buttonText: string;
   current?: boolean;
-  columns: { text: string; href: string }[][];
+  columns: { text: string; href?: string; onClick?: () => any }[][];
 }
 
 interface NavSectionProps {
@@ -76,8 +78,15 @@ type IntrinsicElements = JSX.IntrinsicElements["nav"];
 
 interface HeaderProps extends IntrinsicElements {
   logoProps: LogoProps;
-  navData: NavSection[];
+  navData?: NavSection[];
 }
+
+/**
+ * Header Component
+ * @param {JSX.Element}   [children]    Component children to be rendered in the header.
+ * @param {LogoProps}     [logoProps]   Props to be passed to an instance of the Logo component which will render as part of the Header.
+ * @param {NavSection[]}  [navData]     A list of objects containing the data for each section of the navigation.
+ */
 
 export const Header: React.FC<PropsWithChildren<HeaderProps>> = ({
   children,
@@ -103,7 +112,7 @@ export const Header: React.FC<PropsWithChildren<HeaderProps>> = ({
           <div className="usa-nav__inner">
             <Button buttonText="" iconName="close" className="usa-nav__close" />
             <ul className="usa-nav__primary usa-accordion">
-              {navData.map((section, idx) => {
+              {navData?.map((section, idx) => {
                 return (
                   <NavSection
                     section={section}

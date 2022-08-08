@@ -1,17 +1,26 @@
-import "./ActionsMenu.css";
+import "./ActionsMenu.scss";
 
 import React from "react";
 import { Icon, IconChoice } from "components/Icon/Icon";
 
+interface Link {
+  href?: string;
+  iconName?: IconChoice;
+  onClick?: () => any;
+  text: string;
+}
+
 interface Props {
   name: string;
-  links: {
-    href?: string;
-    iconName?: IconChoice;
-    onClick?: () => any;
-    text: string;
-  }[];
+  links: Link[];
 }
+
+/**
+ * ActionsMenu Component
+ *
+ * @param {string} name   The name of the menu.
+ * @param {Link[]} links  List of links to display in the menu.
+ */
 
 export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -29,6 +38,7 @@ export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
       <menu
         className="user-actions-menu usa-nav__secondary-links"
         style={isOpen ? { display: "block" } : {}}
+        {...rest}
       >
         {links.map((link, idx) => {
           return (

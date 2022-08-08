@@ -1,6 +1,5 @@
 .user-actions-menu li {
   cursor: pointer;
-  margin-bottom: 10px;
 }
 
 .user-actions-menu a {
@@ -32,16 +31,17 @@
   }
 
   .user-actions-menu {
+    display: none;
     background-color: #0071bc;
     flex-direction: flex-start;
     left: 25px;
     position: absolute;
-    top: 40px;
+    top: 42px;
     width: 250px;
   }
 
   .user-actions-menu li {
-    padding: 5px 15px 5px;
+    padding: 10px 15px 10px;
   }
 
   .user-actions-menu a,
@@ -50,9 +50,9 @@
     text-decoration: unset;
   }
 
-  .user-actions-menu {
-    display: none;
-    padding-top: 20px;
+  .user-actions-menu a:hover,
+  .user-actions-menu li:hover {
+    background-color: #1a4480;
   }
 }
 
@@ -60,16 +60,22 @@
   .user-actions-container {
     padding: 0;
   }
-  .user-actions-container a {
-    padding: 12px 16px;
-  }
+
   .user-actions-menu {
     display: block;
   }
 
   .user-actions-menu li {
-    margin: 0;
     border-top: 1px solid #dfe1e2;
+  }
+
+  .user-actions-container a {
+    padding: 12px 16px;
+  }
+
+  .user-actions-menu,
+  .user-actions-menu svg {
+    color: #565c65;
   }
 
   .user-actions-menu a:hover,
@@ -77,9 +83,5 @@
     color: #005ea2;
     background-color: #f0f0f0;
     text-decoration: none;
-  }
-
-  .user-actions-menu li a svg {
-    color: #565c65;
   }
 }
