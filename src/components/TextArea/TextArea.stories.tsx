@@ -62,6 +62,7 @@ CharachterCount.args = {
   characterCountMessage: "Available remaining characters:",
   showCharacterCount: true,
   maxLength: 500,
+  id: "character-count-textarea",
 };
 
 RequiredAndError.args = {
@@ -69,15 +70,18 @@ RequiredAndError.args = {
   inputError: true,
   label: "Required Input Field",
   required: true,
+  id: "required-and-error-textarea",
 };
 
 Success.args = {
   label: "Field with Success Indicator",
   initialValue: "This is a good value!",
   inputSuccess: true,
+  id: "success-textarea",
 };
 
 InputFilter.args = {
   label: "This field only accepts a numerical input",
   inputFilter: /^-?\d*$/i,
+  id: "filter-textarea",
 };

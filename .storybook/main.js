@@ -10,6 +10,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     '@storybook/addon-a11y',
+    '@storybook/preset-scss'
   ],
   framework: "@storybook/react",
   staticDirs: ['../src', '../src/assets/img'],
