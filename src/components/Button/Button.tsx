@@ -40,12 +40,12 @@ type ButtonVariation =
 const ButtonVariationConversion: { [key: string]: string } = {
   primary: " cms-primary-background",
   secondary: "outline cms-primary-text",
+  "secondary-outline": "secondary-outline",
   error: "secondary",
   success: " bg-green",
   inverse: "inverse",
   base: "base",
   link: "unstyled",
-  "secondary-outline": "secondary-outline",
 };
 
 export const Button: React.FC<Props> = ({
