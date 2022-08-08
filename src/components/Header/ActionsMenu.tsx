@@ -1,5 +1,3 @@
-import "./ActionsMenu.scss";
-
 import React from "react";
 import { Icon, IconChoice } from "components/Icon/Icon";
 

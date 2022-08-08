@@ -1,5 +1,3 @@
-import "./Header.scss";
-
 import React, { PropsWithChildren } from "react";
 import { Button } from "components/Button/Button";
 import { Logo, LogoProps } from "components/Logo/Logo";
