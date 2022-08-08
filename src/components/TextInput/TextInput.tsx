@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { generateId } from "../../utils";
+import React, { useState } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
 interface Props extends IntrinsicElements {
   errorMessage?: string;
   fieldName: string;
+  id: string;
   inputError?: boolean;
   inputFilter?: RegExp;
   inputSuccess?: boolean;
@@ -18,6 +18,7 @@ interface Props extends IntrinsicElements {
  * TextInput Component
  * @param {string}  label          Field label.
  * @param {string}  fieldName      Name of the input field.
+ * @param {string}  id             A unique identifier for the input.
  * @param {string}  [errorMessage] Error message text displayed when inputError === true.
  * @param {boolean} [inputError]   Triggers error message and error styling.
  * @param {RegExp}  [inputFilter]  Used to limit input values. If a RegExp is not provided, all input types are allowed.
@@ -30,6 +31,7 @@ export const TextInput: React.FC<Props> = ({
   label,
   errorMessage,
   fieldName,
+  id,
   inputError = false,
   inputFilter,
   inputSuccess = false,
@@ -40,11 +42,6 @@ export const TextInput: React.FC<Props> = ({
 }) => {
   const [focused, setFocused] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>("");
-  const [id, setId] = useState<number>(0);
-
-  useEffect(() => {
-    setId(generateId());
-  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (inputFilter && inputFilter.test(e.target.value)) {
