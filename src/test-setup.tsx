@@ -31,28 +31,3 @@ export { customRender as render };
  * @param {HTMLElement} container The component to clean up.
  * @param {prefixes}      string[]  The reference substrings to leave alone.
  */
-export const cleanAttributes = (container: HTMLElement, prefixes: string[]) => {
-  const attributes = ["id", "for"];
-
-  const clean = (attr: string) => {
-    for (const prefix of prefixes) {
-      if (attr.includes(prefix)) {
-        const attrList = attr.split("-");
-        attrList.splice(-1);
-        return attrList.join("-");
-      }
-    }
-    return attr;
-  };
-
-  attributes.forEach((attr) => {
-    if (container.hasAttribute(attr)) {
-      const value = clean(container.getAttribute(attr)!);
-      container.setAttribute(attr, value);
-    }
-  });
-
-  Array.from(container.children).forEach((child) => {
-    cleanAttributes(child as HTMLElement, prefixes);
-  });
-};

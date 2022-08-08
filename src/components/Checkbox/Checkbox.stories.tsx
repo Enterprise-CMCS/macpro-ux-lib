@@ -62,7 +62,14 @@ Child.args = {
   id: "checkbox-item-child",
   name: "checkbox",
   value: "checkbox-item",
-  children: [<TextArea label="Text input label" fieldName="text-input" />],
+  children: [
+    <TextArea
+      key="text-input-1"
+      id="test-input-1"
+      label="Text input label"
+      fieldName="text-input"
+    />,
+  ],
 };
 
 export const MultipleChildren = Template.bind({});
@@ -79,7 +86,12 @@ MultipleChildren.args = {
       name="checkbox-children"
       value="child-1"
       children={[
-        <TextArea label="Child 1's TextArea" fieldName="child-1-textArea" />,
+        <TextArea
+          id="test-input-2"
+          key="test-input-2"
+          label="Child 1's TextArea"
+          fieldName="child-1-textArea"
+        />,
       ]}
     />,
     <Checkbox
@@ -89,15 +101,23 @@ MultipleChildren.args = {
       name="checkbox-children"
       value="child-2"
       children={[
-        <TextArea label="Child 2's TextArea" fieldName="child-2-textArea" />,
+        <TextArea
+          id="test-input-3"
+          key="test-input-3"
+          label="Child 2's TextArea"
+          fieldName="child-2-textArea"
+        />,
         <Checkbox
           checked={true}
           id="checkbox-item-child-3"
+          key="checkbox-item-child-3"
           label="Child 2's Child"
           name="second-child"
           value="child-2-child"
           children={[
             <TextArea
+              key="test-input-4"
+              id="test-input-4"
               label="Child 2's Child TextArea"
               fieldName="child-2-child-textArea"
             />,
