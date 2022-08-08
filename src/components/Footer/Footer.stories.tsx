@@ -5,7 +5,17 @@ import { Footer } from "./Footer";
 export default {
   title: "USWDS/Base/Footer",
   component: Footer,
-  argTypes: {},
+  argTypes: {
+    emailAddress: {
+      description: "Email Address used at the bottom left for contact help",
+    },
+    address: {
+      description: "Address used at the bottom right of footer",
+    },
+    altFooter: {
+      description: "Determines whether to use the alternative footer",
+    },
+  },
   args: {
     emailAddress: "sample@cms.hhs.gov",
     address: "7500 Security Boulevard Baltimore, MD 21244",

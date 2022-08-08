@@ -14,9 +14,9 @@ interface Props extends IntrinsicElements {
 
 /**
  * Footer Component
- * @param {string}   emailAddress       Determines which icon that needs to be rendered.
- * @param {string}   [address]            String used to specify the size of the icon, a number between 3-9.
- * @param {boolean}  [altFooter]        Determines whether or not the element is hidden from a screen reader.
+ * @param {string}   emailAddress       Email Address used at the bottom left for contact help.
+ * @param {string}   [address]          Address used at the bottom right of footer.
+ * @param {boolean}  [altFooter]        Determines whether to use the alternative footer.
  */
 
 export const Footer: React.FC<Props> = ({
@@ -30,10 +30,12 @@ export const Footer: React.FC<Props> = ({
       <div className="usa-footer__primary-section bg-primary">
         <div className="grid-row padding-x-5 padding-y-2 flex-align-center">
           <div className="grid-col text-white">
-            <h4 className="usa-footer__primary-link text-white">Sitemap</h4>
+            <h4 className="usa-footer__primary-link text-white text-underline">
+              Sitemap
+            </h4>
             <div className="grid-row">
               <ul className="usa-list usa-list--unstyled text-white">
-                <li className="usa-footer__secondary-link ">
+                <li className="usa-footer__secondary-link">
                   <a href="javascript:void(0);">FAQ</a>
                 </li>
                 <li className="usa-footer__secondary-link">
@@ -72,25 +74,25 @@ export const Footer: React.FC<Props> = ({
                 height={80}
               />
             </div>
-            <p className="grid-col font-sans-xs">
+            <div className="font-sans-xs">
               A federal government website managed and paid for by the U.S.
               Centers for Medicare and Medicaid Services and part of the MACPro
               suite.
-            </p>
+            </div>
           </div>
         </div>
       </div>
       <div className="usa-footer__secondary-section bg-primary-darker text-white font-sans-2xs padding-x-4">
-        <div className="grid-row ">
-          <p className="grid-col-3">{`Email ${emailAddress} for help or feedback.`}</p>
+        <div className="grid-row">
+          <p className="grid-col-12 mobile-lg:grid-col">{`Email ${emailAddress} for help or feedback.`}</p>
 
-          <p className="grid-col-3 grid-offset-6">{address}</p>
+          <p className="grid-col-12 mobile-lg:grid-col-3">{address}</p>
         </div>
       </div>
     </footer>
   ) : (
     <footer className="usa-footer usa-footer--slim">
-      <div className="usa-footer__primary-section bg-accent-cool-lighter ">
+      <div className="usa-footer__primary-section bg-accent-cool-lighter flex-justify-end">
         <div className="grid-row padding-x-5 padding-y-2 flex-align-center">
           <div className="grid-col">
             <Logo
@@ -100,7 +102,7 @@ export const Footer: React.FC<Props> = ({
             />
           </div>
 
-          <div className="grid-row grid-col-5 grid-offset-2 flex-align-center">
+          <div className="grid-row grid-col-5 flex-align-center">
             <Logo
               ariaLabel="Department of Health and Human Services"
               altText="Department of Health and Human Services Logo"
@@ -117,10 +119,9 @@ export const Footer: React.FC<Props> = ({
         </div>
       </div>
       <div className="usa-footer__secondary-section bg-primary text-white font-sans-2xs padding-x-4">
-        <div className="grid-row ">
-          <p className="grid-col-3">{`Email ${emailAddress} for help or feedback.`}</p>
-
-          <p className="grid-col-3 grid-offset-6">{address}</p>
+        <div className="grid-row">
+          <p className="grid-col-12 mobile-lg:grid-col">{`Email ${emailAddress} for help or feedback.`}</p>
+          <p className="grid-col-12 mobile-lg:grid-col-3">{address}</p>
         </div>
       </div>
     </footer>
