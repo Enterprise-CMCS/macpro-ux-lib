@@ -35,7 +35,6 @@ type ButtonVariation =
   | "inverse"
   | "base"
   | "link"
-  | "outline"
   | "secondary-outline";
 
 const ButtonVariationConversion: { [key: string]: string } = {
@@ -46,7 +45,6 @@ const ButtonVariationConversion: { [key: string]: string } = {
   inverse: "inverse",
   base: "base",
   link: "unstyled",
-  outline: "outline",
   "secondary-outline": "secondary-outline",
 };
 
