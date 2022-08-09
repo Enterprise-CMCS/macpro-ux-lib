@@ -48,11 +48,10 @@ export const Footer: React.FC<Props> = ({
                 <div className="grid-row">
                   {navigationLinks.map((link, idx) => {
                     return (
-                      <div className="grid-col-6">
+                      <div key={idx} className="grid-col-6">
                         <a
                           className="text-white font-sans-md text-no-underline padding-x-1 grid-col"
                           href={link.href}
-                          key={idx}
                           onClick={link.onClick}
                         >
                           {link.text}
@@ -104,7 +103,7 @@ export const Footer: React.FC<Props> = ({
       </div>
     </footer>
   ) : (
-    <footer className="usa-footer usa-footer--slim">
+    <footer className="usa-footer usa-footer--slim" {...rest}>
       <div className="usa-footer__primary-section bg-accent-cool-lighter flex-justify-end">
         <div className="grid-row padding-x-5 padding-y-2 flex-align-center">
           <div className="tablet:grid-col mobile-text-center">
