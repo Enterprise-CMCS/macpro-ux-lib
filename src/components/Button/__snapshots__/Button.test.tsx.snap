@@ -4,7 +4,7 @@ exports[`Tests for the button component. compontent snapshots primary big disabl
 <div>
   <button
     aria-label="big inverse button"
-    class="display-flex usa-button usa-button--outline text-gray-70 bg-base-lighter usa-button--big"
+    class="display-flex usa-button usa-button--inverse usa-button--big"
     data-testid="button"
   >
     <span
@@ -20,7 +20,7 @@ exports[`Tests for the button component. compontent snapshots secondary button 1
 <div>
   <button
     aria-label="Secondary button"
-    class="display-flex usa-button usa-button--outline "
+    class="display-flex usa-button usa-button--outline cms-primary-text "
     data-testid="button"
   >
     <span
