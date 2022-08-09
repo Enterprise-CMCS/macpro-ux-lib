@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from "react";
+import React, { ReactElement } from "react";
 import { Radio, RadioProps } from "../Radio/Radio";
 
 interface Props {
