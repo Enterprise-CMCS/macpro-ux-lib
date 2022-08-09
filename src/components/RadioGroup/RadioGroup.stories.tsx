@@ -93,6 +93,7 @@ DefaultGroup.args = {
   radioProps: [
     { id: "radio-1", value: "radio-1", label: "Radio 1" },
     { id: "radio-2", value: "radio-2", label: "Radio 2" },
+    { id: "radio-2", value: "radio-2", label: "Radio 2", disabled: true },
   ],
 };
 
@@ -146,6 +147,13 @@ Tile.args = {
       label: "Radio 2",
       isTile: true,
     },
+    {
+      id: "tile-radio-3",
+      value: "tile-radio-3",
+      label: "Radio 3",
+      isTile: true,
+      disabled: true,
+    },
   ],
 };
 
@@ -166,6 +174,14 @@ TileWithDescription.args = {
       label: "Radio 2",
       isTile: true,
       tileDescription: "Radio 2 tile description.",
+    },
+    {
+      id: "tile-desc-radio-3",
+      value: "tile-desc-radio-3",
+      label: "Radio 3",
+      isTile: true,
+      tileDescription: "Radio 3 tile description.",
+      disabled: true,
     },
   ],
 };
