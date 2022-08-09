@@ -78,5 +78,14 @@ TileWithDescription.args = {
   isTile: true,
   name: "radio-tile-desc",
   tileDescription: "This is a tile description.",
-  value: "radio-tile-1",
+  value: "radio-desc-tile-1",
+};
+
+export const DisabledTile = Template.bind({});
+DisabledTile.args = {
+  id: "radio-desc-tile-disabled",
+  isTile: true,
+  disabled: true,
+  tileDescription: "This is a tile description.",
+  value: "radio-desc-tile-disabled",
 };
