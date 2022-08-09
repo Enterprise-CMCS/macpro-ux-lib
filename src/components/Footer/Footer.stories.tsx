@@ -16,12 +16,12 @@ export default {
       description: "Determines whether to use the alternative footer",
     },
     navigationLinks: {
-      description: "Array of navigation elements to render in footer",
+      description:
+        "Array of navigation elements to render in the alternative footer",
     },
   },
   args: {
-    emailAddress: "sample@cms.hhs.gov",
-    address: "7500 Security Boulevard Baltimore, MD 21244",
+    emailAddress: "storybook-test@cms.hhs.gov",
     altFooter: false,
   },
 } as ComponentMeta<typeof Footer>;
@@ -31,14 +31,55 @@ const Template: ComponentStory<typeof Footer> = ({ ...rest }) => (
 );
 
 export const Default = Template.bind({});
-export const altFooter = Template.bind({});
-altFooter.args = {
+export const altFooterWithLinks = Template.bind({});
+altFooterWithLinks.args = {
   altFooter: true,
   navigationLinks: [
-    <a href="https://www.google.com/">test</a>,
-    <a href="https://www.google.com/">test</a>,
-    <a href="https://www.google.com/">test</a>,
-    <a href="https://www.google.com/">test</a>,
-    <a href="https://www.google.com/">test</a>,
+    {
+      href: "https://www.google.com/",
+      iconName: "launch",
+      onClick: () => {
+        console.log("launch");
+      },
+      text: "FAQ",
+    },
+    {
+      href: "https://www.google.com/",
+      iconName: "launch",
+      onClick: () => {
+        console.log("launch");
+      },
+      text: "FAQ",
+    },
+    {
+      href: "https://www.google.com/",
+      iconName: "launch",
+      onClick: () => {
+        console.log("launch");
+      },
+      text: "FAQ",
+    },
+    {
+      href: "https://www.google.com/",
+      iconName: "launch",
+      onClick: () => {
+        console.log("launch");
+      },
+      text: "FAQ",
+    },
+    {
+      href: "https://www.google.com/",
+      onClick: () => {
+        console.log("launch");
+      },
+      text: "Home",
+    },
+    {
+      href: "https://www.google.com/",
+      onClick: () => {
+        console.log("launch");
+      },
+      text: "Home",
+    },
   ],
 };

@@ -26,7 +26,7 @@ interface Props extends IntrinsicElements {
  * @param {string}                        emailAddress       Email Address used at the bottom left for contact help.
  * @param {string}                        [address]          Address used at the bottom right of footer.
  * @param {boolean}                       [altFooter]        Determines whether to use the alternative footer.
- * @param {Link[]}                        [navigationLinks]  Array of navigation links to render in footer.
+ * @param {Link[]}                        [navigationLinks]  Array of navigation links to render in the alternative footer.
  */
 
 export const Footer: React.FC<Props> = ({
@@ -41,19 +41,35 @@ export const Footer: React.FC<Props> = ({
       <div className="usa-footer__primary-section bg-primary">
         <div className="grid-row padding-x-5 padding-y-2 flex-align-center">
           <div className="grid-col text-white">
-            {navigationLinks &&
-              navigationLinks.map((link, idx) => {
-                return (
-                  <li key={idx}>
-                    <a href={link.href} onClick={link.onClick}>
-                      {link.iconName && (
-                        <Icon name={link.iconName} color="#fff" />
-                      )}
-                      {link.text}
-                    </a>
-                  </li>
-                );
-              })}
+            {navigationLinks && (
+              <div className="grid-col-4">
+                <h4 className="margin-0">Sitemap</h4>
+                <hr />
+                <div className="grid-row">
+                  {navigationLinks.map((link, idx) => {
+                    return (
+                      <div className="grid-col-6">
+                        <a
+                          className="text-white font-sans-md text-no-underline padding-x-1 grid-col"
+                          href={link.href}
+                          key={idx}
+                          onClick={link.onClick}
+                        >
+                          {link.text}
+                          {link.iconName && (
+                            <Icon
+                              name={link.iconName}
+                              color="#fff"
+                              className="margin-top-3"
+                            />
+                          )}
+                        </a>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="grid-col-4">
