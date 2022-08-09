@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
-interface Props extends IntrinsicElements {
-  disabled?: boolean;
+export interface RadioProps extends IntrinsicElements {
   id: string;
-  isTile?: boolean;
   label: string;
-  name: string;
+  children?: JSX.Element[];
+  disabled?: boolean;
+  isTile?: boolean;
   tileDescription?: string;
   value?: string;
 }
@@ -15,7 +16,6 @@ interface Props extends IntrinsicElements {
  * Radio Component
  * @param {string}  id                A unique identifier for the input.
  * @param {string}  label             Label text that appears to the right of the Radio.
- * @param {string}  name              A radio group is defined by giving each Radio in the group the same name.
  * @param {boolean} [checked]         Set the initial checked state.
  * @param {Array}   [children]        An array of child elements to appear when selected.
  * @param {boolean} [disabled]        Sets the Radio to its disabled state.
@@ -23,12 +23,12 @@ interface Props extends IntrinsicElements {
  * @param {string}  [tileDescription] Text that can be used to describe the label in more detail. Activates the tile variation automatically.
  * @param {string}  [value]           Value of the input element.
  */
-export const Radio: React.FC<Props> = ({
+export const Radio: React.FC<RadioProps> = ({
+  children,
   disabled = false,
   id,
   isTile = false,
   label,
-  name,
   tileDescription,
   value,
   ...rest
@@ -44,7 +44,6 @@ export const Radio: React.FC<Props> = ({
         disabled={disabled}
         id={id}
         type="radio"
-        name={name}
         value={value}
         {...rest}
       />
