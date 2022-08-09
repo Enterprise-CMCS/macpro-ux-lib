@@ -15,6 +15,9 @@ export default {
     altFooter: {
       description: "Determines whether to use the alternative footer",
     },
+    navigationLinks: {
+      description: "Array of navigation elements to render in footer",
+    },
   },
   args: {
     emailAddress: "sample@cms.hhs.gov",
@@ -29,4 +32,13 @@ const Template: ComponentStory<typeof Footer> = ({ ...rest }) => (
 
 export const Default = Template.bind({});
 export const altFooter = Template.bind({});
-altFooter.args = { altFooter: true };
+altFooter.args = {
+  altFooter: true,
+  navigationLinks: [
+    <a href="https://www.google.com/">test</a>,
+    <a href="https://www.google.com/">test</a>,
+    <a href="https://www.google.com/">test</a>,
+    <a href="https://www.google.com/">test</a>,
+    <a href="https://www.google.com/">test</a>,
+  ],
+};
