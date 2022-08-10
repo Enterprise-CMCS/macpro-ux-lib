@@ -188,7 +188,7 @@ describe("Checkbox", () => {
       );
     });
 
-    it("is renders as a tile", () => {
+    it("renders as a tile", () => {
       const cb = screen.getByRole("checkbox");
       expect(cb).toHaveClass("usa-checkbox__input--tile");
     });
