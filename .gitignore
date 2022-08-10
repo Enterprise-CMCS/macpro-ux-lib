@@ -4,4 +4,3 @@ coverage
 build
 .DS_Store
 storybook-static
-package-lock.json
