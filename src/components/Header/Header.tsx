@@ -74,15 +74,16 @@ const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
 type IntrinsicElements = JSX.IntrinsicElements["nav"];
 
 interface HeaderProps extends IntrinsicElements {
+  children?: React.ReactNode;
   logoProps: LogoProps;
   navData?: NavSection[];
 }
 
 /**
  * Header Component
- * @param {JSX.Element}   [children]    Component children to be rendered in the header.
- * @param {LogoProps}     [logoProps]   Props to be passed to an instance of the Logo component which will render as part of the Header.
- * @param {NavSection[]}  [navData]     A list of objects containing the data for each section of the navigation.
+ * @param {React.ReactNode} [children]    Component children to be rendered in the header.
+ * @param {LogoProps}       [logoProps]   Props to be passed to an instance of the Logo component which will render as part of the Header.
+ * @param {NavSection[]}    [navData]     A list of objects containing the data for each section of the navigation.
  */
 
 export const Header: React.FC<PropsWithChildren<HeaderProps>> = ({

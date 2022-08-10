@@ -54,11 +54,18 @@ export default {
     navData: navData,
   },
   argTypes: {
+    children: {
+      control: false,
+      description:
+        "React element or elements to be displayed in the upper right corner of the header on desktop, or in the side menu on mobile.\n\nExample: the user `ActionsMenu`",
+    },
     logoProps: {
+      control: false,
       description:
         "Props to be passed to an instance of the Logo component which will render as part of the Header.\n\nSee Logo component for complete list of props.",
     },
     navData: {
+      control: false,
       description:
         "A array of objects containing the data for each section of the navigation.\n\nEach section of the nav should be represented as an object in this list.",
     },
