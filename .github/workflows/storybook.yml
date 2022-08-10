@@ -2,8 +2,7 @@ name: Deploy Storybook
 on:
   push:
     branches:
-      - main
-      - temp-envs
+      - "*"
 
 concurrency:
   group: ${{ github.ref }}-storybook
@@ -33,6 +32,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: temp-envs-dev # The branch the action should deploy to.
+          BRANCH: ${{ github.ref }}-dev # The branch the action should deploy to.
           FOLDER: storybook-static # The folder that the build-storybook script generates files.
           CLEAN: true # Automatically remove deleted files from the deploy branch
