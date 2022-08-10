@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Icon, IconChoice } from "components/Icon/Icon";
-import { Link } from "components/Link/Link";
+import { Link, LinkProps } from "components/Link/Link";
 
-interface ActionsMenuLink extends Link {
+interface ActionsMenuLink extends LinkProps {
   iconName?: IconChoice;
 }
 
@@ -15,7 +15,7 @@ interface Props {
  * ActionsMenu Component
  *
  * @param {string} name   The name of the menu.
- * @param {Link[]} links  List of links to display in the menu.
+ * @param {ActionsMenuLink[]} links  List of links to display in the menu.
  */
 
 export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {

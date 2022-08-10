@@ -50,7 +50,6 @@ export default {
   args: {
     logoProps: {
       altText: "CMS.gov Project",
-      // source: "../../assets/img/logos/cms_logo.png",
     },
     navData: navData,
   },
@@ -78,18 +77,24 @@ Default.args = {
       name="My Account"
       links={[
         {
-          text: "Manage Profile",
+          href: "",
           iconName: "person",
+          text: "Manage Profile",
+          target: "_blank",
           onClick: () => console.log("Manage Profile"),
         },
         {
-          text: "Request Role Change",
+          href: "",
           iconName: "people",
+          text: "Request Role Change",
+          target: "_blank",
           onClick: () => console.log("Request Role Change"),
         },
         {
-          text: "Log Out",
+          href: "",
           iconName: "logout",
+          text: "Log Out",
+          target: "_blank",
           onClick: () => console.log("Log Out"),
         },
       ]}

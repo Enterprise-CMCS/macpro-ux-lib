@@ -3,7 +3,7 @@ import { PropsWithChildren } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["a"];
 
-export interface Link extends IntrinsicElements {
+export interface LinkProps extends IntrinsicElements {
   href?: string;
   target?: "_blank" | "_self" | "_parent" | "_top";
   text?: string;
@@ -20,7 +20,7 @@ export interface Link extends IntrinsicElements {
  * Basic component that handles the rendering of a standard anchor tag and standard attribute values.
  *
  */
-export const Link: React.FC<PropsWithChildren<Link>> = ({
+export const Link: React.FC<PropsWithChildren<LinkProps>> = ({
   children,
   text,
   ...rest

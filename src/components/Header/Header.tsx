@@ -1,10 +1,10 @@
 import React, { PropsWithChildren } from "react";
 import { Button } from "components/Button/Button";
-import { Link } from "components/Link/Link";
+import { Link, LinkProps } from "components/Link/Link";
 import { Logo, LogoProps } from "components/Logo/Logo";
 
 interface SubMenuColumnProps {
-  links: Link[];
+  links: LinkProps[];
 }
 
 const SubMenuColumn: React.FC<SubMenuColumnProps> = ({ links }) => {
