@@ -1,6 +1,6 @@
 {
-  "name": "@cmsgov/macpro-ux-lib",
-  "version": "1.0.3",
+  "name": "@enterprise-cmcs/macpro-ux-lib",
+  "version": "1.0.4",
   "description": "Common UX libraries packaged for easier distribution throughout CMS.",
   "main": "build/index.js",
   "module": "build/index.es.js",
@@ -15,9 +15,6 @@
     "build": "gulp compile && tsc && rollup -c",
     "prepublishOnly": "npm run build",
     "compileCss": "gulp compileSass"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
   },
   "engines": {
     "node": ">=10.0"

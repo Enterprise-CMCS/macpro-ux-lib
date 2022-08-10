@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.3...v1.0.4) (2022-08-10)
+
+
+### Bug Fixes
+
+* **npm:** Publish package to npm registry ([#58](https://github.com/cmsgov/macpro-ux-lib/issues/58)) ([78e2833](https://github.com/cmsgov/macpro-ux-lib/commit/78e2833722359deaa946240b2822ded140fbc086))
+
 ## [1.0.3](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.2...v1.0.3) (2022-07-11)
 
 
