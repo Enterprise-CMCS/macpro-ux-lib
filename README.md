@@ -7,8 +7,8 @@
   <a href="https://github.com/cmsgov/macpro-ux-lib/releases/latest">
     <img alt="latest release" src="https://img.shields.io/github/release/cmsgov/macpro-ux-lib.svg">
   </a>
-  <a href="https://www.npmjs.com/package/macpro-ux-lib">
-    <img alt="npm latest version" src="https://img.shields.io/npm/v/macpro-ux-lib/latest.svg">
+  <a href="https://www.npmjs.com/package/@enterprise-cmcs/macpro-ux-lib">
+    <img alt="npm latest version" src="https://img.shields.io/npm/v/@enterprise-cmcs/macpro-ux-lib/latest.svg">
   </a>
   <a href="https://codeclimate.com/github/CMSgov/macpro-ux-lib/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/7aa40b9f69c550a8cf72/maintainability" />
@@ -44,19 +44,19 @@ This is a React implementation of USWDS 3.0 in conjuction with some MACPRO themi
 To install the package run the following command:
 
 ```
-npm install @cmsgov/macpro-ux-lib
+npm install @enterprise-cmcs/macpro-ux-lib
 ```
 
 or
 
 ```
-yarn add @cmsgov/macpro-ux-lib
+yarn add @enterprise-cmcs/macpro-ux-lib
 ```
 
 After installing the package in the root level of your project include this import statement
 
 ```
-import "@cmsgov/macpro-ux-lib/build/assets/css/index.css";
+import "@enterprise-cmcs/macpro-ux-lib/build/assets/css/index.css";
 ```
 
 This will include the css required for the styles to be applied to any components that are used.
