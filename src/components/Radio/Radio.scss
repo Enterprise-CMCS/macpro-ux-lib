@@ -1,12 +1,8 @@
 @use "../../assets/theme/macbis-colors" as c;
 
 .usa-radio__input--tile+[class*=__label] {
-  // background-color: #fff;
   border: 1px solid c.$gray-lighter;
-  // color: #1b1b1b;
   border-radius: 0.2rem;
-  // margin-top: 0.5rem;
-  // padding: 0.75rem 1rem 0.75rem 2.5rem;
 }
 
 .usa-radio__input:checked+[class*=__label]::before {
