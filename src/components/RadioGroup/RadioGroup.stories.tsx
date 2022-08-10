@@ -19,6 +19,14 @@ export default {
   args: {
     groupName: "default-group",
   },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Two or more Radio components may be contained in a RadioGroup component in order to manage the selected state and show/hide any children provided within the `radioProps` object.",
+      },
+    },
+  },
 } as ComponentMeta<typeof RadioGroup>;
 
 const Template: ComponentStory<typeof RadioGroup> = ({ ...rest }) => (
