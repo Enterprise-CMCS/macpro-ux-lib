@@ -42,6 +42,7 @@ altFooterWithLinks.args = {
         console.log("launch");
       },
       text: "FAQ",
+      target: "_blank",
     },
     {
       href: "https://www.google.com/",
@@ -50,6 +51,7 @@ altFooterWithLinks.args = {
         console.log("launch");
       },
       text: "FAQ",
+      target: "_blank",
     },
     {
       href: "https://www.google.com/",
@@ -58,6 +60,7 @@ altFooterWithLinks.args = {
         console.log("launch");
       },
       text: "FAQ",
+      target: "_blank",
     },
     {
       href: "https://www.google.com/",
@@ -66,6 +69,7 @@ altFooterWithLinks.args = {
         console.log("launch");
       },
       text: "FAQ",
+      target: "_blank",
     },
     {
       href: "https://www.google.com/",
@@ -73,6 +77,7 @@ altFooterWithLinks.args = {
         console.log("launch");
       },
       text: "Home",
+      target: "_blank",
     },
     {
       href: "https://www.google.com/",
@@ -80,6 +85,7 @@ altFooterWithLinks.args = {
         console.log("launch");
       },
       text: "Home",
+      target: "_blank",
     },
   ],
 };

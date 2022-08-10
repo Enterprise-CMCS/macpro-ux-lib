@@ -12,6 +12,7 @@ interface Link {
   iconName?: IconChoice;
   onClick?: () => any;
   text: string;
+  target?: string;
 }
 
 interface Props extends IntrinsicElements {
@@ -53,6 +54,7 @@ export const Footer: React.FC<Props> = ({
                           className="text-white font-sans-md text-no-underline padding-x-1 grid-col"
                           href={link.href}
                           onClick={link.onClick}
+                          target={link.target}
                         >
                           {link.text}
                           {link.iconName && (
