@@ -26,8 +26,6 @@ export const Link: React.FC<PropsWithChildren<Link>> = ({
   ...rest
 }) => {
   return (
-    <a {...rest}>
-      {(children && <span>{children}</span>) || (text && <span>{text}</span>)}
-    </a>
+    <a {...rest}>{(children && <>{children}</>) || (text && <>{text}</>)}</a>
   );
 };
