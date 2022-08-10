@@ -1,3 +1,10 @@
+## [1.0.7](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.6...v1.0.7) (2022-08-10)
+
+
+### Bug Fixes
+
+* **README update:**  Publishing a fix to the readme that contained a broken link. ([f92761d](https://github.com/cmsgov/macpro-ux-lib/commit/f92761dfb7aa53aae96f5ceea5e4028053ce3f27))
+
 ## [1.0.6](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.5...v1.0.6) (2022-08-10)
 
 
