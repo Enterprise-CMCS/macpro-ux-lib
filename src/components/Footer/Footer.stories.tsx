@@ -18,6 +18,7 @@ export default {
     navigationLinks: {
       description:
         "Array of navigation elements to render in the alternative footer",
+        control: false,
     },
   },
   args: {
