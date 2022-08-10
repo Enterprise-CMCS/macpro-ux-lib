@@ -11,7 +11,7 @@ const navData = [
     current: true,
     columns: [
       [
-        { text: "Navigational Link", href: "" },
+        { text: "Navigational Link", href: "", target: "_blank" },
         { text: "Navigational Link", href: "" },
         { text: "Navigational Link", href: "" },
         { text: "Navigational Link", href: "" },

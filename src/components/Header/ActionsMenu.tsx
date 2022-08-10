@@ -1,16 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { Icon, IconChoice } from "components/Icon/Icon";
+import { Link } from "components/Link/Link";
 
-interface Link {
-  href?: string;
+interface ActionsMenuLink extends Link {
   iconName?: IconChoice;
-  onClick?: () => any;
-  text: string;
 }
 
 interface Props {
   name: string;
-  links: Link[];
+  links: ActionsMenuLink[];
 }
 
 /**
@@ -21,7 +19,7 @@ interface Props {
  */
 
 export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
-  const [isOpen, setIsOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="user-actions-container">
@@ -41,10 +39,10 @@ export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
         {links.map((link, idx) => {
           return (
             <li key={idx}>
-              <a href={link.href} onClick={link.onClick}>
+              <Link {...link}>
                 {link.iconName && <Icon name={link.iconName} color="#fff" />}
                 {link.text}
-              </a>
+              </Link>
             </li>
           );
         })}
