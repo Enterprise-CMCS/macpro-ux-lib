@@ -16,6 +16,9 @@
     "prepublishOnly": "npm run build",
     "compileCss": "gulp compileSass"
   },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
   "engines": {
     "node": ">=10.0"
   },

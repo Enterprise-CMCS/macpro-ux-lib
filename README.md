@@ -44,19 +44,19 @@ This is a React implementation of USWDS 3.0 in conjuction with some MACPRO themi
 To install the package run the following command:
 
 ```
-npm install @enterprise-cmcs/macpro-ux-lib
+npm install @cmsgov/macpro-ux-lib
 ```
 
 or
 
 ```
-yarn add @enterprise-cmcs/macpro-ux-lib
+yarn add @cmsgov/macpro-ux-lib
 ```
 
 After installing the package in the root level of your project include this import statement
 
 ```
-import "@enterprise-cmcs/macpro-ux-lib/build/assets/css/index.css";
+import "@cmsgov/macpro-ux-lib/build/assets/css/index.css";
 ```
 
 This will include the css required for the styles to be applied to any components that are used.
