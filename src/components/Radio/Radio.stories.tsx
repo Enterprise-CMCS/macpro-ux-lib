@@ -23,6 +23,7 @@ export default {
     tileDescription: {
       description:
         "Text that can be used to describe the label in more detail. Appears only when `isTile` is set to `true`.",
+      if: { arg: "isTile" },
     },
     value: {
       description:
