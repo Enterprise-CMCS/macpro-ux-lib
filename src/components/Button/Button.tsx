@@ -62,11 +62,11 @@ export const Button: React.FC<Props> = ({
   return (
     <button
       disabled={disabled}
-      {...rest}
       aria-label={ariaLabel || `${buttonText} button`}
       className={`display-flex usa-button usa-button--${buttonVariationType} ${
         largeButton ? "usa-button--big" : ""
       }`}
+      {...rest}
     >
       {shiftIconLeft && iconName && (
         <Icon name={iconName} color="curentColor" />
