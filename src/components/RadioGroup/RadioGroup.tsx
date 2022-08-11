@@ -19,14 +19,19 @@ export const RadioGroup: React.FC<Props> = ({ groupName, radioProps }) => {
 
     for (var props of radioProps) {
       radios.push(
-        <>
-          <Radio onChange={handleChange} name={groupName} {...props} />
+        <div key={`${groupName}-${props.id}`}>
+          <Radio
+            key={props.id}
+            onChange={handleChange}
+            name={groupName}
+            {...props}
+          />
           {props.id === selected && props.children && (
             <div className="border-left-05 border-primary margin-left-1 padding-left-205">
               {props.children}
             </div>
           )}
-        </>
+        </div>
       );
     }
 
