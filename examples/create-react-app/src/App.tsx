@@ -1,4 +1,4 @@
-import { Button } from "@cmsgov/macpro-ux-lib";
+import { Button } from "@enterprise-cmcs/macpro-ux-lib";
 
 export const App = () => {
   return (
