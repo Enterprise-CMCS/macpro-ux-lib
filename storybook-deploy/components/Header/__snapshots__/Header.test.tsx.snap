@@ -1,0 +1,834 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test the Header component component snapshots default 1`] = `
+<div>
+  <div
+    class="usa-overlay"
+  />
+  <header
+    class="usa-header usa-header--extended"
+  >
+    <div
+      class="usa-navbar-container"
+    >
+      <div
+        class="usa-navbar"
+      >
+        <div
+          class="usa-logo"
+          id="basic-logo"
+        >
+          <a
+            href=""
+            title="Project Title"
+          >
+            <div
+              aria-label="CMS.gov Project"
+              class="application-logo-container "
+              role="img"
+            >
+              <h2
+                class="usa-logo__text"
+              >
+                CMS.gov Project
+              </h2>
+            </div>
+          </a>
+        </div>
+        <button
+          aria-label="Menu button"
+          class="usa-menu-btn"
+        >
+          <span
+            class="padding-x-05"
+          >
+            Menu
+          </span>
+        </button>
+      </div>
+    </div>
+    <nav
+      aria-label="Primary navigation"
+      class="usa-nav"
+    >
+      <div
+        class="usa-nav__inner"
+      >
+        <button
+          aria-label=" button"
+          class="usa-nav__close"
+        >
+          <span
+            class="padding-x-05 padding-top-05"
+          />
+          <div>
+            <svg
+              aria-hidden="true"
+              aria-label="close icon"
+              class="usa-icon--size-3"
+              color="curentColor"
+              fill="currentColor"
+              role="img"
+            >
+              <use
+                href="sprite.svg#close"
+              />
+            </svg>
+          </div>
+        </button>
+        <ul
+          class="usa-nav__primary usa-accordion"
+        />
+        <div
+          class="usa-nav__secondary usa-header--extended"
+        />
+      </div>
+    </nav>
+  </header>
+</div>
+`;
+
+exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
+<div>
+  <div
+    class="usa-overlay"
+  />
+  <header
+    class="usa-header usa-header--extended"
+  >
+    <div
+      class="usa-navbar-container"
+    >
+      <div
+        class="usa-navbar"
+      >
+        <div
+          class="usa-logo"
+          id="basic-logo"
+        >
+          <a
+            href=""
+            title="Project Title"
+          >
+            <div
+              aria-label="CMS.gov Project"
+              class="application-logo-container "
+              role="img"
+            >
+              <h2
+                class="usa-logo__text"
+              >
+                CMS.gov Project
+              </h2>
+            </div>
+          </a>
+        </div>
+        <button
+          aria-label="Menu button"
+          class="usa-menu-btn"
+        >
+          <span
+            class="padding-x-05"
+          >
+            Menu
+          </span>
+        </button>
+      </div>
+    </div>
+    <nav
+      aria-label="Primary navigation"
+      class="usa-nav"
+    >
+      <div
+        class="usa-nav__inner"
+      >
+        <button
+          aria-label=" button"
+          class="usa-nav__close"
+        >
+          <span
+            class="padding-x-05 padding-top-05"
+          />
+          <div>
+            <svg
+              aria-hidden="true"
+              aria-label="close icon"
+              class="usa-icon--size-3"
+              color="curentColor"
+              fill="currentColor"
+              role="img"
+            >
+              <use
+                href="sprite.svg#close"
+              />
+            </svg>
+          </div>
+        </button>
+        <ul
+          class="usa-nav__primary usa-accordion"
+        >
+          <li
+            class="usa-nav__primary-item"
+          >
+            <button
+              aria-controls="extended-mega-nav-section-0"
+              aria-expanded="false"
+              aria-label="Current Section button"
+              class="usa-accordion__button usa-nav__link usa-current"
+            >
+              <span
+                class="padding-x-05"
+              >
+                Current Section
+              </span>
+            </button>
+            <div
+              class="usa-nav__submenu usa-megamenu"
+              hidden=""
+              id="extended-mega-nav-section-0"
+            >
+              <div
+                class="grid-row grid-gap-4"
+              >
+                <div
+                  class="usa-col"
+                >
+                  <ul
+                    class="usa-nav__submenu-list"
+                  >
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="usa-col"
+                >
+                  <ul
+                    class="usa-nav__submenu-list"
+                  >
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="usa-col"
+                >
+                  <ul
+                    class="usa-nav__submenu-list"
+                  >
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="usa-col"
+                >
+                  <ul
+                    class="usa-nav__submenu-list"
+                  >
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class="usa-nav__primary-item"
+          >
+            <button
+              aria-controls="extended-mega-nav-section-1"
+              aria-expanded="false"
+              aria-label="Section button"
+              class="usa-accordion__button usa-nav__link "
+            >
+              <span
+                class="padding-x-05"
+              >
+                Section
+              </span>
+            </button>
+            <div
+              class="usa-nav__submenu usa-megamenu"
+              hidden=""
+              id="extended-mega-nav-section-1"
+            >
+              <div
+                class="grid-row grid-gap-4"
+              >
+                <div
+                  class="usa-col"
+                >
+                  <ul
+                    class="usa-nav__submenu-list"
+                  >
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div
+          class="usa-nav__secondary usa-header--extended"
+        >
+          <div
+            class="user-actions-container"
+          >
+            <span
+              class="menu-label"
+            >
+              My Account
+              <svg
+                aria-hidden="true"
+                aria-label="arrow drop down icon"
+                class="usa-icon--size-3"
+                color="#fff"
+                fill="currentColor"
+                role="img"
+              >
+                <use
+                  href="sprite.svg#arrow_drop_down"
+                />
+              </svg>
+            </span>
+            <menu
+              class="user-actions-menu usa-nav__secondary-links"
+            >
+              <li>
+                <a>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="person icon"
+                    class="usa-icon--size-3"
+                    color="#fff"
+                    fill="currentColor"
+                    role="img"
+                  >
+                    <use
+                      href="sprite.svg#person"
+                    />
+                  </svg>
+                  Manage Profile
+                </a>
+              </li>
+              <li>
+                <a>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="people icon"
+                    class="usa-icon--size-3"
+                    color="#fff"
+                    fill="currentColor"
+                    role="img"
+                  >
+                    <use
+                      href="sprite.svg#people"
+                    />
+                  </svg>
+                  Request Role Change
+                </a>
+              </li>
+              <li>
+                <a>
+                  <svg
+                    aria-hidden="true"
+                    aria-label="logout icon"
+                    class="usa-icon--size-3"
+                    color="#fff"
+                    fill="currentColor"
+                    role="img"
+                  >
+                    <use
+                      href="sprite.svg#logout"
+                    />
+                  </svg>
+                  Log Out
+                </a>
+              </li>
+            </menu>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>
+`;
+
+exports[`Test the Header component component snapshots with navigation 1`] = `
+<div>
+  <div
+    class="usa-overlay"
+  />
+  <header
+    class="usa-header usa-header--extended"
+  >
+    <div
+      class="usa-navbar-container"
+    >
+      <div
+        class="usa-navbar"
+      >
+        <div
+          class="usa-logo"
+          id="basic-logo"
+        >
+          <a
+            href=""
+            title="Project Title"
+          >
+            <div
+              aria-label="CMS.gov Project"
+              class="application-logo-container "
+              role="img"
+            >
+              <h2
+                class="usa-logo__text"
+              >
+                CMS.gov Project
+              </h2>
+            </div>
+          </a>
+        </div>
+        <button
+          aria-label="Menu button"
+          class="usa-menu-btn"
+        >
+          <span
+            class="padding-x-05"
+          >
+            Menu
+          </span>
+        </button>
+      </div>
+    </div>
+    <nav
+      aria-label="Primary navigation"
+      class="usa-nav"
+    >
+      <div
+        class="usa-nav__inner"
+      >
+        <button
+          aria-label=" button"
+          class="usa-nav__close"
+        >
+          <span
+            class="padding-x-05 padding-top-05"
+          />
+          <div>
+            <svg
+              aria-hidden="true"
+              aria-label="close icon"
+              class="usa-icon--size-3"
+              color="curentColor"
+              fill="currentColor"
+              role="img"
+            >
+              <use
+                href="sprite.svg#close"
+              />
+            </svg>
+          </div>
+        </button>
+        <ul
+          class="usa-nav__primary usa-accordion"
+        >
+          <li
+            class="usa-nav__primary-item"
+          >
+            <button
+              aria-controls="extended-mega-nav-section-0"
+              aria-expanded="false"
+              aria-label="Current Section button"
+              class="usa-accordion__button usa-nav__link usa-current"
+            >
+              <span
+                class="padding-x-05"
+              >
+                Current Section
+              </span>
+            </button>
+            <div
+              class="usa-nav__submenu usa-megamenu"
+              hidden=""
+              id="extended-mega-nav-section-0"
+            >
+              <div
+                class="grid-row grid-gap-4"
+              >
+                <div
+                  class="usa-col"
+                >
+                  <ul
+                    class="usa-nav__submenu-list"
+                  >
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="usa-col"
+                >
+                  <ul
+                    class="usa-nav__submenu-list"
+                  >
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="usa-col"
+                >
+                  <ul
+                    class="usa-nav__submenu-list"
+                  >
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="usa-col"
+                >
+                  <ul
+                    class="usa-nav__submenu-list"
+                  >
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li
+            class="usa-nav__primary-item"
+          >
+            <button
+              aria-controls="extended-mega-nav-section-1"
+              aria-expanded="false"
+              aria-label="Section button"
+              class="usa-accordion__button usa-nav__link "
+            >
+              <span
+                class="padding-x-05"
+              >
+                Section
+              </span>
+            </button>
+            <div
+              class="usa-nav__submenu usa-megamenu"
+              hidden=""
+              id="extended-mega-nav-section-1"
+            >
+              <div
+                class="grid-row grid-gap-4"
+              >
+                <div
+                  class="usa-col"
+                >
+                  <ul
+                    class="usa-nav__submenu-list"
+                  >
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        href=""
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div
+          class="usa-nav__secondary usa-header--extended"
+        />
+      </div>
+    </nav>
+  </header>
+</div>
+`;
