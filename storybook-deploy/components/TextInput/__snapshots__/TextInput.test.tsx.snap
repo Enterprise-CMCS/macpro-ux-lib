@@ -1,0 +1,123 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextInput component compontent snapshots default 1`] = `
+<div>
+  <div
+    class="usa-form-group"
+  >
+    <label
+      class="usa-label"
+      for="input-type-text-test-input"
+    >
+      Testing Input
+    </label>
+    <div
+      class="usa-input-group"
+    >
+      <input
+        aria-describedby=""
+        class="usa-input"
+        id="input-type-text-test-input"
+        name="testing-input"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextInput component compontent snapshots prefix and suffix 1`] = `
+<div>
+  <div
+    class="usa-form-group"
+  >
+    <label
+      class="usa-label"
+      for="input-type-text-test-input"
+    >
+      Testing Input
+    </label>
+    <div
+      class="usa-input-group"
+    >
+      <span
+        aria-hidden="true"
+        class="usa-input-prefix"
+      >
+        $
+      </span>
+      <input
+        aria-describedby=""
+        class="usa-input"
+        id="input-type-text-test-input"
+        name="testing-input"
+        value=""
+      />
+      <span
+        aria-hidden="true"
+        class="usa-input-suffix"
+      >
+        lbs.
+      </span>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextInput component compontent snapshots required and error 1`] = `
+<div>
+  <div
+    class="usa-form-group"
+  >
+    <label
+      class="usa-label"
+      for="input-type-text-test-input"
+    >
+      Testing Input
+      <span
+        style="color: rgb(229, 28, 62);"
+      >
+        *
+      </span>
+    </label>
+    <div
+      class="usa-input-group"
+    >
+      <input
+        aria-describedby=""
+        class="usa-input"
+        id="input-type-text-test-input"
+        name="testing-input"
+        required=""
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`TextInput component compontent snapshots success 1`] = `
+<div>
+  <div
+    class="usa-form-group"
+  >
+    <label
+      class="usa-label"
+      for="input-type-text-test-input"
+    >
+      Testing Input
+    </label>
+    <div
+      class="usa-input-group usa-input--success"
+    >
+      <input
+        aria-describedby=""
+        class="usa-input"
+        id="input-type-text-test-input"
+        name="testing-input"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;
