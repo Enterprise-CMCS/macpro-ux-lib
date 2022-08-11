@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.7...v1.1.0) (2022-08-11)
+
+
+### Features
+
+* **Footer:** add footer component ([f790767](https://github.com/cmsgov/macpro-ux-lib/commit/f79076775038ae4f8e9873eaa1a4dd0753ee3d16))
+
 ## [1.0.7](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.6...v1.0.7) (2022-08-10)
 
 
