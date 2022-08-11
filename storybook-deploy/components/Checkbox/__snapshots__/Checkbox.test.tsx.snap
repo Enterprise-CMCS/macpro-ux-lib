@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox Snapshot tests renders default Checkbox as expected 1`] = `
+<div>
+  <div
+    class="usa-checkbox"
+  >
+    <input
+      class="usa-checkbox__input"
+      id="check-default"
+      name="test-checkbox"
+      type="checkbox"
+      value="default-checkbox"
+    />
+    <label
+      class="usa-checkbox__label"
+      for="check-default"
+    >
+      Default Checkbox
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshot tests renders default Checkbox with children as expected 1`] = `
+<div>
+  <div
+    class="usa-checkbox"
+  >
+    <input
+      checked=""
+      class="usa-checkbox__input"
+      id="checkbox-with-children"
+      name="checkbox"
+      type="checkbox"
+      value="with-children"
+    />
+    <label
+      class="usa-checkbox__label"
+      for="checkbox-with-children"
+    >
+      Checkbox with Children
+    </label>
+    <div
+      class="border-left-05 border-primary margin-left-1 padding-left-205"
+    >
+      <div
+        class="usa-checkbox"
+      >
+        <input
+          class="usa-checkbox__input"
+          id="checkbox-item-child-1"
+          name="checkbox-children"
+          type="checkbox"
+          value="child-1"
+        />
+        <label
+          class="usa-checkbox__label"
+          for="checkbox-item-child-1"
+        >
+          Child 1
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Checkbox Snapshot tests renders tile Checkbox as expected 1`] = `
+<div>
+  <div
+    class="usa-checkbox"
+  >
+    <input
+      class="usa-checkbox__input usa-checkbox__input--tile"
+      id="check-tile"
+      name="test-checkbox"
+      type="checkbox"
+      value="tile-checkbox"
+    />
+    <label
+      class="usa-checkbox__label"
+      for="check-tile"
+    >
+      Tile Checkbox
+      <span
+        class="usa-checkbox__label-description"
+      >
+        This is the tile description.
+      </span>
+    </label>
+  </div>
+</div>
+`;

@@ -1,0 +1,55 @@
+.usa-button:disabled {
+  cursor: default;
+}
+
+.cms-primary-background {
+  background-color: #0071bc;
+}
+
+.cms-primary-text {
+  color: #0071bc;
+  box-shadow: 0 0 0 2px #0071bc;
+}
+
+.usa-button--secondary-outline {
+  color: white;
+  box-shadow: 0 0 0 2px white;
+  background-color: transparent;
+
+  &:hover {
+    background-color: transparent;
+    color: #f1f1f1;
+  }
+
+  &:active {
+    background-color: #ffffff;
+  }
+
+  &:disabled,
+  &:hover:disabled {
+    background-color: transparent;
+    color: #aeb0b5;
+    box-shadow: 0 0 0 2px #aeb0b5;
+  }
+}
+
+.usa-button--inverse {
+  background-color: #d6d7d9;
+  box-shadow: none;
+  color: black;
+
+  &:hover {
+    background-color: #f1f1f1;
+    color: black;
+  }
+
+  &:active {
+    background-color: #ffffff;
+  }
+
+  &:disabled,
+  &:hover:disabled {
+    background-color: #5b616a;
+    color: black;
+  }
+}
