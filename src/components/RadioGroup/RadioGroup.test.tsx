@@ -51,6 +51,7 @@ describe("RadioGroup", () => {
         <form data-testid="test-form">
           <RadioGroup
             groupName="test-group"
+            key="test-group"
             radioProps={[
               {
                 id: "radio-1",
@@ -60,6 +61,7 @@ describe("RadioGroup", () => {
                 children: [
                   <RadioGroup
                     groupName="test-group-children"
+                    key="test-group-children"
                     radioProps={[
                       {
                         id: "child-1",
