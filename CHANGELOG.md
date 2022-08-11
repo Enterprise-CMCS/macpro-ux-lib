@@ -1,3 +1,24 @@
+## [1.2.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.2.0...v1.2.1) (2022-08-11)
+
+
+### Bug Fixes
+
+* **Header:** fix css conflicts ([c199ae8](https://github.com/cmsgov/macpro-ux-lib/commit/c199ae8de1f135543e8dd1b2e69aea127b84de13))
+
+# [1.2.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.1.0...v1.2.0) (2022-08-11)
+
+
+### Features
+
+* **Header:** add Header, ActionsMenu, and Link components ([8d28d90](https://github.com/cmsgov/macpro-ux-lib/commit/8d28d90324b26ec446df94d4066d359858fec247))
+
+# [1.1.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.7...v1.1.0) (2022-08-11)
+
+
+### Features
+
+* **Footer:** add footer component ([f790767](https://github.com/cmsgov/macpro-ux-lib/commit/f79076775038ae4f8e9873eaa1a4dd0753ee3d16))
+
 ## [1.0.7](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.6...v1.0.7) (2022-08-10)
 
 
