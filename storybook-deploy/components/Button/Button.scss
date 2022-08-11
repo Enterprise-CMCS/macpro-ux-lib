@@ -1,14 +1,16 @@
+@use "../../assets/theme/macbis-colors" as c;
+
 .usa-button:disabled {
   cursor: default;
 }
 
 .cms-primary-background {
-  background-color: #0071bc;
+  background-color: c.$primary;
 }
 
 .cms-primary-text {
-  color: #0071bc;
-  box-shadow: 0 0 0 2px #0071bc;
+  color: c.$primary;
+  box-shadow: 0 0 0 2px c.$primary;
 }
 
 .usa-button--secondary-outline {
@@ -18,7 +20,7 @@
 
   &:hover {
     background-color: transparent;
-    color: #f1f1f1;
+    color: c.$gray-lightest;
   }
 
   &:active {
@@ -28,18 +30,18 @@
   &:disabled,
   &:hover:disabled {
     background-color: transparent;
-    color: #aeb0b5;
-    box-shadow: 0 0 0 2px #aeb0b5;
+    color: c.$gray-light;
+    box-shadow: 0 0 0 2px c.$gray-light;
   }
 }
 
 .usa-button--inverse {
-  background-color: #d6d7d9;
+  background-color: c.$gray-lighter;
   box-shadow: none;
   color: black;
 
   &:hover {
-    background-color: #f1f1f1;
+    background-color: c.$gray-lightest;
     color: black;
   }
 
