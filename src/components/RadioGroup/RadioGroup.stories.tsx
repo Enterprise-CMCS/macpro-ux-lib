@@ -12,6 +12,7 @@ export default {
         "Name of the radio group. This name automatically propagates to each Radio component in a RadioGroup.",
     },
     radioProps: {
+      control: false,
       description:
         "An array of Radio component properties. See the Radio component for a complete list.",
     },
