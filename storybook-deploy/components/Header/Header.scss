@@ -1,0 +1,25 @@
+@use "../../assets/theme/macbis-colors" as c;
+
+@media only screen and (min-width: 64em) {
+  .usa-header--extended .usa-nav {
+    border: none;
+  }
+
+  .usa-navbar-container {
+    background-color: c.$primary;
+    min-height: 100px;
+  }
+
+  .usa-logo .application-logo-container {
+    color: #fff;
+  }
+}
+
+@media only screen and (max-width: 64em) {
+  .usa-navbar-container {
+    background-color: #fff;
+  }
+  .usa-logo .application-logo-container {
+    color: c.$primary;
+  }
+}
