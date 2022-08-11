@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Footer } from "./Footer";
 
 export default {
-  title: "USWDS/Base/Footer",
+  title: "COMPONENTS/Footer",
   component: Footer,
   argTypes: {
     emailAddress: {
@@ -18,7 +18,7 @@ export default {
     navigationLinks: {
       description:
         "Array of navigation elements to render in the alternative footer",
-        control: false,
+      control: false,
     },
   },
   args: {
