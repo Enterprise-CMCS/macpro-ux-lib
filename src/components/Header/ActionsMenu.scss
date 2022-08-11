@@ -19,6 +19,22 @@
 }
 
 @media only screen and (min-width: 64em) {
+  // USWDS Overrides
+  .usa-nav__submenu,
+  .usa-header--extended .usa-megamenu.usa-nav__submenu::after,
+  .usa-header--extended .usa-megamenu.usa-nav__submenu::before {
+    background-color: c.$primary-darkest;
+  }
+
+  .usa-nav__primary button {
+    color: c.$gray;
+  }
+
+  .usa-header--extended .usa-nav__primary-item > .usa-current::after {
+    background-color: c.$primary;
+  }
+
+  // New Component Styles
   .user-actions-container {
     color: #fff;
   }
@@ -59,6 +75,40 @@
 }
 
 @media only screen and (max-width: 64em) {
+  // USWDS Overrides
+  .usa-menu-btn {
+    background-color: c.$primary;
+  }
+  .usa-menu-btn:hover {
+    background-color: c.$primary-darker;
+  }
+
+  .usa-nav__primary .usa-current,
+  .usa-nav__primary .usa-current::after {
+    color: c.$primary-darker;
+  }
+
+  .usa-nav__primary button {
+    color: c.$gray;
+  }
+
+  .usa-nav__primary button:hover {
+    color: c.$primary-darker;
+    background-color: c.$gray-lightest;
+  }
+
+  .usa-nav__submenu-item {
+    border-top: 1px solid c.$gray-lighter;
+  }
+  .usa-nav__primary a:not(.usa-button):not(.usa-current) {
+    color: c.$gray;
+  }
+
+  .usa-nav__primary a:not(.usa-button):not(.usa-current):hover {
+    color: c.$primary-darker;
+  }
+
+  // New Component Styles
   .user-actions-container {
     padding: 0;
   }
@@ -68,7 +118,7 @@
   }
 
   .user-actions-menu li {
-    border-top: 1px solid #dfe1e2;
+    border-top: 1px solid c.$gray-lighter;
   }
 
   .user-actions-container a {
@@ -77,13 +127,13 @@
 
   .user-actions-menu,
   .user-actions-menu svg {
-    color: #565c65;
+    color: c.$gray;
   }
 
   .user-actions-menu a:hover,
   .user-actions-menu a:hover svg {
-    color: #005ea2;
-    background-color: #f0f0f0;
+    color: c.$primary-darker;
+    background-color: c.$gray-lightest;
     text-decoration: none;
   }
 }
