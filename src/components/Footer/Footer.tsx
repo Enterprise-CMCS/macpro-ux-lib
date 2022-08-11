@@ -88,11 +88,11 @@ export const Footer: React.FC<Props> = ({
                 height={80}
               />
             </div>
-            <div className="font-sans-xs">
+            <span className="font-sans-xs">
               A federal government website managed and paid for by the U.S.
               Centers for Medicare and Medicaid Services and part of the MACPro
               suite.
-            </div>
+            </span>
           </div>
         </div>
       </div>
