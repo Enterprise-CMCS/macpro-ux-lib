@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.2.0...v1.2.1) (2022-08-11)
+
+
+### Bug Fixes
+
+* **Header:** fix css conflicts ([c199ae8](https://github.com/cmsgov/macpro-ux-lib/commit/c199ae8de1f135543e8dd1b2e69aea127b84de13))
+
 # [1.2.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.1.0...v1.2.0) (2022-08-11)
 
 
