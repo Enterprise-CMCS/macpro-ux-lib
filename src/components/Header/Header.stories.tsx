@@ -52,9 +52,6 @@ export default {
   title: "USWDS/Base/Header",
   component: Header,
   args: {
-    logoProps: {
-      altText: "CMS.gov Project",
-    },
     navData: navData,
   },
   argTypes: {
