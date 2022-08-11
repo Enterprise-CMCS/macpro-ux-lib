@@ -2,7 +2,7 @@ name: Deploy Storybook
 on:
   push:
     branches:
-      - main
+      - "*"
 
 concurrency:
   group: ${{ github.ref }}-storybook
@@ -27,11 +27,4 @@ jobs:
             npm ci
           fi
       - name: Build StoryBook
-        run: npm run build-storybook
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.6.2
-        with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gha-pages # The branch the action should deploy to.
-          FOLDER: storybook-static # The folder that the build-storybook script generates files.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
+        run: npm run build-storybook -o storybook-deploy
