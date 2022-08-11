@@ -7,8 +7,8 @@
   <a href="https://github.com/cmsgov/macpro-ux-lib/releases/latest">
     <img alt="latest release" src="https://img.shields.io/github/release/cmsgov/macpro-ux-lib.svg">
   </a>
-  <a href="https://www.npmjs.com/package/macpro-ux-lib">
-    <img alt="npm latest version" src="https://img.shields.io/npm/v/macpro-ux-lib/latest.svg">
+  <a href="https://www.npmjs.com/package/@enterprise-cmcs/macpro-ux-lib">
+    <img alt="npm latest version" src="https://img.shields.io/npm/v/@enterprise-cmcs/macpro-ux-lib/latest.svg">
   </a>
   <a href="https://codeclimate.com/github/CMSgov/macpro-ux-lib/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/7aa40b9f69c550a8cf72/maintainability" />
