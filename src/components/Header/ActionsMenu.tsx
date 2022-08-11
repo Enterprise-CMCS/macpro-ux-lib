@@ -36,11 +36,12 @@ export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
         style={isOpen ? { display: "block" } : {}}
         {...rest}
       >
-        {links.map((link, idx) => {
+        {links.map((linkData, idx) => {
+          const { iconName, ...link } = linkData; // filter iconName out of linkData
           return (
             <li key={idx}>
               <Link {...link}>
-                {link.iconName && <Icon name={link.iconName} color="#fff" />}
+                {iconName && <Icon name={iconName} color="#fff" />}
                 {link.text}
               </Link>
             </li>

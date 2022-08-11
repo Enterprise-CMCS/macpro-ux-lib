@@ -3,6 +3,8 @@ import { fireEvent, screen, render } from "../../test-setup";
 import { ActionsMenu } from "./ActionsMenu";
 
 import { Header } from "./Header";
+import { Link } from "../Link/Link";
+import { Logo } from "../Logo/Logo";
 
 const testOnClick = jest.fn();
 
@@ -79,9 +81,11 @@ describe("Test the Header component", () => {
     render(
       <Header
         navData={navData}
-        logoProps={{
-          altText: "CMS.gov Project",
-        }}
+        headerLogo={
+          <Link href="" title="Project Title">
+            <Logo altText={"CMS.gov Project"} />
+          </Link>
+        }
       />
     );
 
@@ -104,9 +108,11 @@ describe("Test the Header component", () => {
       const { container } = render(
         <Header
           navData={navData}
-          logoProps={{
-            altText: "CMS.gov Project",
-          }}
+          headerLogo={
+            <Link href="" title="Project Title">
+              <Logo altText={"CMS.gov Project"} />
+            </Link>
+          }
         />
       );
       expect(container.getElementsByClassName("usa-current").length).toBe(1);
@@ -120,9 +126,11 @@ describe("Test the Header component", () => {
       const { container } = render(
         <Header
           navData={navData}
-          logoProps={{
-            altText: "CMS.gov Project",
-          }}
+          headerLogo={
+            <Link href="" title="Project Title">
+              <Logo altText={"CMS.gov Project"} />
+            </Link>
+          }
         />
       );
       expect(container.getElementsByClassName("usa-current").length).toBe(0);
@@ -133,9 +141,11 @@ describe("Test the Header component", () => {
     it("default", () => {
       const { container } = render(
         <Header
-          logoProps={{
-            altText: "CMS.gov Project",
-          }}
+          headerLogo={
+            <Link href="" title="Project Title">
+              <Logo altText={"CMS.gov Project"} />
+            </Link>
+          }
         />
       );
       expect(container).toMatchSnapshot();
@@ -145,9 +155,11 @@ describe("Test the Header component", () => {
       const { container } = render(
         <Header
           navData={navData}
-          logoProps={{
-            altText: "CMS.gov Project",
-          }}
+          headerLogo={
+            <Link href="" title="Project Title">
+              <Logo altText={"CMS.gov Project"} />
+            </Link>
+          }
         />
       );
       expect(container).toMatchSnapshot();
@@ -157,12 +169,15 @@ describe("Test the Header component", () => {
       const { container } = render(
         <Header
           navData={navData}
-          logoProps={{
-            altText: "CMS.gov Project",
-          }}
-        >
-          <ActionsMenu name="My Account" links={actionsMenuLinks} />
-        </Header>
+          headerLogo={
+            <Link href="" title="Project Title">
+              <Logo altText={"CMS.gov Project"} />
+            </Link>
+          }
+          secondaryComponent={
+            <ActionsMenu name="My Account" links={actionsMenuLinks} />
+          }
+        />
       );
       expect(container).toMatchSnapshot();
     });

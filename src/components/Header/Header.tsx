@@ -73,22 +73,28 @@ const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
 
 type IntrinsicElements = JSX.IntrinsicElements["nav"];
 
-interface HeaderProps extends IntrinsicElements {
-  children?: React.ReactNode;
+interface HeaderLogoProps {
+  linkProps: LinkProps;
   logoProps: LogoProps;
+}
+
+interface HeaderProps extends IntrinsicElements {
+  headerLogo?: React.ReactNode;
+  secondaryComponent?: React.ReactNode;
   navData?: NavSection[];
 }
 
 /**
  * Header Component
- * @param {React.ReactNode} [children]    Component children to be rendered in the header.
- * @param {LogoProps}       [logoProps]   Props to be passed to an instance of the Logo component which will render as part of the Header.
- * @param {NavSection[]}    [navData]     A list of objects containing the data for each section of the navigation.
+ *
+ * @param {React.ReactNode} [headerLogo]            React element that will be rendered in the upper left corner of the header.
+ * @param {React.ReactNode} [secondaryComponent]    React element that will be rendered in the upper right corner of the header on desktop, and will be tucked in the side menu on mobile.
+ * @param {NavSection[]}    [navData]               A list of objects containing the data for each section of the navigation.
  */
 
-export const Header: React.FC<PropsWithChildren<HeaderProps>> = ({
-  children,
-  logoProps,
+export const Header: React.FC<HeaderProps> = ({
+  headerLogo,
+  secondaryComponent,
   navData,
   ...rest
 }) => {
@@ -99,9 +105,7 @@ export const Header: React.FC<PropsWithChildren<HeaderProps>> = ({
         <div className="usa-navbar-container">
           <div className="usa-navbar">
             <div className="usa-logo" id="basic-logo">
-              <a href="" title="Project Title">
-                <Logo {...logoProps} />
-              </a>
+              {headerLogo}
             </div>
             <Button buttonText="Menu" className="usa-menu-btn" />
           </div>
@@ -121,7 +125,7 @@ export const Header: React.FC<PropsWithChildren<HeaderProps>> = ({
               })}
             </ul>
             <div className="usa-nav__secondary usa-header--extended">
-              {children}
+              {secondaryComponent}
             </div>
           </div>
         </nav>

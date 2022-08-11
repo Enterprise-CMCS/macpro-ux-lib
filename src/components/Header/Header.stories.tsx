@@ -3,7 +3,11 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { ActionsMenu } from "./ActionsMenu";
 import { Button } from "components/Button/Button";
+import { Link } from "components/Link/Link";
+import { Logo } from "components/Logo/Logo";
 import { Header } from "./Header";
+
+import pngLogo from "../../assets/img/logos/cms_logo.png";
 
 const navData = [
   {
@@ -54,15 +58,15 @@ export default {
     navData: navData,
   },
   argTypes: {
-    children: {
+    headerLogo: {
+      control: false,
+      description:
+        "React element or elements that will be rendered in the upper left corner of the header.\n\nThis will most likely be an instance of the Logo component or Logo wrapped in the Link component.",
+    },
+    secondaryComponent: {
       control: false,
       description:
         "React element or elements to be displayed in the upper right corner of the header on desktop, or in the side menu on mobile.\n\nExample: the user `ActionsMenu`",
-    },
-    logoProps: {
-      control: false,
-      description:
-        "Props to be passed to an instance of the Logo component which will render as part of the Header.\n\nSee Logo component for complete list of props.",
     },
     navData: {
       control: false,
@@ -72,14 +76,21 @@ export default {
   },
 } as ComponentMeta<typeof Header>;
 
-const Template: ComponentStory<typeof Header> = ({ children, ...rest }) => (
-  <Header {...rest}>{children}</Header>
+const Template: ComponentStory<typeof Header> = ({ ...rest }) => (
+  <Header {...rest} />
 );
 
-export const Default = Template.bind({});
+export const Standard = Template.bind({});
 export const HeaderWithButton = Template.bind({});
-Default.args = {
-  children: (
+export const Empty = Template.bind({});
+
+Standard.args = {
+  headerLogo: (
+    <Link href="" title="Project Title">
+      <Logo altText={"Project Logo"} source={pngLogo} />
+    </Link>
+  ),
+  secondaryComponent: (
     <ActionsMenu
       name="My Account"
       links={[
@@ -110,5 +121,10 @@ Default.args = {
 };
 
 HeaderWithButton.args = {
-  children: <Button buttonText="Click Me" buttonVariation="inverse" />,
+  headerLogo: <Logo altText={"Project Logo"} />,
+  secondaryComponent: (
+    <Button buttonText="Click Me" buttonVariation="inverse" />
+  ),
 };
+
+Empty.args = {};

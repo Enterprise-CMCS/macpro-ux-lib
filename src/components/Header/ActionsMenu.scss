@@ -1,3 +1,5 @@
+@use "../../assets/theme/macbis-colors" as c;
+
 .user-actions-menu li {
   cursor: pointer;
 }
@@ -32,7 +34,7 @@
 
   .user-actions-menu {
     display: none;
-    background-color: #0071bc;
+    background-color: c.$primary;
     flex-direction: flex-start;
     left: 25px;
     position: absolute;
@@ -40,7 +42,7 @@
     width: 250px;
   }
 
-  .user-actions-menu li {
+  .user-actions-menu a {
     padding: 10px 15px 10px;
   }
 
@@ -52,7 +54,7 @@
 
   .user-actions-menu a:hover,
   .user-actions-menu li:hover {
-    background-color: #1a4480;
+    background-color: c.$primary-darker;
   }
 }
 
