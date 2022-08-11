@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.1.0...v1.2.0) (2022-08-11)
+
+
+### Features
+
+* **Header:** add Header, ActionsMenu, and Link components ([8d28d90](https://github.com/cmsgov/macpro-ux-lib/commit/8d28d90324b26ec446df94d4066d359858fec247))
+
 # [1.1.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.7...v1.1.0) (2022-08-11)
 
 
