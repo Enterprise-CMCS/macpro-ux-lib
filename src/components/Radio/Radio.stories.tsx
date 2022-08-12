@@ -27,6 +27,7 @@ export default {
     value: {
       description:
         "Value of the input element. If you omit the value attribute, the submitted form data assigns the value `on` to the group. For example, if the user clicked on a \"Phone\" option in a Radio grop named `contact` with no `value` set, the resulting form data after submission would be `contact=on`, which isn't helpful. So don't forget to set your value attributes!",
+      if: { arg: "isTile" },
     },
   },
   args: {
