@@ -23,3 +23,12 @@ i.e.
 @forward "../../components/Header/ActionsMenu.scss";
 @forward "../../components/Header/Header.scss";
 @forward "../../components/Footer/Footer.scss";
+
+@use "../../assets/theme/macbis-colors" as c;
+
+.usa-link {
+  color: c.$primary;
+}
+.usa-link--light {
+  color: #fff;
+}
