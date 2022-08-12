@@ -50,7 +50,6 @@ Default.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   id: "checkbox-item-disabled",
-  label: "Checkbox Item",
   name: "checkbox",
   value: "checkbox-item",
   disabled: true,
