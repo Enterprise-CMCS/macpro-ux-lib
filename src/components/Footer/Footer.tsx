@@ -44,7 +44,7 @@ export const Footer: React.FC<Props> = ({
           <div className="grid-col text-white">
             {navigationLinks && (
               <div className="grid-col-4">
-                <h4 className="margin-0">Sitemap</h4>
+                <h4 className="margin-0">Sitemapssss</h4>
                 <hr />
                 <div className="grid-row">
                   {navigationLinks.map((link, idx) => {
