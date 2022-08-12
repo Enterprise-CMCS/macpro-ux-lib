@@ -1,0 +1,26 @@
+@use "../../assets/theme/macbis-colors" as c;
+
+.usa-checkbox__input--tile+[class*=__label] {
+  border: 1px solid c.$gray-lighter;
+  border-radius: 0.2rem;
+}
+
+.usa-checkbox__input:checked+[class*=__label]::before {
+  background-color: c.$primary;
+  box-shadow: 0 0 0 2px c.$primary;
+}
+
+.usa-checkbox__input--tile:checked+[class*=__label] {
+  background-color: c.$primary-alt-lightest;
+  border-color: c.$primary;
+}
+
+.usa-checkbox__input--tile:disabled+[class*=__label] {
+  background-color: c.$gray-lightest;
+  border-color: c.$gray-lighter;
+}
+
+.usa-checkbox__input:disabled+[class*=__label]::before, .usa-radio__input[aria-disabled=true]+[class*=__label]::before {
+  background-color: c.$gray-lighter;
+  box-shadow: 0 0 0 2px rgb(27 27 27 / 30%);
+}
