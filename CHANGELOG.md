@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.2.1...v1.2.2) (2022-08-12)
+
+
+### Bug Fixes
+
+* **AWS Amplify Deploy:** Deploy Production Site to AWS Amplify to spin up temporary environments ([b1c478f](https://github.com/cmsgov/macpro-ux-lib/commit/b1c478f9374b892443091c1c5a9aa6b785d9f8f9))
+
 ## [1.2.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.2.0...v1.2.1) (2022-08-11)
 
 
