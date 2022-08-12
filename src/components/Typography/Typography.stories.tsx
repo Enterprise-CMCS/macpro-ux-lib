@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Typography } from "./Typography";
 
 export default {
-  title: "USWDS/Base/Typography",
+  title: "TYPOGRAPHY/Typography",
   component: Typography,
   args: {
     as: "p",

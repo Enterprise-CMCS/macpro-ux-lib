@@ -4,7 +4,7 @@ import { Icon } from "./Icon";
 import { iconChoices } from "./IconChoices";
 
 export default {
-  title: "USWDS/Base/Icon",
+  title: "COMPONENTS/Icon",
   component: Icon,
   argTypes: {
     iconSize: {

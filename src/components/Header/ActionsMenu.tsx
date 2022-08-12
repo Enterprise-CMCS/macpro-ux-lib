@@ -41,7 +41,7 @@ export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
           return (
             <li key={idx}>
               <Link {...link}>
-                {iconName && <Icon name={iconName} color="#fff" />}
+                {iconName && <Icon name={iconName} />}
                 {link.text}
               </Link>
             </li>
