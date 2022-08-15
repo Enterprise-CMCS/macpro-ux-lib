@@ -1,3 +1,38 @@
+# [1.3.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.2.2...v1.3.0) (2022-08-12)
+
+
+### Features
+
+* **Link:** add Link component ([56e40d5](https://github.com/cmsgov/macpro-ux-lib/commit/56e40d595cf58635309e4a2589fe49e3ecc8c401))
+
+## [1.2.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.2.1...v1.2.2) (2022-08-12)
+
+
+### Bug Fixes
+
+* **AWS Amplify Deploy:** Deploy Production Site to AWS Amplify to spin up temporary environments ([b1c478f](https://github.com/cmsgov/macpro-ux-lib/commit/b1c478f9374b892443091c1c5a9aa6b785d9f8f9))
+
+## [1.2.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.2.0...v1.2.1) (2022-08-11)
+
+
+### Bug Fixes
+
+* **Header:** fix css conflicts ([c199ae8](https://github.com/cmsgov/macpro-ux-lib/commit/c199ae8de1f135543e8dd1b2e69aea127b84de13))
+
+# [1.2.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.1.0...v1.2.0) (2022-08-11)
+
+
+### Features
+
+* **Header:** add Header, ActionsMenu, and Link components ([8d28d90](https://github.com/cmsgov/macpro-ux-lib/commit/8d28d90324b26ec446df94d4066d359858fec247))
+
+# [1.1.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.7...v1.1.0) (2022-08-11)
+
+
+### Features
+
+* **Footer:** add footer component ([f790767](https://github.com/cmsgov/macpro-ux-lib/commit/f79076775038ae4f8e9873eaa1a4dd0753ee3d16))
+
 ## [1.0.7](https://github.com/cmsgov/macpro-ux-lib/compare/v1.0.6...v1.0.7) (2022-08-10)
 
 

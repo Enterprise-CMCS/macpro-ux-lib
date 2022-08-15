@@ -6,7 +6,7 @@ import pngLogo from "../../assets/img/logos/cms_logo.png";
 import svgLogo from "../../assets/img/logos/cms_logo.svg";
 
 export default {
-  title: "USWDS/Base/Logo",
+  title: "COMPONENTS/Logo",
   component: Logo,
   args: {
     altText: "CMS.gov Logo",

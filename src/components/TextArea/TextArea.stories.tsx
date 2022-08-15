@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { TextArea } from "./TextArea";
 
 export default {
-  title: "USWDS/Base/TextArea",
+  title: "COMPONENTS/TextArea",
   component: TextArea,
   args: {
     label: "Input Label",

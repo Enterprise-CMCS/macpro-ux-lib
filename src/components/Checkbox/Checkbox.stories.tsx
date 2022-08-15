@@ -4,7 +4,7 @@ import { Checkbox } from "./Checkbox";
 import { TextArea } from "../TextArea/TextArea";
 
 export default {
-  title: "USWDS/Base/Checkbox",
+  title: "COMPONENTS/Checkbox",
   component: Checkbox,
   argTypes: {
     id: {
@@ -50,7 +50,6 @@ Default.args = {
 export const Disabled = Template.bind({});
 Disabled.args = {
   id: "checkbox-item-disabled",
-  label: "Checkbox Item",
   name: "checkbox",
   value: "checkbox-item",
   disabled: true,
