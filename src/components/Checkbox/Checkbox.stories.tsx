@@ -4,7 +4,7 @@ import { Checkbox } from "./Checkbox";
 import { TextArea } from "../TextArea/TextArea";
 
 export default {
-  title: "USWDS/Base/Checkbox",
+  title: "COMPONENTS/Checkbox",
   component: Checkbox,
   argTypes: {
     id: {

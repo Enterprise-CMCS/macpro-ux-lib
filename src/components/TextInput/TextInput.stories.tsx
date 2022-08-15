@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { TextInput } from "./TextInput";
 
 export default {
-  title: "USWDS/Base/TextInput",
+  title: "COMPONENTS/TextInput",
   component: TextInput,
   args: {
     label: "Input Label",

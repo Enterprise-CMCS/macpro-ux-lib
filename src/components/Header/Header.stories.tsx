@@ -49,7 +49,7 @@ const navData = [
 ];
 
 export default {
-  title: "USWDS/Base/Header",
+  title: "COMPONENTS/Header",
   component: Header,
   args: {
     navData: navData,

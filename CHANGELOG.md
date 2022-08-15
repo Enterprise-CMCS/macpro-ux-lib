@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.2.2...v1.3.0) (2022-08-12)
+
+
+### Features
+
+* **Link:** add Link component ([56e40d5](https://github.com/cmsgov/macpro-ux-lib/commit/56e40d595cf58635309e4a2589fe49e3ecc8c401))
+
 ## [1.2.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.2.1...v1.2.2) (2022-08-12)
 
 

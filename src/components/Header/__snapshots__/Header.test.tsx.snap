@@ -19,7 +19,9 @@ exports[`Test the Header component component snapshots default 1`] = `
           id="basic-logo"
         >
           <a
+            class="usa-link"
             href=""
+            style="cursor: pointer;"
             title="Project Title"
           >
             <div
@@ -107,7 +109,9 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
           id="basic-logo"
         >
           <a
+            class="usa-link"
             href=""
+            style="cursor: pointer;"
             title="Project Title"
           >
             <div
@@ -200,7 +204,10 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -209,7 +216,10 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -218,7 +228,10 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -227,24 +240,10 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
-                      >
-                        Navigational Link
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div
-                  class="usa-col"
-                >
-                  <ul
-                    class="usa-nav__submenu-list"
-                  >
-                    <li
-                      class="usa-nav__submenu-item"
-                    >
-                      <a
-                        href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -261,25 +260,10 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
-                      >
-                        Navigational Link
-                      </a>
-                    </li>
-                    <li
-                      class="usa-nav__submenu-item"
-                    >
-                      <a
-                        href=""
-                      >
-                        Navigational Link
-                      </a>
-                    </li>
-                    <li
-                      class="usa-nav__submenu-item"
-                    >
-                      <a
-                        href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -296,7 +280,10 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -305,7 +292,54 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        class="usa-link"
+                        href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="usa-col"
+                >
+                  <ul
+                    class="usa-nav__submenu-list"
+                  >
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        class="usa-link"
+                        href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        class="usa-link"
+                        href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -348,7 +382,10 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -357,7 +394,10 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -366,7 +406,10 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -375,7 +418,10 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -384,7 +430,10 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -393,7 +442,10 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -402,7 +454,10 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -440,12 +495,16 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
               class="user-actions-menu usa-nav__secondary-links"
             >
               <li>
-                <a>
+                <a
+                  class="usa-link"
+                  style="cursor: pointer;"
+                  title="Manage Profile Link"
+                >
                   <svg
                     aria-hidden="true"
                     aria-label="person icon"
                     class="usa-icon--size-3"
-                    color="#fff"
+                    color="black"
                     fill="currentColor"
                     role="img"
                   >
@@ -457,12 +516,16 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                 </a>
               </li>
               <li>
-                <a>
+                <a
+                  class="usa-link"
+                  style="cursor: pointer;"
+                  title="Request Role Change Link"
+                >
                   <svg
                     aria-hidden="true"
                     aria-label="people icon"
                     class="usa-icon--size-3"
-                    color="#fff"
+                    color="black"
                     fill="currentColor"
                     role="img"
                   >
@@ -474,12 +537,16 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                 </a>
               </li>
               <li>
-                <a>
+                <a
+                  class="usa-link"
+                  style="cursor: pointer;"
+                  title="Log Out Link"
+                >
                   <svg
                     aria-hidden="true"
                     aria-label="logout icon"
                     class="usa-icon--size-3"
-                    color="#fff"
+                    color="black"
                     fill="currentColor"
                     role="img"
                   >
@@ -518,7 +585,9 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
           id="basic-logo"
         >
           <a
+            class="usa-link"
             href=""
+            style="cursor: pointer;"
             title="Project Title"
           >
             <div
@@ -611,7 +680,10 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -620,7 +692,10 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -629,7 +704,10 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -638,24 +716,10 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
-                      >
-                        Navigational Link
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <div
-                  class="usa-col"
-                >
-                  <ul
-                    class="usa-nav__submenu-list"
-                  >
-                    <li
-                      class="usa-nav__submenu-item"
-                    >
-                      <a
-                        href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -672,25 +736,10 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
-                      >
-                        Navigational Link
-                      </a>
-                    </li>
-                    <li
-                      class="usa-nav__submenu-item"
-                    >
-                      <a
-                        href=""
-                      >
-                        Navigational Link
-                      </a>
-                    </li>
-                    <li
-                      class="usa-nav__submenu-item"
-                    >
-                      <a
-                        href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -707,7 +756,10 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -716,7 +768,54 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        class="usa-link"
+                        href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="usa-col"
+                >
+                  <ul
+                    class="usa-nav__submenu-list"
+                  >
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        class="usa-link"
+                        href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
+                      >
+                        Navigational Link
+                      </a>
+                    </li>
+                    <li
+                      class="usa-nav__submenu-item"
+                    >
+                      <a
+                        class="usa-link"
+                        href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -759,7 +858,10 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -768,7 +870,10 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -777,7 +882,10 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -786,7 +894,10 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -795,7 +906,10 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -804,7 +918,10 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>
@@ -813,7 +930,10 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
                       class="usa-nav__submenu-item"
                     >
                       <a
+                        class="usa-link"
                         href=""
+                        style="cursor: pointer;"
+                        title="Navigational Link Link"
                       >
                         Navigational Link
                       </a>

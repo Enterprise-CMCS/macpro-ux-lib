@@ -6,7 +6,7 @@ import { Button } from "../Button/Button";
 import { TextInput } from "../TextInput/TextInput";
 
 export default {
-  title: "USWDS/Base/Card",
+  title: "COMPONENTS/Card",
   component: Card,
   args: {
     headerText: "A Basic Card",
