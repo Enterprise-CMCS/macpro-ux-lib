@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Datefield } from "./Datefield";
 
 export default {
-  title: "USWDS/Base/Datefield",
+  title: "COMPONENTS/Datefield",
   component: Datefield,
   argTypes: {},
   args: {},
