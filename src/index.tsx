@@ -1,5 +1,7 @@
 import "./assets/css/styles.css";
 import "./assets/js/uswds.min.js";
+import "./assets/js/uswds.js";
+import "./assets/js/uswds-init.js";
 import "./assets/theme/styles.scss";
 
 import { Button } from "./components/Button/Button";

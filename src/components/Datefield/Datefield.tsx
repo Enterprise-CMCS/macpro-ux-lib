@@ -5,6 +5,12 @@ type IntrinsicElements = JSX.IntrinsicElements["input"];
 export interface Props extends IntrinsicElements {
   id: string;
   label: string;
+  hint?: string;
+  required?: boolean;
+  disabled?: boolean;
+  defaultDate?: string;
+  MinDate?: string;
+  MaxDate?: string;
 }
 
 /**
@@ -25,8 +31,15 @@ export const Datefield: React.FC<Props> = ({ id, label, ...rest }) => {
       <div className="usa-hint" id="appointment-date-hint">
         mm/dd/yyyy
       </div>
-      <div className="usa-date-picker">
+      <div
+        className="usa-date-picker"
+        data-max-date="2022-08-08"
+        data-min-date="2022-08-08"
+        data-range-date="2022-08-08"
+        data-default-value="2022-08-08"
+      >
         <input
+          required
           className="usa-input"
           id="appointment-date"
           name="appointment-date"
