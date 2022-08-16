@@ -7,9 +7,25 @@ export default {
   title: "COMPONENTS/Dropdown",
   component: Dropdown,
   args: {
-    data: data,
+    data,
   },
-  argTypes: {},
+  argTypes: {
+    data: {
+      control: false,
+      description:
+        "An array of objects used to populate the dropdown. Each object should appear as follows:\n\n `{ value : string | number, displayString: string }`",
+    },
+    id: {
+      description: "The id of the dropdown",
+    },
+    label: {
+      description: "String used to label the drodown in the UI.",
+    },
+    name: {
+      description:
+        "Name of the dropdown used to identify it in the context of a form.",
+    },
+  },
 } as ComponentMeta<typeof Dropdown>;
 
 const Template: ComponentStory<typeof Dropdown> = ({ ...rest }) => (
@@ -19,7 +35,7 @@ const Template: ComponentStory<typeof Dropdown> = ({ ...rest }) => (
 export const Default = Template.bind({});
 
 Default.args = {
-  label: "Select a fruit",
   id: "fruit",
+  label: "Select a fruit",
   name: "fruit",
 };
