@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.3.1...v1.3.2) (2022-08-16)
+
+
+### Bug Fixes
+
+* **Footer:** Regenerated snapshot tests for footer ([41b14ba](https://github.com/cmsgov/macpro-ux-lib/commit/41b14ba5b1af1f56bf5e070ca468a031b07bb4b2))
+
 ## [1.3.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.3.0...v1.3.1) (2022-08-16)
 
 
