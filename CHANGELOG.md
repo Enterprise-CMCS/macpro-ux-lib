@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.3.0...v1.3.1) (2022-08-16)
+
+
+### Bug Fixes
+
+* **Header:** Gave email text a link to email and bolded the contrast between the rest of the sentence ([670c4d5](https://github.com/cmsgov/macpro-ux-lib/commit/670c4d5e7a273b57cc4d2d6591d4ff7fd7e19f57))
+
 # [1.3.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.2.2...v1.3.0) (2022-08-12)
 
 
