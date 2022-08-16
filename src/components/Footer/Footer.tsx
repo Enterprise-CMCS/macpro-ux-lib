@@ -102,7 +102,7 @@ export const Footer: React.FC<Props> = ({
             Email{" "}
             {
               <a href={`mailto:${emailAddress}`}>
-                <b className="text-underline">{emailAddress}</b>
+                <b>{emailAddress}</b>
               </a>
             }{" "}
             for help or feedback.
@@ -146,7 +146,7 @@ export const Footer: React.FC<Props> = ({
             Email{" "}
             {
               <a href={`mailto:${emailAddress}`}>
-                <b className="text-underline">{emailAddress}</b>
+                <b>{emailAddress}</b>
               </a>
             }{" "}
             for help or feedback.
