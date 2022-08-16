@@ -1,5 +1,6 @@
 import "../src/assets/css/styles.css";
-import "../src/assets/js/uswds";
+import "../src/assets/js/uswds.min";
+import "../src/assets/js/uswds-init.min";
 import "../src/assets/theme/styles.scss"
 
 export const parameters = {

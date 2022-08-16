@@ -98,7 +98,15 @@ export const Footer: React.FC<Props> = ({
       </div>
       <div className="usa-footer__secondary-section bg-primary-darker text-white font-sans-2xs padding-x-4">
         <div className="grid-row">
-          <p className="tablet:grid-col-9 mobile-text-center">{`Email ${emailAddress} for help or feedback.`}</p>
+          <p className="tablet:grid-col-9 mobile-text-center">
+            Email{" "}
+            {
+              <a href={`mailto:${emailAddress}`}>
+                <b>{emailAddress}</b>
+              </a>
+            }{" "}
+            for help or feedback.
+          </p>
 
           <p className="tablet:grid-col-3 mobile-text-center">{address}</p>
         </div>
@@ -134,7 +142,15 @@ export const Footer: React.FC<Props> = ({
       </div>
       <div className="usa-footer__secondary-section bg-primary text-white font-sans-2xs padding-x-4">
         <div className="grid-row">
-          <p className="tablet:grid-col-9 mobile-text-center">{`Email ${emailAddress} for help or feedback.`}</p>
+          <p className="tablet:grid-col-9 mobile-text-center">
+            Email{" "}
+            {
+              <a href={`mailto:${emailAddress}`}>
+                <b>{emailAddress}</b>
+              </a>
+            }{" "}
+            for help or feedback.
+          </p>
           <p className="tablet:grid-col-3 mobile-text-center">{address}</p>
         </div>
       </div>
