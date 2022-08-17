@@ -26,9 +26,3 @@ uswds.paths.dist.theme = "./src/assets/theme";
 exports.init = uswds.init;
 exports.compile = uswds.compile;
 exports.compileSass = uswds.compileSass;
-
-sass({
-    includePaths: [
-      "./node_modules/@uswds/uswds/packages",
-    ],
-  })
