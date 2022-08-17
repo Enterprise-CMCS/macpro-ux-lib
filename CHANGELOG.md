@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.3.2...v1.4.0) (2022-08-17)
+
+
+### Features
+
+* **Dropdown:** add dropdown component ([7dbb1d0](https://github.com/cmsgov/macpro-ux-lib/commit/7dbb1d010594d3bcfd0e82e3c36f0fadc3b050f2))
+
 ## [1.3.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.3.1...v1.3.2) (2022-08-16)
 
 
