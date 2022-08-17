@@ -5,7 +5,7 @@ import { Logo } from "./Logo";
 import pngLogo from "../../assets/img/logos/cms_logo.png";
 import svgLogo from "../../assets/img/logos/cms_logo.svg";
 
-describe("Tests for the button component.", () => {
+describe("Tests for the Logo component", () => {
   it("Should render an svg", () => {
     const { container } = render(
       <Logo altText="CMS.gov Logo" ariaLabel="CMS.gov Logo" source={svgLogo} />
