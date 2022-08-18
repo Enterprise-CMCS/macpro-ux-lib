@@ -1,3 +1,17 @@
+## [1.4.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.4.1...v1.4.2) (2022-08-18)
+
+
+### Bug Fixes
+
+* **Dropdown:** Update Dropdown to use USWDS to generate stylized dropdown ([9bc390a](https://github.com/cmsgov/macpro-ux-lib/commit/9bc390ae476dae4eb1de115621df8076cb0eece7))
+
+## [1.4.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.4.0...v1.4.1) (2022-08-18)
+
+
+### Bug Fixes
+
+* **decorator:** add USWDS decorator for improved Storybook experience ([579f938](https://github.com/cmsgov/macpro-ux-lib/commit/579f938f7084b9fdf41b144451c882f4b205a59a))
+
 # [1.4.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.3.2...v1.4.0) (2022-08-17)
 
 
