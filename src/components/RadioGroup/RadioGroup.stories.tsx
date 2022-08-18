@@ -4,7 +4,7 @@ import { RadioGroup } from "./RadioGroup";
 import { TextArea } from "../TextArea/TextArea";
 
 export default {
-  title: "USWDS/Base/RadioGroup",
+  title: "Components/RadioGroup",
   component: RadioGroup,
   argTypes: {
     groupName: {
