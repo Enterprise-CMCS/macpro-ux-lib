@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.4.1...v1.4.2) (2022-08-18)
+
+
+### Bug Fixes
+
+* **Dropdown:** Update Dropdown to use USWDS to generate stylized dropdown ([9bc390a](https://github.com/cmsgov/macpro-ux-lib/commit/9bc390ae476dae4eb1de115621df8076cb0eece7))
+
 ## [1.4.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.4.0...v1.4.1) (2022-08-18)
 
 
