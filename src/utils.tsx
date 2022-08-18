@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 export const generateId = (digits: number = 6): number => {
   return Math.trunc(Math.random() * Math.pow(10, digits));
@@ -15,19 +15,15 @@ export const generateId = (digits: number = 6): number => {
  */
 export const USWDSDecorator = [
   (Story: any) => {
-    const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
       const script = document.createElement("script");
-      script.onload = () => {
-        setIsLoaded(true);
-      };
       script.src = "/assets/js/uswds.js";
-      document.body.appendChild(script);
+      document.body.append(script);
       return () => {
         // clean up effects of script here
       };
     }, []);
 
-    return isLoaded ? <Story /> : <div>Loading...</div>;
+    return <Story />;
   },
 ];
