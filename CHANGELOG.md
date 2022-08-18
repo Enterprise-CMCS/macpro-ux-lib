@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.4.0...v1.4.1) (2022-08-18)
+
+
+### Bug Fixes
+
+* **decorator:** add USWDS decorator for improved Storybook experience ([579f938](https://github.com/cmsgov/macpro-ux-lib/commit/579f938f7084b9fdf41b144451c882f4b205a59a))
+
 # [1.4.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.3.2...v1.4.0) (2022-08-17)
 
 
