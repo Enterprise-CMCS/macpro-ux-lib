@@ -2,6 +2,26 @@ import React from "react";
 
 interface Props {}
 
+/**
+ * **Accordion Component**
+ *
+ * A single Accordion item. Any instance of an Accordion requires an AccordionGroup wrapper.
+ *
+ * ```JavaScript
+ * <Accordion label="First Amendment">
+ *     <p>
+ *        Congress shall make no law respecting an establishment of religion, or
+ *        prohibiting the free exercise thereof; or abridging the freedom of
+ *        speech, or of the press; or the right of the people peaceably to
+ *        assemble, and to petition the Government for a redress of grievances.
+ *      </p>
+ * </Accordion>
+ * ```
+ *
+ * @param {string}           className    Additional classes that will be applied to the Accordion content-wrapper div.
+ * @param {React.ReactNode}  children     React components that will be rendered within the Accordion content section.
+ * @param {string}           id           Unique identifier required for each Accordion item used for form control.
+ */
 export const Accordion: React.FC<Props> = () => {
   return (
     <>
