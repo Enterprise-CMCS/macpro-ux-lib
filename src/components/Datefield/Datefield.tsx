@@ -56,7 +56,7 @@ export const Datefield: React.FC<Props> = ({
         className="usa-date-picker"
         data-max-date={maxDate}
         data-min-date={minDate}
-        data-default-value="2022-08-08"
+        data-default-value={defaultDate}
       >
         <input
           value={value}
@@ -65,7 +65,7 @@ export const Datefield: React.FC<Props> = ({
           id={id}
           name={fieldName}
           aria-labelledby={`${id}-label`}
-          aria-describedby="appointment-date-hint"
+          aria-describedby={hint ? `${id}-hint` : `${id}-label`}
           disabled={disabled}
           {...rest}
         />

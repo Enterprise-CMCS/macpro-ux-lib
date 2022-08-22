@@ -59,3 +59,12 @@ const Template: ComponentStory<typeof Datefield> = ({ ...rest }) => (
 
 export const PrimaryDatefield = Template.bind({});
 PrimaryDatefield.args = {};
+
+export const DefaultDatefield = Template.bind({});
+DefaultDatefield.args = { defaultDate: "2022-08-08" };
+
+export const MinimumDateRange = Template.bind({});
+MinimumDateRange.args = { minDate: "2022-08-08" };
+
+export const MaximumDateRange = Template.bind({});
+MaximumDateRange.args = { maxDate: "2022-08-08" };
