@@ -78,6 +78,7 @@ exports[`Card component component snapshots media and child component 1`] = `
         <button
           aria-label="Visit button"
           class="display-flex usa-button usa-button-- cms-primary-background "
+          formtarget="_self"
         >
           <span
             class="padding-x-05"
@@ -135,6 +136,7 @@ exports[`Card component component snapshots media and child component in flag 1`
         <button
           aria-label="Visit button"
           class="display-flex usa-button usa-button-- cms-primary-background "
+          formtarget="_self"
         >
           <span
             class="padding-x-05"
@@ -192,6 +194,7 @@ exports[`Card component component snapshots media and child component in flag la
         <button
           aria-label="Visit button"
           class="display-flex usa-button usa-button-- cms-primary-background "
+          formtarget="_self"
         >
           <span
             class="padding-x-05"
@@ -249,6 +252,7 @@ exports[`Card component component snapshots media with inset and header first 1`
         <button
           aria-label="Visit button"
           class="display-flex usa-button usa-button-- cms-primary-background "
+          formtarget="_self"
         >
           <span
             class="padding-x-05"

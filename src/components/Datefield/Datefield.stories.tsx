@@ -28,7 +28,6 @@ export default {
         "Controls whether or not the date picker is disabled to the user.",
     },
     defaultDate: {
-      control: { type: "date" },
       description:
         "The date picker input will set this value if it is a valid date. The date should be in the format YYYY-MM-DD.",
     },

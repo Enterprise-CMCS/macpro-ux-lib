@@ -17,7 +17,6 @@ describe("Tests for the Datefield component.", () => {
 
     fireEvent.click(DatefieldComp);
     expect(DatefieldComp).toBeInTheDocument();
-    expect(DatefieldComp).toHaveTextContent("mm/dd/yyyy");
   });
 });
 
