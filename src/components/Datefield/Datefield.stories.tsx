@@ -1,6 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Datefield } from "./Datefield";
+import { USWDSDecorator } from "../../utils";
 
 export default {
   title: "COMPONENTS/Datefield",
@@ -51,6 +52,7 @@ export default {
       },
     },
   },
+  decorators: [...USWDSDecorator],
 } as ComponentMeta<typeof Datefield>;
 
 const Template: ComponentStory<typeof Datefield> = ({ ...rest }) => (
