@@ -42,19 +42,11 @@ export const Dropdown: React.FC<Props> = ({
       - Option Group
       - Simple Dropdown - Render without custom styles
       */}
-
       <label className="usa-label" htmlFor={id}>
         {label}
       </label>
-      <div className="usa-combo-box" data-enhanced="true">
-        <select
-          aria-hidden="true"
-          className="usa-select usa-sr-only usa-combo-box__select"
-          id=""
-          name={name}
-          tabIndex={-1}
-          {...rest}
-        >
+      <div className="usa-combo-box">
+        <select className="usa-select" id={id} name={name} {...rest}>
           {data.map((option, idx) => (
             <option
               key={`usa-combo-box--option--${id}-${idx}`}
@@ -64,70 +56,6 @@ export const Dropdown: React.FC<Props> = ({
             </option>
           ))}
         </select>
-        <input
-          aria-activedescendant=""
-          aria-autocomplete="list"
-          aria-controls={`${id}--list`}
-          aria-describedby={`${id}--assistiveHint`}
-          aria-expanded="false"
-          aria-owns={`${id}--list`}
-          autoCapitalize="none"
-          autoComplete="off"
-          className="usa-combo-box__input"
-          id={id}
-          role="combobox"
-          type="text"
-        />
-        <span className="usa-combo-box__clear-input__wrapper" tabIndex={-1}>
-          <button
-            aria-label="Clear the select contents"
-            className="usa-combo-box__clear-input"
-            type="button"
-          >
-            &nbsp;
-          </button>
-        </span>
-        <span className="usa-combo-box__input-button-separator">&nbsp;</span>
-        <span className="usa-combo-box__toggle-list__wrapper" tabIndex={-1}>
-          <button
-            aria-label="Toggle the dropdown list"
-            className="usa-combo-box__toggle-list"
-            tabIndex={-1}
-            type="button"
-          >
-            &nbsp;
-          </button>
-        </span>
-        <ul
-          aria-labelledby={`${id}-label`}
-          className="usa-combo-box__list"
-          hidden
-          id={`${id}--list`}
-          role="listbox"
-          tabIndex={-1}
-        >
-          {data.map((option, idx) => (
-            <li
-              aria-setsize={data.length}
-              aria-posinset={idx + 1}
-              aria-selected="false"
-              className="usa-combo-box__list-option"
-              data-value={option.value}
-              id={`${id}--list--option-${idx}`}
-              key={`usa-combo-box--item--${id}-${idx}`}
-              role="option"
-              tabIndex={0}
-            >
-              {option.displayString}
-            </li>
-          ))}
-        </ul>
-        <div className="usa-combo-box__status usa-sr-only" role="status"></div>
-        <span className="usa-sr-only" id={`${id}--assistiveHint`}>
-          When autocomplete results are available use up and down arrows to
-          review and enter to select. Touch device users, explore by touch or
-          with swipe gestures.
-        </span>
       </div>
     </>
   );
