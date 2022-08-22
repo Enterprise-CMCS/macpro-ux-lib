@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compontent snapshots primary datefield 1`] = `
+<div>
+  <div
+    class="usa-form-group"
+  >
+    <label
+      class="usa-label"
+      for="test-3"
+      id="test-3-label"
+    >
+      test-3
+    </label>
+    <div
+      class="usa-hint"
+      id="test-3-hint"
+    >
+      mm/dd/yyyy
+    </div>
+    <div
+      class="usa-date-picker"
+    >
+      <input
+        aria-describedby="test-3-hint"
+        aria-labelledby="test-3-label"
+        class="usa-input"
+        id="test-3"
+        name="test-3"
+        value=""
+      />
+    </div>
+  </div>
+</div>
+`;

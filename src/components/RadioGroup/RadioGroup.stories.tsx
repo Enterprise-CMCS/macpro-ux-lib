@@ -34,14 +34,6 @@ const Template: ComponentStory<typeof RadioGroup> = ({ ...rest }) => (
   <RadioGroup {...rest} />
 );
 
-const childTextArea = [
-  <TextArea
-    fieldName="child-textarea"
-    id="child-textarea"
-    label="Child TextArea"
-  />,
-];
-
 const children = [
   <RadioGroup
     groupName="children"

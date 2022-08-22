@@ -28,6 +28,7 @@ export default {
         "Controls whether or not the date picker is disabled to the user.",
     },
     defaultDate: {
+      control: { type: "date" },
       description:
         "The date picker input will set this value if it is a valid date. The date should be in the format YYYY-MM-DD.",
     },
@@ -64,9 +65,33 @@ PrimaryDatefield.args = {};
 
 export const DefaultDatefield = Template.bind({});
 DefaultDatefield.args = { defaultDate: "2022-08-08" };
+DefaultDatefield.parameters = {
+  docs: {
+    description: {
+      story:
+        "Default place holder values can be giving to inputs that could make selecting dates easier for our users",
+    },
+  },
+};
 
 export const MinimumDateRange = Template.bind({});
 MinimumDateRange.args = { minDate: "2022-08-08" };
+MinimumDateRange.parameters = {
+  docs: {
+    description: {
+      story:
+        "A min date can be provided to prevent users from selecting a date before a certain date",
+    },
+  },
+};
 
 export const MaximumDateRange = Template.bind({});
 MaximumDateRange.args = { maxDate: "2022-08-08" };
+MaximumDateRange.parameters = {
+  docs: {
+    description: {
+      story:
+        "A max date can be provided to prevent users from selecting a date after a certain date",
+    },
+  },
+};

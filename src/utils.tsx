@@ -16,13 +16,24 @@ export const generateId = (digits: number = 6): number => {
 export const USWDSDecorator = [
   (Story: any) => {
     useEffect(() => {
-      const script = document.createElement("script");
-      script.src = "/assets/js/uswds.js";
-      document.body.append(script);
+      const scriptList = document.querySelectorAll("script[id='uswdsJS']");
+      const convertedNodeList = Array.from(scriptList);
+
+      if (!convertedNodeList.length) {
+        const script = document.createElement("script");
+        script.src = "/assets/js/uswds.js";
+        script.id = "uswdsJS";
+        document.body.append(script);
+      }
+
       return () => {
-        // clean up effects of script here
+        const scriptList = document.querySelectorAll("script[id='uswdsJS']");
+        const convertedNodeList = Array.from(scriptList);
+        if (convertedNodeList.length) {
+          convertedNodeList[0]?.parentNode?.removeChild(convertedNodeList[0]);
+        }
       };
-    }, []);
+    });
 
     return <Story />;
   },
