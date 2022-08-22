@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for the search component. compontent snapshots primary big disabled 1`] = `
+<div>
+  <section
+    aria-label="Search component"
+  >
+    <form
+      class="usa-search"
+      role="search"
+    >
+      <label
+        class="usa-sr-only"
+        for="search-field"
+      >
+        Search
+      </label>
+      <input
+        class="usa-input"
+        data-testid="search"
+        id="search-field"
+        name="search"
+        type="search"
+        value=""
+      />
+      <button
+        class="usa-button padding-y-0 padding-x-2"
+        type="button"
+      >
+        <span
+          class="usa-search__submit-text"
+        >
+          Search 
+        </span>
+        <img
+          alt="Search"
+          class="usa-search__submit-icon"
+          src="/assets/img/usa-icons-bg/search--white.svg"
+        />
+      </button>
+    </form>
+  </section>
+</div>
+`;
+
+exports[`Tests for the search component. compontent snapshots secondary big search 1`] = `
+<div>
+  <section
+    aria-label="Big search component"
+  >
+    <form
+      class="usa-search usa-search--big"
+      role="search"
+    >
+      <label
+        class="usa-sr-only"
+        for="search-field-en-big"
+      >
+        Search
+      </label>
+      <input
+        class="usa-input"
+        data-testid="search"
+        id="search-field-en-big"
+        name="search"
+        type="search"
+        value=""
+      />
+      <button
+        class="usa-button padding-y-0 padding-x-2"
+        type="button"
+      >
+        <span
+          class="usa-search__submit-text"
+        >
+          Search 
+        </span>
+        <img
+          alt="Search"
+          class="usa-search__submit-icon"
+          src="/assets/img/usa-icons-bg/search--white.svg"
+        />
+      </button>
+    </form>
+  </section>
+</div>
+`;
