@@ -69,7 +69,7 @@ describe("Tests for the search component.", () => {
   });
 
   describe("compontent snapshots", () => {
-    it("primary big disabled", () => {
+    it("default search", () => {
       const { container } = render(
         <Search
           onSearch={mockChangeFn}
@@ -81,13 +81,28 @@ describe("Tests for the search component.", () => {
       expect(container).toMatchSnapshot();
     });
 
-    it("secondary big search", () => {
+    it("big search", () => {
       const { container } = render(
         <Search
           onSearch={mockChangeFn}
           initialValue="initial"
           data-testid="search"
           variation="big"
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+
+    it("small disabled search", () => {
+      const { container } = render(
+        <Search
+          onSearch={mockChangeFn}
+          onInput={mockChangeFn}
+          placeholder="placeholder"
+          labelText="Click Me"
+          disabled
+          data-testid="search"
+          variation="small"
         />
       );
       expect(container).toMatchSnapshot();
