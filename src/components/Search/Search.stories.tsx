@@ -63,4 +63,5 @@ BigSearch.args = {
 export const SmallSearch = Template.bind({});
 SmallSearch.args = {
   variation: "small",
+  initialValue: "Starting value",
 };
