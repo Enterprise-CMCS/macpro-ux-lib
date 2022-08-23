@@ -12,20 +12,37 @@ export default {
     disabled: {
       description: "Determines whether or not a button is enabled.",
     },
-    value: {
-      description: "The searched value within the input.",
+    initialValue: {
+      description: "If provided, used as value of search input.",
     },
     placeholder: {
       description: "The text placeholder for this component.",
     },
+    labelText: {
+      description: "Label text for search button.",
+    },
     onSearch: {
-      description: "Handles its behavior when the button is clicked.",
+      description:
+        "Handles its behavior when the search button is clicked or the user presses enter in the input. Returns value of the input.",
       control: false,
+    },
+    onInput: {
+      description: "Handles its behavior when the user is typing.",
+      control: false,
+    },
+  },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "Search allows users to search for specific content if they know what search terms to use or can’t find desired content in the main navigation",
+      },
     },
   },
   args: {
     placeholder: "Placeholder here",
-    onSearch: (e) => console.log("test", e.target.value),
+    onSearch: (e) => console.log("on search2", e),
+    onInput: (e) => console.log("on input"),
   },
 } as ComponentMeta<typeof Search>;
 

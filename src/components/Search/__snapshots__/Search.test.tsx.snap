@@ -13,7 +13,7 @@ exports[`Tests for the search component. compontent snapshots primary big disabl
         class="usa-sr-only"
         for="search-field"
       >
-        Search
+        Search Click Here
       </label>
       <input
         class="usa-input"
@@ -24,7 +24,7 @@ exports[`Tests for the search component. compontent snapshots primary big disabl
         value=""
       />
       <button
-        class="usa-button padding-y-0 padding-x-2"
+        class="usa-button  padding-y-0 padding-x-2"
         type="button"
       >
         <span
@@ -56,7 +56,7 @@ exports[`Tests for the search component. compontent snapshots secondary big sear
         class="usa-sr-only"
         for="search-field-en-big"
       >
-        Search
+        search
       </label>
       <input
         class="usa-input"
@@ -64,7 +64,7 @@ exports[`Tests for the search component. compontent snapshots secondary big sear
         id="search-field-en-big"
         name="search"
         type="search"
-        value=""
+        value="initial"
       />
       <button
         class="usa-button padding-y-0 padding-x-2"

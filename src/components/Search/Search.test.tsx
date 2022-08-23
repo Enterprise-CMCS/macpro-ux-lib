@@ -49,7 +49,7 @@ describe("Tests for the search component.", () => {
         placeholder="Test Search"
         data-testid="search"
         onSearch={mockChangeFn}
-        value="new value"
+        initialValue="new value"
       />
     );
     const searchComp = screen.getByTestId("search");
@@ -63,6 +63,7 @@ describe("Tests for the search component.", () => {
           onSearch={mockChangeFn}
           data-testid="search"
           variation="default"
+          labelText="Search Click Here"
         />
       );
       expect(container).toMatchSnapshot();
@@ -70,7 +71,12 @@ describe("Tests for the search component.", () => {
 
     it("secondary big search", () => {
       const { container } = render(
-        <Search onSearch={mockChangeFn} data-testid="search" variation="big" />
+        <Search
+          onSearch={mockChangeFn}
+          initialValue="initial"
+          data-testid="search"
+          variation="big"
+        />
       );
       expect(container).toMatchSnapshot();
     });
