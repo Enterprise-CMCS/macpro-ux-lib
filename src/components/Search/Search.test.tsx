@@ -3,7 +3,8 @@ import { Search } from "./Search";
 import { fireEvent, screen, render } from "../../test-setup";
 
 describe("Tests for the search component.", () => {
-  const mockChangeFn = jest.fn();
+  const mockSearchFn = jest.fn();
+  const mockInputFn = jest.fn();
 
   it("Should render and fire a callback", () => {
     render(
@@ -11,7 +12,7 @@ describe("Tests for the search component.", () => {
         data-testid="search"
         variation="default"
         placeholder="search"
-        onSearch={mockChangeFn}
+        onSearch={mockSearchFn}
       />
     );
     const searchComp = screen.getByTestId("search");
@@ -23,7 +24,8 @@ describe("Tests for the search component.", () => {
     });
     expect(searchComp).toBeInTheDocument();
     expect(searchComp).toHaveAttribute("placeholder", "search");
-    expect(mockChangeFn).toHaveBeenCalled();
+    expect(mockSearchFn).toHaveBeenCalled();
+    expect(searchComp).toHaveAttribute("id", "search-field");
   });
 
   it("Should render a search bar with an icon", () => {
@@ -32,8 +34,8 @@ describe("Tests for the search component.", () => {
         variation="small"
         placeholder="Test Search"
         data-testid="search"
-        onSearch={mockChangeFn}
-        onInput={mockChangeFn}
+        onSearch={mockSearchFn}
+        onInput={mockInputFn}
       />
     );
     const searchComp = screen.getByTestId("search");
@@ -41,7 +43,7 @@ describe("Tests for the search component.", () => {
     fireEvent.change(searchComp, { target: { value: "Good Day" } });
 
     expect(searchComp).toBeInTheDocument();
-    expect(mockChangeFn).toHaveBeenCalled();
+    expect(mockSearchFn).toHaveBeenCalled();
     expect(searchComp).toHaveAttribute("placeholder", "Test Search");
     expect(searchComp).toHaveAttribute("id", "search-field-en-small");
   });
@@ -52,7 +54,7 @@ describe("Tests for the search component.", () => {
         variation="big"
         placeholder="Test Search"
         data-testid="search"
-        onSearch={mockChangeFn}
+        onSearch={mockSearchFn}
         initialValue="new value"
         labelText="Search Label"
       />
@@ -65,14 +67,15 @@ describe("Tests for the search component.", () => {
 
     fireEvent.click(buttonComp);
     expect(buttonComp).toBeInTheDocument();
-    expect(mockChangeFn).toHaveBeenCalled();
+    expect(mockSearchFn).toHaveBeenCalled();
+    expect(searchComp).toHaveAttribute("id", "search-field-en-big");
   });
 
   describe("compontent snapshots", () => {
     it("default search", () => {
       const { container } = render(
         <Search
-          onSearch={mockChangeFn}
+          onSearch={mockSearchFn}
           data-testid="search"
           variation="default"
           labelText="Search Click Here"
@@ -84,7 +87,7 @@ describe("Tests for the search component.", () => {
     it("big search", () => {
       const { container } = render(
         <Search
-          onSearch={mockChangeFn}
+          onSearch={mockSearchFn}
           initialValue="initial"
           data-testid="search"
           variation="big"
@@ -96,8 +99,8 @@ describe("Tests for the search component.", () => {
     it("small disabled search", () => {
       const { container } = render(
         <Search
-          onSearch={mockChangeFn}
-          onInput={mockChangeFn}
+          onSearch={mockSearchFn}
+          onInput={mockInputFn}
           placeholder="placeholder"
           labelText="Click Me"
           disabled
