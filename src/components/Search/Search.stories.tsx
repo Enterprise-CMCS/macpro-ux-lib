@@ -19,7 +19,7 @@ export default {
       description: "The text placeholder for this component.",
     },
     labelText: {
-      description: "Label text for search button.",
+      description: "Label text for screen reader.",
     },
     onSearch: {
       description:

@@ -2,7 +2,7 @@ import React, { EventHandler, FormEventHandler, useState } from "react";
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
 interface Props extends IntrinsicElements {
-  variation?: "default" | "big" | "small";
+  variation?: SearchVariation;
   onSearch?: EventHandler<any>;
   onInput?: FormEventHandler<HTMLInputElement>;
   disabled?: boolean;
@@ -10,6 +10,7 @@ interface Props extends IntrinsicElements {
   placeholder?: string;
   labelText?: string;
 }
+type SearchVariation = "default" | "big" | "small";
 
 /**
  * Search Component
@@ -19,7 +20,7 @@ interface Props extends IntrinsicElements {
  * @param {boolean}           [disabled]            Determines whether or not a button is enabled.
  * @param {string}            [initialValue]        If provided, used as value of search input.
  * @param {string}            [placeholder]         The text placeholder for this component.
- * @param {string}            [labelText]           Label text for search button.
+ * @param {string}            [labelText]           Label text for screen reader.
  */
 
 export const Search: React.FC<Props> = ({
@@ -34,122 +35,46 @@ export const Search: React.FC<Props> = ({
   const [inputValue, setInputValue] = useState<string>(initialValue);
 
   return (
-    <>
-      {variation === "default" && (
-        <section aria-label="Search component">
-          <form className="usa-search" role="search">
-            <label className="usa-sr-only" htmlFor="search-field">
-              {labelText}
-            </label>
-            <input
-              className="usa-input"
-              id="search-field"
-              type="search"
-              name="search"
-              value={inputValue}
-              disabled={disabled}
-              onInput={onInput}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                  onSearch && onSearch(inputValue);
-                }
-              }}
-              {...rest}
-            />
-            <button
-              className="usa-button  padding-y-0 padding-x-2"
-              type="button"
-              onClick={() => onSearch && onSearch(inputValue)}
-            >
-              <span className="usa-search__submit-text">Search </span>
-              <img
-                src="/assets/img/usa-icons-bg/search--white.svg"
-                className="usa-search__submit-icon"
-                alt="Search"
-              />
-            </button>
-          </form>
-        </section>
-      )}
-
-      {variation === "big" && (
-        <section aria-label="Big search component">
-          <form className="usa-search usa-search--big" role="search">
-            <label className="usa-sr-only" htmlFor="search-field-en-big">
-              {labelText}
-            </label>
-            <input
-              className="usa-input"
-              id="search-field-en-big"
-              type="search"
-              name="search"
-              value={inputValue}
-              disabled={disabled}
-              onInput={onInput}
-              onChange={(e) => setInputValue(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                  onSearch && onSearch(inputValue);
-                }
-              }}
-              {...rest}
-            />
-            <button
-              className="usa-button padding-y-0 padding-x-2"
-              type="button"
-              onClick={() => onSearch && onSearch(inputValue)}
-            >
-              <span className="usa-search__submit-text">Search </span>
-              <img
-                src="/assets/img/usa-icons-bg/search--white.svg"
-                className="usa-search__submit-icon"
-                alt="Search"
-              />
-            </button>
-          </form>
-        </section>
-      )}
-
-      {variation === "small" && (
-        <section aria-label="Small search component">
-          <form className="usa-search usa-search--small" role="search">
-            <label className="usa-sr-only" htmlFor="search-field-en-small">
-              {labelText}
-            </label>
-            <input
-              className="usa-input"
-              id="search-field-en-small"
-              type="search"
-              name="search"
-              value={inputValue}
-              disabled={disabled}
-              onChange={(e) => setInputValue(e.target.value)}
-              onInput={onInput}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") {
-                  e.preventDefault();
-                  onSearch && onSearch(inputValue);
-                }
-              }}
-              {...rest}
-            />
-            <button
-              className="usa-button padding-y-0 padding-x-2"
-              type="button"
-              onClick={() => onSearch && onSearch(inputValue)}
-            >
-              <img
-                src="/assets/img/usa-icons-bg/search--white.svg"
-                className="usa-search__submit-icon"
-                alt="Search"
-              />
-            </button>
-          </form>
-        </section>
-      )}
-    </>
+    <section aria-label="Search component">
+      <form
+        className={`usa-search role usa-search--${variation}`}
+        role="search"
+      >
+        <label className="usa-sr-only" htmlFor="search-field">
+          {labelText}
+        </label>
+        <input
+          className="usa-input"
+          id="search-field"
+          type="search"
+          name="search"
+          value={inputValue}
+          disabled={disabled}
+          onInput={onInput}
+          onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              onSearch && onSearch(inputValue);
+            }
+          }}
+          {...rest}
+        />
+        <button
+          className="usa-button padding-y-0 padding-x-2"
+          type="button"
+          onClick={() => onSearch && onSearch(inputValue)}
+        >
+          {variation !== "small" && (
+            <span className="usa-search__submit-text">Search </span>
+          )}
+          <img
+            src="/assets/img/usa-icons-bg/search--white.svg"
+            className="usa-search__submit-icon"
+            alt="Search"
+          />
+        </button>
+      </form>
+    </section>
   );
 };

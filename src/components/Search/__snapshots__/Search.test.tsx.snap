@@ -3,22 +3,22 @@
 exports[`Tests for the search component. compontent snapshots big search 1`] = `
 <div>
   <section
-    aria-label="Big search component"
+    aria-label="Search component"
   >
     <form
-      class="usa-search usa-search--big"
+      class="usa-search role usa-search--big"
       role="search"
     >
       <label
         class="usa-sr-only"
-        for="search-field-en-big"
+        for="search-field"
       >
         search
       </label>
       <input
         class="usa-input"
         data-testid="search"
-        id="search-field-en-big"
+        id="search-field"
         name="search"
         type="search"
         value="initial"
@@ -49,7 +49,7 @@ exports[`Tests for the search component. compontent snapshots default search 1`]
     aria-label="Search component"
   >
     <form
-      class="usa-search"
+      class="usa-search role usa-search--default"
       role="search"
     >
       <label
@@ -67,7 +67,7 @@ exports[`Tests for the search component. compontent snapshots default search 1`]
         value=""
       />
       <button
-        class="usa-button  padding-y-0 padding-x-2"
+        class="usa-button padding-y-0 padding-x-2"
         type="button"
       >
         <span
@@ -89,15 +89,15 @@ exports[`Tests for the search component. compontent snapshots default search 1`]
 exports[`Tests for the search component. compontent snapshots small disabled search 1`] = `
 <div>
   <section
-    aria-label="Small search component"
+    aria-label="Search component"
   >
     <form
-      class="usa-search usa-search--small"
+      class="usa-search role usa-search--small"
       role="search"
     >
       <label
         class="usa-sr-only"
-        for="search-field-en-small"
+        for="search-field"
       >
         Click Me
       </label>
@@ -105,7 +105,7 @@ exports[`Tests for the search component. compontent snapshots small disabled sea
         class="usa-input"
         data-testid="search"
         disabled=""
-        id="search-field-en-small"
+        id="search-field"
         name="search"
         placeholder="placeholder"
         type="search"

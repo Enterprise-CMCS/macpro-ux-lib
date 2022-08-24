@@ -45,7 +45,6 @@ describe("Tests for the search component.", () => {
     expect(searchComp).toBeInTheDocument();
     expect(mockSearchFn).toHaveBeenCalled();
     expect(searchComp).toHaveAttribute("placeholder", "Test Search");
-    expect(searchComp).toHaveAttribute("id", "search-field-en-small");
   });
 
   it("Should render a search bar with a value and the button simulates a search event", () => {
@@ -68,7 +67,6 @@ describe("Tests for the search component.", () => {
     fireEvent.click(buttonComp);
     expect(buttonComp).toBeInTheDocument();
     expect(mockSearchFn).toHaveBeenCalled();
-    expect(searchComp).toHaveAttribute("id", "search-field-en-big");
   });
 
   describe("compontent snapshots", () => {
