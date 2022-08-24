@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import React, { Children, PropsWithChildren, useState } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
 
@@ -32,9 +32,21 @@ export const AccordionGroup: React.FC<PropsWithChildren<Props>> = ({
   className,
   children,
   id,
-  multiSelect,
+  multiSelect = false,
   ...rest
 }) => {
+  const arrayChildren = Children.toArray(children);
+
+  const getInitialContentState = () => {
+    return arrayChildren.map((child) => {
+      if (React.isValidElement(child)) return child.props.hidden ?? true;
+    });
+  };
+  // State of all accordion content hidden
+  const [contentHidden, setContentHidden] = useState<boolean[]>(
+    getInitialContentState()
+  );
+
   return (
     <div
       className={`usa-accordion${bordered ? " usa-accordion--bordered" : ""}${
@@ -44,7 +56,20 @@ export const AccordionGroup: React.FC<PropsWithChildren<Props>> = ({
       data-allow-multiple={multiSelect}
       {...rest}
     >
-      {children}
+      {Children.map(arrayChildren, (child, idx) => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, {
+            hidden: contentHidden[idx],
+            onClick: () => {
+              const stateArray = multiSelect
+                ? [...contentHidden]
+                : arrayChildren.map(() => true);
+              stateArray[idx] = !contentHidden[idx];
+              setContentHidden(stateArray);
+            },
+          });
+        }
+      })}
     </div>
   );
 };

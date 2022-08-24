@@ -37,7 +37,12 @@ export default {
 const Template: ComponentStory<typeof AccordionGroup> = ({ ...rest }) => (
   <AccordionGroup {...rest}>
     {data.map((item) => (
-      <Accordion label={item.label} id={item.id} key={item.id}>
+      <Accordion
+        label={item.label}
+        id={item.id}
+        key={item.id}
+        hidden={item?.hidden}
+      >
         {item.children}
       </Accordion>
     ))}
@@ -67,6 +72,7 @@ const data = [
         assemble, and to petition the Government for a redress of grievances.
       </p>,
     ],
+    hidden: false,
   },
   {
     id: "accoridon-2",

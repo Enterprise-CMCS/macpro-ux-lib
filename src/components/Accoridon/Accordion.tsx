@@ -14,7 +14,7 @@ interface Props extends IntrinsicElements {
  * A single Accordion item. Any instance of an Accordion requires an AccordionGroup wrapper.
  *
  * ```JavaScript
- * <Accordion label="First Amendment">
+ * <Accordion label="First Amendment" id="accordion-1">
  *     <p>
  *        Congress shall make no law respecting an establishment of religion, or
  *        prohibiting the free exercise thereof; or abridging the freedom of
@@ -34,6 +34,8 @@ export const Accordion: React.FC<PropsWithChildren<Props>> = ({
   children,
   label,
   id,
+  hidden = true,
+  onClick,
   ...rest
 }) => {
   return (
@@ -41,17 +43,18 @@ export const Accordion: React.FC<PropsWithChildren<Props>> = ({
       <h4
         className={`usa-accordion__heading${className ? ` ${className}` : ""}`}
         {...rest}
+        onClick={onClick}
       >
         <button
           type="button"
           className="usa-accordion__button"
-          aria-expanded="true"
+          aria-expanded={!hidden}
           aria-controls={id}
         >
           {label}
         </button>
       </h4>
-      <div id={id} className="usa-accordion__content usa-prose">
+      <div id={id} className="usa-accordion__content usa-prose" hidden={hidden}>
         {children}
       </div>
     </>
