@@ -59,9 +59,9 @@ describe("Tests for the search component.", () => {
       />
     );
     const buttonComp = screen.getByRole("button");
-    expect(buttonComp).toBeInTheDocument();
     fireEvent.click(buttonComp);
 
+    expect(buttonComp).toBeInTheDocument();
     expect(buttonComp).toBeInTheDocument();
     expect(mockButtonSearchFn).toHaveBeenCalled();
     expect(mockButtonSearchFn).toHaveBeenCalledWith("new value");
