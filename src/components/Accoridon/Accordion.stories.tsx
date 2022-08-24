@@ -1,13 +1,11 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { USWDSDecorator } from "../../utils";
 import { Accordion } from "./Accordion";
 import { AccordionGroup } from "./AccordionGroup";
 
 export default {
   title: "COMPONENTS/Accordion/Accordion",
   component: Accordion,
-  decorators: [...USWDSDecorator],
   argTypes: {
     className: {
       description:
