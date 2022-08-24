@@ -26,7 +26,7 @@ type SearchVariation = "default" | "big" | "small";
 export const Search: React.FC<Props> = ({
   variation = "default",
   disabled = false,
-  onSearch = () => {},
+  onSearch,
   initialValue = "",
   labelText = "search",
   onInput,

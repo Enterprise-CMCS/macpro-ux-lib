@@ -10,7 +10,6 @@ describe("Tests for the search component.", () => {
     render(
       <Search
         data-testid="search"
-        variation="default"
         placeholder="search"
         onSearch={mockSearchFn}
       />
@@ -60,11 +59,11 @@ describe("Tests for the search component.", () => {
     );
     const searchComp = screen.getByTestId("search");
     const buttonComp = screen.getByLabelText("Search Label");
-
     expect(searchComp).toHaveAttribute("value", "new value");
     expect(buttonComp).toBeInTheDocument();
 
     fireEvent.click(buttonComp);
+    expect(buttonComp).toBeInTheDocument();
     expect(buttonComp).toBeInTheDocument();
     expect(mockSearchFn).toHaveBeenCalled();
   });
