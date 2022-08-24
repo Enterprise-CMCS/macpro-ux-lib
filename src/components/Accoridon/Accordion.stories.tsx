@@ -6,6 +6,7 @@ import { AccordionGroup } from "./AccordionGroup";
 export default {
   title: "COMPONENTS/Accordion/Accordion",
   component: Accordion,
+  args: { hidden: true },
   argTypes: {
     className: {
       description:
@@ -19,6 +20,11 @@ export default {
     },
     label: {
       description: "Label text to be rendered identifying the Accordion.",
+    },
+    hidden: {
+      description:
+        "Determines if the Accordion content will be visible or not on initial render. Defaults to true.",
+      type: { name: "boolean" },
     },
     id: {
       description:
