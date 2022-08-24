@@ -3,7 +3,7 @@ type IntrinsicElements = JSX.IntrinsicElements["input"];
 
 interface Props extends IntrinsicElements {
   variation?: SearchVariation;
-  onSearch?: EventHandler<any>;
+  onSearch: EventHandler<any>;
   onInput?: FormEventHandler<HTMLInputElement>;
   disabled?: boolean;
   initialValue?: string;
@@ -26,7 +26,7 @@ type SearchVariation = "default" | "big" | "small";
 export const Search: React.FC<Props> = ({
   variation = "default",
   disabled = false,
-  onSearch,
+  onSearch = () => {},
   initialValue = "",
   labelText = "search",
   onInput,
@@ -55,15 +55,16 @@ export const Search: React.FC<Props> = ({
           onKeyDown={(e) => {
             if (e.key === "Enter") {
               e.preventDefault();
-              onSearch && onSearch(inputValue);
+              onSearch(inputValue);
             }
           }}
           {...rest}
         />
         <button
-          className="usa-button padding-y-0 padding-x-2"
+          className="usa-button padding-y-0 padding-x-2 radius-left-0"
           type="button"
-          onClick={() => onSearch && onSearch(inputValue)}
+          disabled={disabled}
+          onClick={() => onSearch(inputValue)}
         >
           {variation !== "small" && (
             <span className="usa-search__submit-text">Search </span>
