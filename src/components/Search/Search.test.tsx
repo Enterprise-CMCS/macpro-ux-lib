@@ -47,25 +47,24 @@ describe("Tests for the search component.", () => {
   });
 
   it("Should render a search bar with a value and the button simulates a search event", () => {
+    const mockButtonSearchFn = jest.fn();
     render(
       <Search
         variation="big"
         placeholder="Test Search"
         data-testid="search"
-        onSearch={mockSearchFn}
+        onSearch={mockButtonSearchFn}
         initialValue="new value"
         labelText="Search Label"
       />
     );
-    const searchComp = screen.getByTestId("search");
-    const buttonComp = screen.getByLabelText("Search Label");
-    expect(searchComp).toHaveAttribute("value", "new value");
+    const buttonComp = screen.getByRole("button");
     expect(buttonComp).toBeInTheDocument();
-
     fireEvent.click(buttonComp);
+
     expect(buttonComp).toBeInTheDocument();
-    expect(buttonComp).toBeInTheDocument();
-    expect(mockSearchFn).toHaveBeenCalled();
+    expect(mockButtonSearchFn).toHaveBeenCalled();
+    expect(mockButtonSearchFn).toHaveBeenCalledWith("new value");
   });
 
   describe("compontent snapshots", () => {
