@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Icon } from "../Icon/Icon";
-
-import { datePicker } from "../../../node_modules/@uswds/uswds/packages/usa-date-picker/src/index.js";
+import Calendar from "react-calendar";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 export interface Props extends IntrinsicElements {
@@ -51,6 +50,30 @@ export const Datefield: React.FC<Props> = ({
     setCalendarOpen(!calendarOpen);
   };
 
+  const setDateValue = (dateObj: Date) => {
+    let [month, day, year] = dateObj.toLocaleDateString()?.split("/");
+
+    if (day.length < 2) {
+      day = "0" + day;
+    }
+
+    if (month.length < 2) {
+      month = "0" + month;
+    }
+    setDate(`${month}/${day}/${year}`);
+    console.log(`${month}/${day}/${year}`);
+    openCalendar();
+  };
+
+  const [month, day, year] =
+    currentDate?.split("/") || new Date().toLocaleDateString()?.split("/");
+  const splitDateValue = new Date(
+    parseInt(year),
+    parseInt(month),
+    parseInt(day)
+  );
+  console.log(splitDateValue);
+
   return (
     <div className="usa-form-group">
       <label className="usa-label" id={`${id}-label`} htmlFor={id}>
@@ -61,9 +84,9 @@ export const Datefield: React.FC<Props> = ({
           mm/dd/yyyy
         </div>
       )}
+
       <div className="usa-date-picker grid-row">
         <input
-          placeholder={"test"}
           value={currentDate}
           onChange={(e) => setDate(e.target.value)}
           required={required}
@@ -73,14 +96,16 @@ export const Datefield: React.FC<Props> = ({
           aria-labelledby={`${id}-label`}
           aria-describedby={hint ? `${id}-hint` : `${id}-label`}
           disabled={disabled}
-          type="date"
-          max={maxDate}
-          min={minDate}
+          // max={maxDate}
+          // min={minDate}
           {...rest}
         />
         <div className="calendar-button padding-left-1 grid-row flex-align-center">
           <Icon name="calendar_today" color="black" onClick={openCalendar} />
         </div>
+        {calendarOpen && (
+          <Calendar onChange={setDateValue} value={splitDateValue} />
+        )}
       </div>
     </div>
   );
