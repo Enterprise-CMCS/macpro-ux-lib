@@ -1,6 +1,7 @@
 @use "../../assets/theme/macbis-colors" as c;
 
 .card-choice {
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

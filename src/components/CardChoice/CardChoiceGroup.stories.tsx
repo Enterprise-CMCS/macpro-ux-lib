@@ -6,32 +6,37 @@ import { CardChoiceGroup } from "./CardChoiceGroup";
 const children = [
   <CardChoice
     actionText="Select"
+    headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     href=""
     key="card-1"
-    headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   >
     <p>Aliquam pharetra amet vitae sed tempus turpis.</p>
   </CardChoice>,
   <CardChoice
+    actionText="Click Me"
+    headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     href=""
     key="card-2"
-    headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   >
     <p>Aliquam pharetra amet vitae sed tempus turpis.</p>
+    <p>Praesent sem mauris, sollicitudin ut interdum nec, auctor a nunc.</p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ul>
   </CardChoice>,
   <CardChoice
-    actionText="Select"
+    headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     href=""
     key="card-3"
-    headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   >
     <p>Aliquam pharetra amet vitae sed tempus turpis.</p>
   </CardChoice>,
   <CardChoice
     actionText="Select"
+    headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     href=""
     key="card-4"
-    headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   >
     <p>Aliquam pharetra amet vitae sed tempus turpis.</p>
   </CardChoice>,

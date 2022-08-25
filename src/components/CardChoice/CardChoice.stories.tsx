@@ -5,11 +5,38 @@ import { CardChoice } from "./CardChoice";
 export default {
   title: "COMPONENTS/CardChoice/CardChoice",
   component: CardChoice,
-  argTypes: {},
   args: {
-    headingText: "This is a CardChoice Component",
     actionText: "Click Me",
-    children: [<p>Nothing special. Just a standard UI component.</p>],
+    bodyText: "Nothing special. Just a standard UI component.",
+    headingText: "This is a CardChoice Component",
+  },
+  argTypes: {
+    actionText: {
+      description:
+        "Optional text prompt to be displayed left of the navigation arrow.",
+    },
+    bordered: {
+      description:
+        "Renders a border around the CardChoice. Applying borderd on CardChoice will override the CardChoiceGroup.",
+    },
+    bodyText: { description: "Text to be rendered in the body." },
+    children: {
+      description: "Children provided will be rendered below the bodyText.",
+    },
+    className: {
+      description:
+        "Additional classes that can be applied to the root element.",
+    },
+    darkBG: {
+      description:
+        "Renders the CardChoice with a darker background. Applying darkBG on CardChoice will override the CardChoiceGroup. CardChoiceGroup has an option for alternatingBG.",
+    },
+    headingText: {
+      description:
+        "Bolded heading text displayed at the top of the CardChoice.",
+    },
+    href: { description: "href provided to the Link." },
+    onClick: { description: "onClick provided to the Link." },
   },
 } as ComponentMeta<typeof CardChoice>;
 
