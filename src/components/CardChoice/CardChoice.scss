@@ -5,6 +5,7 @@
   flex-direction: row;
   justify-content: space-between;
   padding: 26px;
+  text-decoration: none;
   &.card-choice--bordered {
     border: solid 2px c.$gray-lighter;
     border-top: none;
@@ -16,11 +17,15 @@
   &:hover {
     background-color: c.$primary-alt-lightest;
     border: solid 2px c.$primary-alt-dark;
-    cursor: pointer;
     padding: 24px;
     &.card-choice--bordered {
       margin-top: -2px;
     }
+  }
+  &:focus {
+    outline: 0.25rem solid #2491ff;
+    outline-offset: 0;
+    position: relative;
   }
   .content {
     line-height: 24px;
@@ -36,9 +41,17 @@
     }
   }
   .select {
-    color: c.$primary;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: c.$primary;
+    span {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      svg {
+        color: c.$primary;
+      }
+    }
   }
 }

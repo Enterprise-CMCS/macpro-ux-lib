@@ -1,32 +1,45 @@
-import React from "react";
+import { Icon } from "components/Icon/Icon";
+import { Link, LinkProps } from "components/Link/Link";
+import React, { PropsWithChildren } from "react";
 
-type IntrinsicElements = JSX.IntrinsicElements["div"];
-
-interface Props extends IntrinsicElements {
+interface Props extends LinkProps {
+  actionText?: string;
   bordered?: boolean;
+  className?: string;
   darkBG?: boolean;
+  headingText?: string;
 }
 
 /**
  * CardChoice Component
  * @param {string}    text    Renders the text contained in the component.
  */
-export const CardChoice: React.FC<Props> = ({ bordered, darkBG, ...rest }) => {
+export const CardChoice: React.FC<PropsWithChildren<Props>> = ({
+  actionText,
+  bordered,
+  children,
+  className,
+  darkBG,
+  headingText,
+  href,
+  onClick,
+  ...rest
+}) => {
+  const classes = `card-choice${darkBG ? " card-choice--dark" : ""}${
+    bordered ? " card-choice--bordered" : ""
+  }${className ? ` ${className}` : ""}`;
   return (
-    <div
-      className={`card-choice${darkBG ? " card-choice--dark" : ""}${
-        bordered ? " card-choice--bordered" : ""
-      }`}
-      {...rest}
-    >
-      {/* TODO: Set a max-width for the content so it wraps elegantly */}
+    <Link {...rest} className={classes} href={href} onClick={onClick}>
       <div className="content">
-        <p className="heading">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-        <p className="body">Aliquam pharetra amet vitae sed tempus turpis.</p>
+        <p className="heading">{headingText}</p>
+        <span className="body">{children}</span>
       </div>
-      <div className="select">Select</div>
-    </div>
+      <div className="select">
+        <span>
+          {actionText}
+          <Icon name="navigate_next" />
+        </span>
+      </div>
+    </Link>
   );
 };

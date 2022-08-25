@@ -1,21 +1,34 @@
-import React, { PropsWithChildren } from "react";
+import React, { Children, PropsWithChildren } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
 
-interface Props extends IntrinsicElements {}
+interface Props extends IntrinsicElements {
+  alternatingBG?: boolean;
+  bordered?: boolean;
+}
 
 /**
  * CardChoiceGroup Component
  * @param {string}    text    Renders the text contained in the component.
  */
 export const CardChoiceGroup: React.FC<PropsWithChildren<Props>> = ({
+  alternatingBG = false,
+  bordered = false,
   children,
   ...rest
 }) => {
+  const arrayChildren = Children.toArray(children);
   return (
     <div className="card-choice-group" {...rest}>
       <span className="gradient-cap"></span>
-      {children}
+      {Children.map(arrayChildren, (child, idx) => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, {
+            bordered: child.props.bordered ?? bordered,
+            darkBG: child.props.darkBG ?? (alternatingBG && idx % 2),
+          });
+        }
+      })}
     </div>
   );
 };

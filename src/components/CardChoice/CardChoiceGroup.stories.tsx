@@ -3,21 +3,51 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { CardChoice } from "./CardChoice";
 import { CardChoiceGroup } from "./CardChoiceGroup";
 
+const children = [
+  <CardChoice
+    actionText="Select"
+    href=""
+    key="card-1"
+    headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  >
+    <p>Aliquam pharetra amet vitae sed tempus turpis.</p>
+  </CardChoice>,
+  <CardChoice
+    href=""
+    key="card-2"
+    headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  >
+    <p>Aliquam pharetra amet vitae sed tempus turpis.</p>
+  </CardChoice>,
+  <CardChoice
+    actionText="Select"
+    href=""
+    key="card-3"
+    headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  >
+    <p>Aliquam pharetra amet vitae sed tempus turpis.</p>
+  </CardChoice>,
+  <CardChoice
+    actionText="Select"
+    href=""
+    key="card-4"
+    headingText="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+  >
+    <p>Aliquam pharetra amet vitae sed tempus turpis.</p>
+  </CardChoice>,
+];
+
 export default {
   title: "COMPONENTS/CardChoice/CardChoiceGroup",
   component: CardChoice,
   argTypes: {},
-  args: {},
+  args: {
+    children,
+  },
 } as ComponentMeta<typeof CardChoiceGroup>;
 
 const Template: ComponentStory<typeof CardChoiceGroup> = ({ ...rest }) => (
-  <CardChoiceGroup>
-    <CardChoice bordered />
-    <CardChoice bordered />
-    <CardChoice />
-    <CardChoice darkBG />
-    <CardChoice />
-  </CardChoiceGroup>
+  <CardChoiceGroup {...rest} />
 );
 
 export const Default = Template.bind({});

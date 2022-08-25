@@ -6,11 +6,15 @@ export default {
   title: "COMPONENTS/CardChoice/CardChoice",
   component: CardChoice,
   argTypes: {},
-  args: {},
+  args: {
+    headingText: "This is a CardChoice Component",
+    actionText: "Click Me",
+    children: [<p>Nothing special. Just a standard UI component.</p>],
+  },
 } as ComponentMeta<typeof CardChoice>;
 
 const Template: ComponentStory<typeof CardChoice> = ({ ...rest }) => (
-  <CardChoice />
+  <CardChoice {...rest} />
 );
 
 export const Default = Template.bind({});
