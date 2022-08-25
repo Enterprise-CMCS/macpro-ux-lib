@@ -100,7 +100,17 @@ exports[`compontent snapshots Alternative Footer 1`] = `
         <p
           class="tablet:grid-col-9 mobile-text-center"
         >
-          Email test@gmail.com for help or feedback.
+          Email
+           
+          <a
+            href="mailto:test@gmail.com"
+          >
+            <b>
+              test@gmail.com
+            </b>
+          </a>
+           
+          for help or feedback.
         </p>
         <p
           class="tablet:grid-col-3 mobile-text-center"
@@ -173,7 +183,17 @@ exports[`compontent snapshots Basic Footer 1`] = `
         <p
           class="tablet:grid-col-9 mobile-text-center"
         >
-          Email test@gmail.com for help or feedback.
+          Email
+           
+          <a
+            href="mailto:test@gmail.com"
+          >
+            <b>
+              test@gmail.com
+            </b>
+          </a>
+           
+          for help or feedback.
         </p>
         <p
           class="tablet:grid-col-3 mobile-text-center"
