@@ -61,7 +61,7 @@ export const PrimaryDatefield = Template.bind({});
 PrimaryDatefield.args = {};
 
 export const DefaultDatefield = Template.bind({});
-DefaultDatefield.args = { defaultDate: "2022-08-08" };
+DefaultDatefield.args = { defaultDate: "2022-08-08", id: "default" };
 DefaultDatefield.parameters = {
   docs: {
     description: {
@@ -72,7 +72,7 @@ DefaultDatefield.parameters = {
 };
 
 export const MinimumDateRange = Template.bind({});
-MinimumDateRange.args = { minDate: "2022-08-08" };
+MinimumDateRange.args = { minDate: "2022-08-08", id: "min-date" };
 MinimumDateRange.parameters = {
   docs: {
     description: {
@@ -83,7 +83,7 @@ MinimumDateRange.parameters = {
 };
 
 export const MaximumDateRange = Template.bind({});
-MaximumDateRange.args = { maxDate: "2022-08-08" };
+MaximumDateRange.args = { maxDate: "2022-08-08", id: "max-date" };
 MaximumDateRange.parameters = {
   docs: {
     description: {
