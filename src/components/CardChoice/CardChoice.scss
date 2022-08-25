@@ -1,0 +1,44 @@
+@use "../../assets/theme/macbis-colors" as c;
+
+.card-choice {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 26px;
+  &.card-choice--bordered {
+    border: solid 2px c.$gray-lighter;
+    border-top: none;
+    padding: 24px;
+  }
+  &.card-choice--dark {
+    background-color: c.$gray-lightest;
+  }
+  &:hover {
+    background-color: c.$primary-alt-lightest;
+    border: solid 2px c.$primary-alt-dark;
+    cursor: pointer;
+    padding: 24px;
+    &.card-choice--bordered {
+      margin-top: -2px;
+    }
+  }
+  .content {
+    line-height: 24px;
+    .heading {
+      color: c.$primary;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .body {
+      color: c.$gray;
+      font-weight: 400;
+      font-size: 16px;
+    }
+  }
+  .select {
+    color: c.$primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
