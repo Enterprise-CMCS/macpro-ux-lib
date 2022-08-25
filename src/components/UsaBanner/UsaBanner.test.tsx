@@ -1,13 +1,6 @@
 import React from "react";
 import { UsaBanner } from "./UsaBanner";
-import { screen, render } from "../../test-setup";
-
-/**
- * Due to the nature of how we are working with the USWDS library, we are currently unable to
- * test the functionality of this component.
- *
- * The following tests are not truly exhaustive.
- */
+import { fireEvent, screen, render } from "../../test-setup";
 
 describe("Tests for the Banner component", () => {
   it("should render", () => {
@@ -44,5 +37,37 @@ describe("Tests for the Banner component", () => {
     );
     const section = container.firstChild as HTMLElement;
     expect(section.classList.contains("test-class")).toBe(true);
+  });
+});
+
+describe("Snapshot tests for UsaBanner component", () => {
+  it("English banner", () => {
+    const { container } = render(<UsaBanner />);
+
+    // Confirm collapsed
+    const content = document.getElementById("gov-banner-default-default");
+    expect(content).not.toBeVisible();
+    expect(container).toMatchSnapshot(); // Match collapsed state
+
+    // Expand
+    const btn = container.getElementsByClassName("usa-banner__button")[0];
+    fireEvent.click(btn);
+    expect(content).toBeVisible();
+    expect(container).toMatchSnapshot(); // Match expanded state
+  });
+
+  it("Spanish banner", () => {
+    const { container } = render(<UsaBanner locale="es" />);
+
+    // Confirm collapsed
+    const content = document.getElementById("gov-banner-spanish-lang-es");
+    expect(content).not.toBeVisible();
+    expect(container).toMatchSnapshot(); // Match collapsed state
+
+    // Expand
+    const btn = container.getElementsByClassName("usa-banner__button")[0];
+    fireEvent.click(btn);
+    expect(content).toBeVisible();
+    expect(container).toMatchSnapshot(); // Match expanded state
   });
 });

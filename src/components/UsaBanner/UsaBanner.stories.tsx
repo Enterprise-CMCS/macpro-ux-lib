@@ -1,12 +1,10 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { USWDSDecorator } from "../../utils";
 import { UsaBanner } from "./UsaBanner";
 
 export default {
   title: "COMPONENTS/USA Banner",
   component: UsaBanner,
-  decorators: [...USWDSDecorator],
   args: {},
   argTypes: {
     className: {

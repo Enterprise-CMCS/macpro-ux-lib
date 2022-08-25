@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface Props {
   className?: string;
@@ -19,6 +19,7 @@ export const UsaBanner: React.FC<Props> = ({
   locale = "en",
   ...rest
 }) => {
+  const [hidden, setHidden] = useState(true);
   return (
     <>
       {locale === "en" && (
@@ -29,7 +30,11 @@ export const UsaBanner: React.FC<Props> = ({
           {...rest}
         >
           <div className="usa-accordion">
-            <header className="usa-banner__header">
+            <header
+              className={`usa-banner__header${
+                hidden ? "" : " usa-banner__header--expanded"
+              }`}
+            >
               <div className="usa-banner__inner">
                 <div className="grid-col-auto">
                   <img
@@ -49,8 +54,9 @@ export const UsaBanner: React.FC<Props> = ({
                 <button
                   type="button"
                   className="usa-accordion__button usa-banner__button"
-                  aria-expanded="false"
+                  aria-expanded={hidden ? "false" : "true"}
                   aria-controls="gov-banner-default-default"
+                  onClick={() => setHidden(!hidden)}
                 >
                   <span className="usa-banner__button-text">
                     Here's how you know
@@ -61,7 +67,7 @@ export const UsaBanner: React.FC<Props> = ({
             <div
               className="usa-banner__content usa-accordion__content"
               id="gov-banner-default-default"
-              hidden
+              hidden={hidden}
             >
               <div className="grid-row grid-gap-lg">
                 <div className="usa-banner__guidance tablet:grid-col-6">
@@ -133,7 +139,11 @@ export const UsaBanner: React.FC<Props> = ({
           {...rest}
         >
           <div className="usa-accordion">
-            <header className="usa-banner__header">
+            <header
+              className={`usa-banner__header${
+                hidden ? "" : " usa-banner__header--expanded"
+              }`}
+            >
               <div className="usa-banner__inner">
                 <div className="grid-col-auto">
                   <img
@@ -153,8 +163,9 @@ export const UsaBanner: React.FC<Props> = ({
                 <button
                   type="button"
                   className="usa-accordion__button usa-banner__button"
-                  aria-expanded="false"
+                  aria-expanded={hidden ? "false" : "true"}
                   aria-controls="gov-banner-spanish-lang-es"
+                  onClick={() => setHidden(!hidden)}
                 >
                   <span className="usa-banner__button-text">
                     Así es como usted puede verificarlo
@@ -165,7 +176,7 @@ export const UsaBanner: React.FC<Props> = ({
             <div
               className="usa-banner__content usa-accordion__content"
               id="gov-banner-spanish-lang-es"
-              hidden
+              hidden={hidden}
             >
               <div className="grid-row grid-gap-lg">
                 <div className="usa-banner__guidance tablet:grid-col-6">
