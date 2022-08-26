@@ -15,26 +15,19 @@ export const generateId = (digits: number = 6): number => {
  */
 export const USWDSDecorator = [
   (Story: any) => {
+    const [isLoaded, setIsLoaded] = useState(false);
     useEffect(() => {
-      const scriptList = document.querySelectorAll("script[id='uswdsJS']");
-      const convertedNodeList = Array.from(scriptList);
-
-      if (!convertedNodeList.length) {
-        const script = document.createElement("script");
-        script.src = "/assets/js/uswds.js";
-        script.id = "uswdsJS";
-        document.body.append(script);
-      }
-
-      return () => {
-        const scriptList = document.querySelectorAll("script[id='uswdsJS']");
-        const convertedNodeList = Array.from(scriptList);
-        if (convertedNodeList.length) {
-          convertedNodeList[0]?.parentNode?.removeChild(convertedNodeList[0]);
-        }
+      const script = document.createElement("script");
+      script.onload = () => {
+        setIsLoaded(true);
       };
-    });
+      script.src = "/assets/js/uswds.js";
+      document.body.appendChild(script);
+      return () => {
+        // clean up effects of script here
+      };
+    }, []);
 
-    return <Story />;
+    return isLoaded ? <Story /> : <div>Loading...</div>;
   },
 ];
