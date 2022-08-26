@@ -44,10 +44,23 @@ const children = [
 
 export default {
   title: "COMPONENTS/CardChoice/CardChoiceGroup",
-  component: CardChoice,
-  argTypes: {},
+  component: CardChoiceGroup,
   args: {
     children,
+  },
+  argTypes: {
+    alternatingBG: {
+      description:
+        "`CardChoice` children are displayed with an alternating background color. The darkBG property on an individual CardChoice will override this property.",
+    },
+    bordered: {
+      description:
+        "All `CardChoice` children are displayed with a gray border. The bordered property on an individual CardChoice will override this property.",
+    },
+    children: {
+      description: "`CardChoice` children to be rendered.",
+      control: false,
+    },
   },
 } as ComponentMeta<typeof CardChoiceGroup>;
 
@@ -57,3 +70,13 @@ const Template: ComponentStory<typeof CardChoiceGroup> = ({ ...rest }) => (
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Bordered = Template.bind({});
+Bordered.args = {
+  bordered: true,
+};
+
+export const Alternating = Template.bind({});
+Alternating.args = {
+  alternatingBG: true,
+};

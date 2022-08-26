@@ -6,9 +6,10 @@ export default {
   title: "COMPONENTS/CardChoice/CardChoice",
   component: CardChoice,
   args: {
-    actionText: "Click Me",
+    actionText: "Select",
     bodyText: "Nothing special. Just a standard UI component.",
     headingText: "This is a CardChoice Component",
+    href: "",
   },
   argTypes: {
     actionText: {
@@ -21,7 +22,8 @@ export default {
     },
     bodyText: { description: "Text to be rendered in the body." },
     children: {
-      description: "Children provided will be rendered below the bodyText.",
+      description:
+        "Children provided will be rendered below the bodyText.\n\n`React.ReactNode`",
     },
     className: {
       description:
@@ -35,8 +37,8 @@ export default {
       description:
         "Bolded heading text displayed at the top of the CardChoice.",
     },
-    href: { description: "href provided to the Link." },
-    onClick: { description: "onClick provided to the Link." },
+    href: { description: "href provided to the Link.", type: "string" },
+    onClick: { description: "onClick provided to the Link.", type: "function" },
   },
 } as ComponentMeta<typeof CardChoice>;
 
@@ -46,3 +48,9 @@ const Template: ComponentStory<typeof CardChoice> = ({ ...rest }) => (
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Bordered = Template.bind({});
+Bordered.args = { bordered: true };
+
+export const DarkBackground = Template.bind({});
+DarkBackground.args = { darkBG: true };

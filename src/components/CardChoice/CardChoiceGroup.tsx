@@ -9,7 +9,9 @@ interface Props extends IntrinsicElements {
 
 /**
  * CardChoiceGroup Component
- * @param {string}    text    Renders the text contained in the component.
+ * @param {boolean}            alternatingBG    CardChoice children are displayed with an alternating background color. The darkBG property on an individual CardChoice will override this property.
+ * @param {boolean}            bordered         All CardChoice children are displayed with a gray border. The bordered property on an individual CardChoice will override this property.
+ * @param {React.ReactNode}    children         CardChoice children to be rendered.
  */
 export const CardChoiceGroup: React.FC<PropsWithChildren<Props>> = ({
   alternatingBG = false,
