@@ -91,7 +91,7 @@ export const Datefield: React.FC<Props> = ({
             value={currentDate}
             onChange={(e) => setDate(e.target.value)}
             required={required}
-            className="usa-input  margin-0"
+            className="usa-input margin-0"
             id={id}
             name={fieldName}
             aria-labelledby={`${id}-label`}

@@ -13,8 +13,13 @@
     background-color: c.$gray-lightest;
     left: 170px;
 
-    .react-calendar__tile:not(.react-calendar__tile--active) {
+    .react-calendar__tile:not(.react-calendar__tile--active, :disabled) {
       color: black;
+    }
+
+    .react-calendar__month-view__days__day--weekend,
+    .react-calendar__month-view__days__day--neighboringMonth {
+      color: rgba(16, 16, 16, 0.3);
     }
   }
 
