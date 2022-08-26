@@ -17,7 +17,7 @@ export default {
     },
     hint: {
       description:
-        "Boolean that shows or hide the date format hint, in the format YYYY-MM-DD.",
+        "Boolean that shows or hide the date format hint, in the format mm/dd/yyyy.",
     },
     required: {
       description: "Adds semantic required.",
@@ -28,15 +28,15 @@ export default {
     },
     defaultDate: {
       description:
-        "The date picker input will set this value if it is a valid date. The date should be in the format YYYY-MM-DD.",
+        "The date picker input will set this value if it is a valid date. The date should be in the format mm/dd/yyyy.",
     },
     minDate: {
       description:
-        "The date picker will not allow a date selection before this date. The date should be in the format YYYY-MM-DD.",
+        "The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy.",
     },
     maxDate: {
       description:
-        "The date picker will not allow a date selection after this date. The date should be in the format YYYY-MM-DD.",
+        "The date picker will not allow a date selection after this date. The date should be in the format mm/dd/yyyy.",
     },
     value: {
       description: "Value of the input element.",
@@ -61,7 +61,11 @@ export const PrimaryDatefield = Template.bind({});
 PrimaryDatefield.args = {};
 
 export const DefaultDatefield = Template.bind({});
-DefaultDatefield.args = { defaultDate: "2022-08-08", id: "default" };
+DefaultDatefield.args = {
+  defaultDate: "08/08/2022",
+  id: "default",
+  fieldName: "default",
+};
 DefaultDatefield.parameters = {
   docs: {
     description: {
@@ -72,7 +76,11 @@ DefaultDatefield.parameters = {
 };
 
 export const MinimumDateRange = Template.bind({});
-MinimumDateRange.args = { minDate: "2022-08-08", id: "min-date" };
+MinimumDateRange.args = {
+  minDate: "08/08/2022",
+  id: "min-date",
+  fieldName: "min-date",
+};
 MinimumDateRange.parameters = {
   docs: {
     description: {
@@ -83,7 +91,11 @@ MinimumDateRange.parameters = {
 };
 
 export const MaximumDateRange = Template.bind({});
-MaximumDateRange.args = { maxDate: "2022-08-08", id: "max-date" };
+MaximumDateRange.args = {
+  maxDate: "08/08/2022",
+  id: "max-date",
+  fieldName: "max-date",
+};
 MaximumDateRange.parameters = {
   docs: {
     description: {

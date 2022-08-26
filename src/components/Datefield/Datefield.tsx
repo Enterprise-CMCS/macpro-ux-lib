@@ -21,12 +21,12 @@ export interface Props extends IntrinsicElements {
  * @param {string}  id                     A unique identifier for the input.
  * @param {string}  fieldName              Name of the input field.
  * @param {string}  label                  Field label.
- * @param {boolean} [hint]                 Boolean that shows or hide the date format hint, in the format YYYY-MM-DD.
+ * @param {boolean} [hint]                 Boolean that shows or hide the date format hint, in the format mm/dd/yyyy.
  * @param {boolean} [required]             Adds semantic required.
  * @param {string}  [disabled]             Controls whether or not the date picker is disabled to the user.
- * @param {string}  [defaultDate]          The date picker input will set this value if it is a valid date. The date should be in the format YYYY-MM-DD
- * @param {string}  [minDate]              The date picker will not allow a date selection before this date. The date should be in the format YYYY-MM-DD
- * @param {string}  [maxDate]              The date picker will not allow a date selection after this date. The date should be in the format YYYY-MM-DD.
+ * @param {string}  [defaultDate]          The date picker input will set this value if it is a valid date. The date should be in the format mm/dd/yyyy
+ * @param {string}  [minDate]              The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
+ * @param {string}  [maxDate]              The date picker will not allow a date selection after this date. The date should be in the format mm/dd/yyyy.
  * @param {string}  [value]                Value of the input element.
  */
 
@@ -44,7 +44,7 @@ export const Datefield: React.FC<Props> = ({
   ...rest
 }) => {
   const [calendarOpen, setCalendarOpen] = useState(false);
-  const [currentDate, setDate] = useState(value || defaultDate);
+  const [currentDate, setDate] = useState(value || defaultDate || "");
 
   const openCalendar = () => {
     setCalendarOpen(!calendarOpen);
@@ -60,19 +60,19 @@ export const Datefield: React.FC<Props> = ({
     if (month.length < 2) {
       month = "0" + month;
     }
+
     setDate(`${month}/${day}/${year}`);
-    console.log(`${month}/${day}/${year}`);
     openCalendar();
   };
 
-  const [month, day, year] =
-    currentDate?.split("/") || new Date().toLocaleDateString()?.split("/");
-  const splitDateValue = new Date(
-    parseInt(year),
-    parseInt(month),
-    parseInt(day)
-  );
-  console.log(splitDateValue);
+  const formatStringDateToDate = (stringDate: string): Date => {
+    const [month, day, year] = stringDate.split("/");
+
+    const parsedMonth = parseInt(month) ? parseInt(month) - 1 : parseInt(month);
+
+    const splitDateValue = new Date(parseInt(year), parsedMonth, parseInt(day));
+    return splitDateValue;
+  };
 
   return (
     <div className="usa-form-group">
@@ -85,27 +85,44 @@ export const Datefield: React.FC<Props> = ({
         </div>
       )}
 
-      <div className="usa-date-picker grid-row">
-        <input
-          value={currentDate}
-          onChange={(e) => setDate(e.target.value)}
-          required={required}
-          className="usa-input"
-          id={id}
-          name={fieldName}
-          aria-labelledby={`${id}-label`}
-          aria-describedby={hint ? `${id}-hint` : `${id}-label`}
-          disabled={disabled}
-          // max={maxDate}
-          // min={minDate}
-          {...rest}
-        />
-        <div className="calendar-button padding-left-1 grid-row flex-align-center">
-          <Icon name="calendar_today" color="black" onClick={openCalendar} />
+      <div className="usa-date-picker">
+        <div className="grid-row">
+          <input
+            value={currentDate}
+            onChange={(e) => setDate(e.target.value)}
+            required={required}
+            className="usa-input  margin-0"
+            id={id}
+            name={fieldName}
+            aria-labelledby={`${id}-label`}
+            aria-describedby={hint ? `${id}-hint` : `${id}-label`}
+            disabled={disabled}
+            {...rest}
+          />
+          <div className={`flex-column${calendarOpen ? " grey-lightest" : ""}`}>
+            <div className="calendar-button padding-x-1 margin-top-1">
+              <Icon
+                name="calendar_today"
+                color="black"
+                onClick={openCalendar}
+              />
+            </div>
+          </div>
         </div>
-        {calendarOpen && (
-          <Calendar onChange={setDateValue} value={splitDateValue} />
-        )}
+
+        <div className="grid-row">
+          {calendarOpen && (
+            <Calendar
+              className="grid-col-3"
+              onChange={setDateValue}
+              value={
+                currentDate ? formatStringDateToDate(currentDate) : undefined
+              }
+              minDate={minDate ? formatStringDateToDate(minDate) : undefined}
+              maxDate={maxDate ? formatStringDateToDate(maxDate) : undefined}
+            />
+          )}
+        </div>
       </div>
     </div>
   );
