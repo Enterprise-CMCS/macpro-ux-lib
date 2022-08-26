@@ -1,5 +1,130 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`compontent snapshots max date datefield 1`] = `
+<div>
+  <div
+    class="usa-form-group"
+  >
+    <label
+      class="usa-label"
+      for="test-4"
+      id="test-4-label"
+      role="label"
+    >
+      test-4
+    </label>
+    <div
+      class="usa-hint"
+      id="test-4-hint"
+    >
+      mm/dd/yyyy
+    </div>
+    <div
+      class="usa-date-picker"
+    >
+      <div
+        class="grid-row"
+      >
+        <input
+          aria-describedby="test-4-hint"
+          aria-labelledby="test-4-label"
+          class="usa-input margin-0"
+          id="test-4"
+          name="test-3"
+          value=""
+        />
+        <div
+          class="flex-column"
+        >
+          <div
+            class="calendar-button padding-x-1 margin-top-1"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="calendar today icon"
+              class="usa-icon--size-3"
+              color="black"
+              fill="currentColor"
+              role="button"
+            >
+              <use
+                href="sprite.svg#calendar_today"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="grid-row"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`compontent snapshots min date datefield 1`] = `
+<div>
+  <div
+    class="usa-form-group"
+  >
+    <label
+      class="usa-label"
+      for="test-5"
+      id="test-5-label"
+      role="label"
+    >
+      test-5
+    </label>
+    <div
+      class="usa-hint"
+      id="test-5-hint"
+    >
+      mm/dd/yyyy
+    </div>
+    <div
+      class="usa-date-picker"
+    >
+      <div
+        class="grid-row"
+      >
+        <input
+          aria-describedby="test-5-hint"
+          aria-labelledby="test-5-label"
+          class="usa-input margin-0"
+          id="test-5"
+          name="test-3"
+          required=""
+          value=""
+        />
+        <div
+          class="flex-column"
+        >
+          <div
+            class="calendar-button padding-x-1 margin-top-1"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="calendar today icon"
+              class="usa-icon--size-3"
+              color="black"
+              fill="currentColor"
+              role="button"
+            >
+              <use
+                href="sprite.svg#calendar_today"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="grid-row"
+      />
+    </div>
+  </div>
+</div>
+`;
+
 exports[`compontent snapshots primary datefield 1`] = `
 <div>
   <div
@@ -9,6 +134,7 @@ exports[`compontent snapshots primary datefield 1`] = `
       class="usa-label"
       for="test-3"
       id="test-3-label"
+      role="label"
     >
       test-3
     </label>
@@ -21,13 +147,40 @@ exports[`compontent snapshots primary datefield 1`] = `
     <div
       class="usa-date-picker"
     >
-      <input
-        aria-describedby="test-3-hint"
-        aria-labelledby="test-3-label"
-        class="usa-input"
-        id="test-3"
-        name="test-3"
-        value=""
+      <div
+        class="grid-row"
+      >
+        <input
+          aria-describedby="test-3-hint"
+          aria-labelledby="test-3-label"
+          class="usa-input margin-0"
+          id="test-3"
+          name="test-3"
+          value="05/05/2020"
+        />
+        <div
+          class="flex-column"
+        >
+          <div
+            class="calendar-button padding-x-1 margin-top-1"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="calendar today icon"
+              class="usa-icon--size-3"
+              color="black"
+              fill="currentColor"
+              role="button"
+            >
+              <use
+                href="sprite.svg#calendar_today"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
+        class="grid-row"
       />
     </div>
   </div>

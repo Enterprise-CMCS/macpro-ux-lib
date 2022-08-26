@@ -76,7 +76,7 @@ export const Datefield: React.FC<Props> = ({
 
   return (
     <div className="usa-form-group">
-      <label className="usa-label" id={`${id}-label`} htmlFor={id}>
+      <label className="usa-label" id={`${id}-label`} htmlFor={id} role="label">
         {label}
       </label>
       {hint && (
@@ -105,6 +105,7 @@ export const Datefield: React.FC<Props> = ({
                 name="calendar_today"
                 color="black"
                 onClick={openCalendar}
+                role="button"
               />
             </div>
           </div>

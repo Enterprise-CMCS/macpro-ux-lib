@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 export const generateId = (digits: number = 6): number => {
   return Math.trunc(Math.random() * Math.pow(10, digits));
