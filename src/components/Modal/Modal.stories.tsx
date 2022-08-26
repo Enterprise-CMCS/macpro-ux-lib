@@ -7,9 +7,39 @@ export default {
   title: "Components/Modal",
   component: Modal,
   argTypes: {
+    description: {
+      description:
+        "The description text that appears on the modal beneath the heading.",
+    },
+    heading: {
+      description: "The heading text that appears on the modal.",
+    },
+    isOpen: {
+      control: false,
+      description:
+        "A boolean flag that shows/hides the modal, set by the Modal's parent component.",
+    },
     modalType: {
       description:
         "The type of Modal. Options include `default`, `large`, or `forcedAction`.",
+    },
+    onClose: {
+      description:
+        "The Modal calls this function when the user clicks the close button.",
+    },
+    primaryButtonText: {
+      description: "Text shown on the primary button.",
+    },
+    primaryOnClick: {
+      description:
+        "The modal calls this function when the user clicks the primary button.",
+    },
+    secondaryButtonText: {
+      description: "Text shown on the secondary button.",
+    },
+    secondaryOnClick: {
+      description:
+        "The modal calls this function when the user clicks the secondary button.",
     },
   },
   args: {
@@ -29,7 +59,7 @@ const Template: ComponentStory<typeof Modal> = ({ ...args }) => {
 
   return (
     <>
-      <Button buttonText="Open deftaul modal" onClick={toggleModal} />
+      <Button buttonText="Open modal" onClick={toggleModal} />
       <Modal
         {...args}
         isOpen={isOpen}
@@ -43,3 +73,9 @@ const Template: ComponentStory<typeof Modal> = ({ ...args }) => {
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const Large = Template.bind({});
+Large.args = { modalType: "large" };
+
+export const ForcedAction = Template.bind({});
+ForcedAction.args = { modalType: "forcedAction" };
