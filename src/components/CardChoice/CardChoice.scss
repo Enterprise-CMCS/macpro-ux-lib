@@ -7,6 +7,7 @@
   justify-content: space-between;
   padding: 26px;
   text-decoration: none;
+  transition: background-color 0.1s;
   &.card-choice--bordered {
     border: solid 2px c.$gray-lighter;
     border-top: none;

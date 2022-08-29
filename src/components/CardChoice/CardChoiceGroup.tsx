@@ -17,11 +17,15 @@ export const CardChoiceGroup: React.FC<PropsWithChildren<Props>> = ({
   alternatingBG = false,
   bordered = false,
   children,
+  className,
   ...rest
 }) => {
   const arrayChildren = Children.toArray(children);
   return (
-    <div className="card-choice-group" {...rest}>
+    <div
+      className={`card-choice-group${className ? ` ${className}` : ""}`}
+      {...rest}
+    >
       <span className="gradient-cap"></span>
       {Children.map(arrayChildren, (child, idx) => {
         if (React.isValidElement(child)) {

@@ -1,5 +1,5 @@
-import { Icon } from "components/Icon/Icon";
 import React, { PropsWithChildren } from "react";
+import { Icon } from "components/Icon/Icon";
 
 type IntrinsicElements = JSX.IntrinsicElements["a"];
 

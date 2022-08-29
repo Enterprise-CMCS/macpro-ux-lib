@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for the CardChoice and CardChoiceGroup components should match snapshot 1`] = `
+<div>
+  <div
+    class="card-choice-group"
+  >
+    <span
+      class="gradient-cap"
+    />
+    <a
+      class="card-choice card-choice--bordered"
+    >
+      <div
+        class="content"
+      >
+        <p
+          class="heading"
+        >
+          CardChoice
+        </p>
+        <span
+          class="body"
+        >
+          <p>
+            This is the body.
+          </p>
+        </span>
+      </div>
+      <div
+        class="select"
+      >
+        <span>
+          <svg
+            aria-hidden="true"
+            aria-label="navigate next icon"
+            class="usa-icon--size-3"
+            color="black"
+            fill="currentColor"
+            role="img"
+          >
+            <use
+              href="sprite.svg#navigate_next"
+            />
+          </svg>
+        </span>
+      </div>
+    </a>
+    <a
+      class="card-choice card-choice--dark card-choice--bordered"
+    >
+      <div
+        class="content"
+      >
+        <p
+          class="heading"
+        >
+          CardChoice
+        </p>
+        <span
+          class="body"
+        >
+          <p>
+            This is the body.
+          </p>
+        </span>
+      </div>
+      <div
+        class="select"
+      >
+        <span>
+          <svg
+            aria-hidden="true"
+            aria-label="navigate next icon"
+            class="usa-icon--size-3"
+            color="black"
+            fill="currentColor"
+            role="img"
+          >
+            <use
+              href="sprite.svg#navigate_next"
+            />
+          </svg>
+        </span>
+      </div>
+    </a>
+    <a
+      class="card-choice card-choice--bordered"
+    >
+      <div
+        class="content"
+      >
+        <p
+          class="heading"
+        >
+          CardChoice
+        </p>
+        <span
+          class="body"
+        >
+          <p>
+            This is the body.
+          </p>
+        </span>
+      </div>
+      <div
+        class="select"
+      >
+        <span>
+          <svg
+            aria-hidden="true"
+            aria-label="navigate next icon"
+            class="usa-icon--size-3"
+            color="black"
+            fill="currentColor"
+            role="img"
+          >
+            <use
+              href="sprite.svg#navigate_next"
+            />
+          </svg>
+        </span>
+      </div>
+    </a>
+  </div>
+</div>
+`;
