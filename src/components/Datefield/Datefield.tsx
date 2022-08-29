@@ -53,6 +53,7 @@ export const Datefield: React.FC<Props> = ({
   const setDateValue = (dateObj: Date) => {
     let [month, day, year] = dateObj.toLocaleDateString()?.split("/");
 
+    // Days and months before the 10th number returns a single numeric character "9" instead of "09"
     if (day.length < 2) {
       day = "0" + day;
     }
@@ -68,6 +69,7 @@ export const Datefield: React.FC<Props> = ({
   const formatStringDateToDate = (stringDate: string): Date => {
     const [month, day, year] = stringDate.split("/");
 
+    // The Date object Month argument is from a range of 0-11;
     const parsedMonth = parseInt(month) ? parseInt(month) - 1 : parseInt(month);
 
     const splitDateValue = new Date(parseInt(year), parsedMonth, parseInt(day));

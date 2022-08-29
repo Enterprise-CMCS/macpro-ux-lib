@@ -21,9 +21,9 @@ describe("Tests for the Datefield component.", () => {
     render(
       <Datefield
         data-testid="Datefield"
-        id="test-6"
-        fieldName="test-6"
-        label="test-6"
+        id="test-2"
+        fieldName="test-2"
+        label="test-2"
         value="10-10-2020"
         hint
       />
@@ -39,13 +39,13 @@ describe("Tests for the Datefield component.", () => {
     render(
       <Datefield
         data-testid="Datefield"
-        id="test-7"
-        fieldName="test-7"
-        label="test-7"
+        id="test-3"
+        fieldName="test-3"
+        label="test-3"
         hint
       />
     );
-    const DatefieldComp = screen.getByLabelText("test-7");
+    const DatefieldComp = screen.getByLabelText("test-3");
     fireEvent.change(DatefieldComp, {
       target: { value: "10-10-2020" },
     });
@@ -56,9 +56,9 @@ describe("Tests for the Datefield component.", () => {
     render(
       <Datefield
         data-testid="Datefield"
-        id="test-8"
-        fieldName="test-8"
-        label="test-8"
+        id="test-4"
+        fieldName="test-4"
+        label="test-4"
         minDate="10/10/2022"
         maxDate="10/11/2022"
         value="10/10/2022"
@@ -77,9 +77,9 @@ describe("Tests for the Datefield component.", () => {
     render(
       <Datefield
         data-testid="Datefield"
-        id="test-11"
-        fieldName="test-11"
-        label="test-11"
+        id="test-5"
+        fieldName="test-5"
+        label="test-5"
       />
     );
     const DatefieldInput = screen.getByTestId("Datefield");
@@ -97,9 +97,9 @@ describe("Tests for the Datefield component.", () => {
     render(
       <Datefield
         data-testid="Datefield"
-        id="test-9"
-        fieldName="test-9"
-        label="test-9"
+        id="test-6"
+        fieldName="test-6"
+        label="test-6"
       />
     );
     const DatefieldComp = screen.getByTestId("Datefield");
@@ -127,9 +127,9 @@ describe("compontent snapshots", () => {
     const { container } = render(
       <Datefield
         hint
-        id="test-3"
-        fieldName="test-3"
-        label="test-3"
+        id="test-8"
+        fieldName="test-8"
+        label="test-8"
         defaultDate="05/05/2020"
       />
     );
@@ -140,9 +140,9 @@ describe("compontent snapshots", () => {
     const { container } = render(
       <Datefield
         hint
-        id="test-4"
-        fieldName="test-3"
-        label="test-4"
+        id="test-9"
+        fieldName="test-9"
+        label="test-9"
         maxDate="05/05/2020"
       />
     );
@@ -153,9 +153,9 @@ describe("compontent snapshots", () => {
     const { container } = render(
       <Datefield
         hint
-        id="test-5"
-        fieldName="test-3"
-        label="test-5"
+        id="test-10"
+        fieldName="test-10"
+        label="test-10"
         required
         minDate="05/05/2020"
       />

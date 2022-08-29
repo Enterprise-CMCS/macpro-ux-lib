@@ -7,15 +7,15 @@ exports[`compontent snapshots max date datefield 1`] = `
   >
     <label
       class="usa-label"
-      for="test-4"
-      id="test-4-label"
+      for="test-9"
+      id="test-9-label"
       role="label"
     >
-      test-4
+      test-9
     </label>
     <div
       class="usa-hint"
-      id="test-4-hint"
+      id="test-9-hint"
     >
       mm/dd/yyyy
     </div>
@@ -26,11 +26,11 @@ exports[`compontent snapshots max date datefield 1`] = `
         class="grid-row"
       >
         <input
-          aria-describedby="test-4-hint"
-          aria-labelledby="test-4-label"
+          aria-describedby="test-9-hint"
+          aria-labelledby="test-9-label"
           class="usa-input margin-0"
-          id="test-4"
-          name="test-3"
+          id="test-9"
+          name="test-9"
           value=""
         />
         <div
@@ -67,15 +67,15 @@ exports[`compontent snapshots min date datefield 1`] = `
   >
     <label
       class="usa-label"
-      for="test-5"
-      id="test-5-label"
+      for="test-10"
+      id="test-10-label"
       role="label"
     >
-      test-5
+      test-10
     </label>
     <div
       class="usa-hint"
-      id="test-5-hint"
+      id="test-10-hint"
     >
       mm/dd/yyyy
     </div>
@@ -86,11 +86,11 @@ exports[`compontent snapshots min date datefield 1`] = `
         class="grid-row"
       >
         <input
-          aria-describedby="test-5-hint"
-          aria-labelledby="test-5-label"
+          aria-describedby="test-10-hint"
+          aria-labelledby="test-10-label"
           class="usa-input margin-0"
-          id="test-5"
-          name="test-3"
+          id="test-10"
+          name="test-10"
           required=""
           value=""
         />
@@ -128,15 +128,15 @@ exports[`compontent snapshots primary datefield 1`] = `
   >
     <label
       class="usa-label"
-      for="test-3"
-      id="test-3-label"
+      for="test-8"
+      id="test-8-label"
       role="label"
     >
-      test-3
+      test-8
     </label>
     <div
       class="usa-hint"
-      id="test-3-hint"
+      id="test-8-hint"
     >
       mm/dd/yyyy
     </div>
@@ -147,11 +147,11 @@ exports[`compontent snapshots primary datefield 1`] = `
         class="grid-row"
       >
         <input
-          aria-describedby="test-3-hint"
-          aria-labelledby="test-3-label"
+          aria-describedby="test-8-hint"
+          aria-labelledby="test-8-label"
           class="usa-input margin-0"
-          id="test-3"
-          name="test-3"
+          id="test-8"
+          name="test-8"
           value="05/05/2020"
         />
         <div
