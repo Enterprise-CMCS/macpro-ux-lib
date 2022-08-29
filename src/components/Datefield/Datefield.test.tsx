@@ -1,7 +1,6 @@
 import React from "react";
 import { Datefield } from "./Datefield";
 import { fireEvent, screen, render } from "../../test-setup";
-import { waitFor } from "@testing-library/react";
 
 describe("Tests for the Datefield component.", () => {
   it("Should render with hint", () => {
@@ -18,7 +17,7 @@ describe("Tests for the Datefield component.", () => {
     expect(DatefieldComp).toBeInTheDocument();
   });
 
-  it("Should render with hint", () => {
+  it("Should render with hint and initalized value", () => {
     render(
       <Datefield
         data-testid="Datefield"
@@ -36,7 +35,78 @@ describe("Tests for the Datefield component.", () => {
     expect(DatefieldComp).toHaveAttribute("value", "10-10-2020");
   });
 
-  it("Should render with hint", () => {
+  it("Should fire and change the value when the user types", () => {
+    render(
+      <Datefield
+        data-testid="Datefield"
+        id="test-7"
+        fieldName="test-7"
+        label="test-7"
+        hint
+      />
+    );
+    const DatefieldComp = screen.getByLabelText("test-7");
+    fireEvent.change(DatefieldComp, {
+      target: { value: "10-10-2020" },
+    });
+    expect(DatefieldComp).toHaveDisplayValue("10-10-2020");
+  });
+
+  it("Should open the calendar component with min and max dates", () => {
+    render(
+      <Datefield
+        data-testid="Datefield"
+        id="test-8"
+        fieldName="test-8"
+        label="test-8"
+        minDate="10/10/2022"
+        maxDate="10/11/2022"
+        value="10/10/2022"
+      />
+    );
+    const DatefieldInput = screen.getByTestId("Datefield");
+    const DatefieldButton = screen.getByTestId("calendar-button");
+    fireEvent.click(DatefieldButton);
+    const DatefieldCalendar = screen.getByTestId("calendar");
+
+    expect(DatefieldCalendar).toBeInTheDocument();
+    expect(DatefieldInput).toHaveValue("10/10/2022");
+  });
+
+  it("Should open the calendar component and choose a date", () => {
+    render(
+      <Datefield
+        data-testid="Datefield"
+        id="test-11"
+        fieldName="test-11"
+        label="test-11"
+      />
+    );
+    const DatefieldInput = screen.getByTestId("Datefield");
+    const DatefieldButton = screen.getByTestId("calendar-button");
+    fireEvent.click(DatefieldButton);
+    const DatefieldCalendar = screen.getByTestId("calendar");
+    const randomDayButton = screen.getAllByRole("button")[6];
+    fireEvent.click(randomDayButton);
+
+    expect(DatefieldCalendar).not.toBeInTheDocument();
+    expect(DatefieldInput).toHaveValue();
+  });
+
+  it("Should format date when provided a min date", () => {
+    render(
+      <Datefield
+        data-testid="Datefield"
+        id="test-9"
+        fieldName="test-9"
+        label="test-9"
+      />
+    );
+    const DatefieldComp = screen.getByTestId("Datefield");
+    expect(DatefieldComp).toBeInTheDocument();
+  });
+
+  it("Should be disabled", () => {
     render(
       <Datefield
         data-testid="Datefield"
@@ -48,7 +118,6 @@ describe("Tests for the Datefield component.", () => {
       />
     );
     const DatefieldComp = screen.getByTestId("Datefield");
-
     expect(DatefieldComp).toBeDisabled();
   });
 });

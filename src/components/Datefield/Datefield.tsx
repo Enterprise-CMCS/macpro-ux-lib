@@ -46,7 +46,7 @@ export const Datefield: React.FC<Props> = ({
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [currentDate, setDate] = useState(value || defaultDate || "");
 
-  const openCalendar = () => {
+  const toggleCalendar = () => {
     setCalendarOpen(!calendarOpen);
   };
 
@@ -62,7 +62,7 @@ export const Datefield: React.FC<Props> = ({
     }
 
     setDate(`${month}/${day}/${year}`);
-    openCalendar();
+    toggleCalendar();
   };
 
   const formatStringDateToDate = (stringDate: string): Date => {
@@ -104,15 +104,16 @@ export const Datefield: React.FC<Props> = ({
               <Icon
                 name="calendar_today"
                 color="black"
-                onClick={openCalendar}
+                onClick={toggleCalendar}
+                data-testid="calendar-button"
                 role="button"
               />
             </div>
           </div>
         </div>
 
-        <div className="grid-row">
-          {calendarOpen && (
+        {calendarOpen && (
+          <div className="grid-row" data-testid="calendar">
             <Calendar
               className="grid-col-3"
               onChange={setDateValue}
@@ -122,8 +123,8 @@ export const Datefield: React.FC<Props> = ({
               minDate={minDate ? formatStringDateToDate(minDate) : undefined}
               maxDate={maxDate ? formatStringDateToDate(maxDate) : undefined}
             />
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

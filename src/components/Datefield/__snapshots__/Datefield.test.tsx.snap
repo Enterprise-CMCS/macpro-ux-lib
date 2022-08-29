@@ -44,6 +44,7 @@ exports[`compontent snapshots max date datefield 1`] = `
               aria-label="calendar today icon"
               class="usa-icon--size-3"
               color="black"
+              data-testid="calendar-button"
               fill="currentColor"
               role="button"
             >
@@ -54,9 +55,6 @@ exports[`compontent snapshots max date datefield 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="grid-row"
-      />
     </div>
   </div>
 </div>
@@ -107,6 +105,7 @@ exports[`compontent snapshots min date datefield 1`] = `
               aria-label="calendar today icon"
               class="usa-icon--size-3"
               color="black"
+              data-testid="calendar-button"
               fill="currentColor"
               role="button"
             >
@@ -117,9 +116,6 @@ exports[`compontent snapshots min date datefield 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="grid-row"
-      />
     </div>
   </div>
 </div>
@@ -169,6 +165,7 @@ exports[`compontent snapshots primary datefield 1`] = `
               aria-label="calendar today icon"
               class="usa-icon--size-3"
               color="black"
+              data-testid="calendar-button"
               fill="currentColor"
               role="button"
             >
@@ -179,9 +176,6 @@ exports[`compontent snapshots primary datefield 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="grid-row"
-      />
     </div>
   </div>
 </div>
