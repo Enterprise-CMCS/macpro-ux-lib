@@ -196,7 +196,9 @@ describe("Modal", () => {
           description="You have unsaved changes that will be lost."
           heading="Are you sure you want to continue?"
           primaryButtonText="Continue without saving"
+          primaryOnClick={mockAction}
           secondaryButtonText="Go back"
+          secondaryOnClick={mockAction}
         />
       );
     });

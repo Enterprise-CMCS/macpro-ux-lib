@@ -9,7 +9,7 @@ interface Props {
   heading: string;
   isOpen?: boolean;
   modalType?: ModalType;
-  onClose: () => void;
+  onClose?: () => void;
   primaryButtonText: string;
   primaryOnClick: () => void;
   secondaryButtonText: string;
@@ -18,7 +18,7 @@ interface Props {
 
 /**
  * Modal
- * @callback onClose
+ * @callback [onClose]
  * @callback primaryOnClick
  * @callback secondaryOnClick
  * @param {boolean}    [isOpen]             Sets whether or not the modal is visible and open.
