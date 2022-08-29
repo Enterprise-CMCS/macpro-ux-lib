@@ -19,9 +19,6 @@ export default {
       description:
         "Boolean that shows or hide the date format hint, in the format mm/dd/yyyy.",
     },
-    required: {
-      description: "Adds semantic required.",
-    },
     disabled: {
       description:
         "Controls whether or not the date picker is disabled to the user.",
@@ -70,7 +67,7 @@ DefaultDatefield.parameters = {
   docs: {
     description: {
       story:
-        "Default place holder values can be giving to inputs that could make selecting dates easier for our users",
+        "Default placeholder values can be given to inputs that could make selecting dates easier for our users",
     },
   },
 };
