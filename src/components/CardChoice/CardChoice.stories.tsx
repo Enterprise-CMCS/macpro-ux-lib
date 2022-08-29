@@ -7,6 +7,7 @@ export default {
   component: CardChoice,
   args: {
     actionText: "Select",
+    ariaLabel: "A Unique Navigational CardChoice Element",
     bodyText: "Nothing special. Just a standard UI component.",
     headingText: "This is a CardChoice Component",
     href: "",
@@ -15,6 +16,10 @@ export default {
     actionText: {
       description:
         "Optional text prompt to be displayed left of the navigation arrow.",
+    },
+    ariaLabel: {
+      description:
+        'Sets the aria-label for the CardChoice wrapping anchor tag.\n\nIf none is provided, defaults to "Navigation Card for ${headingText}". If no headerText is provided defaults to "Navigation Card."',
     },
     bordered: {
       description:

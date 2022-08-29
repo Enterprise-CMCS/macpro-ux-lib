@@ -15,6 +15,9 @@ describe("Tests for the CardChoice component", () => {
 
     expect(component.className).toBe("card-choice");
     expect(component.getAttribute("href")).toBe(null);
+    expect(component.getAttribute("aria-label")).toBe(
+      "Navigation Card for: A CardChoice Component"
+    );
     expect(screen.getByText(headingText)).toBeVisible();
     expect(screen.getByText(bodyText)).toBeVisible();
 
@@ -81,6 +84,22 @@ describe("Tests for the CardChoice component", () => {
 
     fireEvent.click(container.firstElementChild!);
     expect(mockOnClick).toHaveBeenCalled();
+  });
+
+  it("should have custom aria-label", () => {
+    const { container } = render(
+      <CardChoice ariaLabel="my aria-label is great" />
+    );
+    expect(container.firstElementChild!.getAttribute("aria-label")).toBe(
+      "my aria-label is great"
+    );
+  });
+
+  it("should have basic aria-label when no details provided", () => {
+    const { container } = render(<CardChoice />);
+    expect(container.firstElementChild!.getAttribute("aria-label")).toBe(
+      "Navigation Card"
+    );
   });
 });
 

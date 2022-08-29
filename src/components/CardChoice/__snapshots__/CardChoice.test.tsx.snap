@@ -9,16 +9,19 @@ exports[`Tests for the CardChoice and CardChoiceGroup components should match sn
       class="gradient-cap"
     />
     <a
+      aria-label="Navigation Card for: CardChoice"
       class="card-choice card-choice--bordered"
     >
       <div
         class="content"
       >
-        <p
+        <h6
+          aria-level="6"
           class="heading"
+          role="heading"
         >
           CardChoice
-        </p>
+        </h6>
         <span
           class="body"
         >
@@ -30,7 +33,9 @@ exports[`Tests for the CardChoice and CardChoiceGroup components should match sn
       <div
         class="select"
       >
-        <span>
+        <span
+          aria-hidden="true"
+        >
           <svg
             aria-hidden="true"
             aria-label="navigate next icon"
@@ -47,16 +52,19 @@ exports[`Tests for the CardChoice and CardChoiceGroup components should match sn
       </div>
     </a>
     <a
+      aria-label="Navigation Card for: CardChoice"
       class="card-choice card-choice--dark card-choice--bordered"
     >
       <div
         class="content"
       >
-        <p
+        <h6
+          aria-level="6"
           class="heading"
+          role="heading"
         >
           CardChoice
-        </p>
+        </h6>
         <span
           class="body"
         >
@@ -68,7 +76,9 @@ exports[`Tests for the CardChoice and CardChoiceGroup components should match sn
       <div
         class="select"
       >
-        <span>
+        <span
+          aria-hidden="true"
+        >
           <svg
             aria-hidden="true"
             aria-label="navigate next icon"
@@ -85,16 +95,19 @@ exports[`Tests for the CardChoice and CardChoiceGroup components should match sn
       </div>
     </a>
     <a
+      aria-label="Navigation Card for: CardChoice"
       class="card-choice card-choice--bordered"
     >
       <div
         class="content"
       >
-        <p
+        <h6
+          aria-level="6"
           class="heading"
+          role="heading"
         >
           CardChoice
-        </p>
+        </h6>
         <span
           class="body"
         >
@@ -106,7 +119,9 @@ exports[`Tests for the CardChoice and CardChoiceGroup components should match sn
       <div
         class="select"
       >
-        <span>
+        <span
+          aria-hidden="true"
+        >
           <svg
             aria-hidden="true"
             aria-label="navigate next icon"
