@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.4.2...v1.5.0) (2022-08-29)
+
+
+### Features
+
+* **UsaBanner:** add UsaBanner component ([91016dc](https://github.com/cmsgov/macpro-ux-lib/commit/91016dc89cf8db570ba929b41212b117ab47aa14))
+
 ## [1.4.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.4.1...v1.4.2) (2022-08-18)
 
 
