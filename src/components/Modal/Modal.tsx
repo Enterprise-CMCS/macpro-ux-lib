@@ -16,6 +16,19 @@ interface Props {
   secondaryOnClick: () => void;
 }
 
+/**
+ * Modal
+ * @callback onClose
+ * @callback primaryOnClick
+ * @callback secondaryOnClick
+ * @param {boolean}    [isOpen]             Sets whether or not the modal is visible and open.
+ * @param {ModalType}  [modalType]          The type of Modal. Options include "default", "large", or "forcedAction".
+ * @param {string}     description          Description text that appears on the modal beneath the heading.
+ * @param {string}     heading              Heading text that appears at the top of the modal.
+ * @param {string}     primaryButtonText    Text shown on the primary button.
+ * @param {string}     secondaryButtonText  Text shown on the secondary button.
+ */
+
 export const Modal: React.FC<Props> = ({
   description,
   heading,
