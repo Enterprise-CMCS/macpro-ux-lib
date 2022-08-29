@@ -1,11 +1,13 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Dropdown } from "./Dropdown";
+import { USWDSDecorator } from "../../utils";
 import data from "./data.json";
 
 export default {
   title: "COMPONENTS/Dropdown",
   component: Dropdown,
+  decorators: [...USWDSDecorator],
   args: {
     data,
   },
@@ -17,6 +19,7 @@ export default {
     },
     id: {
       description: "The id of the dropdown",
+      type: { name: "string", required: true },
     },
     label: {
       description: "String used to label the drodown in the UI.",
@@ -24,6 +27,7 @@ export default {
     name: {
       description:
         "Name of the dropdown used to identify it in the context of a form.",
+      type: { name: "string", required: true },
     },
   },
 } as ComponentMeta<typeof Dropdown>;
@@ -37,5 +41,5 @@ export const Default = Template.bind({});
 Default.args = {
   id: "fruit",
   label: "Select a fruit",
-  name: "fruit",
+  name: "fruit-dropdown",
 };

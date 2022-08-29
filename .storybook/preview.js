@@ -1,7 +1,5 @@
 import "../src/assets/css/styles.css";
-import "../src/assets/js/uswds.min";
-import "../src/assets/js/uswds-init.min";
-import "../src/assets/theme/styles.scss"
+import "../src/assets/theme/styles.scss";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
