@@ -36,8 +36,8 @@ exports[`compontent snapshots max date datefield 1`] = `
         <div
           class="flex-column"
         >
-          <div
-            class="calendar-button padding-x-1 margin-top-1"
+          <button
+            class="calendar-button padding-x-1 padding-top-1"
           >
             <svg
               aria-hidden="true"
@@ -52,7 +52,7 @@ exports[`compontent snapshots max date datefield 1`] = `
                 href="sprite.svg#calendar_today"
               />
             </svg>
-          </div>
+          </button>
         </div>
       </div>
     </div>
@@ -97,8 +97,8 @@ exports[`compontent snapshots min date datefield 1`] = `
         <div
           class="flex-column"
         >
-          <div
-            class="calendar-button padding-x-1 margin-top-1"
+          <button
+            class="calendar-button padding-x-1 padding-top-1"
           >
             <svg
               aria-hidden="true"
@@ -113,7 +113,7 @@ exports[`compontent snapshots min date datefield 1`] = `
                 href="sprite.svg#calendar_today"
               />
             </svg>
-          </div>
+          </button>
         </div>
       </div>
     </div>
@@ -157,8 +157,8 @@ exports[`compontent snapshots primary datefield 1`] = `
         <div
           class="flex-column"
         >
-          <div
-            class="calendar-button padding-x-1 margin-top-1"
+          <button
+            class="calendar-button padding-x-1 padding-top-1"
           >
             <svg
               aria-hidden="true"
@@ -173,7 +173,7 @@ exports[`compontent snapshots primary datefield 1`] = `
                 href="sprite.svg#calendar_today"
               />
             </svg>
-          </div>
+          </button>
         </div>
       </div>
     </div>

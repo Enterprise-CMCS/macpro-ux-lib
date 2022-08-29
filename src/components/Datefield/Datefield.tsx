@@ -8,7 +8,6 @@ export interface Props extends IntrinsicElements {
   fieldName: string;
   label: string;
   hint?: boolean;
-  required?: boolean;
   disabled?: boolean;
   defaultDate?: string;
   minDate?: string;
@@ -22,7 +21,6 @@ export interface Props extends IntrinsicElements {
  * @param {string}  fieldName              Name of the input field.
  * @param {string}  label                  Field label.
  * @param {boolean} [hint]                 Boolean that shows or hide the date format hint, in the format mm/dd/yyyy.
- * @param {boolean} [required]             Adds semantic required.
  * @param {string}  [disabled]             Controls whether or not the date picker is disabled to the user.
  * @param {string}  [defaultDate]          The date picker input will set this value if it is a valid date. The date should be in the format mm/dd/yyyy
  * @param {string}  [minDate]              The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
@@ -38,7 +36,6 @@ export const Datefield: React.FC<Props> = ({
   minDate,
   maxDate,
   defaultDate,
-  required = false,
   hint = false,
   disabled = false,
   ...rest
@@ -92,7 +89,6 @@ export const Datefield: React.FC<Props> = ({
           <input
             value={currentDate}
             onChange={(e) => setDate(e.target.value)}
-            required={required}
             className="usa-input margin-0"
             id={id}
             name={fieldName}
@@ -102,15 +98,18 @@ export const Datefield: React.FC<Props> = ({
             {...rest}
           />
           <div className={`flex-column${calendarOpen ? " grey-lightest" : ""}`}>
-            <div className="calendar-button padding-x-1 margin-top-1">
+            <button
+              disabled={disabled}
+              onClick={toggleCalendar}
+              className="calendar-button padding-x-1 padding-top-1"
+            >
               <Icon
                 name="calendar_today"
                 color="black"
-                onClick={toggleCalendar}
                 data-testid="calendar-button"
                 role="button"
               />
-            </div>
+            </button>
           </div>
         </div>
 
