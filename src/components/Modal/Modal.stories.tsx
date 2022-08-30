@@ -14,6 +14,11 @@ export default {
     heading: {
       description: "The heading text that appears on the modal.",
     },
+    id: {
+      control: false,
+      description:
+        "The modal ID, used to automatically create related ARIA tags.",
+    },
     isOpen: {
       control: false,
       description:
@@ -45,6 +50,7 @@ export default {
   args: {
     description: "You have unsaved changes that will be lost.",
     heading: "Are you sure you want to continue?",
+    id: "example-modal",
     modalType: "default",
     primaryButtonText: "Primary Button",
     secondaryButtonText: "Secondary Button",
