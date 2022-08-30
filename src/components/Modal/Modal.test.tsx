@@ -230,4 +230,58 @@ describe("Modal", () => {
       expect(close).toBeNull();
     });
   });
+
+  describe("Snapshot tests", () => {
+    it("renders default Modal as expected", () => {
+      const { container } = render(
+        <Modal
+          description="You have unsaved changes that will be lost."
+          heading="Are you sure you want to continue?"
+          id="example-modal"
+          isOpen={true}
+          onClose={mockAction}
+          primaryButtonText="Continue without saving"
+          primaryOnClick={mockAction}
+          secondaryButtonText="Go back"
+          secondaryOnClick={mockAction}
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+
+    it("renders large Modal as expected", () => {
+      const { container } = render(
+        <Modal
+          description="You have unsaved changes that will be lost."
+          heading="Are you sure you want to continue?"
+          id="large-modal"
+          isOpen={true}
+          modalType="large"
+          onClose={mockAction}
+          primaryButtonText="Continue without saving"
+          primaryOnClick={mockAction}
+          secondaryButtonText="Go back"
+          secondaryOnClick={mockAction}
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+
+    it("renders forced-action Modal as expected", () => {
+      const { container } = render(
+        <Modal
+          description="You have unsaved changes that will be lost."
+          heading="Are you sure you want to continue?"
+          id="forced-action-modal"
+          isOpen={true}
+          modalType="forcedAction"
+          primaryButtonText="Continue without saving"
+          primaryOnClick={mockAction}
+          secondaryButtonText="Go back"
+          secondaryOnClick={mockAction}
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+  });
 });
