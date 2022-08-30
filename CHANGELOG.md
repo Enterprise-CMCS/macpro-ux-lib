@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.5.0...v1.5.1) (2022-08-30)
+
+
+### Bug Fixes
+
+* **rollup:** update rollup config file to specifically exclude react and react-dom from package ([40e8ed9](https://github.com/cmsgov/macpro-ux-lib/commit/40e8ed9df57b7f4c382b02fef02d03799846d96d))
+
 # [1.5.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.4.2...v1.5.0) (2022-08-29)
 
 
