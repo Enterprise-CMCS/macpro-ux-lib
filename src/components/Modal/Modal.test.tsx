@@ -145,7 +145,6 @@ describe("Modal", () => {
           id="forced-action-modal"
           isOpen={true}
           modalType="forcedAction"
-          onClose={mockAction}
           primaryButtonText="Continue without saving"
           primaryOnClick={mockAction}
           secondaryButtonText="Go back"
