@@ -5,3 +5,15 @@
 .usa-modal__close {
   padding: 0.5rem;
 }
+
+.usa-modal__heading, .usa-modal--lg .usa-modal__heading {
+  font-family: Source Sans Pro Web,Helvetica Neue,Helvetica,Roboto,Arial,sans-serif;
+}
+
+.usa-modal__main {
+  margin: 0;
+}
+
+.usa-modal--lg .usa-modal__main {
+  margin: 0 auto;
+}
