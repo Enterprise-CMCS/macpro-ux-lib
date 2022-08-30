@@ -13,6 +13,7 @@ import { Header } from "./components/Header/Header";
 import { Icon } from "./components/Icon/Icon";
 import { Link } from "./components/Link/Link";
 import { Logo } from "./components/Logo/Logo";
+import { Modal } from "./components/Modal/Modal";
 import { Radio } from "./components/Radio/Radio";
 import { RadioGroup } from "./components/RadioGroup/RadioGroup";
 import { TextArea } from "./components/TextArea/TextArea";
@@ -31,6 +32,7 @@ export {
   Icon,
   Link,
   Logo,
+  Modal,
   Radio,
   RadioGroup,
   TextArea,
