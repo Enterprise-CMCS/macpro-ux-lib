@@ -7,7 +7,7 @@ type ModalType = "default" | "large" | "forcedAction";
 interface Props {
   description: string;
   heading: string;
-  id?: string;
+  id: string;
   isOpen?: boolean;
   modalType?: ModalType;
   onClose?: () => void;
@@ -24,9 +24,9 @@ interface Props {
  * @callback secondaryOnClick               Callback for the secondary button.
  * @param {boolean}    [isOpen]             Sets whether or not the modal is visible and open.
  * @param {ModalType}  [modalType]          The type of Modal. Options include "default", "large", or "forcedAction".
- * @param {string}     [id]                 String used for the modal ID and related ARIA tags.
  * @param {string}     description          Description text that appears on the modal beneath the heading.
  * @param {string}     heading              Heading text that appears at the top of the modal.
+ * @param {string}     id                   The modal ID, used to create related ARIA tags.
  * @param {string}     primaryButtonText    Text shown on the primary button.
  * @param {string}     secondaryButtonText  Text shown on the secondary button.
  */
@@ -34,6 +34,7 @@ interface Props {
 export const Modal: React.FC<Props> = ({
   description,
   heading,
+  id,
   isOpen = false,
   modalType = "default",
   onClose,
@@ -48,18 +49,18 @@ export const Modal: React.FC<Props> = ({
         <div
           className="usa-modal-wrapper"
           role="dialog"
-          id="example-modal-1"
-          aria-labelledby="modal-1-heading"
-          aria-describedby="modal-1-description"
+          id={id}
+          aria-labelledby={`${id}-heading`}
+          aria-describedby={`${id}-description`}
         >
-          <div className="usa-modal-overlay" aria-controls="example-modal-1">
+          <div className="usa-modal-overlay" aria-controls={id}>
             <div
               className={`usa-modal ${
                 modalType === "large" ? "usa-modal--lg" : ""
               }`}
-              id="example-modal-1"
-              aria-labelledby="modal-1-heading"
-              aria-describedby="modal-1-description"
+              id={id}
+              aria-labelledby={`${id}-heading`}
+              aria-describedby={`${id}-description`}
             >
               <div className="usa-modal__content">
                 <div className="usa-modal__main">
