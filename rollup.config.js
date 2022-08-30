@@ -10,6 +10,7 @@ import image from "@rollup/plugin-image";
 const packageJson = require("./package.json");
 
 export default {
+  external: ["react", "react-dom"],
   input: "src/index.tsx",
   output: [
     {
