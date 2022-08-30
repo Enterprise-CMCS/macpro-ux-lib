@@ -1,5 +1,11 @@
 @use "../../assets/theme/macbis-colors" as c;
 
+.usa-form-group {
+  .usa-hint.input-error {
+    color: c.$error;
+  }
+}
+
 .usa-date-picker {
   .calendar-button {
     background-color: transparent;

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Icon } from "../Icon/Icon";
 import Calendar from "react-calendar";
+import { Icon } from "../Icon/Icon";
+import { completeDateFilter, numbersAndSlashesFilter } from "../../utils";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 export interface Props extends IntrinsicElements {
@@ -36,29 +37,52 @@ export const Datefield: React.FC<Props> = ({
   minDate,
   maxDate,
   defaultDate,
-  hint = false,
+  hint = true,
   disabled = false,
   ...rest
 }) => {
+  value = completeDateFilter.test(value || "") ? value : "";
+  defaultDate = completeDateFilter.test(defaultDate || "") ? defaultDate : "";
+  const [currentDate, setDate] = useState(value || defaultDate);
   const [calendarOpen, setCalendarOpen] = useState(false);
-  const [currentDate, setDate] = useState(value || defaultDate || "");
+  const [dateError, setDateError] = useState(false);
 
   const toggleCalendar = () => {
     setCalendarOpen(!calendarOpen);
   };
 
+  const filterInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (numbersAndSlashesFilter.test(e.target.value)) {
+      setDate(e.target.value);
+    } else if (e.target.value === "") {
+      setDate(e.target.value);
+    }
+  };
+
+  const onBlurCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (completeDateFilter.test(e.target.value)) {
+      setDateError(false);
+    } else {
+      setDateError(true);
+    }
+  };
+
   const setDateValue = (dateObj: Date) => {
     let [month, day, year] = dateObj.toLocaleDateString()?.split("/");
-
     day = day.padStart(2, "0");
     month = month.padStart(2, "0");
 
     setDate(`${month}/${day}/${year}`);
     toggleCalendar();
+    setDateError(false);
   };
 
-  const formatStringDateToDate = (stringDate: string): Date => {
-    return new Date(stringDate);
+  const formatStringDateToDate = (
+    stringDate: string | undefined
+  ): Date | undefined => {
+    return stringDate && completeDateFilter.test(stringDate)
+      ? new Date(stringDate)
+      : undefined;
   };
 
   return (
@@ -66,9 +90,12 @@ export const Datefield: React.FC<Props> = ({
       <label className="usa-label" id={`${id}-label`} htmlFor={id} role="label">
         {label}
       </label>
-      {hint && (
-        <div className="usa-hint" id={`${id}-hint`}>
-          mm/dd/yyyy
+      {(hint || dateError) && (
+        <div
+          className={`usa-hint${dateError ? " input-error" : ""}`}
+          id={`${id}-hint`}
+        >
+          {`${dateError ? "Inputted date must be " : ""}mm/dd/yyyy`}
         </div>
       )}
 
@@ -76,13 +103,14 @@ export const Datefield: React.FC<Props> = ({
         <div className="grid-row">
           <input
             value={currentDate}
-            onChange={(e) => setDate(e.target.value)}
+            onChange={(e) => filterInput(e)}
             className="usa-input margin-0"
             id={id}
             name={name}
             aria-labelledby={`${id}-label`}
             aria-describedby={hint ? `${id}-hint` : `${id}-label`}
             disabled={disabled}
+            onBlur={onBlurCheck}
             {...rest}
           />
           <div className={`flex-column${calendarOpen ? " grey-lightest" : ""}`}>
@@ -100,17 +128,15 @@ export const Datefield: React.FC<Props> = ({
             </button>
           </div>
         </div>
-
         {calendarOpen && (
           <div className="grid-row" data-testid="calendar">
             <Calendar
               className="grid-col-3"
               onChange={setDateValue}
-              value={
-                currentDate ? formatStringDateToDate(currentDate) : undefined
-              }
-              minDate={minDate ? formatStringDateToDate(minDate) : undefined}
-              maxDate={maxDate ? formatStringDateToDate(maxDate) : undefined}
+              value={formatStringDateToDate(currentDate)}
+              defaultActiveStartDate={formatStringDateToDate(minDate)}
+              minDate={formatStringDateToDate(minDate)}
+              maxDate={formatStringDateToDate(maxDate)}
             />
           </div>
         )}

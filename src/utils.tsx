@@ -4,6 +4,10 @@ export const generateId = (digits: number = 6): number => {
   return Math.trunc(Math.random() * Math.pow(10, digits));
 };
 
+// Regex
+export const completeDateFilter = new RegExp(/^\d{2}\/\d{2}\/\d{4}$/);
+export const numbersAndSlashesFilter = new RegExp(/^[0-9/]+$/);
+
 /**
  * Standard Storybook Decorators
  *

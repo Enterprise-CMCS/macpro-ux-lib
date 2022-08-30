@@ -24,7 +24,7 @@ describe("Tests for the Datefield component.", () => {
         id="test-2"
         name="test-2"
         label="test-2"
-        value="10-10-2020"
+        value="10/10/2020"
         hint
       />
     );
@@ -32,7 +32,7 @@ describe("Tests for the Datefield component.", () => {
     const labelComp = screen.getByRole("label");
 
     expect(labelComp).toBeInTheDocument();
-    expect(DatefieldComp).toHaveAttribute("value", "10-10-2020");
+    expect(DatefieldComp).toHaveAttribute("value", "10/10/2020");
   });
 
   it("Should fire and change the value when the user types", () => {
@@ -47,9 +47,44 @@ describe("Tests for the Datefield component.", () => {
     );
     const DatefieldComp = screen.getByLabelText("test-3");
     fireEvent.change(DatefieldComp, {
-      target: { value: "10-10-2020" },
+      target: { value: "10/10/2020" },
     });
-    expect(DatefieldComp).toHaveDisplayValue("10-10-2020");
+    expect(DatefieldComp).toHaveDisplayValue("10/10/2020");
+
+    fireEvent.change(DatefieldComp, {
+      target: { value: "" },
+    });
+    expect(DatefieldComp).toHaveDisplayValue("");
+  });
+
+  it("Should fire a check on blur", () => {
+    render(
+      <Datefield
+        data-testid="Datefield"
+        id="test-3"
+        name="test-3"
+        label="test-3"
+        hint
+      />
+    );
+    const DatefieldComp = screen.getByLabelText("test-3");
+    fireEvent.blur(DatefieldComp, {
+      target: { value: "10/10/2020" },
+    });
+    expect(DatefieldComp).toHaveDisplayValue("10/10/2020");
+
+    fireEvent.blur(DatefieldComp, {
+      target: { value: "" },
+    });
+    expect(DatefieldComp).toHaveDisplayValue("");
+
+    fireEvent.blur(DatefieldComp, {
+      target: { value: "asdasd" },
+    });
+    const hintComp = screen.getByText("Inputted date must be mm/dd/yyyy");
+
+    expect(hintComp).toBeInTheDocument();
+    expect(DatefieldComp).toHaveDisplayValue("asdasd");
   });
 
   it("Should open the calendar component with min and max dates", () => {

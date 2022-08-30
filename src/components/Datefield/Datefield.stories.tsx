@@ -26,14 +26,17 @@ export default {
     defaultDate: {
       description:
         "The date picker input will set this value if it is a valid date. The date should be in the format mm/dd/yyyy.",
+      control: { type: "text" },
     },
     minDate: {
       description:
         "The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy.",
+      control: { type: "text" },
     },
     maxDate: {
       description:
         "The date picker will not allow a date selection after this date. The date should be in the format mm/dd/yyyy.",
+      control: { type: "text" },
     },
     value: {
       description: "Value of the input element.",
@@ -55,13 +58,18 @@ const Template: ComponentStory<typeof Datefield> = ({ ...rest }) => (
 );
 
 export const PrimaryDatefield = Template.bind({});
-PrimaryDatefield.args = {};
+PrimaryDatefield.args = {
+  id: "default",
+  name: "default",
+  label: "Datefield",
+};
 
 export const DefaultDatefield = Template.bind({});
 DefaultDatefield.args = {
   defaultDate: "08/08/2022",
   id: "default",
   name: "default",
+  label: "default",
 };
 DefaultDatefield.parameters = {
   docs: {
@@ -77,6 +85,7 @@ MinimumDateRange.args = {
   minDate: "08/08/2022",
   id: "min-date",
   name: "min-date",
+  label: "Minimum date",
 };
 MinimumDateRange.parameters = {
   docs: {
@@ -92,6 +101,7 @@ MaximumDateRange.args = {
   maxDate: "08/08/2022",
   id: "max-date",
   name: "max-date",
+  label: "Maximum date",
 };
 MaximumDateRange.parameters = {
   docs: {
