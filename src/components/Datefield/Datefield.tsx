@@ -5,7 +5,7 @@ import Calendar from "react-calendar";
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 export interface Props extends IntrinsicElements {
   id: string;
-  fieldName: string;
+  name: string;
   label: string;
   hint?: boolean;
   disabled?: boolean;
@@ -18,7 +18,7 @@ export interface Props extends IntrinsicElements {
 /**
  * Datefield Component
  * @param {string}  id                     A unique identifier for the input.
- * @param {string}  fieldName              Name of the input field.
+ * @param {string}  name                   Name of the input field.
  * @param {string}  label                  Field label.
  * @param {boolean} [hint]                 Boolean that shows or hide the date format hint, in the format mm/dd/yyyy.
  * @param {string}  [disabled]             Controls whether or not the date picker is disabled to the user.
@@ -30,7 +30,7 @@ export interface Props extends IntrinsicElements {
 
 export const Datefield: React.FC<Props> = ({
   id,
-  fieldName,
+  name,
   label,
   value,
   minDate,
@@ -79,7 +79,7 @@ export const Datefield: React.FC<Props> = ({
             onChange={(e) => setDate(e.target.value)}
             className="usa-input margin-0"
             id={id}
-            name={fieldName}
+            name={name}
             aria-labelledby={`${id}-label`}
             aria-describedby={hint ? `${id}-hint` : `${id}-label`}
             disabled={disabled}

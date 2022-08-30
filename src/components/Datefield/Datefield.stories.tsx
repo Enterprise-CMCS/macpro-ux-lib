@@ -9,7 +9,7 @@ export default {
     id: {
       description: "A unique identifier for the input.",
     },
-    fieldName: {
+    name: {
       description: "Name of the input field.",
     },
     label: {
@@ -61,7 +61,7 @@ export const DefaultDatefield = Template.bind({});
 DefaultDatefield.args = {
   defaultDate: "08/08/2022",
   id: "default",
-  fieldName: "default",
+  name: "default",
 };
 DefaultDatefield.parameters = {
   docs: {
@@ -76,7 +76,7 @@ export const MinimumDateRange = Template.bind({});
 MinimumDateRange.args = {
   minDate: "08/08/2022",
   id: "min-date",
-  fieldName: "min-date",
+  name: "min-date",
 };
 MinimumDateRange.parameters = {
   docs: {
@@ -91,7 +91,7 @@ export const MaximumDateRange = Template.bind({});
 MaximumDateRange.args = {
   maxDate: "08/08/2022",
   id: "max-date",
-  fieldName: "max-date",
+  name: "max-date",
 };
 MaximumDateRange.parameters = {
   docs: {

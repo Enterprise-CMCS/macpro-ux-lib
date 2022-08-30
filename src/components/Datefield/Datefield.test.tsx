@@ -8,7 +8,7 @@ describe("Tests for the Datefield component.", () => {
       <Datefield
         data-testid="Datefield"
         id="test-1"
-        fieldName="test-1"
+        name="test-1"
         label="test-1"
         hint
       />
@@ -22,7 +22,7 @@ describe("Tests for the Datefield component.", () => {
       <Datefield
         data-testid="Datefield"
         id="test-2"
-        fieldName="test-2"
+        name="test-2"
         label="test-2"
         value="10-10-2020"
         hint
@@ -40,7 +40,7 @@ describe("Tests for the Datefield component.", () => {
       <Datefield
         data-testid="Datefield"
         id="test-3"
-        fieldName="test-3"
+        name="test-3"
         label="test-3"
         hint
       />
@@ -57,7 +57,7 @@ describe("Tests for the Datefield component.", () => {
       <Datefield
         data-testid="Datefield"
         id="test-4"
-        fieldName="test-4"
+        name="test-4"
         label="test-4"
         minDate="10/10/2022"
         maxDate="10/11/2022"
@@ -78,7 +78,7 @@ describe("Tests for the Datefield component.", () => {
       <Datefield
         data-testid="Datefield"
         id="test-5"
-        fieldName="test-5"
+        name="test-5"
         label="test-5"
       />
     );
@@ -98,7 +98,7 @@ describe("Tests for the Datefield component.", () => {
       <Datefield
         data-testid="Datefield"
         id="test-6"
-        fieldName="test-6"
+        name="test-6"
         label="test-6"
       />
     );
@@ -111,7 +111,7 @@ describe("Tests for the Datefield component.", () => {
       <Datefield
         data-testid="Datefield"
         id="test-7"
-        fieldName="test-7"
+        name="test-7"
         label="test-7"
         hint
         disabled
@@ -128,7 +128,7 @@ describe("compontent snapshots", () => {
       <Datefield
         hint
         id="test-8"
-        fieldName="test-8"
+        name="test-8"
         label="test-8"
         defaultDate="05/05/2020"
       />
@@ -141,7 +141,7 @@ describe("compontent snapshots", () => {
       <Datefield
         hint
         id="test-9"
-        fieldName="test-9"
+        name="test-9"
         label="test-9"
         maxDate="05/05/2020"
       />
@@ -154,7 +154,7 @@ describe("compontent snapshots", () => {
       <Datefield
         hint
         id="test-10"
-        fieldName="test-10"
+        name="test-10"
         label="test-10"
         required
         minDate="05/05/2020"
