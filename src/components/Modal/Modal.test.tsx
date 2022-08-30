@@ -13,6 +13,7 @@ describe("Modal", () => {
         <Modal
           description="You have unsaved changes that will be lost."
           heading="Are you sure you want to continue?"
+          id="example-modal"
           isOpen={true}
           onClose={mockAction}
           primaryButtonText="Continue without saving"
@@ -76,6 +77,7 @@ describe("Modal", () => {
         <Modal
           description="You have unsaved changes that will be lost."
           heading="Are you sure you want to continue?"
+          id="large-modal"
           isOpen={true}
           modalType="large"
           onClose={mockAction}
@@ -140,6 +142,7 @@ describe("Modal", () => {
         <Modal
           description="You have unsaved changes that will be lost."
           heading="Are you sure you want to continue?"
+          id="forced-action-modal"
           isOpen={true}
           modalType="forcedAction"
           onClose={mockAction}
@@ -195,6 +198,7 @@ describe("Modal", () => {
         <Modal
           description="You have unsaved changes that will be lost."
           heading="Are you sure you want to continue?"
+          id="closed-modal"
           primaryButtonText="Continue without saving"
           primaryOnClick={mockAction}
           secondaryButtonText="Go back"
