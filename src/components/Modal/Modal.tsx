@@ -18,10 +18,10 @@ interface Props {
 }
 
 /**
- * Modal
- * @callback [onClose]
- * @callback primaryOnClick
- * @callback secondaryOnClick
+ * Modal component
+ * @callback [onClose]                      Callback for the close button.
+ * @callback primaryOnClick                 Callback for the primary button.
+ * @callback secondaryOnClick               Callback for the secondary button.
  * @param {boolean}    [isOpen]             Sets whether or not the modal is visible and open.
  * @param {ModalType}  [modalType]          The type of Modal. Options include "default", "large", or "forcedAction".
  * @param {string}     [id]                 String used for the modal ID and related ARIA tags.
