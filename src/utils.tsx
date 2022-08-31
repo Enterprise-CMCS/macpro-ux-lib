@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-
+/* istanbul ignore file */
+// Ignoring this file from testing as we are going to be deleting/not using these functions
 export const generateId = (digits: number = 6): number => {
   return Math.trunc(Math.random() * Math.pow(10, digits));
 };
