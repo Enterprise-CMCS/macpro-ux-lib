@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.7.1...v1.8.0) (2022-08-31)
+
+
+### Features
+
+* **CardChoice:** add CardChoice and CardChoiceGroup components ([c410b9f](https://github.com/cmsgov/macpro-ux-lib/commit/c410b9f6c80efe6e00f751f3e5ee88b684974492))
+
 ## [1.7.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.7.0...v1.7.1) (2022-08-31)
 
 
