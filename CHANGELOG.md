@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.6.0...v1.7.0) (2022-08-31)
+
+
+### Features
+
+* **Search:** add search components ([dfe2291](https://github.com/cmsgov/macpro-ux-lib/commit/dfe22917ef27edbad9b8ee420ddb7a6f61114c31))
+
 # [1.6.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.5.1...v1.6.0) (2022-08-31)
 
 
