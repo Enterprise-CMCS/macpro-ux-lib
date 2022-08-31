@@ -94,7 +94,7 @@ export const Modal: React.FC<Props> = ({
                   <button
                     type="button"
                     className="usa-button usa-modal__close"
-                    aria-label="Close this window"
+                    aria-label="Close this modal"
                     data-close-modal
                     onClick={onClose}
                   >
