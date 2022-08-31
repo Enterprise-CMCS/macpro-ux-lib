@@ -3,6 +3,8 @@ import "./assets/js/uswds-init.min.js";
 import "./assets/js/uswds.min.js";
 import "./assets/theme/styles.scss";
 
+import { Accordion } from "./components/Accordion/Accordion";
+import { AccordionGroup } from "./components/Accordion/AccordionGroup";
 import { ActionsMenu } from "./components/Header/ActionsMenu";
 import { Button } from "./components/Button/Button";
 import { Card } from "./components/Card/Card";
@@ -22,6 +24,8 @@ import { Typography } from "./components/Typography/Typography";
 import { UsaBanner } from "./components/UsaBanner/UsaBanner";
 
 export {
+  Accordion,
+  AccordionGroup,
   ActionsMenu,
   Button,
   Card,
