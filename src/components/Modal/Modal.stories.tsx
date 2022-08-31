@@ -4,7 +4,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Modal } from "./Modal";
 
 export default {
-  title: "Components/Modal",
+  title: "COMPONENTS/Modal",
   component: Modal,
   argTypes: {
     description: {
