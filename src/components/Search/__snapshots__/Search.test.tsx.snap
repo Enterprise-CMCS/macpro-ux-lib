@@ -24,6 +24,7 @@ exports[`Tests for the search component. compontent snapshots big search 1`] = `
         value="initial"
       />
       <button
+        aria-label="search"
         class="usa-button padding-y-0 padding-x-2 radius-left-0"
         type="button"
       >
@@ -67,6 +68,7 @@ exports[`Tests for the search component. compontent snapshots default search 1`]
         value=""
       />
       <button
+        aria-label="search"
         class="usa-button padding-y-0 padding-x-2 radius-left-0"
         type="button"
       >
@@ -112,6 +114,7 @@ exports[`Tests for the search component. compontent snapshots small disabled sea
         value=""
       />
       <button
+        aria-label="search"
         class="usa-button padding-y-0 padding-x-2 radius-left-0"
         disabled=""
         type="button"
