@@ -67,7 +67,7 @@ import "@enterprise-cmcs/macpro-ux-lib/build/assets/css/index.css";
 
 This will include the css required for the styles to be applied to any components that are used.
 
-With the project now set up you can import any of the components in your code and use them. Refer to the [StoryBook](https://cmsgov.github.io/macpro-ux-lib/) for implementation details on each component.
+With the project now set up you can import any of the components in your code and use them. Refer to the [StoryBook](https://main.d1oclb5n000jnf.amplifyapp.com/) for implementation details on each component.
 
 ## Contributing
 
