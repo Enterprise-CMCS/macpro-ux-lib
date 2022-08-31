@@ -8,6 +8,8 @@ import { AccordionGroup } from "./components/Accordion/AccordionGroup";
 import { ActionsMenu } from "./components/Header/ActionsMenu";
 import { Button } from "./components/Button/Button";
 import { Card } from "./components/Card/Card";
+import { CardChoice } from "./components/CardChoice/CardChoice";
+import { CardChoiceGroup } from "./components/CardChoice/CardChoiceGroup";
 import { Checkbox } from "./components/Checkbox/Checkbox";
 import { Dropdown } from "./components/Dropdown/Dropdown";
 import { Footer } from "./components/Footer/Footer";
@@ -29,6 +31,8 @@ export {
   ActionsMenu,
   Button,
   Card,
+  CardChoice,
+  CardChoiceGroup,
   Checkbox,
   Dropdown,
   Footer,
