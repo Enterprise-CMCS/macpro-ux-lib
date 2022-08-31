@@ -1,3 +1,80 @@
+# [1.8.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.7.1...v1.8.0) (2022-08-31)
+
+
+### Features
+
+* **CardChoice:** add CardChoice and CardChoiceGroup components ([c410b9f](https://github.com/cmsgov/macpro-ux-lib/commit/c410b9f6c80efe6e00f751f3e5ee88b684974492))
+
+## [1.7.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.7.0...v1.7.1) (2022-08-31)
+
+
+### Bug Fixes
+
+* **readme:** updated readme with correct storybook link ([3338a1a](https://github.com/cmsgov/macpro-ux-lib/commit/3338a1ae24f7279fc15b81bab899ceb1c5f932cd))
+
+# [1.7.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.6.0...v1.7.0) (2022-08-31)
+
+
+### Features
+
+* **Search:** add search components ([dfe2291](https://github.com/cmsgov/macpro-ux-lib/commit/dfe22917ef27edbad9b8ee420ddb7a6f61114c31))
+
+# [1.6.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.5.1...v1.6.0) (2022-08-31)
+
+
+### Features
+
+* **Accordion:** add Accordion and AccordionGroup components ([11ddd70](https://github.com/cmsgov/macpro-ux-lib/commit/11ddd70db204e63a9b068f605c36f3869fc7b180))
+
+## [1.5.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.5.0...v1.5.1) (2022-08-30)
+
+
+### Bug Fixes
+
+* **rollup:** update rollup config file to specifically exclude react and react-dom from package ([40e8ed9](https://github.com/cmsgov/macpro-ux-lib/commit/40e8ed9df57b7f4c382b02fef02d03799846d96d))
+
+# [1.5.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.4.2...v1.5.0) (2022-08-29)
+
+
+### Features
+
+* **UsaBanner:** add UsaBanner component ([91016dc](https://github.com/cmsgov/macpro-ux-lib/commit/91016dc89cf8db570ba929b41212b117ab47aa14))
+
+## [1.4.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.4.1...v1.4.2) (2022-08-18)
+
+
+### Bug Fixes
+
+* **Dropdown:** Update Dropdown to use USWDS to generate stylized dropdown ([9bc390a](https://github.com/cmsgov/macpro-ux-lib/commit/9bc390ae476dae4eb1de115621df8076cb0eece7))
+
+## [1.4.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.4.0...v1.4.1) (2022-08-18)
+
+
+### Bug Fixes
+
+* **decorator:** add USWDS decorator for improved Storybook experience ([579f938](https://github.com/cmsgov/macpro-ux-lib/commit/579f938f7084b9fdf41b144451c882f4b205a59a))
+
+# [1.4.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.3.2...v1.4.0) (2022-08-17)
+
+
+### Features
+
+* **Dropdown:** add dropdown component ([7dbb1d0](https://github.com/cmsgov/macpro-ux-lib/commit/7dbb1d010594d3bcfd0e82e3c36f0fadc3b050f2))
+
+## [1.3.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.3.1...v1.3.2) (2022-08-16)
+
+
+### Bug Fixes
+
+* **Footer:** Regenerated snapshot tests for footer ([41b14ba](https://github.com/cmsgov/macpro-ux-lib/commit/41b14ba5b1af1f56bf5e070ca468a031b07bb4b2))
+
+## [1.3.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.3.0...v1.3.1) (2022-08-16)
+
+
+### Bug Fixes
+
+* **Header:** Gave email text a link to email and bolded the contrast between the rest of the sentence ([670c4d5](https://github.com/cmsgov/macpro-ux-lib/commit/670c4d5e7a273b57cc4d2d6591d4ff7fd7e19f57))
+
 # [1.3.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.2.2...v1.3.0) (2022-08-12)
 
 
