@@ -15,6 +15,7 @@ import { Link } from "./components/Link/Link";
 import { Logo } from "./components/Logo/Logo";
 import { Radio } from "./components/Radio/Radio";
 import { RadioGroup } from "./components/RadioGroup/RadioGroup";
+import { Search } from "./components/Search/Search";
 import { TextArea } from "./components/TextArea/TextArea";
 import { TextInput } from "./components/TextInput/TextInput";
 import { Typography } from "./components/Typography/Typography";
