@@ -65,6 +65,7 @@ export const Search: React.FC<Props> = ({
           type="button"
           disabled={disabled}
           onClick={() => onSearch(inputValue)}
+          aria-label="search"
         >
           {variation !== "small" && (
             <span className="usa-search__submit-text">Search </span>
