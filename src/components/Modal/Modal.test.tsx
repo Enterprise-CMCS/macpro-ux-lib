@@ -43,12 +43,12 @@ describe("Modal", () => {
     });
 
     it("renders the close button", () => {
-      const close = screen.getByLabelText("Close this window");
+      const close = screen.getByLabelText("Close this modal");
       expect(close).toBeInTheDocument();
     });
 
     it("calls onClose() callback", () => {
-      const close = screen.getByLabelText("Close this window");
+      const close = screen.getByLabelText("Close this modal");
       expect(mockAction).not.toBeCalled();
       fireEvent.click(close);
       expect(mockAction).toBeCalled();
@@ -108,12 +108,12 @@ describe("Modal", () => {
     });
 
     it("renders the close button", () => {
-      const close = screen.getByLabelText("Close this window");
+      const close = screen.getByLabelText("Close this modal");
       expect(close).toBeInTheDocument();
     });
 
     it("calls onClose() callback", () => {
-      const close = screen.getByLabelText("Close this window");
+      const close = screen.getByLabelText("Close this modal");
       expect(mockAction).not.toBeCalled();
       fireEvent.click(close);
       expect(mockAction).toBeCalled();
@@ -172,7 +172,7 @@ describe("Modal", () => {
     });
 
     it("renders the close button", () => {
-      const close = screen.queryByLabelText("Close this window");
+      const close = screen.queryByLabelText("Close this modal");
       expect(close).toBeNull();
     });
 
@@ -226,7 +226,7 @@ describe("Modal", () => {
     });
 
     it("renders the close button", () => {
-      const close = screen.queryByLabelText("Close this window");
+      const close = screen.queryByLabelText("Close this modal");
       expect(close).toBeNull();
     });
   });
