@@ -1,3 +1,9 @@
+<!--
+Render Markdown in VS Code
+
+SHIFT + CMD/CTRL + V
+-->
+
 <h1 align="center" style="border-bottom: none;"> macpro-ux-lib</h1>
 <h3 align="center">Common UI/UX Library built on USWDS 3.0 and packaged for easier distribution throughout CMS.</h3>
 <p align="center">
