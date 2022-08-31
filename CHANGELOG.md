@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.5.1...v1.6.0) (2022-08-31)
+
+
+### Features
+
+* **Accordion:** add Accordion and AccordionGroup components ([11ddd70](https://github.com/cmsgov/macpro-ux-lib/commit/11ddd70db204e63a9b068f605c36f3869fc7b180))
+
 ## [1.5.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.5.0...v1.5.1) (2022-08-30)
 
 
