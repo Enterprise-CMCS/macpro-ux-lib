@@ -3,7 +3,7 @@ import React from "react";
 import { Radio } from "./Radio";
 
 export default {
-  title: "Components/Radio",
+  title: "COMPONENTS/Radio/Radio",
   component: Radio,
   argTypes: {
     id: {
