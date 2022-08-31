@@ -85,6 +85,7 @@ describe("Tests for the Datefield component.", () => {
 
     expect(hintComp).toBeInTheDocument();
     expect(DatefieldComp).toHaveDisplayValue("asdasd");
+    expect(DatefieldComp).toHaveAttribute("aria-describedby", "test-3-hint");
   });
 
   it("Should open the calendar component with min and max dates", () => {
@@ -97,6 +98,7 @@ describe("Tests for the Datefield component.", () => {
         minDate="10/10/2022"
         maxDate="10/11/2022"
         value="10/10/2022"
+        hint={false}
       />
     );
     const DatefieldInput = screen.getByTestId("Datefield");
@@ -106,6 +108,7 @@ describe("Tests for the Datefield component.", () => {
 
     expect(DatefieldCalendar).toBeInTheDocument();
     expect(DatefieldInput).toHaveValue("10/10/2022");
+    expect(DatefieldInput).toHaveAttribute("aria-describedby", "test-4-label");
   });
 
   it("Should open the calendar component and choose a date", () => {

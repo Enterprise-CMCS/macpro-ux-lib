@@ -52,9 +52,7 @@ export const Datefield: React.FC<Props> = ({
   };
 
   const filterInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (numbersAndSlashesFilter.test(e.target.value)) {
-      setDate(e.target.value);
-    } else if (e.target.value === "") {
+    if (numbersAndSlashesFilter.test(e.target.value) || e.target.value === "") {
       setDate(e.target.value);
     }
   };
