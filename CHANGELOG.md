@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.7.0...v1.7.1) (2022-08-31)
+
+
+### Bug Fixes
+
+* **readme:** updated readme with correct storybook link ([3338a1a](https://github.com/cmsgov/macpro-ux-lib/commit/3338a1ae24f7279fc15b81bab899ceb1c5f932cd))
+
 # [1.7.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.6.0...v1.7.0) (2022-08-31)
 
 
