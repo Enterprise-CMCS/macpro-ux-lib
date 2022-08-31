@@ -77,7 +77,7 @@ exports[`Modal Snapshot tests renders default Modal as expected 1`] = `
             </div>
           </div>
           <button
-            aria-label="Close this window"
+            aria-label="Close this modal"
             class="usa-button usa-modal__close"
             data-close-modal="true"
             type="button"
@@ -262,7 +262,7 @@ exports[`Modal Snapshot tests renders large Modal as expected 1`] = `
             </div>
           </div>
           <button
-            aria-label="Close this window"
+            aria-label="Close this modal"
             class="usa-button usa-modal__close"
             data-close-modal="true"
             type="button"
