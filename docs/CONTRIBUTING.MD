@@ -57,22 +57,28 @@ Before publishing updates to the package, all changes should be tested locally. 
 To do this, you will need to build the package locally and test it in `examples/macpro-example` or something similar.
 
 ```bash
-# from project root
+# Run the following from project root
 
 # delete existing node_module in example
-rm -rf examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib
+rm -rf examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib/build
 
-npm run build  # build package locally
+# delete .cache/
+rm -rf examples/macpro-example/node_modules/.cache
 
-# create a symlink for the dist folder in the global node_modules
-npm link
+# build package locally
+npm run build
 
-cd examples/macpro-example
-
-# use global @enterprise-cmcs/macpro-ux-lib in example app
-npm link @enterprise-cmcs/macpro-ux-lib
+# replace package build directory
+cp -rf build/ examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib/build/
 
 npm start
+
+##################
+# one line version
+##################
+rm -rf examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib/build && rm -rf examples/macpro-example/node_modules/.cache && npm run build && cp -rf build/ examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib/build/
 ```
 
 If this works as expected, the example application should start without any issue. Implement whatever is necessary in the example app to confirm your changes will work when the package is updated.
+
+Note: If you change a directory name it is possible that it may persist in `build/`. If you encounter an issue where expected changes are not taking effect, try deleting `build/` at the project root and run `npm run build` again.

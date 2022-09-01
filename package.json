@@ -12,7 +12,7 @@
     "build-storybook": "gulp compile && build-storybook",
     "test": "jest",
     "coverage": "jest --coverage",
-    "build": "gulp compile && tsc && rollup -c",
+    "build": "tsc && rollup -c",
     "prepublishOnly": "npm run build",
     "compileCss": "gulp compileSass"
   },
