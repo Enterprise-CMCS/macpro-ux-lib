@@ -2,7 +2,7 @@ name: Deploy Storybook
 on:
   push:
     branches:
-      - *
+      - "*"
 
 concurrency:
   group: ${{ github.ref }}-storybook
