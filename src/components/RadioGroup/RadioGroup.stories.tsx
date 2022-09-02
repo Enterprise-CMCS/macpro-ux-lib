@@ -4,7 +4,7 @@ import { RadioGroup } from "./RadioGroup";
 import { TextArea } from "../TextArea/TextArea";
 
 export default {
-  title: "COMPONENTS/RadioGroup",
+  title: "COMPONENTS/Radio/RadioGroup",
   component: RadioGroup,
   argTypes: {
     groupName: {

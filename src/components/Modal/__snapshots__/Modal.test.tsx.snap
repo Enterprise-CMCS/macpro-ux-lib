@@ -1,0 +1,288 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Modal Snapshot tests renders default Modal as expected 1`] = `
+<div>
+  <div
+    aria-describedby="example-modal-description"
+    aria-labelledby="example-modal-heading"
+    class="usa-modal-wrapper"
+    id="example-modal"
+    role="dialog"
+  >
+    <div
+      aria-controls="example-modal"
+      class="usa-modal-overlay"
+    >
+      <div
+        aria-describedby="example-modal-description"
+        aria-labelledby="example-modal-heading"
+        class="usa-modal "
+        id="example-modal"
+      >
+        <div
+          class="usa-modal__content"
+        >
+          <div
+            class="usa-modal__main"
+          >
+            <h2
+              class="usa-modal__heading"
+              id="modal-1-heading"
+            >
+              Are you sure you want to continue?
+            </h2>
+            <div
+              class="usa-prose"
+            >
+              <p
+                id="modal-1-description"
+              >
+                You have unsaved changes that will be lost.
+              </p>
+            </div>
+            <div
+              class="usa-modal__footer"
+            >
+              <ul
+                class="usa-button-group"
+              >
+                <li
+                  class="usa-button-group__item"
+                >
+                  <button
+                    aria-label="Continue without saving button"
+                    class="display-flex usa-button usa-button-- cms-primary-background "
+                  >
+                    <span
+                      class="padding-x-05"
+                    >
+                      Continue without saving
+                    </span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    aria-label="Go back button"
+                    class="usa-button--unstyled padding-105"
+                    type="button"
+                  >
+                    <span
+                      class="padding-x-05"
+                    >
+                      Go back
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <button
+            aria-label="Close this modal"
+            class="usa-button usa-modal__close"
+            data-close-modal="true"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="close icon"
+              class="usa-icon--size-3"
+              color="black"
+              fill="currentColor"
+              role="img"
+            >
+              <use
+                href="sprite.svg#close"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal Snapshot tests renders forced-action Modal as expected 1`] = `
+<div>
+  <div
+    aria-describedby="forced-action-modal-description"
+    aria-labelledby="forced-action-modal-heading"
+    class="usa-modal-wrapper"
+    id="forced-action-modal"
+    role="dialog"
+  >
+    <div
+      aria-controls="forced-action-modal"
+      class="usa-modal-overlay"
+    >
+      <div
+        aria-describedby="forced-action-modal-description"
+        aria-labelledby="forced-action-modal-heading"
+        class="usa-modal "
+        id="forced-action-modal"
+      >
+        <div
+          class="usa-modal__content"
+        >
+          <div
+            class="usa-modal__main"
+          >
+            <h2
+              class="usa-modal__heading"
+              id="modal-1-heading"
+            >
+              Are you sure you want to continue?
+            </h2>
+            <div
+              class="usa-prose"
+            >
+              <p
+                id="modal-1-description"
+              >
+                You have unsaved changes that will be lost.
+              </p>
+            </div>
+            <div
+              class="usa-modal__footer"
+            >
+              <ul
+                class="usa-button-group"
+              >
+                <li
+                  class="usa-button-group__item"
+                >
+                  <button
+                    aria-label="Continue without saving button"
+                    class="display-flex usa-button usa-button-- cms-primary-background "
+                  >
+                    <span
+                      class="padding-x-05"
+                    >
+                      Continue without saving
+                    </span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    aria-label="Go back button"
+                    class="usa-button--unstyled padding-105"
+                    type="button"
+                  >
+                    <span
+                      class="padding-x-05"
+                    >
+                      Go back
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Modal Snapshot tests renders large Modal as expected 1`] = `
+<div>
+  <div
+    aria-describedby="large-modal-description"
+    aria-labelledby="large-modal-heading"
+    class="usa-modal-wrapper"
+    id="large-modal"
+    role="dialog"
+  >
+    <div
+      aria-controls="large-modal"
+      class="usa-modal-overlay"
+    >
+      <div
+        aria-describedby="large-modal-description"
+        aria-labelledby="large-modal-heading"
+        class="usa-modal usa-modal--lg"
+        id="large-modal"
+      >
+        <div
+          class="usa-modal__content"
+        >
+          <div
+            class="usa-modal__main"
+          >
+            <h2
+              class="usa-modal__heading"
+              id="modal-1-heading"
+            >
+              Are you sure you want to continue?
+            </h2>
+            <div
+              class="usa-prose"
+            >
+              <p
+                id="modal-1-description"
+              >
+                You have unsaved changes that will be lost.
+              </p>
+            </div>
+            <div
+              class="usa-modal__footer"
+            >
+              <ul
+                class="usa-button-group"
+              >
+                <li
+                  class="usa-button-group__item"
+                >
+                  <button
+                    aria-label="Continue without saving button"
+                    class="display-flex usa-button usa-button-- cms-primary-background "
+                  >
+                    <span
+                      class="padding-x-05"
+                    >
+                      Continue without saving
+                    </span>
+                  </button>
+                </li>
+                <li>
+                  <button
+                    aria-label="Go back button"
+                    class="usa-button--unstyled padding-105"
+                    type="button"
+                  >
+                    <span
+                      class="padding-x-05"
+                    >
+                      Go back
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <button
+            aria-label="Close this modal"
+            class="usa-button usa-modal__close"
+            data-close-modal="true"
+            type="button"
+          >
+            <svg
+              aria-hidden="true"
+              aria-label="close icon"
+              class="usa-icon--size-3"
+              color="black"
+              fill="currentColor"
+              role="img"
+            >
+              <use
+                href="sprite.svg#close"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

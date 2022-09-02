@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for the search component. compontent snapshots big search 1`] = `
+<div>
+  <section
+    aria-label="Search component"
+  >
+    <form
+      class="usa-search role usa-search--big"
+      role="search"
+    >
+      <label
+        class="usa-sr-only"
+        for="search-field"
+      >
+        search
+      </label>
+      <input
+        class="usa-input"
+        data-testid="search"
+        id="search-field"
+        name="search"
+        type="search"
+        value="initial"
+      />
+      <button
+        aria-label="search"
+        class="usa-button padding-y-0 padding-x-2 radius-left-0"
+        type="button"
+      >
+        <span
+          class="usa-search__submit-text"
+        >
+          Search 
+        </span>
+        <img
+          alt="Search"
+          class="usa-search__submit-icon"
+          src="/assets/img/usa-icons-bg/search--white.svg"
+        />
+      </button>
+    </form>
+  </section>
+</div>
+`;
+
+exports[`Tests for the search component. compontent snapshots default search 1`] = `
+<div>
+  <section
+    aria-label="Search component"
+  >
+    <form
+      class="usa-search role usa-search--default"
+      role="search"
+    >
+      <label
+        class="usa-sr-only"
+        for="search-field"
+      >
+        Search Click Here
+      </label>
+      <input
+        class="usa-input"
+        data-testid="search"
+        id="search-field"
+        name="search"
+        type="search"
+        value=""
+      />
+      <button
+        aria-label="search"
+        class="usa-button padding-y-0 padding-x-2 radius-left-0"
+        type="button"
+      >
+        <span
+          class="usa-search__submit-text"
+        >
+          Search 
+        </span>
+        <img
+          alt="Search"
+          class="usa-search__submit-icon"
+          src="/assets/img/usa-icons-bg/search--white.svg"
+        />
+      </button>
+    </form>
+  </section>
+</div>
+`;
+
+exports[`Tests for the search component. compontent snapshots small disabled search 1`] = `
+<div>
+  <section
+    aria-label="Search component"
+  >
+    <form
+      class="usa-search role usa-search--small"
+      role="search"
+    >
+      <label
+        class="usa-sr-only"
+        for="search-field"
+      >
+        Click Me
+      </label>
+      <input
+        class="usa-input"
+        data-testid="search"
+        disabled=""
+        id="search-field"
+        name="search"
+        placeholder="placeholder"
+        type="search"
+        value=""
+      />
+      <button
+        aria-label="search"
+        class="usa-button padding-y-0 padding-x-2 radius-left-0"
+        disabled=""
+        type="button"
+      >
+        <img
+          alt="Search"
+          class="usa-search__submit-icon"
+          src="/assets/img/usa-icons-bg/search--white.svg"
+        />
+      </button>
+    </form>
+  </section>
+</div>
+`;
