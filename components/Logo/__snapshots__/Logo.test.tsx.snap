@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for the button component. Should render a png and have unique className 1`] = `
+exports[`Tests for the Logo component Should render a png and have unique className 1`] = `
 <div>
   <div
     aria-label="CMS.gov Logo"
@@ -17,7 +17,7 @@ exports[`Tests for the button component. Should render a png and have unique cla
 </div>
 `;
 
-exports[`Tests for the button component. Should render an svg 1`] = `
+exports[`Tests for the Logo component Should render an svg 1`] = `
 <div>
   <div
     aria-label="CMS.gov Logo"

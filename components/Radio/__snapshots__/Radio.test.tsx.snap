@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Radio Snapshot tests renders default Radio as expected 1`] = `
+<div>
+  <div
+    class="usa-radio"
+  >
+    <input
+      class="usa-radio__input"
+      id="default-radio"
+      name="default-group"
+      type="radio"
+      value="default-radio"
+    />
+    <label
+      class="usa-radio__label"
+      for="default-radio"
+    >
+      Default Radio
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Radio Snapshot tests renders disabled Radio as expected 1`] = `
+<div>
+  <div
+    class="usa-radio"
+  >
+    <input
+      class="usa-radio__input"
+      disabled=""
+      id="default-radio"
+      name="default-group"
+      type="radio"
+      value="default-radio"
+    />
+    <label
+      class="usa-radio__label"
+      for="default-radio"
+    >
+      Default Radio
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Radio Snapshot tests renders disabled tile Radio as expected 1`] = `
+<div>
+  <div
+    class="usa-radio"
+  >
+    <input
+      class="usa-radio__input usa-radio__input--tile"
+      disabled=""
+      id="tile-radio"
+      name="tile-group"
+      type="radio"
+      value="tile-radio"
+    />
+    <label
+      class="usa-radio__label"
+      for="tile-radio"
+    >
+      Tile Radio
+      <span
+        class="usa-radio__label-description"
+      >
+        This is the tile Radio description.
+      </span>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Radio Snapshot tests renders tile Radio as expected 1`] = `
+<div>
+  <div
+    class="usa-radio"
+  >
+    <input
+      class="usa-radio__input usa-radio__input--tile"
+      id="tile-radio"
+      name="tile-group"
+      type="radio"
+      value="tile-radio"
+    />
+    <label
+      class="usa-radio__label"
+      for="tile-radio"
+    >
+      Tile Radio
+      <span
+        class="usa-radio__label-description"
+      >
+        This is the tile Radio description.
+      </span>
+    </label>
+  </div>
+</div>
+`;

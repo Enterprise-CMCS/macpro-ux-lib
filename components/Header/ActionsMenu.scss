@@ -60,10 +60,13 @@
       padding: 10px 15px 10px;
     }
 
-    .user-actions-menu a,
-    .user-actions-menu a:hover {
-      color: #fff;
-      text-decoration: unset;
+    .user-actions-menu {
+      a,
+      svg,
+      a:hover {
+        color: #fff;
+        text-decoration: unset;
+      }
     }
 
     .user-actions-menu a:hover,

@@ -1,6 +1,10 @@
 .usa-footer {
-  a > svg {
-    padding-top: 10px;
+  a {
+    color: white;
+
+    > svg {
+      padding-top: 10px;
+    }
   }
 
   @media only screen and (max-width: 640px) {

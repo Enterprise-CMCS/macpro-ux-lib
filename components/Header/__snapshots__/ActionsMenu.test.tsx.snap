@@ -27,13 +27,16 @@ exports[`Test the Header component menu should open on click 1`] = `
     >
       <li>
         <a
+          class="usa-link"
           href=""
+          style="cursor: pointer;"
+          title="Manage Profile Link"
         >
           <svg
             aria-hidden="true"
             aria-label="person icon"
             class="usa-icon--size-3"
-            color="#fff"
+            color="black"
             fill="currentColor"
             role="img"
           >
@@ -46,13 +49,16 @@ exports[`Test the Header component menu should open on click 1`] = `
       </li>
       <li>
         <a
+          class="usa-link"
           href=""
+          style="cursor: pointer;"
+          title="Request Role Change Link"
         >
           <svg
             aria-hidden="true"
             aria-label="people icon"
             class="usa-icon--size-3"
-            color="#fff"
+            color="black"
             fill="currentColor"
             role="img"
           >
@@ -65,13 +71,16 @@ exports[`Test the Header component menu should open on click 1`] = `
       </li>
       <li>
         <a
+          class="usa-link"
           href=""
+          style="cursor: pointer;"
+          title="Log Out Link"
         >
           <svg
             aria-hidden="true"
             aria-label="logout icon"
             class="usa-icon--size-3"
-            color="#fff"
+            color="black"
             fill="currentColor"
             role="img"
           >
@@ -115,13 +124,16 @@ exports[`Test the Header component menu should open on click 2`] = `
     >
       <li>
         <a
+          class="usa-link"
           href=""
+          style="cursor: pointer;"
+          title="Manage Profile Link"
         >
           <svg
             aria-hidden="true"
             aria-label="person icon"
             class="usa-icon--size-3"
-            color="#fff"
+            color="black"
             fill="currentColor"
             role="img"
           >
@@ -134,13 +146,16 @@ exports[`Test the Header component menu should open on click 2`] = `
       </li>
       <li>
         <a
+          class="usa-link"
           href=""
+          style="cursor: pointer;"
+          title="Request Role Change Link"
         >
           <svg
             aria-hidden="true"
             aria-label="people icon"
             class="usa-icon--size-3"
-            color="#fff"
+            color="black"
             fill="currentColor"
             role="img"
           >
@@ -153,13 +168,16 @@ exports[`Test the Header component menu should open on click 2`] = `
       </li>
       <li>
         <a
+          class="usa-link"
           href=""
+          style="cursor: pointer;"
+          title="Log Out Link"
         >
           <svg
             aria-hidden="true"
             aria-label="logout icon"
             class="usa-icon--size-3"
-            color="#fff"
+            color="black"
             fill="currentColor"
             role="img"
           >
