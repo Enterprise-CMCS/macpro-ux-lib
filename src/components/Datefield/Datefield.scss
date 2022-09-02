@@ -32,9 +32,13 @@
     .react-calendar__month-view__days__day--neighboringMonth {
       color: rgba(16, 16, 16, 0.3);
     }
+
+    .react-calendar__tile--active.react-calendar__month-view__days__day--weekend:not(:disabled) {
+      color: white;
+    }
   }
 
-  .react-calendar__tile--now,
+  .react-calendar__tile--now:not(.react-calendar__tile--active),
   .grey-lightest {
     background-color: c.$gray-lightest;
   }

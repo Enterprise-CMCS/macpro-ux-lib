@@ -132,7 +132,10 @@ export const Datefield: React.FC<Props> = ({
               className="grid-col-3"
               onChange={setDateValue}
               value={formatStringDateToDate(currentDate)}
-              defaultActiveStartDate={formatStringDateToDate(minDate)}
+              defaultActiveStartDate={
+                formatStringDateToDate(minDate) ||
+                formatStringDateToDate(maxDate)
+              }
               minDate={formatStringDateToDate(minDate)}
               maxDate={formatStringDateToDate(maxDate)}
             />
