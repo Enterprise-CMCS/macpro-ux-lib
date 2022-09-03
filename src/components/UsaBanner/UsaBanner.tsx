@@ -1,9 +1,5 @@
 import React, { useState } from "react";
 
-import flag from "../../assets/img/us_flag_small.png";
-import gov from "../../assets/img/icon-dot-gov.svg";
-import lock from "../../assets/img/icon-https.svg";
-
 interface Props {
   className?: string;
   id?: string;
@@ -43,7 +39,7 @@ export const UsaBanner: React.FC<Props> = ({
                 <div className="grid-col-auto">
                   <img
                     className="usa-banner__header-flag"
-                    src={flag}
+                    src="../../assets/img/us_flag_small.png"
                     alt="U.S. flag"
                   />
                 </div>
@@ -77,7 +73,7 @@ export const UsaBanner: React.FC<Props> = ({
                 <div className="usa-banner__guidance tablet:grid-col-6">
                   <img
                     className="usa-banner__icon usa-media-block__img"
-                    src={gov}
+                    src="../../assets/img/icon-dot-gov.svg"
                     role="img"
                     alt=""
                     aria-hidden="true"
@@ -93,7 +89,7 @@ export const UsaBanner: React.FC<Props> = ({
                 <div className="usa-banner__guidance tablet:grid-col-6">
                   <img
                     className="usa-banner__icon usa-media-block__img"
-                    src={lock}
+                    src="../../assets/img/icon-https.svg"
                     role="img"
                     alt=""
                     aria-hidden="true"
@@ -152,7 +148,7 @@ export const UsaBanner: React.FC<Props> = ({
                 <div className="grid-col-auto">
                   <img
                     className="usa-banner__header-flag"
-                    src={flag}
+                    src="../../assets/img/us_flag_small.png"
                     alt="U.S. flag"
                   />
                 </div>
@@ -186,7 +182,7 @@ export const UsaBanner: React.FC<Props> = ({
                 <div className="usa-banner__guidance tablet:grid-col-6">
                   <img
                     className="usa-banner__icon usa-media-block__img"
-                    src={gov}
+                    src="../../assets/img/icon-dot-gov.svg"
                     role="img"
                     alt=""
                     aria-hidden="true"
@@ -203,7 +199,7 @@ export const UsaBanner: React.FC<Props> = ({
                 <div className="usa-banner__guidance tablet:grid-col-6">
                   <img
                     className="usa-banner__icon usa-media-block__img"
-                    src={lock}
+                    src="../../assets/img/icon-https.svg"
                     role="img"
                     alt=""
                     aria-hidden="true"
