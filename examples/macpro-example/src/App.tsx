@@ -18,35 +18,35 @@ function App() {
       <UX.UsaBanner />
       <UX.Header
         headerLogo={<UX.Logo source={logo} altText="Test Logo" />}
-        // secondaryComponent={
-        //   <UX.ActionsMenu
-        //     name="user-actions-menu"
-        //     links={[
-        //       {
-        //         // This type should be correct
-        //         href: "",
-        //         iconName: "person",
-        //         text: "Manage Profile",
-        //         target: "_blank",
-        //         onClick: () => console.log("Manage Profile"),
-        //       },
-        //       {
-        //         href: "",
-        //         iconName: "people",
-        //         text: "Request Role Change",
-        //         target: "_blank",
-        //         onClick: () => console.log("Request Role Change"),
-        //       },
-        //       {
-        //         href: "",
-        //         iconName: "logout",
-        //         text: "Log Out",
-        //         target: "_blank",
-        //         onClick: () => console.log("Log Out"),
-        //       },
-        //     ]}
-        //   />
-        // }
+        secondaryComponent={
+          <UX.ActionsMenu
+            name="user-actions-menu"
+            links={[
+              {
+                // This type should be correct
+                href: "",
+                iconName: "person",
+                text: "Manage Profile",
+                target: "_blank",
+                onClick: () => console.log("Manage Profile"),
+              },
+              {
+                href: "",
+                iconName: "people",
+                text: "Request Role Change",
+                target: "_blank",
+                onClick: () => console.log("Request Role Change"),
+              },
+              {
+                href: "",
+                iconName: "logout",
+                text: "Log Out",
+                target: "_blank",
+                onClick: () => console.log("Log Out"),
+              },
+            ]}
+          />
+        }
         navData={[
           {
             buttonText: "abc",

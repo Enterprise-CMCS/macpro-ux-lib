@@ -13,7 +13,7 @@ import { Dropdown } from "./components/Dropdown/Dropdown";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Icon } from "./components/Icon/Icon";
-import { Link } from "./components/Link/Link";
+import { Link, LinkProps } from "./components/Link/Link";
 import { Logo } from "./components/Logo/Logo";
 import { Radio } from "./components/Radio/Radio";
 import { RadioGroup } from "./components/RadioGroup/RadioGroup";
@@ -37,6 +37,7 @@ export {
   Header,
   Icon,
   Link,
+  LinkProps,
   Logo,
   Radio,
   RadioGroup,
