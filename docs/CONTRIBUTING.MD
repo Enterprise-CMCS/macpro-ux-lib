@@ -57,28 +57,14 @@ Before publishing updates to the package, all changes should be tested locally. 
 To do this, you will need to build the package locally and test it in `examples/macpro-example` or something similar.
 
 ```bash
-# Run the following from project root
+# Run from project root
+npm run use-local-build
 
-# delete existing node_module in example
-rm -rf examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib/build
-
-# delete .cache/
-rm -rf examples/macpro-example/node_modules/.cache
-
-# build package locally
-npm run build
-
-# replace package build directory
-cp -rf build/ examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib/build/
+cd examples/macpro-example
 
 npm start
-
-##################
-# one line version
-##################
-rm -rf examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib/build && rm -rf examples/macpro-example/node_modules/.cache && npm run build && cp -rf build/ examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib/build/
 ```
 
-If this works as expected, the example application should start without any issue. Implement whatever is necessary in the example app to confirm your changes will work when the package is updated.
+If this works as expected, the `use-local-build` script will run the build and replace `@enterprise-cmcs/macpro-ux-lib` in the example project with the build output. The example application should start without any issue. Implement whatever is necessary in the example app to confirm your changes will work when the package is updated.
 
-Note: If you change a directory name it is possible that it may persist in `build/`. If you encounter an issue where expected changes are not taking effect, try deleting `build/` at the project root and run `npm run build` again.
+Note: It is possible that large changes may persist in `build/` between builds, such as changing a directory name. If you encounter an issue where expected changes are not taking effect, try deleting `build/` at the project root and run `npm run use-local-build` again.
