@@ -18,7 +18,9 @@ export interface NavigationItem extends LinkProps {
 
 /**
  * Vertical Navigation Component
- * @param {string}                        emailAddress       Email Address used at the bottom left for contact help.
+ * @param {string}                        items       Email Address used at the bottom left for contact help.
+ * @param {string}                        selectedId       Email Address used at the bottom left for contact help.
+ * @param {string}                        id       Email Address used at the bottom left for contact help.
  */
 
 export const VerticalNavigation: React.FC<Props> = ({
@@ -43,6 +45,7 @@ export const VerticalNavigation: React.FC<Props> = ({
                 text={item.text}
                 items={item.items}
                 key={item.id}
+                togglable={item.togglable}
               />
             );
           })}
