@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 
+import flag from "../../assets/img/us_flag_small.png";
+import gov from "../../assets/img/icon-dot-gov.svg";
+import lock from "../../assets/img/icon-https.svg";
+
 interface Props {
   className?: string;
   id?: string;
@@ -39,7 +43,7 @@ export const UsaBanner: React.FC<Props> = ({
                 <div className="grid-col-auto">
                   <img
                     className="usa-banner__header-flag"
-                    src="/assets/img/us_flag_small.png"
+                    src={flag}
                     alt="U.S. flag"
                   />
                 </div>
@@ -73,7 +77,7 @@ export const UsaBanner: React.FC<Props> = ({
                 <div className="usa-banner__guidance tablet:grid-col-6">
                   <img
                     className="usa-banner__icon usa-media-block__img"
-                    src="/assets/img/icon-dot-gov.svg"
+                    src={gov}
                     role="img"
                     alt=""
                     aria-hidden="true"
@@ -89,7 +93,7 @@ export const UsaBanner: React.FC<Props> = ({
                 <div className="usa-banner__guidance tablet:grid-col-6">
                   <img
                     className="usa-banner__icon usa-media-block__img"
-                    src="/assets/img/icon-https.svg"
+                    src={lock}
                     role="img"
                     alt=""
                     aria-hidden="true"
@@ -118,7 +122,7 @@ export const UsaBanner: React.FC<Props> = ({
                             fillRule="evenodd"
                             d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"
                           />
-                        </svg>{" "}
+                        </svg>
                       </span>
                       ) or <strong>https://</strong> means you've safely
                       connected to the .gov website. Share sensitive information
@@ -148,7 +152,7 @@ export const UsaBanner: React.FC<Props> = ({
                 <div className="grid-col-auto">
                   <img
                     className="usa-banner__header-flag"
-                    src="/assets/img/us_flag_small.png"
+                    src={flag}
                     alt="U.S. flag"
                   />
                 </div>
@@ -182,7 +186,7 @@ export const UsaBanner: React.FC<Props> = ({
                 <div className="usa-banner__guidance tablet:grid-col-6">
                   <img
                     className="usa-banner__icon usa-media-block__img"
-                    src="/assets/img/icon-dot-gov.svg"
+                    src={gov}
                     role="img"
                     alt=""
                     aria-hidden="true"
@@ -199,7 +203,7 @@ export const UsaBanner: React.FC<Props> = ({
                 <div className="usa-banner__guidance tablet:grid-col-6">
                   <img
                     className="usa-banner__icon usa-media-block__img"
-                    src="/assets/img/icon-https.svg"
+                    src={lock}
                     role="img"
                     alt=""
                     aria-hidden="true"
@@ -229,7 +233,7 @@ export const UsaBanner: React.FC<Props> = ({
                             fillRule="evenodd"
                             d="M26 0c10.493 0 19 8.507 19 19v9h3a4 4 0 0 1 4 4v28a4 4 0 0 1-4 4H4a4 4 0 0 1-4-4V32a4 4 0 0 1 4-4h3v-9C7 8.507 15.507 0 26 0zm0 8c-5.979 0-10.843 4.77-10.996 10.712L15 19v9h22v-9c0-6.075-4.925-11-11-11z"
                           />
-                        </svg>{" "}
+                        </svg>
                       </span>
                       ) o <strong>https://</strong> significa que usted se
                       conectó de forma segura a un sitio web .gov. Comparta

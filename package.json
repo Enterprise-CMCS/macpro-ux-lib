@@ -12,9 +12,10 @@
     "build-storybook": "gulp compile && build-storybook",
     "test": "jest",
     "coverage": "jest --coverage",
-    "build": "gulp compile && tsc && rollup -c",
+    "build": "tsc && rollup -c",
     "prepublishOnly": "npm run build",
-    "compileCss": "gulp compileSass"
+    "compileCss": "gulp compileSass",
+    "use-local-build": "rm -rf examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib/build && rm -rf examples/macpro-example/node_modules/.cache && npm run build && cp -rf build/ examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib/build/"
   },
   "engines": {
     "node": ">=10.0"

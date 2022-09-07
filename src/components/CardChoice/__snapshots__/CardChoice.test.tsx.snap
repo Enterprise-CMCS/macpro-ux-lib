@@ -45,7 +45,7 @@ exports[`Tests for the CardChoice and CardChoiceGroup components should match sn
             role="img"
           >
             <use
-              href="sprite.svg#navigate_next"
+              href="[object Object]#navigate_next"
             />
           </svg>
         </span>
@@ -88,7 +88,7 @@ exports[`Tests for the CardChoice and CardChoiceGroup components should match sn
             role="img"
           >
             <use
-              href="sprite.svg#navigate_next"
+              href="[object Object]#navigate_next"
             />
           </svg>
         </span>
@@ -131,7 +131,7 @@ exports[`Tests for the CardChoice and CardChoiceGroup components should match sn
             role="img"
           >
             <use
-              href="sprite.svg#navigate_next"
+              href="[object Object]#navigate_next"
             />
           </svg>
         </span>

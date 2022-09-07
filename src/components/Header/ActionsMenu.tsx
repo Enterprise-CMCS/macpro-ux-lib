@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Icon, IconChoice } from "components/Icon/Icon";
-import { Link, LinkProps } from "components/Link/Link";
+import { Icon, IconChoice } from "../Icon/Icon";
+import { Link, LinkProps } from "../Link/Link";
 
 interface ActionsMenuLink extends LinkProps {
   iconName?: IconChoice;
