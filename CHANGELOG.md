@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.9.1...v1.10.0) (2022-09-07)
+
+
+### Features
+
+* **Datefield:** add Datefield component to allow users to work with a date input/date picker ([2fca61c](https://github.com/cmsgov/macpro-ux-lib/commit/2fca61cdd160c2efc739c5b74285192b48f609aa))
+
 ## [1.9.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.9.0...v1.9.1) (2022-09-07)
 
 
