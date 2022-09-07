@@ -26,9 +26,10 @@
     }
 
     .react-calendar {
+      position: absolute;
       font-family: "Open Sans", sans-serif;
       background-color: c.$gray-lightest;
-      left: 170px;
+      left: 188px;
 
       .react-calendar__navigation__arrow {
         font-size: 30px;
