@@ -21,7 +21,7 @@ exports[`Snapshot tests for UsaBanner component English banner 1`] = `
             <img
               alt="U.S. flag"
               class="usa-banner__header-flag"
-              src="/assets/img/us_flag_small.png"
+              src="[object Object]"
             />
           </div>
           <div
@@ -69,7 +69,7 @@ exports[`Snapshot tests for UsaBanner component English banner 1`] = `
               aria-hidden="true"
               class="usa-banner__icon usa-media-block__img"
               role="img"
-              src="/assets/img/icon-dot-gov.svg"
+              src="[object Object]"
             />
             <div
               class="usa-media-block__body"
@@ -95,7 +95,7 @@ exports[`Snapshot tests for UsaBanner component English banner 1`] = `
               aria-hidden="true"
               class="usa-banner__icon usa-media-block__img"
               role="img"
-              src="/assets/img/icon-https.svg"
+              src="[object Object]"
             />
             <div
               class="usa-media-block__body"
@@ -139,7 +139,6 @@ exports[`Snapshot tests for UsaBanner component English banner 1`] = `
                       fill-rule="evenodd"
                     />
                   </svg>
-                   
                 </span>
                 ) or 
                 <strong>
@@ -177,7 +176,7 @@ exports[`Snapshot tests for UsaBanner component English banner 2`] = `
             <img
               alt="U.S. flag"
               class="usa-banner__header-flag"
-              src="/assets/img/us_flag_small.png"
+              src="[object Object]"
             />
           </div>
           <div
@@ -224,7 +223,7 @@ exports[`Snapshot tests for UsaBanner component English banner 2`] = `
               aria-hidden="true"
               class="usa-banner__icon usa-media-block__img"
               role="img"
-              src="/assets/img/icon-dot-gov.svg"
+              src="[object Object]"
             />
             <div
               class="usa-media-block__body"
@@ -250,7 +249,7 @@ exports[`Snapshot tests for UsaBanner component English banner 2`] = `
               aria-hidden="true"
               class="usa-banner__icon usa-media-block__img"
               role="img"
-              src="/assets/img/icon-https.svg"
+              src="[object Object]"
             />
             <div
               class="usa-media-block__body"
@@ -294,7 +293,6 @@ exports[`Snapshot tests for UsaBanner component English banner 2`] = `
                       fill-rule="evenodd"
                     />
                   </svg>
-                   
                 </span>
                 ) or 
                 <strong>
@@ -332,7 +330,7 @@ exports[`Snapshot tests for UsaBanner component Spanish banner 1`] = `
             <img
               alt="U.S. flag"
               class="usa-banner__header-flag"
-              src="/assets/img/us_flag_small.png"
+              src="[object Object]"
             />
           </div>
           <div
@@ -380,7 +378,7 @@ exports[`Snapshot tests for UsaBanner component Spanish banner 1`] = `
               aria-hidden="true"
               class="usa-banner__icon usa-media-block__img"
               role="img"
-              src="/assets/img/icon-dot-gov.svg"
+              src="[object Object]"
             />
             <div
               class="usa-media-block__body"
@@ -406,7 +404,7 @@ exports[`Snapshot tests for UsaBanner component Spanish banner 1`] = `
               aria-hidden="true"
               class="usa-banner__icon usa-media-block__img"
               role="img"
-              src="/assets/img/icon-https.svg"
+              src="[object Object]"
             />
             <div
               class="usa-media-block__body"
@@ -450,7 +448,6 @@ exports[`Snapshot tests for UsaBanner component Spanish banner 1`] = `
                       fill-rule="evenodd"
                     />
                   </svg>
-                   
                 </span>
                 ) o 
                 <strong>
@@ -488,7 +485,7 @@ exports[`Snapshot tests for UsaBanner component Spanish banner 2`] = `
             <img
               alt="U.S. flag"
               class="usa-banner__header-flag"
-              src="/assets/img/us_flag_small.png"
+              src="[object Object]"
             />
           </div>
           <div
@@ -535,7 +532,7 @@ exports[`Snapshot tests for UsaBanner component Spanish banner 2`] = `
               aria-hidden="true"
               class="usa-banner__icon usa-media-block__img"
               role="img"
-              src="/assets/img/icon-dot-gov.svg"
+              src="[object Object]"
             />
             <div
               class="usa-media-block__body"
@@ -561,7 +558,7 @@ exports[`Snapshot tests for UsaBanner component Spanish banner 2`] = `
               aria-hidden="true"
               class="usa-banner__icon usa-media-block__img"
               role="img"
-              src="/assets/img/icon-https.svg"
+              src="[object Object]"
             />
             <div
               class="usa-media-block__body"
@@ -605,7 +602,6 @@ exports[`Snapshot tests for UsaBanner component Spanish banner 2`] = `
                       fill-rule="evenodd"
                     />
                   </svg>
-                   
                 </span>
                 ) o 
                 <strong>

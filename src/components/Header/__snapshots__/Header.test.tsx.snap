@@ -73,7 +73,7 @@ exports[`Test the Header component component snapshots default 1`] = `
               role="img"
             >
               <use
-                href="sprite.svg#close"
+                href="[object Object]#close"
               />
             </svg>
           </div>
@@ -163,7 +163,7 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
               role="img"
             >
               <use
-                href="sprite.svg#close"
+                href="[object Object]#close"
               />
             </svg>
           </div>
@@ -487,7 +487,7 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                 role="img"
               >
                 <use
-                  href="sprite.svg#arrow_drop_down"
+                  href="[object Object]#arrow_drop_down"
                 />
               </svg>
             </span>
@@ -509,7 +509,7 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                     role="img"
                   >
                     <use
-                      href="sprite.svg#person"
+                      href="[object Object]#person"
                     />
                   </svg>
                   Manage Profile
@@ -530,7 +530,7 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                     role="img"
                   >
                     <use
-                      href="sprite.svg#people"
+                      href="[object Object]#people"
                     />
                   </svg>
                   Request Role Change
@@ -551,7 +551,7 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                     role="img"
                   >
                     <use
-                      href="sprite.svg#logout"
+                      href="[object Object]#logout"
                     />
                   </svg>
                   Log Out
@@ -639,7 +639,7 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
               role="img"
             >
               <use
-                href="sprite.svg#close"
+                href="[object Object]#close"
               />
             </svg>
           </div>
