@@ -57,22 +57,14 @@ Before publishing updates to the package, all changes should be tested locally. 
 To do this, you will need to build the package locally and test it in `examples/macpro-example` or something similar.
 
 ```bash
-# from project root
-
-# delete existing node_module in example
-rm -rf examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib
-
-npm run build  # build package locally
-
-# create a symlink for the dist folder in the global node_modules
-npm link
+# Run from project root
+npm run use-local-build
 
 cd examples/macpro-example
-
-# use global @enterprise-cmcs/macpro-ux-lib in example app
-npm link @enterprise-cmcs/macpro-ux-lib
 
 npm start
 ```
 
-If this works as expected, the example application should start without any issue. Implement whatever is necessary in the example app to confirm your changes will work when the package is updated.
+If this works as expected, the `use-local-build` script will run the build and replace `@enterprise-cmcs/macpro-ux-lib` in the example project with the build output. The example application should start without any issue. Implement whatever is necessary in the example app to confirm your changes will work when the package is updated.
+
+Note: It is possible that large changes may persist in `build/` between builds, such as changing a directory name. If you encounter an issue where expected changes are not taking effect, try deleting `build/` at the project root and run `npm run use-local-build` again.

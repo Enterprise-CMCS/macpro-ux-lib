@@ -40,7 +40,7 @@ exports[`Tests for the button component. compontent snapshots secondary button 1
         role="img"
       >
         <use
-          href="sprite.svg#add"
+          href="[object Object]#add"
         />
       </svg>
     </div>
