@@ -84,7 +84,7 @@ export const Datefield: React.FC<Props> = ({
   };
 
   return (
-    <div className="usa-form-group">
+    <div className="usa-form-group datefield">
       <label className="usa-label" id={`${id}-label`} htmlFor={id} role="label">
         {label}
       </label>
