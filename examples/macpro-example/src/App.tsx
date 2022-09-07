@@ -220,6 +220,7 @@ function App() {
           id="text-input-1"
           label="The Text Input We've All Been Waiting For"
         ></UX.TextInput>
+        <UX.Datefield id="1" name="react-calendar" label="Calendar example" />
       </div>
       <UX.Footer emailAddress="jhechter@fearless.tech" />
     </div>

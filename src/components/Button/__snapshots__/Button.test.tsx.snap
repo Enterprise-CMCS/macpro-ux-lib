@@ -6,6 +6,7 @@ exports[`Tests for the button component. compontent snapshots primary big disabl
     aria-label="big inverse button"
     class="display-flex usa-button usa-button--inverse usa-button--big"
     data-testid="button"
+    formtarget="_self"
   >
     <span
       class="padding-x-05"
@@ -22,6 +23,7 @@ exports[`Tests for the button component. compontent snapshots secondary button 1
     aria-label="Secondary button"
     class="display-flex usa-button usa-button--outline cms-primary-text "
     data-testid="button"
+    formtarget="_self"
   >
     <span
       class="padding-x-05 padding-top-05"
