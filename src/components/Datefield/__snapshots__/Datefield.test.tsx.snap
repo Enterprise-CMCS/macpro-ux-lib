@@ -3,7 +3,7 @@
 exports[`compontent snapshots max date datefield 1`] = `
 <div>
   <div
-    class="usa-form-group"
+    class="usa-form-group datefield"
   >
     <label
       class="usa-label"
@@ -63,7 +63,7 @@ exports[`compontent snapshots max date datefield 1`] = `
 exports[`compontent snapshots min date datefield 1`] = `
 <div>
   <div
-    class="usa-form-group"
+    class="usa-form-group datefield"
   >
     <label
       class="usa-label"
@@ -124,7 +124,7 @@ exports[`compontent snapshots min date datefield 1`] = `
 exports[`compontent snapshots primary datefield 1`] = `
 <div>
   <div
-    class="usa-form-group"
+    class="usa-form-group datefield"
   >
     <label
       class="usa-label"
