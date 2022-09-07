@@ -129,6 +129,7 @@ export const Datefield: React.FC<Props> = ({
         {calendarOpen && (
           <div className="grid-row" data-testid="calendar">
             <Calendar
+              calendarType="US"
               className="grid-col-3"
               onChange={setDateValue}
               value={formatStringDateToDate(currentDate)}
