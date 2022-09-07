@@ -91,7 +91,7 @@ exports[`Modal Snapshot tests renders default Modal as expected 1`] = `
               role="img"
             >
               <use
-                href="sprite.svg#close"
+                href="[object Object]#close"
               />
             </svg>
           </button>
@@ -276,7 +276,7 @@ exports[`Modal Snapshot tests renders large Modal as expected 1`] = `
               role="img"
             >
               <use
-                href="sprite.svg#close"
+                href="[object Object]#close"
               />
             </svg>
           </button>
