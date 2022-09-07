@@ -139,6 +139,9 @@ export const Datefield: React.FC<Props> = ({
               }
               minDate={formatStringDateToDate(minDate)}
               maxDate={formatStringDateToDate(maxDate)}
+              formatShortWeekday={(_, value) =>
+                ["S", "M", "T", "W", "T", "F", "S"][value.getDay()]
+              }
             />
           </div>
         )}

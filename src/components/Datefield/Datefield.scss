@@ -26,8 +26,18 @@
     }
 
     .react-calendar {
+      font-family: "Open Sans", sans-serif;
       background-color: c.$gray-lightest;
       left: 170px;
+
+      .react-calendar__navigation__arrow {
+        font-size: 30px;
+      }
+
+      .react-calendar__month-view__weekdays__weekday > abbr {
+        font-size: 16px;
+        text-decoration: none;
+      }
 
       .react-calendar__tile:not(.react-calendar__tile--active, :disabled) {
         color: black;
