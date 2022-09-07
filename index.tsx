@@ -2,12 +2,14 @@ import "./assets/css/styles.css";
 import "./assets/js/uswds-init.min.js";
 import "./assets/js/uswds.min.js";
 import "./assets/theme/styles.scss";
+import "react-calendar/dist/Calendar.css";
 
 import { Accordion } from "./components/Accordion/Accordion";
 import { AccordionGroup } from "./components/Accordion/AccordionGroup";
 import { ActionsMenu } from "./components/Header/ActionsMenu";
 import { Button } from "./components/Button/Button";
 import { Card } from "./components/Card/Card";
+import { Datefield } from "./components/Datefield/Datefield";
 import { CardChoice } from "./components/CardChoice/CardChoice";
 import { CardChoiceGroup } from "./components/CardChoice/CardChoiceGroup";
 import { Checkbox } from "./components/Checkbox/Checkbox";
@@ -35,6 +37,7 @@ export {
   CardChoice,
   CardChoiceGroup,
   Checkbox,
+  Datefield,
   Dropdown,
   Footer,
   Header,

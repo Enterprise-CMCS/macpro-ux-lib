@@ -37,7 +37,7 @@ exports[`compontent snapshots Alternative Footer 1`] = `
                   <svg
                     aria-hidden="true"
                     aria-label="launch icon"
-                    class="usa-icon--size-3"
+                    class="margin-top-3"
                     color="#fff"
                     fill="currentColor"
                     role="img"
