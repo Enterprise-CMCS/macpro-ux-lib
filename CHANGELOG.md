@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.9.0...v1.9.1) (2022-09-07)
+
+
+### Bug Fixes
+
+* **general:** fix broken image sources and some type errors ([a019609](https://github.com/cmsgov/macpro-ux-lib/commit/a01960979ee36b04259a470949b6b23e8d0acd22))
+
 # [1.9.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.8.0...v1.9.0) (2022-09-07)
 
 
