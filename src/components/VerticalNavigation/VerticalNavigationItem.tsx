@@ -17,11 +17,12 @@ export const VerticalNavigationItem: React.FC<NavigationItemChild> = ({
   text,
   togglable,
   items,
+  href,
 }) => {
   return (
     <li className="usa-sidenav__item">
       <a
-        href="javascript:void(0);"
+        href={href}
         className={selectedIds.includes(id) ? "usa-current" : ""}
         onClick={() =>
           !selectedIds.includes(id)
@@ -39,7 +40,7 @@ export const VerticalNavigationItem: React.FC<NavigationItemChild> = ({
             return (
               <li className="usa-sidenav__item" key={itemChild.id}>
                 <a
-                  href="javascript:void(0);"
+                  href={itemChild.href}
                   className={
                     selectedIds.includes(itemChild.id) ? "usa-current" : ""
                   }
@@ -57,24 +58,24 @@ export const VerticalNavigationItem: React.FC<NavigationItemChild> = ({
                   itemChild.items &&
                   itemChild.items.length > 0 && (
                     <ul className="usa-sidenav__sublist">
-                      {itemChild.items.map((itemGrandChild) => {
+                      {itemChild.items.map((itemGrandchild) => {
                         return (
                           <li
                             className="usa-sidenav__item"
-                            key={itemGrandChild.id}
+                            key={itemGrandchild.id}
                           >
                             <a
-                              href="javascript:void(0);"
+                              href={itemGrandchild.href}
                               className={
-                                selectedIds.includes(itemGrandChild.id)
+                                selectedIds.includes(itemGrandchild.id)
                                   ? "usa-current"
                                   : ""
                               }
                               onClick={() =>
-                                navClick([id, itemChild.id, itemGrandChild.id])
+                                navClick([id, itemChild.id, itemGrandchild.id])
                               }
                             >
-                              {itemGrandChild.text}
+                              {itemGrandchild.text}
                             </a>
                           </li>
                         );
