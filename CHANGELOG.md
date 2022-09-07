@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.8.0...v1.9.0) (2022-09-07)
+
+
+### Features
+
+* **Storybook:** allow main branch hosting on github pages ([2f9da25](https://github.com/cmsgov/macpro-ux-lib/commit/2f9da256b8e2ab64ca8a497ceb58e90ff992f2dc))
+
 # [1.8.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.7.1...v1.8.0) (2022-08-31)
 
 
