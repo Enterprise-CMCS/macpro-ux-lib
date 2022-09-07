@@ -36,7 +36,7 @@ exports[`Tests for the search component. compontent snapshots big search 1`] = `
         <img
           alt="Search"
           class="usa-search__submit-icon"
-          src="/assets/img/usa-icons-bg/search--white.svg"
+          src="[object Object]"
         />
       </button>
     </form>
@@ -80,7 +80,7 @@ exports[`Tests for the search component. compontent snapshots default search 1`]
         <img
           alt="Search"
           class="usa-search__submit-icon"
-          src="/assets/img/usa-icons-bg/search--white.svg"
+          src="[object Object]"
         />
       </button>
     </form>
@@ -122,7 +122,7 @@ exports[`Tests for the search component. compontent snapshots small disabled sea
         <img
           alt="Search"
           class="usa-search__submit-icon"
-          src="/assets/img/usa-icons-bg/search--white.svg"
+          src="[object Object]"
         />
       </button>
     </form>

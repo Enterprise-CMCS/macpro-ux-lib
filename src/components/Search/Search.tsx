@@ -1,4 +1,6 @@
 import React, { EventHandler, FormEventHandler, useState } from "react";
+import spyGlass from "../../assets/img/usa-icons-bg/search--white.svg";
+
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
 interface Props extends IntrinsicElements {
@@ -71,7 +73,7 @@ export const Search: React.FC<Props> = ({
             <span className="usa-search__submit-text">Search </span>
           )}
           <img
-            src="/assets/img/usa-icons-bg/search--white.svg"
+            src={spyGlass}
             className="usa-search__submit-icon"
             alt="Search"
           />

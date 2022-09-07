@@ -1,5 +1,6 @@
 import React from "react";
 import { iconChoices } from "./IconChoices";
+import sprite from "../../assets/img/sprite.svg";
 
 export type IconChoice = typeof iconChoices[number];
 type IntrinsicElements = JSX.IntrinsicElements["svg"];
@@ -38,14 +39,14 @@ export const Icon: React.FC<Props> = ({
   return (
     <svg
       aria-label={ariaLabel || `${iconName} icon`}
-      {...rest}
       className={`usa-icon--size-${iconSize}`}
       aria-hidden={ariaHidden}
       role={role}
       fill="currentColor"
       color={color}
+      {...rest}
     >
-      <use href={`sprite.svg#${name}`}></use>
+      <use href={`${sprite}#${name}`}></use>
     </svg>
   );
 };

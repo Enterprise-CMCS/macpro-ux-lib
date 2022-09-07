@@ -52,6 +52,7 @@ exports[`Modal Snapshot tests renders default Modal as expected 1`] = `
                   <button
                     aria-label="Continue without saving button"
                     class="display-flex usa-button usa-button-- cms-primary-background "
+                    formtarget="_self"
                   >
                     <span
                       class="padding-x-05"
@@ -64,6 +65,7 @@ exports[`Modal Snapshot tests renders default Modal as expected 1`] = `
                   <button
                     aria-label="Go back button"
                     class="usa-button--unstyled padding-105"
+                    formtarget="_self"
                     type="button"
                   >
                     <span
@@ -91,7 +93,7 @@ exports[`Modal Snapshot tests renders default Modal as expected 1`] = `
               role="img"
             >
               <use
-                href="sprite.svg#close"
+                href="[object Object]#close"
               />
             </svg>
           </button>
@@ -154,6 +156,7 @@ exports[`Modal Snapshot tests renders forced-action Modal as expected 1`] = `
                   <button
                     aria-label="Continue without saving button"
                     class="display-flex usa-button usa-button-- cms-primary-background "
+                    formtarget="_self"
                   >
                     <span
                       class="padding-x-05"
@@ -166,6 +169,7 @@ exports[`Modal Snapshot tests renders forced-action Modal as expected 1`] = `
                   <button
                     aria-label="Go back button"
                     class="usa-button--unstyled padding-105"
+                    formtarget="_self"
                     type="button"
                   >
                     <span
@@ -237,6 +241,7 @@ exports[`Modal Snapshot tests renders large Modal as expected 1`] = `
                   <button
                     aria-label="Continue without saving button"
                     class="display-flex usa-button usa-button-- cms-primary-background "
+                    formtarget="_self"
                   >
                     <span
                       class="padding-x-05"
@@ -249,6 +254,7 @@ exports[`Modal Snapshot tests renders large Modal as expected 1`] = `
                   <button
                     aria-label="Go back button"
                     class="usa-button--unstyled padding-105"
+                    formtarget="_self"
                     type="button"
                   >
                     <span
@@ -276,7 +282,7 @@ exports[`Modal Snapshot tests renders large Modal as expected 1`] = `
               role="img"
             >
               <use
-                href="sprite.svg#close"
+                href="[object Object]#close"
               />
             </svg>
           </button>

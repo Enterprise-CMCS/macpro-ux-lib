@@ -11,7 +11,7 @@ exports[`compontent snapshots accessibility new icon 1`] = `
     role="img"
   >
     <use
-      href="sprite.svg#accessibility_new"
+      href="[object Object]#accessibility_new"
     />
   </svg>
 </div>
@@ -28,7 +28,7 @@ exports[`compontent snapshots accessibility new icon that is not purely decorati
     role="button"
   >
     <use
-      href="sprite.svg#add"
+      href="[object Object]#add"
     />
   </svg>
 </div>

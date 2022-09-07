@@ -11,6 +11,7 @@ interface Props extends IntrinsicElements {
   shiftIconLeft?: boolean;
   ariaLabel?: string;
   largeButton?: boolean;
+  target?: string;
 }
 
 /**
@@ -56,6 +57,7 @@ export const Button: React.FC<Props> = ({
   ariaLabel,
   largeButton = false,
   disabled = false,
+  target = "_self",
   ...rest
 }) => {
   const buttonVariationType = ButtonVariationConversion[buttonVariation] ?? "";
@@ -66,6 +68,7 @@ export const Button: React.FC<Props> = ({
       className={`display-flex usa-button usa-button--${buttonVariationType} ${
         largeButton ? "usa-button--big" : ""
       }`}
+      formTarget={target}
       {...rest}
     >
       {shiftIconLeft && iconName && (
