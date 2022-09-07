@@ -24,7 +24,11 @@ export const VerticalNavigationItem: React.FC<NavigationItemChild> = ({
         href="javascript:void(0);"
         className={selectedIds.includes(id) ? "usa-current" : ""}
         onClick={() =>
-          selectedIds.includes(id) && togglable ? navClick([]) : navClick([id])
+          !selectedIds.includes(id)
+            ? navClick([id])
+            : togglable
+            ? navClick([])
+            : undefined
         }
       >
         {text}
