@@ -7,58 +7,78 @@ interface Props extends IntrinsicElements {}
 /**
  * **Tabs Component**
  *
- * @param {boolean}    multiSelect  Determines whether or not multiple Accordion items can be expanded at the same time.
+ * @param {boolean}    id  Unique identifier.
  */
-export const Tabs: React.FC<PropsWithChildren<Props>> = ({ ...rest }) => {
+export const Tabs: React.FC<PropsWithChildren<Props>> = ({
+  children,
+  ...rest
+}) => {
+  const arrayChildren = Children.toArray(children);
+
+  const buildContentHidden = (idx: number = 0) => {
+    const arr = Array(arrayChildren.length).fill(true);
+    arr[idx] = false;
+    return arr;
+  };
+
+  // State of all tab content
+  const [contentHidden, setContentHidden] = useState<boolean[]>(
+    buildContentHidden()
+  );
+
   return (
-    <div className="tabs">
+    <div className="tabs" {...rest}>
       <div className="tabs-row" role="tablist">
-        <a
-          aria-selected="true"
-          aria-controls="summary"
-          href="#summary"
-          role="tab"
-          className="tab current"
-          id="ds-c-tabs__item--summary"
-        >
-          Summary
-        </a>
-        <a
-          aria-selected="false"
-          aria-controls="preamble"
-          href="#preamble"
-          role="tab"
-          className="tab"
-          id="ds-c-tabs__item--preamble"
-        >
-          Preamble
-        </a>
+        {Children.map(arrayChildren, (child, idx) => {
+          if (React.isValidElement(child)) {
+            const classNames = `tab ${contentHidden[idx] ? "" : "current"}`;
+            return (
+              <Tab
+                aria-controls={child.props.tab}
+                aria-selected={!contentHidden[idx]}
+                {...child.props}
+                className={classNames}
+                onClick={() => setContentHidden(buildContentHidden(idx))}
+                role="tab"
+              />
+            );
+          }
+        })}
       </div>
       <div className="tabs-content">
-        <div
-          aria-labelledby="ds-c-tabs__item--summary"
-          aria-hidden="false"
-          className="ds-c-tabs__panel"
-          id="summary"
-          role="tabpanel"
-        >
-          The Bill of Rights is the first ten amendments to the United States
-          Constitution.
-        </div>
-        <div
-          aria-labelledby="ds-c-tabs__item--preamble"
-          aria-hidden="true"
-          className="ds-c-tabs__panel"
-          id="preamble"
-          role="tabpanel"
-        >
-          We the People of the United States, in Order to form a more perfect
-          Union, establish Justice, insure domestic Tranquility, provide for the
-          common defence, promote the general Welfare, and secure the Blessings
-          of Liberty to ourselves and our Posterity, do ordain and establish
-          this Constitution for the United States of America.
-        </div>
+        {Children.map(arrayChildren, (child, idx) => {
+          if (React.isValidElement(child)) {
+            return React.cloneElement(child, {
+              hidden: contentHidden[idx],
+            });
+          }
+        })}
       </div>
     </div>
+  );
+};
+
+type IntrinsicAnchor = JSX.IntrinsicElements["a"];
+
+interface TabProps extends IntrinsicAnchor {
+  disabled?: boolean;
+  tab: string;
+}
+
+const Tab: React.FC<TabProps> = ({
+  className,
+  disabled,
+  tab,
+  onClick,
+  ...rest
+}) => {
+  return disabled ? (
+    <span className={`${className} disabled`} aria-disabled="true" {...rest}>
+      {tab}
+    </span>
+  ) : (
+    <a className={className} onClick={onClick} {...rest}>
+      {tab}
+    </a>
   );
 };

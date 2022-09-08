@@ -4,6 +4,7 @@
 .tab {
   border: 1px solid c.$gray-lighter;
   color: c.$base;
+  cursor: pointer;
   font-size: 16px;
   font-weight: 700;
   margin: 0 -1px -1px 0;
@@ -25,6 +26,11 @@
       right: -1px;
       top: -1px;
     }
+  }
+  &.disabled {
+    background-color: c.$gray-lighter;
+    color: c.$gray-dark;
+    cursor: auto;
   }
 }
 // }
