@@ -1,23 +1,26 @@
-import { LinkProps } from "components/Link/Link";
 import React, { useState } from "react";
-import { VerticalNavigationItem } from "./VerticalNavigationItem";
+import {
+  NavigationItemChild,
+  VerticalNavigationItem,
+} from "./VerticalNavigationItem";
 type IntrinsicElements = JSX.IntrinsicElements["nav"];
 
 interface Props extends IntrinsicElements {
-  items: NavigationItem[];
+  items: IVerticalNavigationItem[];
   selectedId?: string;
 }
 
-export interface NavigationItem extends LinkProps {
+export interface IVerticalNavigationItem {
   id: string;
-  selectedIds: string[];
-  items?: NavigationItem[];
+  items?: NavigationItemChild[];
   togglable?: boolean;
+  href?: string;
+  text: string;
 }
 
 /**
  * Vertical Navigation Component
- * @param {NavigationItem[]}              items            Navigation section items to be rendered for the sidebar, cam ne up to three layers deep.
+ * @param {IVerticalNavigationItem[]}              items            Navigation section items to be rendered for the sidebar, can be up to three layers deep.
  * @param {string}                        selectedId       Selected id of section that is currently active.
  */
 
@@ -26,7 +29,7 @@ export const VerticalNavigation: React.FC<Props> = ({
   items,
   ...rest
 }) => {
-  const setSelectedSecitons = () => {
+  const getSelectedSecitons = (): string[] => {
     const foundSelectedIds: string[] = [];
     items.some((parentItem) => {
       if (parentItem.id === selectedId) {
@@ -61,7 +64,7 @@ export const VerticalNavigation: React.FC<Props> = ({
   };
 
   const [selectedIds, setSelectedIds] = useState<string[]>(
-    selectedId ? setSelectedSecitons : []
+    selectedId ? getSelectedSecitons() : []
   );
 
   return (

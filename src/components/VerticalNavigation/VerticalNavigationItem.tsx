@@ -1,13 +1,16 @@
+import { Icon } from "../Icon/Icon";
 import React, { Dispatch, SetStateAction } from "react";
-import { NavigationItem } from "./VerticalNavigation";
+import { IVerticalNavigationItem } from "./VerticalNavigation";
 
-export interface NavigationItemChild extends NavigationItem {
+export interface NavigationItemChild extends IVerticalNavigationItem {
   navClick: Dispatch<SetStateAction<string[]>>;
+  selectedIds: string[];
 }
 
 /**
  * Vertical Navigation Child Component
- * @param {string}                        emailAddress       Email Address used at the bottom left for contact help.
+ * @param {Dispatch<SetStateAction<string[]>>}     navClick       Click hanlder passed from the Veritical Navigation component that handles showing/hiding sections.
+ * @param {string[]}                               selectedIds    An array of currently selected ids that is being tracked by parent component.
  */
 
 export const VerticalNavigationItem: React.FC<NavigationItemChild> = ({
@@ -33,6 +36,15 @@ export const VerticalNavigationItem: React.FC<NavigationItemChild> = ({
         }
       >
         {text}
+        {togglable && (
+          <span className="float-right">
+            {selectedIds.includes(id) ? (
+              <Icon name="arrow_drop_up" />
+            ) : (
+              <Icon name="arrow_drop_down" />
+            )}
+          </span>
+        )}
       </a>
       {selectedIds.includes(id) && items && items.length > 0 && (
         <ul className="usa-sidenav__sublist">
@@ -53,6 +65,15 @@ export const VerticalNavigationItem: React.FC<NavigationItemChild> = ({
                   }
                 >
                   {itemChild.text}
+                  {itemChild.togglable && (
+                    <span className="float-right">
+                      {selectedIds.includes(itemChild.id) ? (
+                        <Icon name="arrow_drop_up" />
+                      ) : (
+                        <Icon name="arrow_drop_down" />
+                      )}
+                    </span>
+                  )}
                 </a>
                 {selectedIds.includes(itemChild.id) &&
                   itemChild.items &&

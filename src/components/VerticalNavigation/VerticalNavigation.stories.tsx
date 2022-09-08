@@ -1,14 +1,14 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { VerticalNavigation } from "./VerticalNavigation";
-
 export default {
   title: "COMPONENTS/Vertical Navigation",
   component: VerticalNavigation,
+
   argTypes: {
     items: {
       description:
-        "Navigation section items to be rendered for the sidebar, cam ne up to three layers deep.",
+        "Navigation section items to be rendered for the sidebar, can be up to three layers deep. \n\nExample object structure: `{ id: '1', items: [],  text: 'Parent'}`",
       control: false,
     },
     selectedId: {
@@ -34,25 +34,25 @@ const Template: ComponentStory<typeof VerticalNavigation> = ({ ...rest }) => (
 export const Default = Template.bind({});
 Default.args = {
   items: [
-    { id: "1", items: [], selectedIds: [], text: "Parent" },
+    { id: "1", items: [], text: "Parent" },
     {
       id: "2",
       items: [
         {
           id: "4",
           items: [
-            { id: "6", items: [], selectedIds: [], text: "Grandchild" },
-            { id: "7", items: [], selectedIds: [], text: "Grandchild" },
+            { id: "6", text: "Grandchild" },
+            { id: "7", text: "Grandchild" },
           ],
           selectedIds: "4",
           text: "Child",
         },
-        { id: "5", items: [], selectedIds: [], text: "Child" },
+        { id: "5", items: [], text: "Child" },
       ],
-      selectedIds: [],
+
       text: "Parent",
     },
-    { id: "3", items: [], selectedIds: [], text: "Parent" },
+    { id: "3", items: [], text: "Parent" },
   ],
 };
 
@@ -69,7 +69,7 @@ Togglable.parameters = {
 
 Togglable.args = {
   items: [
-    { id: "1", items: [], selectedIds: [], text: "Parent" },
+    { id: "1", items: [], text: "Parent" },
     {
       id: "2",
       togglable: true,
@@ -78,18 +78,18 @@ Togglable.args = {
           id: "4",
           togglable: true,
           items: [
-            { id: "6", items: [], selectedIds: [], text: "Grandchild" },
-            { id: "7", items: [], selectedIds: [], text: "Grandchild" },
+            { id: "6", text: "Grandchild" },
+            { id: "7", text: "Grandchild" },
           ],
           selectedIds: "4",
           text: "Child with toggle",
         },
-        { id: "5", items: [], selectedIds: [], text: "Child" },
+        { id: "5", items: [], text: "Child" },
       ],
-      selectedIds: [],
+
       text: "Parent with toggle",
     },
-    { id: "3", items: [], selectedIds: [], text: "Parent" },
+    { id: "3", items: [], text: "Parent" },
   ],
 };
 
@@ -107,7 +107,7 @@ SelectedId.parameters = {
 SelectedId.args = {
   selectedId: "7",
   items: [
-    { id: "1", items: [], selectedIds: [], text: "Parent" },
+    { id: "1", items: [], text: "Parent" },
     {
       id: "2",
       togglable: true,
@@ -116,17 +116,17 @@ SelectedId.args = {
           id: "4",
           togglable: true,
           items: [
-            { id: "6", items: [], selectedIds: [], text: "Grandchild" },
-            { id: "7", items: [], selectedIds: [], text: "Grandchild" },
+            { id: "6", text: "Grandchild" },
+            { id: "7", text: "Grandchild" },
           ],
           selectedIds: "4",
           text: "Child with toggle",
         },
-        { id: "5", items: [], selectedIds: [], text: "Child" },
+        { id: "5", items: [], text: "Child" },
       ],
-      selectedIds: [],
+
       text: "Parent with toggle",
     },
-    { id: "3", items: [], selectedIds: [], text: "Parent" },
+    { id: "3", items: [], text: "Parent" },
   ],
 };
