@@ -12,13 +12,13 @@ interface Props extends IntrinsicElements {}
 export const Tabs: React.FC<PropsWithChildren<Props>> = ({ ...rest }) => {
   return (
     <div className="tabs">
-      <div className="ds-c-tabs" role="tablist">
+      <div className="tabs-row" role="tablist">
         <a
           aria-selected="true"
           aria-controls="summary"
           href="#summary"
           role="tab"
-          className="ds-c-tabs__item"
+          className="tab current"
           id="ds-c-tabs__item--summary"
         >
           Summary
@@ -28,34 +28,36 @@ export const Tabs: React.FC<PropsWithChildren<Props>> = ({ ...rest }) => {
           aria-controls="preamble"
           href="#preamble"
           role="tab"
-          className="ds-c-tabs__item"
+          className="tab"
           id="ds-c-tabs__item--preamble"
         >
           Preamble
         </a>
       </div>
-      <div
-        aria-labelledby="ds-c-tabs__item--summary"
-        aria-hidden="false"
-        className="ds-c-tabs__panel"
-        id="summary"
-        role="tabpanel"
-      >
-        The Bill of Rights is the first ten amendments to the United States
-        Constitution.
-      </div>
-      <div
-        aria-labelledby="ds-c-tabs__item--preamble"
-        aria-hidden="true"
-        className="ds-c-tabs__panel"
-        id="preamble"
-        role="tabpanel"
-      >
-        We the People of the United States, in Order to form a more perfect
-        Union, establish Justice, insure domestic Tranquility, provide for the
-        common defence, promote the general Welfare, and secure the Blessings of
-        Liberty to ourselves and our Posterity, do ordain and establish this
-        Constitution for the United States of America.
+      <div className="tabs-content">
+        <div
+          aria-labelledby="ds-c-tabs__item--summary"
+          aria-hidden="false"
+          className="ds-c-tabs__panel"
+          id="summary"
+          role="tabpanel"
+        >
+          The Bill of Rights is the first ten amendments to the United States
+          Constitution.
+        </div>
+        <div
+          aria-labelledby="ds-c-tabs__item--preamble"
+          aria-hidden="true"
+          className="ds-c-tabs__panel"
+          id="preamble"
+          role="tabpanel"
+        >
+          We the People of the United States, in Order to form a more perfect
+          Union, establish Justice, insure domestic Tranquility, provide for the
+          common defence, promote the general Welfare, and secure the Blessings
+          of Liberty to ourselves and our Posterity, do ordain and establish
+          this Constitution for the United States of America.
+        </div>
       </div>
     </div>
   );
