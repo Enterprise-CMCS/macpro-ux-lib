@@ -49,13 +49,11 @@ describe("Tests for the VerticalNavigation component.", () => {
   });
 
   it("Should render out full sidebar nav component with options, an active section, and togglable", () => {
-    const setState2 = jest.fn();
     render(
       <VerticalNavigation
         items={[
           {
             id: "2",
-            togglable: true,
             items: [
               {
                 id: "4",
@@ -76,17 +74,16 @@ describe("Tests for the VerticalNavigation component.", () => {
           },
         ]}
         data-testid="verticalNavigation"
-        selectedId="6"
+        selectedId="4"
       />
     );
 
     const parentSection = screen.getByText("Parent");
     const childSection = screen.getByText("Child");
     const grandChildSection = screen.getByText("Grandchild");
-    console.log(parentSection);
-    fireEvent.click(grandChildSection);
-    fireEvent.click(childSection);
     fireEvent.click(parentSection);
+    fireEvent.click(childSection);
+    fireEvent.click(grandChildSection);
   });
 
   it("Should render out full sidebar nav component with options and an active section", () => {
@@ -234,7 +231,14 @@ describe("compontent snapshots", () => {
 
   it("Alternative VerticalNavigation", () => {
     const { container } = render(
-      <VerticalNavigation items={[]} data-testid="verticalNavigation" />
+      <VerticalNavigation
+        selectedId="1"
+        items={[
+          { id: "1", items: [], text: "Parent" },
+          { id: "2", items: [], text: "Parent" },
+        ]}
+        data-testid="verticalNavigation"
+      />
     );
     expect(container).toMatchSnapshot();
   });

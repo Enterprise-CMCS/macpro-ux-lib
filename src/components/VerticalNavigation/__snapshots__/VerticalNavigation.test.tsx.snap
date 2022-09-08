@@ -11,7 +11,26 @@ exports[`compontent snapshots Alternative VerticalNavigation 1`] = `
     >
       <ul
         class="usa-sidenav"
-      />
+      >
+        <li
+          class="usa-sidenav__item"
+        >
+          <a
+            class="usa-current"
+          >
+            Parent
+          </a>
+        </li>
+        <li
+          class="usa-sidenav__item"
+        >
+          <a
+            class=""
+          >
+            Parent
+          </a>
+        </li>
+      </ul>
     </nav>
   </div>
 </div>
