@@ -23,6 +23,8 @@ import { Modal } from "./components/Modal/Modal";
 import { Radio } from "./components/Radio/Radio";
 import { RadioGroup } from "./components/RadioGroup/RadioGroup";
 import { Search } from "./components/Search/Search";
+import { Tab } from "./components/Tabs/Tab";
+import { TabPanel } from "./components/Tabs/TabPanel";
 import { TextArea } from "./components/TextArea/TextArea";
 import { TextInput } from "./components/TextInput/TextInput";
 import { Typography } from "./components/Typography/Typography";
@@ -48,6 +50,8 @@ export {
   Radio,
   RadioGroup,
   Search,
+  Tab,
+  TabPanel,
   TextArea,
   TextInput,
   Typography,
