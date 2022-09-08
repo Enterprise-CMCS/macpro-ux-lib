@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compontent snapshots Alternative VerticalNavigation 1`] = `
+<div>
+  <div
+    class="tablet:grid-col-4 pointer"
+  >
+    <nav
+      aria-label="Side navigation"
+      data-testid="verticalNavigation"
+    >
+      <ul
+        class="usa-sidenav"
+      />
+    </nav>
+  </div>
+</div>
+`;
+
+exports[`compontent snapshots Basic VerticalNavigation 1`] = `
+<div>
+  <div
+    class="tablet:grid-col-4 pointer"
+  >
+    <nav
+      aria-label="Side navigation"
+      data-testid="verticalNavigation"
+    >
+      <ul
+        class="usa-sidenav"
+      >
+        <li
+          class="usa-sidenav__item"
+        >
+          <a
+            class=""
+          >
+            Parent
+          </a>
+        </li>
+        <li
+          class="usa-sidenav__item"
+        >
+          <a
+            class=""
+          >
+            Parent
+          </a>
+        </li>
+        <li
+          class="usa-sidenav__item"
+        >
+          <a
+            class=""
+          >
+            Parent
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+`;

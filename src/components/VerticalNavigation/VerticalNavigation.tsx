@@ -37,27 +37,23 @@ export const VerticalNavigation: React.FC<Props> = ({
         return true;
       }
 
-      if (parentItem.items?.length) {
-        parentItem.items.some((childItem) => {
-          if (childItem.id === selectedId) {
-            foundSelectedIds.push(parentItem.id, childItem.id);
+      parentItem.items?.some((childItem) => {
+        if (childItem.id === selectedId) {
+          foundSelectedIds.push(parentItem.id, childItem.id);
+          return true;
+        }
+
+        childItem.items?.some((grandchildItem) => {
+          if (grandchildItem.id === selectedId) {
+            foundSelectedIds.push(
+              parentItem.id,
+              childItem.id,
+              grandchildItem.id
+            );
             return true;
           }
-
-          if (childItem.items?.length) {
-            childItem.items.some((grandchildItem) => {
-              if (grandchildItem.id === selectedId) {
-                foundSelectedIds.push(
-                  parentItem.id,
-                  childItem.id,
-                  grandchildItem.id
-                );
-                return true;
-              }
-            });
-          }
         });
-      }
+      });
     });
 
     return foundSelectedIds;
@@ -68,7 +64,7 @@ export const VerticalNavigation: React.FC<Props> = ({
   );
 
   return (
-    <div className="tablet:grid-col-4">
+    <div className="tablet:grid-col-4 pointer">
       <nav aria-label="Side navigation" {...rest}>
         <ul className="usa-sidenav">
           {items.map((item) => {

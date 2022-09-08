@@ -1,85 +1,241 @@
-// import React from "react";
-// import { screen, render } from "../../test-setup";
-// import { Footer } from "./VerticalNavigation";
+import React from "react";
+import { fireEvent, screen, render } from "../../test-setup";
+import { VerticalNavigation } from "./VerticalNavigation";
 
-// describe("Tests for the Footer component.", () => {
-//   it("Should render with default address and test email", () => {
-//     render(<Footer emailAddress="test@gmail.com" data-testid="Footer" />);
+describe("Tests for the VerticalNavigation component.", () => {
+  const setState = jest.fn();
+  const selectedIds: string[] = [];
 
-//     const FooterComp = screen.getByTestId("Footer");
-//     expect(FooterComp).toBeInTheDocument();
-//     expect(FooterComp).toHaveTextContent(
-//       "Email test@gmail.com for help or feedback."
-//     );
-//     expect(FooterComp).toHaveTextContent(
-//       "7500 Security Boulevard Baltimore, MD 21244"
-//     );
-//   });
+  it("Should render out full sidebar nav component with options, an active section, and togglable", () => {
+    render(
+      <VerticalNavigation
+        items={[
+          {
+            id: "2",
+            togglable: true,
+            items: [
+              {
+                id: "4",
+                togglable: true,
+                items: [
+                  {
+                    id: "6",
+                    navClick: setState,
+                    selectedIds,
+                    text: "Grandchild",
+                  },
+                ],
+                text: "Child",
+                navClick: setState,
+                selectedIds,
+              },
+            ],
+            text: "Parent",
+          },
+        ]}
+        data-testid="verticalNavigation"
+        selectedId="6"
+      />
+    );
+    const SideNavComp = screen.getByTestId("verticalNavigation");
+    const parentSection = screen.getByText("Parent");
+    const childSection = screen.getByText("Child");
+    const grandChildSection = screen.getByText("Grandchild");
+    fireEvent.click(grandChildSection);
+    fireEvent.click(childSection);
+    fireEvent.click(parentSection);
 
-//   it("Should render with user address and user email", () => {
-//     render(
-//       <Footer
-//         emailAddress="user@gmail.com"
-//         data-testid="Footer"
-//         address="111 user drive"
-//       />
-//     );
+    expect(SideNavComp).toBeInTheDocument();
+  });
 
-//     const FooterComp = screen.getByTestId("Footer");
-//     expect(FooterComp).toHaveTextContent(
-//       "Email user@gmail.com for help or feedback."
-//     );
-//     expect(FooterComp).toHaveTextContent("111 user drive");
-//   });
+  it("Should render out full sidebar nav component with options, an active section, and togglable", () => {
+    const setState2 = jest.fn();
+    render(
+      <VerticalNavigation
+        items={[
+          {
+            id: "2",
+            togglable: true,
+            items: [
+              {
+                id: "4",
+                items: [
+                  {
+                    id: "6",
+                    navClick: setState,
+                    selectedIds: ["6", "4", "2"],
+                    text: "Grandchild",
+                  },
+                ],
+                text: "Child",
+                navClick: setState,
+                selectedIds: ["6", "4", "2"],
+              },
+            ],
+            text: "Parent",
+          },
+        ]}
+        data-testid="verticalNavigation"
+        selectedId="6"
+      />
+    );
 
-//   it("Should render alternative footer with a link", () => {
-//     render(
-//       <Footer
-//         navigationLinks={[
-//           {
-//             href: "https://www.google.com/",
-//             iconName: "launch",
-//             onClick: () => {
-//               console.log("launch");
-//             },
-//             text: "FAQ",
-//           },
-//         ]}
-//         emailAddress="user@gmail.com"
-//         altFooter
-//         data-testid="Footer"
-//       />
-//     );
+    const parentSection = screen.getByText("Parent");
+    const childSection = screen.getByText("Child");
+    const grandChildSection = screen.getByText("Grandchild");
+    console.log(parentSection);
+    fireEvent.click(grandChildSection);
+    fireEvent.click(childSection);
+    fireEvent.click(parentSection);
+  });
 
-//     const FooterComp = screen.getByTestId("Footer");
-//     expect(FooterComp).toHaveTextContent("FAQ");
-//   });
-// });
+  it("Should render out full sidebar nav component with options and an active section", () => {
+    render(
+      <VerticalNavigation
+        items={[
+          { id: "1", items: [], text: "Parent" },
+          { id: "2", items: [], text: "Parent" },
+        ]}
+        data-testid="verticalNavigation"
+        selectedId="1"
+      />
+    );
 
-// describe("compontent snapshots", () => {
-//   it("Basic Footer", () => {
-//     const { container } = render(<Footer emailAddress="test@gmail.com" />);
-//     expect(container).toMatchSnapshot();
-//   });
+    const SideNavComp = screen.getByTestId("verticalNavigation");
+    expect(SideNavComp).toBeInTheDocument();
+  });
 
-//   it("Alternative Footer", () => {
-//     const { container } = render(
-//       <Footer
-//         altFooter
-//         navigationLinks={[
-//           {
-//             href: "https://www.google.com/",
-//             iconName: "launch",
-//             onClick: () => {
-//               console.log("launch");
-//             },
-//             text: "FAQ",
-//           },
-//         ]}
-//         emailAddress="test@gmail.com"
-//         address="111 test drive"
-//       />
-//     );
-//     expect(container).toMatchSnapshot();
-//   });
-// });
+  it("Should render a vertical nav component with dropdown toggles", () => {
+    render(
+      <VerticalNavigation
+        items={[
+          { id: "1", items: [], text: "Parent" },
+          {
+            id: "2",
+            togglable: true,
+            items: [
+              {
+                id: "4",
+                togglable: true,
+                items: [
+                  {
+                    id: "6",
+                    navClick: setState,
+                    selectedIds,
+                    text: "Grandchild",
+                  },
+                ],
+                text: "Child",
+                navClick: setState,
+                selectedIds,
+              },
+              {
+                id: "5",
+                items: [],
+                text: "Child",
+                navClick: setState,
+                selectedIds: selectedIds,
+              },
+            ],
+
+            text: "Parent",
+          },
+          { id: "3", items: [], text: "Parent" },
+        ]}
+        selectedId="6"
+        data-testid="verticalNavigation"
+      />
+    );
+
+    const SideNavComp = screen.getByTestId("verticalNavigation");
+    expect(SideNavComp).toHaveTextContent("Grandchild");
+    expect(SideNavComp.getElementsByTagName("span")[0]).toBeInTheDocument();
+  });
+
+  it("Should render out full sidebar nav component with options and an active section in child", () => {
+    render(
+      <VerticalNavigation
+        items={[
+          {
+            id: "1",
+            items: [
+              {
+                id: "2",
+                navClick: setState,
+                selectedIds,
+                items: [],
+                text: "Parent",
+              },
+            ],
+            text: "Parent",
+          },
+          { id: "3", items: [], text: "Parent" },
+        ]}
+        data-testid="verticalNavigation"
+        selectedId="2"
+      />
+    );
+
+    const SideNavComp = screen.getByTestId("verticalNavigation");
+    expect(SideNavComp).toBeInTheDocument();
+  });
+});
+
+describe("compontent snapshots", () => {
+  const setState = jest.fn();
+  const selectedIds: string[] = [];
+
+  it("Basic VerticalNavigation", () => {
+    const { container } = render(
+      <VerticalNavigation
+        items={[
+          { id: "1", items: [], text: "Parent" },
+          {
+            id: "2",
+            items: [
+              {
+                id: "4",
+                items: [
+                  {
+                    id: "6",
+                    navClick: setState,
+                    selectedIds,
+                    text: "Grandchild",
+                  },
+                  {
+                    id: "7",
+                    navClick: setState,
+                    selectedIds,
+                    text: "Grandchild",
+                  },
+                ],
+                text: "Child",
+                navClick: setState,
+                selectedIds,
+              },
+              {
+                id: "5",
+                items: [],
+                text: "Child",
+                navClick: setState,
+                selectedIds: selectedIds,
+              },
+            ],
+
+            text: "Parent",
+          },
+          { id: "3", items: [], text: "Parent" },
+        ]}
+        data-testid="verticalNavigation"
+      />
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  it("Alternative VerticalNavigation", () => {
+    const { container } = render(
+      <VerticalNavigation items={[]} data-testid="verticalNavigation" />
+    );
+    expect(container).toMatchSnapshot();
+  });
+});
