@@ -1,9 +1,10 @@
 import React from "react";
 import { fireEvent, screen, render } from "../../test-setup";
-import { Tab } from "./Tab";
+import { TabPanel } from "./TabPanel";
+import { Tabs } from "./Tabs";
 
 describe("Tests for the Accordion component", () => {
   it("should render", () => {
-    render(<Tab />);
+    render(<Tabs />);
   });
 });
