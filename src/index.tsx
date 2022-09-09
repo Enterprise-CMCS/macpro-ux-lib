@@ -21,7 +21,7 @@ import { Link } from "./components/Link/Link";
 import { Logo } from "./components/Logo/Logo";
 import { Modal } from "./components/Modal/Modal";
 import { Radio } from "./components/Radio/Radio";
-import { RadioGroup } from "./components/RadioGroup/RadioGroup";
+import { RadioGroup } from "./components/Radio/RadioGroup";
 import { Search } from "./components/Search/Search";
 import { TextArea } from "./components/TextArea/TextArea";
 import { TextInput } from "./components/TextInput/TextInput";
