@@ -1,6 +1,5 @@
 @use "../../assets/theme/macbis-colors" as c;
 
-// .tabPanel {
 .tab {
   border: 1px solid c.$gray-lighter;
   color: c.$base;
@@ -33,4 +32,3 @@
     cursor: auto;
   }
 }
-// }

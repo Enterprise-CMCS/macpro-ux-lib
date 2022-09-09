@@ -10,7 +10,11 @@ interface Props extends IntrinsicElements {
 /**
  * **TabPanel Component**
  *
- * @param {string}    id  Unique identifier required for each Accordion item used for form control.
+ * @param {React.Node}    children  Contents to be displayed when Tab is clicked.
+ * @param {boolean}       disabled  Setting this value will render Tab with disabled styles and make tab unclickable.
+ * @param {string}        id        Unique identifier required for each TabPanel item used for form control.
+ * @param {string}        tab       Text label for each tab.
+ *
  */
 export const TabPanel: React.FC<PropsWithChildren<Props>> = ({
   children,
