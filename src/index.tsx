@@ -53,4 +53,5 @@ export {
   TextInput,
   Typography,
   UsaBanner,
+  VerticalNavigation,
 };
