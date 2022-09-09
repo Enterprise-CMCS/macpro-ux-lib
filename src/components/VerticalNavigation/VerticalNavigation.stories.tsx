@@ -21,7 +21,7 @@ export default {
     docs: {
       description: {
         component:
-          "Hierarchical, vertical navigation to place at the side of a page. To display a navigational hierarchy with one to three levels.",
+          "Hierarchical, vertical navigation to place at the side of a page. The recommendation is to display a navigational hierarchy with one to three levels. In theory it can be infinitely nested, but three layers max is recommended for a better user experience.",
       },
     },
   },

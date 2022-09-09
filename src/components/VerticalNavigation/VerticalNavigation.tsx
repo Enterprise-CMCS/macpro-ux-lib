@@ -29,38 +29,33 @@ export const VerticalNavigation: React.FC<Props> = ({
   items,
   ...rest
 }) => {
-  const getSelectedSecitons = (): string[] => {
-    const foundSelectedIds: string[] = [];
-    items.some((parentItem) => {
-      if (parentItem.id === selectedId) {
-        foundSelectedIds.push(parentItem.id);
+  const getSelectedSecitons = (
+    items: IVerticalNavigationItem[] | NavigationItemChild[],
+    selectedId: string,
+    prevSelectedIds: string[] = []
+  ): string[] => {
+    let foundSelectedIds: string[] = [];
+    items.some((item) => {
+      if (item.id === selectedId) {
+        foundSelectedIds.push(item.id, ...prevSelectedIds);
         return true;
       }
 
-      parentItem.items?.some((childItem) => {
-        if (childItem.id === selectedId) {
-          foundSelectedIds.push(parentItem.id, childItem.id);
-          return true;
-        }
-
-        childItem.items?.some((grandchildItem) => {
-          if (grandchildItem.id === selectedId) {
-            foundSelectedIds.push(
-              parentItem.id,
-              childItem.id,
-              grandchildItem.id
-            );
-            return true;
-          }
-        });
-      });
+      if (item.items?.length) {
+        prevSelectedIds.push(item.id);
+        foundSelectedIds = getSelectedSecitons(
+          item.items,
+          selectedId,
+          prevSelectedIds
+        );
+      }
     });
 
     return foundSelectedIds;
   };
 
   const [selectedIds, setSelectedIds] = useState<string[]>(
-    selectedId ? getSelectedSecitons() : []
+    selectedId ? getSelectedSecitons(items, selectedId) : []
   );
 
   return (

@@ -22,92 +22,59 @@ export const VerticalNavigationItem: React.FC<NavigationItemChild> = ({
   items,
   href,
 }) => {
-  return (
-    <li className="usa-sidenav__item">
-      <a
-        href={href}
-        className={selectedIds.includes(id) ? "usa-current" : ""}
-        onClick={() =>
-          !selectedIds.includes(id)
-            ? navClick([id])
-            : togglable
-            ? navClick([])
-            : undefined
-        }
-      >
-        {text}
-        {togglable && (
-          <span className="float-right">
-            {selectedIds.includes(id) ? (
-              <Icon name="arrow_drop_up" />
-            ) : (
-              <Icon name="arrow_drop_down" />
-            )}
-          </span>
+  const generateSections = (
+    id: string,
+    text: string,
+    togglable?: boolean,
+    href?: string,
+    items?: NavigationItemChild["items"],
+    previousItemsIds: string[] = []
+  ) => {
+    return (
+      <li className="usa-sidenav__item" key={id}>
+        <a
+          href={href}
+          className={selectedIds.includes(id) ? "usa-current" : ""}
+          onClick={() =>
+            !selectedIds.includes(id)
+              ? navClick([...previousItemsIds, id])
+              : togglable
+              ? navClick([
+                  ...previousItemsIds.filter((prevId) => prevId !== id),
+                ])
+              : undefined
+          }
+        >
+          {text}
+          {togglable && (
+            <span className="float-right">
+              {selectedIds.includes(id) ? (
+                <Icon name="arrow_drop_up" />
+              ) : (
+                <Icon name="arrow_drop_down" />
+              )}
+            </span>
+          )}
+        </a>
+        {selectedIds.includes(id) && items && items.length > 0 && (
+          <ul className="usa-sidenav__sublist">
+            {items.map((itemChild) => {
+              previousItemsIds.push(id);
+
+              return generateSections(
+                itemChild.id,
+                itemChild.text,
+                itemChild.togglable,
+                itemChild.href,
+                itemChild.items,
+                previousItemsIds
+              );
+            })}
+          </ul>
         )}
-      </a>
-      {selectedIds.includes(id) && items && items.length > 0 && (
-        <ul className="usa-sidenav__sublist">
-          {items.map((itemChild) => {
-            return (
-              <li className="usa-sidenav__item" key={itemChild.id}>
-                <a
-                  href={itemChild.href}
-                  className={
-                    selectedIds.includes(itemChild.id) ? "usa-current" : ""
-                  }
-                  onClick={() =>
-                    !selectedIds.includes(itemChild.id)
-                      ? navClick([id, itemChild.id])
-                      : itemChild.togglable
-                      ? navClick([id])
-                      : undefined
-                  }
-                >
-                  {itemChild.text}
-                  {itemChild.togglable && (
-                    <span className="float-right">
-                      {selectedIds.includes(itemChild.id) ? (
-                        <Icon name="arrow_drop_up" />
-                      ) : (
-                        <Icon name="arrow_drop_down" />
-                      )}
-                    </span>
-                  )}
-                </a>
-                {selectedIds.includes(itemChild.id) &&
-                  itemChild.items &&
-                  itemChild.items.length > 0 && (
-                    <ul className="usa-sidenav__sublist">
-                      {itemChild.items.map((itemGrandchild) => {
-                        return (
-                          <li
-                            className="usa-sidenav__item"
-                            key={itemGrandchild.id}
-                          >
-                            <a
-                              href={itemGrandchild.href}
-                              className={
-                                selectedIds.includes(itemGrandchild.id)
-                                  ? "usa-current"
-                                  : ""
-                              }
-                              onClick={() =>
-                                navClick([id, itemChild.id, itemGrandchild.id])
-                              }
-                            >
-                              {itemGrandchild.text}
-                            </a>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  )}
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </li>
-  );
+      </li>
+    );
+  };
+
+  return <>{generateSections(id, text, togglable, href, items)}</>;
 };
