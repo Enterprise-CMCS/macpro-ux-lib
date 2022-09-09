@@ -14,8 +14,13 @@ interface Props extends IntrinsicElements {
  */
 export const TabPanel: React.FC<PropsWithChildren<Props>> = ({
   children,
+  id,
   tab,
   ...rest
 }) => {
-  return <div {...rest}>{children}</div>;
+  return (
+    <div {...rest} aria-labelledby={id} aria-hidden="true" role="tabpanel">
+      {children}
+    </div>
+  );
 };
