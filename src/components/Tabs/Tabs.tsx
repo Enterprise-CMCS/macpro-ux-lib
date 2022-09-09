@@ -10,8 +10,19 @@ interface Props extends IntrinsicElements {
 /**
  * **Tabs Component**
  *
+ * `Tabs` acts as a parent for one or many `TabPanel` children. These components are reliant on
+ * each other and will not display correctly if used independently.
+ *
+ * ```html
+ * <Tabs>
+ *   <TabPanel></TabPanel>
+ *   <TabPanel></TabPanel>
+ *   <TabPanel></TabPanel>
+ * </Tabs>
+ * ```
+ *
  * @param {React.Node}    children    `TabPanel` children to be rendered in the Tabs component.
- * @param {number}        initialTab  Optionally set the initial tab to be open when the component renders.
+ * @param {number}        initialTab  Index of the tab to be open when the component renders. Defaults to first non-disabled tab.
  */
 export const Tabs: React.FC<PropsWithChildren<Props>> = ({
   children,
