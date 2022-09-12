@@ -17,6 +17,7 @@ exports[`compontent snapshots Alternative VerticalNavigation 1`] = `
         >
           <a
             class="usa-current"
+            tabindex="0"
           >
             Parent
           </a>
@@ -26,6 +27,7 @@ exports[`compontent snapshots Alternative VerticalNavigation 1`] = `
         >
           <a
             class=""
+            tabindex="0"
           >
             Parent
           </a>
@@ -53,6 +55,7 @@ exports[`compontent snapshots Basic VerticalNavigation 1`] = `
         >
           <a
             class=""
+            tabindex="0"
           >
             Parent
           </a>
@@ -62,6 +65,7 @@ exports[`compontent snapshots Basic VerticalNavigation 1`] = `
         >
           <a
             class=""
+            tabindex="0"
           >
             Parent
           </a>
@@ -71,6 +75,7 @@ exports[`compontent snapshots Basic VerticalNavigation 1`] = `
         >
           <a
             class=""
+            tabindex="0"
           >
             Parent
           </a>
