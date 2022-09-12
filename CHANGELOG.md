@@ -1,3 +1,10 @@
+## [1.10.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.10.0...v1.10.1) (2022-09-09)
+
+
+### Bug Fixes
+
+* **radio:** clean up radio directory to include radiogroup  ([dcf6885](https://github.com/cmsgov/macpro-ux-lib/commit/dcf6885cdb9fbae0116d8d50e9189c9b0161cf13))
+
 # [1.10.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.9.1...v1.10.0) (2022-09-07)
 
 
