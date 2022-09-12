@@ -142,6 +142,48 @@ function App() {
         >
           <UX.Button buttonText="A button could live here" />
         </UX.Card>
+        <UX.VerticalNavigation
+          items={[
+            { id: "1", items: [], text: "Parent" },
+            {
+              id: "2",
+              togglable: true,
+              items: [
+                {
+                  id: "4",
+                  togglable: true,
+                  navClick: () => console.log(""),
+                  selectedIds: [""],
+                  items: [
+                    {
+                      id: "6",
+                      text: "Grandchild",
+                      selectedIds: [""],
+                      navClick: () => console.log(""),
+                    },
+                    {
+                      id: "7",
+                      text: "Grandchild",
+                      selectedIds: [""],
+                      navClick: () => console.log(""),
+                    },
+                  ],
+                  text: "Child with toggle",
+                },
+                {
+                  id: "5",
+                  items: [],
+                  text: "Child",
+                  selectedIds: [""],
+                  navClick: () => console.log(""),
+                },
+              ],
+
+              text: "Parent with toggle",
+            },
+            { id: "3", items: [], text: "Parent" },
+          ]}
+        />
         <UX.Checkbox
           id="1"
           label="My Checkbox"
