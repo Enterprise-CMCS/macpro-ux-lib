@@ -37,7 +37,6 @@ export const DateRange: React.FC<Props> = ({
 }) => {
   const [currentMinDate, setMinDate] = useState(minDate);
   const [currentMaxDate, setMaxDate] = useState(maxDate);
-
   return (
     <div {...rest}>
       <Datefield
@@ -48,6 +47,7 @@ export const DateRange: React.FC<Props> = ({
         maxDate={currentMaxDate}
         label={startLabel}
         value={currentMinDate}
+        dateRangeChange={setMinDate}
       />
       <Datefield
         value={currentMaxDate}
@@ -57,6 +57,7 @@ export const DateRange: React.FC<Props> = ({
         label={endLabel}
         hint={hint}
         minDate={currentMinDate}
+        dateRangeChange={setMaxDate}
       />
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import Calendar from "react-calendar";
 import { Icon } from "../Icon/Icon";
 import { completeDateFilter, numbersAndSlashesFilter } from "../../utils";
@@ -14,6 +14,7 @@ export interface Props extends IntrinsicElements {
   minDate?: string;
   maxDate?: string;
   value?: string;
+  dateRangeChange?: Dispatch<SetStateAction<string | undefined>>;
 }
 
 /**
@@ -39,6 +40,7 @@ export const Datefield: React.FC<Props> = ({
   defaultDate,
   hint = true,
   disabled = false,
+  dateRangeChange,
   ...rest
 }) => {
   value = completeDateFilter.test(value || "") ? value : "";
@@ -54,6 +56,7 @@ export const Datefield: React.FC<Props> = ({
   const filterInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (numbersAndSlashesFilter.test(e.target.value) || e.target.value === "") {
       setDate(e.target.value);
+      dateRangeChange && dateRangeChange(e.target.value);
     }
   };
 
@@ -71,6 +74,7 @@ export const Datefield: React.FC<Props> = ({
     month = month.padStart(2, "0");
 
     setDate(`${month}/${day}/${year}`);
+    dateRangeChange && dateRangeChange(`${month}/${day}/${year}`);
     toggleCalendar();
     setDateError(false);
   };
