@@ -33,7 +33,7 @@ export const TabPanel: React.FC<PropsWithChildren<Props>> = ({
   ...rest
 }) => {
   return (
-    <div {...rest} aria-labelledby={id} aria-hidden="true" role="tabpanel">
+    <div {...rest} aria-labelledby={id} role="tabpanel">
       {children}
     </div>
   );

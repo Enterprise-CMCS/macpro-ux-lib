@@ -51,11 +51,12 @@ export const Tabs: React.FC<PropsWithChildren<Props>> = ({
         {Children.map(arrayChildren, (child, idx) => {
           if (React.isValidElement(child)) {
             const current = currentTab === idx;
-            const classNames = `tab ${current ? "current" : ""}`;
+            const classNames = `tab${current ? " current" : ""}`;
             return (
               <Tab
                 aria-controls={child.props.tab}
                 aria-selected={current}
+                aria-hidden={!current}
                 {...child.props}
                 className={classNames}
                 onClick={() => setCurrentTab(idx)}
@@ -71,6 +72,7 @@ export const Tabs: React.FC<PropsWithChildren<Props>> = ({
             const current = currentTab === idx;
             return React.cloneElement(child, {
               hidden: !current,
+              "aria-hidden": !current,
             });
           }
         })}
