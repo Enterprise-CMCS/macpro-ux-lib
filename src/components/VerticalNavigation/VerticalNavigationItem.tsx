@@ -34,6 +34,7 @@ export const VerticalNavigationItem: React.FC<NavigationItemChild> = ({
       <li className="usa-sidenav__item" key={id}>
         <a
           href={href}
+          tabIndex={0}
           className={selectedIds.includes(id) ? "usa-current" : ""}
           onClick={() =>
             !selectedIds.includes(id)
