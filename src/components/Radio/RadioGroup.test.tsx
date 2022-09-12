@@ -1,4 +1,4 @@
-import { RadioGroup } from "../RadioGroup/RadioGroup";
+import { RadioGroup } from "./RadioGroup";
 import { render, screen } from "../../test-setup";
 import { fireEvent } from "@storybook/testing-library";
 import React from "react";
