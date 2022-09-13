@@ -58,6 +58,8 @@ Enter the new component name: Button
 # └── Button.tsx
 ```
 
+At the present time, this script does not add imports for your new component in `_uswds-theme-custom-styles.scss` or in `index.tsx`. These are required if you want to include custom CSS or include your component in the packaged version of this code.
+
 ### Pull Requests
 
 We use pull request to drive a variety of actions and workflows in the project
