@@ -27,7 +27,7 @@ export default {
       description:
         "Unique identifier required for each TabPanel item. The id is used to associate the tab and it's content, as well as populate aria tags.",
     },
-    tab: { description: "Text label for each tab." },
+    tabLabel: { description: "Text label for each tab." },
   },
 } as ComponentMeta<typeof TabPanel>;
 
