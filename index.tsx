@@ -26,6 +26,7 @@ import { Search } from "./components/Search/Search";
 import { TextArea } from "./components/TextArea/TextArea";
 import { TextInput } from "./components/TextInput/TextInput";
 import { Typography } from "./components/Typography/Typography";
+import { VerticalNavigation } from "./components/VerticalNavigation/VerticalNavigation";
 import { UsaBanner } from "./components/UsaBanner/UsaBanner";
 
 export {
@@ -52,4 +53,5 @@ export {
   TextInput,
   Typography,
   UsaBanner,
+  VerticalNavigation,
 };
