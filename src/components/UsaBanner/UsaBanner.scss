@@ -1,0 +1,23 @@
+@use "../../assets/theme/macbis-colors" as c;
+
+// TODO: These colors do not exist in _macbis-colors
+// How and do we incorporate these? Should these be converted to existing colors?
+$black: #1b1b1b;
+$gray: #adadad;
+$white: #fff;
+
+.usa-banner {
+  &.usa-banner--dark {
+    background-color: $black;
+    .usa-banner__header-text,
+    .usa-media-block__body {
+      color: $white;
+    }
+    .usa-banner__button-text {
+      color: $gray;
+    }
+    .usa-banner__button::after {
+      background-color: $gray;
+    }
+  }
+}
