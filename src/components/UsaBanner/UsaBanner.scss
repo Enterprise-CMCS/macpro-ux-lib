@@ -9,6 +9,9 @@ $white: #fff;
 .usa-banner {
   &.usa-banner--dark {
     background-color: $black;
+    .usa-banner__button[aria-expanded="true"]::before {
+      background-color: $black;
+    }
     .usa-banner__header-text,
     .usa-media-block__body {
       color: $white;
