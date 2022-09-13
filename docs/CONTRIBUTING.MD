@@ -34,6 +34,30 @@ npm run storybook
 After running the aformentioned code you will be able to preview any changes you make to the component library in storybook. For more on storybook reference their documentation.
 [Storybook Documentation](https://storybook.js.org/docs/react/get-started/introduction)
 
+### Creating a New Component
+
+All of our components live in `src/components/`, and each new component should be included here. Components can be created from scratch, but it is recommended that you use an existing component as a reference. Additionally, a simple boilerplate component can be generated using `npm run generate-component`.
+
+#### generate-component.sh
+
+This script creates a new component by referencing a `TemplateComponent` in the project root. Upon running, the user will be prompted to provide a name for the new component. The script will then create a directory with a basic working component and Storybook story.
+
+Example:
+
+```bash
+> npm run generate-component
+
+This script generates a new template component with a specified name.
+Enter the new component name: Button
+
+# Output:
+# src/components/Button/
+# ├── Button.scss
+# ├── Button.stories.tsx
+# ├── Button.test.tsx
+# └── Button.tsx
+```
+
 ### Pull Requests
 
 We use pull request to drive a variety of actions and workflows in the project
