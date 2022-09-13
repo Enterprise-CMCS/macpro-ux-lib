@@ -14,7 +14,9 @@ export interface Props extends IntrinsicElements {
   minDate?: string;
   maxDate?: string;
   value?: string;
+  rangeCalendarOpen?: boolean;
   dateRangeChange?: Dispatch<SetStateAction<string | undefined>>;
+  toggleRangeCalendars?: Function;
 }
 
 /**
@@ -41,6 +43,8 @@ export const Datefield: React.FC<Props> = ({
   hint = true,
   disabled = false,
   dateRangeChange,
+  rangeCalendarOpen,
+  toggleRangeCalendars,
   ...rest
 }) => {
   value = completeDateFilter.test(value || "") ? value : "";
@@ -50,7 +54,11 @@ export const Datefield: React.FC<Props> = ({
   const [dateError, setDateError] = useState(false);
 
   const toggleCalendar = () => {
-    setCalendarOpen(!calendarOpen);
+    if (toggleRangeCalendars !== undefined) {
+      toggleRangeCalendars();
+    } else {
+      setCalendarOpen(!calendarOpen);
+    }
   };
 
   const filterInput = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -61,7 +69,7 @@ export const Datefield: React.FC<Props> = ({
   };
 
   const onBlurCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (completeDateFilter.test(e.target.value)) {
+    if (completeDateFilter.test(e.target.value) || e.target.value === "") {
       setDateError(false);
     } else {
       setDateError(true);
@@ -130,7 +138,7 @@ export const Datefield: React.FC<Props> = ({
             </button>
           </div>
         </div>
-        {calendarOpen && (
+        {(rangeCalendarOpen || calendarOpen) && (
           <div className="grid-row" data-testid="calendar">
             <Calendar
               calendarType="US"

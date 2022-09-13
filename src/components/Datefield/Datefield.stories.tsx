@@ -41,6 +41,15 @@ export default {
     value: {
       description: "Value of the input element.",
     },
+    dateRangeChange: {
+      table: { disable: true },
+    },
+    rangeCalendarOpen: {
+      table: { disable: true },
+    },
+    toggleRangeCalendars: {
+      table: { disable: true },
+    },
   },
   args: {},
   parameters: {
