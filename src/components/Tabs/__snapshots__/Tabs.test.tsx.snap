@@ -10,7 +10,6 @@ exports[`Tests for the Tabs component component snapshot 1`] = `
       role="tablist"
     >
       <a
-        aria-controls="Summary"
         aria-hidden="false"
         aria-selected="true"
         class="tab current"
@@ -20,7 +19,6 @@ exports[`Tests for the Tabs component component snapshot 1`] = `
         Summary
       </a>
       <a
-        aria-controls="Preamble"
         aria-hidden="true"
         aria-selected="false"
         class="tab"
@@ -30,7 +28,6 @@ exports[`Tests for the Tabs component component snapshot 1`] = `
         Preamble
       </a>
       <a
-        aria-controls="Amendments"
         aria-hidden="true"
         aria-selected="false"
         class="tab"
@@ -40,7 +37,6 @@ exports[`Tests for the Tabs component component snapshot 1`] = `
         Amendments
       </a>
       <span
-        aria-controls="Disabled"
         aria-disabled="true"
         aria-hidden="true"
         aria-selected="false"

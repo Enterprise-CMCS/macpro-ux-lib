@@ -4,18 +4,18 @@ import { TabPanel } from "./TabPanel";
 import { Tabs } from "./Tabs";
 
 const tabPanels = [
-  <TabPanel tab="Summary" id="tab-panel--summary">
+  <TabPanel tabLabel="Summary" id="tab-panel--summary">
     The Bill of Rights is the first ten amendments to the United States
     Constitution.
   </TabPanel>,
-  <TabPanel tab="Preamble" id="tab-panel--preamble">
+  <TabPanel tabLabel="Preamble" id="tab-panel--preamble">
     We the People of the United States, in Order to form a more perfect Union,
     establish Justice, insure domestic Tranquility, provide for the common
     defence, promote the general Welfare, and secure the Blessings of Liberty to
     ourselves and our Posterity, do ordain and establish this Constitution for
     the United States of America.
   </TabPanel>,
-  <TabPanel tab="Amendments" id="tab-panel--amendments">
+  <TabPanel tabLabel="Amendments" id="tab-panel--amendments">
     <h2>Bill of Rights</h2>
     <ol>
       <li>Freedoms, Petitions, Assembly</li>
@@ -50,7 +50,7 @@ const tabPanels = [
       <li>Congressional pay raises</li>
     </ol>
   </TabPanel>,
-  <TabPanel tab="Disabled" disabled id="tab-panel--disabled" />,
+  <TabPanel tabLabel="Disabled" disabled id="tab-panel--disabled" />,
 ];
 
 describe("Tests for the Tabs component", () => {
@@ -132,9 +132,9 @@ describe("Tests for the Tabs component", () => {
   it("when all tabs are disabled none should be set to current", () => {
     const { container } = render(
       <Tabs>
-        <TabPanel tab="Disabled 1" disabled id="tab-panel--disabled-1" />
-        <TabPanel tab="Disabled 2" disabled id="tab-panel--disabled-2" />
-        <TabPanel tab="Disabled 3" disabled id="tab-panel--disabled-3" />
+        <TabPanel tabLabel="Disabled 1" disabled id="tab-panel--disabled-1" />
+        <TabPanel tabLabel="Disabled 2" disabled id="tab-panel--disabled-2" />
+        <TabPanel tabLabel="Disabled 3" disabled id="tab-panel--disabled-3" />
       </Tabs>
     );
     expect(container.getElementsByClassName("current").length).toBe(0);

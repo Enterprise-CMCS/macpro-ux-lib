@@ -5,7 +5,7 @@ type IntrinsicElements = JSX.IntrinsicElements["h4"];
 interface Props extends IntrinsicElements {
   disabled?: boolean;
   id: string;
-  tab: string;
+  tabLabel: string;
 }
 
 /**
@@ -23,13 +23,13 @@ interface Props extends IntrinsicElements {
  * @param {React.Node}    children  Contents to be displayed when Tab is clicked.
  * @param {boolean}       disabled  Setting this value will render Tab with disabled styles and make tab unclickable.
  * @param {string}        id        Unique identifier required for each TabPanel item. The id is used to associate the tab and it's content, as well as populate aria tags.
- * @param {string}        tab       Text label for each tab.
+ * @param {string}        tabLabel  Text label for each tab.
  *
  */
 export const TabPanel: React.FC<PropsWithChildren<Props>> = ({
   children,
   id,
-  tab,
+  tabLabel,
   ...rest
 }) => {
   return (

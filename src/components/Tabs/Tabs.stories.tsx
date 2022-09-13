@@ -24,18 +24,18 @@ export default {
 
 const Template: ComponentStory<typeof Tabs> = ({ ...rest }) => (
   <Tabs {...rest}>
-    <TabPanel tab="Summary" id="tab-panel--summary">
+    <TabPanel tabLabel="Summary" id="tab-panel--summary">
       The Bill of Rights is the first ten amendments to the United States
       Constitution.
     </TabPanel>
-    <TabPanel tab="Preamble" id="tab-panel--preamble">
+    <TabPanel tabLabel="Preamble" id="tab-panel--preamble">
       We the People of the United States, in Order to form a more perfect Union,
       establish Justice, insure domestic Tranquility, provide for the common
       defence, promote the general Welfare, and secure the Blessings of Liberty
       to ourselves and our Posterity, do ordain and establish this Constitution
       for the United States of America.
     </TabPanel>
-    <TabPanel tab="Amendments" id="tab-panel--amendments">
+    <TabPanel tabLabel="Amendments" id="tab-panel--amendments">
       <h2>Bill of Rights</h2>
       <ol>
         <li>Freedoms, Petitions, Assembly</li>
@@ -70,7 +70,7 @@ const Template: ComponentStory<typeof Tabs> = ({ ...rest }) => (
         <li>Congressional pay raises</li>
       </ol>
     </TabPanel>
-    <TabPanel tab="Disabled" disabled id="tab-panel--disabled" />
+    <TabPanel tabLabel="Disabled" disabled id="tab-panel--disabled" />
   </Tabs>
 );
 

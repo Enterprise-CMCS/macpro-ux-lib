@@ -10,7 +10,7 @@ export default {
     children:
       "The Bill of Rights is the first ten amendments to the United States Constitution.",
     disabled: false,
-    tab: "Summary",
+    tabLabel: "Summary",
     id: "tab-panel--summary",
   },
   argTypes: {

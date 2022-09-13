@@ -4,7 +4,7 @@ type IntrinsicElements = JSX.IntrinsicElements["a"];
 
 interface TabProps extends IntrinsicElements {
   disabled?: boolean;
-  tab: string;
+  tabLabel: string;
 }
 
 /**
@@ -16,17 +16,17 @@ interface TabProps extends IntrinsicElements {
 export const Tab: React.FC<TabProps> = ({
   className,
   disabled,
-  tab,
+  tabLabel,
   onClick,
   ...rest
 }) => {
   return disabled ? (
     <span className={`${className} disabled`} aria-disabled="true" {...rest}>
-      {tab}
+      {tabLabel}
     </span>
   ) : (
     <a className={className} onClick={onClick} {...rest}>
-      {tab}
+      {tabLabel}
     </a>
   );
 };
