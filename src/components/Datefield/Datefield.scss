@@ -40,7 +40,7 @@
         text-decoration: none;
       }
 
-      .react-calendar__tile:not(.react-calendar__tile--active, :disabled) {
+      .react-calendar__tile:not(.react-calendar__tile--active, :disabled, .range-start-end) {
         color: black;
       }
 
@@ -54,9 +54,18 @@
       }
     }
 
-    .react-calendar__tile--now:not(.react-calendar__tile--active),
+    .react-calendar__tile--now:not(.react-calendar__tile--active, .range-start-end, .range-selected),
     .grey-lightest {
       background-color: c.$gray-lightest;
     }
+  }
+
+  .range-selected {
+    background-color: c.$primary-lighter;
+  }
+  .range-start-end,
+  .range-start-end:hover {
+    background-color: c.$primary;
+    color: white;
   }
 }

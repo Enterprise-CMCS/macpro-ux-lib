@@ -50,6 +50,9 @@ export default {
     toggleRangeCalendars: {
       table: { disable: true },
     },
+    selectedRangeClassName: {
+      table: { disable: true },
+    },
   },
   args: {},
   parameters: {

@@ -17,6 +17,7 @@ export interface Props extends IntrinsicElements {
   rangeCalendarOpen?: boolean;
   dateRangeChange?: Dispatch<SetStateAction<string | undefined>>;
   toggleRangeCalendars?: Function;
+  selectedRangeClassName?: (date: Date) => string;
 }
 
 /**
@@ -45,6 +46,7 @@ export const Datefield: React.FC<Props> = ({
   dateRangeChange,
   rangeCalendarOpen,
   toggleRangeCalendars,
+  selectedRangeClassName,
   ...rest
 }) => {
   value = completeDateFilter.test(value || "") ? value : "";
@@ -141,6 +143,12 @@ export const Datefield: React.FC<Props> = ({
         {(rangeCalendarOpen || calendarOpen) && (
           <div className="grid-row" data-testid="calendar">
             <Calendar
+              tileClassName={(dateProps) => {
+                if (selectedRangeClassName) {
+                  return selectedRangeClassName(dateProps.date);
+                }
+                return "";
+              }}
               calendarType="US"
               className="grid-col-3"
               onChange={setDateValue}

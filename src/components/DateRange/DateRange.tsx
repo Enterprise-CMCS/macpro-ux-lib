@@ -42,7 +42,7 @@ export const DateRange: React.FC<Props> = ({
   ...rest
 }) => {
   const [currentStartDate, setStartDate] = useState(startDate);
-  const [currentMaxDate, setEndDate] = useState(endDate);
+  const [currentEndDate, setEndDate] = useState(endDate);
   const [startCalendarOpen, setStartCalendarOpen] = useState(false);
   const [endCalendarOpen, setEndCalendarOpen] = useState(false);
 
@@ -56,6 +56,28 @@ export const DateRange: React.FC<Props> = ({
     }
   };
 
+  const applyRangeClassName = (date: Date): string => {
+    if (currentStartDate && currentEndDate) {
+      let [month, day, year] = date.toLocaleDateString().split("/");
+      day = day.padStart(2, "0");
+      month = month.padStart(2, "0");
+
+      let formattedDate = `${month}/${day}/${year}`;
+
+      let dateStart = currentStartDate.split("/");
+      let dateEnd = currentEndDate.split("/");
+      let dateToCheck = formattedDate.split("/");
+
+      if (dateToCheck > dateStart && dateToCheck < dateEnd) {
+        return "range-selected";
+      } else if (dateToCheck >= dateStart && dateToCheck <= dateEnd) {
+        return "range-start-end";
+      }
+    }
+
+    return "";
+  };
+
   return (
     <div {...rest}>
       <Datefield
@@ -64,15 +86,16 @@ export const DateRange: React.FC<Props> = ({
         id=""
         hint={hint}
         defaultDate={defaultStartDate}
-        maxDate={currentMaxDate}
+        maxDate={currentEndDate}
         label={startLabel}
         value={currentStartDate}
         dateRangeChange={setStartDate}
         toggleRangeCalendars={() => toggleRangeCalendars(true)}
         rangeCalendarOpen={startCalendarOpen}
+        selectedRangeClassName={applyRangeClassName}
       />
       <Datefield
-        value={currentMaxDate}
+        value={currentEndDate}
         disabled={disabled}
         name="date-range-2"
         id="date-range-2"
@@ -82,6 +105,7 @@ export const DateRange: React.FC<Props> = ({
         minDate={currentStartDate}
         dateRangeChange={setEndDate}
         rangeCalendarOpen={endCalendarOpen}
+        selectedRangeClassName={applyRangeClassName}
         toggleRangeCalendars={() => toggleRangeCalendars(false)}
       />
     </div>
