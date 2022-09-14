@@ -3,7 +3,7 @@ import { useEffect } from "react";
 /**
  * Hook that alerts clicks outside of the passed ref
  */
-export const useOutsideAlerter = (
+export const useOutsideClick = (
   ref: React.MutableRefObject<any>,
   onOutsideClick: () => any
 ) => {
