@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Button } from "components/Button/Button";
 import { Link, LinkProps } from "components/Link/Link";
 import { LogoProps } from "components/Logo/Logo";
+import { useOutsideAlerter } from "hooks/useOutsideClick";
 
 interface SubMenuColumnProps {
   links: LinkProps[];
@@ -98,6 +99,10 @@ export const Header: React.FC<HeaderProps> = ({
   navData,
   ...rest
 }) => {
+  const wrapperRef = useRef(null);
+  useOutsideAlerter(wrapperRef, () => {
+    closeMenu();
+  });
   const [menuOpen, setMenuOpen] = useState(false);
 
   const openMenu = () => {
@@ -113,7 +118,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <>
       <div className={`usa-overlay${menuOpen ? " is-visible" : ""}`}></div>
-      <header className="usa-header usa-header--extended">
+      <header className="usa-header usa-header--extended" ref={wrapperRef}>
         <div className="usa-navbar-container">
           <div className="usa-navbar">
             <div className="usa-logo" id="basic-logo">
