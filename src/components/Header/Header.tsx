@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "components/Button/Button";
 import { Link, LinkProps } from "components/Link/Link";
 import { LogoProps } from "components/Logo/Logo";
@@ -98,21 +98,46 @@ export const Header: React.FC<HeaderProps> = ({
   navData,
   ...rest
 }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const openMenu = () => {
+    document.body.classList.add("usa-js-mobile-nav--active");
+    setMenuOpen(true);
+  };
+
+  const closeMenu = () => {
+    document.body.classList.remove("usa-js-mobile-nav--active");
+    setMenuOpen(false);
+  };
+
   return (
     <>
-      <div className="usa-overlay"></div>
+      <div className={`usa-overlay${menuOpen ? " is-visible" : ""}`}></div>
       <header className="usa-header usa-header--extended">
         <div className="usa-navbar-container">
           <div className="usa-navbar">
             <div className="usa-logo" id="basic-logo">
               {headerLogo}
             </div>
-            <Button buttonText="Menu" className="usa-menu-btn" />
+            <Button
+              buttonText="Menu"
+              className="usa-menu-btn"
+              onClick={openMenu}
+            />
           </div>
         </div>
-        <nav aria-label="Primary navigation" className="usa-nav" {...rest}>
+        <nav
+          aria-label="Primary navigation"
+          className={`usa-nav${menuOpen ? " is-visible" : ""}`}
+          {...rest}
+        >
           <div className="usa-nav__inner">
-            <Button buttonText="" iconName="close" className="usa-nav__close" />
+            <Button
+              buttonText=""
+              iconName="close"
+              className="usa-nav__close"
+              onClick={closeMenu}
+            />
             <ul className="usa-nav__primary usa-accordion">
               {navData?.map((section, idx) => {
                 return (
