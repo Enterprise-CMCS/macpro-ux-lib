@@ -60,12 +60,13 @@
     }
   }
 
-  .range-selected {
-    background-color: c.$primary-lighter;
+  .range-selected,
+  .range-selected:hover {
+    background-color: c.$primary-lighter !important;
   }
   .range-start-end,
   .range-start-end:hover {
-    background-color: c.$primary;
+    background-color: c.$primary !important;
     color: white;
   }
 }

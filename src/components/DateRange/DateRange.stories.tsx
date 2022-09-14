@@ -6,7 +6,45 @@ export default {
   title: "COMPONENTS/DateRange",
   component: DateRange,
   argTypes: {
-    value: {
+    defaultStartDate: {
+      description: "Value of the input element.",
+      control: { type: "text" },
+    },
+    startDate: {
+      description: "Value of the input element.",
+      control: { type: "text" },
+    },
+    startInputId: {
+      description: "Value of the input element.",
+    },
+    startInputName: {
+      description: "Value of the input element.",
+    },
+    startLabel: {
+      description: "Value of the input element.",
+    },
+    defaultEndDate: {
+      description: "Value of the input element.",
+      control: { type: "text" },
+    },
+    endDate: {
+      description: "Value of the input element.",
+      control: { type: "text" },
+    },
+    endInputId: {
+      description: "Value of the input element.",
+    },
+
+    endInputName: {
+      description: "Value of the input element.",
+    },
+    endLabel: {
+      description: "Value of the input element.",
+    },
+    disabled: {
+      description: "Value of the input element.",
+    },
+    hint: {
       description: "Value of the input element.",
     },
   },

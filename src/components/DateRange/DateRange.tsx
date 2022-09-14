@@ -3,31 +3,34 @@ import { Datefield } from "components/Datefield/Datefield";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
 export interface Props extends IntrinsicElements {
-  // id: string;
-  // name: string;
-  startLabel: string;
-  endLabel: string;
-  hint?: boolean;
-  disabled?: boolean;
-  startDate?: string;
-  endDate?: string;
   defaultStartDate?: string;
+  startDate?: string;
+  startInputId: string;
+  startInputName: string;
+  startLabel: string;
   defaultEndDate?: string;
-  // value?: string;
+  endDate?: string;
+  endInputId: string;
+  endInputName: string;
+  endLabel: string;
+  disabled?: boolean;
+  hint?: boolean;
 }
 
 /**
  * DateRange Component
- * @param {string}  id                     A unique identifier for the input.
- * @param {string}  name                   Name of the input field.
- * @param {string}  label                  Field label.
- * @param {boolean} [hint]                 Boolean that shows or hide the date format hint, in the format mm/dd/yyyy.
- * @param {string}  [disabled]             Controls whether or not the date picker is disabled to the user.
  * @param {string}  [startDate]            The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
+ * @param {string}  [startInputId]            The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
+ * @param {string}  [startInputName]            The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
+ * @param {string}  [startLabel]            The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
+ * @param {string}  [endDate]               The date picker will not allow a date selection after this date. The date should be in the format mm/dd/yyyy.
+ * @param {string}  [endInputId]            The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
+ * @param {string}  [endInputName]            The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
+ * @param {string}  [endLabel]            The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
+ * @param {string}  [disabled]             Controls whether or not the date picker is disabled to the user.
+ * @param {boolean} [hint]                 Boolean that shows or hide the date format hint, in the format mm/dd/yyyy.
  * @param {string}  [defaultStartDate]     The start date picker input will set this value if it is a valid date. The date should be in the format mm/dd/yyyy
  * @param {string}  [defaultEndDate]       The end date picker input will set this value if it is a valid date. The date should be in the format mm/dd/yyyy
- * @param {string}  [endDate]               The date picker will not allow a date selection after this date. The date should be in the format mm/dd/yyyy.
- * @param {string}  [value]                Value of the input element.
  */
 
 export const DateRange: React.FC<Props> = ({
@@ -39,6 +42,10 @@ export const DateRange: React.FC<Props> = ({
   disabled,
   startLabel,
   endLabel,
+  startInputId,
+  startInputName,
+  endInputId,
+  endInputName,
   ...rest
 }) => {
   const [currentStartDate, setStartDate] = useState(startDate);
@@ -82,8 +89,8 @@ export const DateRange: React.FC<Props> = ({
     <div {...rest}>
       <Datefield
         disabled={disabled}
-        name="date-range-1"
-        id=""
+        name={startInputName}
+        id={startInputId}
         hint={hint}
         defaultDate={defaultStartDate}
         maxDate={currentEndDate}
@@ -97,8 +104,8 @@ export const DateRange: React.FC<Props> = ({
       <Datefield
         value={currentEndDate}
         disabled={disabled}
-        name="date-range-2"
-        id="date-range-2"
+        name={endInputName}
+        id={endInputId}
         label={endLabel}
         hint={hint}
         defaultDate={defaultEndDate}
