@@ -1,7 +1,6 @@
 @use "../../assets/theme/macbis-colors" as c;
 
-// TODO: These colors do not exist in _macbis-colors
-// How and do we incorporate these? Should these be converted to existing colors?
+// Currently, these colors are only used in the UsaBanner
 $black: #1b1b1b;
 $gray: #adadad;
 $white: #fff;
