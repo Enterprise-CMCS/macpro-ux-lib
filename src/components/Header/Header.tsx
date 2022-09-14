@@ -39,6 +39,7 @@ interface NavSectionProps {
 }
 
 const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
+  const [expanded, setExpanded] = useState(false);
   const { buttonText, current } = section;
   return (
     <>
@@ -48,13 +49,14 @@ const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
           className={`usa-accordion__button usa-nav__link ${
             current ? "usa-current" : ""
           }`}
-          aria-expanded="false"
+          aria-expanded={expanded}
           aria-controls={`extended-mega-nav-section-${index}`}
+          onClick={() => setExpanded(!expanded)}
         />
         <div
           id={`extended-mega-nav-section-${index}`}
           className="usa-nav__submenu usa-megamenu"
-          hidden
+          hidden={!expanded}
         >
           <div className="grid-row grid-gap-4">
             {section.columns.map((column, idx) => {
