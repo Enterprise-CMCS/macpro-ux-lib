@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useOutsideClick } from "hooks/useOutsideClick";
+import React, { useRef, useState } from "react";
 import { Icon, IconChoice } from "../Icon/Icon";
 import { Link, LinkProps } from "../Link/Link";
 
@@ -20,9 +21,13 @@ interface Props {
 
 export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const wrapperRef = useRef(null);
+  useOutsideClick(wrapperRef, () => {
+    setIsOpen(false);
+  });
 
   return (
-    <div className="user-actions-container">
+    <div className="user-actions-container" ref={wrapperRef}>
       <span className="menu-label" onClick={() => setIsOpen(!isOpen)}>
         {name}
         <Icon

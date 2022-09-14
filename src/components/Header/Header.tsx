@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import { Button } from "components/Button/Button";
 import { Link, LinkProps } from "components/Link/Link";
 import { LogoProps } from "components/Logo/Logo";
-import { useOutsideAlerter } from "hooks/useOutsideClick";
+import { useOutsideClick } from "hooks/useOutsideClick";
 
 interface SubMenuColumnProps {
   links: LinkProps[];
@@ -76,11 +76,6 @@ const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
 
 type IntrinsicElements = JSX.IntrinsicElements["nav"];
 
-interface HeaderLogoProps {
-  linkProps: LinkProps;
-  logoProps: LogoProps;
-}
-
 interface HeaderProps extends IntrinsicElements {
   headerLogo?: React.ReactNode;
   secondaryComponent?: React.ReactNode;
@@ -101,10 +96,6 @@ export const Header: React.FC<HeaderProps> = ({
   navData,
   ...rest
 }) => {
-  const wrapperRef = useRef(null);
-  useOutsideAlerter(wrapperRef, () => {
-    closeMenu();
-  });
   const [menuOpen, setMenuOpen] = useState(false);
 
   const openMenu = () => {
@@ -116,6 +107,11 @@ export const Header: React.FC<HeaderProps> = ({
     document.body.classList.remove("usa-js-mobile-nav--active");
     setMenuOpen(false);
   };
+
+  const wrapperRef = useRef(null);
+  useOutsideClick(wrapperRef, () => {
+    closeMenu();
+  });
 
   return (
     <>
