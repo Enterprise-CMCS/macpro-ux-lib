@@ -144,7 +144,7 @@ export const UsaBanner: React.FC<Props> = ({
       {locale === "es" && (
         <section
           aria-label="Un sitio oficial del Gobierno de Estados Unidos"
-          className={`usa-banner${className ? ` ${className}` : ""}`}
+          className={classNames}
           id={id}
           {...rest}
         >
