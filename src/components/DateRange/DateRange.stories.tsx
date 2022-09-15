@@ -7,45 +7,51 @@ export default {
   component: DateRange,
   argTypes: {
     defaultStartDate: {
-      description: "Value of the input element.",
+      description:
+        "The start date picker input will set this value by default if it is a valid date. The date should be in the format mm/dd/yyyy.",
       control: { type: "text" },
     },
     startDate: {
-      description: "Value of the input element.",
+      description:
+        "The value given to the start date input. The date should be in the format mm/dd/yyyy",
       control: { type: "text" },
     },
     startInputId: {
-      description: "Value of the input element.",
+      description: "A unique identifier for the start date input.",
     },
     startInputName: {
-      description: "Value of the input element.",
+      description: "Name of the start date input field.",
     },
     startLabel: {
-      description: "Value of the input element.",
+      description: "The label of the start date input.",
     },
     defaultEndDate: {
-      description: "Value of the input element.",
+      description:
+        "The end date picker input will set this value by default if it is a valid date. The date should be in the format mm/dd/yyyy.",
       control: { type: "text" },
     },
     endDate: {
-      description: "Value of the input element.",
+      description:
+        "The value given to the end date input. The date should be in the format mm/dd/yyyy.",
       control: { type: "text" },
     },
     endInputId: {
-      description: "Value of the input element.",
+      description: "A unique identifier for the end date input.",
     },
 
     endInputName: {
-      description: "Value of the input element.",
+      description: "Name of the end date input field.",
     },
     endLabel: {
-      description: "Value of the input element.",
+      description: "The label of the end date input.",
     },
     disabled: {
-      description: "Value of the input element.",
+      description:
+        "Controls whether or not the date range pickers are disabled to the user.",
     },
     hint: {
-      description: "Value of the input element.",
+      description:
+        " Boolean that shows or hide the date format hint for both inputs, in the format mm/dd/yyyy.",
     },
   },
   args: {},
@@ -70,50 +76,13 @@ PrimaryDatefield.args = {
   label: "DateRange",
 };
 
-export const DefaultDatefield = Template.bind({});
-DefaultDatefield.args = {
-  defaultDate: "08/08/2022",
-  id: "default",
-  name: "default",
-  label: "default",
-};
-DefaultDatefield.parameters = {
-  docs: {
-    description: {
-      story:
-        "Default placeholder values can be given to inputs that could make selecting dates easier for our users",
-    },
-  },
-};
-
-export const MinimumDateRange = Template.bind({});
-MinimumDateRange.args = {
-  minDate: "08/08/2022",
-  id: "min-date",
-  name: "min-date",
-  label: "Minimum date",
-};
-MinimumDateRange.parameters = {
-  docs: {
-    description: {
-      story:
-        "A min date can be provided to prevent users from selecting a date before a certain date",
-    },
-  },
-};
-
-export const MaximumDateRange = Template.bind({});
-MaximumDateRange.args = {
-  maxDate: "08/08/2022",
-  id: "max-date",
-  name: "max-date",
-  label: "Maximum date",
-};
-MaximumDateRange.parameters = {
-  docs: {
-    description: {
-      story:
-        "A max date can be provided to prevent users from selecting a date after a certain date",
-    },
-  },
-};
+// export const DefaultDatefield = Template.bind({});
+// DefaultDatefield.args = {};
+// DefaultDatefield.parameters = {
+//   docs: {
+//     description: {
+//       story:
+//         "Default placeholder values can be given to inputs that could make selecting dates easier for our users",
+//     },
+//   },
+// };

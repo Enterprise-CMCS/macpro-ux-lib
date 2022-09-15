@@ -19,18 +19,18 @@ export interface Props extends IntrinsicElements {
 
 /**
  * DateRange Component
- * @param {string}  [startDate]            The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
- * @param {string}  [startInputId]            The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
- * @param {string}  [startInputName]            The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
- * @param {string}  [startLabel]            The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
- * @param {string}  [endDate]               The date picker will not allow a date selection after this date. The date should be in the format mm/dd/yyyy.
- * @param {string}  [endInputId]            The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
- * @param {string}  [endInputName]            The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
- * @param {string}  [endLabel]            The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
- * @param {string}  [disabled]             Controls whether or not the date picker is disabled to the user.
- * @param {boolean} [hint]                 Boolean that shows or hide the date format hint, in the format mm/dd/yyyy.
- * @param {string}  [defaultStartDate]     The start date picker input will set this value if it is a valid date. The date should be in the format mm/dd/yyyy
- * @param {string}  [defaultEndDate]       The end date picker input will set this value if it is a valid date. The date should be in the format mm/dd/yyyy
+ * @param {string}  [defaultStartDate]     The start date picker input will set this value by default if it is a valid date. The date should be in the format mm/dd/yyyy.
+ * @param {string}  [startDate]            The value given to the start date input. The date should be in the format mm/dd/yyyy.
+ * @param {string}  [startInputId]         A unique identifier for the start date input.
+ * @param {string}  [startInputName]       Name of the start date input field.
+ * @param {string}  [startLabel]           The label of the start date input.
+ * @param {string}  [defaultEndDate]       The end date picker input will set this value by default if it is a valid date. The date should be in the format mm/dd/yyyy.
+ * @param {string}  [endDate]              The value given to the end date input. The date should be in the format mm/dd/yyyy.
+ * @param {string}  [endInputId]           A unique identifier for the end date input.
+ * @param {string}  [endInputName]         Name of the end date input field.
+ * @param {string}  [endLabel]             The label of the end date input.
+ * @param {string}  [disabled]             Controls whether or not the date range pickers are disabled to the user.
+ * @param {boolean} [hint]                 Boolean that shows or hide the date format hint for both inputs, in the format mm/dd/yyyy.
  */
 
 export const DateRange: React.FC<Props> = ({
@@ -63,17 +63,10 @@ export const DateRange: React.FC<Props> = ({
     }
   };
 
-  const applyRangeClassName = (date: Date): string => {
+  const applyRangeClassName = (dateToCheck: Date): string => {
     if (currentStartDate && currentEndDate) {
-      let [month, day, year] = date.toLocaleDateString().split("/");
-      day = day.padStart(2, "0");
-      month = month.padStart(2, "0");
-
-      let formattedDate = `${month}/${day}/${year}`;
-
-      let dateStart = currentStartDate.split("/");
-      let dateEnd = currentEndDate.split("/");
-      let dateToCheck = formattedDate.split("/");
+      let dateStart = new Date(currentStartDate);
+      let dateEnd = new Date(currentEndDate);
 
       if (dateToCheck > dateStart && dateToCheck < dateEnd) {
         return "range-selected";
