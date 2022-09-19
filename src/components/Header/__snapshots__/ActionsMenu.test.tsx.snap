@@ -5,7 +5,7 @@ exports[`Test the Header component menu should open on click 1`] = `
   <div
     class="user-actions-container"
   >
-    <span
+    <button
       class="menu-label"
     >
       My Account
@@ -21,9 +21,10 @@ exports[`Test the Header component menu should open on click 1`] = `
           href="[object Object]#arrow_drop_down"
         />
       </svg>
-    </span>
+    </button>
     <menu
       class="user-actions-menu usa-nav__secondary-links"
+      hidden=""
     >
       <li>
         <a
@@ -101,7 +102,7 @@ exports[`Test the Header component menu should open on click 2`] = `
   <div
     class="user-actions-container"
   >
-    <span
+    <button
       class="menu-label"
     >
       My Account
@@ -117,10 +118,9 @@ exports[`Test the Header component menu should open on click 2`] = `
           href="[object Object]#arrow_drop_up"
         />
       </svg>
-    </span>
+    </button>
     <menu
       class="user-actions-menu usa-nav__secondary-links"
-      style="display: block;"
     >
       <li>
         <a

@@ -480,7 +480,7 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
           <div
             class="user-actions-container"
           >
-            <span
+            <button
               class="menu-label"
             >
               My Account
@@ -496,9 +496,10 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                   href="[object Object]#arrow_drop_down"
                 />
               </svg>
-            </span>
+            </button>
             <menu
               class="user-actions-menu usa-nav__secondary-links"
+              hidden=""
             >
               <li>
                 <a

@@ -12,6 +12,8 @@
   }
   .user-actions-menu a,
   .menu-label {
+    background-color: unset;
+    border: unset;
     font-size: 1.06rem;
   }
 
@@ -43,16 +45,21 @@
       display: flex;
       flex-direction: row;
       font-weight: bold;
+      padding: 8px 8px 8px 15px;
       position: relative;
+      &:hover {
+        background-color: c.$primary-darker;
+      }
     }
-
-    .user-actions-menu {
+    .user-actions-menu:hidden {
       display: none;
+    }
+    .user-actions-menu {
       background-color: c.$primary;
       flex-direction: flex-start;
       left: 25px;
       position: absolute;
-      top: 41px;
+      top: 58px;
       width: 250px;
     }
 
@@ -76,6 +83,10 @@
   }
 
   @media only screen and (max-width: 64em) {
+    .menu-label:focus {
+      outline: none;
+    }
+
     // USWDS Overrides
     .usa-menu-btn {
       background-color: c.$primary;

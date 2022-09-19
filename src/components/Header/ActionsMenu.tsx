@@ -28,18 +28,18 @@ export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
 
   return (
     <div className="user-actions-container" ref={wrapperRef}>
-      <span className="menu-label" onClick={() => setIsOpen(!isOpen)}>
+      <button className="menu-label" onClick={() => setIsOpen(!isOpen)}>
         {name}
         <Icon
           aria-hidden="true"
           name={isOpen ? "arrow_drop_up" : "arrow_drop_down"}
           color="#fff"
         />
-      </span>
+      </button>
       <menu
         className="user-actions-menu usa-nav__secondary-links"
-        style={isOpen ? { display: "block" } : {}}
         {...rest}
+        hidden={!isOpen} // TODO: This cannot say "hidden" when expanded in mobile
       >
         {links.map((linkData, idx) => {
           const { iconName, ...link } = linkData; // filter iconName out of linkData

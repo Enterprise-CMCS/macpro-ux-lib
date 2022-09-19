@@ -41,6 +41,16 @@ describe("Test the Header component", () => {
     );
   });
 
+  it("menu should toggle open/close on click", () => {
+    const { container } = render(
+      <ActionsMenu name="My Account" links={links} />
+    );
+    // should render menu hidden
+
+    // expand menu
+    fireEvent.click(screen.getByText("My Account"));
+  });
+
   it("menu should open on click", () => {
     const { container } = render(
       <ActionsMenu name="My Account" links={links} />
