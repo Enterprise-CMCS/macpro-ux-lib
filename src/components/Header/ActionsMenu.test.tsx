@@ -46,9 +46,37 @@ describe("Test the Header component", () => {
       <ActionsMenu name="My Account" links={links} />
     );
     // should render menu hidden
+    const actionsMenu =
+      container.getElementsByClassName("user-actions-menu")[0];
+    expect(actionsMenu).not.toBeVisible();
 
     // expand menu
     fireEvent.click(screen.getByText("My Account"));
+    expect(actionsMenu).toBeVisible();
+
+    // collapse
+    fireEvent.click(screen.getByText("My Account"));
+    expect(actionsMenu).not.toBeVisible();
+  });
+
+  it("menu should close when the user clicks outside", () => {
+    const { container } = render(
+      <>
+        <ActionsMenu name="My Account" links={links} />
+        <button>example</button>
+      </>
+    );
+    const actionsMenu =
+      container.getElementsByClassName("user-actions-menu")[0];
+    expect(actionsMenu).not.toBeVisible();
+
+    // expand menu
+    fireEvent.click(screen.getByText("My Account"));
+    expect(actionsMenu).toBeVisible();
+
+    // click another element
+    fireEvent.mouseDown(screen.getByText("example"));
+    expect(actionsMenu).not.toBeVisible();
   });
 
   it("menu should open on click", () => {
