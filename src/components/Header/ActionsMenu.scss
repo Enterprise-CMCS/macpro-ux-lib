@@ -21,7 +21,7 @@
     margin-right: 10px;
   }
 
-  @media only screen and (min-width: 64em) {
+  @media only screen and (min-width: 1024px) {
     // USWDS Overrides
     .usa-nav__submenu,
     .usa-header--extended .usa-megamenu.usa-nav__submenu::after,
@@ -82,7 +82,7 @@
     }
   }
 
-  @media only screen and (max-width: 64em) {
+  @media only screen and (max-width: 1023px) {
     .menu-label:focus {
       outline: none;
     }

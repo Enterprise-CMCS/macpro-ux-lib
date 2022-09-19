@@ -1,7 +1,7 @@
 @use "../../assets/theme/macbis-colors" as c;
 
 .usa-header {
-  @media only screen and (min-width: 64em) {
+  @media only screen and (min-width: 1024px) {
     .usa-nav {
       border: none;
     }
@@ -16,7 +16,7 @@
     }
   }
 
-  @media only screen and (max-width: 64em) {
+  @media only screen and (max-width: 1023px) {
     .usa-navbar-container {
       background-color: #fff;
     }
