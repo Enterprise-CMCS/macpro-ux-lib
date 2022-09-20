@@ -36,6 +36,8 @@ describe("Tests for the Datefield component.", () => {
   });
 
   it("Should fire and change the value when the user types", () => {
+    const mockDateRangeFunc = jest.fn();
+
     render(
       <Datefield
         data-testid="Datefield"
@@ -43,8 +45,10 @@ describe("Tests for the Datefield component.", () => {
         name="test-3"
         label="test-3"
         hint
+        dateRangeChange={mockDateRangeFunc}
       />
     );
+
     const DatefieldComp = screen.getByLabelText("test-3");
     fireEvent.change(DatefieldComp, {
       target: { value: "10/10/2020" },
@@ -89,6 +93,9 @@ describe("Tests for the Datefield component.", () => {
   });
 
   it("Should open the calendar component with min and max dates", () => {
+    const mockOnClick = jest.fn();
+    const mockClassFunc = jest.fn();
+    const mockDateRangeFunc = jest.fn();
     render(
       <Datefield
         data-testid="Datefield"
@@ -99,6 +106,10 @@ describe("Tests for the Datefield component.", () => {
         maxDate="10/11/2022"
         value="10/10/2022"
         hint={false}
+        toggleRangeCalendars={mockOnClick}
+        rangeCalendarOpen={true}
+        selectedRangeClassName={mockClassFunc}
+        dateRangeChange={mockDateRangeFunc}
       />
     );
     const DatefieldInput = screen.getByTestId("Datefield");

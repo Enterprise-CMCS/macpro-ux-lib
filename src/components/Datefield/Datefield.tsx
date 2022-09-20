@@ -1,7 +1,11 @@
 import React, { Dispatch, SetStateAction, useState } from "react";
 import Calendar from "react-calendar";
 import { Icon } from "../Icon/Icon";
-import { completeDateFilter, numbersAndSlashesFilter } from "../../utils";
+import {
+  completeDateFilter,
+  daysInMonth,
+  numbersAndSlashesFilter,
+} from "../../utils";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 export interface Props extends IntrinsicElements {
@@ -71,7 +75,14 @@ export const Datefield: React.FC<Props> = ({
   };
 
   const onBlurCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (completeDateFilter.test(e.target.value) || e.target.value === "") {
+    let [month, day, year] = e.target.value?.split("/");
+
+    if (
+      (completeDateFilter.test(e.target.value) &&
+        parseInt(month) < 12 &&
+        daysInMonth(parseInt(month), parseInt(year)) >= parseInt(day)) ||
+      e.target.value === ""
+    ) {
       setDateError(false);
     } else {
       setDateError(true);

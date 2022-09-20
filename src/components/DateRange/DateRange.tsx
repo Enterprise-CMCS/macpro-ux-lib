@@ -34,7 +34,7 @@ export interface Props extends IntrinsicElements {
  */
 
 export const DateRange: React.FC<Props> = ({
-  hint = true,
+  hint,
   startDate,
   endDate,
   defaultStartDate,

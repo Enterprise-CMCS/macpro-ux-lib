@@ -2,202 +2,104 @@ import React from "react";
 import { DateRange } from "./DateRange";
 import { fireEvent, screen, render } from "../../test-setup";
 
-// describe("Tests for the DateRange component.", () => {
-//   it("Should render with hint", () => {
-//     render(
-//       <DateRange
-//         data-testid="DateRange"
-//         id="test-1"
-//         name="test-1"
-//         label="test-1"
-//         hint
-//       />
-//     );
-//     const DatefieldComp = screen.getByTestId("DateRange");
-//     expect(DatefieldComp).toBeInTheDocument();
-//   });
+describe("Tests for the DateRange component.", () => {
+  it("Should render with hint", () => {
+    render(
+      <DateRange
+        data-testid="DateRange"
+        startInputId="test-1"
+        endInputId="test-1"
+        endInputName="test-1"
+        startInputName="test-1"
+        startLabel="test-1"
+        endLabel="test-1"
+        startDate="09/10/22"
+        endDate="09/12/22"
+        hint={false}
+      />
+    );
+    const DatefieldButton1 = screen.queryAllByTestId("calendar-button")[0];
+    const DatefieldButton2 = screen.queryAllByTestId("calendar-button")[1];
+    fireEvent.click(DatefieldButton1);
+    const randomDayButton = screen.getAllByRole("button")[6];
+    fireEvent.click(randomDayButton);
+    fireEvent.click(DatefieldButton2);
+    const randomDayButton2 = screen.getAllByRole("button")[6];
+    fireEvent.click(randomDayButton2);
 
-//   it("Should render with hint and initalized value", () => {
-//     render(
-//       <DateRange
-//         data-testid="DateRange"
-//         id="test-2"
-//         name="test-2"
-//         label="test-2"
-//         value="10/10/2020"
-//         hint
-//       />
-//     );
-//     const DatefieldComp = screen.getByTestId("DateRange");
-//     const labelComp = screen.getByRole("label");
+    const DatefieldComp = screen.getByTestId("DateRange");
+    expect(DatefieldComp).toBeInTheDocument();
+  });
 
-//     expect(labelComp).toBeInTheDocument();
-//     expect(DatefieldComp).toHaveAttribute("value", "10/10/2020");
-//   });
+  it("Should render with hint", () => {
+    render(
+      <DateRange
+        data-testid="DateRange"
+        startInputId="test-2"
+        endInputId="test-2"
+        endInputName="test-2"
+        startInputName="test-2"
+        startLabel="test-2"
+        endLabel="test-2"
+        hint={true}
+      />
+    );
+    const DatefieldButton1 = screen.queryAllByTestId("calendar-button")[0];
+    const DatefieldButton2 = screen.queryAllByTestId("calendar-button")[1];
+    fireEvent.click(DatefieldButton2);
+    fireEvent.click(DatefieldButton1);
+    fireEvent.click(DatefieldButton2);
+    fireEvent.click(DatefieldButton1);
 
-//   it("Should fire and change the value when the user types", () => {
-//     render(
-//       <DateRange
-//         data-testid="DateRange"
-//         id="test-3"
-//         name="test-3"
-//         label="test-3"
-//         hint
-//       />
-//     );
-//     const DatefieldComp = screen.getByLabelText("test-3");
-//     fireEvent.change(DatefieldComp, {
-//       target: { value: "10/10/2020" },
-//     });
-//     expect(DatefieldComp).toHaveDisplayValue("10/10/2020");
+    const DatefieldComp = screen.getByTestId("DateRange");
+    expect(DatefieldComp).toBeInTheDocument();
+  });
 
-//     fireEvent.change(DatefieldComp, {
-//       target: { value: "" },
-//     });
-//     expect(DatefieldComp).toHaveDisplayValue("");
-//   });
+  describe("compontent snapshots", () => {
+    it("primary datefield", () => {
+      const { container } = render(
+        <DateRange
+          hint
+          startInputId="test-8"
+          endInputId="test-8"
+          startInputName="test-8"
+          endInputName="test-8"
+          startLabel="test-8"
+          endLabel="test-8"
+        />
+      );
 
-//   it("Should fire a check on blur", () => {
-//     render(
-//       <DateRange
-//         data-testid="DateRange"
-//         id="test-3"
-//         name="test-3"
-//         label="test-3"
-//         hint
-//       />
-//     );
-//     const DatefieldComp = screen.getByLabelText("test-3");
-//     fireEvent.blur(DatefieldComp, {
-//       target: { value: "10/10/2020" },
-//     });
-//     expect(DatefieldComp).toHaveDisplayValue("10/10/2020");
+      expect(container).toMatchSnapshot();
+    });
 
-//     fireEvent.blur(DatefieldComp, {
-//       target: { value: "" },
-//     });
-//     expect(DatefieldComp).toHaveDisplayValue("");
+    it("max date datefield", () => {
+      const { container } = render(
+        <DateRange
+          hint
+          startInputId="test-9"
+          startInputName="test-9"
+          startLabel="test-9"
+          endInputId="test-9"
+          endInputName="test-9"
+          endLabel="test-9"
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
 
-//     fireEvent.blur(DatefieldComp, {
-//       target: { value: "asdasd" },
-//     });
-//     const hintComp = screen.getByText("Inputted date must be mm/dd/yyyy");
-
-//     expect(hintComp).toBeInTheDocument();
-//     expect(DatefieldComp).toHaveDisplayValue("asdasd");
-//     expect(DatefieldComp).toHaveAttribute("aria-describedby", "test-3-hint");
-//   });
-
-//   it("Should open the calendar component with min and max dates", () => {
-//     render(
-//       <DateRange
-//         data-testid="DateRange"
-//         id="test-4"
-//         name="test-4"
-//         label="test-4"
-//         minDate="10/10/2022"
-//         maxDate="10/11/2022"
-//         value="10/10/2022"
-//         hint={false}
-//       />
-//     );
-//     const DatefieldInput = screen.getByTestId("DateRange");
-//     const DatefieldButton = screen.getByTestId("calendar-button");
-//     fireEvent.click(DatefieldButton);
-//     const DatefieldCalendar = screen.getByTestId("calendar");
-
-//     expect(DatefieldCalendar).toBeInTheDocument();
-//     expect(DatefieldInput).toHaveValue("10/10/2022");
-//     expect(DatefieldInput).toHaveAttribute("aria-describedby", "test-4-label");
-//   });
-
-//   it("Should open the calendar component and choose a date", () => {
-//     render(
-//       <DateRange
-//         data-testid="DateRange"
-//         id="test-5"
-//         name="test-5"
-//         label="test-5"
-//       />
-//     );
-//     const DatefieldInput = screen.getByTestId("DateRange");
-//     const DatefieldButton = screen.getByTestId("calendar-button");
-//     fireEvent.click(DatefieldButton);
-//     const DatefieldCalendar = screen.getByTestId("calendar");
-//     const randomDayButton = screen.getAllByRole("button")[6];
-//     fireEvent.click(randomDayButton);
-
-//     expect(DatefieldCalendar).not.toBeInTheDocument();
-//     expect(DatefieldInput).toHaveValue();
-//   });
-
-//   it("Should format date when provided a min date", () => {
-//     render(
-//       <DateRange
-//         data-testid="DateRange"
-//         id="test-6"
-//         name="test-6"
-//         label="test-6"
-//       />
-//     );
-//     const DatefieldComp = screen.getByTestId("DateRange");
-//     expect(DatefieldComp).toBeInTheDocument();
-//   });
-
-//   it("Should be disabled", () => {
-//     render(
-//       <DateRange
-//         data-testid="DateRange"
-//         id="test-7"
-//         name="test-7"
-//         label="test-7"
-//         hint
-//         disabled
-//       />
-//     );
-//     const DatefieldComp = screen.getByTestId("DateRange");
-//     expect(DatefieldComp).toBeDisabled();
-//   });
-// });
-
-// describe("compontent snapshots", () => {
-//   it("primary datefield", () => {
-//     const { container } = render(
-//       <DateRange
-//         hint
-//         id="test-8"
-//         name="test-8"
-//         label="test-8"
-//         defaultDate="05/05/2020"
-//       />
-//     );
-//     expect(container).toMatchSnapshot();
-//   });
-
-//   it("max date datefield", () => {
-//     const { container } = render(
-//       <DateRange
-//         hint
-//         id="test-9"
-//         name="test-9"
-//         label="test-9"
-//         maxDate="05/05/2020"
-//       />
-//     );
-//     expect(container).toMatchSnapshot();
-//   });
-
-//   it("min date datefield", () => {
-//     const { container } = render(
-//       <DateRange
-//         hint
-//         id="test-10"
-//         name="test-10"
-//         label="test-10"
-//         required
-//         minDate="05/05/2020"
-//       />
-//     );
-//     expect(container).toMatchSnapshot();
-//   });
-// });
+    it("min date datefield", () => {
+      const { container } = render(
+        <DateRange
+          hint={false}
+          startInputId="test-10"
+          startInputName="test-10"
+          startLabel="test-10"
+          endInputId="test-10"
+          endInputName="test-10"
+          endLabel="test-10"
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+  });
+});
