@@ -79,7 +79,7 @@ export const Datefield: React.FC<Props> = ({
 
     if (
       (completeDateFilter.test(e.target.value) &&
-        parseInt(month) < 12 &&
+        parseInt(month) <= 12 &&
         daysInMonth(parseInt(month), parseInt(year)) >= parseInt(day)) ||
       e.target.value === ""
     ) {
