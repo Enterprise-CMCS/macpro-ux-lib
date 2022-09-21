@@ -3,7 +3,7 @@ import { fireEvent, screen, render } from "../../test-setup";
 import { Alert } from "./Alert";
 
 describe("Tests for the Alert component", () => {
-  it("should render", () => {
+  it("should render an info alert", () => {
     render(
       <Alert
         data-testid="Alert"
@@ -20,7 +20,7 @@ describe("Tests for the Alert component", () => {
     expect(AlertComp).toHaveTextContent("Test body");
   });
 
-  it("should render", () => {
+  it("should render a warning slim alert without an icon", () => {
     render(
       <Alert
         data-testid="Alert"
@@ -42,14 +42,14 @@ describe("Tests for the Alert component", () => {
 });
 
 describe("compontent snapshots", () => {
-  it("primary big disabled", () => {
+  it("should render an info alert", () => {
     const { container } = render(
       <Alert variation="info" alertHeading="Test1" alertBody="Test body1" />
     );
     expect(container).toMatchSnapshot();
   });
 
-  it("secondary button", () => {
+  it("should render a warning alert", () => {
     const { container } = render(
       <Alert
         variation="warning"

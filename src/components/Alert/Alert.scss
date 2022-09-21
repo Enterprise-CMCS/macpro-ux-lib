@@ -1,4 +1,6 @@
 @use "../../assets/theme/macbis-colors" as c;
+// @use "../../assets/img/sprite.svg#success" as success;
+// @use "../../assets/img/sprite.svg#info_alt" as info;
 
 .usa-alert {
   button {
@@ -7,14 +9,17 @@
   }
 }
 
-// .usa-alert--info:before {
-//   background-color: black;
-//   fill: black;
-//   -webkit-mask: url("static/media/src/assets/img/usa-icons/info.svg") no-repeat
-//     center/contain;
-//   mask: url("static/media/src/assets/img/usa-icons/info.svg") no-repeat
-//     center/contain;
-// }
+.usa-alert--info:before {
+  -webkit-mask: url("../../assets/img/usa-icons/info_alt.svg") no-repeat
+    center/contain;
+  mask: url("../../assets/img/usa-icons/info_alt.svg") no-repeat center/contain;
+}
+
+.usa-alert--success:before {
+  -webkit-mask: url("../../assets/img/usa-icons/success.svg") no-repeat
+    center/contain;
+  mask: url("../../assets/img/usa-icons/success.svg") no-repeat center/contain;
+}
 
 .usa-alert--warning {
   background-color: c.$warn-lightest;
