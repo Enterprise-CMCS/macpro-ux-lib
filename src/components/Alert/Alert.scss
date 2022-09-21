@@ -1,0 +1,37 @@
+@use "../../assets/theme/macbis-colors" as c;
+
+.usa-alert {
+  button {
+    border: none;
+    background-color: transparent;
+  }
+}
+
+// .usa-alert--info:before {
+//   background-color: black;
+//   fill: black;
+//   -webkit-mask: url("static/media/src/assets/img/usa-icons/info.svg") no-repeat
+//     center/contain;
+//   mask: url("static/media/src/assets/img/usa-icons/info.svg") no-repeat
+//     center/contain;
+// }
+
+.usa-alert--warning {
+  background-color: c.$warn-lightest;
+  border-left-color: c.$warn;
+}
+
+.usa-alert--error {
+  background-color: c.$error-lightest;
+  border-left-color: c.$error;
+}
+
+.usa-alert--info {
+  background-color: c.$primary-alt-lightest;
+  border-left-color: c.$primary-alt-dark;
+}
+
+.usa-alert--success {
+  background-color: c.$success-lightest;
+  border-left-color: c.$success;
+}

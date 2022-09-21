@@ -26,6 +26,11 @@ export default {
       description:
         "Show/hide the alert icon associated with the variation of the alert.",
     },
+    close: {
+      description:
+        "Close button that shows when a event handler is passed to the component",
+      control: false,
+    },
   },
   parameters: {
     docs: {
@@ -41,9 +46,15 @@ const Template: ComponentStory<typeof Alert> = ({ ...rest }) => (
   <Alert {...rest} />
 );
 
-export const Default = Template.bind({});
-Default.args = {
+export const Info = Template.bind({});
+Info.args = {
   variation: "info",
+};
+
+export const InfoWithCloseButton = Template.bind({});
+InfoWithCloseButton.args = {
+  variation: "info",
+  close: () => console.log("test"),
 };
 
 export const Warning = Template.bind({});
