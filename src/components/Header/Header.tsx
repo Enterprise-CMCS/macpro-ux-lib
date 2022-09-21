@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Button } from "components/Button/Button";
 import { Link, LinkProps } from "components/Link/Link";
-import { LogoProps } from "components/Logo/Logo";
 import { useOutsideClick } from "hooks/useOutsideClick";
 
 interface SubMenuColumnProps {
@@ -41,9 +40,13 @@ interface NavSectionProps {
 const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
   const [expanded, setExpanded] = useState(false);
   const { buttonText, current } = section;
+  const wrapperRef = useRef(null);
+  useOutsideClick(wrapperRef, () => {
+    setExpanded(false);
+  });
   return (
     <>
-      <li className="usa-nav__primary-item">
+      <li className="usa-nav__primary-item" ref={wrapperRef}>
         <Button
           buttonText={buttonText}
           className={`usa-accordion__button usa-nav__link ${
