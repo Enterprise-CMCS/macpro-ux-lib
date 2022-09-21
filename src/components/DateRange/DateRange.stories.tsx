@@ -76,3 +76,12 @@ DatefieldWithDefaults.args = {
   defaultStartDate: "10/10/2022",
   defaultEndDate: "10/15/2022",
 };
+
+DatefieldWithDefaults.parameters = {
+  docs: {
+    description: {
+      story:
+        "A start and end date can be provided to help users selected a certain start or end range by default",
+    },
+  },
+};
