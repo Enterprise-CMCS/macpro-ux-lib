@@ -25,7 +25,7 @@ export const Tab: React.FC<TabProps> = ({
       {tabLabel}
     </span>
   ) : (
-    <a {...rest} className={className} onClick={onClick} href="#">
+    <a {...rest} className={className} onClick={onClick} href="javascript:;">
       {tabLabel}
     </a>
   );
