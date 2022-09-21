@@ -25,3 +25,10 @@
 .pointer {
   cursor: pointer;
 }
+
+// All focused elements should have a border
+*:focus {
+  outline: 0.25rem solid #2491ff;
+  outline-offset: 0;
+  position: relative;
+}

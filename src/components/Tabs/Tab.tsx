@@ -21,11 +21,11 @@ export const Tab: React.FC<TabProps> = ({
   ...rest
 }) => {
   return disabled ? (
-    <span className={`${className} disabled`} aria-disabled="true" {...rest}>
+    <span {...rest} className={`${className} disabled`} aria-disabled="true">
       {tabLabel}
     </span>
   ) : (
-    <a className={className} onClick={onClick} {...rest}>
+    <a {...rest} className={className} onClick={onClick} href="#">
       {tabLabel}
     </a>
   );

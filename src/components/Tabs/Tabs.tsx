@@ -59,6 +59,7 @@ export const Tabs: React.FC<PropsWithChildren<Props>> = ({
                 aria-hidden={!current}
                 {...child.props}
                 className={classNames}
+                id={child.props.id}
                 onClick={() => setCurrentTab(idx)}
                 role="tab"
               />
