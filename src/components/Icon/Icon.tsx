@@ -40,7 +40,9 @@ export const Icon: React.FC<Props> = ({
   return (
     <svg
       aria-label={ariaLabel || `${iconName} icon`}
-      className={`usa-icon--size-${iconSize} ${className}`}
+      className={`usa-icon--size-${iconSize}${
+        className ? ` ${className}` : ""
+      }`}
       aria-hidden={ariaHidden}
       role={role}
       fill="currentColor"

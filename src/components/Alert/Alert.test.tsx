@@ -29,6 +29,9 @@ describe("Tests for the Alert component", () => {
         alertBody="Warning Body"
         icon={false}
         slim
+        close={() => {
+          console.log("test");
+        }}
       />
     );
 
