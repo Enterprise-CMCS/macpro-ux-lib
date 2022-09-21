@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compontent snapshots primary big disabled 1`] = `
+<div>
+  <div
+    class="usa-alert usa-alert--info"
+  >
+    <div
+      class="usa-alert__body"
+    >
+      <h4
+        class="usa-alert__heading"
+      >
+        Test1
+      </h4>
+      <p
+        class="usa-alert__text"
+      >
+        Test body1
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`compontent snapshots secondary button 1`] = `
+<div>
+  <div
+    class="usa-alert usa-alert--warning usa-alert--slim usa-alert--no-icon"
+  >
+    <div
+      class="usa-alert__body"
+    >
+      <h4
+        class="usa-alert__heading"
+      >
+        Test2
+      </h4>
+      <p
+        class="usa-alert__text"
+      >
+        Test body2
+      </p>
+    </div>
+  </div>
+</div>
+`;
