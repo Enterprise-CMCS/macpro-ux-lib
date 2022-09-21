@@ -33,13 +33,14 @@ export const Icon: React.FC<Props> = ({
   ariaHidden = true,
   ariaLabel,
   color = "black",
+  className,
   ...rest
 }) => {
   const iconName = name.replace(/_/g, " ");
   return (
     <svg
       aria-label={ariaLabel || `${iconName} icon`}
-      className={`usa-icon--size-${iconSize}`}
+      className={`usa-icon--size-${iconSize} ${className}`}
       aria-hidden={ariaHidden}
       role={role}
       fill="currentColor"
