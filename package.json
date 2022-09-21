@@ -1,6 +1,6 @@
 {
   "name": "@enterprise-cmcs/macpro-ux-lib",
-  "version": "1.10.1",
+  "version": "1.11.0",
   "description": "Common UX libraries packaged for easier distribution throughout CMS.",
   "main": "build/index.js",
   "module": "build/index.es.js",
@@ -15,7 +15,8 @@
     "build": "tsc && rollup -c",
     "prepublishOnly": "npm run build",
     "compileCss": "gulp compileSass",
-    "use-local-build": "rm -rf examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib/build && rm -rf examples/macpro-example/node_modules/.cache && npm run build && cp -rf build/ examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib/build/"
+    "use-local-build": "rm -rf examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib/build && rm -rf examples/macpro-example/node_modules/.cache && npm run build && cp -rf build/ examples/macpro-example/node_modules/@enterprise-cmcs/macpro-ux-lib/build/",
+    "generate-component": "./generate-component.sh"
   },
   "engines": {
     "node": ">=10.0"
