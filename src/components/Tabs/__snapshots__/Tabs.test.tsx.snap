@@ -9,7 +9,7 @@ exports[`Tests for the Tabs component component snapshot 1`] = `
       class="tabs-row"
       role="tablist"
     >
-      <a
+      <button
         aria-hidden="false"
         aria-selected="true"
         class="tab current"
@@ -17,8 +17,8 @@ exports[`Tests for the Tabs component component snapshot 1`] = `
         role="tab"
       >
         Summary
-      </a>
-      <a
+      </button>
+      <button
         aria-hidden="true"
         aria-selected="false"
         class="tab"
@@ -26,8 +26,8 @@ exports[`Tests for the Tabs component component snapshot 1`] = `
         role="tab"
       >
         Preamble
-      </a>
-      <a
+      </button>
+      <button
         aria-hidden="true"
         aria-selected="false"
         class="tab"
@@ -35,7 +35,7 @@ exports[`Tests for the Tabs component component snapshot 1`] = `
         role="tab"
       >
         Amendments
-      </a>
+      </button>
       <span
         aria-disabled="true"
         aria-hidden="true"
