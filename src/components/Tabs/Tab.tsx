@@ -1,6 +1,6 @@
 import React from "react";
 
-type IntrinsicElements = JSX.IntrinsicElements["a"];
+type IntrinsicElements = JSX.IntrinsicElements["button"];
 
 interface TabProps extends IntrinsicElements {
   disabled?: boolean;
@@ -25,8 +25,8 @@ export const Tab: React.FC<TabProps> = ({
       {tabLabel}
     </span>
   ) : (
-    <a {...rest} className={className} onClick={onClick} href="javascript:;">
+    <button {...rest} className={className} onClick={onClick}>
       {tabLabel}
-    </a>
+    </button>
   );
 };
