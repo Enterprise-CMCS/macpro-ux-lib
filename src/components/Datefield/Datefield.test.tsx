@@ -65,13 +65,13 @@ describe("Tests for the Datefield component.", () => {
     render(
       <Datefield
         data-testid="Datefield"
-        id="test-3"
-        name="test-3"
-        label="test-3"
+        id="test-11"
+        name="test-11"
+        label="test-11"
         hint
       />
     );
-    const DatefieldComp = screen.getByLabelText("test-3");
+    const DatefieldComp = screen.getByLabelText("test-11");
     fireEvent.blur(DatefieldComp, {
       target: { value: "10/10/2020" },
     });
