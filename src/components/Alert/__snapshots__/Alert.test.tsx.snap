@@ -4,6 +4,7 @@ exports[`compontent snapshots should render a warning alert 1`] = `
 <div>
   <div
     class="grid-row usa-alert usa-alert--warning usa-alert--slim usa-alert--no-icon"
+    role="alert"
   >
     <div
       class="grid-col usa-alert__body"
@@ -27,6 +28,7 @@ exports[`compontent snapshots should render an info alert 1`] = `
 <div>
   <div
     class="grid-row usa-alert usa-alert--info"
+    role="alert"
   >
     <div
       class="grid-col usa-alert__body"
