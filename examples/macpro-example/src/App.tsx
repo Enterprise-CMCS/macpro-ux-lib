@@ -262,6 +262,11 @@ function App() {
           id="text-input-1"
           label="The Text Input We've All Been Waiting For"
         ></UX.TextInput>
+        <UX.Alert
+          alertHeading="Alert Heading"
+          alertBody="Alert Body"
+          variation="info"
+        />
         <UX.Datefield id="1" name="react-calendar" label="Calendar example" />
       </div>
       <UX.Footer emailAddress="jhechter@fearless.tech" />

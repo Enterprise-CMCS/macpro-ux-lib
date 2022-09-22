@@ -43,7 +43,11 @@ export const Alert: React.FC<Props> = ({
         <p className="usa-alert__text">{alertBody}</p>
       </div>
       {close && (
-        <button onClick={close} className="padding-x-2">
+        <button
+          aria-label="close alert"
+          onClick={close}
+          className="padding-x-2"
+        >
           <Icon name="close" />
         </button>
       )}
