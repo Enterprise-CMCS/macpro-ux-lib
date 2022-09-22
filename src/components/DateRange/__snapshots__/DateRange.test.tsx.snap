@@ -8,14 +8,14 @@ exports[`Tests for the DateRange component. compontent snapshots max date datefi
     >
       <label
         class="usa-label"
-        for="test-9"
-        id="test-9-label"
+        for="test-4"
+        id="test-4-label"
       >
-        test-9
+        test-4
       </label>
       <div
         class="usa-hint"
-        id="test-9-hint"
+        id="test-4-hint"
       >
         mm/dd/yyyy
       </div>
@@ -26,11 +26,11 @@ exports[`Tests for the DateRange component. compontent snapshots max date datefi
           class="grid-row"
         >
           <input
-            aria-describedby="test-9-hint"
-            aria-labelledby="test-9-label"
+            aria-describedby="test-4-hint"
+            aria-labelledby="test-4-label"
             class="usa-input margin-0"
-            id="test-9"
-            name="test-9"
+            id="test-4"
+            name="test-4"
             value=""
           />
           <div
@@ -63,14 +63,14 @@ exports[`Tests for the DateRange component. compontent snapshots max date datefi
     >
       <label
         class="usa-label"
-        for="test-9"
-        id="test-9-label"
+        for="test-4"
+        id="test-4-label"
       >
-        test-9
+        test-4
       </label>
       <div
         class="usa-hint"
-        id="test-9-hint"
+        id="test-4-hint"
       >
         mm/dd/yyyy
       </div>
@@ -81,11 +81,11 @@ exports[`Tests for the DateRange component. compontent snapshots max date datefi
           class="grid-row"
         >
           <input
-            aria-describedby="test-9-hint"
-            aria-labelledby="test-9-label"
+            aria-describedby="test-4-hint"
+            aria-labelledby="test-4-label"
             class="usa-input margin-0"
-            id="test-9"
-            name="test-9"
+            id="test-4"
+            name="test-4"
             value=""
           />
           <div
@@ -125,10 +125,10 @@ exports[`Tests for the DateRange component. compontent snapshots min date datefi
     >
       <label
         class="usa-label"
-        for="test-10"
-        id="test-10-label"
+        for="test-5"
+        id="test-5-label"
       >
-        test-10
+        test-5
       </label>
       <div
         class="usa-date-picker"
@@ -137,11 +137,11 @@ exports[`Tests for the DateRange component. compontent snapshots min date datefi
           class="grid-row"
         >
           <input
-            aria-describedby="test-10-label"
-            aria-labelledby="test-10-label"
+            aria-describedby="test-5-label"
+            aria-labelledby="test-5-label"
             class="usa-input margin-0"
-            id="test-10"
-            name="test-10"
+            id="test-5"
+            name="test-5"
             value=""
           />
           <div
@@ -174,10 +174,10 @@ exports[`Tests for the DateRange component. compontent snapshots min date datefi
     >
       <label
         class="usa-label"
-        for="test-10"
-        id="test-10-label"
+        for="test-5"
+        id="test-5-label"
       >
-        test-10
+        test-5
       </label>
       <div
         class="usa-date-picker"
@@ -186,11 +186,11 @@ exports[`Tests for the DateRange component. compontent snapshots min date datefi
           class="grid-row"
         >
           <input
-            aria-describedby="test-10-label"
-            aria-labelledby="test-10-label"
+            aria-describedby="test-5-label"
+            aria-labelledby="test-5-label"
             class="usa-input margin-0"
-            id="test-10"
-            name="test-10"
+            id="test-5"
+            name="test-5"
             value=""
           />
           <div
@@ -230,14 +230,14 @@ exports[`Tests for the DateRange component. compontent snapshots primary datefie
     >
       <label
         class="usa-label"
-        for="test-8"
-        id="test-8-label"
+        for="test-3"
+        id="test-3-label"
       >
-        test-8
+        test-3
       </label>
       <div
         class="usa-hint"
-        id="test-8-hint"
+        id="test-3-hint"
       >
         mm/dd/yyyy
       </div>
@@ -248,11 +248,11 @@ exports[`Tests for the DateRange component. compontent snapshots primary datefie
           class="grid-row"
         >
           <input
-            aria-describedby="test-8-hint"
-            aria-labelledby="test-8-label"
+            aria-describedby="test-3-hint"
+            aria-labelledby="test-3-label"
             class="usa-input margin-0"
-            id="test-8"
-            name="test-8"
+            id="test-3"
+            name="test-3"
             value=""
           />
           <div
@@ -285,14 +285,14 @@ exports[`Tests for the DateRange component. compontent snapshots primary datefie
     >
       <label
         class="usa-label"
-        for="test-8"
-        id="test-8-label"
+        for="test-3"
+        id="test-3-label"
       >
-        test-8
+        test-3
       </label>
       <div
         class="usa-hint"
-        id="test-8-hint"
+        id="test-3-hint"
       >
         mm/dd/yyyy
       </div>
@@ -303,11 +303,11 @@ exports[`Tests for the DateRange component. compontent snapshots primary datefie
           class="grid-row"
         >
           <input
-            aria-describedby="test-8-hint"
-            aria-labelledby="test-8-label"
+            aria-describedby="test-3-hint"
+            aria-labelledby="test-3-label"
             class="usa-input margin-0"
-            id="test-8"
-            name="test-8"
+            id="test-3"
+            name="test-3"
             value=""
           />
           <div

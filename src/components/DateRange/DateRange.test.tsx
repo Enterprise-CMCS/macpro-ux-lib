@@ -60,12 +60,12 @@ describe("Tests for the DateRange component.", () => {
       const { container } = render(
         <DateRange
           hint
-          startInputId="test-8"
-          endInputId="test-8"
-          startInputName="test-8"
-          endInputName="test-8"
-          startLabel="test-8"
-          endLabel="test-8"
+          startInputId="test-3"
+          endInputId="test-3"
+          startInputName="test-3"
+          endInputName="test-3"
+          startLabel="test-3"
+          endLabel="test-3"
         />
       );
 
@@ -76,12 +76,12 @@ describe("Tests for the DateRange component.", () => {
       const { container } = render(
         <DateRange
           hint
-          startInputId="test-9"
-          startInputName="test-9"
-          startLabel="test-9"
-          endInputId="test-9"
-          endInputName="test-9"
-          endLabel="test-9"
+          startInputId="test-4"
+          startInputName="test-4"
+          startLabel="test-4"
+          endInputId="test-4"
+          endInputName="test-4"
+          endLabel="test-4"
         />
       );
       expect(container).toMatchSnapshot();
@@ -91,12 +91,12 @@ describe("Tests for the DateRange component.", () => {
       const { container } = render(
         <DateRange
           hint={false}
-          startInputId="test-10"
-          startInputName="test-10"
-          startLabel="test-10"
-          endInputId="test-10"
-          endInputName="test-10"
-          endLabel="test-10"
+          startInputId="test-5"
+          startInputName="test-5"
+          startLabel="test-5"
+          endInputId="test-5"
+          endInputName="test-5"
+          endLabel="test-5"
         />
       );
       expect(container).toMatchSnapshot();
