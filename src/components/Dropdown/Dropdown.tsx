@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["select"];
 
@@ -30,10 +30,11 @@ export const Dropdown: React.FC<Props> = ({
   name,
   ...rest
 }) => {
-  const [hidden, setHidden] = useState<boolean>(true);
-  const [inputValue, setInputValue] = useState<string | undefined>(undefined);
-  const [value, setValue] = useState<string | number | undefined>(undefined);
   const [activeDescendant, setActiveDescendant] = useState<string>("");
+  const [dropdownData, setDropdownData] = useState<DropdownData[]>(data);
+  const [hidden, setHidden] = useState<boolean>(true);
+  const [inputValue, setInputValue] = useState<string>("");
+  const [value, setValue] = useState<string | number | undefined>(undefined);
 
   const closeDropdown = () => {
     setHidden(true);
@@ -55,10 +56,26 @@ export const Dropdown: React.FC<Props> = ({
     setValue(itemValue);
   };
 
+  const handleInput = (inputValue: string) => {
+    setInputValue(inputValue);
+    // filter dropdownData
+    setDropdownData(
+      data.filter((itm) => {
+        const displayStr = itm.displayString.toLowerCase();
+        const searchString = inputValue.toLowerCase();
+        return displayStr.includes(searchString);
+      })
+    );
+  };
+
   const getDisplayString = () => {
     const obj = data.find((itm) => itm.value === value);
     return obj?.displayString ?? "";
   };
+
+  useEffect(() => {
+    setInputValue(getDisplayString());
+  }, [value]);
   return (
     <>
       <>
@@ -77,7 +94,9 @@ export const Dropdown: React.FC<Props> = ({
         {label}
       </label>
       <div
-        className={`usa-combo-box${value ? " usa-combo-box--pristine" : ""}`}
+        className={`usa-combo-box${
+          value || inputValue ? " usa-combo-box--pristine" : ""
+        }`}
         // add when a selection is made "usa-combo-box--pristine"
         data-enhanced="true"
         onFocus={() => setHidden(false)}
@@ -114,11 +133,10 @@ export const Dropdown: React.FC<Props> = ({
           autoComplete="off"
           className="usa-combo-box__input"
           id={id}
-          readOnly
-          // onChange={(e) => console.log(e.target.value)}
+          onChange={(e) => handleInput(e.target.value)}
           type="text"
           role="combobox"
-          value={getDisplayString()}
+          value={inputValue}
         />
         <span className="usa-combo-box__clear-input__wrapper" tabIndex={-1}>
           <button
@@ -126,6 +144,8 @@ export const Dropdown: React.FC<Props> = ({
             className="usa-combo-box__clear-input"
             aria-label="Clear the select contents"
             onClick={() => {
+              setDropdownData(data);
+              setInputValue("");
               setValue(undefined);
               closeDropdown();
             }}
@@ -154,7 +174,7 @@ export const Dropdown: React.FC<Props> = ({
           aria-labelledby="fruit-label"
           hidden={hidden}
         >
-          {data.map((item, index) => {
+          {dropdownData.map((item, index) => {
             const itemId = `${id}--option-${index}`;
             const focused = itemId === activeDescendant;
             const selected = item.value === value;
@@ -172,6 +192,7 @@ export const Dropdown: React.FC<Props> = ({
                   item,
                   itemId,
                   index,
+                  key: itemId,
                   onClick: () => handleItemClick(item.value),
                   onMouseOver: () => setActiveDescendant(itemId),
                   selected,
@@ -224,7 +245,6 @@ const DropdownItem: React.FC<DropdownItemProps> = ({
       }${selected ? " usa-combo-box__list-option--selected" : ""}`}
       data-value={item.value}
       id={itemId}
-      key={itemId}
       // tabIndex = 0 should be value when opened, then if activeDescendant, if no activeDescendant default to top
 
       tabIndex={index === 0 ? 0 : -1}
