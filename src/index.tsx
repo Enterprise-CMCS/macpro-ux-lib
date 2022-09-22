@@ -22,6 +22,7 @@ import { Logo } from "./components/Logo/Logo";
 import { Modal } from "./components/Modal/Modal";
 import { Radio } from "./components/Radio/Radio";
 import { RadioGroup } from "./components/Radio/RadioGroup";
+import { SiteAlert } from "./components/SiteAlert/SiteAlert";
 import { Search } from "./components/Search/Search";
 import { TextArea } from "./components/TextArea/TextArea";
 import { TextInput } from "./components/TextInput/TextInput";
@@ -49,6 +50,7 @@ export {
   Radio,
   RadioGroup,
   Search,
+  SiteAlert,
   TextArea,
   TextInput,
   Typography,
