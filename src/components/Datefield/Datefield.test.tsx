@@ -83,12 +83,14 @@ describe("Tests for the Datefield component.", () => {
     expect(DatefieldComp).toHaveDisplayValue("");
 
     fireEvent.blur(DatefieldComp, {
-      target: { value: "asdasd" },
+      target: { value: "00/00/00" },
     });
-    const hintComp = screen.getByText("Inputted date must be mm/dd/yyyy");
+    const hintComp = screen.getByText(
+      "Inputted date must be a valid date in mm/dd/yyyy"
+    );
 
     expect(hintComp).toBeInTheDocument();
-    expect(DatefieldComp).toHaveDisplayValue("asdasd");
+    expect(DatefieldComp).toHaveDisplayValue("00/00/00");
     expect(DatefieldComp).toHaveAttribute("aria-describedby", "test-11-hint");
   });
 

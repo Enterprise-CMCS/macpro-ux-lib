@@ -3,8 +3,9 @@ import Calendar from "react-calendar";
 import { Icon } from "../Icon/Icon";
 import {
   completeDateFilter,
-  daysInMonth,
   numbersAndSlashesFilter,
+  checkValidMonthDays,
+  splitDateIntoVariables,
 } from "../../utils";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
@@ -75,12 +76,11 @@ export const Datefield: React.FC<Props> = ({
   };
 
   const onBlurCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let [month, day, year] = e.target.value?.split("/");
+    let [month, day, year] = splitDateIntoVariables(e.target.value);
 
     if (
       (completeDateFilter.test(e.target.value) &&
-        parseInt(month) <= 12 &&
-        daysInMonth(parseInt(month), parseInt(year)) >= parseInt(day)) ||
+        checkValidMonthDays(parseInt(month), parseInt(year), parseInt(day))) ||
       e.target.value === ""
     ) {
       setDateError(false);
@@ -90,7 +90,10 @@ export const Datefield: React.FC<Props> = ({
   };
 
   const setDateValue = (dateObj: Date) => {
-    let [month, day, year] = dateObj.toLocaleDateString()?.split("/");
+    let [month, day, year] = splitDateIntoVariables(
+      dateObj.toLocaleDateString()
+    );
+
     day = day.padStart(2, "0");
     month = month.padStart(2, "0");
 
@@ -103,9 +106,14 @@ export const Datefield: React.FC<Props> = ({
   const formatStringDateToDate = (
     stringDate: string | undefined
   ): Date | undefined => {
-    return stringDate && completeDateFilter.test(stringDate)
-      ? new Date(stringDate)
-      : undefined;
+    if (stringDate) {
+      let [month, day, year] = splitDateIntoVariables(stringDate);
+
+      return completeDateFilter.test(stringDate) &&
+        checkValidMonthDays(parseInt(month), parseInt(year), parseInt(day))
+        ? new Date(stringDate)
+        : undefined;
+    }
   };
 
   return (
@@ -118,7 +126,9 @@ export const Datefield: React.FC<Props> = ({
           className={`usa-hint${dateError ? " input-error" : ""}`}
           id={`${id}-hint`}
         >
-          {`${dateError ? "Inputted date must be " : ""}mm/dd/yyyy`}
+          {`${
+            dateError ? "Inputted date must be a valid date in " : ""
+          }mm/dd/yyyy`}
         </div>
       )}
 

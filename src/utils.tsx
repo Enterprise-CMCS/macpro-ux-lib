@@ -50,3 +50,21 @@ export const daysInMonth = (month: number, year: number): number => {
       return 31;
   }
 };
+
+export const checkValidMonthDays = (
+  month: number,
+  year: number,
+  day: number
+): boolean => {
+  return (
+    month > 0 &&
+    month <= 12 &&
+    daysInMonth(month, year) >= day &&
+    day > 0 &&
+    year > 1776
+  );
+};
+
+export const splitDateIntoVariables = (date: string): string[] => {
+  return date ? date.split("/") : [];
+};
