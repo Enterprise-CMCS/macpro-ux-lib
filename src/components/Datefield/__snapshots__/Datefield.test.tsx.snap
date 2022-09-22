@@ -6,7 +6,6 @@ exports[`compontent snapshots max date datefield 1`] = `
     class="usa-form-group datefield"
   >
     <label
-      aria-label="test-9"
       class="usa-label"
       for="test-9"
       id="test-9-label"
@@ -67,7 +66,6 @@ exports[`compontent snapshots min date datefield 1`] = `
     class="usa-form-group datefield"
   >
     <label
-      aria-label="test-10"
       class="usa-label"
       for="test-10"
       id="test-10-label"
@@ -129,7 +127,6 @@ exports[`compontent snapshots primary datefield 1`] = `
     class="usa-form-group datefield"
   >
     <label
-      aria-label="test-8"
       class="usa-label"
       for="test-8"
       id="test-8-label"

@@ -29,7 +29,7 @@ describe("Tests for the Datefield component.", () => {
       />
     );
     const DatefieldComp = screen.getByTestId("Datefield");
-    const labelComp = screen.getByRole("label");
+    const labelComp = screen.getByText("test-2");
 
     expect(labelComp).toBeInTheDocument();
     expect(DatefieldComp).toHaveAttribute("value", "10/10/2020");
@@ -89,7 +89,7 @@ describe("Tests for the Datefield component.", () => {
 
     expect(hintComp).toBeInTheDocument();
     expect(DatefieldComp).toHaveDisplayValue("asdasd");
-    expect(DatefieldComp).toHaveAttribute("aria-describedby", "test-3-hint");
+    expect(DatefieldComp).toHaveAttribute("aria-describedby", "test-11-hint");
   });
 
   it("Should open the calendar component with min and max dates", () => {

@@ -110,12 +110,7 @@ export const Datefield: React.FC<Props> = ({
 
   return (
     <div className="usa-form-group datefield">
-      <label
-        className="usa-label"
-        id={`${id}-label`}
-        htmlFor={id}
-        aria-label={label}
-      >
+      <label className="usa-label" id={`${id}-label`} htmlFor={id}>
         {label}
       </label>
       {(hint || dateError) && (

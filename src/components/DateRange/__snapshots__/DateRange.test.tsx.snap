@@ -7,7 +7,6 @@ exports[`Tests for the DateRange component. compontent snapshots max date datefi
       class="usa-form-group datefield"
     >
       <label
-        aria-label="test-9"
         class="usa-label"
         for="test-9"
         id="test-9-label"
@@ -63,7 +62,6 @@ exports[`Tests for the DateRange component. compontent snapshots max date datefi
       class="usa-form-group datefield"
     >
       <label
-        aria-label="test-9"
         class="usa-label"
         for="test-9"
         id="test-9-label"
@@ -126,7 +124,6 @@ exports[`Tests for the DateRange component. compontent snapshots min date datefi
       class="usa-form-group datefield"
     >
       <label
-        aria-label="test-10"
         class="usa-label"
         for="test-10"
         id="test-10-label"
@@ -176,7 +173,6 @@ exports[`Tests for the DateRange component. compontent snapshots min date datefi
       class="usa-form-group datefield"
     >
       <label
-        aria-label="test-10"
         class="usa-label"
         for="test-10"
         id="test-10-label"
@@ -233,7 +229,6 @@ exports[`Tests for the DateRange component. compontent snapshots primary datefie
       class="usa-form-group datefield"
     >
       <label
-        aria-label="test-8"
         class="usa-label"
         for="test-8"
         id="test-8-label"
@@ -289,7 +284,6 @@ exports[`Tests for the DateRange component. compontent snapshots primary datefie
       class="usa-form-group datefield"
     >
       <label
-        aria-label="test-8"
         class="usa-label"
         for="test-8"
         id="test-8-label"
