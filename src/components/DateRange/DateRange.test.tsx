@@ -3,7 +3,7 @@ import { DateRange } from "./DateRange";
 import { fireEvent, screen, render } from "../../test-setup";
 
 describe("Tests for the DateRange component.", () => {
-  it("Should render with hint", () => {
+  it("Should render without hint", () => {
     render(
       <DateRange
         data-testid="DateRange"
