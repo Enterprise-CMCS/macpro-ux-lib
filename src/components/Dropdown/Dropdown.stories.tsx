@@ -7,7 +7,7 @@ import data from "./data.json";
 export default {
   title: "COMPONENTS/Dropdown",
   component: Dropdown,
-  decorators: [...USWDSDecorator],
+  // decorators: [...USWDSDecorator],
   args: {
     data,
   },
