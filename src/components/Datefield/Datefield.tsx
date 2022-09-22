@@ -110,7 +110,12 @@ export const Datefield: React.FC<Props> = ({
 
   return (
     <div className="usa-form-group datefield">
-      <label className="usa-label" id={`${id}-label`} htmlFor={id} role="label">
+      <label
+        className="usa-label"
+        id={`${id}-label`}
+        htmlFor={id}
+        aria-label={label}
+      >
         {label}
       </label>
       {(hint || dateError) && (
@@ -138,6 +143,7 @@ export const Datefield: React.FC<Props> = ({
           />
           <div className={`flex-column${calendarOpen ? " grey-lightest" : ""}`}>
             <button
+              aria-label="calendar button"
               disabled={disabled}
               onClick={toggleCalendar}
               className="calendar-button padding-x-1 padding-top-1"

@@ -54,7 +54,14 @@ export default {
         "Boolean that shows or hide the date format hint for both inputs, in the format mm/dd/yyyy.",
     },
   },
-  args: {},
+  args: {
+    startInputId: "id-1",
+    startInputName: "name-1",
+    startLabel: "Start Date",
+    endInputId: "id-2",
+    endInputName: "name-2",
+    endLabel: "End Date",
+  },
   parameters: {
     docs: {
       description: {
@@ -69,15 +76,15 @@ const Template: ComponentStory<typeof DateRange> = ({ ...rest }) => (
   <DateRange {...rest} />
 );
 
-export const PrimaryDatefield = Template.bind({});
+export const PrimaryDateRange = Template.bind({});
 
-export const DatefieldWithDefaults = Template.bind({});
-DatefieldWithDefaults.args = {
+export const DateRangeWithDefaults = Template.bind({});
+DateRangeWithDefaults.args = {
   defaultStartDate: "10/10/2022",
   defaultEndDate: "10/15/2022",
 };
 
-DatefieldWithDefaults.parameters = {
+DateRangeWithDefaults.parameters = {
   docs: {
     description: {
       story:
