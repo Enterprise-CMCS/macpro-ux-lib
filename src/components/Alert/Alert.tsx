@@ -29,10 +29,12 @@ export const Alert: React.FC<Props> = ({
   slim = false,
   icon = true,
   close,
+  role = "alert",
   ...rest
 }) => {
   return (
     <div
+      role={role}
       className={`grid-row usa-alert usa-alert--${variation}${
         slim ? " usa-alert--slim" : ""
       }${icon ? "" : " usa-alert--no-icon"}`}
@@ -46,7 +48,7 @@ export const Alert: React.FC<Props> = ({
         <button
           aria-label="close alert"
           onClick={close}
-          className="padding-x-2"
+          className="padding-x-2 pointer"
         >
           <Icon name="close" />
         </button>
