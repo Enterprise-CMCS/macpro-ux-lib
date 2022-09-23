@@ -1,6 +1,9 @@
 @use "../../assets/theme/macbis-colors" as c;
 
 .usa-combo-box {
+  .usa-combo-box__input:read-only {
+    cursor: pointer;
+  }
   .usa-combo-box__input-button-separator {
     line-height: calc(2.5rem - 18px);
   }

@@ -11,6 +11,7 @@ interface DropdownData {
 interface Props extends IntrinsicElements {
   data: DropdownData[];
   label: string;
+  readOnly: boolean;
 }
 
 /**
@@ -29,6 +30,7 @@ export const Dropdown: React.FC<Props> = ({
   id,
   label,
   name,
+  readOnly = false,
   ...rest
 }) => {
   const [activeDescendant, setActiveDescendant] = useState<string>("");
@@ -136,6 +138,7 @@ export const Dropdown: React.FC<Props> = ({
           onFocus={() => setHidden(false)}
           onChange={(e) => handleInput(e.target.value)}
           type="text"
+          readOnly={readOnly}
           role="combobox"
           value={inputValue}
         />
