@@ -8,7 +8,7 @@ exports[`compontent snapshots should render a info alert 1`] = `
     role="alert"
   >
     <div
-      class="usa-alert"
+      class="usa-alert grid-col"
     >
       <div
         class="usa-alert__body"
@@ -32,7 +32,7 @@ exports[`compontent snapshots should render an emergency alert 1`] = `
     role="alert"
   >
     <div
-      class="usa-alert"
+      class="usa-alert grid-col"
     >
       <div
         class="usa-alert__body"

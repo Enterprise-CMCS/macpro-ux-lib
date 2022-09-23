@@ -43,7 +43,7 @@ export const SiteAlert: React.FC<Props> = ({
       aria-label="Site alert,"
       {...rest}
     >
-      <div className="usa-alert">
+      <div className="usa-alert grid-col">
         <div className="usa-alert__body">
           {alertHeading && (
             <h3 className="usa-alert__heading">{alertHeading}</h3>

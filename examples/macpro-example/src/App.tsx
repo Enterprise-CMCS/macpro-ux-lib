@@ -267,6 +267,11 @@ function App() {
           alertBody="Alert Body"
           variation="info"
         />
+        <UX.SiteAlert
+          alertHeading="Alert Heading"
+          alertBody="Alert Body"
+          emergency
+        />
         <UX.Datefield id="1" name="react-calendar" label="Calendar example" />
       </div>
       <UX.Footer emailAddress="jhechter@fearless.tech" />
