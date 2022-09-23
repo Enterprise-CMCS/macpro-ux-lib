@@ -1,3 +1,4 @@
+import { Icon } from "components/Icon/Icon";
 import React, { useEffect, useState } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["select"];
@@ -54,6 +55,7 @@ export const Dropdown: React.FC<Props> = ({
 
   const handleItemClick = (itemValue: string | number) => {
     setValue(itemValue);
+    closeDropdown();
   };
 
   const handleInput = (inputValue: string) => {
@@ -97,9 +99,7 @@ export const Dropdown: React.FC<Props> = ({
         className={`usa-combo-box${
           value || inputValue ? " usa-combo-box--pristine" : ""
         }`}
-        // add when a selection is made "usa-combo-box--pristine"
         data-enhanced="true"
-        onFocus={() => setHidden(false)}
         onBlur={(e) => handleBlur(e)}
       >
         <select
@@ -133,6 +133,7 @@ export const Dropdown: React.FC<Props> = ({
           autoComplete="off"
           className="usa-combo-box__input"
           id={id}
+          onFocus={() => setHidden(false)}
           onChange={(e) => handleInput(e.target.value)}
           type="text"
           role="combobox"
@@ -147,10 +148,9 @@ export const Dropdown: React.FC<Props> = ({
               setDropdownData(data);
               setInputValue("");
               setValue(undefined);
-              closeDropdown();
             }}
           >
-            &nbsp;
+            <Icon name="close" />
           </button>
         </span>
         <span className="usa-combo-box__input-button-separator">&nbsp;</span>
@@ -160,10 +160,9 @@ export const Dropdown: React.FC<Props> = ({
             tabIndex={-1}
             className="usa-combo-box__toggle-list"
             aria-label="Toggle the dropdown list"
-            // TODO: do not compete with the onFocus callback in input
-            // onClick={() => setHidden(!hidden)}
+            onClick={() => setHidden(!hidden)}
           >
-            &nbsp;
+            <Icon name="expand_more" />
           </button>
         </span>
         <ul
