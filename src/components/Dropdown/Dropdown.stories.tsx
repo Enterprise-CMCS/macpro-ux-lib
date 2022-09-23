@@ -1,13 +1,11 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Dropdown } from "./Dropdown";
-import { USWDSDecorator } from "../../utils";
 import data from "./data.json";
 
 export default {
   title: "COMPONENTS/Dropdown",
   component: Dropdown,
-  // decorators: [...USWDSDecorator],
   args: {
     data,
   },
