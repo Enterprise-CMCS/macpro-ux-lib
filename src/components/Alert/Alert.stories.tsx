@@ -16,7 +16,7 @@ export default {
     },
     alertBody: {
       description:
-        "Text content for the alert body. Users can provide either a string or a React Children to display for the alert body.",
+        "Text content for the alert body. Users can provide either a string or React Children to display for the alert body.",
     },
     variation: {
       description: "Determines the alert variation to render.",

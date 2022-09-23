@@ -1,4 +1,5 @@
 import React from "react";
+import { Icon } from "../Icon/Icon";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
 
@@ -14,9 +15,9 @@ interface Props extends IntrinsicElements {
 /**
  * **SiteAlert Component**
  *
- * @param {string}                     alertHeading   Text content for the alert heading.
+ * @param {string}                     [alertHeading]  Text content for the alert heading.
  * @param {string | React.ReactNode}   alertBody      Text content for the alert body.
- * @param {string}                     emergency      Determines the alert whether to render the information or emergency alert.
+ * @param {string}                     [emergency]    Determines the alert whether to render the information or emergency alert.
  * @param {boolean}                    slim           Renders a slimmer version of the banner.
  * @param {boolean}                    icon           Show/hide the alert icon associated with the variation of the alert.
  * @param {React.MouseEventHandler}    close          Close button that shows when a event handler is passed to the component.
@@ -33,7 +34,7 @@ export const SiteAlert: React.FC<Props> = ({
 }) => {
   return (
     <section
-      className={`usa-site-alert usa-site-alert--${
+      className={`grid-row usa-site-alert usa-site-alert--${
         emergency ? "emergency" : "info"
       }${slim ? " usa-site-alert--slim" : ""}${
         icon ? "" : " usa-site-alert--no-icon"
@@ -49,6 +50,15 @@ export const SiteAlert: React.FC<Props> = ({
           <div className="usa-alert__text">{alertBody}</div>
         </div>
       </div>
+      {close && (
+        <button
+          aria-label="close alert"
+          onClick={close}
+          className="padding-x-2 pointer"
+        >
+          <Icon name="close" />
+        </button>
+      )}
     </section>
   );
 };

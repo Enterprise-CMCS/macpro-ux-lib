@@ -8,14 +8,14 @@ export default {
   args: {
     alertHeading: "Emergency alert message",
     alertBody: [
-      <>
+      <div key="alert-3">
         <strong>Short alert message.</strong> Additional context and followup
         information including{" "}
-        <a className="usa-link" href="javascript:void(0);">
+        <a className="usa-link" href="https://google.com">
           a link
         </a>
         .
-      </>,
+      </div>,
     ],
   },
   argTypes: {
@@ -23,10 +23,13 @@ export default {
       description: "Text content for the alert heading.",
     },
     alertBody: {
-      description: "Text content for the alert body.",
+      control: "text",
+      description:
+        "Text content for the alert body. Users can provide either a string or React Children to display for the alert body.",
     },
-    variation: {
-      description: "Determines the alert variation to render.",
+    emergency: {
+      description:
+        "Determines the alert whether to render the information or emergency alert.",
     },
     slim: {
       description: "Renders a slimmer version of the banner.",
@@ -58,6 +61,15 @@ const Template: ComponentStory<typeof SiteAlert> = ({ ...rest }) => (
 export const Info = Template.bind({});
 Info.args = {
   variation: "info",
+  alertBody: [
+    <p key="info-1" className="usa-alert__text">
+      Additional context and followup information including{" "}
+      <a className="usa-link" href="https://google.com">
+        a link
+      </a>
+      .
+    </p>,
+  ],
 };
 
 export const InfoSiteAlertWithCloseButton = Template.bind({});
@@ -81,17 +93,17 @@ export const EmergencySiteAlertWithList = Template.bind({});
 EmergencySiteAlertWithList.args = {
   emergency: true,
   alertBody: [
-    <ul className="usa-list">
+    <ul key="alert-2" className="usa-list">
       <li>
         The primary emergency message and{" "}
-        <a className="usa-link" href="javascript:void(0);">
+        <a className="usa-link" href="https://google.com">
           a link
         </a>{" "}
         for supporting context.
       </li>
       <li>
         Another message,{" "}
-        <a className="usa-link" href="javascript:void(0);">
+        <a className="usa-link" href="https://google.com">
           and another link
         </a>
         .

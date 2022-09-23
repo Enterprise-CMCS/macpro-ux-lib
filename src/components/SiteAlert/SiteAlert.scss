@@ -1,9 +1,18 @@
 @use "../../assets/theme/macbis-colors" as c;
 
-.usa-site-alert--info {
+.usa-site-alert {
+  button {
+    border: none;
+    background-color: transparent;
+  }
+}
+
+.usa-site-alert--info,
+.usa-site-alert--info .usa-alert {
   background-color: c.$primary-alt-lightest;
 }
 
-.usa-site-alert--emergency {
+.usa-site-alert--emergency,
+.usa-site-alert--emergency .usa-alert {
   background-color: c.$error-dark;
 }
