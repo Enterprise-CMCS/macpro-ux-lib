@@ -34,6 +34,7 @@ export const SiteAlert: React.FC<Props> = ({
 }) => {
   return (
     <section
+      role={role}
       className={`grid-row usa-site-alert usa-site-alert--${
         emergency ? "emergency" : "info"
       }${slim ? " usa-site-alert--slim" : ""}${
