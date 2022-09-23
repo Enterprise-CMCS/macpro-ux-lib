@@ -5,7 +5,7 @@ type IntrinsicElements = JSX.IntrinsicElements["div"];
 
 interface Props extends IntrinsicElements {
   alertHeading: string;
-  alertBody: string;
+  alertBody: string | React.ReactNode;
   variation: "info" | "warning" | "error" | "success";
   slim?: boolean;
   icon?: boolean;

@@ -1,6 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Alert } from "./Alert";
+import { Link } from "../Link/Link";
 
 export default {
   title: "COMPONENTS/Alert",
@@ -55,6 +56,26 @@ export const InfoWithCloseButton = Template.bind({});
 InfoWithCloseButton.args = {
   variation: "info",
   close: () => console.log("test"),
+};
+
+export const InfoWithALink = Template.bind({});
+InfoWithALink.args = {
+  variation: "info",
+  alertBody: [
+    <p>
+      Click this <Link href="https://google.com" text="link" /> to take you to
+      google!
+    </p>,
+  ],
+};
+
+InfoWithALink.parameters = {
+  docs: {
+    description: {
+      story:
+        "Users can provide either a string or a React Children to display for the alert body. In this example, the alert body is a react element:\n\n `[<p> Click this <Link href='https://google.com' text='link' /> to take you to google!</p>]`",
+    },
+  },
 };
 
 export const Warning = Template.bind({});
