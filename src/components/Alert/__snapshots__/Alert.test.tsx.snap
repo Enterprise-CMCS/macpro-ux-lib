@@ -14,11 +14,11 @@ exports[`compontent snapshots should render a warning alert 1`] = `
       >
         Test2
       </h4>
-      <p
+      <div
         class="usa-alert__text"
       >
         Test body2
-      </p>
+      </div>
     </div>
   </div>
 </div>
@@ -38,11 +38,11 @@ exports[`compontent snapshots should render an info alert 1`] = `
       >
         Test1
       </h4>
-      <p
+      <div
         class="usa-alert__text"
       >
         Test body1
-      </p>
+      </div>
     </div>
   </div>
 </div>
