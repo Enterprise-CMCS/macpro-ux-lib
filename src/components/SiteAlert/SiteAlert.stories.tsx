@@ -60,7 +60,6 @@ const Template: ComponentStory<typeof SiteAlert> = ({ ...rest }) => (
 
 export const Info = Template.bind({});
 Info.args = {
-  variation: "info",
   alertBody: [
     <p key="info-1" className="usa-alert__text">
       Additional context and followup information including{" "}
@@ -74,7 +73,6 @@ Info.args = {
 
 export const InfoSiteAlertWithCloseButton = Template.bind({});
 InfoSiteAlertWithCloseButton.args = {
-  variation: "info",
   close: () => console.log("test"),
 };
 
