@@ -42,7 +42,7 @@ export const Alert: React.FC<Props> = ({
     >
       <div className="grid-col usa-alert__body">
         <h4 className="usa-alert__heading">{alertHeading}</h4>
-        <p className="usa-alert__text">{alertBody}</p>
+        <div className="usa-alert__text">{alertBody}</div>
       </div>
       {close && (
         <button
