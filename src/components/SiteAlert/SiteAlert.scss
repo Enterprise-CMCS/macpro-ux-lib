@@ -1,0 +1,9 @@
+@use "../../assets/theme/macbis-colors" as c;
+
+.usa-site-alert--info {
+  background-color: c.$primary-alt-lightest;
+}
+
+.usa-site-alert--emergency {
+  background-color: c.$error-dark;
+}

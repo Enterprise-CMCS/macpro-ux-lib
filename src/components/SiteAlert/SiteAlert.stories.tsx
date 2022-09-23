@@ -6,8 +6,17 @@ export default {
   title: "COMPONENTS/SiteAlert",
   component: SiteAlert,
   args: {
-    alertHeading: "Heading",
-    alertBody: "Body",
+    alertHeading: "Emergency alert message",
+    alertBody: [
+      <>
+        <strong>Short alert message.</strong> Additional context and followup
+        information including{" "}
+        <a className="usa-link" href="javascript:void(0);">
+          a link
+        </a>
+        .
+      </>,
+    ],
   },
   argTypes: {
     alertHeading: {
@@ -51,13 +60,57 @@ Info.args = {
   variation: "info",
 };
 
-export const InfoWithCloseButton = Template.bind({});
-InfoWithCloseButton.args = {
+export const InfoSiteAlertWithCloseButton = Template.bind({});
+InfoSiteAlertWithCloseButton.args = {
   variation: "info",
   close: () => console.log("test"),
 };
 
-export const Warning = Template.bind({});
-Warning.args = {
-  variation: "warning",
+export const EmergencySiteAlert = Template.bind({});
+EmergencySiteAlert.args = {
+  emergency: true,
+};
+
+export const EmergencySiteAlertWithNoHeader = Template.bind({});
+EmergencySiteAlertWithNoHeader.args = {
+  alertHeading: "",
+  emergency: true,
+};
+
+export const EmergencySiteAlertWithList = Template.bind({});
+EmergencySiteAlertWithList.args = {
+  emergency: true,
+  alertBody: [
+    <ul className="usa-list">
+      <li>
+        The primary emergency message and{" "}
+        <a className="usa-link" href="javascript:void(0);">
+          a link
+        </a>{" "}
+        for supporting context.
+      </li>
+      <li>
+        Another message,{" "}
+        <a className="usa-link" href="javascript:void(0);">
+          and another link
+        </a>
+        .
+      </li>
+      <li>A final emergency message.</li>
+    </ul>,
+  ],
+};
+
+export const SlimEmergencySiteAlert = Template.bind({});
+SlimEmergencySiteAlert.args = {
+  emergency: true,
+  slim: true,
+  alertHeading: "",
+};
+
+export const SlimSiteAlertEmergencyWithNoIcon = Template.bind({});
+SlimSiteAlertEmergencyWithNoIcon.args = {
+  emergency: true,
+  icon: false,
+  alertHeading: "",
 };

@@ -7,7 +7,6 @@ describe("Tests for the SiteAlert component", () => {
     render(
       <SiteAlert
         data-testid="SiteAlert"
-        variation="info"
         alertHeading="Test"
         alertBody="Test body"
       />
@@ -24,7 +23,6 @@ describe("Tests for the SiteAlert component", () => {
     render(
       <SiteAlert
         data-testid="SiteAlert"
-        variation="warning"
         alertHeading="Warning Heading"
         alertBody="Warning Body"
         icon={false}
@@ -47,7 +45,7 @@ describe("Tests for the SiteAlert component", () => {
 describe("compontent snapshots", () => {
   it("should render an info alert", () => {
     const { container } = render(
-      <SiteAlert variation="info" alertHeading="Test1" alertBody="Test body1" />
+      <SiteAlert alertHeading="Test1" alertBody="Test body1" />
     );
     expect(container).toMatchSnapshot();
   });
@@ -55,7 +53,6 @@ describe("compontent snapshots", () => {
   it("should render a warning alert", () => {
     const { container } = render(
       <SiteAlert
-        variation="warning"
         slim
         icon={false}
         alertHeading="Test2"
