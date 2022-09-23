@@ -16,7 +16,7 @@ interface Props extends IntrinsicElements {
  * **Alert Component**
  *
  * @param {string}                     alertHeading   Text content for the alert heading.
- * @param {string}                     alertBody      Text content for the alert body.
+ * @param {string | React.ReactNode}   alertBody      Text content for the alert body.
  * @param {string}                     variation      Determines the alert variation to render.
  * @param {boolean}                    slim           Renders a slimmer version of the banner.
  * @param {boolean}                    icon           Show/hide the alert icon associated with the variation of the alert.

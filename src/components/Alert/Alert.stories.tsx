@@ -15,7 +15,8 @@ export default {
       description: "Text content for the alert heading.",
     },
     alertBody: {
-      description: "Text content for the alert body.",
+      description:
+        "Text content for the alert body. Users can provide either a string or a React Children to display for the alert body.",
     },
     variation: {
       description: "Determines the alert variation to render.",
@@ -62,7 +63,7 @@ export const InfoWithALink = Template.bind({});
 InfoWithALink.args = {
   variation: "info",
   alertBody: [
-    <p>
+    <p key="info">
       Click this <Link href="https://google.com" text="link" /> to take you to
       google!
     </p>,
