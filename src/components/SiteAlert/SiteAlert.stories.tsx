@@ -60,15 +60,7 @@ const Template: ComponentStory<typeof SiteAlert> = ({ ...rest }) => (
 
 export const Info = Template.bind({});
 Info.args = {
-  alertBody: [
-    <p key="info-1" className="usa-alert__text">
-      Additional context and followup information including{" "}
-      <a className="usa-link" href="https://google.com">
-        a link
-      </a>
-      .
-    </p>,
-  ],
+  alertBody: "Alert Body",
 };
 
 export const InfoSiteAlertWithCloseButton = Template.bind({});
