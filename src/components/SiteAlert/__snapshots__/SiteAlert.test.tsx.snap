@@ -3,7 +3,7 @@
 exports[`compontent snapshots should render a info alert 1`] = `
 <div>
   <section
-    aria-label="Site alert,"
+    aria-label="Site alert"
     class="grid-row usa-site-alert usa-site-alert--info usa-site-alert--slim usa-site-alert--no-icon"
     role="alert"
   >
@@ -27,7 +27,7 @@ exports[`compontent snapshots should render a info alert 1`] = `
 exports[`compontent snapshots should render an emergency alert 1`] = `
 <div>
   <section
-    aria-label="Site alert,"
+    aria-label="Site alert"
     class="grid-row usa-site-alert usa-site-alert--emergency"
     role="alert"
   >
