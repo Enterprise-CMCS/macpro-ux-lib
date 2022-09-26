@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.11.0...v1.12.0) (2022-09-23)
+
+
+### Features
+
+* **Alerts:** Add Alert component ([089441b](https://github.com/cmsgov/macpro-ux-lib/commit/089441bc9ef214bc800b97aca487b27f8c321b56))
+
 # [1.11.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.10.1...v1.11.0) (2022-09-13)
 
 
