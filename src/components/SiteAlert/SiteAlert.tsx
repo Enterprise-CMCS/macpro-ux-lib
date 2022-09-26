@@ -1,7 +1,7 @@
 import React from "react";
 import { Icon } from "../Icon/Icon";
 
-type IntrinsicElements = JSX.IntrinsicElements["div"];
+type IntrinsicElements = JSX.IntrinsicElements["section"];
 
 interface Props extends IntrinsicElements {
   alertHeading?: string;
@@ -40,7 +40,7 @@ export const SiteAlert: React.FC<Props> = ({
       }${slim ? " usa-site-alert--slim" : ""}${
         icon ? "" : " usa-site-alert--no-icon"
       }`}
-      aria-label="Site alert,"
+      aria-label="Site alert"
       {...rest}
     >
       <div className="usa-alert grid-col">

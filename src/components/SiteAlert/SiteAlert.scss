@@ -10,9 +10,17 @@
 .usa-site-alert--info,
 .usa-site-alert--info .usa-alert {
   background-color: c.$primary-alt-lightest;
+
+  .usa-alert__text {
+    color: c.$primary-darker;
+  }
 }
 
 .usa-site-alert--emergency,
 .usa-site-alert--emergency .usa-alert {
   background-color: c.$error-dark;
+
+  .usa-link {
+    color: white;
+  }
 }
