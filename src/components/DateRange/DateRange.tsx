@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Datefield } from "components/Datefield/Datefield";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
@@ -48,10 +48,17 @@ export const DateRange: React.FC<Props> = ({
   endInputName,
   ...rest
 }) => {
-  const [currentStartDate, setStartDate] = useState(startDate);
-  const [currentEndDate, setEndDate] = useState(endDate);
+  const [currentStartDate, setStartDate] = useState(
+    startDate || defaultStartDate
+  );
+  const [currentEndDate, setEndDate] = useState(endDate || defaultEndDate);
   const [startCalendarOpen, setStartCalendarOpen] = useState(false);
   const [endCalendarOpen, setEndCalendarOpen] = useState(false);
+
+  useEffect(() => {
+    setStartDate(startDate || defaultStartDate);
+    setEndDate(endDate || defaultEndDate);
+  }, [startDate, endDate, defaultStartDate, defaultEndDate]);
 
   const toggleRangeCalendars = (startCalendar: boolean) => {
     if (startCalendar) {

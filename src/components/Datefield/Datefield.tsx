@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import { Icon } from "../Icon/Icon";
 import {
@@ -60,6 +60,15 @@ export const Datefield: React.FC<Props> = ({
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [dateError, setDateError] = useState(false);
 
+  useEffect(() => {
+    if (
+      (value && checkValidDate(value)) ||
+      (defaultDate && checkValidDate(defaultDate))
+    ) {
+      setDate(value || defaultDate || undefined);
+    }
+  }, [value, defaultDate]);
+
   const toggleCalendar = () => {
     if (toggleRangeCalendars !== undefined) {
       toggleRangeCalendars();
@@ -75,17 +84,19 @@ export const Datefield: React.FC<Props> = ({
     }
   };
 
-  const onBlurCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
-    let [month, day, year] = splitDateIntoVariables(e.target.value);
+  const checkValidDate = (date: string): boolean => {
+    let [month, day, year] = splitDateIntoVariables(date);
 
     if (
-      (completeDateFilter.test(e.target.value) &&
+      (completeDateFilter.test(date) &&
         checkValidMonthDays(parseInt(month), parseInt(year), parseInt(day))) ||
-      e.target.value === ""
+      date === ""
     ) {
       setDateError(false);
+      return true;
     } else {
       setDateError(true);
+      return false;
     }
   };
 
@@ -143,7 +154,7 @@ export const Datefield: React.FC<Props> = ({
             aria-labelledby={`${id}-label`}
             aria-describedby={hint ? `${id}-hint` : `${id}-label`}
             disabled={disabled}
-            onBlur={onBlurCheck}
+            onBlur={(e) => checkValidDate(e.target.value)}
             {...rest}
           />
           <div className={`flex-column${calendarOpen ? " grey-lightest" : ""}`}>
