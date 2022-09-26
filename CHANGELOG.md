@@ -1,3 +1,17 @@
+# [1.12.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.11.0...v1.12.0) (2022-09-23)
+
+
+### Features
+
+* **Alerts:** Add Alert component ([089441b](https://github.com/cmsgov/macpro-ux-lib/commit/089441bc9ef214bc800b97aca487b27f8c321b56))
+
+# [1.11.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.10.1...v1.11.0) (2022-09-13)
+
+
+### Features
+
+* **Vertical Navigation:** Add vertical navigation to make sidebar site navigation components ([a43b433](https://github.com/cmsgov/macpro-ux-lib/commit/a43b4330ce5c8e4235d3770f3ed106ca873b2c1e))
+
 ## [1.10.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.10.0...v1.10.1) (2022-09-09)
 
 

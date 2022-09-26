@@ -1,3 +1,4 @@
+@forward "../../components/Alert/Alert.scss";
 @forward "../../components/Button/Button.scss";
 @forward "../../components/CardChoice/CardChoice.scss";
 @forward "../../components/CardChoice/CardChoiceGroup.scss";
@@ -15,6 +16,11 @@
 .usa-link {
   color: c.$primary;
 }
+
 .usa-link--light {
   color: #fff;
+}
+
+.pointer {
+  cursor: pointer;
 }

@@ -1,7 +1,7 @@
-import React, { PropsWithChildren } from "react";
+import React from "react";
 import { Button } from "components/Button/Button";
 import { Link, LinkProps } from "components/Link/Link";
-import { Logo, LogoProps } from "components/Logo/Logo";
+import { LogoProps } from "components/Logo/Logo";
 
 interface SubMenuColumnProps {
   links: LinkProps[];

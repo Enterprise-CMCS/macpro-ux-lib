@@ -7,6 +7,7 @@ import "react-calendar/dist/Calendar.css";
 import { Accordion } from "./components/Accordion/Accordion";
 import { AccordionGroup } from "./components/Accordion/AccordionGroup";
 import { ActionsMenu } from "./components/Header/ActionsMenu";
+import { Alert } from "./components/Alert/Alert";
 import { Button } from "./components/Button/Button";
 import { Card } from "./components/Card/Card";
 import { Datefield } from "./components/Datefield/Datefield";
@@ -27,12 +28,14 @@ import { Search } from "./components/Search/Search";
 import { TextArea } from "./components/TextArea/TextArea";
 import { TextInput } from "./components/TextInput/TextInput";
 import { Typography } from "./components/Typography/Typography";
+import { VerticalNavigation } from "./components/VerticalNavigation/VerticalNavigation";
 import { UsaBanner } from "./components/UsaBanner/UsaBanner";
 
 export {
   Accordion,
   AccordionGroup,
   ActionsMenu,
+  Alert,
   Button,
   Card,
   CardChoice,
@@ -54,4 +57,5 @@ export {
   TextInput,
   Typography,
   UsaBanner,
+  VerticalNavigation,
 };
