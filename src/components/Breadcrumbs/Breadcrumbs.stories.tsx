@@ -14,6 +14,7 @@ export default {
     },
     parentOnly: {
       description: "Show only the parent item with a back arrow.",
+      defaultValue: false,
     },
   },
 } as ComponentMeta<typeof Breadcrumbs>;
