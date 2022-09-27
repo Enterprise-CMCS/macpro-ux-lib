@@ -42,7 +42,7 @@ export default {
   args: {
     placeholder: "Placeholder here",
     onSearch: (e) => console.log("on search2", e),
-    onInput: (e) => console.log("on input"),
+    onInput: (e) => console.log("on input", e),
   },
 } as ComponentMeta<typeof Search>;
 
