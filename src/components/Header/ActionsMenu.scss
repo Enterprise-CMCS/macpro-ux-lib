@@ -56,10 +56,9 @@
     }
     .user-actions-menu {
       background-color: c.$primary;
-      flex-direction: flex-start;
-      left: 25px;
       position: absolute;
-      top: 58px;
+      right: 0;
+      top: 44px;
       width: 250px;
     }
 

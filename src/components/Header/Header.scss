@@ -9,6 +9,20 @@
     .usa-navbar-container {
       background-color: c.$primary;
       min-height: 100px;
+      .usa-navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100px;
+        align-items: center;
+        overflow: visible;
+        .usa-nav__secondary {
+          bottom: unset;
+          margin: 0;
+          position: relative;
+          z-index: 999;
+        }
+      }
     }
 
     .usa-logo .application-logo-container {

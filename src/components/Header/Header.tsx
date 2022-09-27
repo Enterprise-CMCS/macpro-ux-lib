@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { Button } from "components/Button/Button";
 import { Link, LinkProps } from "components/Link/Link";
 import { useOutsideClick } from "hooks/useOutsideClick";
+import { useWindowDimensions } from "hooks/useWindowDimensions";
 
 interface SubMenuColumnProps {
   links: LinkProps[];
@@ -99,6 +100,8 @@ export const Header: React.FC<HeaderProps> = ({
   navData,
   ...rest
 }) => {
+  const { width } = useWindowDimensions();
+
   const [menuOpen, setMenuOpen] = useState(false);
 
   const openMenu = () => {
@@ -130,6 +133,11 @@ export const Header: React.FC<HeaderProps> = ({
               className="usa-menu-btn"
               onClick={openMenu}
             />
+            {width >= 1024 && (
+              <div className="usa-nav__secondary usa-header--extended">
+                {secondaryComponent}
+              </div>
+            )}
           </div>
         </div>
         <nav
@@ -155,9 +163,11 @@ export const Header: React.FC<HeaderProps> = ({
                 );
               })}
             </ul>
-            <div className="usa-nav__secondary usa-header--extended">
-              {secondaryComponent}
-            </div>
+            {width < 1024 && (
+              <div className="usa-nav__secondary usa-header--extended">
+                {secondaryComponent}
+              </div>
+            )}
           </div>
         </nav>
       </header>
