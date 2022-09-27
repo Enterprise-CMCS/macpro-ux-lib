@@ -24,6 +24,8 @@ import { Modal } from "./components/Modal/Modal";
 import { Radio } from "./components/Radio/Radio";
 import { RadioGroup } from "./components/Radio/RadioGroup";
 import { Search } from "./components/Search/Search";
+import { TabPanel } from "./components/Tabs/TabPanel";
+import { Tabs } from "./components/Tabs/Tabs";
 import { TextArea } from "./components/TextArea/TextArea";
 import { TextInput } from "./components/TextInput/TextInput";
 import { Typography } from "./components/Typography/Typography";
@@ -51,6 +53,8 @@ export {
   Radio,
   RadioGroup,
   Search,
+  TabPanel,
+  Tabs,
   TextArea,
   TextInput,
   Typography,
