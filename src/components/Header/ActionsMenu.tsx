@@ -27,7 +27,12 @@ export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
   });
 
   return (
-    <div className="user-actions-container" ref={wrapperRef}>
+    <div
+      className={`user-actions-container${
+        isOpen ? " user-actions-container__drop-shadow" : ""
+      }`}
+      ref={wrapperRef}
+    >
       <button className="menu-label" onClick={() => setIsOpen(!isOpen)}>
         {name}
         <Icon
