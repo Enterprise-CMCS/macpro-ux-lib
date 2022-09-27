@@ -1,5 +1,5 @@
 import { Icon } from "components/Icon/Icon";
-import React, { MutableRefObject, useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const UseFocus = (): [React.MutableRefObject<any>, () => void] => {
   const htmlElRef = useRef<any>(null);
@@ -53,23 +53,22 @@ export const Dropdown: React.FC<Props> = ({
     setActiveDescendant("");
   };
 
-  // const handleArrowDown = (e: React.KeyboardEvent) => {
-  //   if (hidden) setHidden(false);
+  const handleInputArrowDown = () => {
+    const selectedElement = document.getElementsByClassName(
+      "usa-combo-box__list-option--selected"
+    )[0] as HTMLElement;
 
-  //   const currentElement = document.getElementsByClassName(
-  //     "usa-combo-box__list-option--focused"
-  //   )[0];
-  //   const nextOption = currentElement.nextSibling;
+    const firstElement = document.getElementsByClassName(
+      "usa-combo-box__list-option"
+    )[0] as HTMLElement;
 
-  //   if (nextOption) {
-  //     console.log(nextOption);
-  //     // highlightOption()
-  //   }
+    const elem = selectedElement ?? firstElement;
 
-  //   e.preventDefault;
-  // };
-
-  const highlightOption = () => {};
+    if (elem) {
+      elem.focus();
+      setActiveDescendant(elem.id);
+    }
+  };
 
   const handleBlur = (e: React.FocusEvent) => {
     if (!hidden) {
@@ -116,8 +115,6 @@ export const Dropdown: React.FC<Props> = ({
       - Error State
       - Default Value
       - Disabled
-      - Disable Search
-      - Option Group
       - Simple Dropdown - Render without custom styles
       */}
       </>
@@ -164,9 +161,12 @@ export const Dropdown: React.FC<Props> = ({
           id={id}
           onChange={(e) => handleInput(e.target.value)}
           onFocus={() => setHidden(false)}
-          // onKeyDown={(e) => {
-          //   if (e.key === "ArrowDown") handleArrowDown(e);
-          // }}
+          onKeyDown={(e) => {
+            if (e.key === "ArrowDown") {
+              e.preventDefault;
+              handleInputArrowDown();
+            }
+          }}
           type="text"
           readOnly={readOnly}
           role="combobox"
@@ -208,51 +208,109 @@ export const Dropdown: React.FC<Props> = ({
         >
           {dropdownData.map((item, index) => {
             const itemId = `${id}--option-${index}`;
-            const focused = itemId === activeDescendant;
-            const selected = item.value === value;
-
-            const tabIndex = activeDescendant && focused ? 0 : -1;
-
-            const [ref, setFocus] = UseFocus();
-            const handleHover = () => {
-              setActiveDescendant(itemId);
-              setFocus();
-            };
-
             return (
-              <li
-                aria-setsize={data.length}
-                aria-posinset={index + 1}
-                aria-selected="false"
-                className={`usa-combo-box__list-option${
-                  focused ? " usa-combo-box__list-option--focused" : ""
-                }${selected ? " usa-combo-box__list-option--selected" : ""}`}
-                data-value={item.value}
-                id={itemId}
-                key={itemId}
-                ref={ref}
-                tabIndex={tabIndex}
-                role="option"
-                onClick={() => handleItemClick(item.value)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter") handleItemClick(item.value);
+              <DropdownItem
+                {...{
+                  activeDescendant,
+                  data,
+                  handleItemClick,
+                  id,
+                  index,
+                  item,
+                  itemId,
+                  key: itemId,
+                  setActiveDescendant,
+                  value,
                 }}
-                onMouseOver={() => handleHover()}
-              >
-                {item.displayString}
-              </li>
+              />
             );
           })}
         </ul>
         <div className="usa-combo-box__status usa-sr-only" role="status">
           {!hidden && `${data.length} results available.`}
         </div>
-        <span id="fruit--assistiveHint" className="usa-sr-only">
+        <span id={`${id}--assistiveHint`} className="usa-sr-only">
           When autocomplete results are available use up and down arrows to
           review and enter to select. Touch device users, explore by touch or
           with swipe gestures.
         </span>
       </div>
     </>
+  );
+};
+
+interface DropdownItemProps {}
+
+// TODO: This needs some cleanup
+const DropdownItem = ({
+  activeDescendant,
+  data,
+  handleItemClick,
+  id,
+  index,
+  item,
+  itemId,
+  setActiveDescendant,
+  value,
+}: any) => {
+  const [ref, setFocus] = UseFocus();
+  const focused = itemId === activeDescendant;
+  const selected = item.value === value;
+  const tabIndex = activeDescendant && focused ? 0 : -1;
+
+  const handleArrow = (arrow: "ArrowDown" | "ArrowUp") => {
+    const currentElement = document.getElementsByClassName(
+      "usa-combo-box__list-option--focused"
+    )[0];
+
+    if (arrow === "ArrowDown") {
+      const nextElement = currentElement?.nextElementSibling as HTMLElement;
+      if (nextElement) {
+        nextElement.focus();
+        setActiveDescendant(nextElement.id);
+      }
+    } else if (arrow === "ArrowUp") {
+      const previousElement =
+        currentElement?.previousElementSibling as HTMLElement;
+      if (previousElement) {
+        previousElement.focus();
+        setActiveDescendant(previousElement.id);
+      }
+    }
+  };
+
+  return (
+    <li
+      aria-setsize={data.length}
+      aria-posinset={index + 1}
+      aria-selected="false"
+      className={`usa-combo-box__list-option${
+        focused ? " usa-combo-box__list-option--focused" : ""
+      }${selected ? " usa-combo-box__list-option--selected" : ""}`}
+      data-value={item.value}
+      id={itemId}
+      ref={ref}
+      tabIndex={tabIndex}
+      role="option"
+      onClick={() => handleItemClick(item.value)}
+      onKeyDown={(e) => {
+        e.preventDefault();
+        switch (e.key) {
+          case "Enter":
+            handleItemClick(item.value);
+            break;
+          case "ArrowDown":
+          case "ArrowUp":
+            handleArrow(e.key);
+            break;
+        }
+      }}
+      onMouseOver={() => {
+        setActiveDescendant(itemId);
+        setFocus();
+      }}
+    >
+      {item.displayString}
+    </li>
   );
 };
