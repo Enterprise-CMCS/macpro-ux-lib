@@ -14,20 +14,3 @@ const customRender = (
 
 export * from "@testing-library/react";
 export { customRender as render };
-
-/**
- * Clean up attributes from the rendered component by removing the generated ids.
- *
- * Before:
- *   for="input-type-text-123456"
- *   id="input-type-text-123456"
- *
- * After:
- *   for="input-type-text"
- *   id="input-type-text"
- *
- * This is useful during snapshot testing. Snapshot comparisons will fail without addressing these items.
- *
- * @param {HTMLElement} container The component to clean up.
- * @param {prefixes}      string[]  The reference substrings to leave alone.
- */
