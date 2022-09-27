@@ -61,7 +61,7 @@ export const checkValidMonthDays = (
     month <= 12 &&
     daysInMonth(month, year) >= day &&
     day > 0 &&
-    year > 1776
+    year > 1965
   );
 };
 
