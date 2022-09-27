@@ -4,7 +4,9 @@ import { Icon } from "./Icon";
 
 describe("Tests for the Icon component.", () => {
   it("Should render", () => {
-    render(<Icon name="accessibility_new" data-testid="Icon" />);
+    render(
+      <Icon name="accessibility_new" className="test" data-testid="Icon" />
+    );
 
     const IconComp = screen.getByTestId("Icon");
     expect(IconComp).toBeInTheDocument();
