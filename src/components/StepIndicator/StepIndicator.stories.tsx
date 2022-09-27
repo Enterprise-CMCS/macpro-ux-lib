@@ -34,16 +34,16 @@ export const Default = Template.bind({});
 Default.args = {};
 
 export const NoLabels = Template.bind({});
-NoLabels.args = {};
+NoLabels.args = { labels: false };
 
 export const Centered = Template.bind({});
-Centered.args = {};
+Centered.args = { centered: true };
 
 export const Counters = Template.bind({});
-Counters.args = {};
+Counters.args = { counters: true };
 
 export const SmallCounters = Template.bind({});
-SmallCounters.args = {};
+SmallCounters.args = { counters: true, smallCounters: true };
 
 export const CenteredCounters = Template.bind({});
-CenteredCounters.args = {};
+CenteredCounters.args = { counters: true, centered: true };
