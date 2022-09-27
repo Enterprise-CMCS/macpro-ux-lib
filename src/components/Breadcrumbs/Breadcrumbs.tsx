@@ -29,7 +29,10 @@ export const Breadcrumbs: React.FC<BreadcrumbProps> = ({
       {!parentOnly && (
         <ol className="usa-breadcrumb__list">
           {items.map((item, index) => (
-            <li className="usa-breadcrumb__list-item">
+            <li
+              className="usa-breadcrumb__list-item"
+              key={`${index}-${item.name}`}
+            >
               <a href={item.path} className="usa-breadcrumb__link">
                 <span>{item.name}</span>
               </a>
@@ -39,6 +42,7 @@ export const Breadcrumbs: React.FC<BreadcrumbProps> = ({
             <li
               className="usa-breadcrumb__list-item usa-current"
               aria-current="page"
+              key={`current-item-${currentItemName}`}
             >
               <span>{currentItemName}</span>
             </li>
