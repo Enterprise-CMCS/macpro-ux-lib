@@ -1,4 +1,5 @@
 import React from "react";
+import { Icon } from "../Icon/Icon";
 
 export type BreadcrumbItems = {
   name: string;
@@ -25,23 +26,37 @@ export const Breadcrumbs: React.FC<BreadcrumbProps> = ({
 }) => {
   return (
     <nav className="usa-breadcrumb" aria-label="Breadcrumbs">
-      <ol className="usa-breadcrumb__list">
-        {items.map((item, index) => (
+      {!parentOnly && (
+        <ol className="usa-breadcrumb__list">
+          {items.map((item, index) => (
+            <li className="usa-breadcrumb__list-item">
+              <a href={item.path} className="usa-breadcrumb__link">
+                <span>{item.name}</span>
+              </a>
+            </li>
+          ))}
+          {currentItemName && (
+            <li
+              className="usa-breadcrumb__list-item usa-current"
+              aria-current="page"
+            >
+              <span>{currentItemName}</span>
+            </li>
+          )}
+        </ol>
+      )}
+      {parentOnly && (
+        <ol className="usa-breadcrumb__list">
           <li className="usa-breadcrumb__list-item">
-            <a href={item.path} className="usa-breadcrumb__link">
-              <span>{item.name}</span>
+            <a href={items[0].path}>
+              <div className="parent-only">
+                <Icon name="arrow_back" className="arrow-back" />
+                <span>{items[0].name}</span>
+              </div>
             </a>
           </li>
-        ))}
-        {currentItemName && (
-          <li
-            className="usa-breadcrumb__list-item usa-current"
-            aria-current="page"
-          >
-            <span>{currentItemName}</span>
-          </li>
-        )}
-      </ol>
+        </ol>
+      )}
     </nav>
   );
 };
