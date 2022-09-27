@@ -6,22 +6,22 @@ export type BreadcrumbItems = {
 }[];
 
 export interface BreadcrumbProps {
-  currentItemName?: string;
+  currentItemName: string;
   items: BreadcrumbItems;
-  breadcrumbType: "default" | "parent";
+  parentOnly?: boolean;
 }
 
 /**
  * Breadcrumbs Component
- * @param {string}                [currentItemName] The name of the current item, displayed as the last breadcrumb item.
- * @param {BreadcrumbItems}       items             An array of breadcrumb items.
- * @param {"default" | "parent"}  breadcrumbType    The type of breadcrumbs. "default" displays a list of breadcrumbs while "parent" only displays the parent location.
+ * @param {string}          currentItemName The name of the current item, displayed as the last breadcrumb item.
+ * @param {BreadcrumbItems} items             An array of breadcrumb items.
+ * @param {boolean}         [parentOnly]        Use the parent-only variation.
  */
 
 export const Breadcrumbs: React.FC<BreadcrumbProps> = ({
   currentItemName,
   items,
-  breadcrumbType,
+  parentOnly = false,
 }) => {
   return (
     <nav className="usa-breadcrumb" aria-label="Breadcrumbs">
