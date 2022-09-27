@@ -1,3 +1,10 @@
+## [1.14.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.14.0...v1.14.1) (2022-09-27)
+
+
+### Bug Fixes
+
+* **Header:** refactor Header to remove functional dependency on USWDS.js ([622ad97](https://github.com/cmsgov/macpro-ux-lib/commit/622ad970da86b3ec82b99948125b3e1eb33950a2))
+
 # [1.14.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.13.0...v1.14.0) (2022-09-27)
 
 
