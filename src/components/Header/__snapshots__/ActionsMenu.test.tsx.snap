@@ -100,7 +100,7 @@ exports[`Test the Header component menu should open on click 1`] = `
 exports[`Test the Header component menu should open on click 2`] = `
 <div>
   <div
-    class="user-actions-container"
+    class="user-actions-container user-actions-container__drop-shadow"
   >
     <button
       class="menu-label"
