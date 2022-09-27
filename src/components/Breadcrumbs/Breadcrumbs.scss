@@ -1,0 +1,16 @@
+@use "../../assets/theme/macbis-colors" as c;
+
+.usa-breadcrumb__list-item:not(:last-child)::after {
+  margin: 0 0.5rem;
+  background-color: c.$gray;
+}
+
+.parent-only {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-back {
+  margin-right: 0.5rem;
+  color: c.$gray;
+}
