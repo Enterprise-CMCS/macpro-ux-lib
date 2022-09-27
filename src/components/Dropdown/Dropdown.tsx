@@ -1,5 +1,14 @@
 import { Icon } from "components/Icon/Icon";
-import React, { useEffect, useState } from "react";
+import React, { MutableRefObject, useEffect, useRef, useState } from "react";
+
+const UseFocus = (): [React.MutableRefObject<any>, () => void] => {
+  const htmlElRef = useRef<any>(null);
+  const setFocus = () => {
+    htmlElRef.current && htmlElRef.current.focus();
+  };
+
+  return [htmlElRef, setFocus];
+};
 
 type IntrinsicElements = JSX.IntrinsicElements["select"];
 
@@ -43,6 +52,24 @@ export const Dropdown: React.FC<Props> = ({
     setHidden(true);
     setActiveDescendant("");
   };
+
+  // const handleArrowDown = (e: React.KeyboardEvent) => {
+  //   if (hidden) setHidden(false);
+
+  //   const currentElement = document.getElementsByClassName(
+  //     "usa-combo-box__list-option--focused"
+  //   )[0];
+  //   const nextOption = currentElement.nextSibling;
+
+  //   if (nextOption) {
+  //     console.log(nextOption);
+  //     // highlightOption()
+  //   }
+
+  //   e.preventDefault;
+  // };
+
+  const highlightOption = () => {};
 
   const handleBlur = (e: React.FocusEvent) => {
     if (!hidden) {
@@ -94,7 +121,7 @@ export const Dropdown: React.FC<Props> = ({
       - Simple Dropdown - Render without custom styles
       */}
       </>
-      <label className="usa-label" htmlFor={id}>
+      <label className="usa-label" htmlFor={id} id={`${id}-label`}>
         {label}
       </label>
       <div
@@ -114,7 +141,7 @@ export const Dropdown: React.FC<Props> = ({
           tabIndex={-1}
           value={value}
         >
-          <option value="">Select a fruit</option>
+          <option value="">{label}</option>
           {data.map((itm, idx) => (
             <option
               key={`usa-combo-box--option--${id}-${idx}`}
@@ -127,16 +154,19 @@ export const Dropdown: React.FC<Props> = ({
         <input
           aria-activedescendant={activeDescendant}
           aria-autocomplete="list"
-          aria-controls="fruit--list"
-          aria-describedby="fruit--assistiveHint"
+          aria-controls={`${id}--list`}
+          aria-describedby={`${id}--assistiveHint`}
           aria-expanded="false"
-          aria-owns="fruit--list"
+          aria-owns={`${id}--list`}
           autoCapitalize="none"
           autoComplete="off"
           className="usa-combo-box__input"
           id={id}
-          onFocus={() => setHidden(false)}
           onChange={(e) => handleInput(e.target.value)}
+          onFocus={() => setHidden(false)}
+          // onKeyDown={(e) => {
+          //   if (e.key === "ArrowDown") handleArrowDown(e);
+          // }}
           type="text"
           readOnly={readOnly}
           role="combobox"
@@ -170,10 +200,10 @@ export const Dropdown: React.FC<Props> = ({
         </span>
         <ul
           tabIndex={-1}
-          id="fruit--list"
+          id={`${id}--list`}
           className="usa-combo-box__list"
           role="listbox"
-          aria-labelledby="fruit-label"
+          aria-labelledby={`${id}-label`}
           hidden={hidden}
         >
           {dropdownData.map((item, index) => {
@@ -181,25 +211,36 @@ export const Dropdown: React.FC<Props> = ({
             const focused = itemId === activeDescendant;
             const selected = item.value === value;
 
-            const getTabIndex = (): number => {
-              if (activeDescendant) {
-              }
-              return -1;
+            const tabIndex = activeDescendant && focused ? 0 : -1;
+
+            const [ref, setFocus] = UseFocus();
+            const handleHover = () => {
+              setActiveDescendant(itemId);
+              setFocus();
             };
+
             return (
-              <DropdownItem
-                {...{
-                  dropdownLength: data.length,
-                  focused,
-                  item,
-                  itemId,
-                  index,
-                  key: itemId,
-                  onClick: () => handleItemClick(item.value),
-                  onMouseOver: () => setActiveDescendant(itemId),
-                  selected,
+              <li
+                aria-setsize={data.length}
+                aria-posinset={index + 1}
+                aria-selected="false"
+                className={`usa-combo-box__list-option${
+                  focused ? " usa-combo-box__list-option--focused" : ""
+                }${selected ? " usa-combo-box__list-option--selected" : ""}`}
+                data-value={item.value}
+                id={itemId}
+                key={itemId}
+                ref={ref}
+                tabIndex={tabIndex}
+                role="option"
+                onClick={() => handleItemClick(item.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") handleItemClick(item.value);
                 }}
-              />
+                onMouseOver={() => handleHover()}
+              >
+                {item.displayString}
+              </li>
             );
           })}
         </ul>
@@ -213,48 +254,5 @@ export const Dropdown: React.FC<Props> = ({
         </span>
       </div>
     </>
-  );
-};
-
-interface DropdownItemProps {
-  dropdownLength: number;
-  focused: boolean;
-  item: { displayString: string; value: string | number };
-  itemId: string;
-  index: number;
-  onClick: (arg: string | number) => void;
-  onMouseOver: (arg: string) => void;
-  selected: boolean;
-}
-
-const DropdownItem: React.FC<DropdownItemProps> = ({
-  dropdownLength,
-  focused,
-  item,
-  itemId,
-  index,
-  onClick,
-  onMouseOver,
-  selected,
-}) => {
-  return (
-    <li
-      aria-setsize={dropdownLength}
-      aria-posinset={index + 1}
-      aria-selected="false"
-      className={`usa-combo-box__list-option${
-        focused ? " usa-combo-box__list-option--focused" : ""
-      }${selected ? " usa-combo-box__list-option--selected" : ""}`}
-      data-value={item.value}
-      id={itemId}
-      // tabIndex = 0 should be value when opened, then if activeDescendant, if no activeDescendant default to top
-
-      tabIndex={index === 0 ? 0 : -1}
-      role="option"
-      onClick={() => onClick(item.value)}
-      onMouseOver={() => onMouseOver(itemId)}
-    >
-      {item.displayString}
-    </li>
   );
 };
