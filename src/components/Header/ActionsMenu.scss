@@ -104,6 +104,11 @@
       color: c.$gray;
     }
 
+    .user-actions-menu a,
+    .menu-label {
+      background-color: #fff;
+    }
+
     .usa-nav__primary button:hover {
       color: c.$primary-darker;
       background-color: c.$gray-lightest;
