@@ -7,6 +7,14 @@ export default {
   component: StepIndicator,
   args: {},
   argTypes: {},
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "A step indicator updates users on their progress through a multi-step process.",
+      },
+    },
+  },
 } as ComponentMeta<typeof StepIndicator>;
 
 const Template: ComponentStory<typeof StepIndicator> = ({ ...rest }) => (
