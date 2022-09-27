@@ -1,3 +1,4 @@
+@forward "../../components/Alert/Alert.scss";
 @forward "../../components/Button/Button.scss";
 @forward "../../components/CardChoice/CardChoice.scss";
 @forward "../../components/CardChoice/CardChoiceGroup.scss";
@@ -10,6 +11,8 @@
 @forward "../../components/Modal/Modal.scss";
 @forward "../../components/Radio/Radio.scss";
 @forward "../../components/Radio/RadioGroup.scss";
+@forward "../../components/Tabs/Tab.scss";
+@forward "../../components/Tabs/Tabs.scss";
 
 @use "../../assets/theme/macbis-colors" as c;
 
