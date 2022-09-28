@@ -20,12 +20,15 @@ interface Props extends IntrinsicElements {
  * This component is a wrapper around the HTML `<select>` element and provides the basic functionality of a dropdown along with accessibility and styling.
  * A key enhancement to the standard dropdown is the ability for a user to type to search for an option.
  *
- * @param {DropdownData}  data    Data used to populate the dropdown.
- * @param {string}        id      The id of the dropdown.
- * @param {string}        label   String used to label the dropdown in the UI.
- * @param {string}        name    Name of the dropdown used to identify it in the context of a form.
+ * @param {string}        className A class name that will be applied on the select element.
+ * @param {DropdownData}  data      Data used to populate the dropdown.
+ * @param {string}        id        The id of the dropdown.
+ * @param {string}        label     String used to label the dropdown in the UI.
+ * @param {string}        name      Name of the dropdown used to identify it in the context of a form.
+ * @param {boolean}       readOnly  Sets input field to read-only. Effectively disables type-ahead search.
  */
 export const Dropdown: React.FC<Props> = ({
+  className,
   data,
   id,
   label,
@@ -33,6 +36,15 @@ export const Dropdown: React.FC<Props> = ({
   readOnly = false,
   ...rest
 }) => {
+  /*
+    Possible TODO:
+    These items are outside scope of design, but might be nice to have
+    - Error State
+    - Default Value
+    - Disabled
+    - Simple Dropdown - Render without custom styles
+  */
+
   const [activeDescendant, setActiveDescendant] = useState<string>("");
   const [dropdownData, setDropdownData] = useState<DropdownData[]>(data);
   const [hidden, setHidden] = useState<boolean>(true);
@@ -44,7 +56,7 @@ export const Dropdown: React.FC<Props> = ({
     setActiveDescendant("");
   };
 
-  /**
+  /*
    * Handles ArrowDown when input has focus.
    *
    * If a value was previously selected, focus should shift to that element on ArrowDown.
@@ -67,6 +79,7 @@ export const Dropdown: React.FC<Props> = ({
     }
   };
 
+  // Collapse dropdown onBlur – do not collapse if focus shifts to a child element
   const handleBlur = (e: React.FocusEvent) => {
     if (!hidden) {
       const currentTarget = e.currentTarget;
@@ -78,14 +91,15 @@ export const Dropdown: React.FC<Props> = ({
     }
   };
 
+  // triggered by click or click-equivalent event (Enter/Tab)
   const handleItemClick = (itemValue: string | number) => {
     setValue(itemValue);
     closeDropdown();
   };
 
+  // Sets inputValue text and filters dropdown options
   const handleInput = (inputValue: string) => {
     setInputValue(inputValue);
-    // filter dropdownData
     setDropdownData(
       data.filter((itm) => {
         const displayStr = itm.displayString.toLowerCase();
@@ -100,19 +114,13 @@ export const Dropdown: React.FC<Props> = ({
     return obj?.displayString ?? "";
   };
 
+  // when value updates, inputValue should match value
   useEffect(() => {
     setInputValue(getDisplayString());
   }, [value]);
+
   return (
     <>
-      {/*
-      Possible TODO:
-      These items are outside scope of design, but might be nice to have
-      - Error State
-      - Default Value
-      - Disabled
-      - Simple Dropdown - Render without custom styles
-      */}
       <label className="usa-label" htmlFor={id} id={`${id}-label`}>
         {label}
       </label>
@@ -126,7 +134,9 @@ export const Dropdown: React.FC<Props> = ({
         <select
           {...rest}
           aria-hidden={hidden}
-          className="usa-select usa-sr-only usa-combo-box__select"
+          className={`usa-select usa-sr-only usa-combo-box__select${
+            className ? ` ${className}` : ""
+          }`}
           id={id}
           name={name}
           onChange={(e) => setValue(e.target.value)}
@@ -233,10 +243,8 @@ export const Dropdown: React.FC<Props> = ({
   );
 };
 
-/**
- *
+/*
  * UseFocus takes a ref and shifts focus to the referenced element.
- *
  * Used here as a way to shift focus in a self-referential way within DropdownItem.
  */
 const UseFocus = (): [React.MutableRefObject<any>, () => void] => {
@@ -249,16 +257,20 @@ const UseFocus = (): [React.MutableRefObject<any>, () => void] => {
 };
 
 interface DropdownItemProps {
-  activeDescendant: any;
-  data: any;
-  handleItemClick: any;
-  index: any;
-  item: any;
-  itemId: any;
+  activeDescendant: string;
+  data: DropdownData[];
+  handleItemClick: (arg: string | number) => void;
+  index: number;
+  item: DropdownData;
+  itemId: string;
   setActiveDescendant: any;
-  value: any;
+  value: string | number | undefined;
 }
 
+/*
+ * DropdownItem component is a helper component for Dropdown.
+ * Represents each item in the dropdown menu and contains much of the functionality and logic.
+ */
 const DropdownItem = ({
   activeDescendant,
   data,
@@ -281,6 +293,7 @@ const DropdownItem = ({
   if (activeDescendant && focused) tabIndex = 0;
   else if (!activeDescendant && index === 0) tabIndex = 0;
 
+  // takes a string representing arrow key press and shifts focus down or up accordingly
   const handleArrow = (arrow: "ArrowDown" | "ArrowUp") => {
     const currentElement = document.getElementsByClassName(
       "usa-combo-box__list-option--focused"
@@ -299,6 +312,26 @@ const DropdownItem = ({
     }
   };
 
+  /*
+   * disable default behavior
+   * on Enter/Tab set value to be focused element value
+   * on ArrowDown/ArrowUp shift focus appropriately
+   */
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLLIElement>) => {
+    e.preventDefault();
+
+    switch (e.key) {
+      case "Tab":
+      case "Enter":
+        handleItemClick(item.value);
+        break;
+      case "ArrowDown":
+      case "ArrowUp":
+        handleArrow(e.key);
+        break;
+    }
+  };
+
   return (
     <li
       aria-setsize={data.length}
@@ -313,19 +346,7 @@ const DropdownItem = ({
       tabIndex={tabIndex}
       role="option"
       onClick={() => handleItemClick(item.value)}
-      onKeyDown={(e) => {
-        e.preventDefault();
-        switch (e.key) {
-          case "Tab":
-          case "Enter":
-            handleItemClick(item.value);
-            break;
-          case "ArrowDown":
-          case "ArrowUp":
-            handleArrow(e.key);
-            break;
-        }
-      }}
+      onKeyDown={(e) => handleKeyDown(e)}
       onMouseOver={() => {
         setActiveDescendant(itemId);
         setFocus();
