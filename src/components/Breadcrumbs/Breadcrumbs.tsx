@@ -1,12 +1,12 @@
 import React from "react";
 import { Icon } from "../Icon/Icon";
 
-export type BreadcrumbItems = {
+type BreadcrumbItems = {
   name: string;
   path: string;
 }[];
 
-export interface BreadcrumbProps {
+interface BreadcrumbProps {
   currentItemName: string;
   items: BreadcrumbItems;
   parentOnly?: boolean;
