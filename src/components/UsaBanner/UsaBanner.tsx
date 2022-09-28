@@ -8,6 +8,7 @@ interface Props {
   className?: string;
   id?: string;
   locale?: "en" | "es";
+  variant?: "default" | "dark";
 }
 
 /**
@@ -15,21 +16,26 @@ interface Props {
  * @param {string}  className     Additional classes to be added to the root `section` element.
  * @param {string}  id            A unique ID to be applied to the banner content at the root `section` element.
  * @param {string}  locale        Determines which version of the banner to display (en === english, es === español).
+ * @param {string}  variant       Indicates which color variant of the banner to display.
  */
 
 export const UsaBanner: React.FC<Props> = ({
   className,
+  variant,
   id,
   locale = "en",
   ...rest
 }) => {
   const [hidden, setHidden] = useState(true);
+  const classNames = `usa-banner${
+    variant === "dark" ? ` usa-banner--dark` : ""
+  }${className ? ` ${className}` : ""}`;
   return (
     <>
       {locale === "en" && (
         <section
           aria-label="Official government website"
-          className={`usa-banner${className ? ` ${className}` : ""}`}
+          className={classNames}
           id={id}
           {...rest}
         >
@@ -138,7 +144,7 @@ export const UsaBanner: React.FC<Props> = ({
       {locale === "es" && (
         <section
           aria-label="Un sitio oficial del Gobierno de Estados Unidos"
-          className={`usa-banner${className ? ` ${className}` : ""}`}
+          className={classNames}
           id={id}
           {...rest}
         >
