@@ -29,13 +29,15 @@ describe("Tests for the Datefield component.", () => {
       />
     );
     const DatefieldComp = screen.getByTestId("Datefield");
-    const labelComp = screen.getByRole("label");
+    const labelComp = screen.getByText("test-2");
 
     expect(labelComp).toBeInTheDocument();
     expect(DatefieldComp).toHaveAttribute("value", "10/10/2020");
   });
 
   it("Should fire and change the value when the user types", () => {
+    const mockDateRangeFunc = jest.fn();
+
     render(
       <Datefield
         data-testid="Datefield"
@@ -43,8 +45,10 @@ describe("Tests for the Datefield component.", () => {
         name="test-3"
         label="test-3"
         hint
+        dateRangeChange={mockDateRangeFunc}
       />
     );
+
     const DatefieldComp = screen.getByLabelText("test-3");
     fireEvent.change(DatefieldComp, {
       target: { value: "10/10/2020" },
@@ -61,13 +65,13 @@ describe("Tests for the Datefield component.", () => {
     render(
       <Datefield
         data-testid="Datefield"
-        id="test-3"
-        name="test-3"
-        label="test-3"
+        id="test-11"
+        name="test-11"
+        label="test-11"
         hint
       />
     );
-    const DatefieldComp = screen.getByLabelText("test-3");
+    const DatefieldComp = screen.getByLabelText("test-11");
     fireEvent.blur(DatefieldComp, {
       target: { value: "10/10/2020" },
     });
@@ -79,16 +83,21 @@ describe("Tests for the Datefield component.", () => {
     expect(DatefieldComp).toHaveDisplayValue("");
 
     fireEvent.blur(DatefieldComp, {
-      target: { value: "asdasd" },
+      target: { value: "00/00/00" },
     });
-    const hintComp = screen.getByText("Inputted date must be mm/dd/yyyy");
+    const hintComp = screen.getByText(
+      "Inputted date must be a valid date in mm/dd/yyyy"
+    );
 
     expect(hintComp).toBeInTheDocument();
-    expect(DatefieldComp).toHaveDisplayValue("asdasd");
-    expect(DatefieldComp).toHaveAttribute("aria-describedby", "test-3-hint");
+    expect(DatefieldComp).toHaveDisplayValue("00/00/00");
+    expect(DatefieldComp).toHaveAttribute("aria-describedby", "test-11-hint");
   });
 
   it("Should open the calendar component with min and max dates", () => {
+    const mockOnClick = jest.fn();
+    const mockClassFunc = jest.fn();
+    const mockDateRangeFunc = jest.fn();
     render(
       <Datefield
         data-testid="Datefield"
@@ -99,6 +108,10 @@ describe("Tests for the Datefield component.", () => {
         maxDate="10/11/2022"
         value="10/10/2022"
         hint={false}
+        toggleRangeCalendars={mockOnClick}
+        rangeCalendarOpen={true}
+        selectedRangeClassName={mockClassFunc}
+        dateRangeChange={mockDateRangeFunc}
       />
     );
     const DatefieldInput = screen.getByTestId("Datefield");
