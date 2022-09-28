@@ -39,3 +39,9 @@ Default.args = {
     { name: "Second item", path: "#" },
   ],
 };
+
+export const ParentOnly = Template.bind({});
+ParentOnly.args = {
+  items: [{ name: "Home", path: "#" }],
+  parentOnly: true,
+};
