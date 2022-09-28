@@ -58,11 +58,7 @@ export const Footer: React.FC<Props> = ({
                         >
                           {link.text}
                           {link.iconName && (
-                            <Icon
-                              name={link.iconName}
-                              color="#fff"
-                              className="margin-top-3"
-                            />
+                            <Icon name={link.iconName} color="#fff" />
                           )}
                         </a>
                       </div>
