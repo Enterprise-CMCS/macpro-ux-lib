@@ -14,9 +14,9 @@ export interface BreadcrumbProps {
 
 /**
  * Breadcrumbs Component
- * @param {string}          currentItemName The name of the current item, displayed as the last breadcrumb item.
+ * @param {string}          [currentItemName] The name of the current item, displayed as the last breadcrumb item.
  * @param {BreadcrumbItems} items             An array of breadcrumb items.
- * @param {boolean}         [parentOnly]        Use the parent-only variation.
+ * @param {boolean}         [parentOnly]      Use the parent-only variation.
  */
 
 export const Breadcrumbs: React.FC<BreadcrumbProps> = ({
