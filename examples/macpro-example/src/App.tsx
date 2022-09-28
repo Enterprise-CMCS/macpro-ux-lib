@@ -257,17 +257,82 @@ function App() {
           id="child-textarea"
           label="Child 1 TextArea"
         />
+        <UX.Datefield id="1" name="react-calendar" label="Calendar example" />
         <UX.TextInput
           fieldName="text-input"
           id="text-input-1"
           label="The Text Input We've All Been Waiting For"
         ></UX.TextInput>
+        <UX.DateRange
+          startInputId="id-1"
+          startInputName="react-calendar"
+          startLabel="Start Range"
+          endInputId="id-2"
+          endInputName="react-calendar2"
+          endLabel="End Range"
+          defaultStartDate="08/08/2022"
+          hint={true}
+        />
         <UX.Alert
           alertHeading="Alert Heading"
           alertBody="Alert Body"
           variation="info"
         />
+        <UX.SiteAlert
+          alertHeading="Alert Heading"
+          alertBody="Alert Body"
+          emergency
+        />
         <UX.Datefield id="1" name="react-calendar" label="Calendar example" />
+        <UX.Tabs>
+          <UX.TabPanel tabLabel="Summary" id="tab-panel--summary">
+            The Bill of Rights is the first ten amendments to the United States
+            Constitution.
+          </UX.TabPanel>
+          <UX.TabPanel tabLabel="Preamble" id="tab-panel--preamble">
+            We the People of the United States, in Order to form a more perfect
+            Union, establish Justice, insure domestic Tranquility, provide for
+            the common defence, promote the general Welfare, and secure the
+            Blessings of Liberty to ourselves and our Posterity, do ordain and
+            establish this Constitution for the United States of America.
+          </UX.TabPanel>
+          <UX.TabPanel tabLabel="Amendments" id="tab-panel--amendments">
+            <h2>Bill of Rights</h2>
+            <ol>
+              <li>Freedoms, Petitions, Assembly</li>
+              <li>Right to bear arms</li>
+              <li>Quartering of soldiers</li>
+              <li>Search and arrest</li>
+              <li>Rights in criminal cases</li>
+              <li>Right to a fair trial</li>
+              <li>Rights in civil cases</li>
+              <li>Bail, fines, punishment</li>
+              <li>Rights retained by the People</li>
+              <li>States' rights</li>
+            </ol>
+            <h2>Later Amendments</h2>
+            <ol start={11}>
+              <li>Lawsuits against states</li>
+              <li>Presidential elections</li>
+              <li>Abolition of slavery</li>
+              <li>Civil rights</li>
+              <li>Black suffrage</li>
+              <li>Income taxes</li>
+              <li>Senatorial elections</li>
+              <li>Prohibition of liquor</li>
+              <li>Women's suffrage</li>
+              <li>Terms of office</li>
+              <li>Repeal of Prohibition</li>
+              <li>Term Limits for the Presidency</li>
+              <li>Washington, D.C., suffrage</li>
+              <li>Abolition of poll taxes</li>
+              <li>Presidential succession</li>
+              <li>18-year-old suffrage</li>
+              <li>Congressional pay raises</li>
+            </ol>
+          </UX.TabPanel>
+          <UX.TabPanel tabLabel="Disabled" disabled id="tab-panel--disabled" />
+        </UX.Tabs>
       </div>
       <UX.Footer emailAddress="jhechter@fearless.tech" />
     </div>

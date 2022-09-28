@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import { Icon } from "../Icon/Icon";
-import { completeDateFilter, numbersAndSlashesFilter } from "../../utils";
+import {
+  completeDateFilter,
+  numbersAndSlashesFilter,
+  checkValidMonthDays,
+  splitDateIntoVariables,
+} from "../../utils";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 export interface Props extends IntrinsicElements {
@@ -14,6 +19,10 @@ export interface Props extends IntrinsicElements {
   minDate?: string;
   maxDate?: string;
   value?: string;
+  rangeCalendarOpen?: boolean;
+  dateRangeChange?: Dispatch<SetStateAction<string | undefined>>;
+  toggleRangeCalendars?: Function;
+  selectedRangeClassName?: (date: Date) => string;
 }
 
 /**
@@ -39,6 +48,10 @@ export const Datefield: React.FC<Props> = ({
   defaultDate,
   hint = true,
   disabled = false,
+  dateRangeChange,
+  rangeCalendarOpen,
+  toggleRangeCalendars,
+  selectedRangeClassName,
   ...rest
 }) => {
   value = completeDateFilter.test(value || "") ? value : "";
@@ -47,30 +60,56 @@ export const Datefield: React.FC<Props> = ({
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [dateError, setDateError] = useState(false);
 
+  useEffect(() => {
+    if (
+      (value && checkValidDate(value)) ||
+      (defaultDate && checkValidDate(defaultDate))
+    ) {
+      setDate(value || defaultDate || undefined);
+    }
+  }, [value, defaultDate]);
+
   const toggleCalendar = () => {
-    setCalendarOpen(!calendarOpen);
+    if (toggleRangeCalendars !== undefined) {
+      toggleRangeCalendars();
+    } else {
+      setCalendarOpen(!calendarOpen);
+    }
   };
 
   const filterInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (numbersAndSlashesFilter.test(e.target.value) || e.target.value === "") {
       setDate(e.target.value);
+      dateRangeChange && dateRangeChange(e.target.value);
     }
   };
 
-  const onBlurCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (completeDateFilter.test(e.target.value)) {
+  const checkValidDate = (date: string): boolean => {
+    let [month, day, year] = splitDateIntoVariables(date);
+
+    if (
+      (completeDateFilter.test(date) &&
+        checkValidMonthDays(parseInt(month), parseInt(year), parseInt(day))) ||
+      date === ""
+    ) {
       setDateError(false);
+      return true;
     } else {
       setDateError(true);
+      return false;
     }
   };
 
   const setDateValue = (dateObj: Date) => {
-    let [month, day, year] = dateObj.toLocaleDateString()?.split("/");
+    let [month, day, year] = splitDateIntoVariables(
+      dateObj.toLocaleDateString()
+    );
+
     day = day.padStart(2, "0");
     month = month.padStart(2, "0");
 
     setDate(`${month}/${day}/${year}`);
+    dateRangeChange && dateRangeChange(`${month}/${day}/${year}`);
     toggleCalendar();
     setDateError(false);
   };
@@ -78,14 +117,19 @@ export const Datefield: React.FC<Props> = ({
   const formatStringDateToDate = (
     stringDate: string | undefined
   ): Date | undefined => {
-    return stringDate && completeDateFilter.test(stringDate)
-      ? new Date(stringDate)
-      : undefined;
+    if (stringDate) {
+      let [month, day, year] = splitDateIntoVariables(stringDate);
+
+      return completeDateFilter.test(stringDate) &&
+        checkValidMonthDays(parseInt(month), parseInt(year), parseInt(day))
+        ? new Date(stringDate)
+        : undefined;
+    }
   };
 
   return (
     <div className="usa-form-group datefield">
-      <label className="usa-label" id={`${id}-label`} htmlFor={id} role="label">
+      <label className="usa-label" id={`${id}-label`} htmlFor={id}>
         {label}
       </label>
       {(hint || dateError) && (
@@ -93,7 +137,9 @@ export const Datefield: React.FC<Props> = ({
           className={`usa-hint${dateError ? " input-error" : ""}`}
           id={`${id}-hint`}
         >
-          {`${dateError ? "Inputted date must be " : ""}mm/dd/yyyy`}
+          {`${
+            dateError ? "Inputted date must be a valid date in " : ""
+          }mm/dd/yyyy`}
         </div>
       )}
 
@@ -108,11 +154,12 @@ export const Datefield: React.FC<Props> = ({
             aria-labelledby={`${id}-label`}
             aria-describedby={hint ? `${id}-hint` : `${id}-label`}
             disabled={disabled}
-            onBlur={onBlurCheck}
+            onBlur={(e) => checkValidDate(e.target.value)}
             {...rest}
           />
           <div className={`flex-column${calendarOpen ? " grey-lightest" : ""}`}>
             <button
+              aria-label="calendar button"
               disabled={disabled}
               onClick={toggleCalendar}
               className="calendar-button padding-x-1 padding-top-1"
@@ -126,14 +173,21 @@ export const Datefield: React.FC<Props> = ({
             </button>
           </div>
         </div>
-        {calendarOpen && (
+        {(rangeCalendarOpen || calendarOpen) && (
           <div className="grid-row" data-testid="calendar">
             <Calendar
+              tileClassName={(dateProps) => {
+                if (selectedRangeClassName) {
+                  return selectedRangeClassName(dateProps.date);
+                }
+                return "";
+              }}
               calendarType="US"
               className="grid-col-3"
               onChange={setDateValue}
               value={formatStringDateToDate(currentDate)}
               defaultActiveStartDate={
+                formatStringDateToDate(currentDate) ||
                 formatStringDateToDate(minDate) ||
                 formatStringDateToDate(maxDate)
               }

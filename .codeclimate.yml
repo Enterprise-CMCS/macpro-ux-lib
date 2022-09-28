@@ -12,7 +12,7 @@ checks:
       threshold: 1000
   method-complexity:
     config:
-      threshold: 20
+      threshold: 30
   return-statements:
     enabled: false
   similar-code:
@@ -41,4 +41,5 @@ exclude_patterns:
   ############################################
   ## Additional exclude patterns
   - src/assets
+  - examples/*
   ############################################
