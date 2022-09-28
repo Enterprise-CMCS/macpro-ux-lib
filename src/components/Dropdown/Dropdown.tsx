@@ -1,15 +1,6 @@
 import { Icon } from "components/Icon/Icon";
 import React, { useEffect, useRef, useState } from "react";
 
-const UseFocus = (): [React.MutableRefObject<any>, () => void] => {
-  const htmlElRef = useRef<any>(null);
-  const setFocus = () => {
-    htmlElRef.current && htmlElRef.current.focus();
-  };
-
-  return [htmlElRef, setFocus];
-};
-
 type IntrinsicElements = JSX.IntrinsicElements["select"];
 
 interface DropdownData {
@@ -53,6 +44,12 @@ export const Dropdown: React.FC<Props> = ({
     setActiveDescendant("");
   };
 
+  /**
+   * Handles ArrowDown when input has focus.
+   *
+   * If a value was previously selected, focus should shift to that element on ArrowDown.
+   * If a value has not yet been selected, focus goes to the first option in the list.
+   */
   const handleInputArrowDown = () => {
     const selectedElement = document.getElementsByClassName(
       "usa-combo-box__list-option--selected"
@@ -108,8 +105,7 @@ export const Dropdown: React.FC<Props> = ({
   }, [value]);
   return (
     <>
-      <>
-        {/*
+      {/*
       Possible TODO:
       These items are outside scope of design, but might be nice to have
       - Error State
@@ -117,7 +113,6 @@ export const Dropdown: React.FC<Props> = ({
       - Disabled
       - Simple Dropdown - Render without custom styles
       */}
-      </>
       <label className="usa-label" htmlFor={id} id={`${id}-label`}>
         {label}
       </label>
@@ -163,7 +158,7 @@ export const Dropdown: React.FC<Props> = ({
           onFocus={() => setHidden(false)}
           onKeyDown={(e) => {
             if (e.key === "ArrowDown") {
-              e.preventDefault;
+              e.preventDefault();
               handleInputArrowDown();
             }
           }}
@@ -214,7 +209,6 @@ export const Dropdown: React.FC<Props> = ({
                   activeDescendant,
                   data,
                   handleItemClick,
-                  id,
                   index,
                   item,
                   itemId,
@@ -239,43 +233,69 @@ export const Dropdown: React.FC<Props> = ({
   );
 };
 
-interface DropdownItemProps {}
+/**
+ *
+ * UseFocus takes a ref and shifts focus to the referenced element.
+ *
+ * Used here as a way to shift focus in a self-referential way within DropdownItem.
+ */
+const UseFocus = (): [React.MutableRefObject<any>, () => void] => {
+  const htmlElRef = useRef<any>(null);
+  const setFocus = () => {
+    htmlElRef.current && htmlElRef.current.focus();
+  };
 
-// TODO: This needs some cleanup
+  return [htmlElRef, setFocus];
+};
+
+interface DropdownItemProps {
+  activeDescendant: any;
+  data: any;
+  handleItemClick: any;
+  index: any;
+  item: any;
+  itemId: any;
+  setActiveDescendant: any;
+  value: any;
+}
+
 const DropdownItem = ({
   activeDescendant,
   data,
   handleItemClick,
-  id,
   index,
   item,
   itemId,
   setActiveDescendant,
   value,
-}: any) => {
+}: DropdownItemProps) => {
   const [ref, setFocus] = UseFocus();
-  const focused = itemId === activeDescendant;
   const selected = item.value === value;
-  const tabIndex = activeDescendant && focused ? 0 : -1;
+
+  let focused = false;
+  if (itemId === activeDescendant) focused = true;
+  else if (!activeDescendant && selected) focused = true;
+  else if (!activeDescendant && !value && index === 0) focused = true;
+
+  let tabIndex = -1;
+  if (activeDescendant && focused) tabIndex = 0;
+  else if (!activeDescendant && index === 0) tabIndex = 0;
 
   const handleArrow = (arrow: "ArrowDown" | "ArrowUp") => {
     const currentElement = document.getElementsByClassName(
       "usa-combo-box__list-option--focused"
     )[0];
 
+    let elemToFocus;
     if (arrow === "ArrowDown") {
-      const nextElement = currentElement?.nextElementSibling as HTMLElement;
-      if (nextElement) {
-        nextElement.focus();
-        setActiveDescendant(nextElement.id);
-      }
+      elemToFocus = currentElement?.nextElementSibling as HTMLElement;
     } else if (arrow === "ArrowUp") {
-      const previousElement =
-        currentElement?.previousElementSibling as HTMLElement;
-      if (previousElement) {
-        previousElement.focus();
-        setActiveDescendant(previousElement.id);
-      }
+      elemToFocus = currentElement?.previousElementSibling as HTMLElement;
+    }
+
+    if (elemToFocus) {
+      elemToFocus.focus();
+      setActiveDescendant(elemToFocus.id);
     }
   };
 
@@ -296,6 +316,7 @@ const DropdownItem = ({
       onKeyDown={(e) => {
         e.preventDefault();
         switch (e.key) {
+          case "Tab":
           case "Enter":
             handleItemClick(item.value);
             break;
