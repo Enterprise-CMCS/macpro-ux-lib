@@ -1,0 +1,340 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for the DateRange component. compontent snapshots max date datefield 1`] = `
+<div>
+  <div>
+    <div
+      class="usa-form-group datefield"
+    >
+      <label
+        class="usa-label"
+        for="test-4"
+        id="test-4-label"
+      >
+        test-4
+      </label>
+      <div
+        class="usa-hint"
+        id="test-4-hint"
+      >
+        mm/dd/yyyy
+      </div>
+      <div
+        class="usa-date-picker"
+      >
+        <div
+          class="grid-row"
+        >
+          <input
+            aria-describedby="test-4-hint"
+            aria-labelledby="test-4-label"
+            class="usa-input margin-0"
+            id="test-4"
+            name="test-4"
+            value=""
+          />
+          <div
+            class="flex-column"
+          >
+            <button
+              aria-label="calendar button"
+              class="calendar-button padding-x-1 padding-top-1"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="calendar today icon"
+                class="usa-icon--size-3"
+                color="black"
+                data-testid="calendar-button"
+                fill="currentColor"
+                role="button"
+              >
+                <use
+                  href="[object Object]#calendar_today"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="usa-form-group datefield"
+    >
+      <label
+        class="usa-label"
+        for="test-4"
+        id="test-4-label"
+      >
+        test-4
+      </label>
+      <div
+        class="usa-hint"
+        id="test-4-hint"
+      >
+        mm/dd/yyyy
+      </div>
+      <div
+        class="usa-date-picker"
+      >
+        <div
+          class="grid-row"
+        >
+          <input
+            aria-describedby="test-4-hint"
+            aria-labelledby="test-4-label"
+            class="usa-input margin-0"
+            id="test-4"
+            name="test-4"
+            value=""
+          />
+          <div
+            class="flex-column"
+          >
+            <button
+              aria-label="calendar button"
+              class="calendar-button padding-x-1 padding-top-1"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="calendar today icon"
+                class="usa-icon--size-3"
+                color="black"
+                data-testid="calendar-button"
+                fill="currentColor"
+                role="button"
+              >
+                <use
+                  href="[object Object]#calendar_today"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tests for the DateRange component. compontent snapshots min date datefield 1`] = `
+<div>
+  <div>
+    <div
+      class="usa-form-group datefield"
+    >
+      <label
+        class="usa-label"
+        for="test-5"
+        id="test-5-label"
+      >
+        test-5
+      </label>
+      <div
+        class="usa-date-picker"
+      >
+        <div
+          class="grid-row"
+        >
+          <input
+            aria-describedby="test-5-label"
+            aria-labelledby="test-5-label"
+            class="usa-input margin-0"
+            id="test-5"
+            name="test-5"
+            value=""
+          />
+          <div
+            class="flex-column"
+          >
+            <button
+              aria-label="calendar button"
+              class="calendar-button padding-x-1 padding-top-1"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="calendar today icon"
+                class="usa-icon--size-3"
+                color="black"
+                data-testid="calendar-button"
+                fill="currentColor"
+                role="button"
+              >
+                <use
+                  href="[object Object]#calendar_today"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="usa-form-group datefield"
+    >
+      <label
+        class="usa-label"
+        for="test-5"
+        id="test-5-label"
+      >
+        test-5
+      </label>
+      <div
+        class="usa-date-picker"
+      >
+        <div
+          class="grid-row"
+        >
+          <input
+            aria-describedby="test-5-label"
+            aria-labelledby="test-5-label"
+            class="usa-input margin-0"
+            id="test-5"
+            name="test-5"
+            value=""
+          />
+          <div
+            class="flex-column"
+          >
+            <button
+              aria-label="calendar button"
+              class="calendar-button padding-x-1 padding-top-1"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="calendar today icon"
+                class="usa-icon--size-3"
+                color="black"
+                data-testid="calendar-button"
+                fill="currentColor"
+                role="button"
+              >
+                <use
+                  href="[object Object]#calendar_today"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Tests for the DateRange component. compontent snapshots primary datefield 1`] = `
+<div>
+  <div>
+    <div
+      class="usa-form-group datefield"
+    >
+      <label
+        class="usa-label"
+        for="test-3"
+        id="test-3-label"
+      >
+        test-3
+      </label>
+      <div
+        class="usa-hint"
+        id="test-3-hint"
+      >
+        mm/dd/yyyy
+      </div>
+      <div
+        class="usa-date-picker"
+      >
+        <div
+          class="grid-row"
+        >
+          <input
+            aria-describedby="test-3-hint"
+            aria-labelledby="test-3-label"
+            class="usa-input margin-0"
+            id="test-3"
+            name="test-3"
+            value=""
+          />
+          <div
+            class="flex-column"
+          >
+            <button
+              aria-label="calendar button"
+              class="calendar-button padding-x-1 padding-top-1"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="calendar today icon"
+                class="usa-icon--size-3"
+                color="black"
+                data-testid="calendar-button"
+                fill="currentColor"
+                role="button"
+              >
+                <use
+                  href="[object Object]#calendar_today"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="usa-form-group datefield"
+    >
+      <label
+        class="usa-label"
+        for="test-3"
+        id="test-3-label"
+      >
+        test-3
+      </label>
+      <div
+        class="usa-hint"
+        id="test-3-hint"
+      >
+        mm/dd/yyyy
+      </div>
+      <div
+        class="usa-date-picker"
+      >
+        <div
+          class="grid-row"
+        >
+          <input
+            aria-describedby="test-3-hint"
+            aria-labelledby="test-3-label"
+            class="usa-input margin-0"
+            id="test-3"
+            name="test-3"
+            value=""
+          />
+          <div
+            class="flex-column"
+          >
+            <button
+              aria-label="calendar button"
+              class="calendar-button padding-x-1 padding-top-1"
+            >
+              <svg
+                aria-hidden="true"
+                aria-label="calendar today icon"
+                class="usa-icon--size-3"
+                color="black"
+                data-testid="calendar-button"
+                fill="currentColor"
+                role="button"
+              >
+                <use
+                  href="[object Object]#calendar_today"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
