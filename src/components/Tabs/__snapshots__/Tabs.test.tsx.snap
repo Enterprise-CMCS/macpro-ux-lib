@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for the Tabs component component snapshot 1`] = `
+<div>
+  <div
+    class="tabs"
+  >
+    <div
+      class="tabs-row"
+      role="tablist"
+    >
+      <button
+        aria-hidden="false"
+        aria-selected="true"
+        class="tab current"
+        id="tab-panel--summary"
+        role="tab"
+      >
+        Summary
+      </button>
+      <button
+        aria-hidden="true"
+        aria-selected="false"
+        class="tab"
+        id="tab-panel--preamble"
+        role="tab"
+      >
+        Preamble
+      </button>
+      <button
+        aria-hidden="true"
+        aria-selected="false"
+        class="tab"
+        id="tab-panel--amendments"
+        role="tab"
+      >
+        Amendments
+      </button>
+      <span
+        aria-disabled="true"
+        aria-hidden="true"
+        aria-selected="false"
+        class="tab disabled"
+        id="tab-panel--disabled"
+        role="tab"
+      >
+        Disabled
+      </span>
+    </div>
+    <div
+      class="tabs-content"
+    >
+      <div
+        aria-hidden="false"
+        aria-labelledby="tab-panel--summary"
+        role="tabpanel"
+      >
+        The Bill of Rights is the first ten amendments to the United States Constitution.
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="tab-panel--preamble"
+        hidden=""
+        role="tabpanel"
+      >
+        We the People of the United States, in Order to form a more perfect Union, establish Justice, insure domestic Tranquility, provide for the common defence, promote the general Welfare, and secure the Blessings of Liberty to ourselves and our Posterity, do ordain and establish this Constitution for the United States of America.
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="tab-panel--amendments"
+        hidden=""
+        role="tabpanel"
+      >
+        <h2>
+          Bill of Rights
+        </h2>
+        <ol>
+          <li>
+            Freedoms, Petitions, Assembly
+          </li>
+          <li>
+            Right to bear arms
+          </li>
+          <li>
+            Quartering of soldiers
+          </li>
+          <li>
+            Search and arrest
+          </li>
+          <li>
+            Rights in criminal cases
+          </li>
+          <li>
+            Right to a fair trial
+          </li>
+          <li>
+            Rights in civil cases
+          </li>
+          <li>
+            Bail, fines, punishment
+          </li>
+          <li>
+            Rights retained by the People
+          </li>
+          <li>
+            States' rights
+          </li>
+        </ol>
+        <h2>
+          Later Amendments
+        </h2>
+        <ol
+          start="11"
+        >
+          <li>
+            Lawsuits against states
+          </li>
+          <li>
+            Presidential elections
+          </li>
+          <li>
+            Abolition of slavery
+          </li>
+          <li>
+            Civil rights
+          </li>
+          <li>
+            Black suffrage
+          </li>
+          <li>
+            Income taxes
+          </li>
+          <li>
+            Senatorial elections
+          </li>
+          <li>
+            Prohibition of liquor
+          </li>
+          <li>
+            Women's suffrage
+          </li>
+          <li>
+            Terms of office
+          </li>
+          <li>
+            Repeal of Prohibition
+          </li>
+          <li>
+            Term Limits for the Presidency
+          </li>
+          <li>
+            Washington, D.C., suffrage
+          </li>
+          <li>
+            Abolition of poll taxes
+          </li>
+          <li>
+            Presidential succession
+          </li>
+          <li>
+            18-year-old suffrage
+          </li>
+          <li>
+            Congressional pay raises
+          </li>
+        </ol>
+      </div>
+      <div
+        aria-hidden="true"
+        aria-labelledby="tab-panel--disabled"
+        disabled=""
+        hidden=""
+        role="tabpanel"
+      />
+    </div>
+  </div>
+</div>
+`;
