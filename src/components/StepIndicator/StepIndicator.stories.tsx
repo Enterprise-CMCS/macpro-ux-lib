@@ -15,7 +15,30 @@ export default {
     ],
     currentProgress: 3,
   },
-  argTypes: {},
+  argTypes: {
+    currentProgress: {
+      description: "Number tracker of which step the user is currently on.",
+    },
+    steps: {
+      description:
+        "An array of step object data which consist of a label and the order number. The order number is 1 based.",
+    },
+    counters: {
+      description:
+        "Boolean which shows the counters alternative to the step indidcator.",
+    },
+    smallCounters: {
+      description:
+        "Boolean which shows the smaller counters alternative to the step indicator. Only shows if counters is true.",
+    },
+    showLabels: {
+      description: "Dictates whether or not labels are show under each step.",
+    },
+    isCentered: {
+      description:
+        "Dictates whether the labels are centered under the steps. Labels must be true.",
+    },
+  },
   parameters: {
     docs: {
       description: {
@@ -34,10 +57,10 @@ export const Default = Template.bind({});
 Default.args = {};
 
 export const NoLabels = Template.bind({});
-NoLabels.args = { labels: false };
+NoLabels.args = { showLabels: false };
 
 export const Centered = Template.bind({});
-Centered.args = { centered: true };
+Centered.args = { isCentered: true };
 
 export const Counters = Template.bind({});
 Counters.args = { counters: true };
@@ -46,4 +69,4 @@ export const SmallCounters = Template.bind({});
 SmallCounters.args = { counters: true, smallCounters: true };
 
 export const CenteredCounters = Template.bind({});
-CenteredCounters.args = { counters: true, centered: true };
+CenteredCounters.args = { counters: true, isCentered: true };
