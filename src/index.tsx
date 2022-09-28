@@ -1,15 +1,15 @@
 import "./assets/css/styles.css";
-import "./assets/js/uswds-init.min.js";
-import "./assets/js/uswds.min.js";
 import "./assets/theme/styles.scss";
 import "react-calendar/dist/Calendar.css";
 
 import { Accordion } from "./components/Accordion/Accordion";
 import { AccordionGroup } from "./components/Accordion/AccordionGroup";
 import { ActionsMenu } from "./components/Header/ActionsMenu";
+import { Alert } from "./components/Alert/Alert";
 import { Button } from "./components/Button/Button";
 import { Card } from "./components/Card/Card";
 import { Datefield } from "./components/Datefield/Datefield";
+import { DateRange } from "./components/DateRange/DateRange";
 import { CardChoice } from "./components/CardChoice/CardChoice";
 import { CardChoiceGroup } from "./components/CardChoice/CardChoiceGroup";
 import { Checkbox } from "./components/Checkbox/Checkbox";
@@ -22,7 +22,10 @@ import { Logo } from "./components/Logo/Logo";
 import { Modal } from "./components/Modal/Modal";
 import { Radio } from "./components/Radio/Radio";
 import { RadioGroup } from "./components/Radio/RadioGroup";
+import { SiteAlert } from "./components/SiteAlert/SiteAlert";
 import { Search } from "./components/Search/Search";
+import { TabPanel } from "./components/Tabs/TabPanel";
+import { Tabs } from "./components/Tabs/Tabs";
 import { TextArea } from "./components/TextArea/TextArea";
 import { TextInput } from "./components/TextInput/TextInput";
 import { Typography } from "./components/Typography/Typography";
@@ -33,12 +36,14 @@ export {
   Accordion,
   AccordionGroup,
   ActionsMenu,
+  Alert,
   Button,
   Card,
   CardChoice,
   CardChoiceGroup,
   Checkbox,
   Datefield,
+  DateRange,
   Dropdown,
   Footer,
   Header,
@@ -49,6 +54,9 @@ export {
   Radio,
   RadioGroup,
   Search,
+  SiteAlert,
+  TabPanel,
+  Tabs,
   TextArea,
   TextInput,
   Typography,
