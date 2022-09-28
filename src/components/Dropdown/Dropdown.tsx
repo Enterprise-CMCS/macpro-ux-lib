@@ -11,7 +11,7 @@ interface DropdownData {
 interface Props extends IntrinsicElements {
   data: DropdownData[];
   label: string;
-  readOnly: boolean;
+  readOnly?: boolean;
 }
 
 /**
