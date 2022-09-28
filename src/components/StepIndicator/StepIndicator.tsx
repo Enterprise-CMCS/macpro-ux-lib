@@ -27,8 +27,8 @@ export const StepIndicator: React.FC<Props> = ({
   counters = false,
   smallCounters = false,
   showLabels = true,
-  currentProgress = 1,
-  steps = [],
+  currentProgress,
+  steps,
   isCentered = false,
   ...rest
 }) => {
@@ -49,6 +49,7 @@ export const StepIndicator: React.FC<Props> = ({
         {steps.map((step) => {
           return (
             <li
+              key={step.label}
               className={`usa-step-indicator__segment ${
                 step.order === currentProgress
                   ? "usa-step-indicator__segment--current"
