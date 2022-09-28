@@ -9,6 +9,7 @@ import { Alert } from "./components/Alert/Alert";
 import { Button } from "./components/Button/Button";
 import { Card } from "./components/Card/Card";
 import { Datefield } from "./components/Datefield/Datefield";
+import { DateRange } from "./components/DateRange/DateRange";
 import { CardChoice } from "./components/CardChoice/CardChoice";
 import { CardChoiceGroup } from "./components/CardChoice/CardChoiceGroup";
 import { Checkbox } from "./components/Checkbox/Checkbox";
@@ -42,6 +43,7 @@ export {
   CardChoiceGroup,
   Checkbox,
   Datefield,
+  DateRange,
   Dropdown,
   Footer,
   Header,
