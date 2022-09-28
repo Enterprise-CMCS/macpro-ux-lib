@@ -187,7 +187,7 @@ export const Datefield: React.FC<Props> = ({
               onChange={setDateValue}
               value={formatStringDateToDate(currentDate)}
               defaultActiveStartDate={
-                formatStringDateToDate(value) ||
+                formatStringDateToDate(currentDate) ||
                 formatStringDateToDate(minDate) ||
                 formatStringDateToDate(maxDate)
               }
