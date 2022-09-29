@@ -1,3 +1,17 @@
+# [1.16.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.15.0...v1.16.0) (2022-09-28)
+
+
+### Features
+
+* **USA Header Dark Variant:** Add UsaBanner dark variant ([ea3b073](https://github.com/cmsgov/macpro-ux-lib/commit/ea3b073857f9d0a091feeff5e005f37834561fe1))
+
+# [1.15.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.14.1...v1.15.0) (2022-09-28)
+
+
+### Features
+
+* **Date Range:** Add Date Range component for user to select a range of dates ([8152711](https://github.com/cmsgov/macpro-ux-lib/commit/81527111e8fc59abf043f1272d24df9b9d8cd607))
+
 ## [1.14.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.14.0...v1.14.1) (2022-09-27)
 
 

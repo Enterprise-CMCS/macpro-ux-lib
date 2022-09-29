@@ -19,6 +19,10 @@ export default {
       description:
         "Determines which version of the banner to display (en === english, es === español).",
     },
+    variant: {
+      description:
+        "Indicates which color variant of the banner to display. Defaults to standard light-gray background.",
+    },
   },
 } as ComponentMeta<typeof UsaBanner>;
 
@@ -28,6 +32,9 @@ const Template: ComponentStory<typeof UsaBanner> = ({ ...rest }) => (
 
 export const Default = Template.bind({});
 Default.args = {};
+
+export const DarkVariant = Template.bind({});
+DarkVariant.args = { variant: "dark" };
 
 export const EnglishBanner = Template.bind({});
 EnglishBanner.args = {
