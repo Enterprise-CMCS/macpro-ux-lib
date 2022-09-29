@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, screen, render } from "../../test-setup";
+import { screen, render } from "../../test-setup";
 import { StepIndicator } from "./StepIndicator";
 
 describe("Tests for the StepIndicator component", () => {
@@ -21,6 +21,7 @@ describe("Tests for the StepIndicator component", () => {
     );
 
     const StepComp = screen.getByTestId("StepAlert");
+
     expect(StepComp).toBeInTheDocument();
   });
 
@@ -62,10 +63,12 @@ describe("Tests for the StepIndicator component", () => {
         currentProgress={5}
         steps={steps}
         counters={true}
+        isCentered={true}
       />
     );
     const StepComp = screen.getByTestId("StepAlert");
 
+    expect(StepComp).toHaveClass("usa-step-indicator--center");
     expect(StepComp).toHaveClass("usa-step-indicator--counters");
   });
 });
