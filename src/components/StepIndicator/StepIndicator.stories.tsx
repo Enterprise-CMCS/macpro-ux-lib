@@ -21,7 +21,7 @@ export default {
     },
     steps: {
       description:
-        "An array of step object data which consist of a label and the order number. The order number is 1 based.",
+        "An array of step object data which consist of a label and the order number. The order number is 1 based. Each object shape should appear as follows:\n\n `{ label: string; order: number }`",
     },
     counters: {
       description:
