@@ -3,7 +3,8 @@ import { Icon } from "../Icon/Icon";
 
 type BreadcrumbItems = {
   name: string;
-  path: string;
+  onClick?: () => any;
+  path?: string;
 }[];
 
 interface BreadcrumbProps {
@@ -33,7 +34,11 @@ export const Breadcrumbs: React.FC<BreadcrumbProps> = ({
               className="usa-breadcrumb__list-item"
               key={`${index}-${item.name}`}
             >
-              <a href={item.path} className="usa-breadcrumb__link">
+              <a
+                href={item.path}
+                className="usa-breadcrumb__link"
+                onClick={item.onClick}
+              >
                 <span>{item.name}</span>
               </a>
             </li>
@@ -52,7 +57,7 @@ export const Breadcrumbs: React.FC<BreadcrumbProps> = ({
       {parentOnly && (
         <ol className="usa-breadcrumb__list">
           <li className="usa-breadcrumb__list-item">
-            <a href={items[0].path}>
+            <a href={items[0].path} onClick={items[0].onClick}>
               <div className="parent-only">
                 <Icon name="arrow_back" className="arrow-back" />
                 <span>{items[0].name}</span>
