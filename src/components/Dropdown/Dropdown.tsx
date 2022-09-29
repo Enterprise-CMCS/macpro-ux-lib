@@ -133,18 +133,17 @@ export const Dropdown: React.FC<Props> = ({
       >
         <select
           {...rest}
-          aria-hidden={hidden}
+          aria-hidden={true}
           className={`usa-select usa-sr-only usa-combo-box__select${
             className ? ` ${className}` : ""
           }`}
-          id={id}
           name={name}
           onChange={(e) => setValue(e.target.value)}
           tabIndex={-1}
           value={value}
         >
-          <option value="">{label}</option>
-          {data.map((itm, idx) => (
+          <option value={undefined}></option>
+          {dropdownData.map((itm, idx) => (
             <option
               key={`usa-combo-box--option--${id}-${idx}`}
               value={itm.value}
@@ -179,13 +178,13 @@ export const Dropdown: React.FC<Props> = ({
         />
         <span className="usa-combo-box__clear-input__wrapper" tabIndex={-1}>
           <button
+            hidden={!value}
             type="button"
             className="usa-combo-box__clear-input"
             aria-label="Clear the select contents"
             onClick={() => {
               setDropdownData(data);
-              setInputValue("");
-              setValue(undefined);
+              setValue("");
             }}
           >
             <Icon name="close" />
@@ -250,7 +249,7 @@ export const Dropdown: React.FC<Props> = ({
 const UseFocus = (): [React.MutableRefObject<any>, () => void] => {
   const htmlElRef = useRef<any>(null);
   const setFocus = () => {
-    htmlElRef.current && htmlElRef.current.focus();
+    htmlElRef.current.focus();
   };
 
   return [htmlElRef, setFocus];

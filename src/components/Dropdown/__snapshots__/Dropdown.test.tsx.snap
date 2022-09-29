@@ -1,10 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for the Dropdown component component snapshot 1`] = `
+exports[`Test the Dropdown component component snapshot 1`] = `
 <div>
   <label
     class="usa-label"
-    id="undefined-label"
+    for="fruit"
+    id="fruit-label"
   >
     Select a fruit
   </label>
@@ -15,13 +16,10 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
     <select
       aria-hidden="true"
       class="usa-select usa-sr-only usa-combo-box__select"
+      name="fruit-dropdown"
       tabindex="-1"
     >
-      <option
-        value=""
-      >
-        Select a fruit
-      </option>
+      <option />
       <option
         value="apple"
       >
@@ -346,13 +344,14 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
     <input
       aria-activedescendant=""
       aria-autocomplete="list"
-      aria-controls="undefined--list"
-      aria-describedby="undefined--assistiveHint"
+      aria-controls="fruit--list"
+      aria-describedby="fruit--assistiveHint"
       aria-expanded="false"
-      aria-owns="undefined--list"
+      aria-owns="fruit--list"
       autocapitalize="none"
       autocomplete="off"
       class="usa-combo-box__input"
+      id="fruit"
       role="combobox"
       type="text"
       value=""
@@ -364,6 +363,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
       <button
         aria-label="Clear the select contents"
         class="usa-combo-box__clear-input"
+        hidden=""
         type="button"
       >
         <svg
@@ -410,10 +410,10 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
       </button>
     </span>
     <ul
-      aria-labelledby="undefined-label"
+      aria-labelledby="fruit-label"
       class="usa-combo-box__list"
       hidden=""
-      id="undefined--list"
+      id="fruit--list"
       role="listbox"
       tabindex="-1"
     >
@@ -423,7 +423,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option usa-combo-box__list-option--focused"
         data-value="apple"
-        id="undefined--option-0"
+        id="fruit--option-0"
         role="option"
         tabindex="0"
       >
@@ -435,7 +435,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="apricot"
-        id="undefined--option-1"
+        id="fruit--option-1"
         role="option"
         tabindex="-1"
       >
@@ -447,7 +447,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="avocado"
-        id="undefined--option-2"
+        id="fruit--option-2"
         role="option"
         tabindex="-1"
       >
@@ -459,7 +459,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="banana"
-        id="undefined--option-3"
+        id="fruit--option-3"
         role="option"
         tabindex="-1"
       >
@@ -471,7 +471,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="blackberry"
-        id="undefined--option-4"
+        id="fruit--option-4"
         role="option"
         tabindex="-1"
       >
@@ -483,7 +483,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="blood orange"
-        id="undefined--option-5"
+        id="fruit--option-5"
         role="option"
         tabindex="-1"
       >
@@ -495,7 +495,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="blueberry"
-        id="undefined--option-6"
+        id="fruit--option-6"
         role="option"
         tabindex="-1"
       >
@@ -507,7 +507,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="boysenberry"
-        id="undefined--option-7"
+        id="fruit--option-7"
         role="option"
         tabindex="-1"
       >
@@ -519,7 +519,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="breadfruit"
-        id="undefined--option-8"
+        id="fruit--option-8"
         role="option"
         tabindex="-1"
       >
@@ -531,7 +531,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="buddhas hand citron"
-        id="undefined--option-9"
+        id="fruit--option-9"
         role="option"
         tabindex="-1"
       >
@@ -543,7 +543,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="cantaloupe"
-        id="undefined--option-10"
+        id="fruit--option-10"
         role="option"
         tabindex="-1"
       >
@@ -555,7 +555,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="clementine"
-        id="undefined--option-11"
+        id="fruit--option-11"
         role="option"
         tabindex="-1"
       >
@@ -567,7 +567,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="crab apple"
-        id="undefined--option-12"
+        id="fruit--option-12"
         role="option"
         tabindex="-1"
       >
@@ -579,7 +579,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="currant"
-        id="undefined--option-13"
+        id="fruit--option-13"
         role="option"
         tabindex="-1"
       >
@@ -591,7 +591,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="cherry"
-        id="undefined--option-14"
+        id="fruit--option-14"
         role="option"
         tabindex="-1"
       >
@@ -603,7 +603,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="custard apple"
-        id="undefined--option-15"
+        id="fruit--option-15"
         role="option"
         tabindex="-1"
       >
@@ -615,7 +615,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="coconut"
-        id="undefined--option-16"
+        id="fruit--option-16"
         role="option"
         tabindex="-1"
       >
@@ -627,7 +627,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="cranberry"
-        id="undefined--option-17"
+        id="fruit--option-17"
         role="option"
         tabindex="-1"
       >
@@ -639,7 +639,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="date"
-        id="undefined--option-18"
+        id="fruit--option-18"
         role="option"
         tabindex="-1"
       >
@@ -651,7 +651,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="dragonfruit"
-        id="undefined--option-19"
+        id="fruit--option-19"
         role="option"
         tabindex="-1"
       >
@@ -663,7 +663,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="durian"
-        id="undefined--option-20"
+        id="fruit--option-20"
         role="option"
         tabindex="-1"
       >
@@ -675,7 +675,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="elderberry"
-        id="undefined--option-21"
+        id="fruit--option-21"
         role="option"
         tabindex="-1"
       >
@@ -687,7 +687,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="fig"
-        id="undefined--option-22"
+        id="fruit--option-22"
         role="option"
         tabindex="-1"
       >
@@ -699,7 +699,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="gooseberry"
-        id="undefined--option-23"
+        id="fruit--option-23"
         role="option"
         tabindex="-1"
       >
@@ -711,7 +711,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="grape"
-        id="undefined--option-24"
+        id="fruit--option-24"
         role="option"
         tabindex="-1"
       >
@@ -723,7 +723,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="grapefruit"
-        id="undefined--option-25"
+        id="fruit--option-25"
         role="option"
         tabindex="-1"
       >
@@ -735,7 +735,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="guava"
-        id="undefined--option-26"
+        id="fruit--option-26"
         role="option"
         tabindex="-1"
       >
@@ -747,7 +747,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="honeydew melon"
-        id="undefined--option-27"
+        id="fruit--option-27"
         role="option"
         tabindex="-1"
       >
@@ -759,7 +759,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="jackfruit"
-        id="undefined--option-28"
+        id="fruit--option-28"
         role="option"
         tabindex="-1"
       >
@@ -771,7 +771,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="kiwifruit"
-        id="undefined--option-29"
+        id="fruit--option-29"
         role="option"
         tabindex="-1"
       >
@@ -783,7 +783,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="kumquat"
-        id="undefined--option-30"
+        id="fruit--option-30"
         role="option"
         tabindex="-1"
       >
@@ -795,7 +795,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="lemon"
-        id="undefined--option-31"
+        id="fruit--option-31"
         role="option"
         tabindex="-1"
       >
@@ -807,7 +807,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="lime"
-        id="undefined--option-32"
+        id="fruit--option-32"
         role="option"
         tabindex="-1"
       >
@@ -819,7 +819,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="lychee"
-        id="undefined--option-33"
+        id="fruit--option-33"
         role="option"
         tabindex="-1"
       >
@@ -831,7 +831,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="mandarine"
-        id="undefined--option-34"
+        id="fruit--option-34"
         role="option"
         tabindex="-1"
       >
@@ -843,7 +843,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="mango"
-        id="undefined--option-35"
+        id="fruit--option-35"
         role="option"
         tabindex="-1"
       >
@@ -855,7 +855,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="mangosteen"
-        id="undefined--option-36"
+        id="fruit--option-36"
         role="option"
         tabindex="-1"
       >
@@ -867,7 +867,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="marionberry"
-        id="undefined--option-37"
+        id="fruit--option-37"
         role="option"
         tabindex="-1"
       >
@@ -879,7 +879,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="nectarine"
-        id="undefined--option-38"
+        id="fruit--option-38"
         role="option"
         tabindex="-1"
       >
@@ -891,7 +891,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="orange"
-        id="undefined--option-39"
+        id="fruit--option-39"
         role="option"
         tabindex="-1"
       >
@@ -903,7 +903,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="papaya"
-        id="undefined--option-40"
+        id="fruit--option-40"
         role="option"
         tabindex="-1"
       >
@@ -915,7 +915,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="passionfruit"
-        id="undefined--option-41"
+        id="fruit--option-41"
         role="option"
         tabindex="-1"
       >
@@ -927,7 +927,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="peach"
-        id="undefined--option-42"
+        id="fruit--option-42"
         role="option"
         tabindex="-1"
       >
@@ -939,7 +939,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="pear"
-        id="undefined--option-43"
+        id="fruit--option-43"
         role="option"
         tabindex="-1"
       >
@@ -951,7 +951,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="persimmon"
-        id="undefined--option-44"
+        id="fruit--option-44"
         role="option"
         tabindex="-1"
       >
@@ -963,7 +963,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="plantain"
-        id="undefined--option-45"
+        id="fruit--option-45"
         role="option"
         tabindex="-1"
       >
@@ -975,7 +975,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="plum"
-        id="undefined--option-46"
+        id="fruit--option-46"
         role="option"
         tabindex="-1"
       >
@@ -987,7 +987,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="pineapple"
-        id="undefined--option-47"
+        id="fruit--option-47"
         role="option"
         tabindex="-1"
       >
@@ -999,7 +999,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="pluot"
-        id="undefined--option-48"
+        id="fruit--option-48"
         role="option"
         tabindex="-1"
       >
@@ -1011,7 +1011,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="pomegranate"
-        id="undefined--option-49"
+        id="fruit--option-49"
         role="option"
         tabindex="-1"
       >
@@ -1023,7 +1023,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="pomelo"
-        id="undefined--option-50"
+        id="fruit--option-50"
         role="option"
         tabindex="-1"
       >
@@ -1035,7 +1035,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="quince"
-        id="undefined--option-51"
+        id="fruit--option-51"
         role="option"
         tabindex="-1"
       >
@@ -1047,7 +1047,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="raspberry"
-        id="undefined--option-52"
+        id="fruit--option-52"
         role="option"
         tabindex="-1"
       >
@@ -1059,7 +1059,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="rambutan"
-        id="undefined--option-53"
+        id="fruit--option-53"
         role="option"
         tabindex="-1"
       >
@@ -1071,7 +1071,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="soursop"
-        id="undefined--option-54"
+        id="fruit--option-54"
         role="option"
         tabindex="-1"
       >
@@ -1083,7 +1083,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="starfruit"
-        id="undefined--option-55"
+        id="fruit--option-55"
         role="option"
         tabindex="-1"
       >
@@ -1095,7 +1095,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="strawberry"
-        id="undefined--option-56"
+        id="fruit--option-56"
         role="option"
         tabindex="-1"
       >
@@ -1107,7 +1107,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="tamarind"
-        id="undefined--option-57"
+        id="fruit--option-57"
         role="option"
         tabindex="-1"
       >
@@ -1119,7 +1119,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="tangelo"
-        id="undefined--option-58"
+        id="fruit--option-58"
         role="option"
         tabindex="-1"
       >
@@ -1131,7 +1131,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="tangerine"
-        id="undefined--option-59"
+        id="fruit--option-59"
         role="option"
         tabindex="-1"
       >
@@ -1143,7 +1143,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="ugli fruit"
-        id="undefined--option-60"
+        id="fruit--option-60"
         role="option"
         tabindex="-1"
       >
@@ -1155,7 +1155,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="watermelon"
-        id="undefined--option-61"
+        id="fruit--option-61"
         role="option"
         tabindex="-1"
       >
@@ -1167,7 +1167,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="white currant"
-        id="undefined--option-62"
+        id="fruit--option-62"
         role="option"
         tabindex="-1"
       >
@@ -1179,7 +1179,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
         aria-setsize="64"
         class="usa-combo-box__list-option"
         data-value="yuzu"
-        id="undefined--option-63"
+        id="fruit--option-63"
         role="option"
         tabindex="-1"
       >
@@ -1192,7 +1192,7 @@ exports[`Tests for the Dropdown component component snapshot 1`] = `
     />
     <span
       class="usa-sr-only"
-      id="undefined--assistiveHint"
+      id="fruit--assistiveHint"
     >
       When autocomplete results are available use up and down arrows to review and enter to select. Touch device users, explore by touch or with swipe gestures.
     </span>
