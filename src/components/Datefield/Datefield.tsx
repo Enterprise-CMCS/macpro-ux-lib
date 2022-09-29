@@ -72,8 +72,30 @@ export const Datefield: React.FC<Props> = ({
   const toggleCalendar = () => {
     if (toggleRangeCalendars !== undefined) {
       toggleRangeCalendars();
+      focusDateOnOpen(!rangeCalendarOpen!);
     } else {
       setCalendarOpen(!calendarOpen);
+      focusDateOnOpen(!calendarOpen);
+    }
+  };
+
+  const focusDateOnOpen = (clickedToOpenCalendar: boolean) => {
+    if (clickedToOpenCalendar) {
+      if (currentDate) {
+        setTimeout(() => {
+          const currentSelectedDate = document.getElementsByClassName(
+            "react-calendar__tile--active "
+          )[0] as HTMLElement;
+          currentSelectedDate?.focus();
+        });
+      } else {
+        setTimeout(() => {
+          const today = document.getElementsByClassName(
+            "react-calendar__tile--now"
+          )[0] as HTMLElement;
+          today?.focus();
+        });
+      }
     }
   };
 
