@@ -69,4 +69,8 @@
     background-color: c.$primary !important;
     color: white !important;
   }
+
+  .range-start-end:active {
+    background-color: c.$primary-darker !important;
+  }
 }
