@@ -5,6 +5,7 @@ type IntrinsicElements = JSX.IntrinsicElements["p"];
 type Step = { label: string; order: number };
 
 interface Props extends IntrinsicElements {
+  headingText: string;
   currentProgress: number;
   steps: Step[];
   counters?: boolean;
@@ -16,12 +17,13 @@ interface Props extends IntrinsicElements {
 /**
  * **StepIndicator Component**
  *
- * @param {number}    currentProgress    Number tracker of which step the user is currently on.
- * @param {Step[]}    steps              An array of step object data which consist of a label and the order number. The order number is 1 based.
- * @param {boolean}   counters           Boolean which shows the counters alternative to the step indidcator.
- * @param {boolean}   smallCounters      Boolean which shows the smaller counters alternative to the step indicator. Only shows if counters is true.
- * @param {boolean}   showLabels         Dictates whether or not labels are show under each step.
- * @param {boolean}   isCentered         Dictates whether the labels are centered under the steps. Labels must be true.
+ * @param {string}    headingText         The heading text of the step indicator.
+ * @param {number}    currentProgress     Number tracker of which step the user is currently on.
+ * @param {Step[]}    steps               An array of step object data which consist of a label and the order number. The order number is 1 based.
+ * @param {boolean}  [counters]           Boolean which shows the counters alternative to the step indidcator.
+ * @param {boolean}   [smallCounters]     Boolean which shows the smaller counters alternative to the step indicator. Only shows if counters is true.
+ * @param {boolean}   [showLabels]        Dictates whether or not labels are show under each step.
+ * @param {boolean}   [isCentered]        Dictates whether the labels are centered under the steps. Labels must be true.
  */
 export const StepIndicator: React.FC<Props> = ({
   counters = false,
@@ -30,6 +32,7 @@ export const StepIndicator: React.FC<Props> = ({
   currentProgress,
   steps,
   isCentered = false,
+  headingText,
   ...rest
 }) => {
   return (
@@ -84,7 +87,7 @@ export const StepIndicator: React.FC<Props> = ({
             </span>{" "}
           </span>
           <span className="usa-step-indicator__heading-text">
-            Supporting documents
+            {headingText}
           </span>
         </h4>
       </div>

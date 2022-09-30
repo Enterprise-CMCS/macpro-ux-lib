@@ -14,8 +14,12 @@ export default {
       { label: "Review and submit", order: 5 },
     ],
     currentProgress: 3,
+    headingText: "Supporting documents",
   },
   argTypes: {
+    headingText: {
+      description: "The heading text of the step indicator.",
+    },
     currentProgress: {
       description: "Number tracker of which step the user is currently on.",
     },
