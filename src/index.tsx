@@ -6,6 +6,7 @@ import { Accordion } from "./components/Accordion/Accordion";
 import { AccordionGroup } from "./components/Accordion/AccordionGroup";
 import { ActionsMenu } from "./components/Header/ActionsMenu";
 import { Alert } from "./components/Alert/Alert";
+import { Breadcrumbs } from "./components/Breadcrumbs/Breadcrumbs";
 import { Button } from "./components/Button/Button";
 import { Card } from "./components/Card/Card";
 import { Datefield } from "./components/Datefield/Datefield";
@@ -37,6 +38,7 @@ export {
   AccordionGroup,
   ActionsMenu,
   Alert,
+  Breadcrumbs,
   Button,
   Card,
   CardChoice,
