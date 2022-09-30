@@ -79,12 +79,12 @@ export const Datefield: React.FC<Props> = ({
     }
   };
 
-  const focusDateOnOpen = (clickedToOpenCalendar: boolean) => {
-    if (clickedToOpenCalendar) {
+  const focusDateOnOpen = (openCalendar: boolean) => {
+    if (openCalendar) {
       if (currentDate) {
         setTimeout(() => {
           const currentSelectedDate = document.getElementsByClassName(
-            "react-calendar__tile--active "
+            "react-calendar__tile--active"
           )[0] as HTMLElement;
           currentSelectedDate?.focus();
         });
