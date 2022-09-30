@@ -1,3 +1,10 @@
+# [1.16.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.15.0...v1.16.0) (2022-09-28)
+
+
+### Features
+
+* **USA Header Dark Variant:** Add UsaBanner dark variant ([ea3b073](https://github.com/cmsgov/macpro-ux-lib/commit/ea3b073857f9d0a091feeff5e005f37834561fe1))
+
 # [1.15.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.14.1...v1.15.0) (2022-09-28)
 
 

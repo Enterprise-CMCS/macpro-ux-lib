@@ -1,0 +1,23 @@
+@use "../../assets/theme/macbis-colors" as c;
+
+// Currently, these colors are only used in the UsaBanner
+$black: #1b1b1b;
+$gray: #adadad;
+$white: #fff;
+
+.usa-banner {
+  &.usa-banner--dark {
+    background-color: $black;
+    .usa-banner__button[aria-expanded="true"]::before {
+      background-color: $black;
+    }
+    .usa-banner__header-text,
+    .usa-media-block__body {
+      color: $white;
+    }
+    .usa-banner__button-text,
+    .usa-banner__header-action {
+      color: $gray;
+    }
+  }
+}
