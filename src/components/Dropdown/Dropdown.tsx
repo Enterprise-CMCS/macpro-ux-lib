@@ -132,7 +132,6 @@ export const Dropdown: React.FC<Props> = ({
         onBlur={(e) => handleBlur(e)}
       >
         <select
-          {...rest}
           aria-hidden={true}
           className={`usa-select usa-sr-only usa-combo-box__select${
             className ? ` ${className}` : ""
@@ -141,6 +140,7 @@ export const Dropdown: React.FC<Props> = ({
           onChange={(e) => setValue(e.target.value)}
           tabIndex={-1}
           value={value}
+          {...rest}
         >
           <option value={undefined}></option>
           {dropdownData.map((itm, idx) => (
