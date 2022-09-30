@@ -80,7 +80,11 @@ export const StepIndicator: React.FC<Props> = ({
           <span className="usa-step-indicator__heading-counter">
             <span className="usa-sr-only">Step</span>
             <span className="usa-step-indicator__current-step margin-right-05">
-              {currentProgress}
+              {currentProgress > 0 && currentProgress <= steps.length
+                ? currentProgress
+                : currentProgress > steps.length
+                ? steps.length
+                : 1}
             </span>
             <span className="usa-step-indicator__total-steps">
               of {steps.length}
