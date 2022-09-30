@@ -17,6 +17,7 @@ describe("Tests for the StepIndicator component", () => {
         data-testid="StepAlert"
         currentProgress={1}
         steps={steps}
+        headingText="Test"
       />
     );
 
@@ -32,11 +33,13 @@ describe("Tests for the StepIndicator component", () => {
         currentProgress={1}
         steps={steps}
         isCentered={true}
+        headingText="Test Heading"
       />
     );
 
     const StepComp = screen.getByTestId("StepAlert");
     expect(StepComp).toBeInTheDocument();
+    expect(StepComp).toHaveTextContent("Test Heading");
   });
 
   it("should render the StepIndicator component", () => {
@@ -48,6 +51,7 @@ describe("Tests for the StepIndicator component", () => {
         counters={true}
         smallCounters={true}
         showLabels={false}
+        headingText="Test"
       />
     );
 
@@ -64,6 +68,7 @@ describe("Tests for the StepIndicator component", () => {
         steps={steps}
         counters={true}
         isCentered={true}
+        headingText="Test"
       />
     );
     const StepComp = screen.getByTestId("StepAlert");
