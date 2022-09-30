@@ -33,6 +33,10 @@ describe("Test the Dropdown component", () => {
     selectElem = container.getElementsByClassName("usa-combo-box__select")[0];
     inputElem = container.getElementsByClassName("usa-combo-box__input")[0];
     listElem = container.getElementsByClassName("usa-combo-box__list")[0];
+
+    jest
+      .spyOn(window, "requestAnimationFrame")
+      .mockImplementation((cb: any) => cb());
   });
 
   it("should render correctly", () => {
@@ -62,6 +66,14 @@ describe("Test the Dropdown component", () => {
       "usa-combo-box__toggle-list"
     )[0];
     userEvent.click(toggleArrow);
+    expect(listElem).not.toBeVisible();
+
+    // expand on input focus
+    userEvent.focus(inputElem);
+    expect(listElem).toBeVisible();
+
+    // collapse on input blur
+    userEvent.blur(inputElem);
     expect(listElem).not.toBeVisible();
   });
 
