@@ -144,8 +144,8 @@ describe("Tests for the Datefield component.", () => {
     expect(DatefieldInput).toHaveValue();
   });
 
-  it("Should format date when provided a min date", () => {
-    render(
+  it("Should format date when provided a min date", async () => {
+    const { container } = render(
       <Datefield
         data-testid="Datefield"
         id="test-6"
@@ -153,8 +153,39 @@ describe("Tests for the Datefield component.", () => {
         label="test-6"
       />
     );
-    const DatefieldComp = screen.getByTestId("Datefield");
-    expect(DatefieldComp).toBeInTheDocument();
+    const DatefieldButton = screen.getByTestId("calendar-button");
+    fireEvent.click(DatefieldButton);
+    await new Promise((res) => setTimeout(res, 1000));
+
+    const today = container.getElementsByClassName(
+      "react-calendar__tile--now"
+    )[0];
+
+    expect(today).toHaveFocus();
+  });
+
+  it("Should format date when provided a min date", async () => {
+    const { container } = render(
+      <Datefield
+        data-testid="Datefield"
+        id="test-11"
+        name="test-11"
+        label="test-11"
+      />
+    );
+
+    const DatefieldButton = screen.getByTestId("calendar-button");
+    fireEvent.click(DatefieldButton);
+    fireEvent.click(screen.getAllByRole("button")[6]);
+
+    fireEvent.click(DatefieldButton);
+    await new Promise((res) => setTimeout(res, 1000));
+
+    const selectedDate = container.getElementsByClassName(
+      "react-calendar__tile--active"
+    )[0];
+
+    expect(selectedDate).toHaveFocus();
   });
 
   it("Should be disabled", () => {

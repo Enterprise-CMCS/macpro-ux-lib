@@ -65,7 +65,7 @@ export const Datefield: React.FC<Props> = ({
       (value && checkValidDate(value)) ||
       (defaultDate && checkValidDate(defaultDate))
     ) {
-      setDate(value || defaultDate || undefined);
+      setDate(value || defaultDate);
     }
   }, [value, defaultDate]);
 
@@ -86,14 +86,14 @@ export const Datefield: React.FC<Props> = ({
           const currentSelectedDate = document.getElementsByClassName(
             "react-calendar__tile--active"
           )[0] as HTMLElement;
-          currentSelectedDate?.focus();
+          if (currentSelectedDate) currentSelectedDate.focus();
         });
       } else {
         setTimeout(() => {
-          const today = document.getElementsByClassName(
+          const todaysDate = document.getElementsByClassName(
             "react-calendar__tile--now"
           )[0] as HTMLElement;
-          today?.focus();
+          if (todaysDate) todaysDate.focus();
         });
       }
     }
