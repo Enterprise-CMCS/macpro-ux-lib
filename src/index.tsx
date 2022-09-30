@@ -15,6 +15,7 @@ import { CardChoice } from "./components/CardChoice/CardChoice";
 import { CardChoiceGroup } from "./components/CardChoice/CardChoiceGroup";
 import { Checkbox } from "./components/Checkbox/Checkbox";
 import { Dropdown } from "./components/Dropdown/Dropdown";
+import { FileInput } from "./components/FileInput/FileInput";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Icon } from "./components/Icon/Icon";
@@ -47,6 +48,7 @@ export {
   Datefield,
   DateRange,
   Dropdown,
+  FileInput,
   Footer,
   Header,
   Icon,
