@@ -54,9 +54,10 @@ export const StepIndicator: React.FC<Props> = ({
             <li
               key={step.label}
               className={`usa-step-indicator__segment ${
-                step.order === currentProgress
+                step.order === currentProgress ||
+                (currentProgress <= 0 && step.order === 1)
                   ? "usa-step-indicator__segment--current"
-                  : step.order < currentProgress
+                  : step.order <= currentProgress
                   ? "usa-step-indicator__segment--complete"
                   : ""
               }`}
