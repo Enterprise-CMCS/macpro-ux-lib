@@ -41,6 +41,18 @@ export default {
     value: {
       description: "Value of the input element.",
     },
+    dateRangeChange: {
+      table: { disable: true },
+    },
+    rangeCalendarOpen: {
+      table: { disable: true },
+    },
+    toggleRangeCalendars: {
+      table: { disable: true },
+    },
+    selectedRangeClassName: {
+      table: { disable: true },
+    },
   },
   args: {},
   parameters: {
@@ -80,14 +92,14 @@ DefaultDatefield.parameters = {
   },
 };
 
-export const MinimumDateRange = Template.bind({});
-MinimumDateRange.args = {
+export const MinimumDateField = Template.bind({});
+MinimumDateField.args = {
   minDate: "08/08/2022",
   id: "min-date",
   name: "min-date",
   label: "Minimum date",
 };
-MinimumDateRange.parameters = {
+MinimumDateField.parameters = {
   docs: {
     description: {
       story:
@@ -96,14 +108,14 @@ MinimumDateRange.parameters = {
   },
 };
 
-export const MaximumDateRange = Template.bind({});
-MaximumDateRange.args = {
+export const MaximumDateField = Template.bind({});
+MaximumDateField.args = {
   maxDate: "08/08/2022",
   id: "max-date",
   name: "max-date",
   label: "Maximum date",
 };
-MaximumDateRange.parameters = {
+MaximumDateField.parameters = {
   docs: {
     description: {
       story:

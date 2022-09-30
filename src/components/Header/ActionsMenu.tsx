@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Icon, IconChoice } from "../Icon/Icon";
 import { Link, LinkProps } from "../Link/Link";
+import { useOutsideClick } from "hooks/useOutsideClick";
 
 interface ActionsMenuLink extends LinkProps {
   iconName?: IconChoice;
@@ -20,21 +21,30 @@ interface Props {
 
 export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const wrapperRef = useRef(null);
+  useOutsideClick(wrapperRef, () => {
+    setIsOpen(false);
+  });
 
   return (
-    <div className="user-actions-container">
-      <span className="menu-label" onClick={() => setIsOpen(!isOpen)}>
+    <div
+      className={`user-actions-container${
+        isOpen ? " user-actions-container__drop-shadow" : ""
+      }`}
+      ref={wrapperRef}
+    >
+      <button className="menu-label" onClick={() => setIsOpen(!isOpen)}>
         {name}
         <Icon
           aria-hidden="true"
           name={isOpen ? "arrow_drop_up" : "arrow_drop_down"}
           color="#fff"
         />
-      </span>
+      </button>
       <menu
         className="user-actions-menu usa-nav__secondary-links"
-        style={isOpen ? { display: "block" } : {}}
         {...rest}
+        hidden={!isOpen} // TODO: This cannot say "hidden" when expanded in mobile
       >
         {links.map((linkData, idx) => {
           const { iconName, ...link } = linkData; // filter iconName out of linkData

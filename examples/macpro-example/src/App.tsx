@@ -257,15 +257,31 @@ function App() {
           id="child-textarea"
           label="Child 1 TextArea"
         />
+        <UX.Datefield id="1" name="react-calendar" label="Calendar example" />
         <UX.TextInput
           fieldName="text-input"
           id="text-input-1"
           label="The Text Input We've All Been Waiting For"
         ></UX.TextInput>
+        <UX.DateRange
+          startInputId="id-1"
+          startInputName="react-calendar"
+          startLabel="Start Range"
+          endInputId="id-2"
+          endInputName="react-calendar2"
+          endLabel="End Range"
+          defaultStartDate="08/08/2022"
+          hint={true}
+        />
         <UX.Alert
           alertHeading="Alert Heading"
           alertBody="Alert Body"
           variation="info"
+        />
+        <UX.SiteAlert
+          alertHeading="Alert Heading"
+          alertBody="Alert Body"
+          emergency
         />
         <UX.Datefield id="1" name="react-calendar" label="Calendar example" />
         <UX.Tabs>

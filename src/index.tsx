@@ -1,6 +1,4 @@
 import "./assets/css/styles.css";
-import "./assets/js/uswds-init.min.js";
-import "./assets/js/uswds.min.js";
 import "./assets/theme/styles.scss";
 import "react-calendar/dist/Calendar.css";
 
@@ -11,6 +9,7 @@ import { Alert } from "./components/Alert/Alert";
 import { Button } from "./components/Button/Button";
 import { Card } from "./components/Card/Card";
 import { Datefield } from "./components/Datefield/Datefield";
+import { DateRange } from "./components/DateRange/DateRange";
 import { CardChoice } from "./components/CardChoice/CardChoice";
 import { CardChoiceGroup } from "./components/CardChoice/CardChoiceGroup";
 import { Checkbox } from "./components/Checkbox/Checkbox";
@@ -23,6 +22,7 @@ import { Logo } from "./components/Logo/Logo";
 import { Modal } from "./components/Modal/Modal";
 import { Radio } from "./components/Radio/Radio";
 import { RadioGroup } from "./components/Radio/RadioGroup";
+import { SiteAlert } from "./components/SiteAlert/SiteAlert";
 import { Search } from "./components/Search/Search";
 import { TabPanel } from "./components/Tabs/TabPanel";
 import { Tabs } from "./components/Tabs/Tabs";
@@ -43,6 +43,7 @@ export {
   CardChoiceGroup,
   Checkbox,
   Datefield,
+  DateRange,
   Dropdown,
   Footer,
   Header,
@@ -53,6 +54,7 @@ export {
   Radio,
   RadioGroup,
   Search,
+  SiteAlert,
   TabPanel,
   Tabs,
   TextArea,

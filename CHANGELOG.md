@@ -1,3 +1,38 @@
+# [1.16.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.15.0...v1.16.0) (2022-09-28)
+
+
+### Features
+
+* **USA Header Dark Variant:** Add UsaBanner dark variant ([ea3b073](https://github.com/cmsgov/macpro-ux-lib/commit/ea3b073857f9d0a091feeff5e005f37834561fe1))
+
+# [1.15.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.14.1...v1.15.0) (2022-09-28)
+
+
+### Features
+
+* **Date Range:** Add Date Range component for user to select a range of dates ([8152711](https://github.com/cmsgov/macpro-ux-lib/commit/81527111e8fc59abf043f1272d24df9b9d8cd607))
+
+## [1.14.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.14.0...v1.14.1) (2022-09-27)
+
+
+### Bug Fixes
+
+* **Header:** refactor Header to remove functional dependency on USWDS.js ([622ad97](https://github.com/cmsgov/macpro-ux-lib/commit/622ad970da86b3ec82b99948125b3e1eb33950a2))
+
+# [1.14.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.13.0...v1.14.0) (2022-09-27)
+
+
+### Features
+
+* **Site Alerts:** Add SiteAlert component for site wise alerts ([51db26c](https://github.com/cmsgov/macpro-ux-lib/commit/51db26c02c6aa458884f1c49ab27bc8ca9589d46))
+
+# [1.13.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.12.0...v1.13.0) (2022-09-27)
+
+
+### Features
+
+* **Tabs:** add Tabs and TabPanel components ([a0f89e9](https://github.com/cmsgov/macpro-ux-lib/commit/a0f89e9e9944a92f589d70f2ce74b090f2a8a10c))
+
 # [1.12.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.11.0...v1.12.0) (2022-09-23)
 
 

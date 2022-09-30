@@ -38,6 +38,18 @@ describe("Tests for the Banner component", () => {
     const section = container.firstChild as HTMLElement;
     expect(section.classList.contains("test-class")).toBe(true);
   });
+
+  it("light/default variant", () => {
+    const { container } = render(<UsaBanner />);
+    const section = container.firstChild as HTMLElement;
+    expect(section.className).toBe("usa-banner");
+  });
+
+  it("dark variant", () => {
+    const { container } = render(<UsaBanner variant="dark" />);
+    const section = container.firstChild as HTMLElement;
+    expect(section.className).toBe("usa-banner usa-banner--dark");
+  });
 });
 
 describe("Snapshot tests for UsaBanner component", () => {

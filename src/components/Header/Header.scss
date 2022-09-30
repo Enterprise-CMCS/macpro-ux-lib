@@ -1,14 +1,28 @@
 @use "../../assets/theme/macbis-colors" as c;
 
 .usa-header {
-  @media only screen and (min-width: 64em) {
-    .usa-header--extended .usa-nav {
+  @media only screen and (min-width: 1024px) {
+    .usa-nav {
       border: none;
     }
 
     .usa-navbar-container {
       background-color: c.$primary;
       min-height: 100px;
+      .usa-navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100px;
+        align-items: center;
+        overflow: visible;
+        .usa-nav__secondary {
+          bottom: unset;
+          margin: 0;
+          position: relative;
+          z-index: 999;
+        }
+      }
     }
 
     .usa-logo .application-logo-container {
@@ -16,7 +30,7 @@
     }
   }
 
-  @media only screen and (max-width: 64em) {
+  @media only screen and (max-width: 1023px) {
     .usa-navbar-container {
       background-color: #fff;
     }
