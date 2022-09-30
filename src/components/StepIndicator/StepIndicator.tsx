@@ -17,10 +17,10 @@ interface Props extends IntrinsicElements {
 /**
  * **StepIndicator Component**
  *
- * @param {string}    headingText         The heading text of the step indicator.
- * @param {number}    currentProgress     Number tracker of which step the user is currently on.
- * @param {Step[]}    steps               An array of step object data which consist of a label and the order number. The order number is 1 based.
- * @param {boolean}  [counters]           Boolean which shows the counters alternative to the step indidcator.
+ * @param {string}     headingText        The heading text of the step indicator.
+ * @param {number}     currentProgress    Number tracker of which step the user is currently on.
+ * @param {Step[]}     steps              An array of step object data which consist of a label and the order number. The order number is 1 based.
+ * @param {boolean}   [counters]          ∂Boolean which shows the counters alternative to the step indidcator.
  * @param {boolean}   [smallCounters]     Boolean which shows the smaller counters alternative to the step indicator. Only shows if counters is true.
  * @param {boolean}   [showLabels]        Dictates whether or not labels are show under each step.
  * @param {boolean}   [isCentered]        Dictates whether the labels are centered under the steps. Labels must be true.
