@@ -40,3 +40,20 @@ export const checkValidMonthDays = (
 export const splitDateIntoVariables = (date: string): string[] => {
   return date ? date.split("/") : [];
 };
+
+export const convertFileSize = (fileSize: number) => {
+  if (fileSize < 1030000) {
+    return `${Math.ceil(fileSize / 1000)}KB`;
+  } else {
+    return `${Math.ceil(fileSize / 1030000)}MB`;
+  }
+};
+
+export const defaultAccepetedFileTypes = {
+  "image/*": [".png", ".gif", ".jpeg", ".jpg", ".svg"],
+  "text/html": [".html", ".htm"],
+  "application/pdf": [".pdf"],
+  "application/doc": [".doc"],
+  "application/docx": [".docx"],
+  "application/xlsx": [".xlsx"],
+};

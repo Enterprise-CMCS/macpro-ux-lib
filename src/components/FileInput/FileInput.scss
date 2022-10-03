@@ -1,0 +1,11 @@
+@use "../../assets/theme/macbis-colors" as c;
+
+.usa-form-group {
+  .dropzone {
+    border: black 1px dashed;
+  }
+
+  .files-uploaded {
+    background-color: c.$primary-alt-lightest;
+  }
+}
