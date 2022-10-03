@@ -8,4 +8,10 @@
   .files-uploaded {
     background-color: c.$primary-alt-lightest;
   }
+
+  .file {
+    border-top: 1px white solid;
+    border-bottom: 1px white solid;
+    height: 40px;
+  }
 }

@@ -75,8 +75,23 @@ export const FileInput: React.FC<Props> = ({
       </div>
       <div className={`dropzone${files.length ? " files-uploaded" : ""}`}>
         <div className="usa-file-input__instructions" aria-hidden="true">
-          <span className="usa-file-input__drag-text">Drag files here or </span>
-          <span className="usa-file-input__choose">choose from folder</span>
+          {files.length === 0 ? (
+            <>
+              <span className="usa-file-input__drag-text">
+                Drag files here or{" "}
+              </span>
+              <span className="usa-file-input__choose">choose from folder</span>
+            </>
+          ) : (
+            <div className="flex-row">
+              <div className="">
+                {files.length > 1
+                  ? `${files.length} files selected`
+                  : "Selected File"}
+              </div>
+              <div className="underline">choose from folder</div>
+            </div>
+          )}
         </div>
         <input
           id={id}
@@ -93,7 +108,7 @@ export const FileInput: React.FC<Props> = ({
           {...rest}
         />
         {fileRejections.map((erroredFile, index) => (
-          <div key={index}>
+          <div className="file" key={index}>
             {erroredFile.file.name}:{" "}
             {erroredFile.errors[0].message.replace(
               /[0-9]* bytes/g,
@@ -102,7 +117,11 @@ export const FileInput: React.FC<Props> = ({
           </div>
         ))}
         {files.map((file: File, index: number) => {
-          return <div key={index}>{file.name}</div>;
+          return (
+            <div className="file" key={index}>
+              {file.name}
+            </div>
+          );
         })}
       </div>
     </div>
