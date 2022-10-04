@@ -38,5 +38,6 @@ ScrollableTable.args = {
 
 export const SortableTable = Template.bind({});
 SortableTable.args = {
+  caption: "Recently admitted US states (sortable table example)",
   data: data["sortableTable"],
 };

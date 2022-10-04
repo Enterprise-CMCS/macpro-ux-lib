@@ -148,8 +148,121 @@
     ]
   },
   "sortableTable": {
-    "headers": [],
-    "body": []
+    "headers": [
+      [
+        { "value": "Name" },
+        { "value": "Order admitted to union" },
+        { "value": "Date of ratification vote" },
+        { "value": "Date admitted to union" },
+        { "value": "Percent of voters in favor of ratification" },
+        { "value": "Votes cast in favor of ratification" },
+        { "value": "Estimated population at time of admission" }
+      ]
+    ],
+    "body": [
+      [
+        { "value": "Utah" },
+        { "value": "45th", "type": "number" },
+        {
+          "value": "Nov. 5, 1895",
+          "type": "date",
+          "sortValue": "November 5, 1895"
+        },
+        {
+          "value": "Jan. 4, 1896",
+          "type": "date",
+          "sortValue": "January 4, 1896"
+        },
+        { "value": "80.5%", "type": "number" },
+        { "value": "31,305", "type": "number", "sortValue": 31305 },
+        { "value": "210,779", "type": "number", "sortValue": 210779 }
+      ],
+      [
+        { "value": "Oklahoma" },
+        { "value": "46th", "type": "number" },
+        {
+          "value": "Sept. 17, 1907",
+          "type": "date",
+          "sortValue": "September 17, 1907"
+        },
+        {
+          "value": "Nov. 16, 1907",
+          "type": "date",
+          "sortValue": "November 16, 1907"
+        },
+        { "value": "71.2%", "type": "number" },
+        { "value": "180,333", "type": "number", "sortValue": 180333 },
+        { "value": "1,657,155", "type": "number", "sortValue": 1657155 }
+      ],
+      [
+        { "value": "New Mexico" },
+        { "value": "47th", "type": "number" },
+        {
+          "value": "Nov. 5, 1911",
+          "type": "date",
+          "sortValue": "November 5, 1911"
+        },
+        {
+          "value": "Jan. 6, 1912",
+          "type": "date",
+          "sortValue": "January 6, 1912"
+        },
+        { "value": "70.3%", "type": "number" },
+        { "value": "31,742", "type": "number", "sortValue": 31742 },
+        { "value": "327,301", "type": "number", "sortValue": 327301 }
+      ],
+      [
+        { "value": "Hawaii" },
+        { "value": "50th", "type": "number" },
+        {
+          "value": "Jun. 27, 1959",
+          "type": "date",
+          "sortValue": "June 27, 1959"
+        },
+        {
+          "value": "Aug. 21, 1959",
+          "type": "date",
+          "sortValue": "August 21, 1959"
+        },
+        { "value": "94.3%", "type": "number" },
+        { "value": "132,773", "type": "number", "sortValue": 132773 },
+        { "value": "632,772", "type": "number", "sortValue": 632772 }
+      ],
+      [
+        { "value": "Arizona" },
+        { "value": "48th", "type": "number" },
+        {
+          "value": "Feb. 9, 1911",
+          "type": "date",
+          "sortValue": "February 9, 1911"
+        },
+        {
+          "value": "Feb. 14, 1912",
+          "type": "date",
+          "sortValue": "February 14, 1912"
+        },
+        { "value": "78.7%", "type": "number" },
+        { "value": "12,187", "type": "number", "sortValue": 12187 },
+        { "value": "204,354", "type": "number", "sortValue": 204354 }
+      ],
+      [
+        { "value": "Alaska" },
+        { "value": "49th", "type": "number" },
+        {
+          "value": "Apr. 24, 1956",
+          "type": "date",
+          "sortValue": "April 24, 1956"
+        },
+        {
+          "value": "Jan. 3, 1959",
+          "type": "date",
+          "sortValue": "January 3, 1959"
+        },
+        { "value": "68.1%", "type": "number" },
+        { "value": "17,477", "type": "number", "sortValue": 17477 },
+        { "value": "226,167", "type": "number", "sortValue": 226167 }
+      ]
+    ]
   },
   "standardTable": {
     "headers": [
