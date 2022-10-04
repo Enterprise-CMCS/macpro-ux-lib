@@ -58,6 +58,10 @@
     .grey-lightest {
       background-color: c.$gray-lightest;
     }
+
+    .react-calendar__tile--now:hover:not(.react-calendar__tile--active) {
+      background-color: c.$gray-lighter;
+    }
   }
 
   .range-selected,
