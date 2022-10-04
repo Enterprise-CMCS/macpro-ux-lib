@@ -39,7 +39,6 @@ export const FileInput: React.FC<Props> = ({
   ...rest
 }) => {
   const [files, setFile] = useState<File[]>([]);
-
   const onDrop = React.useCallback((acceptedFiles: File[]) => {
     setFile([...files, ...acceptedFiles]);
     console.log(acceptedFiles);
@@ -58,57 +57,63 @@ export const FileInput: React.FC<Props> = ({
       onDrop,
       accept: acceptedFileTypes || defaultAccepetedFileTypes,
       maxSize,
+      multiple: multipleFiles,
     });
 
   return (
-    <div className="usa-form-group" {...getRootProps()} {...rest}>
+    <div
+      className="usa-form-group grid-col-4 text-center pointer"
+      {...getRootProps()}
+      {...rest}
+    >
       <label className="usa-label" htmlFor={id}>
         {label}
       </label>
-      <div>
-        {hintText && <span className="usa-hint"> {hintText}</span>}
-        {showMaxSize && (
-          <span className="usa-hint">
-            Maximum file size of {convertFileSize(maxSize)}
-          </span>
-        )}
-      </div>
-      <div className={`dropzone${files.length ? " files-uploaded" : ""}`}>
-        <div className="usa-file-input__instructions" aria-hidden="true">
-          {files.length === 0 ? (
-            <>
-              <span className="usa-file-input__drag-text">
-                Drag files here or{" "}
-              </span>
-              <span className="usa-file-input__choose">choose from folder</span>
-            </>
-          ) : (
-            <div className="flex-row">
-              <div className="">
-                {files.length > 1
-                  ? `${files.length} files selected`
-                  : "Selected File"}
-              </div>
-              <div className="underline">choose from folder</div>
-            </div>
+      {(hintText || showMaxSize) && (
+        <div>
+          {hintText && <span className="usa-hint"> {hintText}</span>}
+          {showMaxSize && (
+            <span className="usa-hint">
+              Maximum file size of {convertFileSize(maxSize)}
+            </span>
           )}
         </div>
+      )}
+      <div className={`dropzone${files.length ? " files-uploaded" : ""}`}>
+        {files.length === 0 ? (
+          <div className="usa-file-input__instructions" aria-hidden="true">
+            <span className="usa-file-input__drag-text">
+              Drag files here or{" "}
+            </span>
+            <span className="usa-file-input__choose">choose from folder</span>
+          </div>
+        ) : (
+          <div className="grid-row padding-1">
+            <div className="grid-col text-left text-bold">
+              {files.length > 1
+                ? `${files.length} files selected`
+                : "Selected File"}
+            </div>
+            <div className="text-underline usa-link text-right grid-col">
+              Replace
+            </div>
+          </div>
+        )}
         <input
           id={id}
           className="usa-file-input"
           type="file"
           name={name}
-          multiple={multipleFiles}
           disabled={disabled}
           onChange={(e) => {
             console.log(e);
-            // setFile(e);
           }}
+          multiple={multipleFiles}
           {...getInputProps()}
           {...rest}
         />
         {fileRejections.map((erroredFile, index) => (
-          <div className="file" key={index}>
+          <div className="file grid-row text-left" key={index}>
             {erroredFile.file.name}:{" "}
             {erroredFile.errors[0].message.replace(
               /[0-9]* bytes/g,
@@ -118,7 +123,7 @@ export const FileInput: React.FC<Props> = ({
         ))}
         {files.map((file: File, index: number) => {
           return (
-            <div className="file" key={index}>
+            <div className="file grid-row flex-align-center" key={index}>
               {file.name}
             </div>
           );
