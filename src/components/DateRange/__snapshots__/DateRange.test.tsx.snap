@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for the DateRange component. compontent snapshots max date datefield 1`] = `
+exports[`compontent snapshots max date datefield 1`] = `
 <div>
   <div>
     <div
@@ -117,7 +117,7 @@ exports[`Tests for the DateRange component. compontent snapshots max date datefi
 </div>
 `;
 
-exports[`Tests for the DateRange component. compontent snapshots min date datefield 1`] = `
+exports[`compontent snapshots min date datefield 1`] = `
 <div>
   <div>
     <div
@@ -222,7 +222,7 @@ exports[`Tests for the DateRange component. compontent snapshots min date datefi
 </div>
 `;
 
-exports[`Tests for the DateRange component. compontent snapshots primary datefield 1`] = `
+exports[`compontent snapshots primary datefield 1`] = `
 <div>
   <div>
     <div

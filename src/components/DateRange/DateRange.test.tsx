@@ -13,8 +13,8 @@ describe("Tests for the DateRange component.", () => {
         startInputName="test-1"
         startLabel="test-1"
         endLabel="test-1"
-        startDate="09/10/22"
-        endDate="09/12/22"
+        startDate="09/10/2022"
+        endDate="09/12/2022"
         hint={false}
       />
     );
@@ -55,51 +55,94 @@ describe("Tests for the DateRange component.", () => {
     expect(DatefieldComp).toBeInTheDocument();
   });
 
-  describe("compontent snapshots", () => {
-    it("primary datefield", () => {
-      const { container } = render(
-        <DateRange
-          hint
-          startInputId="test-3"
-          endInputId="test-3"
-          startInputName="test-3"
-          endInputName="test-3"
-          startLabel="test-3"
-          endLabel="test-3"
-        />
-      );
+  it("Should render with a start date", () => {
+    render(
+      <DateRange
+        data-testid="DateRange"
+        startInputId="test-6"
+        endInputId="test-6"
+        endInputName="test-6"
+        startInputName="test-6"
+        startLabel="test-6"
+        endLabel="test-6"
+        startDate="09/10/2022"
+        hint={true}
+      />
+    );
+    const DatefieldButton2 = screen.queryAllByTestId("calendar-button")[1];
+    fireEvent.click(DatefieldButton2);
 
-      expect(container).toMatchSnapshot();
-    });
+    const DatefieldComp = screen.getByTestId("DateRange");
+    expect(DatefieldComp).toBeInTheDocument();
+  });
 
-    it("max date datefield", () => {
-      const { container } = render(
-        <DateRange
-          hint
-          startInputId="test-4"
-          startInputName="test-4"
-          startLabel="test-4"
-          endInputId="test-4"
-          endInputName="test-4"
-          endLabel="test-4"
-        />
-      );
-      expect(container).toMatchSnapshot();
-    });
+  it("Should render with an end date", async () => {
+    const { container } = render(
+      <DateRange
+        data-testid="DateRange"
+        startInputId="test-6"
+        endInputId="test-6"
+        endInputName="test-6"
+        startInputName="test-6"
+        startLabel="test-6"
+        endLabel="test-6"
+        endDate="09/10/2022"
+        hint={true}
+      />
+    );
+    const DatefieldButton = screen.queryAllByTestId("calendar-button")[0];
+    fireEvent.click(DatefieldButton);
+    await new Promise((res) => setTimeout(res, 1000));
 
-    it("min date datefield", () => {
-      const { container } = render(
-        <DateRange
-          hint={false}
-          startInputId="test-5"
-          startInputName="test-5"
-          startLabel="test-5"
-          endInputId="test-5"
-          endInputName="test-5"
-          endLabel="test-5"
-        />
-      );
-      expect(container).toMatchSnapshot();
-    });
+    const endDate = container.getElementsByClassName("date-end")[0];
+    expect(endDate).toHaveFocus();
+  });
+});
+
+describe("compontent snapshots", () => {
+  it("primary datefield", () => {
+    const { container } = render(
+      <DateRange
+        hint
+        startInputId="test-3"
+        endInputId="test-3"
+        startInputName="test-3"
+        endInputName="test-3"
+        startLabel="test-3"
+        endLabel="test-3"
+      />
+    );
+
+    expect(container).toMatchSnapshot();
+  });
+
+  it("max date datefield", () => {
+    const { container } = render(
+      <DateRange
+        hint
+        startInputId="test-4"
+        startInputName="test-4"
+        startLabel="test-4"
+        endInputId="test-4"
+        endInputName="test-4"
+        endLabel="test-4"
+      />
+    );
+    expect(container).toMatchSnapshot();
+  });
+
+  it("min date datefield", () => {
+    const { container } = render(
+      <DateRange
+        hint={false}
+        startInputId="test-5"
+        startInputName="test-5"
+        startLabel="test-5"
+        endInputId="test-5"
+        endInputName="test-5"
+        endLabel="test-5"
+      />
+    );
+    expect(container).toMatchSnapshot();
   });
 });

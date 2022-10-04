@@ -144,7 +144,7 @@ describe("Tests for the Datefield component.", () => {
     expect(DatefieldInput).toHaveValue();
   });
 
-  it("Should format date when provided a min date", async () => {
+  it("Should focus on current date when calendar is open", async () => {
     const { container } = render(
       <Datefield
         data-testid="Datefield"
@@ -164,7 +164,7 @@ describe("Tests for the Datefield component.", () => {
     expect(today).toHaveFocus();
   });
 
-  it("Should format date when provided a min date", async () => {
+  it("Should focus the selected date when it has a value", async () => {
     const { container } = render(
       <Datefield
         data-testid="Datefield"
@@ -186,21 +186,6 @@ describe("Tests for the Datefield component.", () => {
     )[0];
 
     expect(selectedDate).toHaveFocus();
-  });
-
-  it("Should be disabled", () => {
-    render(
-      <Datefield
-        data-testid="Datefield"
-        id="test-7"
-        name="test-7"
-        label="test-7"
-        hint
-        disabled
-      />
-    );
-    const DatefieldComp = screen.getByTestId("Datefield");
-    expect(DatefieldComp).toBeDisabled();
   });
 });
 
