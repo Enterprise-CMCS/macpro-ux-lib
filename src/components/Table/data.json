@@ -1,0 +1,155 @@
+{
+  "scrollableTable": {
+    "headers": [
+      [
+        {
+          "value": "Federal Budget Baseline Projections",
+          "props": {
+            "rowSpan": 2
+          }
+        },
+        {
+          "value": "2017",
+          "props": {
+            "colSpan": 2
+          }
+        },
+        {
+          "value": "2018",
+          "props": {
+            "colSpan": 2
+          }
+        },
+        {
+          "value": "2019",
+          "props": {
+            "colSpan": 2
+          }
+        }
+      ],
+      [
+        {
+          "value": "%GDP"
+        },
+        {
+          "value": "USD*"
+        },
+        {
+          "value": "%GDP"
+        },
+        {
+          "value": "USD*"
+        },
+        {
+          "value": "%GDP"
+        },
+        {
+          "value": "USD*"
+        }
+      ]
+    ],
+    "body": [
+      [
+        { "value": "Revenue" },
+        { "value": "17.2%" },
+        { "value": "3,316" },
+        { "value": "16.4%" },
+        { "value": "3,338" },
+        { "value": "16.3%" },
+        { "value": "3,490" }
+      ],
+      [
+        { "value": "Outlays" },
+        { "value": "20.6%" },
+        { "value": "3,982" },
+        { "value": "20.2%" },
+        { "value": "4,142" },
+        { "value": "21.0%" },
+        { "value": "4,470" }
+      ],
+      [
+        { "value": "Budget Deficit" },
+        { "value": "-3.5%" },
+        { "value": "-665" },
+        { "value": "-3.8%" },
+        { "value": "-804" },
+        { "value": "-4.6%" },
+        { "value": "-981" }
+      ],
+      [
+        { "value": "Debt Held by Public" },
+        { "value": "76.0%" },
+        { "value": "14,665" },
+        { "value": "77.4%" },
+        { "value": "15,688" },
+        { "value": "79.2%" },
+        { "value": "16,762" }
+      ]
+    ]
+  },
+  "sortableTable": {
+    "headers": [],
+    "body": []
+  },
+  "standardTable": {
+    "headers": [
+      [
+        {
+          "value": "Document title"
+        },
+        {
+          "value": "Description"
+        },
+        {
+          "value": "Year"
+        }
+      ]
+    ],
+    "body": [
+      [
+        {
+          "value": "Declaration of Independence"
+        },
+        {
+          "value": "Statement adopted by the Continental Congress declaring independence from the British Empire."
+        },
+        {
+          "value": "1776"
+        }
+      ],
+      [
+        {
+          "value": "Bill of Rights"
+        },
+        {
+          "value": "The first ten amendments of the U.S. Constitution guaranteeing rights and freedoms."
+        },
+        {
+          "value": "1791"
+        }
+      ],
+      [
+        {
+          "value": "Declaration of Sentiments"
+        },
+        {
+          "value": "A document written during the Seneca Falls Convention outlining the rights that American women should be entitled to as citizens."
+        },
+        {
+          "value": "1848"
+        }
+      ],
+      [
+        {
+          "value": "Emancipation Proclamation"
+        },
+        {
+          "value": "An executive order granting freedom to slaves in designated southern states. "
+        },
+        {
+          "value": "1863"
+        }
+      ]
+    ]
+  }
+}
