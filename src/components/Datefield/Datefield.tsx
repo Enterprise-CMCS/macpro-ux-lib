@@ -93,7 +93,13 @@ export const Datefield: React.FC<Props> = ({
           const todaysDate = document.getElementsByClassName(
             "react-calendar__tile--now"
           )[0] as HTMLElement;
-          if (todaysDate) todaysDate.focus();
+          if (minDate || maxDate) {
+            const highlightDate = (document.getElementsByClassName(
+              "date-start"
+            )[0] ||
+              document.getElementsByClassName("date-end")[0]) as HTMLElement;
+            if (highlightDate) highlightDate.focus();
+          } else if (todaysDate) todaysDate.focus();
         });
       }
     }

@@ -71,15 +71,19 @@ export const DateRange: React.FC<Props> = ({
   };
 
   const applyRangeClassName = (dateToCheck: Date): string => {
-    if (currentStartDate && currentEndDate) {
-      let dateStart = new Date(currentStartDate);
-      let dateEnd = new Date(currentEndDate);
+    let dateStart = new Date(currentStartDate!);
+    let dateEnd = new Date(currentEndDate!);
 
+    if (currentStartDate && currentEndDate) {
       if (dateToCheck > dateStart && dateToCheck < dateEnd) {
         return "range-selected";
       } else if (dateToCheck >= dateStart && dateToCheck <= dateEnd) {
         return "range-start-end";
       }
+    } else if (dateStart.getTime() === dateToCheck.getTime()) {
+      return "date-start";
+    } else if (dateEnd.getTime() === dateToCheck.getTime()) {
+      return "date-end";
     }
 
     return "";
