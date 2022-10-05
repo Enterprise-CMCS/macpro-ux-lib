@@ -1,3 +1,10 @@
+## [1.16.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.16.0...v1.16.1) (2022-10-04)
+
+
+### Bug Fixes
+
+* **Dropdown:** Updates to Dropdown to reduce reliance on USWDS ([d5ac320](https://github.com/cmsgov/macpro-ux-lib/commit/d5ac32060dbec2e02111330a051629bd0cd89402))
+
 # [1.16.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.15.0...v1.16.0) (2022-09-28)
 
 
