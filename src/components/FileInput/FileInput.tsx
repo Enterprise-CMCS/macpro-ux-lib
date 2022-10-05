@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import { convertFileSize, defaultAccepetedFileTypes } from "../../utils";
-import { useDropzone } from "react-dropzone";
+const fileInput = require("@uswds/uswds/packages/usa-file-input/src");
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
@@ -35,37 +35,20 @@ export const FileInput: React.FC<Props> = ({
   acceptedFileTypes,
   hintText,
   showMaxSize,
-  disabled,
   ...rest
 }) => {
+  const tooltipRef = useRef<HTMLSpanElement>(null);
+
+  useLayoutEffect(() => {
+    const tooltipElement = tooltipRef.current;
+    fileInput.on(tooltipElement);
+    return () => fileInput.off(tooltipElement);
+  });
+
   const [files, setFile] = useState<File[]>([]);
-  const onDrop = React.useCallback((acceptedFiles: File[]) => {
-    setFile([...files, ...acceptedFiles]);
-    console.log(acceptedFiles);
-  }, []);
-
-  // const clearFile = (fileIndexToClear: number) => {
-  //   const arrayToFilter = field.value as File[];
-  //   const filteredArray = arrayToFilter.filter(
-  //     (_, index) => index !== fileIndexToClear
-  //   );
-  //   field.onChange(filteredArray);
-  // };
-
-  const { getRootProps, getInputProps, isDragActive, fileRejections } =
-    useDropzone({
-      onDrop,
-      accept: acceptedFileTypes || defaultAccepetedFileTypes,
-      maxSize,
-      multiple: multipleFiles,
-    });
 
   return (
-    <div
-      className="usa-form-group grid-col-4 text-center pointer"
-      {...getRootProps()}
-      {...rest}
-    >
+    <div className="usa-form-group">
       <label className="usa-label" htmlFor={id}>
         {label}
       </label>
@@ -79,56 +62,57 @@ export const FileInput: React.FC<Props> = ({
           )}
         </div>
       )}
-      <div className={`dropzone${files.length ? " files-uploaded" : ""}`}>
-        {files.length === 0 ? (
-          <div className="usa-file-input__instructions" aria-hidden="true">
-            <span className="usa-file-input__drag-text">
-              Drag files here or{" "}
-            </span>
-            <span className="usa-file-input__choose">choose from folder</span>
-          </div>
-        ) : (
-          <div className="grid-row padding-1">
-            <div className="grid-col text-left text-bold">
-              {files.length > 1
-                ? `${files.length} files selected`
-                : "Selected File"}
-            </div>
-            <div className="text-underline usa-link text-right grid-col">
-              Replace
-            </div>
-          </div>
-        )}
-        <input
-          id={id}
-          className="usa-file-input"
-          type="file"
-          name={name}
-          disabled={disabled}
-          onChange={(e) => {
-            console.log(e);
-          }}
-          multiple={multipleFiles}
-          {...getInputProps()}
-          {...rest}
-        />
-        {fileRejections.map((erroredFile, index) => (
-          <div className="file grid-row text-left" key={index}>
-            {erroredFile.file.name}:{" "}
-            {erroredFile.errors[0].message.replace(
-              /[0-9]* bytes/g,
-              convertFileSize(maxSize)
-            )}
-          </div>
-        ))}
-        {files.map((file: File, index: number) => {
-          return (
-            <div className="file grid-row flex-align-center" key={index}>
-              {file.name}
-            </div>
-          );
-        })}
-      </div>
+      <input
+        id={id}
+        className="usa-file-input"
+        type="file"
+        name={name}
+        onChange={(e) => {
+          console.log(e);
+        }}
+        multiple={multipleFiles}
+        {...rest}
+      />
     </div>
   );
 };
+
+{
+  /* <div className={`dropzone${files.length ? " files-uploaded" : ""}`}>
+{files.length === 0 ? (
+  <div className="usa-file-input__instructions" aria-hidden="true">
+    <span className="usa-file-input__drag-text">
+      Drag files here or{" "}
+    </span>
+    <span className="usa-file-input__choose">choose from folder</span>
+  </div>
+) : (
+  <div className="grid-row padding-1">
+    <div className="grid-col text-left text-bold">
+      {files.length > 1
+        ? `${files.length} files selected`
+        : "Selected File"}
+    </div>
+    <div className="text-underline usa-link text-right grid-col">
+      Replace
+    </div>
+  </div>
+)}
+</div> */
+}
+// {fileRejections.map((erroredFile, index) => (
+//   <div className="file grid-row text-left" key={index}>
+//     {erroredFile.file.name}:{" "}
+//     {erroredFile.errors[0].message.replace(
+//       /[0-9]* bytes/g,
+//       convertFileSize(maxSize)
+//     )}
+//   </div>
+// ))}
+// {files.map((file: File, index: number) => {
+//   return (
+//     <div className="file grid-row flex-align-center" key={index}>
+//       {file.name}
+//     </div>
+//   );
+// })}
