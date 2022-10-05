@@ -1,63 +1,78 @@
-import React, { useLayoutEffect, useRef, useState } from "react";
-import { convertFileSize, defaultAccepetedFileTypes } from "../../utils";
+import React, { ChangeEventHandler, useLayoutEffect, useRef } from "react";
 const fileInput = require("@uswds/uswds/packages/usa-file-input/src");
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
 interface Props extends IntrinsicElements {
-  name: string;
   id: string;
+  name: string;
   multipleFiles?: boolean;
   label?: string;
-  maxSize?: number;
-  acceptedFileTypes?: { [key: string]: string[] };
-  showMaxSize?: boolean;
+  acceptedFileTypes?: string[];
   hintText?: string;
   disabled?: boolean;
+  error?: boolean;
+  errorMessage?: string;
+  onChange?: ChangeEventHandler<HTMLInputElement>;
 }
 
 /**
  * **FileInput Component**
  *
- * @param {string}    id             Unique identifier required for each Accordion item used for form control.
- * @param {string}    multipleFiles  Determines whether the file input can take multiple files.
- * @param {string}    label          String used to label the file input in the UI.
- * @param {string}    name           Name of the file input field.
+ * @param {string}    id                  The id to uniquely identify the file input.
+ * @param {string}    name                Name of the file input field.
+ * @param {boolean}   multipleFiles       Controls if the input accepts multiple files.
+ * @param {string}    label               Used to label the file input in the UI.
+ * @param {string[]}  acceptedFileTypes   Array of string file types accepeted in this file input.
+ * @param {string}    hintText            Text to show to the user as a guide of the type of accepateble files.
+ * @param {boolean}   disabled            Controls whether the file input is disabled.
+ * @param {boolean}   error               Triggers error message and error styling.
+ * @param {string}    errorMessage        Message to show when an error is present.
+ * @param {string}    onChange            Function that is called when the File Input changes.
  *
  */
 
 export const FileInput: React.FC<Props> = ({
   id,
-  multipleFiles,
+  multipleFiles = false,
   label,
-  maxSize = 82000000,
   name,
-  acceptedFileTypes,
+  error = false,
+  errorMessage,
+  acceptedFileTypes = [
+    ".pdf",
+    ".doc",
+    ".docx",
+    ".xlsx",
+    ".jpg",
+    ".jpeg",
+    ".png",
+  ],
   hintText,
-  showMaxSize,
+  onChange,
   ...rest
 }) => {
-  const tooltipRef = useRef<HTMLSpanElement>(null);
-
+  const fileInputRef = useRef<HTMLSpanElement>(null);
   useLayoutEffect(() => {
-    const tooltipElement = tooltipRef.current;
+    const tooltipElement = fileInputRef.current;
     fileInput.on(tooltipElement);
     return () => fileInput.off(tooltipElement);
   });
 
-  const [files, setFile] = useState<File[]>([]);
-
   return (
-    <div className="usa-form-group">
-      <label className="usa-label" htmlFor={id}>
+    <div className={`usa-form-group${error ? " usa-form-group--error" : ""}`}>
+      <label
+        className={`usa-label${error ? " usa-label--error" : ""}`}
+        htmlFor={id}
+      >
         {label}
       </label>
-      {(hintText || showMaxSize) && (
+      {(hintText || errorMessage) && (
         <div>
           {hintText && <span className="usa-hint"> {hintText}</span>}
-          {showMaxSize && (
-            <span className="usa-hint">
-              Maximum file size of {convertFileSize(maxSize)}
+          {errorMessage && (
+            <span className="usa-error-message" id="file-input-error-alert">
+              {errorMessage}
             </span>
           )}
         </div>
@@ -67,52 +82,10 @@ export const FileInput: React.FC<Props> = ({
         className="usa-file-input"
         type="file"
         name={name}
-        onChange={(e) => {
-          console.log(e);
-        }}
         multiple={multipleFiles}
+        onChange={onChange}
         {...rest}
       />
     </div>
   );
 };
-
-{
-  /* <div className={`dropzone${files.length ? " files-uploaded" : ""}`}>
-{files.length === 0 ? (
-  <div className="usa-file-input__instructions" aria-hidden="true">
-    <span className="usa-file-input__drag-text">
-      Drag files here or{" "}
-    </span>
-    <span className="usa-file-input__choose">choose from folder</span>
-  </div>
-) : (
-  <div className="grid-row padding-1">
-    <div className="grid-col text-left text-bold">
-      {files.length > 1
-        ? `${files.length} files selected`
-        : "Selected File"}
-    </div>
-    <div className="text-underline usa-link text-right grid-col">
-      Replace
-    </div>
-  </div>
-)}
-</div> */
-}
-// {fileRejections.map((erroredFile, index) => (
-//   <div className="file grid-row text-left" key={index}>
-//     {erroredFile.file.name}:{" "}
-//     {erroredFile.errors[0].message.replace(
-//       /[0-9]* bytes/g,
-//       convertFileSize(maxSize)
-//     )}
-//   </div>
-// ))}
-// {files.map((file: File, index: number) => {
-//   return (
-//     <div className="file grid-row flex-align-center" key={index}>
-//       {file.name}
-//     </div>
-//   );
-// })}
