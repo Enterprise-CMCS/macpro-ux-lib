@@ -1,3 +1,10 @@
+# [1.17.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.16.1...v1.17.0) (2022-10-05)
+
+
+### Features
+
+* **Step Indicator:** Added step indicator to track user progress  ([fafa982](https://github.com/cmsgov/macpro-ux-lib/commit/fafa982dac6e16cbae13b0d494281185c562f88f))
+
 ## [1.16.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.16.0...v1.16.1) (2022-10-04)
 
 
