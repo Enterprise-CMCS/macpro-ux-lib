@@ -40,6 +40,13 @@ export default {
       control: false,
     },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: "File input allows users to attach one or multiple files.",
+      },
+    },
+  },
 } as ComponentMeta<typeof FileInput>;
 
 const Template: ComponentStory<typeof FileInput> = ({ ...rest }) => (
