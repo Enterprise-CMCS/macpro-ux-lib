@@ -1,5 +1,4 @@
 [
-  { "value": "", "displayString": "Select a fruit" },
   { "value": "apple", "displayString": "Apple" },
   { "value": "apricot", "displayString": "Apricot" },
   { "value": "avocado", "displayString": "Avocado" },
