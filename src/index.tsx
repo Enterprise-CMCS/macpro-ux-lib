@@ -25,6 +25,7 @@ import { Radio } from "./components/Radio/Radio";
 import { RadioGroup } from "./components/Radio/RadioGroup";
 import { SiteAlert } from "./components/SiteAlert/SiteAlert";
 import { Search } from "./components/Search/Search";
+import { StepIndicator } from "./components/StepIndicator/StepIndicator";
 import { Table } from "./components/Table/Table";
 import { TabPanel } from "./components/Tabs/TabPanel";
 import { Tabs } from "./components/Tabs/Tabs";
@@ -60,6 +61,7 @@ export {
   RadioGroup,
   Search,
   SiteAlert,
+  StepIndicator,
   Table,
   TabPanel,
   Tabs,
