@@ -5,6 +5,7 @@
 @forward "../../components/CardChoice/CardChoiceGroup.scss";
 @forward "../../components/Checkbox/Checkbox.scss";
 @forward "../../components/Datefield/Datefield.scss";
+@forward "../../components/Dropdown/Dropdown.scss";
 @forward "../../components/Footer/Footer.scss";
 @forward "../../components/FileInput/FileInput.scss";
 @forward "../../components/Header/ActionsMenu.scss";
@@ -13,6 +14,7 @@
 @forward "../../components/Radio/Radio.scss";
 @forward "../../components/Radio/RadioGroup.scss";
 @forward "../../components/SiteAlert/SiteAlert.scss";
+@forward "../../components/StepIndicator/StepIndicator.scss";
 @forward "../../components/Tabs/Tab.scss";
 @forward "../../components/Tabs/Tabs.scss";
 @forward "../../components/UsaBanner/UsaBanner.scss";
@@ -35,5 +37,4 @@
 *:focus {
   outline: 0.25rem solid #2491ff;
   outline-offset: 0;
-  position: relative;
 }
