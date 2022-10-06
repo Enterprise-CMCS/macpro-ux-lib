@@ -2,7 +2,7 @@ import React, { useDebugValue } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Table } from "./Table";
 import {
-  BorderlessTableChildren,
+  BasicTableChildren,
   ScrollableTableChildren,
   StackedTableChildren,
   SortableTableChildren,
@@ -24,7 +24,7 @@ BorderlessTable.args = {
   borderless: true,
   caption:
     "Borderless table: A borderless table can be useful when you want the information to feel more a part of the text it accompanies and extends.",
-  children: BorderlessTableChildren,
+  children: BasicTableChildren,
 };
 
 export const ScrollableTable = Template.bind({});

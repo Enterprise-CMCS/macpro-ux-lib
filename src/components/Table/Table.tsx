@@ -8,7 +8,7 @@ type IntrinsicElements = JSX.IntrinsicElements["table"];
 interface Props extends IntrinsicElements {
   borderless?: boolean;
   caption?: string;
-  compact?: string;
+  compact?: boolean;
   footnote?: string;
   scrollable?: boolean;
   stacked?: boolean;
@@ -51,9 +51,9 @@ export const Table: React.FC<PropsWithChildren<Props>> = ({
   return (
     <div
       ref={componentRef}
-      className={`${scrollable ? "usa-table-container--scrollable" : ""}${
-        stacked ? " width-mobile" : ""
-      }`}
+      className={`usa-table-container${
+        scrollable ? " usa-table-container--scrollable" : ""
+      }${stacked ? " width-mobile" : ""}`}
       tabIndex={0}
     >
       <table className={tableClassNames} {...rest}>

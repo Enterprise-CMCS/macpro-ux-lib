@@ -2,15 +2,15 @@ import React from "react";
 import { TD } from "./TD";
 import { TH } from "./TH";
 
-export const BorderlessTableChildren = [
-  <thead key="BorderlessTableChildren__thead">
+export const BasicTableChildren = [
+  <thead key="BasicTableChildren__thead">
     <tr>
       <TH>Document title</TH>
       <TH>Description</TH>
       <TH>Year</TH>
     </tr>
   </thead>,
-  <tbody key="BorderlessTableChildren__tbody">
+  <tbody key="BasicTableChildren__tbody">
     <tr>
       <TH rowHeader>Declaration of Independence</TH>
       <TD>
