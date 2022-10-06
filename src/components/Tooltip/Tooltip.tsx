@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
+// @ts-ignore
+import tooltip from "@uswds/uswds/packages/usa-tooltip/src";
 
-export const Tooltip: React.FC = ({}) => {
+type Props = {
+  children?: React.ReactNode;
+  position: "top" | "right" | "bottom" | "left";
+  title: string;
+};
+
+export const Tooltip: React.FC<Props> = ({ children, position, title }) => {
+  const tooltipRef = useRef<HTMLSpanElement>(null);
+
+  useLayoutEffect(() => {
+    const tooltipElement = tooltipRef.current;
+    tooltip.on(tooltipElement);
+    return () => tooltip.off(tooltipElement);
+  });
+
   return (
-    <button
-      type="button"
-      className="usa-button usa-tooltip"
-      data-position="top"
-      title="Top"
-    >
-      Show on top
-    </button>
+    <div className="wrapper usa-tooltip" data-position={position} title={title}>
+      {children}
+    </div>
   );
 };
