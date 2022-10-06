@@ -86,11 +86,12 @@ describe("Tests for the Table component", () => {
     expect(table.className).toBe("usa-table usa-table--stacked-header");
   });
 
-  it("should have a caption and a foonote", () => {
+  it("should have a caption, a footnote, and custom className", () => {
     const { container } = render(
       <Table
-        children={BasicTableChildren}
         caption="This text should appear in the caption"
+        children={BasicTableChildren}
+        className="test-me"
         footnote="This text should appear in the footnote"
       />
     );
@@ -106,6 +107,10 @@ describe("Tests for the Table component", () => {
     expect(footnote[0].innerHTML).toBe(
       "This text should appear in the footnote"
     );
+
+    // test custom class
+    const table = container.getElementsByTagName("table")[0];
+    expect(table.className).toBe("usa-table test-me");
   });
 });
 

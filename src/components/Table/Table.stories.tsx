@@ -11,8 +11,47 @@ import {
 export default {
   title: "COMPONENTS/Table",
   component: Table,
-  args: {},
-  argTypes: {},
+  args: { id: "standard-table" },
+  argTypes: {
+    borderless: {
+      description:
+        "Removes the outer table borders, retaining only a single bottom border on each row. Best for tables with more text than numbers.",
+    },
+    caption: {
+      description:
+        "Descriptive text information to be displayed above the table.",
+    },
+    children: {
+      description:
+        "Table content to be provided as children. Can use all standard HTML table elements (thead, tbody, tr, etc.). `TH` and `TD` are provided components that have some additional functionality.",
+      control: false,
+    },
+    compact: {
+      description:
+        "Reduces the row height and vertical spacing to display more table rows within a limited space. Should only be used with dense, numerical data, not text content. Pairs well with scrollable and striped variants, but is not suitable for use with stacked variants.",
+    },
+    footnote: {
+      description:
+        "Descriptive text information to be displayed below the table.",
+    },
+    id: { description: "Unique identifier required for the Table." },
+    scrollable: {
+      description:
+        "Applies a horizontal scrollbar if the columns exceed the available width. Ideal for dense tables with many columns.",
+    },
+    stacked: {
+      description:
+        "Stacks the table cells on narrow screens. Ideal for tables that contain more text information than numerical data. If you use this variant, you must ensure there is a data-label attribute on each cell of the table that matches the column header.",
+    },
+    stackedHeader: {
+      description:
+        "Stacks the table cells on narrow screens and visually promotes the first cell of every row into a “header” for that group. Preferred for directories and other lists where the first cell of every row is a name. If you use this variant, you must ensure there is a data-label attribute on each cell of the table that matches the column header.",
+    },
+    striped: {
+      description:
+        "Applies alternating horizontal striping to help the eye track across table rows. Pairs well with the scrollable variant for tables with many columns.",
+    },
+  },
 } as ComponentMeta<typeof Table>;
 
 const Template: ComponentStory<typeof Table> = ({ children, ...rest }) => (

@@ -8,9 +8,18 @@ interface Props extends IntrinsicElements {
   rowHeader?: boolean;
 }
 
+/**
+ *  **TH Component**
+ *
+ * @param {React.Node}  children      Contents to be rendered inside `<th>`.
+ * @param {boolean}     dataSortable  String value to be used when sorting the contents of this cell. If a dataSortValue is not provided, sort defaults to contents of the cell. (Ex: Dates should be converted to seconds or some other comparable value)
+ * @param {string}      role          Sets the role prop. Defaults to "columnheader".
+ * @param {boolean}     rowHeader     Boolean value that sets both role and scope to be "rowheader" and "row" respectively.
+ * @param {string}      scope         Sets the scope prop. Defaults to "col".
+ * @param {boolean}     sorted        Requires dataSortable. Sorts the row and applies sorted styling on component render.
+ */
 export const TH: React.FC<PropsWithChildren<Props>> = ({
   children,
-  className,
   dataSortable,
   role,
   rowHeader,
@@ -23,7 +32,6 @@ export const TH: React.FC<PropsWithChildren<Props>> = ({
   return (
     <th
       aria-sort={sorted ? "descending" : undefined}
-      className={className}
       data-sortable={dataSortable}
       role={thRole}
       scope={thScope}

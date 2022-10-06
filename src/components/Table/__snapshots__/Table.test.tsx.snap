@@ -39,14 +39,10 @@ exports[`snapshots for Table component Basic table 1`] = `
           >
             Declaration of Independence
           </th>
-          <td
-            class=""
-          >
+          <td>
             Statement adopted by the Continental Congress declaring independence from the British Empire.
           </td>
-          <td
-            class=""
-          >
+          <td>
             1776
           </td>
         </tr>
@@ -57,14 +53,10 @@ exports[`snapshots for Table component Basic table 1`] = `
           >
             Bill of Rights
           </th>
-          <td
-            class=""
-          >
+          <td>
             The first ten amendments of the U.S. Constitution guaranteeing rights and freedoms.
           </td>
-          <td
-            class=""
-          >
+          <td>
             1791
           </td>
         </tr>
@@ -75,14 +67,10 @@ exports[`snapshots for Table component Basic table 1`] = `
           >
             Declaration of Sentiments
           </th>
-          <td
-            class=""
-          >
+          <td>
             A document written during the Seneca Falls Convention outlining the rights that American women should be entitled to as citizens.
           </td>
-          <td
-            class=""
-          >
+          <td>
             1848
           </td>
         </tr>
@@ -93,14 +81,10 @@ exports[`snapshots for Table component Basic table 1`] = `
           >
             Emancipation Proclamation
           </th>
-          <td
-            class=""
-          >
+          <td>
             An executive order granting freedom to slaves in designated southern states.
           </td>
-          <td
-            class=""
-          >
+          <td>
             1863
           </td>
         </tr>
