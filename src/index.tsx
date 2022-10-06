@@ -25,10 +25,13 @@ import { Radio } from "./components/Radio/Radio";
 import { RadioGroup } from "./components/Radio/RadioGroup";
 import { SiteAlert } from "./components/SiteAlert/SiteAlert";
 import { Search } from "./components/Search/Search";
+import { Table } from "./components/Table/Table";
 import { TabPanel } from "./components/Tabs/TabPanel";
 import { Tabs } from "./components/Tabs/Tabs";
 import { TextArea } from "./components/TextArea/TextArea";
 import { TextInput } from "./components/TextInput/TextInput";
+import { TD } from "./components/Table/TD";
+import { TH } from "./components/Table/TH";
 import { Typography } from "./components/Typography/Typography";
 import { VerticalNavigation } from "./components/VerticalNavigation/VerticalNavigation";
 import { UsaBanner } from "./components/UsaBanner/UsaBanner";
@@ -57,10 +60,13 @@ export {
   RadioGroup,
   Search,
   SiteAlert,
+  Table,
   TabPanel,
   Tabs,
   TextArea,
   TextInput,
+  TD,
+  TH,
   Typography,
   UsaBanner,
   VerticalNavigation,

@@ -1,43 +1,49 @@
 import React, { useDebugValue } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Table } from "./Table";
-import data from "./data.json";
+import {
+  BorderlessTableChildren,
+  ScrollableTableChildren,
+  StackedTableChildren,
+  SortableTableChildren,
+} from "./TableChildren";
 
 export default {
   title: "COMPONENTS/Table",
   component: Table,
-  args: {
-    caption:
-      "Standard Table: A commonly used table with many features and functionality",
-    data: data["standardTable"],
-  },
+  args: {},
   argTypes: {},
 } as ComponentMeta<typeof Table>;
 
-const Template: ComponentStory<typeof Table> = ({ ...rest }) => (
-  <Table {...rest} />
+const Template: ComponentStory<typeof Table> = ({ children, ...rest }) => (
+  <Table {...rest}>{children}</Table>
 );
-
-export const StandardTable = Template.bind({});
-StandardTable.args = {};
 
 export const BorderlessTable = Template.bind({});
 BorderlessTable.args = {
   borderless: true,
-  data: data["standardTable"],
   caption:
     "Borderless table: A borderless table can be useful when you want the information to feel more a part of the text it accompanies and extends.",
+  children: BorderlessTableChildren,
 };
 
 export const ScrollableTable = Template.bind({});
 ScrollableTable.args = {
-  data: data["scrollableTable"],
+  caption: "Scrollable table",
+  children: ScrollableTableChildren,
   footnote: "* in billions of dollars. Data for illustration purposes only.",
   scrollable: true,
+};
+
+export const StackedTable = Template.bind({});
+StackedTable.args = {
+  caption: "Stacked table",
+  children: StackedTableChildren,
+  stacked: true,
 };
 
 export const SortableTable = Template.bind({});
 SortableTable.args = {
   caption: "Recently admitted US states (sortable table example)",
-  data: data["sortableTable"],
+  children: SortableTableChildren,
 };
