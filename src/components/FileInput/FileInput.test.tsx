@@ -3,44 +3,48 @@ import { fireEvent, screen, render } from "../../test-setup";
 import { FileInput } from "./FileInput";
 
 describe("Tests for the FileInput component", () => {
-  it("should render", () => {
-    render(<FileInput name="test-1" id="1" data-test-id="file-input" />);
+  it("should render basic file input", async () => {
+    render(<FileInput name="test-1" id="1" data-testid="file-input" />);
 
-    const fileInput = screen.getByRole("file-input");
+    const fileInput = screen.getByTestId("file-input");
     expect(fileInput).toBeInTheDocument();
   });
 
-  it("should render", () => {
-    render(
+  it("should render file input with helpful text and multiple files", () => {
+    const { container } = render(
       <FileInput
         name="test-4"
         id="4"
-        data-test-id="file-input"
+        data-testid="file-input"
         multipleFiles
         hintText="Test"
         label="test label"
       />
     );
-    const fileInput = screen.getByRole("file-input");
+    const label = container.getElementsByClassName("usa-label")[0];
+    const hint = container.getElementsByClassName("usa-hint")[0];
+    expect(label).toHaveTextContent("test label");
+    expect(hint).toHaveTextContent("Test");
   });
 
-  it("should render", () => {
+  it("should render a disabled input", () => {
     render(
       <FileInput
         name="test-5"
         id="5"
-        data-test-id="file-input"
+        data-testid="file-input"
         disabled
         error
         errorMessage="error"
       />
     );
+    const fileInput = screen.getByTestId("file-input");
+    expect(fileInput).toBeDisabled();
   });
-  const fileInput = screen.getByRole("file-input");
 });
 
 describe("compontent snapshots", () => {
-  it("default search", () => {
+  it("default file input that allows multiple", () => {
     const { container } = render(
       <FileInput
         name="test-2"
@@ -53,7 +57,7 @@ describe("compontent snapshots", () => {
     expect(container).toMatchSnapshot();
   });
 
-  it("big search", () => {
+  it("file input with hint and onchange", () => {
     const { container } = render(
       <FileInput
         name="test-2"

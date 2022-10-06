@@ -55,8 +55,13 @@ export const FileInput: React.FC<Props> = ({
   const fileInputRef = useRef<HTMLSpanElement>(null);
   useLayoutEffect(() => {
     const tooltipElement = fileInputRef.current;
-    fileInput.on(tooltipElement);
-    return () => fileInput.off(tooltipElement);
+    // Safeguard to turn off JS and turn back on if hot reloaded
+    if (typeof fileInput.off === "function") fileInput.off(tooltipElement);
+    if (typeof fileInput.on === "function") fileInput.on(tooltipElement);
+
+    return () => {
+      if (typeof fileInput.off === "function") fileInput.off(tooltipElement);
+    };
   });
 
   return (

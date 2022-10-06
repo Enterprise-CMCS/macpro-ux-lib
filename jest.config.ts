@@ -10,4 +10,7 @@ export default {
     "^.+\\.(ts|tsx)$": "ts-jest", // That one tells Jest to use ts-jest when dealing with TypeScript files
     "^.+\\.(png|svg)$": "<rootDir>/imgTransform.js", // handle for images
   },
+  moduleNameMapper: {
+    "@uswds/(.*)": "<rootDir>/node_modules/@uswds/uswds",
+  },
 };

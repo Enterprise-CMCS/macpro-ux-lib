@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compontent snapshots default file input that allows multiple 1`] = `
+<div>
+  <div
+    class="usa-form-group"
+  >
+    <label
+      class="usa-label"
+      for="2"
+    >
+      test
+    </label>
+    <input
+      class="usa-file-input"
+      data-test-id="file-input"
+      id="2"
+      multiple=""
+      name="test-2"
+      type="file"
+    />
+  </div>
+</div>
+`;
+
+exports[`compontent snapshots file input with hint and onchange 1`] = `
+<div>
+  <div
+    class="usa-form-group"
+  >
+    <label
+      class="usa-label"
+      for="2"
+    />
+    <div>
+      <span
+        class="usa-hint"
+      >
+         
+        hint-text
+      </span>
+    </div>
+    <input
+      class="usa-file-input"
+      data-test-id="file-input"
+      id="2"
+      name="test-2"
+      type="file"
+    />
+  </div>
+</div>
+`;
