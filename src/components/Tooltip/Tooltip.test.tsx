@@ -1,7 +1,6 @@
 import { Tooltip } from "./Tooltip";
 import { render, screen } from "../../test-setup";
 import React from "react";
-import { act } from "react-dom/test-utils";
 
 describe("Tooltip", () => {
   // beforeEach(() => {
@@ -28,10 +27,8 @@ describe("Tooltip", () => {
     const button = wrapper.getElementsByClassName("test-button")[0];
     expect(button).toBeInTheDocument();
 
-    expect(wrapper).toHaveTextContent("This is the tooltip");
-
     // The tooltip text should be in the DOM
-    // expect(wrapper).toHaveTextContent("This is the tooltip");
+    expect(wrapper).toHaveTextContent("This is the tooltip");
   });
 
   it("renders the tooltip as expected", () => {
