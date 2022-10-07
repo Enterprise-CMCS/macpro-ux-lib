@@ -1,6 +1,5 @@
 import React, { useLayoutEffect, useRef } from "react";
-// @ts-ignore
-import tooltip from "@uswds/uswds/packages/usa-tooltip/src";
+const tooltip = require("@uswds/uswds/packages/usa-tooltip/src");
 
 type Props = {
   children?: React.ReactNode;
