@@ -16,13 +16,14 @@ export const Tooltip: React.FC<Props> = ({ children, position, title }) => {
     try {
       tooltip.on(tooltipElement);
     } catch (error) {
-      console.log(error);
+      console.error("tooltip.on:", tooltip.on);
+      console.error(error);
     }
     return () => {
       try {
         tooltip.off(tooltipElement);
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
     };
   });
