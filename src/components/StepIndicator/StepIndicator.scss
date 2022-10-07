@@ -1,0 +1,26 @@
+@use "../../assets/theme/macbis-colors" as c;
+
+.usa-step-indicator {
+  .usa-step-indicator__segment--current::before,
+  .usa-step-indicator__segment--current::after {
+    background-color: c.$primary;
+  }
+
+  .usa-step-indicator__segment--complete::before,
+  .usa-step-indicator__segment--complete::after {
+    background-color: c.$primary-darkest;
+  }
+
+  .usa-step-indicator__current-step {
+    background-color: c.$primary;
+  }
+
+  .usa-step-indicator__segment:not(.usa-step-indicator__segment--current, .usa-step-indicator__segment--complete)
+    .usa-step-indicator__segment-label {
+    color: c.$gray-medium;
+  }
+
+  .usa-step-indicator__segment--current .usa-step-indicator__segment-label {
+    color: c.$primary;
+  }
+}
