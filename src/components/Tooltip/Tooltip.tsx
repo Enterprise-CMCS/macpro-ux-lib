@@ -12,19 +12,8 @@ export const Tooltip: React.FC<Props> = ({ children, position, title }) => {
 
   useLayoutEffect(() => {
     const tooltipElement = tooltipRef.current;
-
-    try {
-      tooltip.on(tooltipElement);
-    } catch (error) {
-      console.error(error);
-    }
-    return () => {
-      try {
-        tooltip.off(tooltipElement);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+    tooltip.on(tooltipElement);
+    return () => tooltip.off(tooltipElement);
   });
 
   return (
