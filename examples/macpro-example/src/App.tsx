@@ -335,6 +335,7 @@ function App() {
         </UX.Tabs>
         <div className="margin-5">
           <UX.StepIndicator
+            headingText="Heading"
             currentProgress={3}
             steps={[
               { label: "Personal information", order: 1 },
