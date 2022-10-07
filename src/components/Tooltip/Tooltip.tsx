@@ -16,6 +16,7 @@ export const Tooltip: React.FC<Props> = ({ children, position, title }) => {
     try {
       tooltip.on(tooltipElement);
     } catch (error) {
+      console.error("tooltip:", tooltip);
       console.error("tooltip.on:", tooltip.on);
       console.error(error);
     }
