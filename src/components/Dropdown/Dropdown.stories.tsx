@@ -10,6 +10,10 @@ export default {
     data,
   },
   argTypes: {
+    className: {
+      description: "A class name that will be applied on the select element.",
+      type: { name: "string" },
+    },
     data: {
       control: false,
       description:
@@ -20,12 +24,16 @@ export default {
       type: { name: "string", required: true },
     },
     label: {
-      description: "String used to label the drodown in the UI.",
+      description: "String used to label the dropdown in the UI.",
     },
     name: {
       description:
         "Name of the dropdown used to identify it in the context of a form.",
       type: { name: "string", required: true },
+    },
+    readOnly: {
+      description:
+        "Sets input field to read-only. Effectively disables type-ahead search.",
     },
   },
 } as ComponentMeta<typeof Dropdown>;
