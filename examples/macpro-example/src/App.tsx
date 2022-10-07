@@ -333,6 +333,18 @@ function App() {
           </UX.TabPanel>
           <UX.TabPanel tabLabel="Disabled" disabled id="tab-panel--disabled" />
         </UX.Tabs>
+        <div className="margin-5">
+          <UX.StepIndicator
+            currentProgress={3}
+            steps={[
+              { label: "Personal information", order: 1 },
+              { label: "Household status", order: 2 },
+              { label: "Supporting documents", order: 3 },
+              { label: "Signature", order: 4 },
+              { label: "Review and submit", order: 5 },
+            ]}
+          />
+        </div>
       </div>
       <UX.Footer emailAddress="jhechter@fearless.tech" />
     </div>

@@ -6,6 +6,7 @@ import { Accordion } from "./components/Accordion/Accordion";
 import { AccordionGroup } from "./components/Accordion/AccordionGroup";
 import { ActionsMenu } from "./components/Header/ActionsMenu";
 import { Alert } from "./components/Alert/Alert";
+import { Breadcrumbs } from "./components/Breadcrumbs/Breadcrumbs";
 import { Button } from "./components/Button/Button";
 import { Card } from "./components/Card/Card";
 import { Datefield } from "./components/Datefield/Datefield";
@@ -24,6 +25,7 @@ import { Radio } from "./components/Radio/Radio";
 import { RadioGroup } from "./components/Radio/RadioGroup";
 import { SiteAlert } from "./components/SiteAlert/SiteAlert";
 import { Search } from "./components/Search/Search";
+import { StepIndicator } from "./components/StepIndicator/StepIndicator";
 import { TabPanel } from "./components/Tabs/TabPanel";
 import { Tabs } from "./components/Tabs/Tabs";
 import { TextArea } from "./components/TextArea/TextArea";
@@ -37,6 +39,7 @@ export {
   AccordionGroup,
   ActionsMenu,
   Alert,
+  Breadcrumbs,
   Button,
   Card,
   CardChoice,
@@ -55,6 +58,7 @@ export {
   RadioGroup,
   Search,
   SiteAlert,
+  StepIndicator,
   TabPanel,
   Tabs,
   TextArea,
