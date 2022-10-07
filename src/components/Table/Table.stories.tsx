@@ -52,6 +52,14 @@ export default {
         "Applies alternating horizontal striping to help the eye track across table rows. Pairs well with the scrollable variant for tables with many columns.",
     },
   },
+  parameters: {
+    docs: {
+      description: {
+        component:
+          "A table shows information in columns and rows.\n\nTables help logically organize information and group like things together, and they make it easier to understand complex content. They're especially useful for showing long lists of sequential or structured content. Users read tables one row or column at a time, making it easy to digest and compare information.",
+      },
+    },
+  },
 } as ComponentMeta<typeof Table>;
 
 const Template: ComponentStory<typeof Table> = ({ children, ...rest }) => (
