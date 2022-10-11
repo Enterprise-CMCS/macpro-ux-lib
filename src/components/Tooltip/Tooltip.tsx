@@ -1,5 +1,4 @@
 import React, { useLayoutEffect, useRef } from "react";
-// @ts-ignore:next-line
 import tooltip from "@uswds/uswds/packages/usa-tooltip/src";
 
 type Props = {
