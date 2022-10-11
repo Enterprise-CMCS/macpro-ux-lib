@@ -18,7 +18,6 @@ uswds.paths.dist.fonts = "./assets/fonts";
 uswds.paths.dist.img = "./assets/img";
 uswds.paths.dist.js = "./assets/js";
 uswds.paths.dist.theme = "./assets/theme";
-uswds.paths.dist.uswds = "./node_modules/@uswds";
 /**
  * Exports
  * Add as many as you need
