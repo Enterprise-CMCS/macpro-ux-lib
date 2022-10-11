@@ -1,5 +1,7 @@
 import React, { ChangeEventHandler, useLayoutEffect, useRef } from "react";
-const fileInput = require("../../../node_modules/@uswds/uswds/packages/usa-file-input/src");
+// @ts-ignore:next-line
+import fileInput from "@uswds/uswds/packages/usa-file-input/src";
+
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
 interface Props extends IntrinsicElements {
@@ -54,12 +56,11 @@ export const FileInput: React.FC<Props> = ({
   const fileInputRef = useRef<HTMLSpanElement>(null);
   useLayoutEffect(() => {
     const tooltipElement = fileInputRef.current;
-    // Safeguard to turn off JS and turn back on if hot reloaded
-    fileInput.off(tooltipElement);
-    fileInput.on(tooltipElement);
+    if (typeof fileInput.off === "function") fileInput.off(tooltipElement);
+    if (typeof fileInput.on === "function") fileInput.on(tooltipElement);
 
     return () => {
-      fileInput.off(tooltipElement);
+      if (typeof fileInput.off === "function") fileInput.off(tooltipElement);
     };
   });
 
