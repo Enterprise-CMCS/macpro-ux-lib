@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef } from "react";
-const tooltip = require("../../../node_modules/@uswds/uswds/packages/usa-tooltip/src");
+// @ts-ignore:next-line
+import tooltip from "@uswds/uswds/packages/usa-tooltip/src";
 
 type Props = {
   children?: React.ReactNode;
@@ -12,8 +13,10 @@ export const Tooltip: React.FC<Props> = ({ children, position, title }) => {
 
   useLayoutEffect(() => {
     const tooltipElement = tooltipRef.current;
-    tooltip.on(tooltipElement);
-    return () => tooltip.off(tooltipElement);
+    if (typeof tooltip.on === "function") tooltip.on(tooltipElement);
+    return () => {
+      if (typeof tooltip.off === "function") tooltip.off(tooltipElement);
+    };
   });
 
   return (

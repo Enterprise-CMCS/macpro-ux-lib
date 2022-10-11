@@ -3,6 +3,14 @@ import { render, screen } from "../../test-setup";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 
+// jest.mock(
+//   "../../../node_modules/@uswds/uswds/packages/usa-tooltip/src",
+//   () => ({
+//     off: jest.fn(),
+//     on: jest.fn(),
+//   })
+// );
+
 describe("Tooltip", () => {
   describe("Initialization", () => {
     beforeEach(() => {
@@ -52,7 +60,6 @@ describe("Tooltip", () => {
         const wrapper = screen.getByTestId("wrapper");
         const button = wrapper.getElementsByClassName("test-button")[0];
         const tooltip = wrapper.getElementsByClassName("usa-tooltip__body")[0];
-
         // Initial state
         expect(tooltip).toBeVisible();
         expect(tooltip).toHaveTextContent(tooltipText);
