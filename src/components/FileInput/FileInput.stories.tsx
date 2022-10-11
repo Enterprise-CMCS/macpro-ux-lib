@@ -59,6 +59,7 @@ Default.args = { name: "1", id: "1" };
 export const MultipleFiles = Template.bind({});
 MultipleFiles.args = {
   hintText: "This input accepts multiple files",
+  multipleFiles: true,
   name: "2",
   id: "2",
 };
