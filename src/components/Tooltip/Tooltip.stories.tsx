@@ -31,7 +31,7 @@ export default {
 const Template: ComponentStory<typeof Tooltip> = ({ ...rest }) => (
   <div className="padding-8">
     <Tooltip {...rest}>
-      <Button buttonText="Show on top" type="button" />
+      <Button buttonText="Hover to show tooltip" type="button" />
     </Tooltip>
   </div>
 );
