@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useLayoutEffect, useRef } from "react";
 
-const table = require("../../../node_modules/@uswds/uswds/packages/usa-table/src");
+import table from "@uswds/uswds/packages/usa-table/src";
 
 type IntrinsicElements = JSX.IntrinsicElements["table"];
 
@@ -61,10 +61,13 @@ export const Table: React.FC<PropsWithChildren<Props>> = ({
   const componentRef = useRef(null);
 
   useLayoutEffect(() => {
-    const component = componentRef.current;
-    table.on(component);
-    return () => table.off(component);
-  });
+    if (typeof table.on === "function" && typeof table.off === "function") {
+      const component = componentRef.current;
+      table.off(component);
+      table.on(component);
+      return () => table.off(component);
+    }
+  }, [table]);
 
   const tableClassNames = `usa-table${
     borderless ? " usa-table--borderless" : ""

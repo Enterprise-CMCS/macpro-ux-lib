@@ -1,12 +1,12 @@
 import React from "react";
-import { fireEvent, screen, render } from "../../test-setup";
+import { render } from "../../test-setup";
 import { Table } from "./Table";
-import {
-  BasicTableChildren,
-  ScrollableTableChildren,
-  StackedTableChildren,
-  SortableTableChildren,
-} from "./TableChildren";
+import { BasicTableChildren, ScrollableTableChildren } from "./TableChildren";
+
+jest.mock("../../../node_modules/@uswds/uswds/packages/usa-table/src", () => ({
+  off: jest.fn(),
+  on: jest.fn(),
+}));
 
 describe("Tests for the Table component", () => {
   it("should render", () => {
