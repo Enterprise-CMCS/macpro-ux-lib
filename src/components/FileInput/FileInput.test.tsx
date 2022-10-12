@@ -2,14 +2,6 @@ import React from "react";
 import { screen, render } from "../../test-setup";
 import { FileInput } from "./FileInput";
 
-jest.mock(
-  "../../../node_modules/@uswds/uswds/packages/usa-file-input/src",
-  () => ({
-    off: jest.fn(),
-    on: jest.fn(),
-  })
-);
-
 describe("Tests for the FileInput component", () => {
   it("should render basic file input", () => {
     render(<FileInput name="test-1" id="1" data-testid="file-input" />);
