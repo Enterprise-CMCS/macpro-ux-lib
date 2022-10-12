@@ -1,3 +1,10 @@
+# [1.19.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.18.0...v1.19.0) (2022-10-12)
+
+
+### Features
+
+* **Table:** add Table component ([60360dc](https://github.com/cmsgov/macpro-ux-lib/commit/60360dc4db254714b7b762780c3b60f945fb04a6))
+
 # [1.18.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.17.0...v1.18.0) (2022-10-12)
 
 
