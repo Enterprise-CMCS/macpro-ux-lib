@@ -3,11 +3,6 @@ import { render } from "../../test-setup";
 import { Table } from "./Table";
 import { BasicTableChildren, ScrollableTableChildren } from "./TableChildren";
 
-jest.mock("../../../node_modules/@uswds/uswds/packages/usa-table/src", () => ({
-  off: jest.fn(),
-  on: jest.fn(),
-}));
-
 describe("Tests for the Table component", () => {
   it("should render", () => {
     const { container } = render(<Table children={BasicTableChildren} />);

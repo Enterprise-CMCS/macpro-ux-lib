@@ -1,9 +1,6 @@
 export default {
   moduleDirectories: ["node_modules", "src"],
   moduleFileExtensions: ["js", "ts", "tsx", "json", "node"],
-  moduleNameMapper: {
-    "@uswds/(.*)": "<rootDir>/node_modules/@uswds/uswds",
-  },
   roots: ["src"],
   testEnvironment: "jest-environment-jsdom", // Use browser-like testing environment
   testMatch: ["**/__tests__/**/*.[jt]s?(x)", "**/?(*.)+(spec|test).[tj]s?(x)"],
@@ -14,8 +11,9 @@ export default {
     "^.+\\.(png|svg)$": "<rootDir>/imgTransform.js", // handle for images
   },
   moduleNameMapper: {
-    "@uswds/(.*)": [
+    "@uswds/(.*)/usa-table/src":
+      "<rootDir>/node_modules/@uswds/uswds/packages/usa-table/src",
+    "@uswds/(.*)/usa-tooltip/src":
       "<rootDir>/node_modules/@uswds/uswds/packages/usa-tooltip/src",
-    ],
   },
 };
