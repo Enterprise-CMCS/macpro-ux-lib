@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require("path");
 
 module.exports = {
   stories: [
@@ -9,11 +9,12 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    '@storybook/addon-a11y',
-    '@storybook/preset-scss'
+    "@storybook/addon-a11y",
+    "@storybook/preset-scss",
+    "storybook-dark-mode",
   ],
   framework: "@storybook/react",
-  staticDirs: ['../src', '../src/assets/img'],
+  staticDirs: ["../src", "../src/assets/img"],
 
   webpackFinal: async (config) => {
     config.resolve.modules = [
