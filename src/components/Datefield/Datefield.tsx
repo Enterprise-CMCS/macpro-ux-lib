@@ -155,6 +155,34 @@ export const Datefield: React.FC<Props> = ({
     }
   };
 
+  const checkKeyNavigation = (e: any) => {
+    const element = e.target as HTMLElement;
+    const classArray = Array.from(element.classList);
+    console.log(e.which);
+    if (classArray.includes("month-start") && e.which === 37) {
+      const highlightDate = document.getElementsByClassName(
+        "react-calendar__navigation__prev-button"
+      )[0] as HTMLElement;
+      if (highlightDate) highlightDate.click();
+    } else if (classArray.includes("month-end") && e.which === 39) {
+      const highlightDate = document.getElementsByClassName(
+        "react-calendar__navigation__prev-button"
+      )[0] as HTMLElement;
+      if (highlightDate) highlightDate.click();
+    } else if (Array.from(element.classList).includes("react-calendar__tile")) {
+      console.log("current");
+    }
+  };
+
+  const setDateClassName = (dateToCheck: Date): string => {
+    if (dateToCheck.getDate() === 1) return "month-start ";
+
+    if (new Date(dateToCheck.getTime() + 86400000).getDate() === 1) {
+      return "month-end ";
+    }
+    return "";
+  };
+
   return (
     <div className="usa-form-group datefield">
       <label className="usa-label" id={`${id}-label`} htmlFor={id}>
@@ -202,13 +230,20 @@ export const Datefield: React.FC<Props> = ({
           </div>
         </div>
         {(rangeCalendarOpen || calendarOpen) && (
-          <div className="grid-row" data-testid="calendar">
+          <div
+            onKeyDown={checkKeyNavigation}
+            className="grid-row"
+            data-testid="calendar"
+          >
             <Calendar
               tileClassName={(dateProps) => {
                 if (selectedRangeClassName) {
-                  return selectedRangeClassName(dateProps.date);
+                  return (
+                    setDateClassName(dateProps.date) +
+                    selectedRangeClassName(dateProps.date)
+                  );
                 }
-                return "";
+                return setDateClassName(dateProps.date);
               }}
               calendarType="US"
               className="grid-col-3"
