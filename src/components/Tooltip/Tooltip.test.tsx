@@ -3,14 +3,6 @@ import { render, screen } from "../../test-setup";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 
-// jest.mock(
-//   "../../../node_modules/@uswds/uswds/packages/usa-tooltip/src",
-//   () => ({
-//     off: jest.fn(),
-//     on: jest.fn(),
-//   })
-// );
-
 describe("Tooltip", () => {
   describe("Initialization", () => {
     beforeEach(() => {

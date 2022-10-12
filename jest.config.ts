@@ -11,6 +11,8 @@ export default {
     "^.+\\.(png|svg)$": "<rootDir>/imgTransform.js", // handle for images
   },
   moduleNameMapper: {
-    "@uswds/(.*)": "<rootDir>/node_modules/@uswds/uswds",
+    "@uswds/(.*)": [
+      "<rootDir>/node_modules/@uswds/uswds/packages/usa-tooltip/src",
+    ],
   },
 };
