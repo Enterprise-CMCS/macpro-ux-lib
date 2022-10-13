@@ -1,6 +1,6 @@
 {
   "name": "@enterprise-cmcs/macpro-ux-lib",
-  "version": "1.19.0",
+  "version": "1.20.0",
   "description": "Common UX libraries packaged for easier distribution throughout CMS.",
   "main": "build/index.js",
   "module": "build/index.es.js",
@@ -23,9 +23,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.18.5",
-    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-commonjs": "^23.0.0",
     "@rollup/plugin-image": "^2.1.1",
-    "@rollup/plugin-node-resolve": "^14.1.0",
+    "@rollup/plugin-node-resolve": "^15.0.0",
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/git": "^10.0.1",
     "@storybook/addon-a11y": "^6.5.9",
