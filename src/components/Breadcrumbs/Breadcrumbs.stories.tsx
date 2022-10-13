@@ -5,6 +5,7 @@ import { Breadcrumbs } from "./Breadcrumbs";
 export default {
   title: "COMPONENTS/Breadcrumbs",
   component: Breadcrumbs,
+  args: false,
   argTypes: {
     currentItemName: {
       description: "The name of the current page where the breadcrumbs appear.",
@@ -14,7 +15,6 @@ export default {
     },
     parentOnly: {
       description: "Show only the parent item with a back arrow.",
-      defaultValue: false,
     },
   },
   parameters: {
