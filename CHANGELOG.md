@@ -1,3 +1,10 @@
+## [1.20.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.20.0...v1.20.1) (2022-10-13)
+
+
+### Bug Fixes
+
+* **general:** upgrade package versions ([a6fbbf9](https://github.com/cmsgov/macpro-ux-lib/commit/a6fbbf9019e326d0450ee2ebe13c3bf6e5825fa3))
+
 # [1.20.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.19.0...v1.20.0) (2022-10-13)
 
 
