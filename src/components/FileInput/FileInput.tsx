@@ -1,6 +1,5 @@
 import React, { ChangeEventHandler, useLayoutEffect, useRef } from "react";
-// @ts-ignore:next-line
-import fileInput from "@uswds/uswds/packages/usa-file-input/src";
+import fileInput from "../../../node_modules/@uswds/uswds/packages/usa-file-input/src";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
