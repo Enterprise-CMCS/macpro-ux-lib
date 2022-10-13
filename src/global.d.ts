@@ -1,4 +1,3 @@
 declare module "*.png";
 declare module "*.svg";
-
-declare module "@uswds/uswds/packages/*";
+declare module "../../../node_modules/@uswds/uswds/*";

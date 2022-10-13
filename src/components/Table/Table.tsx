@@ -1,6 +1,5 @@
 import React, { PropsWithChildren, useLayoutEffect, useRef } from "react";
-
-import table from "@uswds/uswds/packages/usa-table/src";
+import table from "../../../node_modules/@uswds/uswds/packages/usa-table/src";
 
 type IntrinsicElements = JSX.IntrinsicElements["table"];
 

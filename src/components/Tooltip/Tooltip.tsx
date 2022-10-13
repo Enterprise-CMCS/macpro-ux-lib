@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef } from "react";
-import tooltip from "@uswds/uswds/packages/usa-tooltip/src";
+import tooltip from "../../../node_modules/@uswds/uswds/packages/usa-tooltip/src";
 
 type Props = {
   children?: React.ReactNode;
