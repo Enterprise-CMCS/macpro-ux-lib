@@ -1,3 +1,10 @@
+# [1.20.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.19.0...v1.20.0) (2022-10-13)
+
+
+### Features
+
+* **FileInput:** add File Input component to library ([6db3c5c](https://github.com/cmsgov/macpro-ux-lib/commit/6db3c5cefcfac4febe1655df7cf6149547e4f2d4))
+
 # [1.19.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.18.0...v1.19.0) (2022-10-12)
 
 
