@@ -15,7 +15,7 @@ describe("Tests for the StepIndicator component", () => {
     render(
       <StepIndicator
         data-testid="StepAlert"
-        currentProgress={1}
+        currentProgress={0}
         steps={steps}
         headingText="Test"
       />
@@ -64,7 +64,7 @@ describe("Tests for the StepIndicator component", () => {
     render(
       <StepIndicator
         data-testid="StepAlert"
-        currentProgress={5}
+        currentProgress={6}
         steps={steps}
         counters={true}
         isCentered={true}
@@ -75,5 +75,21 @@ describe("Tests for the StepIndicator component", () => {
 
     expect(StepComp).toHaveClass("usa-step-indicator--center");
     expect(StepComp).toHaveClass("usa-step-indicator--counters");
+  });
+
+  describe("compontent snapshots", () => {
+    it("should render a info alert", () => {
+      const { container } = render(
+        <StepIndicator
+          data-testid="StepAlert"
+          currentProgress={5}
+          steps={steps}
+          counters={true}
+          isCentered={true}
+          headingText="Test"
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
   });
 });

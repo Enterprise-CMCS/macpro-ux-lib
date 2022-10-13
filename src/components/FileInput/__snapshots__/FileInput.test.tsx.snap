@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`compontent snapshots default file input that allows multiple 1`] = `
+<div>
+  <div
+    class="usa-form-group"
+  >
+    <label
+      class="usa-label"
+      for="2"
+    >
+      test
+    </label>
+    <div
+      class="usa-file-input"
+    >
+      <div
+        class="usa-file-input__target"
+      >
+        <div
+          aria-hidden="true"
+          class="usa-file-input__instructions"
+        >
+          <span
+            class="usa-file-input__drag-text"
+          >
+            Drag files here or 
+          </span>
+          <span
+            class="usa-file-input__choose"
+          >
+            choose from folder
+          </span>
+        </div>
+        <div
+          class="usa-file-input__box"
+        />
+        <input
+          aria-label="No files selected"
+          aria-live="polite"
+          class="usa-file-input__input"
+          data-default-aria-label="No files selected"
+          data-test-id="file-input"
+          id="2"
+          multiple=""
+          name="test-2"
+          type="file"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`compontent snapshots file input with hint and onchange 1`] = `
+<div>
+  <div
+    class="usa-form-group"
+  >
+    <label
+      class="usa-label"
+      for="2"
+    />
+    <div>
+      <span
+        class="usa-hint"
+      >
+         
+        hint-text
+      </span>
+    </div>
+    <div
+      class="usa-file-input"
+    >
+      <div
+        class="usa-file-input__target"
+      >
+        <div
+          aria-hidden="true"
+          class="usa-file-input__instructions"
+        >
+          <span
+            class="usa-file-input__drag-text"
+          >
+            Drag file here or 
+          </span>
+          <span
+            class="usa-file-input__choose"
+          >
+            choose from folder
+          </span>
+        </div>
+        <div
+          class="usa-file-input__box"
+        />
+        <input
+          aria-label="No file selected"
+          aria-live="polite"
+          class="usa-file-input__input"
+          data-default-aria-label="No file selected"
+          data-test-id="file-input"
+          id="2"
+          name="test-2"
+          type="file"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
