@@ -1,3 +1,17 @@
+# [1.19.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.18.0...v1.19.0) (2022-10-12)
+
+
+### Features
+
+* **Table:** add Table component ([60360dc](https://github.com/cmsgov/macpro-ux-lib/commit/60360dc4db254714b7b762780c3b60f945fb04a6))
+
+# [1.18.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.17.0...v1.18.0) (2022-10-12)
+
+
+### Features
+
+* **Tooltip:** Add Tooltip component ([1cabd4a](https://github.com/cmsgov/macpro-ux-lib/commit/1cabd4a8b083d1cf9a8d7371daeb86f887a7390a))
+
 # [1.17.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.16.1...v1.17.0) (2022-10-05)
 
 

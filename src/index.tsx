@@ -15,6 +15,7 @@ import { CardChoice } from "./components/CardChoice/CardChoice";
 import { CardChoiceGroup } from "./components/CardChoice/CardChoiceGroup";
 import { Checkbox } from "./components/Checkbox/Checkbox";
 import { Dropdown } from "./components/Dropdown/Dropdown";
+import { FileInput } from "./components/FileInput/FileInput";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Icon } from "./components/Icon/Icon";
@@ -26,10 +27,14 @@ import { RadioGroup } from "./components/Radio/RadioGroup";
 import { SiteAlert } from "./components/SiteAlert/SiteAlert";
 import { Search } from "./components/Search/Search";
 import { StepIndicator } from "./components/StepIndicator/StepIndicator";
+import { Table } from "./components/Table/Table";
 import { TabPanel } from "./components/Tabs/TabPanel";
 import { Tabs } from "./components/Tabs/Tabs";
 import { TextArea } from "./components/TextArea/TextArea";
 import { TextInput } from "./components/TextInput/TextInput";
+import { TD } from "./components/Table/TD";
+import { TH } from "./components/Table/TH";
+import { Tooltip } from "./components/Tooltip/Tooltip";
 import { Typography } from "./components/Typography/Typography";
 import { VerticalNavigation } from "./components/VerticalNavigation/VerticalNavigation";
 import { UsaBanner } from "./components/UsaBanner/UsaBanner";
@@ -48,6 +53,7 @@ export {
   Datefield,
   DateRange,
   Dropdown,
+  FileInput,
   Footer,
   Header,
   Icon,
@@ -59,10 +65,14 @@ export {
   Search,
   SiteAlert,
   StepIndicator,
+  Table,
   TabPanel,
   Tabs,
   TextArea,
   TextInput,
+  TD,
+  TH,
+  Tooltip,
   Typography,
   UsaBanner,
   VerticalNavigation,
