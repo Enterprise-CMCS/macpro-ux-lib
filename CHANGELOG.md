@@ -1,3 +1,10 @@
+## [1.20.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.20.1...v1.20.2) (2022-10-13)
+
+
+### Reverts
+
+* Revert "chore(deps-dev): bump rollup from 2.79.1 to 3.1.0" (#153) ([778fc3c](https://github.com/cmsgov/macpro-ux-lib/commit/778fc3c063766f851617096ffaba8a4dbb417d13)), closes [#153](https://github.com/cmsgov/macpro-ux-lib/issues/153) [#150](https://github.com/cmsgov/macpro-ux-lib/issues/150)
+
 ## [1.20.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.20.0...v1.20.1) (2022-10-13)
 
 
