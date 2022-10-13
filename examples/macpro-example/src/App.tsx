@@ -335,7 +335,6 @@ function App() {
         </UX.Tabs>
         <div className="margin-5">
           <UX.StepIndicator
-            headingText="Heading"
             currentProgress={3}
             headingText="This is the Step Indicator"
             steps={[
@@ -392,6 +391,13 @@ function App() {
             </tr>
           </tbody>
         </UX.Table>
+      </div>
+      <div className="padding-left-3">
+        <UX.Tooltip
+          title="ToolTip"
+          position="right"
+          children={[<h1 key="test">Hover me</h1>]}
+        />
       </div>
       <UX.Footer emailAddress="jhechter@fearless.tech" />
     </div>
