@@ -337,6 +337,7 @@ function App() {
           <UX.StepIndicator
             headingText="Heading"
             currentProgress={3}
+            headingText="This is the Step Indicator"
             steps={[
               { label: "Personal information", order: 1 },
               { label: "Household status", order: 2 },
@@ -346,6 +347,51 @@ function App() {
             ]}
           />
         </div>
+
+        <UX.Table>
+          <thead key="BasicTableChildren__thead">
+            <tr>
+              <UX.TH>Document title</UX.TH>
+              <UX.TH>Description</UX.TH>
+              <UX.TH>Year</UX.TH>
+            </tr>
+          </thead>
+          <tbody key="BasicTableChildren__tbody">
+            <tr>
+              <UX.TH rowHeader>Declaration of Independence</UX.TH>
+              <UX.TD>
+                Statement adopted by the Continental Congress declaring
+                independence from the British Empire.
+              </UX.TD>
+              <UX.TD>1776</UX.TD>
+            </tr>
+            <tr>
+              <UX.TH rowHeader>Bill of Rights</UX.TH>
+              <UX.TD>
+                The first ten amendments of the U.S. Constitution guaranteeing
+                rights and freedoms.
+              </UX.TD>
+              <UX.TD>1791</UX.TD>
+            </tr>
+            <tr>
+              <UX.TH rowHeader>Declaration of Sentiments</UX.TH>
+              <UX.TD>
+                A document written during the Seneca Falls Convention outlining
+                the rights that American women should be entitled to as
+                citizens.
+              </UX.TD>
+              <UX.TD>1848</UX.TD>
+            </tr>
+            <tr>
+              <UX.TH rowHeader>Emancipation Proclamation</UX.TH>
+              <UX.TD>
+                An executive order granting freedom to slaves in designated
+                southern states.
+              </UX.TD>
+              <UX.TD>1863</UX.TD>
+            </tr>
+          </tbody>
+        </UX.Table>
       </div>
       <UX.Footer emailAddress="jhechter@fearless.tech" />
     </div>
