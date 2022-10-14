@@ -3,6 +3,7 @@ import { Button } from "components/Button/Button";
 import { Link, LinkProps } from "components/Link/Link";
 import { useOutsideClick } from "hooks/useOutsideClick";
 import { useWindowDimensions } from "hooks/useWindowDimensions";
+import { Icon } from "components/Icon/Icon";
 
 interface SubMenuColumnProps {
   links: LinkProps[];
@@ -48,15 +49,16 @@ const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
   return (
     <>
       <li className="usa-nav__primary-item" ref={wrapperRef}>
-        <Button
-          buttonText={buttonText}
+        <button
           className={`usa-accordion__button usa-nav__link ${
             current ? "usa-current" : ""
           }`}
           aria-expanded={expanded}
           aria-controls={`extended-mega-nav-section-${index}`}
           onClick={() => setExpanded(!expanded)}
-        />
+        >
+          {buttonText}
+        </button>
         <div
           id={`extended-mega-nav-section-${index}`}
           className="usa-nav__submenu usa-megamenu"
@@ -128,11 +130,9 @@ export const Header: React.FC<HeaderProps> = ({
             <div className="usa-logo" id="basic-logo">
               {headerLogo}
             </div>
-            <Button
-              buttonText="Menu"
-              className="usa-menu-btn"
-              onClick={openMenu}
-            />
+            <button className="usa-menu-btn" onClick={openMenu}>
+              Menu
+            </button>
             {width >= 1024 && (
               <div className="usa-nav__secondary usa-header--extended">
                 {secondaryComponent}
@@ -146,12 +146,9 @@ export const Header: React.FC<HeaderProps> = ({
           {...rest}
         >
           <div className="usa-nav__inner">
-            <Button
-              buttonText=""
-              iconName="close"
-              className="usa-nav__close"
-              onClick={closeMenu}
-            />
+            <button className="usa-nav__close" onClick={closeMenu}>
+              <Icon name="close" />
+            </button>
             <ul className="usa-nav__primary usa-accordion">
               {navData?.map((section, idx) => {
                 return (

@@ -4,6 +4,6 @@ import { FilterChip } from "./FilterChip";
 
 describe("Tests for the FilterChip component", () => {
   it("should render", () => {
-    render(<FilterChip />);
+    render(<FilterChip text="Standard Filter Chip" />);
   });
 });
