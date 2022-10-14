@@ -17,6 +17,7 @@ export const FilterChip: React.FC<Props> = ({ text, ...rest }) => {
     <Button
       buttonVariation="primary"
       buttonText={text}
+      className={"filter-chip"}
       iconName="close"
       {...rest}
     />

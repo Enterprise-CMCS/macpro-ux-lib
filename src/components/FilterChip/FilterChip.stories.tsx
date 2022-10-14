@@ -6,7 +6,7 @@ export default {
   title: "COMPONENTS/FilterChip",
   component: FilterChip,
   args: {
-    text: "Item 1",
+    text: "Non cras.",
   },
   argTypes: {},
 } as ComponentMeta<typeof FilterChip>;
