@@ -15,5 +15,5 @@ const Template: ComponentStory<typeof FilterChip> = ({ ...rest }) => (
   <FilterChip {...rest} />
 );
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Component = Template.bind({});
+Component.args = {};

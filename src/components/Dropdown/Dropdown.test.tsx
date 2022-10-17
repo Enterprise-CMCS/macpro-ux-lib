@@ -22,12 +22,16 @@ describe("Test the Dropdown component", () => {
   let listElem: Element;
 
   beforeEach(() => {
+    React.useState = jest.fn().mockReturnValue([undefined, {}]);
+    const [value, setValue] = React.useState();
     container = render(
       <Dropdown
         data={data}
         id="fruit"
         label="Select a fruit"
         name="fruit-dropdown"
+        value={value}
+        setValue={setValue}
       />
     ).container;
     selectElem = container.getElementsByClassName("usa-combo-box__select")[0];

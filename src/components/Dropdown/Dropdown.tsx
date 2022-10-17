@@ -1,5 +1,11 @@
 import { Icon } from "components/Icon/Icon";
-import React, { useEffect, useRef, useState } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["select"];
 
@@ -12,6 +18,8 @@ interface Props extends IntrinsicElements {
   data: DropdownData[];
   label: string;
   readOnly?: boolean;
+  setValue: Dispatch<SetStateAction<any>>;
+  value: string | number | undefined;
 }
 
 /**
@@ -34,6 +42,8 @@ export const Dropdown: React.FC<Props> = ({
   label,
   name,
   readOnly = false,
+  setValue,
+  value,
   ...rest
 }) => {
   /*
@@ -49,7 +59,6 @@ export const Dropdown: React.FC<Props> = ({
   const [dropdownData, setDropdownData] = useState<DropdownData[]>(data);
   const [hidden, setHidden] = useState<boolean>(true);
   const [inputValue, setInputValue] = useState<string>("");
-  const [value, setValue] = useState<string | number | undefined>(undefined);
 
   const closeDropdown = () => {
     setHidden(true);
@@ -117,7 +126,8 @@ export const Dropdown: React.FC<Props> = ({
   // when value updates, inputValue should match value
   useEffect(() => {
     setInputValue(getDisplayString());
-  }, [value]);
+    setDropdownData(data);
+  }, [value, data]);
 
   return (
     <>
@@ -183,7 +193,6 @@ export const Dropdown: React.FC<Props> = ({
             className="usa-combo-box__clear-input"
             aria-label="Clear the select contents"
             onClick={() => {
-              setDropdownData(data);
               setValue("");
             }}
           >
