@@ -5,8 +5,6 @@ import { Typography } from "../Typography/Typography";
 import { Dropdown } from "../Dropdown/Dropdown";
 import dropdownData from "../Dropdown/data.json";
 
-// const ImplementationComponent: React.FC = () =>
-
 export default {
   title: "COMPONENTS/FilterChip",
 } as ComponentMeta<typeof FilterChip>;
@@ -37,7 +35,7 @@ const Template: ComponentStory<any> = () => {
 
   return (
     <>
-      <Typography>Filter Chip Implementation Example</Typography>
+      <Typography>FilterChip Implementation Example</Typography>
       <Dropdown
         data={data}
         label={"Select an item from the list:"}
