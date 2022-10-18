@@ -23,11 +23,6 @@ export default {
       description:
         "Controls whether or not the date picker is disabled to the user.",
     },
-    defaultDate: {
-      description:
-        "The date picker input will set this value if it is a valid date. The date should be in the format mm/dd/yyyy.",
-      control: { type: "text" },
-    },
     minDate: {
       description:
         "The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy.",
@@ -40,18 +35,6 @@ export default {
     },
     value: {
       description: "Value of the input element.",
-    },
-    dateRangeChange: {
-      table: { disable: true },
-    },
-    rangeCalendarOpen: {
-      table: { disable: true },
-    },
-    toggleRangeCalendars: {
-      table: { disable: true },
-    },
-    selectedRangeClassName: {
-      table: { disable: true },
     },
   },
   args: {},
@@ -71,8 +54,8 @@ const Template: ComponentStory<typeof Datefield> = ({ ...rest }) => (
 
 export const PrimaryDatefield = Template.bind({});
 PrimaryDatefield.args = {
-  id: "default",
-  name: "default",
+  id: "primary",
+  name: "primary",
   label: "Datefield",
 };
 

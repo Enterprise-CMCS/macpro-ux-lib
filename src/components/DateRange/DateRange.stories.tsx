@@ -6,11 +6,6 @@ export default {
   title: "COMPONENTS/DateRange",
   component: DateRange,
   argTypes: {
-    defaultStartDate: {
-      description:
-        "The start date picker input will set this value by default if it is a valid date. The date should be in the format mm/dd/yyyy.",
-      control: { type: "text" },
-    },
     startDate: {
       description:
         "The value given to the start date input. The date should be in the format mm/dd/yyyy",
@@ -25,11 +20,7 @@ export default {
     startLabel: {
       description: "The label of the start date input.",
     },
-    defaultEndDate: {
-      description:
-        "The end date picker input will set this value by default if it is a valid date. The date should be in the format mm/dd/yyyy.",
-      control: { type: "text" },
-    },
+
     endDate: {
       description:
         "The value given to the end date input. The date should be in the format mm/dd/yyyy.",
@@ -78,17 +69,7 @@ const Template: ComponentStory<typeof DateRange> = ({ ...rest }) => (
 
 export const PrimaryDateRange = Template.bind({});
 
-export const DateRangeWithDefaults = Template.bind({});
-DateRangeWithDefaults.args = {
-  defaultStartDate: "10/10/2022",
-  defaultEndDate: "10/15/2022",
-};
+// export const DateRangeWithDefaults = Template.bind({});
+// DateRangeWithDefaults.args = {
 
-DateRangeWithDefaults.parameters = {
-  docs: {
-    description: {
-      story:
-        "A start and end date can be provided to help users selected a certain start or end range by default",
-    },
-  },
-};
+// };

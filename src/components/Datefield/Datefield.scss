@@ -11,6 +11,9 @@
     color: c.$error;
   }
 
+  .hidden-button {
+    visibility: hidden;
+  }
   // .range-selected,
   // .range-selected:hover {
   //   background-color: c.$primary-lighter !important;
