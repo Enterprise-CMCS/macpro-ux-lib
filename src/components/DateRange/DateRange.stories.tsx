@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
+import { useEffect } from "@storybook/addons";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { DateRange } from "./DateRange";
 
@@ -6,6 +7,16 @@ export default {
   title: "COMPONENTS/DateRange",
   component: DateRange,
   argTypes: {
+    minDate: {
+      description:
+        "The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy.",
+      control: { type: "text" },
+    },
+    maxDate: {
+      description:
+        "The date picker will not allow a date selection after this date. The date should be in the format mm/dd/yyyy.",
+      control: { type: "text" },
+    },
     startDate: {
       description:
         "The value given to the start date input. The date should be in the format mm/dd/yyyy",
@@ -61,6 +72,17 @@ export default {
       },
     },
   },
+  // decorators: [
+  //   (Story) => {
+  //     useLayoutEffect(() => {
+  //       const script = document.createElement("script");
+  //       script.src = "../../assets/js/uswds.min.js";
+  //       document.body.appendChild(script);
+  //     });
+
+  //     return <Story />;
+  //   },
+  // ],
 } as ComponentMeta<typeof DateRange>;
 
 const Template: ComponentStory<typeof DateRange> = ({ ...rest }) => (

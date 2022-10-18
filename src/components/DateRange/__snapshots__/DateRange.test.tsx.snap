@@ -2,7 +2,9 @@
 
 exports[`compontent snapshots max date datefield 1`] = `
 <div>
-  <div>
+  <div
+    class="usa-date-range-picker"
+  >
     <div
       class="usa-form-group datefield"
     >
@@ -22,40 +24,13 @@ exports[`compontent snapshots max date datefield 1`] = `
       <div
         class="usa-date-picker"
       >
-        <div
-          class="grid-row"
-        >
-          <input
-            aria-describedby="test-4-hint"
-            aria-labelledby="test-4-label"
-            class="usa-input margin-0"
-            id="test-4"
-            name="test-4"
-            value=""
-          />
-          <div
-            class="flex-column"
-          >
-            <button
-              aria-label="calendar button"
-              class="calendar-button padding-x-1 padding-top-1"
-            >
-              <svg
-                aria-hidden="true"
-                aria-label="calendar today icon"
-                class="usa-icon--size-3"
-                color="black"
-                data-testid="calendar-button"
-                fill="currentColor"
-                role="button"
-              >
-                <use
-                  href="[object Object]#calendar_today"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+        <input
+          aria-describedby="test-4-hint"
+          aria-labelledby="test-4-label"
+          class="usa-input"
+          id="test-4"
+          name="test-4"
+        />
       </div>
     </div>
     <div
@@ -77,40 +52,13 @@ exports[`compontent snapshots max date datefield 1`] = `
       <div
         class="usa-date-picker"
       >
-        <div
-          class="grid-row"
-        >
-          <input
-            aria-describedby="test-4-hint"
-            aria-labelledby="test-4-label"
-            class="usa-input margin-0"
-            id="test-4"
-            name="test-4"
-            value=""
-          />
-          <div
-            class="flex-column"
-          >
-            <button
-              aria-label="calendar button"
-              class="calendar-button padding-x-1 padding-top-1"
-            >
-              <svg
-                aria-hidden="true"
-                aria-label="calendar today icon"
-                class="usa-icon--size-3"
-                color="black"
-                data-testid="calendar-button"
-                fill="currentColor"
-                role="button"
-              >
-                <use
-                  href="[object Object]#calendar_today"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+        <input
+          aria-describedby="test-4-hint"
+          aria-labelledby="test-4-label"
+          class="usa-input"
+          id="test-4"
+          name="test-4"
+        />
       </div>
     </div>
   </div>
@@ -119,7 +67,9 @@ exports[`compontent snapshots max date datefield 1`] = `
 
 exports[`compontent snapshots min date datefield 1`] = `
 <div>
-  <div>
+  <div
+    class="usa-date-range-picker"
+  >
     <div
       class="usa-form-group datefield"
     >
@@ -133,40 +83,13 @@ exports[`compontent snapshots min date datefield 1`] = `
       <div
         class="usa-date-picker"
       >
-        <div
-          class="grid-row"
-        >
-          <input
-            aria-describedby="test-5-label"
-            aria-labelledby="test-5-label"
-            class="usa-input margin-0"
-            id="test-5"
-            name="test-5"
-            value=""
-          />
-          <div
-            class="flex-column"
-          >
-            <button
-              aria-label="calendar button"
-              class="calendar-button padding-x-1 padding-top-1"
-            >
-              <svg
-                aria-hidden="true"
-                aria-label="calendar today icon"
-                class="usa-icon--size-3"
-                color="black"
-                data-testid="calendar-button"
-                fill="currentColor"
-                role="button"
-              >
-                <use
-                  href="[object Object]#calendar_today"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+        <input
+          aria-describedby="test-5-label"
+          aria-labelledby="test-5-label"
+          class="usa-input"
+          id="test-5"
+          name="test-5"
+        />
       </div>
     </div>
     <div
@@ -182,40 +105,13 @@ exports[`compontent snapshots min date datefield 1`] = `
       <div
         class="usa-date-picker"
       >
-        <div
-          class="grid-row"
-        >
-          <input
-            aria-describedby="test-5-label"
-            aria-labelledby="test-5-label"
-            class="usa-input margin-0"
-            id="test-5"
-            name="test-5"
-            value=""
-          />
-          <div
-            class="flex-column"
-          >
-            <button
-              aria-label="calendar button"
-              class="calendar-button padding-x-1 padding-top-1"
-            >
-              <svg
-                aria-hidden="true"
-                aria-label="calendar today icon"
-                class="usa-icon--size-3"
-                color="black"
-                data-testid="calendar-button"
-                fill="currentColor"
-                role="button"
-              >
-                <use
-                  href="[object Object]#calendar_today"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+        <input
+          aria-describedby="test-5-label"
+          aria-labelledby="test-5-label"
+          class="usa-input"
+          id="test-5"
+          name="test-5"
+        />
       </div>
     </div>
   </div>
@@ -224,7 +120,9 @@ exports[`compontent snapshots min date datefield 1`] = `
 
 exports[`compontent snapshots primary datefield 1`] = `
 <div>
-  <div>
+  <div
+    class="usa-date-range-picker"
+  >
     <div
       class="usa-form-group datefield"
     >
@@ -244,40 +142,13 @@ exports[`compontent snapshots primary datefield 1`] = `
       <div
         class="usa-date-picker"
       >
-        <div
-          class="grid-row"
-        >
-          <input
-            aria-describedby="test-3-hint"
-            aria-labelledby="test-3-label"
-            class="usa-input margin-0"
-            id="test-3"
-            name="test-3"
-            value=""
-          />
-          <div
-            class="flex-column"
-          >
-            <button
-              aria-label="calendar button"
-              class="calendar-button padding-x-1 padding-top-1"
-            >
-              <svg
-                aria-hidden="true"
-                aria-label="calendar today icon"
-                class="usa-icon--size-3"
-                color="black"
-                data-testid="calendar-button"
-                fill="currentColor"
-                role="button"
-              >
-                <use
-                  href="[object Object]#calendar_today"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+        <input
+          aria-describedby="test-3-hint"
+          aria-labelledby="test-3-label"
+          class="usa-input"
+          id="test-3"
+          name="test-3"
+        />
       </div>
     </div>
     <div
@@ -299,40 +170,13 @@ exports[`compontent snapshots primary datefield 1`] = `
       <div
         class="usa-date-picker"
       >
-        <div
-          class="grid-row"
-        >
-          <input
-            aria-describedby="test-3-hint"
-            aria-labelledby="test-3-label"
-            class="usa-input margin-0"
-            id="test-3"
-            name="test-3"
-            value=""
-          />
-          <div
-            class="flex-column"
-          >
-            <button
-              aria-label="calendar button"
-              class="calendar-button padding-x-1 padding-top-1"
-            >
-              <svg
-                aria-hidden="true"
-                aria-label="calendar today icon"
-                class="usa-icon--size-3"
-                color="black"
-                data-testid="calendar-button"
-                fill="currentColor"
-                role="button"
-              >
-                <use
-                  href="[object Object]#calendar_today"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
+        <input
+          aria-describedby="test-3-hint"
+          aria-labelledby="test-3-label"
+          class="usa-input"
+          id="test-3"
+          name="test-3"
+        />
       </div>
     </div>
   </div>

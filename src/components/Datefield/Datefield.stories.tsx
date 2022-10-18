@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useLayoutEffect } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Datefield } from "./Datefield";
 
@@ -46,6 +46,17 @@ export default {
       },
     },
   },
+  // decorators: [
+  //   (Story) => {
+  //     useLayoutEffect(() => {
+  //       const script = document.createElement("script");
+  //       script.src = "../../assets/js/uswds.min.js";
+  //       document.body.appendChild(script);
+  //     }, []);
+
+  //     return <Story />;
+  //   },
+  // ],
 } as ComponentMeta<typeof Datefield>;
 
 const Template: ComponentStory<typeof Datefield> = ({ ...rest }) => (

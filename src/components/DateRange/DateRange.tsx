@@ -1,14 +1,8 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import {
-  completeDateFilter,
-  numbersAndSlashesFilter,
-  checkValidMonthDays,
-  splitDateIntoVariables,
-} from "../../utils";
+import React, { useLayoutEffect, useRef, useState } from "react";
+import { formatPropDates } from "../../utils";
 
 import dateRange from "../../../node_modules/@uswds/uswds/packages/usa-date-range-picker/src";
 import { Datefield } from "components/Datefield/Datefield";
-// import datePicker from "../../../node_modules/@uswds/uswds/packages/usa-date-picker/src";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
 export interface Props extends IntrinsicElements {
@@ -77,16 +71,6 @@ export const DateRange: React.FC<Props> = ({
     };
   }, []);
 
-  const formatPropDates = (date: string | undefined) => {
-    let [month, day, year] = splitDateIntoVariables(date || "");
-    if (
-      date &&
-      completeDateFilter.test(date) &&
-      checkValidMonthDays(parseInt(month), parseInt(year), parseInt(day))
-    ) {
-      return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
-    }
-  };
   return (
     <div
       className="usa-date-range-picker"
@@ -94,58 +78,24 @@ export const DateRange: React.FC<Props> = ({
       data-max-date={formatPropDates(maxDate)}
       {...rest}
     >
-      <Datefield id={startInputId} name={startInputName} label={startLabel} />
-      <Datefield id={endInputId} name={endInputName} label={endLabel} />
-      {/* <div className="usa-form-group">
-        <label
-          className="usa-label"
-          id={`${startInputId}-label`}
-          htmlFor={startInputId}
-        >
-          {startLabel}
-        </label>
-        {hint && (
-          <div className="usa-hint" id={`${startInputId}-hint`}>
-            mm/dd/yyyy
-          </div>
-        )}
-        <div className="usa-date-picker">
-          <input
-            className="usa-input"
-            id={startInputId}
-            name={startInputName}
-            aria-labelledby={`${startInputId}-label`}
-            aria-describedby={`${startInputId}-hint`}
-            required={required}
-            disabled={disabled}
-          />
-        </div>
-      </div>
-      <div className="usa-form-group">
-        <label
-          className="usa-label"
-          id={`${endInputId}-label`}
-          htmlFor={endInputId}
-        >
-          {endLabel}
-        </label>
-        {hint && (
-          <div className="usa-hint" id={`${endInputId}-hint`}>
-            mm/dd/yyyy
-          </div>
-        )}
-        <div className="usa-date-picker">
-          <input
-            className="usa-input "
-            id={endInputId}
-            name={endInputName}
-            aria-labelledby={`${endInputId}-label`}
-            aria-describedby={`${endInputId}-hint`}
-            required={required}
-            disabled={disabled}
-          />
-        </div>
-      </div> */}
+      <Datefield
+        hint={hint}
+        id={startInputId}
+        name={startInputName}
+        label={startLabel}
+        disabled={disabled}
+        required={required}
+        value={startDate}
+      />
+      <Datefield
+        hint={hint}
+        id={endInputId}
+        name={endInputName}
+        label={endLabel}
+        disabled={disabled}
+        required={required}
+        value={endDate}
+      />
     </div>
   );
 };

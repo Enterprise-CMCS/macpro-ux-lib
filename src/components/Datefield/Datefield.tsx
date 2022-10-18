@@ -4,6 +4,7 @@ import {
   numbersAndSlashesFilter,
   checkValidMonthDays,
   splitDateIntoVariables,
+  formatPropDates,
 } from "../../utils";
 
 import datePicker from "../../../node_modules/@uswds/uswds/packages/usa-date-picker/src";
@@ -49,15 +50,17 @@ export const Datefield: React.FC<Props> = ({
 
   useLayoutEffect(() => {
     const datePickerElement = datePickerRef.current;
+    console.log(datePickerElement);
     if (typeof datePicker.on === "function") {
       setTimeout(() => {
         datePicker.on(datePickerElement);
       });
 
       setTimeout(() => {
-        const dateFieldinput = document.getElementsByClassName(
-          "usa-date-picker__external-input"
-        )[0];
+        const dateFieldinput = Array.from(
+          document.getElementsByClassName("usa-date-picker__external-input")
+        ).find((dateField) => dateField.id === id);
+
         if (dateFieldinput) {
           dateFieldinput.addEventListener("keydown", (e: any) =>
             filterInput(e)
@@ -66,6 +69,26 @@ export const Datefield: React.FC<Props> = ({
             checkValidDate(e.target.value)
           );
         }
+
+        // const dateFieldButton = Array.from(
+        //   document.getElementsByClassName("usa-date-picker__button")
+        // )[0];
+
+        // if (dateFieldButton) {
+        //   dateFieldButton.addEventListener("click", () => {
+        //     const dateFieldCalendar = Array.from(
+        //       document.getElementsByClassName("usa-date-picker__calendar")
+        //     )[0];
+
+        //     if (dateFieldCalendar) {
+        //       console.log(dateFieldCalendar.getAttribute("hidden"));
+        //       dateFieldCalendar.className.includes("show-calendar")
+        //         ? (dateFieldCalendar.className = "usa-date-picker__calendar")
+        //         : (dateFieldCalendar.className =
+        //             "usa-date-picker__calendar show-calendar");
+        //     }
+        //   });
+        // }
       });
     }
 
@@ -79,6 +102,7 @@ export const Datefield: React.FC<Props> = ({
   }, [value]);
 
   const filterInput = (typedValue: KeyboardEvent) => {
+    console.log(id, typedValue);
     if (
       (typedValue && numbersAndSlashesFilter.test(typedValue.key)) ||
       typedValue.key === "Backspace" ||
@@ -102,17 +126,6 @@ export const Datefield: React.FC<Props> = ({
       setDateError(false);
     } else {
       setDateError(true);
-    }
-  };
-
-  const formatPropDates = (date: string | undefined) => {
-    let [month, day, year] = splitDateIntoVariables(date || "");
-    if (
-      date &&
-      completeDateFilter.test(date) &&
-      checkValidMonthDays(parseInt(month), parseInt(year), parseInt(day))
-    ) {
-      return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
     }
   };
 

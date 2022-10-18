@@ -45,7 +45,6 @@ describe("Tests for the Datefield component.", () => {
         name="test-3"
         label="test-3"
         hint
-        dateRangeChange={mockDateRangeFunc}
       />
     );
 
@@ -95,10 +94,7 @@ describe("Tests for the Datefield component.", () => {
   });
 
   it("Should open the calendar component with min and max dates", () => {
-    const mockOnClick = jest.fn();
-    const mockClassFunc = jest.fn();
-    const mockDateRangeFunc = jest.fn();
-    render(
+    const { container } = render(
       <Datefield
         data-testid="Datefield"
         id="test-4"
@@ -108,14 +104,12 @@ describe("Tests for the Datefield component.", () => {
         maxDate="10/11/2022"
         value="10/10/2022"
         hint={false}
-        toggleRangeCalendars={mockOnClick}
-        rangeCalendarOpen={true}
-        selectedRangeClassName={mockClassFunc}
-        dateRangeChange={mockDateRangeFunc}
       />
     );
     const DatefieldInput = screen.getByTestId("Datefield");
-    const DatefieldButton = screen.getByTestId("calendar-button");
+    const DatefieldButton = container.getElementsByClassName(
+      "usa-date-picker__button"
+    )[0];
     fireEvent.click(DatefieldButton);
     const DatefieldCalendar = screen.getByTestId("calendar");
 
@@ -125,7 +119,7 @@ describe("Tests for the Datefield component.", () => {
   });
 
   it("Should open the calendar component and choose a date", () => {
-    render(
+    const { container } = render(
       <Datefield
         data-testid="Datefield"
         id="test-5"
@@ -134,7 +128,9 @@ describe("Tests for the Datefield component.", () => {
       />
     );
     const DatefieldInput = screen.getByTestId("Datefield");
-    const DatefieldButton = screen.getByTestId("calendar-button");
+    const DatefieldButton = container.getElementsByClassName(
+      "usa-date-picker__button"
+    )[0];
     fireEvent.click(DatefieldButton);
     const DatefieldCalendar = screen.getByTestId("calendar");
     const randomDayButton = screen.getAllByRole("button")[6];
@@ -153,12 +149,14 @@ describe("Tests for the Datefield component.", () => {
         label="test-6"
       />
     );
-    const DatefieldButton = screen.getByTestId("calendar-button");
+    const DatefieldButton = container.getElementsByClassName(
+      "usa-date-picker__button"
+    )[0];
     fireEvent.click(DatefieldButton);
     await new Promise((res) => setTimeout(res, 1000));
 
     const today = container.getElementsByClassName(
-      "react-calendar__tile--now"
+      "usa-date-picker__calendar__date--today"
     )[0];
 
     expect(today).toHaveFocus();
@@ -174,7 +172,9 @@ describe("Tests for the Datefield component.", () => {
       />
     );
 
-    const DatefieldButton = screen.getByTestId("calendar-button");
+    const DatefieldButton = container.getElementsByClassName(
+      "usa-date-picker__button"
+    )[0];
     fireEvent.click(DatefieldButton);
     fireEvent.click(screen.getAllByRole("button")[6]);
 
@@ -192,13 +192,7 @@ describe("Tests for the Datefield component.", () => {
 describe("compontent snapshots", () => {
   it("primary datefield", () => {
     const { container } = render(
-      <Datefield
-        hint
-        id="test-8"
-        name="test-8"
-        label="test-8"
-        defaultDate="05/05/2020"
-      />
+      <Datefield hint id="test-8" name="test-8" label="test-8" />
     );
     expect(container).toMatchSnapshot();
   });
