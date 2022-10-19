@@ -1,3 +1,24 @@
+## [1.20.3](https://github.com/cmsgov/macpro-ux-lib/compare/v1.20.2...v1.20.3) (2022-10-17)
+
+
+### Reverts
+
+* Revert "chore(deps-dev): bump rollup from 2.79.1 to 3.1.0" (#159) ([1433f18](https://github.com/cmsgov/macpro-ux-lib/commit/1433f1801f580d162cc166009df6447fbda8e1c9)), closes [#159](https://github.com/cmsgov/macpro-ux-lib/issues/159) [#157](https://github.com/cmsgov/macpro-ux-lib/issues/157)
+
+## [1.20.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.20.1...v1.20.2) (2022-10-13)
+
+
+### Reverts
+
+* Revert "chore(deps-dev): bump rollup from 2.79.1 to 3.1.0" (#153) ([778fc3c](https://github.com/cmsgov/macpro-ux-lib/commit/778fc3c063766f851617096ffaba8a4dbb417d13)), closes [#153](https://github.com/cmsgov/macpro-ux-lib/issues/153) [#150](https://github.com/cmsgov/macpro-ux-lib/issues/150)
+
+## [1.20.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.20.0...v1.20.1) (2022-10-13)
+
+
+### Bug Fixes
+
+* **general:** upgrade package versions ([a6fbbf9](https://github.com/cmsgov/macpro-ux-lib/commit/a6fbbf9019e326d0450ee2ebe13c3bf6e5825fa3))
+
 # [1.20.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.19.0...v1.20.0) (2022-10-13)
 
 
