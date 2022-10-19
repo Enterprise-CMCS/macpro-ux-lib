@@ -1,58 +1,81 @@
 import React, { useEffect, useState } from "react";
-import { Dropdown } from "../Dropdown/Dropdown";
+import { Dropdown, DropdownData, DropdownProps } from "../Dropdown/Dropdown";
 import { FilterChip } from "../FilterChip/FilterChip";
-import dropdownData from "../Dropdown/data.json";
 
-type IntrinsicElements = JSX.IntrinsicElements["p"];
-
-interface Props extends IntrinsicElements {}
+interface Props extends DropdownProps {
+  defaultValues: (string | number)[];
+  dropdownData: DropdownData[];
+  label: string;
+  placeholder?: string;
+}
 
 /**
  * **MultiSelect Component**
  *
- * @param {string}    id  Unique identifier required for form control.
+ * @param {string}    defaultValues  Unique identifier required for form control.
+ * @param {string}    dropdownData   Unique identifier required for form control.
+ * @param {string}    id             Unique identifier required for form control.
+ * @param {string}    label          Unique identifier required for form control.
  */
-export const MultiSelect: React.FC<Props> = ({ ...rest }) => {
+export const MultiSelect: React.FC<Props> = ({
+  defaultValues,
+  dropdownData,
+  id,
+  name,
+  ...rest
+}) => {
   const [data, setDropdownData] = useState(dropdownData);
-  const [selectedValues, setSelectedValues] = useState<string[]>([]);
-  const [value, setValue] = useState<string | number | undefined>("");
+  const [dropdownValue, setDropdownValue] =
+    useState<string | number | undefined>("");
+  const [selectedValues, setSelectedValues] = useState<(string | number)[]>(
+    defaultValues ?? []
+  );
 
-  const handleValueChange = (val: string) => {
-    const obj = dropdownData.find((itm) => itm.value === val);
-    const displayString = obj?.displayString;
-    if (displayString) setSelectedValues([...selectedValues, displayString]);
-    setValue("");
+  // return the item with the corresponding provided value
+  const findInDropdownData = (val: string | number) => {
+    return dropdownData.find((item) => item.value === val);
   };
 
-  const removeChip = (val: string) => {
-    setSelectedValues(selectedValues.filter((e) => e !== val));
+  // add a clicked item's value to the array of selectedValues
+  const handleValueChange = (val: string | number | undefined) => {
+    const item = dropdownData.find((itm) => itm.value === val);
+    if (item?.value !== undefined)
+      setSelectedValues([...selectedValues, item.value]);
+    setDropdownValue("");
   };
 
+  const removeChip = (val: string | number) => {
+    setSelectedValues(selectedValues.filter((item) => item !== val));
+  };
+
+  // displayed data should be dropdownData - selectedValues
+  // update whenever a change is made to selectedValues
   useEffect(() => {
     setDropdownData(
-      dropdownData.filter(
-        (item) => !selectedValues.includes(item.displayString)
-      )
+      dropdownData.filter((item) => !selectedValues.includes(item.value))
     );
   }, [selectedValues]);
 
   return (
-    <>
+    <div className="multiselect" id={id}>
       <Dropdown
+        {...rest}
         data={data}
-        label={"Select an item from the list:"}
-        value={value}
         setValue={handleValueChange}
+        value={dropdownValue}
       />
-      <span style={{ display: "flex", flexDirection: "row" }}>
-        {selectedValues.map((val, idx) => (
-          <FilterChip
-            text={val}
-            key={`filterchip-${idx}`}
-            onClick={() => removeChip(val)}
-          />
-        ))}
-      </span>
-    </>
+      <div className="filterchip-wrapper">
+        {selectedValues.map((val, idx) => {
+          const item = findInDropdownData(val);
+          return (
+            <FilterChip
+              text={item?.displayString ?? ""}
+              key={`${id}-filterchip-${idx}`}
+              onClick={() => removeChip(val)}
+            />
+          );
+        })}
+      </div>
+    </div>
   );
 };

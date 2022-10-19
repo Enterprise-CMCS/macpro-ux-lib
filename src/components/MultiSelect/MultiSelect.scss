@@ -1,0 +1,11 @@
+.multiselect {
+  .filterchip-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 8px;
+    .filter-chip {
+      margin: 0 4px 4px 0;
+    }
+  }
+}
