@@ -4,6 +4,7 @@ exports[`compontent snapshots max date datefield 1`] = `
 <div>
   <div
     class="usa-date-range-picker"
+    data-min-date="0000-01-01"
   >
     <div
       class="usa-form-group datefield"
@@ -22,17 +23,55 @@ exports[`compontent snapshots max date datefield 1`] = `
         mm/dd/yyyy
       </div>
       <div
-        class="usa-date-picker"
-        data-max-date="false"
-        data-min-date="false"
+        class="usa-date-picker usa-date-picker--initialized usa-date-range-picker__range-start"
+        data-default-date=""
+        data-max-date=""
+        data-min-date="0000-01-01"
+        data-range-date=""
       >
         <input
           aria-describedby="test-4-hint"
+          aria-hidden="true"
           aria-labelledby="test-4-label"
-          class="usa-input"
-          id="test-4"
-          name="test-4"
+          class="usa-input usa-date-picker__internal-input"
+          style="display: none;"
+          tabindex="-1"
         />
+        <div
+          class="usa-date-picker__wrapper"
+        >
+          <input
+            aria-describedby="test-4-hint"
+            aria-labelledby="test-4-label"
+            class="usa-input usa-date-picker__external-input"
+            id="test-4"
+            name="test-4"
+            type="text"
+          />
+          
+    
+          <button
+            aria-haspopup="true"
+            aria-label="Toggle calendar"
+            class="usa-date-picker__button"
+            type="button"
+          />
+          
+    
+          <div
+            aria-modal="true"
+            class="usa-date-picker__calendar"
+            hidden=""
+            role="dialog"
+          />
+          
+    
+          <div
+            aria-live="polite"
+            class="usa-sr-only usa-date-picker__status"
+            role="status"
+          />
+        </div>
       </div>
     </div>
     <div
@@ -52,17 +91,55 @@ exports[`compontent snapshots max date datefield 1`] = `
         mm/dd/yyyy
       </div>
       <div
-        class="usa-date-picker"
+        class="usa-date-picker usa-date-picker--initialized usa-date-range-picker__range-end"
+        data-default-date=""
         data-max-date="false"
-        data-min-date="false"
+        data-min-date="0000-01-01"
+        data-range-date=""
       >
         <input
           aria-describedby="test-4-hint"
+          aria-hidden="true"
           aria-labelledby="test-4-label"
-          class="usa-input"
-          id="test-4"
-          name="test-4"
+          class="usa-input usa-date-picker__internal-input"
+          style="display: none;"
+          tabindex="-1"
         />
+        <div
+          class="usa-date-picker__wrapper"
+        >
+          <input
+            aria-describedby="test-4-hint"
+            aria-labelledby="test-4-label"
+            class="usa-input usa-date-picker__external-input"
+            id="test-4"
+            name="test-4"
+            type="text"
+          />
+          
+    
+          <button
+            aria-haspopup="true"
+            aria-label="Toggle calendar"
+            class="usa-date-picker__button"
+            type="button"
+          />
+          
+    
+          <div
+            aria-modal="true"
+            class="usa-date-picker__calendar"
+            hidden=""
+            role="dialog"
+          />
+          
+    
+          <div
+            aria-live="polite"
+            class="usa-sr-only usa-date-picker__status"
+            role="status"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -73,6 +150,7 @@ exports[`compontent snapshots min date datefield 1`] = `
 <div>
   <div
     class="usa-date-range-picker"
+    data-min-date="0000-01-01"
   >
     <div
       class="usa-form-group datefield"
@@ -85,17 +163,55 @@ exports[`compontent snapshots min date datefield 1`] = `
         test-5
       </label>
       <div
-        class="usa-date-picker"
-        data-max-date="false"
-        data-min-date="false"
+        class="usa-date-picker usa-date-picker--initialized usa-date-range-picker__range-start"
+        data-default-date=""
+        data-max-date=""
+        data-min-date="0000-01-01"
+        data-range-date=""
       >
         <input
           aria-describedby="test-5-label"
+          aria-hidden="true"
           aria-labelledby="test-5-label"
-          class="usa-input"
-          id="test-5"
-          name="test-5"
+          class="usa-input usa-date-picker__internal-input"
+          style="display: none;"
+          tabindex="-1"
         />
+        <div
+          class="usa-date-picker__wrapper"
+        >
+          <input
+            aria-describedby="test-5-label"
+            aria-labelledby="test-5-label"
+            class="usa-input usa-date-picker__external-input"
+            id="test-5"
+            name="test-5"
+            type="text"
+          />
+          
+    
+          <button
+            aria-haspopup="true"
+            aria-label="Toggle calendar"
+            class="usa-date-picker__button"
+            type="button"
+          />
+          
+    
+          <div
+            aria-modal="true"
+            class="usa-date-picker__calendar"
+            hidden=""
+            role="dialog"
+          />
+          
+    
+          <div
+            aria-live="polite"
+            class="usa-sr-only usa-date-picker__status"
+            role="status"
+          />
+        </div>
       </div>
     </div>
     <div
@@ -109,17 +225,55 @@ exports[`compontent snapshots min date datefield 1`] = `
         test-5
       </label>
       <div
-        class="usa-date-picker"
+        class="usa-date-picker usa-date-picker--initialized usa-date-range-picker__range-end"
+        data-default-date=""
         data-max-date="false"
-        data-min-date="false"
+        data-min-date="0000-01-01"
+        data-range-date=""
       >
         <input
           aria-describedby="test-5-label"
+          aria-hidden="true"
           aria-labelledby="test-5-label"
-          class="usa-input"
-          id="test-5"
-          name="test-5"
+          class="usa-input usa-date-picker__internal-input"
+          style="display: none;"
+          tabindex="-1"
         />
+        <div
+          class="usa-date-picker__wrapper"
+        >
+          <input
+            aria-describedby="test-5-label"
+            aria-labelledby="test-5-label"
+            class="usa-input usa-date-picker__external-input"
+            id="test-5"
+            name="test-5"
+            type="text"
+          />
+          
+    
+          <button
+            aria-haspopup="true"
+            aria-label="Toggle calendar"
+            class="usa-date-picker__button"
+            type="button"
+          />
+          
+    
+          <div
+            aria-modal="true"
+            class="usa-date-picker__calendar"
+            hidden=""
+            role="dialog"
+          />
+          
+    
+          <div
+            aria-live="polite"
+            class="usa-sr-only usa-date-picker__status"
+            role="status"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -130,6 +284,7 @@ exports[`compontent snapshots primary datefield 1`] = `
 <div>
   <div
     class="usa-date-range-picker"
+    data-min-date="0000-01-01"
   >
     <div
       class="usa-form-group datefield"
@@ -148,17 +303,55 @@ exports[`compontent snapshots primary datefield 1`] = `
         mm/dd/yyyy
       </div>
       <div
-        class="usa-date-picker"
-        data-max-date="false"
-        data-min-date="false"
+        class="usa-date-picker usa-date-picker--initialized usa-date-range-picker__range-start"
+        data-default-date=""
+        data-max-date=""
+        data-min-date="0000-01-01"
+        data-range-date=""
       >
         <input
           aria-describedby="test-3-hint"
+          aria-hidden="true"
           aria-labelledby="test-3-label"
-          class="usa-input"
-          id="test-3"
-          name="test-3"
+          class="usa-input usa-date-picker__internal-input"
+          style="display: none;"
+          tabindex="-1"
         />
+        <div
+          class="usa-date-picker__wrapper"
+        >
+          <input
+            aria-describedby="test-3-hint"
+            aria-labelledby="test-3-label"
+            class="usa-input usa-date-picker__external-input"
+            id="test-3"
+            name="test-3"
+            type="text"
+          />
+          
+    
+          <button
+            aria-haspopup="true"
+            aria-label="Toggle calendar"
+            class="usa-date-picker__button"
+            type="button"
+          />
+          
+    
+          <div
+            aria-modal="true"
+            class="usa-date-picker__calendar"
+            hidden=""
+            role="dialog"
+          />
+          
+    
+          <div
+            aria-live="polite"
+            class="usa-sr-only usa-date-picker__status"
+            role="status"
+          />
+        </div>
       </div>
     </div>
     <div
@@ -178,17 +371,55 @@ exports[`compontent snapshots primary datefield 1`] = `
         mm/dd/yyyy
       </div>
       <div
-        class="usa-date-picker"
+        class="usa-date-picker usa-date-picker--initialized usa-date-range-picker__range-end"
+        data-default-date=""
         data-max-date="false"
-        data-min-date="false"
+        data-min-date="0000-01-01"
+        data-range-date=""
       >
         <input
           aria-describedby="test-3-hint"
+          aria-hidden="true"
           aria-labelledby="test-3-label"
-          class="usa-input"
-          id="test-3"
-          name="test-3"
+          class="usa-input usa-date-picker__internal-input"
+          style="display: none;"
+          tabindex="-1"
         />
+        <div
+          class="usa-date-picker__wrapper"
+        >
+          <input
+            aria-describedby="test-3-hint"
+            aria-labelledby="test-3-label"
+            class="usa-input usa-date-picker__external-input"
+            id="test-3"
+            name="test-3"
+            type="text"
+          />
+          
+    
+          <button
+            aria-haspopup="true"
+            aria-label="Toggle calendar"
+            class="usa-date-picker__button"
+            type="button"
+          />
+          
+    
+          <div
+            aria-modal="true"
+            class="usa-date-picker__calendar"
+            hidden=""
+            role="dialog"
+          />
+          
+    
+          <div
+            aria-live="polite"
+            class="usa-sr-only usa-date-picker__status"
+            role="status"
+          />
+        </div>
       </div>
     </div>
   </div>

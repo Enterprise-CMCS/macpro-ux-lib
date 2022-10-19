@@ -3,24 +3,9 @@ import { Datefield } from "./Datefield";
 import { fireEvent, screen, render } from "../../test-setup";
 
 describe("Tests for the Datefield component.", () => {
-  it("Should render with hint", () => {
-    render(
-      <Datefield
-        data-testid="Datefield"
-        id="test-1"
-        name="test-1"
-        label="test-1"
-        hint
-      />
-    );
-
-    const DatefieldComp = screen.getByTestId("Datefield");
-    expect(DatefieldComp).toBeInTheDocument();
-  });
-
   it("Should render with hint and initalized value", async () => {
     const { container } = render(
-      <Datefield id="test-2" name="test-2" label="test-2" value="10/10/2020" />
+      <Datefield id="test-1" name="test-1" label="test-1" value="10/10/2020" />
     );
     await new Promise((res) => setTimeout(res, 100));
 
@@ -35,7 +20,7 @@ describe("Tests for the Datefield component.", () => {
 
   it("Should fire and change the value when the user types", async () => {
     const { container } = render(
-      <Datefield id="test-3" name="test-3" label="test-3" />
+      <Datefield id="test-2" name="test-2" label="test-2" />
     );
     await new Promise((res) => setTimeout(res, 100));
 
@@ -59,9 +44,9 @@ describe("Tests for the Datefield component.", () => {
   it("Should fire a check on blur", async () => {
     render(
       <Datefield
-        id="test-11"
-        name="test-11"
-        label="test-11"
+        id="test-4"
+        name="test-4"
+        label="test-4"
         data-testid="Datefield"
       />
     );
@@ -95,9 +80,9 @@ describe("Tests for the Datefield component.", () => {
     const { container } = render(
       <Datefield
         data-testid="Datefield"
-        id="test-5"
-        name="test-5"
-        label="test-5"
+        id="test-4"
+        name="test-4"
+        label="test-4"
       />
     );
     await new Promise((res) => setTimeout(res, 100));
@@ -124,9 +109,9 @@ describe("compontent snapshots", () => {
     const { container } = render(
       <Datefield
         hint
-        id="test-9"
-        name="test-9"
-        label="test-9"
+        id="test-5"
+        name="test-5"
+        label="test-5"
         maxDate="05/05/2020"
       />
     );
@@ -137,9 +122,9 @@ describe("compontent snapshots", () => {
     const { container } = render(
       <Datefield
         hint
-        id="test-10"
-        name="test-10"
-        label="test-10"
+        id="test-6"
+        name="test-6"
+        label="test-6"
         required
         minDate="05/05/2020"
       />

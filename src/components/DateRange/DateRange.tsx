@@ -59,15 +59,11 @@ export const DateRange: React.FC<Props> = ({
     const datePickerElement = dateRangeRef.current;
 
     if (typeof dateRange.on === "function") {
-      setTimeout(() => {
-        dateRange.on(datePickerElement);
-      });
+      dateRange.on(datePickerElement);
     }
     return () => {
       if (typeof dateRange.off === "function") {
-        setTimeout(() => {
-          dateRange.off(datePickerElement);
-        });
+        dateRange.off(datePickerElement);
       }
     };
   }, []);

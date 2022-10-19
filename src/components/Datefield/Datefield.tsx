@@ -54,31 +54,23 @@ export const Datefield: React.FC<Props> = ({
   useLayoutEffect(() => {
     const datePickerElement = datePickerRef.current;
     if (typeof datePicker.on === "function") {
-      setTimeout(() => {
-        datePicker.on(datePickerElement);
-      });
+      datePicker.on(datePickerElement);
 
-      setTimeout(() => {
-        const dateFieldinput = Array.from(
-          document.getElementsByClassName("usa-date-picker__external-input")
-        ).find((dateField) => dateField.id === id);
+      const dateFieldinput = Array.from(
+        document.getElementsByClassName("usa-date-picker__external-input")
+      ).find((dateField) => dateField.id === id);
 
-        if (dateFieldinput) {
-          dateFieldinput.addEventListener("keydown", (e: any) =>
-            filterInput(e)
-          );
-          dateFieldinput.addEventListener("blur", (e: any) =>
-            checkValidDate(e.target.value)
-          );
-        }
-      });
+      if (dateFieldinput) {
+        dateFieldinput.addEventListener("keydown", (e: any) => filterInput(e));
+        dateFieldinput.addEventListener("blur", (e: any) =>
+          checkValidDate(e.target.value)
+        );
+      }
     }
 
     return () => {
       if (typeof datePicker.off === "function") {
-        setTimeout(() => {
-          datePicker.off(datePickerElement);
-        });
+        datePicker.off(datePickerElement);
       }
     };
   }, [value]);
