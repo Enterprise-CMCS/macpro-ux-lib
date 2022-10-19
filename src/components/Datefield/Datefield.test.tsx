@@ -43,14 +43,16 @@ describe("Tests for the Datefield component.", () => {
       "usa-input usa-date-picker__external-input"
     )[0];
 
-    fireEvent.change(DatefieldComp, {
+    fireEvent.keyDown(DatefieldComp, {
       target: { value: "10/10/2020" },
     });
     expect(DatefieldComp).toHaveValue("10/10/2020");
 
-    fireEvent.change(DatefieldComp, {
+    fireEvent.keyDown(DatefieldComp, {
       target: { value: "" },
     });
+
+    fireEvent.keyDown(DatefieldComp, { key: "/" });
     expect(DatefieldComp).toHaveValue("");
   });
 
@@ -107,48 +109,6 @@ describe("Tests for the Datefield component.", () => {
     fireEvent.click(DatefieldButton);
     const randomDayButton = screen.getAllByRole("button")[6];
     fireEvent.click(randomDayButton);
-  });
-
-  it("Should focus on current date when calendar is open", async () => {
-    const { container } = render(
-      <Datefield id="test-6" name="test-6" label="test-6" />
-    );
-    await new Promise((res) => setTimeout(res, 100));
-
-    const DatefieldButton = container.getElementsByClassName(
-      "usa-date-picker__button"
-    )[0];
-    fireEvent.click(DatefieldButton);
-
-    const today = container.getElementsByClassName(
-      "usa-date-picker__calendar__date--today"
-    )[0];
-
-    expect(today).toHaveFocus();
-  });
-
-  it("Should focus the selected date when it has a value", async () => {
-    const { container } = render(
-      <Datefield
-        data-testid="Datefield"
-        id="test-11"
-        name="test-11"
-        label="test-11"
-        value="10/10/2022"
-      />
-    );
-    await new Promise((res) => setTimeout(res, 100));
-
-    const DatefieldButton = container.getElementsByClassName(
-      "usa-date-picker__button"
-    )[0];
-    fireEvent.click(DatefieldButton);
-
-    const selectedDate = container.getElementsByClassName(
-      "usa-date-picker__calendar__date--selected"
-    )[0];
-
-    expect(selectedDate).toHaveFocus();
   });
 });
 

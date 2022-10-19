@@ -37,68 +37,32 @@ describe("Tests for the DateRange component.", () => {
     expect(DatefieldComp).toBeInTheDocument();
   });
 
-  // it("Should render with hint", () => {
-  //   render(
-  //     <DateRange
-  //       data-testid="DateRange"
-  //       startInputId="test-2"
-  //       endInputId="test-2"
-  //       endInputName="test-2"
-  //       startInputName="test-2"
-  //       startLabel="test-2"
-  //       endLabel="test-2"
-  //       hint={true}
-  //     />
-  //   );
-  //   const DatefieldButton1 = screen.queryAllByTestId("calendar-button")[0];
-  //   const DatefieldButton2 = screen.queryAllByTestId("calendar-button")[1];
-  //   fireEvent.click(DatefieldButton2);
-  //   fireEvent.click(DatefieldButton1);
-  //   fireEvent.click(DatefieldButton2);
-  //   fireEvent.click(DatefieldButton1);
-  //   const DatefieldComp = screen.getByTestId("DateRange");
-  //   expect(DatefieldComp).toBeInTheDocument();
-  // });
-  // it("Should render with a start date", () => {
-  //   render(
-  //     <DateRange
-  //       data-testid="DateRange"
-  //       startInputId="test-6"
-  //       endInputId="test-6"
-  //       endInputName="test-6"
-  //       startInputName="test-6"
-  //       startLabel="test-6"
-  //       endLabel="test-6"
-  //       startDate="09/10/2022"
-  //       hint={true}
-  //     />
-  //   );
-  //   const DatefieldButton2 = screen.queryAllByTestId("calendar-button")[1];
-  //   fireEvent.click(DatefieldButton2);
-  //   const DatefieldComp = screen.getByTestId("DateRange");
-  //   expect(DatefieldComp).toBeInTheDocument();
-  // });
-  // it("Should render with an end date", async () => {
-  //   const { container } = render(
-  //     <DateRange
-  //       data-testid="DateRange"
-  //       startInputId="test-6"
-  //       endInputId="test-6"
-  //       endInputName="test-6"
-  //       startInputName="test-6"
-  //       startLabel="test-6"
-  //       endLabel="test-6"
-  //       endDate="09/10/2022"
-  //       hint={true}
-  //     />
-  //   );
-  //   const DatefieldButton = container.getElementsByClassName(
-  //     "usa-date-picker__button"
-  //   )[0];
-  //   fireEvent.click(DatefieldButton);
-  //   await new Promise((res) => setTimeout(res, 1000));
-  //   // expect(endDate).toHaveFocus();
-  // });
+  it("Should render with hint,start date, and should be focused on start date when opening up calendar", async () => {
+    const { container } = render(
+      <DateRange
+        data-testid="DateRange"
+        startInputId="test-2"
+        endInputId="test-2"
+        endInputName="test-2"
+        startInputName="test-2"
+        startLabel="test-2"
+        endLabel="test-2"
+        startDate="09/10/2022"
+      />
+    );
+    await new Promise((res) => setTimeout(res, 100));
+    const endCalendarButton = container.getElementsByClassName(
+      "usa-date-picker__button"
+    )[0];
+    fireEvent.click(endCalendarButton);
+    await new Promise((res) => setTimeout(res, 100));
+
+    const startDate = container.getElementsByClassName(
+      "usa-date-picker__calendar__date--selected"
+    )[0];
+
+    expect(startDate).toHaveFocus();
+  });
 });
 
 describe("compontent snapshots", () => {
