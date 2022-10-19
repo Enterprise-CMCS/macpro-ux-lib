@@ -7,14 +7,14 @@ exports[`compontent snapshots max date datefield 1`] = `
   >
     <label
       class="usa-label"
-      for="test-9"
-      id="test-9-label"
+      for="test-5"
+      id="test-5-label"
     >
-      test-9
+      test-5
     </label>
     <div
       class="usa-hint"
-      id="test-9-hint"
+      id="test-5-hint"
     >
       mm/dd/yyyy
     </div>
@@ -24,9 +24,9 @@ exports[`compontent snapshots max date datefield 1`] = `
       data-min-date="0000-01-01"
     >
       <input
-        aria-describedby="test-9-hint"
+        aria-describedby="test-5-hint"
         aria-hidden="true"
-        aria-labelledby="test-9-label"
+        aria-labelledby="test-5-label"
         class="usa-input usa-date-picker__internal-input"
         style="display: none;"
         tabindex="-1"
@@ -35,11 +35,11 @@ exports[`compontent snapshots max date datefield 1`] = `
         class="usa-date-picker__wrapper"
       >
         <input
-          aria-describedby="test-9-hint"
-          aria-labelledby="test-9-label"
+          aria-describedby="test-5-hint"
+          aria-labelledby="test-5-label"
           class="usa-input usa-date-picker__external-input"
-          id="test-9"
-          name="test-9"
+          id="test-5"
+          name="test-5"
           type="text"
         />
         
@@ -78,14 +78,14 @@ exports[`compontent snapshots min date datefield 1`] = `
   >
     <label
       class="usa-label"
-      for="test-10"
-      id="test-10-label"
+      for="test-6"
+      id="test-6-label"
     >
-      test-10
+      test-6
     </label>
     <div
       class="usa-hint"
-      id="test-10-hint"
+      id="test-6-hint"
     >
       mm/dd/yyyy
     </div>
@@ -95,9 +95,9 @@ exports[`compontent snapshots min date datefield 1`] = `
       data-min-date="2020-05-05"
     >
       <input
-        aria-describedby="test-10-hint"
+        aria-describedby="test-6-hint"
         aria-hidden="true"
-        aria-labelledby="test-10-label"
+        aria-labelledby="test-6-label"
         class="usa-input usa-date-picker__internal-input"
         style="display: none;"
         tabindex="-1"
@@ -106,11 +106,11 @@ exports[`compontent snapshots min date datefield 1`] = `
         class="usa-date-picker__wrapper"
       >
         <input
-          aria-describedby="test-10-hint"
-          aria-labelledby="test-10-label"
+          aria-describedby="test-6-hint"
+          aria-labelledby="test-6-label"
           class="usa-input usa-date-picker__external-input"
-          id="test-10"
-          name="test-10"
+          id="test-6"
+          name="test-6"
           type="text"
         />
         

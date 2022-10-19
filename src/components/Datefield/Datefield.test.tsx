@@ -12,7 +12,7 @@ describe("Tests for the Datefield component.", () => {
     const DatefieldComp = container.getElementsByClassName(
       "usa-input usa-date-picker__external-input"
     )[0];
-    const labelComp = screen.getByText("test-2");
+    const labelComp = screen.getByText("test-1");
 
     expect(labelComp).toBeInTheDocument();
     expect(DatefieldComp).toHaveValue("10/10/2020");
@@ -52,7 +52,7 @@ describe("Tests for the Datefield component.", () => {
     );
     await new Promise((res) => setTimeout(res, 100));
 
-    const DatefieldComp = screen.getAllByLabelText("test-11")[1];
+    const DatefieldComp = screen.getAllByLabelText("test-4")[1];
 
     fireEvent.blur(DatefieldComp, {
       target: { value: "10/10/2020" },
@@ -73,7 +73,7 @@ describe("Tests for the Datefield component.", () => {
 
     expect(hintComp).toBeInTheDocument();
     expect(DatefieldComp).toHaveValue("00/00/00");
-    expect(DatefieldComp).toHaveAttribute("aria-describedby", "test-11-hint");
+    expect(DatefieldComp).toHaveAttribute("aria-describedby", "test-4-hint");
   });
 
   it("Should open the calendar component and choose a date", async () => {
