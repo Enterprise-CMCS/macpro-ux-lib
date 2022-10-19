@@ -10,7 +10,7 @@ interface Props extends IntrinsicElements {
 /**
  * **FilterChip Component**
  *
- * @param {string}    id  Unique identifier required for each Accordion item used for form control.
+ * @param {string}    text  Text content to be displayed within the FilterChip.
  */
 export const FilterChip: React.FC<Props> = ({ text, ...rest }) => {
   return (
