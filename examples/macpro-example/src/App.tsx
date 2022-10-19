@@ -270,8 +270,8 @@ function App() {
           endInputId="id-2"
           endInputName="react-calendar2"
           endLabel="End Range"
-          defaultStartDate="08/08/2022"
-          hint={true}
+          startDate="08/08/2022"
+          maxDate="09/09/2022"
         />
         <UX.Alert
           alertHeading="Alert Heading"
@@ -283,7 +283,6 @@ function App() {
           alertBody="Alert Body"
           emergency
         />
-        <UX.Datefield id="1" name="react-calendar" label="Calendar example" />
         <UX.Tabs>
           <UX.TabPanel tabLabel="Summary" id="tab-panel--summary">
             The Bill of Rights is the first ten amendments to the United States

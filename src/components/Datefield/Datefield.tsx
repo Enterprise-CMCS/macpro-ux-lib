@@ -129,8 +129,8 @@ export const Datefield: React.FC<Props> = ({
 
       <div
         className="usa-date-picker"
-        data-min-date={formatPropDates(minDate)}
-        data-max-date={formatPropDates(maxDate)}
+        data-min-date={minDate !== undefined && formatPropDates(minDate)}
+        data-max-date={maxDate !== undefined && formatPropDates(maxDate)}
         data-default-value={formatPropDates(value)}
       >
         <input
