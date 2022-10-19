@@ -53,10 +53,10 @@ export const DateRange: React.FC<Props> = ({
   required,
   ...rest
 }) => {
-  const datePickerRef = useRef<HTMLInputElement>(null);
+  const dateRangeRef = useRef<HTMLInputElement>(null);
 
   useLayoutEffect(() => {
-    const datePickerElement = datePickerRef.current;
+    const datePickerElement = dateRangeRef.current;
 
     if (typeof dateRange.on === "function") {
       setTimeout(() => {
@@ -74,6 +74,7 @@ export const DateRange: React.FC<Props> = ({
 
   return (
     <div
+      ref={dateRangeRef}
       className="usa-date-range-picker"
       data-min-date={formatPropDates(minDate)}
       data-max-date={formatPropDates(maxDate)}

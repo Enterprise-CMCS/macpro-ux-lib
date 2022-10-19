@@ -13,73 +13,69 @@ describe("Tests for the Datefield component.", () => {
         hint
       />
     );
+
     const DatefieldComp = screen.getByTestId("Datefield");
     expect(DatefieldComp).toBeInTheDocument();
   });
 
-  it("Should render with hint and initalized value", () => {
-    render(
-      <Datefield
-        data-testid="Datefield"
-        id="test-2"
-        name="test-2"
-        label="test-2"
-        value="10/10/2020"
-        hint
-      />
+  it("Should render with hint and initalized value", async () => {
+    const { container } = render(
+      <Datefield id="test-2" name="test-2" label="test-2" value="10/10/2020" />
     );
-    const DatefieldComp = screen.getByTestId("Datefield");
+    await new Promise((res) => setTimeout(res, 100));
+
+    const DatefieldComp = container.getElementsByClassName(
+      "usa-input usa-date-picker__external-input"
+    )[0];
     const labelComp = screen.getByText("test-2");
 
     expect(labelComp).toBeInTheDocument();
-    expect(DatefieldComp).toHaveAttribute("value", "10/10/2020");
+    expect(DatefieldComp).toHaveValue("10/10/2020");
   });
 
-  it("Should fire and change the value when the user types", () => {
-    const mockDateRangeFunc = jest.fn();
-
-    render(
-      <Datefield
-        data-testid="Datefield"
-        id="test-3"
-        name="test-3"
-        label="test-3"
-        hint
-      />
+  it("Should fire and change the value when the user types", async () => {
+    const { container } = render(
+      <Datefield id="test-3" name="test-3" label="test-3" />
     );
+    await new Promise((res) => setTimeout(res, 100));
 
-    const DatefieldComp = screen.getByLabelText("test-3");
+    const DatefieldComp = container.getElementsByClassName(
+      "usa-input usa-date-picker__external-input"
+    )[0];
+
     fireEvent.change(DatefieldComp, {
       target: { value: "10/10/2020" },
     });
-    expect(DatefieldComp).toHaveDisplayValue("10/10/2020");
+    expect(DatefieldComp).toHaveValue("10/10/2020");
 
     fireEvent.change(DatefieldComp, {
       target: { value: "" },
     });
-    expect(DatefieldComp).toHaveDisplayValue("");
+    expect(DatefieldComp).toHaveValue("");
   });
 
-  it("Should fire a check on blur", () => {
+  it("Should fire a check on blur", async () => {
     render(
       <Datefield
-        data-testid="Datefield"
         id="test-11"
         name="test-11"
         label="test-11"
-        hint
+        data-testid="Datefield"
       />
     );
-    const DatefieldComp = screen.getByLabelText("test-11");
+    await new Promise((res) => setTimeout(res, 100));
+
+    const DatefieldComp = screen.getAllByLabelText("test-11")[1];
+
     fireEvent.blur(DatefieldComp, {
       target: { value: "10/10/2020" },
     });
-    expect(DatefieldComp).toHaveDisplayValue("10/10/2020");
+    expect(DatefieldComp).toHaveValue("10/10/2020");
 
     fireEvent.blur(DatefieldComp, {
       target: { value: "" },
     });
-    expect(DatefieldComp).toHaveDisplayValue("");
+    expect(DatefieldComp).toHaveValue("");
 
     fireEvent.blur(DatefieldComp, {
       target: { value: "00/00/00" },
@@ -89,36 +85,11 @@ describe("Tests for the Datefield component.", () => {
     );
 
     expect(hintComp).toBeInTheDocument();
-    expect(DatefieldComp).toHaveDisplayValue("00/00/00");
+    expect(DatefieldComp).toHaveValue("00/00/00");
     expect(DatefieldComp).toHaveAttribute("aria-describedby", "test-11-hint");
   });
 
-  it("Should open the calendar component with min and max dates", () => {
-    const { container } = render(
-      <Datefield
-        data-testid="Datefield"
-        id="test-4"
-        name="test-4"
-        label="test-4"
-        minDate="10/10/2022"
-        maxDate="10/11/2022"
-        value="10/10/2022"
-        hint={false}
-      />
-    );
-    const DatefieldInput = screen.getByTestId("Datefield");
-    const DatefieldButton = container.getElementsByClassName(
-      "usa-date-picker__button"
-    )[0];
-    fireEvent.click(DatefieldButton);
-    const DatefieldCalendar = screen.getByTestId("calendar");
-
-    expect(DatefieldCalendar).toBeInTheDocument();
-    expect(DatefieldInput).toHaveValue("10/10/2022");
-    expect(DatefieldInput).toHaveAttribute("aria-describedby", "test-4-label");
-  });
-
-  it("Should open the calendar component and choose a date", () => {
+  it("Should open the calendar component and choose a date", async () => {
     const { container } = render(
       <Datefield
         data-testid="Datefield"
@@ -127,33 +98,27 @@ describe("Tests for the Datefield component.", () => {
         label="test-5"
       />
     );
-    const DatefieldInput = screen.getByTestId("Datefield");
+    await new Promise((res) => setTimeout(res, 100));
+
     const DatefieldButton = container.getElementsByClassName(
       "usa-date-picker__button"
     )[0];
+
     fireEvent.click(DatefieldButton);
-    const DatefieldCalendar = screen.getByTestId("calendar");
     const randomDayButton = screen.getAllByRole("button")[6];
     fireEvent.click(randomDayButton);
-
-    expect(DatefieldCalendar).not.toBeInTheDocument();
-    expect(DatefieldInput).toHaveValue();
   });
 
   it("Should focus on current date when calendar is open", async () => {
     const { container } = render(
-      <Datefield
-        data-testid="Datefield"
-        id="test-6"
-        name="test-6"
-        label="test-6"
-      />
+      <Datefield id="test-6" name="test-6" label="test-6" />
     );
+    await new Promise((res) => setTimeout(res, 100));
+
     const DatefieldButton = container.getElementsByClassName(
       "usa-date-picker__button"
     )[0];
     fireEvent.click(DatefieldButton);
-    await new Promise((res) => setTimeout(res, 1000));
 
     const today = container.getElementsByClassName(
       "usa-date-picker__calendar__date--today"
@@ -169,20 +134,18 @@ describe("Tests for the Datefield component.", () => {
         id="test-11"
         name="test-11"
         label="test-11"
+        value="10/10/2022"
       />
     );
+    await new Promise((res) => setTimeout(res, 100));
 
     const DatefieldButton = container.getElementsByClassName(
       "usa-date-picker__button"
     )[0];
     fireEvent.click(DatefieldButton);
-    fireEvent.click(screen.getAllByRole("button")[6]);
-
-    fireEvent.click(DatefieldButton);
-    await new Promise((res) => setTimeout(res, 1000));
 
     const selectedDate = container.getElementsByClassName(
-      "react-calendar__tile--active"
+      "usa-date-picker__calendar__date--selected"
     )[0];
 
     expect(selectedDate).toHaveFocus();

@@ -62,7 +62,6 @@ exports[`compontent snapshots min date datefield 1`] = `
         class="usa-input"
         id="test-10"
         name="test-10"
-        required=""
       />
     </div>
   </div>

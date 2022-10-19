@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useLayoutEffect, useRef, useState } from "react";
 import {
   completeDateFilter,
@@ -49,11 +50,10 @@ export const Datefield: React.FC<Props> = ({
 }) => {
   value = completeDateFilter.test(value || "") ? value : "";
   const [dateError, setDateError] = useState(false);
-  const datePickerRef = useRef<HTMLInputElement>(null);
+  const datePickerRef = useRef<HTMLInputElement>();
 
   useLayoutEffect(() => {
     const datePickerElement = datePickerRef.current;
-
     if (typeof datePicker.on === "function") {
       setTimeout(() => {
         datePicker.on(datePickerElement);
@@ -112,7 +112,7 @@ export const Datefield: React.FC<Props> = ({
   };
 
   return (
-    <div className="usa-form-group datefield">
+    <div className="usa-form-group datefield" ref={datePickerRef}>
       <label className="usa-label" id={`${id}-label`} htmlFor={id}>
         {label}
       </label>
