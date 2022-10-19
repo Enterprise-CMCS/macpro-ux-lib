@@ -9,12 +9,12 @@ import React, {
 
 type IntrinsicElements = JSX.IntrinsicElements["select"];
 
-interface DropdownData {
+export interface DropdownData {
   value: string | number;
   displayString: string;
 }
 
-interface Props extends IntrinsicElements {
+export interface DropdownProps extends IntrinsicElements {
   data: DropdownData[];
   label: string;
   readOnly?: boolean;
@@ -28,19 +28,21 @@ interface Props extends IntrinsicElements {
  * This component is a wrapper around the HTML `<select>` element and provides the basic functionality of a dropdown along with accessibility and styling.
  * A key enhancement to the standard dropdown is the ability for a user to type to search for an option.
  *
- * @param {string}        className A class name that will be applied on the select element.
- * @param {DropdownData}  data      Data used to populate the dropdown.
- * @param {string}        id        The id of the dropdown.
- * @param {string}        label     String used to label the dropdown in the UI.
- * @param {string}        name      Name of the dropdown used to identify it in the context of a form.
- * @param {boolean}       readOnly  Sets input field to read-only. Effectively disables type-ahead search.
+ * @param {string}        [className]    A class name that will be applied on the select element.
+ * @param {DropdownData}  data           Data used to populate the dropdown.
+ * @param {string}        id             The id of the dropdown.
+ * @param {string}        label          String used to label the dropdown in the UI.
+ * @param {string}        name           Name of the dropdown used to identify it in the context of a form.
+ * @param {string}        [placeholder]  Placeholder text to be displayed in the input.
+ * @param {boolean}       readOnly       Sets input field to read-only. Effectively disables type-ahead search.
  */
-export const Dropdown: React.FC<Props> = ({
+export const Dropdown: React.FC<DropdownProps> = ({
   className,
   data,
   id,
   label,
   name,
+  placeholder,
   readOnly = false,
   setValue,
   value,
@@ -184,6 +186,7 @@ export const Dropdown: React.FC<Props> = ({
               handleInputArrowDown();
             }
           }}
+          placeholder={placeholder}
           type="text"
           readOnly={readOnly}
           role="combobox"
