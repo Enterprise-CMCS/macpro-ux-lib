@@ -10,12 +10,4 @@
   .usa-hint.input-error {
     color: c.$error;
   }
-
-  .hidden-button {
-    visibility: hidden;
-  }
-
-  .usa-date-picker__wrapper:not(:first-of-type) {
-    display: none;
-  }
 }
