@@ -12,7 +12,7 @@ checks:
       threshold: 1000
   method-complexity:
     config:
-      threshold: 50
+      threshold: 30
   return-statements:
     enabled: false
   similar-code:
