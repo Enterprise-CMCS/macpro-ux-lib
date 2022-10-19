@@ -1,4 +1,3 @@
-// @ts-nocheck
 import React, { useLayoutEffect, useRef, useState } from "react";
 import {
   completeDateFilter,
@@ -50,7 +49,7 @@ export const Datefield: React.FC<Props> = ({
 }) => {
   value = completeDateFilter.test(value || "") ? value : "";
   const [dateError, setDateError] = useState(false);
-  const datePickerRef = useRef<HTMLInputElement>();
+  const datePickerRef = useRef<HTMLDivElement>(null);
 
   useLayoutEffect(() => {
     const datePickerElement = datePickerRef.current;
