@@ -18,8 +18,8 @@ interface Props extends IntrinsicElements {
   data: DropdownData[];
   label: string;
   readOnly?: boolean;
-  setValue: Dispatch<SetStateAction<any>>;
-  value: string | number | undefined;
+  setValue?: Dispatch<SetStateAction<any>>;
+  value?: string | number | undefined;
 }
 
 /**
@@ -59,6 +59,9 @@ export const Dropdown: React.FC<Props> = ({
   const [dropdownData, setDropdownData] = useState<DropdownData[]>(data);
   const [hidden, setHidden] = useState<boolean>(true);
   const [inputValue, setInputValue] = useState<string>("");
+
+  if (value === undefined && setValue === undefined)
+    [value, setValue] = useState<string | number | undefined>("");
 
   const closeDropdown = () => {
     setHidden(true);
@@ -102,7 +105,7 @@ export const Dropdown: React.FC<Props> = ({
 
   // triggered by click or click-equivalent event (Enter/Tab)
   const handleItemClick = (itemValue: string | number) => {
-    setValue(itemValue);
+    setValue && setValue(itemValue);
     closeDropdown();
   };
 
@@ -147,7 +150,7 @@ export const Dropdown: React.FC<Props> = ({
             className ? ` ${className}` : ""
           }`}
           name={name}
-          onChange={(e) => setValue(e.target.value)}
+          onChange={(e) => setValue && setValue(e.target.value)}
           tabIndex={-1}
           value={value}
           {...rest}
@@ -193,7 +196,7 @@ export const Dropdown: React.FC<Props> = ({
             className="usa-combo-box__clear-input"
             aria-label="Clear the select contents"
             onClick={() => {
-              setValue("");
+              setValue && setValue("");
             }}
           >
             <Icon name="close" />

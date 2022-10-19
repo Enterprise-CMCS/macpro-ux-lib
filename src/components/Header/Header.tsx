@@ -1,9 +1,8 @@
 import React, { useRef, useState } from "react";
-import { Button } from "components/Button/Button";
-import { Link, LinkProps } from "components/Link/Link";
+import { Icon } from "../Icon/Icon";
+import { Link, LinkProps } from "../Link/Link";
 import { useOutsideClick } from "hooks/useOutsideClick";
 import { useWindowDimensions } from "hooks/useWindowDimensions";
-import { Icon } from "components/Icon/Icon";
 
 interface SubMenuColumnProps {
   links: LinkProps[];
