@@ -15,7 +15,7 @@
     visibility: hidden;
   }
 
-  // .show-calendar {
-  //   display: block;
-  // }
+  .usa-date-picker__wrapper:not(:first-of-type) {
+    display: none;
+  }
 }

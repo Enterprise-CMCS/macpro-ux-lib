@@ -19,6 +19,7 @@ export interface Props extends IntrinsicElements {
   minDate?: string;
   maxDate?: string;
   value?: string;
+  required?: boolean;
 }
 
 /**
@@ -31,6 +32,7 @@ export interface Props extends IntrinsicElements {
  * @param {string}  [minDate]              The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
  * @param {string}  [maxDate]              The date picker will not allow a date selection after this date. The date should be in the format mm/dd/yyyy.
  * @param {string}  [value]                Value of the input element.
+ * @param {string}  [required]             The date picker component will be required in terms of native form validation.
  */
 
 export const Datefield: React.FC<Props> = ({
@@ -42,6 +44,7 @@ export const Datefield: React.FC<Props> = ({
   maxDate,
   hint = true,
   disabled = false,
+  required = false,
   ...rest
 }) => {
   value = completeDateFilter.test(value || "") ? value : "";
@@ -50,7 +53,7 @@ export const Datefield: React.FC<Props> = ({
 
   useLayoutEffect(() => {
     const datePickerElement = datePickerRef.current;
-    console.log(datePickerElement);
+
     if (typeof datePicker.on === "function") {
       setTimeout(() => {
         datePicker.on(datePickerElement);
@@ -69,26 +72,6 @@ export const Datefield: React.FC<Props> = ({
             checkValidDate(e.target.value)
           );
         }
-
-        // const dateFieldButton = Array.from(
-        //   document.getElementsByClassName("usa-date-picker__button")
-        // )[0];
-
-        // if (dateFieldButton) {
-        //   dateFieldButton.addEventListener("click", () => {
-        //     const dateFieldCalendar = Array.from(
-        //       document.getElementsByClassName("usa-date-picker__calendar")
-        //     )[0];
-
-        //     if (dateFieldCalendar) {
-        //       console.log(dateFieldCalendar.getAttribute("hidden"));
-        //       dateFieldCalendar.className.includes("show-calendar")
-        //         ? (dateFieldCalendar.className = "usa-date-picker__calendar")
-        //         : (dateFieldCalendar.className =
-        //             "usa-date-picker__calendar show-calendar");
-        //     }
-        //   });
-        // }
       });
     }
 
@@ -102,7 +85,6 @@ export const Datefield: React.FC<Props> = ({
   }, [value]);
 
   const filterInput = (typedValue: KeyboardEvent) => {
-    console.log(id, typedValue);
     if (
       (typedValue && numbersAndSlashesFilter.test(typedValue.key)) ||
       typedValue.key === "Backspace" ||

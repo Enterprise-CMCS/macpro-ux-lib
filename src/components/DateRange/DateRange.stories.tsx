@@ -1,5 +1,4 @@
-import React, { useLayoutEffect } from "react";
-import { useEffect } from "@storybook/addons";
+import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { DateRange } from "./DateRange";
 
@@ -55,6 +54,10 @@ export default {
       description:
         "Boolean that shows or hide the date format hint for both inputs, in the format mm/dd/yyyy.",
     },
+    required: {
+      description:
+        "The date picker component will be required in terms of native form validation.",
+    },
   },
   args: {
     startInputId: "id-1",
@@ -72,17 +75,6 @@ export default {
       },
     },
   },
-  // decorators: [
-  //   (Story) => {
-  //     useLayoutEffect(() => {
-  //       const script = document.createElement("script");
-  //       script.src = "../../assets/js/uswds.min.js";
-  //       document.body.appendChild(script);
-  //     });
-
-  //     return <Story />;
-  //   },
-  // ],
 } as ComponentMeta<typeof DateRange>;
 
 const Template: ComponentStory<typeof DateRange> = ({ ...rest }) => (
@@ -91,7 +83,8 @@ const Template: ComponentStory<typeof DateRange> = ({ ...rest }) => (
 
 export const PrimaryDateRange = Template.bind({});
 
-// export const DateRangeWithDefaults = Template.bind({});
-// DateRangeWithDefaults.args = {
-
-// };
+export const DateRangeWithDefaults = Template.bind({});
+DateRangeWithDefaults.args = {
+  startDate: "10/10/2022",
+  endDate: "10/14/2022",
+};
