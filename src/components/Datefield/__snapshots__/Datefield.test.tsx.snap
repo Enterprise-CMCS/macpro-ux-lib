@@ -21,6 +21,7 @@ exports[`compontent snapshots max date datefield 1`] = `
     <div
       class="usa-date-picker"
       data-max-date="2020-05-05"
+      data-min-date="false"
     >
       <input
         aria-describedby="test-9-hint"
@@ -54,6 +55,7 @@ exports[`compontent snapshots min date datefield 1`] = `
     </div>
     <div
       class="usa-date-picker"
+      data-max-date="false"
       data-min-date="2020-05-05"
     >
       <input
@@ -88,6 +90,8 @@ exports[`compontent snapshots primary datefield 1`] = `
     </div>
     <div
       class="usa-date-picker"
+      data-max-date="false"
+      data-min-date="false"
     >
       <input
         aria-describedby="test-8-hint"
