@@ -28,11 +28,11 @@ export interface Props extends IntrinsicElements {
  * @param {string}  name                   Name of the input field.
  * @param {string}  label                  Field label.
  * @param {boolean} [hint]                 Boolean that shows or hide the date format hint, in the format mm/dd/yyyy.
- * @param {string}  [disabled]             Controls whether or not the date picker is disabled to the user.
+ * @param {boolean}  [disabled]            Controls whether or not the date picker is disabled to the user.
  * @param {string}  [minDate]              The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
  * @param {string}  [maxDate]              The date picker will not allow a date selection after this date. The date should be in the format mm/dd/yyyy.
  * @param {string}  [value]                Value of the input element.
- * @param {string}  [required]             The date picker component will be required in terms of native form validation.
+ * @param {boolean} [required]             The date picker component will be required in terms of native form validation.
  */
 
 export const Datefield: React.FC<Props> = ({

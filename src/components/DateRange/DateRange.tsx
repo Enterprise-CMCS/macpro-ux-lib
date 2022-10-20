@@ -32,7 +32,7 @@ export interface Props extends IntrinsicElements {
  * @param {string}  endInputId             A unique identifier for the end date input.
  * @param {string}  endInputName           Name of the end date input field.
  * @param {string}  endLabel               The label of the end date input.
- * @param {string}  [disabled]             Controls whether or not the date range pickers are disabled to the user.
+ * @param {boolean} [disabled]             Controls whether or not the date range pickers are disabled to the user.
  * @param {boolean} [hint]                 Boolean that shows or hide the date format hint for both inputs, in the format mm/dd/yyyy.
  * @param {boolean} [required]             The date picker component will be required in terms of native form validation.
  */
