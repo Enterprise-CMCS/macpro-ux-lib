@@ -2,9 +2,9 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import { ActionsMenu } from "./ActionsMenu";
-import { Button } from "components/Button/Button";
-import { Link } from "components/Link/Link";
-import { Logo } from "components/Logo/Logo";
+import { Button } from "../Button/Button";
+import { Link } from "../Link/Link";
+import { Logo } from "../Logo/Logo";
 import { Header } from "./Header";
 
 import pngLogo from "../../assets/img/logos/cms_logo.png";
