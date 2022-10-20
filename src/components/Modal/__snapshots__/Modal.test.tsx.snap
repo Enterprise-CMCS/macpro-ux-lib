@@ -64,7 +64,7 @@ exports[`Modal Snapshot tests renders default Modal as expected 1`] = `
                 <li>
                   <button
                     aria-label="Go back button"
-                    class="usa-button--unstyled padding-105"
+                    class="display-flex usa-button usa-button--unstyled  usa-button--unstyled padding-105"
                     formtarget="_self"
                     type="button"
                   >
@@ -168,7 +168,7 @@ exports[`Modal Snapshot tests renders forced-action Modal as expected 1`] = `
                 <li>
                   <button
                     aria-label="Go back button"
-                    class="usa-button--unstyled padding-105"
+                    class="display-flex usa-button usa-button--unstyled  usa-button--unstyled padding-105"
                     formtarget="_self"
                     type="button"
                   >
@@ -253,7 +253,7 @@ exports[`Modal Snapshot tests renders large Modal as expected 1`] = `
                 <li>
                   <button
                     aria-label="Go back button"
-                    class="usa-button--unstyled padding-105"
+                    class="display-flex usa-button usa-button--unstyled  usa-button--unstyled padding-105"
                     formtarget="_self"
                     type="button"
                   >
