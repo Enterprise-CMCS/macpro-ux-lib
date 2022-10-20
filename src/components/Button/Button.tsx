@@ -50,24 +50,26 @@ const ButtonVariationConversion: { [key: string]: string } = {
 };
 
 export const Button: React.FC<Props> = ({
+  ariaLabel,
   buttonVariation = "primary",
   buttonText,
-  shiftIconLeft = false,
-  iconName,
-  ariaLabel,
-  largeButton = false,
+  className,
   disabled = false,
+  iconName,
+  largeButton = false,
+  shiftIconLeft = false,
   target = "_self",
   ...rest
 }) => {
   const buttonVariationType = ButtonVariationConversion[buttonVariation] ?? "";
+  const classNames = `display-flex usa-button usa-button--${buttonVariationType} ${
+    largeButton ? "usa-button--big" : ""
+  }${className ? ` ${className}` : ""}`;
   return (
     <button
       disabled={disabled}
       aria-label={ariaLabel || `${buttonText} button`}
-      className={`display-flex usa-button usa-button--${buttonVariationType} ${
-        largeButton ? "usa-button--big" : ""
-      }`}
+      className={classNames}
       formTarget={target}
       {...rest}
     >

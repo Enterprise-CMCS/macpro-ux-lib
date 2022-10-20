@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Dropdown } from "./Dropdown";
 import data from "./data.json";
@@ -38,10 +38,10 @@ export default {
   },
 } as ComponentMeta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof Dropdown> = ({ ...rest }) => (
-  <Dropdown {...rest} />
-);
-
+const Template: ComponentStory<typeof Dropdown> = ({ ...rest }) => {
+  const [value, setValue] = useState("");
+  return <Dropdown {...rest} value={value} setValue={setValue} />;
+};
 export const Default = Template.bind({});
 
 Default.args = {
