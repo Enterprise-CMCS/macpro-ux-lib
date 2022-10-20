@@ -7,53 +7,64 @@ exports[`compontent snapshots max date datefield 1`] = `
   >
     <label
       class="usa-label"
-      for="test-9"
-      id="test-9-label"
+      for="test-5"
+      id="test-5-label"
     >
-      test-9
+      test-5
     </label>
     <div
       class="usa-hint"
-      id="test-9-hint"
+      id="test-5-hint"
     >
       mm/dd/yyyy
     </div>
     <div
-      class="usa-date-picker"
+      class="usa-date-picker usa-date-picker--initialized"
+      data-max-date="2020-05-05"
+      data-min-date="0000-01-01"
     >
+      <input
+        aria-describedby="test-5-hint"
+        aria-hidden="true"
+        aria-labelledby="test-5-label"
+        class="usa-input usa-date-picker__internal-input"
+        style="display: none;"
+        tabindex="-1"
+      />
       <div
-        class="grid-row"
+        class="usa-date-picker__wrapper"
       >
         <input
-          aria-describedby="test-9-hint"
-          aria-labelledby="test-9-label"
-          class="usa-input margin-0"
-          id="test-9"
-          name="test-9"
-          value=""
+          aria-describedby="test-5-hint"
+          aria-labelledby="test-5-label"
+          class="usa-input usa-date-picker__external-input"
+          id="test-5"
+          name="test-5"
+          type="text"
         />
+        
+    
+        <button
+          aria-haspopup="true"
+          aria-label="Toggle calendar"
+          class="usa-date-picker__button"
+          type="button"
+        />
+        
+    
         <div
-          class="flex-column"
-        >
-          <button
-            aria-label="calendar button"
-            class="calendar-button padding-x-1 padding-top-1"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="calendar today icon"
-              class="usa-icon--size-3"
-              color="black"
-              data-testid="calendar-button"
-              fill="currentColor"
-              role="button"
-            >
-              <use
-                href="[object Object]#calendar_today"
-              />
-            </svg>
-          </button>
-        </div>
+          aria-modal="true"
+          class="usa-date-picker__calendar"
+          hidden=""
+          role="dialog"
+        />
+        
+    
+        <div
+          aria-live="polite"
+          class="usa-sr-only usa-date-picker__status"
+          role="status"
+        />
       </div>
     </div>
   </div>
@@ -67,54 +78,64 @@ exports[`compontent snapshots min date datefield 1`] = `
   >
     <label
       class="usa-label"
-      for="test-10"
-      id="test-10-label"
+      for="test-6"
+      id="test-6-label"
     >
-      test-10
+      test-6
     </label>
     <div
       class="usa-hint"
-      id="test-10-hint"
+      id="test-6-hint"
     >
       mm/dd/yyyy
     </div>
     <div
-      class="usa-date-picker"
+      class="usa-date-picker usa-date-picker--initialized"
+      data-max-date="false"
+      data-min-date="2020-05-05"
     >
+      <input
+        aria-describedby="test-6-hint"
+        aria-hidden="true"
+        aria-labelledby="test-6-label"
+        class="usa-input usa-date-picker__internal-input"
+        style="display: none;"
+        tabindex="-1"
+      />
       <div
-        class="grid-row"
+        class="usa-date-picker__wrapper"
       >
         <input
-          aria-describedby="test-10-hint"
-          aria-labelledby="test-10-label"
-          class="usa-input margin-0"
-          id="test-10"
-          name="test-10"
-          required=""
-          value=""
+          aria-describedby="test-6-hint"
+          aria-labelledby="test-6-label"
+          class="usa-input usa-date-picker__external-input"
+          id="test-6"
+          name="test-6"
+          type="text"
         />
+        
+    
+        <button
+          aria-haspopup="true"
+          aria-label="Toggle calendar"
+          class="usa-date-picker__button"
+          type="button"
+        />
+        
+    
         <div
-          class="flex-column"
-        >
-          <button
-            aria-label="calendar button"
-            class="calendar-button padding-x-1 padding-top-1"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="calendar today icon"
-              class="usa-icon--size-3"
-              color="black"
-              data-testid="calendar-button"
-              fill="currentColor"
-              role="button"
-            >
-              <use
-                href="[object Object]#calendar_today"
-              />
-            </svg>
-          </button>
-        </div>
+          aria-modal="true"
+          class="usa-date-picker__calendar"
+          hidden=""
+          role="dialog"
+        />
+        
+    
+        <div
+          aria-live="polite"
+          class="usa-sr-only usa-date-picker__status"
+          role="status"
+        />
       </div>
     </div>
   </div>
@@ -140,41 +161,52 @@ exports[`compontent snapshots primary datefield 1`] = `
       mm/dd/yyyy
     </div>
     <div
-      class="usa-date-picker"
+      class="usa-date-picker usa-date-picker--initialized"
+      data-max-date="false"
+      data-min-date="0000-01-01"
     >
+      <input
+        aria-describedby="test-8-hint"
+        aria-hidden="true"
+        aria-labelledby="test-8-label"
+        class="usa-input usa-date-picker__internal-input"
+        style="display: none;"
+        tabindex="-1"
+      />
       <div
-        class="grid-row"
+        class="usa-date-picker__wrapper"
       >
         <input
           aria-describedby="test-8-hint"
           aria-labelledby="test-8-label"
-          class="usa-input margin-0"
+          class="usa-input usa-date-picker__external-input"
           id="test-8"
           name="test-8"
-          value="05/05/2020"
+          type="text"
         />
+        
+    
+        <button
+          aria-haspopup="true"
+          aria-label="Toggle calendar"
+          class="usa-date-picker__button"
+          type="button"
+        />
+        
+    
         <div
-          class="flex-column"
-        >
-          <button
-            aria-label="calendar button"
-            class="calendar-button padding-x-1 padding-top-1"
-          >
-            <svg
-              aria-hidden="true"
-              aria-label="calendar today icon"
-              class="usa-icon--size-3"
-              color="black"
-              data-testid="calendar-button"
-              fill="currentColor"
-              role="button"
-            >
-              <use
-                href="[object Object]#calendar_today"
-              />
-            </svg>
-          </button>
-        </div>
+          aria-modal="true"
+          class="usa-date-picker__calendar"
+          hidden=""
+          role="dialog"
+        />
+        
+    
+        <div
+          aria-live="polite"
+          class="usa-sr-only usa-date-picker__status"
+          role="status"
+        />
       </div>
     </div>
   </div>
