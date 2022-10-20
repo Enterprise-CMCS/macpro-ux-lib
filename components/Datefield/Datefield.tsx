@@ -1,12 +1,13 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
-import Calendar from "react-calendar";
-import { Icon } from "../Icon/Icon";
+import React, { useLayoutEffect, useRef, useState } from "react";
 import {
   completeDateFilter,
   numbersAndSlashesFilter,
   checkValidMonthDays,
   splitDateIntoVariables,
+  formatPropDates,
 } from "../../utils";
+
+import datePicker from "../../../node_modules/@uswds/uswds/packages/usa-date-picker/src";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 export interface Props extends IntrinsicElements {
@@ -15,14 +16,10 @@ export interface Props extends IntrinsicElements {
   label: string;
   hint?: boolean;
   disabled?: boolean;
-  defaultDate?: string;
   minDate?: string;
   maxDate?: string;
   value?: string;
-  rangeCalendarOpen?: boolean;
-  dateRangeChange?: Dispatch<SetStateAction<string | undefined>>;
-  toggleRangeCalendars?: Function;
-  selectedRangeClassName?: (date: Date) => string;
+  required?: boolean;
 }
 
 /**
@@ -31,11 +28,11 @@ export interface Props extends IntrinsicElements {
  * @param {string}  name                   Name of the input field.
  * @param {string}  label                  Field label.
  * @param {boolean} [hint]                 Boolean that shows or hide the date format hint, in the format mm/dd/yyyy.
- * @param {string}  [disabled]             Controls whether or not the date picker is disabled to the user.
- * @param {string}  [defaultDate]          The date picker input will set this value if it is a valid date. The date should be in the format mm/dd/yyyy
+ * @param {boolean}  [disabled]            Controls whether or not the date picker is disabled to the user.
  * @param {string}  [minDate]              The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
  * @param {string}  [maxDate]              The date picker will not allow a date selection after this date. The date should be in the format mm/dd/yyyy.
  * @param {string}  [value]                Value of the input element.
+ * @param {boolean} [required]             The date picker component will be required in terms of native form validation.
  */
 
 export const Datefield: React.FC<Props> = ({
@@ -45,46 +42,53 @@ export const Datefield: React.FC<Props> = ({
   value,
   minDate,
   maxDate,
-  defaultDate,
   hint = true,
   disabled = false,
-  dateRangeChange,
-  rangeCalendarOpen,
-  toggleRangeCalendars,
-  selectedRangeClassName,
+  required = false,
   ...rest
 }) => {
   value = completeDateFilter.test(value || "") ? value : "";
-  defaultDate = completeDateFilter.test(defaultDate || "") ? defaultDate : "";
-  const [currentDate, setDate] = useState(value || defaultDate);
-  const [calendarOpen, setCalendarOpen] = useState(false);
   const [dateError, setDateError] = useState(false);
+  const datePickerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const datePickerElement = datePickerRef.current;
+    if (typeof datePicker.on === "function") {
+      datePicker.on(datePickerElement);
+
+      const dateFieldinput = Array.from(
+        document.getElementsByClassName("usa-date-picker__external-input")
+      ).find((dateField) => dateField.id === id);
+
+      if (dateFieldinput) {
+        dateFieldinput.addEventListener("keydown", (e: any) => filterInput(e));
+        dateFieldinput.addEventListener("blur", (e: any) =>
+          checkValidDate(e.target.value)
+        );
+      }
+    }
+
+    return () => {
+      if (typeof datePicker.off === "function") {
+        datePicker.off(datePickerElement);
+      }
+    };
+  }, [value]);
+
+  const filterInput = (typedValue: KeyboardEvent) => {
     if (
-      (value && checkValidDate(value)) ||
-      (defaultDate && checkValidDate(defaultDate))
+      (typedValue && numbersAndSlashesFilter.test(typedValue.key)) ||
+      typedValue.key === "Backspace" ||
+      typedValue.key === "Tab" ||
+      typedValue.metaKey
     ) {
-      setDate(value || defaultDate || undefined);
-    }
-  }, [value, defaultDate]);
-
-  const toggleCalendar = () => {
-    if (toggleRangeCalendars !== undefined) {
-      toggleRangeCalendars();
+      setDateError(false);
     } else {
-      setCalendarOpen(!calendarOpen);
+      typedValue.preventDefault();
     }
   };
 
-  const filterInput = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (numbersAndSlashesFilter.test(e.target.value) || e.target.value === "") {
-      setDate(e.target.value);
-      dateRangeChange && dateRangeChange(e.target.value);
-    }
-  };
-
-  const checkValidDate = (date: string): boolean => {
+  const checkValidDate = (date: string) => {
     let [month, day, year] = splitDateIntoVariables(date);
 
     if (
@@ -93,42 +97,13 @@ export const Datefield: React.FC<Props> = ({
       date === ""
     ) {
       setDateError(false);
-      return true;
     } else {
       setDateError(true);
-      return false;
-    }
-  };
-
-  const setDateValue = (dateObj: Date) => {
-    let [month, day, year] = splitDateIntoVariables(
-      dateObj.toLocaleDateString()
-    );
-
-    day = day.padStart(2, "0");
-    month = month.padStart(2, "0");
-
-    setDate(`${month}/${day}/${year}`);
-    dateRangeChange && dateRangeChange(`${month}/${day}/${year}`);
-    toggleCalendar();
-    setDateError(false);
-  };
-
-  const formatStringDateToDate = (
-    stringDate: string | undefined
-  ): Date | undefined => {
-    if (stringDate) {
-      let [month, day, year] = splitDateIntoVariables(stringDate);
-
-      return completeDateFilter.test(stringDate) &&
-        checkValidMonthDays(parseInt(month), parseInt(year), parseInt(day))
-        ? new Date(stringDate)
-        : undefined;
     }
   };
 
   return (
-    <div className="usa-form-group datefield">
+    <div className="usa-form-group datefield" ref={datePickerRef}>
       <label className="usa-label" id={`${id}-label`} htmlFor={id}>
         {label}
       </label>
@@ -143,62 +118,21 @@ export const Datefield: React.FC<Props> = ({
         </div>
       )}
 
-      <div className="usa-date-picker">
-        <div className="grid-row">
-          <input
-            value={currentDate}
-            onChange={(e) => filterInput(e)}
-            className="usa-input margin-0"
-            id={id}
-            name={name}
-            aria-labelledby={`${id}-label`}
-            aria-describedby={hint ? `${id}-hint` : `${id}-label`}
-            disabled={disabled}
-            onBlur={(e) => checkValidDate(e.target.value)}
-            {...rest}
-          />
-          <div className={`flex-column${calendarOpen ? " grey-lightest" : ""}`}>
-            <button
-              aria-label="calendar button"
-              disabled={disabled}
-              onClick={toggleCalendar}
-              className="calendar-button padding-x-1 padding-top-1"
-            >
-              <Icon
-                name="calendar_today"
-                color="black"
-                data-testid="calendar-button"
-                role="button"
-              />
-            </button>
-          </div>
-        </div>
-        {(rangeCalendarOpen || calendarOpen) && (
-          <div className="grid-row" data-testid="calendar">
-            <Calendar
-              tileClassName={(dateProps) => {
-                if (selectedRangeClassName) {
-                  return selectedRangeClassName(dateProps.date);
-                }
-                return "";
-              }}
-              calendarType="US"
-              className="grid-col-3"
-              onChange={setDateValue}
-              value={formatStringDateToDate(currentDate)}
-              defaultActiveStartDate={
-                formatStringDateToDate(currentDate) ||
-                formatStringDateToDate(minDate) ||
-                formatStringDateToDate(maxDate)
-              }
-              minDate={formatStringDateToDate(minDate)}
-              maxDate={formatStringDateToDate(maxDate)}
-              formatShortWeekday={(_, value) =>
-                ["S", "M", "T", "W", "T", "F", "S"][value.getDay()]
-              }
-            />
-          </div>
-        )}
+      <div
+        className="usa-date-picker"
+        data-min-date={minDate !== undefined && formatPropDates(minDate)}
+        data-max-date={maxDate !== undefined && formatPropDates(maxDate)}
+        data-default-value={formatPropDates(value)}
+      >
+        <input
+          className="usa-input"
+          id={id}
+          name={name}
+          aria-labelledby={`${id}-label`}
+          aria-describedby={hint ? `${id}-hint` : `${id}-label`}
+          disabled={disabled}
+          {...rest}
+        />
       </div>
     </div>
   );
