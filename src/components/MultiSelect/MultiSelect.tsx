@@ -3,8 +3,11 @@ import { Dropdown, DropdownData, DropdownProps } from "../Dropdown/Dropdown";
 import { FilterChip } from "../FilterChip/FilterChip";
 
 interface Props extends DropdownProps {
-  defaultValues: (string | number)[];
-  dropdownData: DropdownData[];
+  defaultValues: string[];
+  dropdownData: {
+    value: string;
+    displayString: string;
+  }[];
   label: string;
   placeholder?: string;
 }
@@ -27,7 +30,7 @@ export const MultiSelect: React.FC<Props> = ({
   const [data, setDropdownData] = useState(dropdownData);
   const [dropdownValue, setDropdownValue] =
     useState<string | number | undefined>("");
-  const [selectedValues, setSelectedValues] = useState<(string | number)[]>(
+  const [selectedValues, setSelectedValues] = useState<string[]>(
     defaultValues ?? []
   );
 
@@ -57,7 +60,25 @@ export const MultiSelect: React.FC<Props> = ({
   }, [selectedValues]);
 
   return (
-    <div className="multiselect" id={id}>
+    <div className="multiselect">
+      <select
+        name={name}
+        className=""
+        id={id}
+        multiple
+        value={selectedValues}
+        onChange={(e) => {
+          const options = [...e.target.options];
+          const selectedOptions = options.filter((option) => option.selected);
+          setSelectedValues(selectedOptions.map((option) => option.value));
+        }}
+      >
+        {dropdownData.map((itm, idx) => (
+          <option key={`${id}-${idx}`} value={itm.value}>
+            {itm.displayString}
+          </option>
+        ))}
+      </select>
       <Dropdown
         {...rest}
         data={data}
