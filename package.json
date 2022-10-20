@@ -1,6 +1,6 @@
 {
   "name": "@enterprise-cmcs/macpro-ux-lib",
-  "version": "1.21.0",
+  "version": "1.21.1",
   "description": "Common UX libraries packaged for easier distribution throughout CMS.",
   "main": "build/index.js",
   "module": "build/index.es.js",
