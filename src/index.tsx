@@ -15,6 +15,7 @@ import { CardChoiceGroup } from "./components/CardChoice/CardChoiceGroup";
 import { Checkbox } from "./components/Checkbox/Checkbox";
 import { Dropdown } from "./components/Dropdown/Dropdown";
 import { FileInput } from "./components/FileInput/FileInput";
+import { FilterChip } from "./components/FilterChip/FilterChip";
 import { Footer } from "./components/Footer/Footer";
 import { Header } from "./components/Header/Header";
 import { Icon } from "./components/Icon/Icon";
@@ -53,6 +54,7 @@ export {
   DateRange,
   Dropdown,
   FileInput,
+  FilterChip,
   Footer,
   Header,
   Icon,
