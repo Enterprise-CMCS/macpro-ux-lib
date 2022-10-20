@@ -1,3 +1,10 @@
+# [1.21.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.20.3...v1.21.0) (2022-10-20)
+
+
+### Features
+
+* **FilterChip:** add FilterChip component ([ff47b5c](https://github.com/cmsgov/macpro-ux-lib/commit/ff47b5c5b00de80e29a2a697799e1890bc7f711d))
+
 ## [1.20.3](https://github.com/cmsgov/macpro-ux-lib/compare/v1.20.2...v1.20.3) (2022-10-17)
 
 
