@@ -173,7 +173,7 @@ describe("Test the Dropdown component", () => {
     userEvent.focus(inputElem);
     fireEvent.type(inputElem, "apple");
 
-    expect(selectElem.children.length).toBe(5); // select has a manually added empty option
+    expect(selectElem.children.length).toBe(65); // select doesn't get filtered
     expect(listElem.children.length).toBe(4);
   });
 

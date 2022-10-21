@@ -1,9 +1,10 @@
 import React from "react";
-import { fireEvent, screen, render } from "../../test-setup";
+import { render } from "../../test-setup";
 import { MultiSelect } from "./MultiSelect";
+import data from "../DropdownInput/data.json";
 
 describe("Tests for the MultiSelect component", () => {
   it("should render", () => {
-    render(<MultiSelect />);
+    render(<MultiSelect label="" data={data} />);
   });
 });
