@@ -1,16 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { DropdownProps } from "../Dropdown/Dropdown";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { DropdownInput } from "../DropdownInput/DropdownInput";
 import { FilterChip } from "../FilterChip/FilterChip";
 
-interface Props extends DropdownProps {
+type IntrinsicElements = JSX.IntrinsicElements["select"];
+
+interface DropdownData {
+  value: string;
+  displayString: string;
+}
+
+interface MultiSelelctProps extends IntrinsicElements {
+  data: DropdownData[];
   defaultValues?: string[];
-  data: {
-    value: string;
-    displayString: string;
-  }[];
   label: string;
   placeholder?: string;
+  readOnly?: boolean;
+  setValue?: Dispatch<SetStateAction<any>>;
+  value?: string[];
 }
 
 /**
@@ -21,66 +27,71 @@ interface Props extends DropdownProps {
  * @param {string}    id             Unique identifier required for form control.
  * @param {string}    label          Unique identifier required for form control.
  */
-export const MultiSelect: React.FC<Props> = ({
+export const MultiSelect: React.FC<MultiSelelctProps> = ({
+  className,
   defaultValues,
   data,
+  label,
   id,
   name,
+  value,
+  setValue,
   ...rest
 }) => {
   const [dropdownData, setDropdownData] = useState(data);
   const [dropdownValue, setDropdownValue] =
     useState<string | number | undefined>("");
-  const [selectedValues, setSelectedValues] = useState<string[]>(
-    defaultValues ?? []
-  );
+
+  if (value === undefined && setValue === undefined)
+    [value, setValue] = useState<string[]>(defaultValues ?? []);
 
   // return the item with the corresponding provided value
   const findInDropdownData = (val: string | number) => {
-    return dropdownData.find((item) => item.value === val);
+    return data.find((item) => item.value === val);
   };
 
-  // add a clicked item's value to the array of selectedValues
+  // add a clicked item's value to the array of value
   const handleValueChange = (val: string | number | undefined) => {
     const item = dropdownData.find((itm) => itm.value === val);
     if (item?.value !== undefined)
-      setSelectedValues([...selectedValues, item.value]);
+      setValue && setValue([...value!, item.value]);
     setDropdownValue("");
   };
 
   const removeChip = (val: string | number) => {
-    setSelectedValues(selectedValues.filter((item) => item !== val));
+    setValue && setValue(value!.filter((item) => item !== val));
   };
 
-  // displayed data should be dropdownData - selectedValues
-  // update whenever a change is made to selectedValues
+  // displayed data should be dropdownData - value
+  // update whenever a change is made to value
   useEffect(() => {
     setDropdownData(
-      dropdownData.filter((item) => !selectedValues.includes(item.value))
+      dropdownData.filter((item) => value && !value.includes(item.value))
     );
-  }, [selectedValues]);
+  }, [value]);
 
   return (
     <div className="multiselect">
       <DropdownInput
-        {...rest}
         data={dropdownData}
+        id={id}
+        label={label}
         setValue={handleValueChange}
         value={dropdownValue}
-        id={id}
       >
         <select
           aria-hidden={true}
-          name={name}
           className="usa-select usa-sr-only usa-combo-box__select"
           multiple
+          name={name}
           onChange={(e) => {
             const options = [...e.target.options];
             const selectedOptions = options.filter((option) => option.selected);
-            setSelectedValues(selectedOptions.map((option) => option.value));
+            setValue && setValue(selectedOptions.map((option) => option.value));
           }}
           tabIndex={-1}
-          value={selectedValues}
+          value={value}
+          {...rest}
         >
           {dropdownData.map((itm, idx) => (
             <option key={`${id}-${idx}`} value={itm.value}>
@@ -90,16 +101,17 @@ export const MultiSelect: React.FC<Props> = ({
         </select>
       </DropdownInput>
       <div className="filter-chip-wrapper">
-        {selectedValues.map((val, idx) => {
-          const item = findInDropdownData(val);
-          return (
-            <FilterChip
-              text={item?.displayString ?? ""}
-              key={`${id}-filterchip-${idx}`}
-              onClick={() => removeChip(val)}
-            />
-          );
-        })}
+        {value &&
+          value.map((val, idx) => {
+            const item = findInDropdownData(val);
+            return (
+              <FilterChip
+                text={item?.displayString ?? ""}
+                key={`${id}-filterchip-${idx}`}
+                onClick={() => removeChip(val)}
+              />
+            );
+          })}
       </div>
     </div>
   );

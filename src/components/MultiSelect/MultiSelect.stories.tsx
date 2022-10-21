@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { MultiSelect } from "./MultiSelect";
-import dropdownData from "../Dropdown/data.json";
+import data from "../Dropdown/data.json";
 
 const defaultValues = [
   "apple",
@@ -18,8 +18,8 @@ export default {
   title: "COMPONENTS/MultiSelect",
   component: MultiSelect,
   args: {
+    data,
     defaultValues,
-    dropdownData,
     label: "Select a fruit from the dropdown:",
     placeholder: "Type to filter",
   },

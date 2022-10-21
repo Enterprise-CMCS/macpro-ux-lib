@@ -3,12 +3,12 @@ import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["select"];
 
-export interface DropdownData {
+interface DropdownData {
   value: string | number;
   displayString: string;
 }
 
-export interface DropdownProps extends IntrinsicElements {
+interface DropdownProps extends IntrinsicElements {
   data: DropdownData[];
   label: string;
   readOnly?: boolean;
@@ -55,9 +55,8 @@ export const Dropdown: React.FC<DropdownProps> = ({
     [value, setValue] = useState<string | number | undefined>("");
 
   return (
-    <>
+    <div className={className}>
       <DropdownInput
-        className={className}
         data={data}
         id={id}
         label={label}
@@ -85,6 +84,6 @@ export const Dropdown: React.FC<DropdownProps> = ({
           ))}
         </select>
       </DropdownInput>
-    </>
+    </div>
   );
 };
