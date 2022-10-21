@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Dropdown, DropdownData, DropdownProps } from "../Dropdown/Dropdown";
+import { DropdownProps } from "../Dropdown/Dropdown";
+import { DropdownInput } from "../DropdownInput/DropdownInput";
 import { FilterChip } from "../FilterChip/FilterChip";
 
 interface Props extends DropdownProps {
@@ -51,6 +52,27 @@ export const MultiSelect: React.FC<Props> = ({
     setSelectedValues(selectedValues.filter((item) => item !== val));
   };
 
+  const select = (
+    <select
+      name={name}
+      className="usa-select usa-sr-only usa-combo-box__select"
+      id={id}
+      multiple
+      value={selectedValues}
+      onChange={(e) => {
+        const options = [...e.target.options];
+        const selectedOptions = options.filter((option) => option.selected);
+        setSelectedValues(selectedOptions.map((option) => option.value));
+      }}
+    >
+      {dropdownData.map((itm, idx) => (
+        <option key={`${id}-${idx}`} value={itm.value}>
+          {itm.displayString}
+        </option>
+      ))}
+    </select>
+  );
+
   // displayed data should be dropdownData - selectedValues
   // update whenever a change is made to selectedValues
   useEffect(() => {
@@ -61,29 +83,12 @@ export const MultiSelect: React.FC<Props> = ({
 
   return (
     <div className="multiselect">
-      <select
-        name={name}
-        className=""
-        id={id}
-        multiple
-        value={selectedValues}
-        onChange={(e) => {
-          const options = [...e.target.options];
-          const selectedOptions = options.filter((option) => option.selected);
-          setSelectedValues(selectedOptions.map((option) => option.value));
-        }}
-      >
-        {dropdownData.map((itm, idx) => (
-          <option key={`${id}-${idx}`} value={itm.value}>
-            {itm.displayString}
-          </option>
-        ))}
-      </select>
-      <Dropdown
+      <DropdownInput
         {...rest}
         data={data}
         setValue={handleValueChange}
         value={dropdownValue}
+        select={select}
       />
       <div className="filterchip-wrapper">
         {selectedValues.map((val, idx) => {
