@@ -67,18 +67,20 @@ export const MultiSelect: React.FC<Props> = ({
         data={data}
         setValue={handleValueChange}
         value={dropdownValue}
+        id={id}
       >
         <select
+          aria-hidden={true}
           name={name}
           className="usa-select usa-sr-only usa-combo-box__select"
-          id={id}
           multiple
-          value={selectedValues}
           onChange={(e) => {
             const options = [...e.target.options];
             const selectedOptions = options.filter((option) => option.selected);
             setSelectedValues(selectedOptions.map((option) => option.value));
           }}
+          tabIndex={-1}
+          value={selectedValues}
         >
           {dropdownData.map((itm, idx) => (
             <option key={`${id}-${idx}`} value={itm.value}>
