@@ -22,7 +22,7 @@ export interface DropdownProps extends IntrinsicElements {
  * This component is a wrapper around the HTML `<select>` element and provides the basic functionality of a dropdown along with accessibility and styling.
  * A key enhancement to the standard dropdown is the ability for a user to type to search for an option.
  *
- * @param {string}        [className]    A class name that will be applied on the select element.
+ * @param {string}        [className]    A class name that will be applied on the component wrapper div.
  * @param {DropdownData}  data           Data used to populate the dropdown.
  * @param {string}        id             The id of the dropdown.
  * @param {string}        label          String used to label the dropdown in the UI.
@@ -57,17 +57,17 @@ export const Dropdown: React.FC<DropdownProps> = ({
   return (
     <>
       <DropdownInput
-        label={label}
+        className={className}
         data={data}
         id={id}
+        label={label}
+        readOnly={readOnly}
         setValue={setValue}
         value={value}
       >
         <select
           aria-hidden={true}
-          className={`usa-select usa-sr-only usa-combo-box__select${
-            className ? ` ${className}` : ""
-          }`}
+          className="usa-select usa-sr-only usa-combo-box__select"
           name={name}
           onChange={(e) => setValue && setValue(e.target.value)}
           tabIndex={-1}

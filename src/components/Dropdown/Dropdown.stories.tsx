@@ -11,7 +11,8 @@ export default {
   },
   argTypes: {
     className: {
-      description: "A class name that will be applied on the select element.",
+      description:
+        "A class name that will be applied on the component wrapper `div`.",
       type: { name: "string" },
     },
     data: {
@@ -34,6 +35,16 @@ export default {
     readOnly: {
       description:
         "Sets input field to read-only. Effectively disables type-ahead search.",
+    },
+    setValue: {
+      description:
+        "Optionally manage state in this component from a parent by passing state params to `value` and `setValue`",
+      control: false,
+    },
+    value: {
+      description:
+        "Optionally manage state in this component from a parent by passing state params to `value` and `setValue`",
+      control: false,
     },
   },
 } as ComponentMeta<typeof Dropdown>;

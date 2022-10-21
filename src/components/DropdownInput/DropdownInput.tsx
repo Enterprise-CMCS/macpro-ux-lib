@@ -36,6 +36,7 @@ interface DropdownProps extends IntrinsicElements {
  * @param {boolean}       readOnly       Sets input field to read-only. Effectively disables type-ahead search.
  */
 export const DropdownInput: React.FC<PropsWithChildren<DropdownProps>> = ({
+  className,
   children,
   data,
   id,
@@ -130,7 +131,7 @@ export const DropdownInput: React.FC<PropsWithChildren<DropdownProps>> = ({
       <div
         className={`usa-combo-box${
           value || inputValue ? " usa-combo-box--pristine" : ""
-        }`}
+        }${className ? ` ${className}` : ""}`}
         data-enhanced="true"
         onBlur={(e) => handleBlur(e)}
       >
