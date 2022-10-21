@@ -1,6 +1,7 @@
 import { Icon } from "components/Icon/Icon";
 import React, {
   Dispatch,
+  PropsWithChildren,
   SetStateAction,
   useEffect,
   useRef,
@@ -20,7 +21,6 @@ interface DropdownProps extends IntrinsicElements {
   readOnly?: boolean;
   setValue?: Dispatch<SetStateAction<any>>;
   value?: string | number | undefined;
-  select: React.ReactNode;
 }
 
 /**
@@ -37,15 +37,15 @@ interface DropdownProps extends IntrinsicElements {
  * @param {string}        [placeholder]  Placeholder text to be displayed in the input.
  * @param {boolean}       readOnly       Sets input field to read-only. Effectively disables type-ahead search.
  */
-export const DropdownInput: React.FC<DropdownProps> = ({
+export const DropdownInput: React.FC<PropsWithChildren<DropdownProps>> = ({
   className,
+  children,
   data,
   id,
   label,
   name,
   placeholder,
   readOnly = false,
-  select,
   setValue,
   value,
   ...rest
@@ -139,7 +139,7 @@ export const DropdownInput: React.FC<DropdownProps> = ({
         data-enhanced="true"
         onBlur={(e) => handleBlur(e)}
       >
-        {select}
+        {children}
         <input
           aria-activedescendant={activeDescendant}
           aria-autocomplete="list"
