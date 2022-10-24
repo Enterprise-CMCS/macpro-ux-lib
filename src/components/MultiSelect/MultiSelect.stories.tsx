@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { MultiSelect } from "./MultiSelect";
-import data from "../Dropdown/data.json";
+import data from "../DropdownInput/data.json";
 
 const defaultValues = [
   "apple",

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Dropdown } from "./Dropdown";
-import data from "./data.json";
+import data from "../DropdownInput/data.json";
 
 export default {
   title: "COMPONENTS/Dropdown",
