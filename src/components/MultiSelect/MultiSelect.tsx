@@ -34,6 +34,7 @@ export const MultiSelect: React.FC<MultiSelelctProps> = ({
   label,
   id,
   name,
+  placeholder,
   value,
   setValue,
   ...rest
@@ -51,14 +52,14 @@ export const MultiSelect: React.FC<MultiSelelctProps> = ({
   };
 
   // add a clicked item's value to the array of value
-  const handleValueChange = (val: string | number | undefined) => {
+  const addValue = (val: string | number | undefined) => {
     const item = dropdownData.find((itm) => itm.value === val);
     if (item?.value !== undefined)
       setValue && setValue([...value!, item.value]);
     setDropdownValue("");
   };
 
-  const removeChip = (val: string | number) => {
+  const removeValue = (val: string | number) => {
     setValue && setValue(value!.filter((item) => item !== val));
   };
 
@@ -66,7 +67,7 @@ export const MultiSelect: React.FC<MultiSelelctProps> = ({
   // update whenever a change is made to value
   useEffect(() => {
     setDropdownData(
-      dropdownData.filter((item) => value && !value.includes(item.value))
+      data.filter((item) => value && !value.includes(item.value))
     );
   }, [value]);
 
@@ -76,7 +77,8 @@ export const MultiSelect: React.FC<MultiSelelctProps> = ({
         data={dropdownData}
         id={id}
         label={label}
-        setValue={handleValueChange}
+        placeholder={placeholder}
+        setValue={addValue}
         value={dropdownValue}
       >
         <select
@@ -93,7 +95,7 @@ export const MultiSelect: React.FC<MultiSelelctProps> = ({
           value={value}
           {...rest}
         >
-          {dropdownData.map((itm, idx) => (
+          {data.map((itm, idx) => (
             <option key={`${id}-${idx}`} value={itm.value}>
               {itm.displayString}
             </option>
@@ -108,7 +110,7 @@ export const MultiSelect: React.FC<MultiSelelctProps> = ({
               <FilterChip
                 text={item?.displayString ?? ""}
                 key={`${id}-filterchip-${idx}`}
-                onClick={() => removeChip(val)}
+                onClick={() => removeValue(val)}
               />
             );
           })}

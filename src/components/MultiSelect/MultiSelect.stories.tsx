@@ -20,6 +20,7 @@ export default {
   args: {
     data,
     defaultValues,
+    id: "multi-select",
     label: "Select a fruit from the dropdown:",
     placeholder: "Type to filter",
   },
