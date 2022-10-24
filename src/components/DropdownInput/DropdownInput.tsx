@@ -284,9 +284,9 @@ const DropdownItem = ({
 
     let elemToFocus;
     if (arrow === "ArrowDown") {
-      elemToFocus = currentElement?.nextElementSibling as HTMLElement;
+      elemToFocus = currentElement.nextElementSibling as HTMLElement;
     } else if (arrow === "ArrowUp") {
-      elemToFocus = currentElement?.previousElementSibling as HTMLElement;
+      elemToFocus = currentElement.previousElementSibling as HTMLElement;
     }
 
     if (elemToFocus) {
