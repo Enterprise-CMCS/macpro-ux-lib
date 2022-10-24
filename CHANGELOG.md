@@ -1,3 +1,18 @@
+## [1.21.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.21.1...v1.21.2) (2022-10-24)
+
+
+### Reverts
+
+* Revert "chore(deps-dev): bump rollup from 2.79.1 to 3.2.3" (#173) ([034121f](https://github.com/cmsgov/macpro-ux-lib/commit/034121f7affcb8da099dcb50146340e811815de7)), closes [#173](https://github.com/cmsgov/macpro-ux-lib/issues/173) [#164](https://github.com/cmsgov/macpro-ux-lib/issues/164)
+* Revert "chore(deps-dev): bump @rollup/plugin-commonjs from 23.0.0 to 23.0.2" (#170) ([6a45aaa](https://github.com/cmsgov/macpro-ux-lib/commit/6a45aaa1976423d51262b5d2a7bebf5af91afe33)), closes [#170](https://github.com/cmsgov/macpro-ux-lib/issues/170) [#168](https://github.com/cmsgov/macpro-ux-lib/issues/168)
+
+## [1.21.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.21.0...v1.21.1) (2022-10-20)
+
+
+### Bug Fixes
+
+* **DateRange:** add key navigation & accessibility to Datefield and Date Range components  ([558c812](https://github.com/cmsgov/macpro-ux-lib/commit/558c8129fa55b0dbbd8083c8326423498ddcd6c8))
+
 # [1.21.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.20.3...v1.21.0) (2022-10-20)
 
 

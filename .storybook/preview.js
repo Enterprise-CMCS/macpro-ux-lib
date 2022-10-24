@@ -1,6 +1,5 @@
 import "../src/assets/css/styles.css";
 import "../src/assets/theme/styles.scss";
-import "react-calendar/dist/Calendar.css";
 import { themes } from "@storybook/theming";
 import logoBlue from "./oneMAC_logo_blue.svg";
 import logoWhite from "./oneMAC_logo_white.svg";

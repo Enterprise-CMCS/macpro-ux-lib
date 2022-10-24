@@ -1,6 +1,5 @@
 import "./assets/css/styles.css";
 import "./assets/theme/styles.scss";
-import "react-calendar/dist/Calendar.css";
 
 import { Accordion } from "./components/Accordion/Accordion";
 import { AccordionGroup } from "./components/Accordion/AccordionGroup";

@@ -3,84 +3,66 @@ import { Datefield } from "./Datefield";
 import { fireEvent, screen, render } from "../../test-setup";
 
 describe("Tests for the Datefield component.", () => {
-  it("Should render with hint", () => {
-    render(
-      <Datefield
-        data-testid="Datefield"
-        id="test-1"
-        name="test-1"
-        label="test-1"
-        hint
-      />
+  it("Should render with hint and initalized value", async () => {
+    const { container } = render(
+      <Datefield id="test-1" name="test-1" label="test-1" value="10/10/2020" />
     );
-    const DatefieldComp = screen.getByTestId("Datefield");
-    expect(DatefieldComp).toBeInTheDocument();
-  });
+    await new Promise((res) => setTimeout(res, 100));
 
-  it("Should render with hint and initalized value", () => {
-    render(
-      <Datefield
-        data-testid="Datefield"
-        id="test-2"
-        name="test-2"
-        label="test-2"
-        value="10/10/2020"
-        hint
-      />
-    );
-    const DatefieldComp = screen.getByTestId("Datefield");
-    const labelComp = screen.getByText("test-2");
+    const DatefieldComp = container.getElementsByClassName(
+      "usa-input usa-date-picker__external-input"
+    )[0];
+    const labelComp = screen.getByText("test-1");
 
     expect(labelComp).toBeInTheDocument();
-    expect(DatefieldComp).toHaveAttribute("value", "10/10/2020");
+    expect(DatefieldComp).toHaveValue("10/10/2020");
   });
 
-  it("Should fire and change the value when the user types", () => {
-    const mockDateRangeFunc = jest.fn();
-
-    render(
-      <Datefield
-        data-testid="Datefield"
-        id="test-3"
-        name="test-3"
-        label="test-3"
-        hint
-        dateRangeChange={mockDateRangeFunc}
-      />
+  it("Should fire and change the value when the user types", async () => {
+    const { container } = render(
+      <Datefield id="test-2" name="test-2" label="test-2" />
     );
+    await new Promise((res) => setTimeout(res, 100));
 
-    const DatefieldComp = screen.getByLabelText("test-3");
-    fireEvent.change(DatefieldComp, {
+    const DatefieldComp = container.getElementsByClassName(
+      "usa-input usa-date-picker__external-input"
+    )[0];
+
+    fireEvent.keyDown(DatefieldComp, {
       target: { value: "10/10/2020" },
     });
-    expect(DatefieldComp).toHaveDisplayValue("10/10/2020");
+    expect(DatefieldComp).toHaveValue("10/10/2020");
 
-    fireEvent.change(DatefieldComp, {
+    fireEvent.keyDown(DatefieldComp, {
       target: { value: "" },
     });
-    expect(DatefieldComp).toHaveDisplayValue("");
+
+    fireEvent.keyDown(DatefieldComp, { key: "/" });
+    expect(DatefieldComp).toHaveValue("");
   });
 
-  it("Should fire a check on blur", () => {
+  it("Should fire a check on blur", async () => {
     render(
       <Datefield
+        id="test-4"
+        name="test-4"
+        label="test-4"
         data-testid="Datefield"
-        id="test-11"
-        name="test-11"
-        label="test-11"
-        hint
       />
     );
-    const DatefieldComp = screen.getByLabelText("test-11");
+    await new Promise((res) => setTimeout(res, 100));
+
+    const DatefieldComp = screen.getAllByLabelText("test-4")[1];
+
     fireEvent.blur(DatefieldComp, {
       target: { value: "10/10/2020" },
     });
-    expect(DatefieldComp).toHaveDisplayValue("10/10/2020");
+    expect(DatefieldComp).toHaveValue("10/10/2020");
 
     fireEvent.blur(DatefieldComp, {
       target: { value: "" },
     });
-    expect(DatefieldComp).toHaveDisplayValue("");
+    expect(DatefieldComp).toHaveValue("");
 
     fireEvent.blur(DatefieldComp, {
       target: { value: "00/00/00" },
@@ -90,99 +72,35 @@ describe("Tests for the Datefield component.", () => {
     );
 
     expect(hintComp).toBeInTheDocument();
-    expect(DatefieldComp).toHaveDisplayValue("00/00/00");
-    expect(DatefieldComp).toHaveAttribute("aria-describedby", "test-11-hint");
+    expect(DatefieldComp).toHaveValue("00/00/00");
+    expect(DatefieldComp).toHaveAttribute("aria-describedby", "test-4-hint");
   });
 
-  it("Should open the calendar component with min and max dates", () => {
-    const mockOnClick = jest.fn();
-    const mockClassFunc = jest.fn();
-    const mockDateRangeFunc = jest.fn();
-    render(
+  it("Should open the calendar component and choose a date", async () => {
+    const { container } = render(
       <Datefield
         data-testid="Datefield"
         id="test-4"
         name="test-4"
         label="test-4"
-        minDate="10/10/2022"
-        maxDate="10/11/2022"
-        value="10/10/2022"
-        hint={false}
-        toggleRangeCalendars={mockOnClick}
-        rangeCalendarOpen={true}
-        selectedRangeClassName={mockClassFunc}
-        dateRangeChange={mockDateRangeFunc}
       />
     );
-    const DatefieldInput = screen.getByTestId("Datefield");
-    const DatefieldButton = screen.getByTestId("calendar-button");
-    fireEvent.click(DatefieldButton);
-    const DatefieldCalendar = screen.getByTestId("calendar");
+    await new Promise((res) => setTimeout(res, 100));
 
-    expect(DatefieldCalendar).toBeInTheDocument();
-    expect(DatefieldInput).toHaveValue("10/10/2022");
-    expect(DatefieldInput).toHaveAttribute("aria-describedby", "test-4-label");
-  });
+    const DatefieldButton = container.getElementsByClassName(
+      "usa-date-picker__button"
+    )[0];
 
-  it("Should open the calendar component and choose a date", () => {
-    render(
-      <Datefield
-        data-testid="Datefield"
-        id="test-5"
-        name="test-5"
-        label="test-5"
-      />
-    );
-    const DatefieldInput = screen.getByTestId("Datefield");
-    const DatefieldButton = screen.getByTestId("calendar-button");
     fireEvent.click(DatefieldButton);
-    const DatefieldCalendar = screen.getByTestId("calendar");
     const randomDayButton = screen.getAllByRole("button")[6];
     fireEvent.click(randomDayButton);
-
-    expect(DatefieldCalendar).not.toBeInTheDocument();
-    expect(DatefieldInput).toHaveValue();
-  });
-
-  it("Should format date when provided a min date", () => {
-    render(
-      <Datefield
-        data-testid="Datefield"
-        id="test-6"
-        name="test-6"
-        label="test-6"
-      />
-    );
-    const DatefieldComp = screen.getByTestId("Datefield");
-    expect(DatefieldComp).toBeInTheDocument();
-  });
-
-  it("Should be disabled", () => {
-    render(
-      <Datefield
-        data-testid="Datefield"
-        id="test-7"
-        name="test-7"
-        label="test-7"
-        hint
-        disabled
-      />
-    );
-    const DatefieldComp = screen.getByTestId("Datefield");
-    expect(DatefieldComp).toBeDisabled();
   });
 });
 
 describe("compontent snapshots", () => {
   it("primary datefield", () => {
     const { container } = render(
-      <Datefield
-        hint
-        id="test-8"
-        name="test-8"
-        label="test-8"
-        defaultDate="05/05/2020"
-      />
+      <Datefield hint id="test-8" name="test-8" label="test-8" />
     );
     expect(container).toMatchSnapshot();
   });
@@ -191,9 +109,9 @@ describe("compontent snapshots", () => {
     const { container } = render(
       <Datefield
         hint
-        id="test-9"
-        name="test-9"
-        label="test-9"
+        id="test-5"
+        name="test-5"
+        label="test-5"
         maxDate="05/05/2020"
       />
     );
@@ -204,9 +122,9 @@ describe("compontent snapshots", () => {
     const { container } = render(
       <Datefield
         hint
-        id="test-10"
-        name="test-10"
-        label="test-10"
+        id="test-6"
+        name="test-6"
+        label="test-6"
         required
         minDate="05/05/2020"
       />
