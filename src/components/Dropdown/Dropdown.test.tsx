@@ -3,7 +3,7 @@ import { fireEvent as userEvent, render } from "../../test-setup";
 import fireEvent from "@testing-library/user-event";
 
 import { Dropdown } from "./Dropdown";
-import data from "./data.json";
+import data from "../DropdownInput/data.json";
 
 describe("Test the Dropdown component", () => {
   /*
