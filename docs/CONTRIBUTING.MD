@@ -69,6 +69,12 @@ We use pull request to drive a variety of actions and workflows in the project.
 
 Be sure to follow the template when creating your [pull request on GitHub](https://github.com/CMSgov/macpro-ux-lib/pulls). Upon doing this, and provided all of the additional checks pass, your code will be reviewed and approved if the changes are in line with the projects plans.
 
+## Deployment
+
+The short version of the CICD Pipeline is `Pull Request → Github Actions → AWS Amplify Temporary Environments → Accessible Application → Pull Request Approval → Master deployment & New Version `
+
+All of the deployments start with new code on a branch. A branch environment is created and this is where automated and manual testing occurs. Once all of the checks have been passed on a branch, it is pulled into the Master branch. The master branch specifically lives in the git-hub actions branch `gha-pages` and serves as our most up to date deployment environment. It is where live users have access to the new features and new components. It is available to view at [https://cmsgov.github.io/macpro-ux-lib](https://cmsgov.github.io/macpro-ux-lib).
+
 ## Testing the NPM Distribution
 
 We have a simple React application in `examples/macpro-example` that can be used as a sandbox environment. This application has `@enterprise-cmcs/macpro-ux-lib` listed as a dependeny in its `package.json` file which allows you to experience working with the library as any other user who installs the package. Running the application should be simple:
