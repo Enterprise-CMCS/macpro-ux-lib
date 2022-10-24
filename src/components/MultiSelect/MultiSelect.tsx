@@ -22,21 +22,28 @@ interface MultiSelelctProps extends IntrinsicElements {
 /**
  * **MultiSelect Component**
  *
- * @param {string}    defaultValues  Unique identifier required for form control.
- * @param {string}    dropdownData   Unique identifier required for form control.
+ * @param {string}    className      A class name that will be applied on the component wrapper `div`.
+ * @param {string}    data           An array of objects used to populate the dropdown. Each object should appear as follows:\n\n `{ value : string, displayString: string }`\n\nUnlike the regular Dropdown, values must be strings.
+ * @param {string}    defaultValues  An array of strings used as default selected values.
+ * @param {string}    label          String used to label the dropdown in the UI.
  * @param {string}    id             Unique identifier required for form control.
- * @param {string}    label          Unique identifier required for form control.
+ * @param {string}    name           Name of the select element used to identify it in the context of a form.
+ * @param {string}    placeholder    Placeholder text for the input search.
+ * @param {string}    readOnly       Sets input field to read-only. Effectively disables type-ahead search.
+ * @param {string}    setValue       Optionally manage state in this component from a parent by passing state params to `value` and `setValue`.
+ * @param {string}    value          Optionally manage state in this component from a parent by passing state params to `value` and `setValue`.
  */
 export const MultiSelect: React.FC<MultiSelelctProps> = ({
   className,
-  defaultValues,
   data,
+  defaultValues,
   label,
   id,
   name,
   placeholder,
-  value,
+  readOnly,
   setValue,
+  value,
   ...rest
 }) => {
   const [dropdownData, setDropdownData] = useState(data);
@@ -78,6 +85,7 @@ export const MultiSelect: React.FC<MultiSelelctProps> = ({
         id={id}
         label={label}
         placeholder={placeholder}
+        readOnly={readOnly}
         setValue={addValue}
         value={dropdownValue}
       >
