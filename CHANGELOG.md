@@ -1,3 +1,10 @@
+## [1.21.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.21.0...v1.21.1) (2022-10-20)
+
+
+### Bug Fixes
+
+* **DateRange:** add key navigation & accessibility to Datefield and Date Range components  ([558c812](https://github.com/cmsgov/macpro-ux-lib/commit/558c8129fa55b0dbbd8083c8326423498ddcd6c8))
+
 # [1.21.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.20.3...v1.21.0) (2022-10-20)
 
 

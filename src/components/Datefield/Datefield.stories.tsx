@@ -23,11 +23,6 @@ export default {
       description:
         "Controls whether or not the date picker is disabled to the user.",
     },
-    defaultDate: {
-      description:
-        "The date picker input will set this value if it is a valid date. The date should be in the format mm/dd/yyyy.",
-      control: { type: "text" },
-    },
     minDate: {
       description:
         "The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy.",
@@ -41,17 +36,9 @@ export default {
     value: {
       description: "Value of the input element.",
     },
-    dateRangeChange: {
-      table: { disable: true },
-    },
-    rangeCalendarOpen: {
-      table: { disable: true },
-    },
-    toggleRangeCalendars: {
-      table: { disable: true },
-    },
-    selectedRangeClassName: {
-      table: { disable: true },
+    required: {
+      description:
+        "The date picker component will be required in terms of native form validation.",
     },
   },
   args: {},
@@ -71,14 +58,14 @@ const Template: ComponentStory<typeof Datefield> = ({ ...rest }) => (
 
 export const PrimaryDatefield = Template.bind({});
 PrimaryDatefield.args = {
-  id: "default",
-  name: "default",
+  id: "primary",
+  name: "primary",
   label: "Datefield",
 };
 
 export const DefaultDatefield = Template.bind({});
 DefaultDatefield.args = {
-  defaultDate: "08/08/2022",
+  value: "08/08/2022",
   id: "default",
   name: "default",
   label: "default",
@@ -103,7 +90,7 @@ MinimumDateField.parameters = {
   docs: {
     description: {
       story:
-        "A min date can be provided to prevent users from selecting a date before a certain date",
+        "A min date can be provided to prevent users from selecting a date before a certain date. The minimum date is 08/08/2022 here.",
     },
   },
 };
@@ -119,7 +106,7 @@ MaximumDateField.parameters = {
   docs: {
     description: {
       story:
-        "A max date can be provided to prevent users from selecting a date after a certain date",
+        "A max date can be provided to prevent users from selecting a date after a certain date. The max date is 08/08/2022 here.",
     },
   },
 };
