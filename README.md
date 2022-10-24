@@ -73,10 +73,6 @@ With the project now set up you can import any of the components in your code an
 
 Found a bug, want to help with updating the docs or maybe you want to help add a feature. Refer to our contribution documentation for more information: [Documentation](./docs/CONTRIBUTING.MD)
 
-## Examples
-
-You can view and example implementation of the app [here](./examples/create-react-app/)
-
 ## License
 
 [![License](https://img.shields.io/badge/License-CC0--1.0--Universal-blue.svg)](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
