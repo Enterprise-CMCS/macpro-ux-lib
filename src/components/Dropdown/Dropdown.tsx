@@ -1,5 +1,5 @@
-import { DropdownInput } from "components/DropdownInput/DropdownInput";
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { DropdownInput } from "../DropdownInput/DropdownInput";
+import React, { Dispatch, SetStateAction, useState } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["select"];
 
