@@ -2,35 +2,23 @@ import React from "react";
 import { fireEvent as userEvent, render } from "../../test-setup";
 import fireEvent from "@testing-library/user-event";
 
-import { Dropdown } from "./Dropdown";
-import data from "../DropdownInput/data.json";
+import { DropdownInput } from "./DropdownInput";
+import data from "./data.json";
 
-describe("Test the Dropdown component", () => {
-  /*
-   * Note:
-   *
-   * This component uses both the native select elem as well as a custom dropdown.
-   * The select element is included for screen readers. This element and a couple
-   * others are tagged with a class "usa-sr-only" that render them off to the side
-   * of the page. Data should flow to sr-friendly elements correctly and interacting
-   * with them should still affect component state.
-   */
-
+describe("Test the DropdownInput component", () => {
   let container: HTMLElement;
-  let selectElem: Element;
   let inputElem: Element;
   let listElem: Element;
 
   beforeEach(() => {
     container = render(
-      <Dropdown
+      <DropdownInput
         data={data}
         id="fruit"
         label="Select a fruit"
         name="fruit-dropdown"
       />
     ).container;
-    selectElem = container.getElementsByClassName("usa-combo-box__select")[0];
     inputElem = container.getElementsByClassName("usa-combo-box__input")[0];
     listElem = container.getElementsByClassName("usa-combo-box__list")[0];
 
@@ -40,16 +28,11 @@ describe("Test the Dropdown component", () => {
   });
 
   it("should render correctly", () => {
-    // both dropdowns should exist
-    expect(selectElem).toBeInTheDocument();
     expect(inputElem).toBeInTheDocument();
     expect(listElem).toBeInTheDocument();
 
-    // both should contain the same data
-    expect(selectElem.children.length).toBe(data.length + 1); // select has a manually added empty option
+    // list should exist but not be visible
     expect(listElem.children.length).toBe(data.length);
-
-    // should render collapsed
     expect(listElem).not.toBeVisible();
   });
 
@@ -86,17 +69,7 @@ describe("Test the Dropdown component", () => {
     )[0];
     userEvent.click(apple);
 
-    // both should contain the same data
-    expect(selectElem).toHaveDisplayValue("Apple");
-    expect(inputElem).toHaveDisplayValue("Apple");
-  });
-
-  it("should be able to select elements from sr-only select", () => {
-    // select an option
-    fireEvent.selectOptions(selectElem, "apple");
-
-    // both should contain the same data
-    expect(selectElem).toHaveDisplayValue("Apple");
+    // should contain the data
     expect(inputElem).toHaveDisplayValue("Apple");
   });
 
@@ -112,17 +85,14 @@ describe("Test the Dropdown component", () => {
     )[0];
     userEvent.click(apple);
 
-    // both should contain the same data
-    expect(selectElem).toHaveDisplayValue("Apple");
+    // should contain the data
     expect(inputElem).toHaveDisplayValue("Apple");
-
     expect(clearBtn).toBeVisible();
+
     userEvent.click(clearBtn);
 
-    // both should be empty
-    expect(selectElem).toHaveDisplayValue("");
+    // should be empty
     expect(inputElem).toHaveDisplayValue("");
-
     expect(clearBtn).not.toBeVisible();
   });
 
@@ -166,14 +136,36 @@ describe("Test the Dropdown component", () => {
     userEvent.keyDown(apple, { key: "Enter" });
 
     expect(inputElem).toHaveDisplayValue("Apple");
-    expect(selectElem).toHaveDisplayValue("Apple");
+  });
+
+  it("selector should jump to current dropdown value on ArrowDown", () => {
+    const apple = container.getElementsByClassName(
+      "usa-combo-box__list-option"
+    )[0];
+    const apricot = container.getElementsByClassName(
+      "usa-combo-box__list-option"
+    )[1];
+
+    // Move down to apricot
+    userEvent.focus(inputElem);
+    userEvent.keyDown(inputElem, { key: "ArrowDown" });
+    userEvent.keyDown(apple, { key: "ArrowDown" });
+    expect(apricot).toHaveFocus();
+
+    // collapse list
+    userEvent.blur(inputElem);
+    expect(listElem).not.toBeVisible();
+
+    // refocus input; ArrowDown should jump to current value
+    userEvent.focus(inputElem);
+    userEvent.keyDown(window, { key: "ArrowDown" });
+    expect(apricot).toHaveFocus();
   });
 
   it("typing in input should filter dropdown list", () => {
     userEvent.focus(inputElem);
     fireEvent.type(inputElem, "apple");
 
-    expect(selectElem.children.length).toBe(65); // select doesn't get filtered
     expect(listElem.children.length).toBe(4);
   });
 

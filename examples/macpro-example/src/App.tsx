@@ -198,6 +198,14 @@ function App() {
             { displayString: "GHI", value: "ghi" },
           ]}
         ></UX.Dropdown>
+        <UX.MultiSelect
+          label="My MultiSelect Dropdown"
+          data={[
+            { displayString: "ABC", value: "abc" },
+            { displayString: "DEF", value: "def" },
+            { displayString: "GHI", value: "ghi" },
+          ]}
+        ></UX.MultiSelect>
         <UX.Icon name="accessibility_new" color="#000" />
         <UX.Link>Log Out</UX.Link>
         <UX.RadioGroup

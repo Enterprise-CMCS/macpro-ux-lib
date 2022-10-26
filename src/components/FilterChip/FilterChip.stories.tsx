@@ -17,7 +17,7 @@ export default {
     docs: {
       description: {
         component:
-          "The FilterChip uses a tag or descriptive words as a way to filter content. This may be a good alternative to a Checkbox for larger data sets.\n\nThis component contains no actual logic to interact with your data. See the FilterChip Implementation story for an example of how this might be used.",
+          "The FilterChip uses a tag or descriptive words as a way to filter content. This may be a good alternative to a Checkbox for larger data sets.\n\nThis component contains no actual logic to interact with your data. See the MultiSelect component for an example of how this might be used.",
       },
     },
   },

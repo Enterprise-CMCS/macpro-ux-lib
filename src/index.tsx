@@ -22,6 +22,7 @@ import { Icon } from "./components/Icon/Icon";
 import { Link } from "./components/Link/Link";
 import { Logo } from "./components/Logo/Logo";
 import { Modal } from "./components/Modal/Modal";
+import { MultiSelect } from "./components/MultiSelect/MultiSelect";
 import { Radio } from "./components/Radio/Radio";
 import { RadioGroup } from "./components/Radio/RadioGroup";
 import { SiteAlert } from "./components/SiteAlert/SiteAlert";
@@ -61,6 +62,7 @@ export {
   Link,
   Logo,
   Modal,
+  MultiSelect,
   Radio,
   RadioGroup,
   Search,
