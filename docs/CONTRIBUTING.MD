@@ -172,3 +172,5 @@ This [discussion topic](https://github.com/uswds/uswds/discussions/4680) on usin
 ## Future Improvements
 
 The MACPro UX library was built using version 3.0 of USWDS. As of this writing (October 19, 2022), USWDS released [version 3.2.0](https://github.com/uswds/uswds). Future maintainers and contributors may want to upgrade the library to use [the latest version of USWDS](https://github.com/uswds/uswds/releases/) before fixing bugs or adding new features.
+
+It may also be worth looking into another way to show users how some components take data objects (such as JSX objects) as parameters. Currently, we hide these data objects in the main Storybook view and users may look at the example code snippets for reference, but it may be worth investigating a more clear way to call this out.
