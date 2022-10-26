@@ -1,3 +1,10 @@
+# [1.22.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.21.2...v1.22.0) (2022-10-26)
+
+
+### Features
+
+* **MultiSelect:** add MultiSelect component ([0a95093](https://github.com/cmsgov/macpro-ux-lib/commit/0a9509388130735afaf52f394fc4448998c004cb))
+
 ## [1.21.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.21.1...v1.21.2) (2022-10-24)
 
 
