@@ -1,3 +1,10 @@
+## [1.22.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.22.0...v1.22.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* **update-actions:** update github action library versions ([#188](https://github.com/cmsgov/macpro-ux-lib/issues/188)) ([4def8fc](https://github.com/cmsgov/macpro-ux-lib/commit/4def8fcf6eccade1fc350d946e80581ac8e2bbce))
+
 # [1.22.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.21.2...v1.22.0) (2022-10-26)
 
 
