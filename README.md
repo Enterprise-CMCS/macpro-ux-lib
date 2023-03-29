@@ -7,7 +7,7 @@ SHIFT + CMD/CTRL + V
 <h1 align="center" style="border-bottom: none;"> macpro-ux-lib</h1>
 <h3 align="center">Common UI/UX Library built on USWDS 3.0 and packaged for easier distribution throughout CMS.</h3>
 <p align="center">
-  <a href="https://cmsgov.github.io/macpro-ux-lib/">
+  <a href="https://enterprise-cmcs.github.io/macpro-ux-lib/">
     <img alt="Storybook" src="https://img.shields.io/badge/Storybook-Docs-pink.svg">
   </a>
   <a href="https://github.com/cmsgov/macpro-ux-lib/releases/latest">
@@ -35,7 +35,7 @@ SHIFT + CMD/CTRL + V
 
 ---
 
-### See the [Storybook](https://cmsgov.github.io/macpro-ux-lib/) for a preview of the component library.
+### See the [Storybook](https://enterprise-cmcs.github.io/macpro-ux-lib/) for a preview of the component library.
 
 ---
 
