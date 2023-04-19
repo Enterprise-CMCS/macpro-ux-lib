@@ -73,7 +73,7 @@ Be sure to follow the template when creating your [pull request on GitHub](https
 
 The short version of the CICD Pipeline is `Pull Request → Github Actions → AWS Amplify Temporary Environments → Accessible Application → Pull Request Approval → Master deployment & New Version `
 
-All of the deployments start with new code on a branch. A branch environment is created and this is where automated and manual testing occurs. Once all of the checks have been passed on a branch, it is pulled into the Master branch. The master branch specifically lives in the git-hub actions branch `gha-pages` and serves as our most up to date deployment environment. It is where live users have access to the new features and new components. It is available to view at [https://cmsgov.github.io/macpro-ux-lib](https://cmsgov.github.io/macpro-ux-lib).
+All of the deployments start with new code on a branch. A branch environment is created and this is where automated and manual testing occurs. Once all of the checks have been passed on a branch, it is pulled into the Master branch. The master branch specifically lives in the git-hub actions branch `gha-pages` and serves as our most up to date deployment environment. It is where live users have access to the new features and new components. It is available to view at [https://enterprise-cmcs.github.io/macpro-ux-lib](https://enterprise-cmcs.github.io/macpro-ux-lib).
 
 ## Testing the NPM Distribution
 
