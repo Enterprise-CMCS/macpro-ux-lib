@@ -17,7 +17,7 @@ interface Props extends IntrinsicElements {
   size?: Size;
   family?: Family;
   children: React.ReactNode;
-  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
 }
 
 export const Typography: React.FC<Props> = ({
