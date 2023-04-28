@@ -65,7 +65,7 @@
     "rollup-plugin-scss": "^3.0.0",
     "rollup-plugin-typescript2": "^0.34.1",
     "sass": "^1.53.0",
-    "sass-loader": "10.1.1",
+    "sass-loader": "^13.2.2",
     "semantic-release": "^21.0.1",
     "storybook": "^7.0.7",
     "storybook-addon-sass-postcss": "^0.1.3",
