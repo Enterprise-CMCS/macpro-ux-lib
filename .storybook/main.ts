@@ -1,5 +1,9 @@
+import type { StorybookConfig } from "@storybook/react-webpack5";
+import { Configuration } from "webpack";
+
 const path = require("path");
-module.exports = {
+
+const config: StorybookConfig = {
   stories: [
     "../src/components/**/*.stories.mdx",
     "../src/components/**/*.stories.@(js|jsx|ts|tsx)",
@@ -17,15 +21,14 @@ module.exports = {
     name: "@storybook/react-webpack5",
     options: {},
   },
-  staticDirs: ["../src", "../src/assets/img"],
-  webpackFinal: async (config) => {
-    config.resolve.modules = [
-      ...(config.resolve.modules || []),
-      path.resolve(__dirname, "../src"),
-    ];
-    return config;
-  },
   docs: {
     autodocs: true,
   },
+  webpackFinal: async (config: Configuration) => {
+    config.resolve?.modules?.push(...[path.resolve(__dirname, "../src")]);
+
+    return config;
+  },
 };
+
+export default config;
