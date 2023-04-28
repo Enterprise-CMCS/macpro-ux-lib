@@ -122,7 +122,7 @@ If your component requires custom styling beyond what is provided by USWDS, you 
 In this new SCSS file, start by importing the MACbis color palette:
 
 ```typescript
-@use "../../assets/theme/macbis-colors" as c;
+@use "../../sass/macbis-colors" as c;
 ```
 
 You may now access the MACbis colors in the format `c.$primary`, `c.$error`, `c.$warn`, etc.
