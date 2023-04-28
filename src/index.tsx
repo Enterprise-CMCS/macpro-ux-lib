@@ -1,5 +1,5 @@
-import "./assets/css/styles.css";
-import "./assets/theme/styles.scss";
+import "./assets/uswds/css/styles.css";
+import "./assets/sass/styles.scss";
 
 import { Accordion } from "./components/Accordion/Accordion";
 import { AccordionGroup } from "./components/Accordion/AccordionGroup";

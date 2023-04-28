@@ -1,5 +1,5 @@
 import React, { EventHandler, FormEventHandler, useState } from "react";
-import spyGlass from "../../assets/img/usa-icons-bg/search--white.svg";
+import spyGlass from "../../assets/uswds/img/usa-icons-bg/search--white.svg";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
