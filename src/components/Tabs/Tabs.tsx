@@ -71,7 +71,7 @@ export const Tabs: React.FC<PropsWithChildren<Props>> = ({
         {Children.map(arrayChildren, (child, idx) => {
           if (React.isValidElement(child)) {
             const current = currentTab === idx;
-            return React.cloneElement(child, {
+            return React.cloneElement(child as React.ReactElement, {
               hidden: !current,
               "aria-hidden": !current,
             });
