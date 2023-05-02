@@ -13,7 +13,7 @@ We love your input! We want to make contributing to this project as easy and tra
 We use [Storybook](https://storybook.js.org/) to build, organize, and document the components in this library. To get started, clone the repository:
 
 ```
-git clone https://github.com/CMSgov/macpro-ux-lib macpro-ux-lib
+git clone https://github.com/Enterprise-CMCS/macpro-ux-lib macpro-ux-lib
 ```
 
 Create a branch describing the issue or feature you are contributing:
@@ -67,7 +67,7 @@ Finally, add your new component to `src/index.tsx` in order to appear in Storybo
 
 We use pull request to drive a variety of actions and workflows in the project.
 
-Be sure to follow the template when creating your [pull request on GitHub](https://github.com/CMSgov/macpro-ux-lib/pulls). Upon doing this, and provided all of the additional checks pass, your code will be reviewed and approved if the changes are in line with the projects plans.
+Be sure to follow the template when creating your [pull request on GitHub](https://github.com/Enterprise-CMCS/macpro-ux-lib/pulls). Upon doing this, and provided all of the additional checks pass, your code will be reviewed and approved if the changes are in line with the projects plans.
 
 ## Deployment
 
