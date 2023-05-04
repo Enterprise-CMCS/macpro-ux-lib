@@ -5,13 +5,13 @@ import tooltip from "../../../node_modules/@uswds/uswds/packages/usa-tooltip/src
 type ButtonElements = JSX.IntrinsicElements["button"];
 
 interface Props extends ButtonElements {
+  ariaLabel?: string;
   buttonText: string;
   buttonVariation?: ButtonVariation;
   disabled?: boolean;
   iconName?: IconChoice;
-  shiftIconLeft?: boolean;
-  ariaLabel?: string;
   largeButton?: boolean;
+  shiftIconLeft?: boolean;
   target?: string;
   tooltipPosition?: TooltipPosition;
   tooltipText?: string;
@@ -20,15 +20,15 @@ interface Props extends ButtonElements {
 
 /**
  * Button Component
+ * @param {string}      [ariaLabel]           Overwrites the aria label of the button element that will be read on screen readers.
+ * @param {string}      [button]              Type of specified button.
  * @param {string}      buttonText            Renders the text contained in the button.
  * @param {string}      [buttonVariation]     Renders the style of the button.
  * @param {boolean}     [disabled]            Determines whether or not a button is enabled.
  * @param {IconChoice}  [iconName]            Handles the icon to render in the button.
- * @param {boolean}     [shiftIconLeft]       Determines if a rendered icon should render on the left side.
- * @param {string}      [ariaLabel]           Overwrites the aria label of the button element that will be read on screen readers.
  * @param {boolean}     [largeButton]         Determines whether a large button is required.
- * @param {string}      [button]              Type of specified button.
  * @param {Event}       [onClick]             Handles its behavior when the button is clicked.
+ * @param {boolean}     [shiftIconLeft]       Determines if a rendered icon should render on the left side.
  * @param {string}      [target]              Specifies a name or a keyword that indicates where to display the response that is received after clicking the button.
  * @param {string}      [tooltipPosition]     Determines the position of the tooltip.
  * @param {string}      [tooltipText]         Renders the text contained in the tooltip.
@@ -60,8 +60,8 @@ const ButtonVariationConversion: { [key: string]: string } = {
 
 export const Button: React.FC<Props> = ({
   ariaLabel,
-  buttonVariation = "primary",
   buttonText,
+  buttonVariation = "primary",
   className,
   disabled = false,
   iconName,
