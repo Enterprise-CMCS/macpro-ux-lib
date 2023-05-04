@@ -13,7 +13,7 @@ interface Props extends ButtonElements {
   largeButton?: boolean;
   shiftIconLeft?: boolean;
   target?: string;
-  tooltipPosition?: TooltipPosition;
+  tooltipPosition?: TooltipPositions;
   tooltipText?: string;
   withTooltip?: boolean;
 }
@@ -44,7 +44,7 @@ type ButtonVariation =
   | "link"
   | "secondary-outline";
 
-type TooltipPosition = "top" | "bottom" | "left" | "right";
+type TooltipPositions = "top" | "bottom" | "left" | "right";
 
 const ButtonVariationConversion: { [key: string]: string } = {
   primary: "cms-primary-background",
