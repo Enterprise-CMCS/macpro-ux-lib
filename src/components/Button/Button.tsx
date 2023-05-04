@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import { Icon, IconChoice } from "../Icon/Icon";
+import tooltip from "../../../node_modules/@uswds/uswds/packages/usa-tooltip/src";
 
 type IntrinsicElements = JSX.IntrinsicElements["button"];
 
@@ -12,6 +13,9 @@ interface Props extends IntrinsicElements {
   ariaLabel?: string;
   largeButton?: boolean;
   target?: string;
+  tooltipPosition?: TooltipPosition;
+  tooltipText?: string;
+  withTooltip?: boolean;
 }
 
 /**
@@ -26,6 +30,9 @@ interface Props extends IntrinsicElements {
  * @param {string}      [button]              Type of specified button.
  * @param {Event}       [onClick]             Handles its behavior when the button is clicked.
  * @param {string}      [target]              Specifies a name or a keyword that indicates where to display the response that is received after clicking the button.
+ * @param {string}      [tooltipPosition]     Determines the position of the tooltip.
+ * @param {string}      [tooltipText]         Renders the text contained in the tooltip.
+ * @param {boolean}     [withTooltip]         Determines if a tooltip should be rendered.
  */
 
 type ButtonVariation =
@@ -37,6 +44,8 @@ type ButtonVariation =
   | "base"
   | "link"
   | "secondary-outline";
+
+type TooltipPosition = "top" | "bottom" | "left" | "right";
 
 const ButtonVariationConversion: { [key: string]: string } = {
   primary: " cms-primary-background",
@@ -59,18 +68,39 @@ export const Button: React.FC<Props> = ({
   largeButton = false,
   shiftIconLeft = false,
   target = "_self",
+  tooltipPosition = null,
+  tooltipText = undefined,
+  withTooltip = false,
   ...rest
 }) => {
   const buttonVariationType = ButtonVariationConversion[buttonVariation] ?? "";
   const classNames = `display-flex usa-button usa-button--${buttonVariationType} ${
     largeButton ? "usa-button--big" : ""
   }${className ? ` ${className}` : ""}`;
+  // Tooltip setup
+  const tooltipRef = useRef<HTMLButtonElement>(null);
+
+  useLayoutEffect(() => {
+    const tooltipElement = tooltipRef.current;
+
+    if (typeof tooltip.on === "function") {
+      tooltip.on(tooltipElement);
+    }
+    return () => {
+      if (typeof tooltip.off === "function") {
+        tooltip.off(tooltipElement);
+      }
+    };
+  }, []);
   return (
     <button
+      ref={tooltipRef}
       disabled={disabled}
       aria-label={ariaLabel || `${buttonText} button`}
       className={classNames}
       formTarget={target}
+      data-position={tooltipPosition}
+      title={tooltipText}
       {...rest}
     >
       {shiftIconLeft && iconName && (
