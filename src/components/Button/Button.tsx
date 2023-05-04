@@ -48,14 +48,14 @@ type ButtonVariation =
 type TooltipPosition = "top" | "bottom" | "left" | "right";
 
 const ButtonVariationConversion: { [key: string]: string } = {
-  primary: " cms-primary-background",
-  secondary: "outline cms-primary-text",
-  "secondary-outline": "secondary-outline",
-  error: "secondary",
-  success: " bg-green",
-  inverse: "inverse",
-  base: "base",
-  link: "unstyled",
+  primary: "cms-primary-background",
+  secondary: "usa-button--outline cms-primary-text",
+  "secondary-outline": "usa-button--secondary-outline",
+  error: "usa-button--secondary",
+  success: "bg-green",
+  inverse: "usa-button--inverse",
+  base: "usa-button--base",
+  link: "usa-button--unstyled",
 };
 
 export const Button: React.FC<Props> = ({
@@ -73,10 +73,6 @@ export const Button: React.FC<Props> = ({
   withTooltip = false,
   ...rest
 }) => {
-  const buttonVariationType = ButtonVariationConversion[buttonVariation] ?? "";
-  const classNames = `display-flex usa-button usa-button--${buttonVariationType} ${
-    largeButton ? "usa-button--big" : ""
-  }${className ? ` ${className}` : ""}`;
   // Tooltip setup
   const tooltipRef = useRef<HTMLButtonElement>(null);
 
@@ -92,6 +88,24 @@ export const Button: React.FC<Props> = ({
       }
     };
   }, []);
+
+  // Get the classes for the specified button variation
+  const buttonVariationClass = ButtonVariationConversion[buttonVariation] ?? "";
+  const largeButtonClass = largeButton ? "usa-button--big" : "";
+  const tooltipClass = withTooltip ? "usa-tooltip" : "";
+
+  const computedClasses: String[] = [
+    buttonVariationClass,
+    largeButtonClass,
+    tooltipClass,
+    className ?? "",
+  ];
+
+  // Combine computed classes without adding unnecessary spaces
+  const classNames = `display-flex flex-align-center usa-button ${computedClasses
+    .filter(Boolean)
+    .join(" ")}`;
+
   return (
     <button
       ref={tooltipRef}
