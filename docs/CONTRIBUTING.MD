@@ -135,33 +135,35 @@ For examples on how to use custom SCSS files, look at the components listed in `
 
 ## USWDS JavaScript
 
-Some components, such as Tooltip, rely on USWDS JavaScript files. If you are building a library component and would like to leverage the USWDS JavaScript, you will need to import that component's JS directly from the USWDS package.
+Some components, such as FileInput, rely on USWDS JavaScript files. If you are building a library component and would like to leverage the USWDS JavaScript, you will need to import that component's JS directly from the USWDS package.
 
-Currently, the way to import the USWDS's `usa-tooltip` JavaScript is to reference it directly:
+Currently, the way to import the USWDS's `usa-file-input` JavaScript is to reference it directly:
 
 ```typescript
-import tooltip from "../../../node_modules/@uswds/uswds/packages/usa-tooltip/src";
+import tooltip from "../../../node_modules/@uswds/uswds/packages/usa-file-input/src";
 ```
 
 **Note:** The above works with USWDS 3.0. This process may be different for more recent versions.
 
-Once you've imported the JS, you will need to initialize it in your React component. In Tooltip, it is done like this:
+Once you've imported the JS, you will need to initialize it in your React component. In FileInput, it is done like this:
 
 ```typescript
-const tooltipRef = useRef < HTMLSpanElement > null;
+const fileInputRef = useRef<HTMLSpanElement>(null);
 
 useLayoutEffect(() => {
-  const tooltipElement = tooltipRef.current;
-  if (typeof tooltip.on === "function") tooltip.on(tooltipElement);
+  const fileInputElement = fileInputRef.current;
+  if (typeof fileInput.off === "function") fileInput.off(fileInputElement);
+  if (typeof fileInput.on === "function") fileInput.on(fileInputElement);
+
   return () => {
-    if (typeof tooltip.off === "function") tooltip.off(tooltipElement);
+    if (typeof fileInput.off === "function") fileInput.off(fileInputElement);
   };
 });
 ```
 
-We use `useRef` to avoid importing multiple instances of the same JS file. In `useLayoutEffect()`, we ensure that the imported `tooltip` has an `.on` function, and then we call it, passing the ref as a parameter. This will add the necessary `tooltip` JavaScript to the `HTMLSpanElement` created by `useRef`.
+We use `useRef` to avoid importing multiple instances of the same JS file. In `useLayoutEffect()`, we ensure that the imported `fileInput` has an `.on` function, and then we call it, passing the ref as a parameter. This will add the necessary `fileInput` JavaScript to the `HTMLSpanElement` created by `useRef`.
 
-In the `return` block, we will deinitialize the `tooltip` by using its `off` function, removing it at the end of the React component lifecycle.
+In the `return` block, we will deinitialize the `fileInput` by using its `off` function, removing it at the end of the React component lifecycle.
 
 Your component will now be able to take advantage of the USWDS component's JavaScript functionality.
 
