@@ -27,7 +27,6 @@ interface Props extends ButtonElements {
  * @param {boolean}     [disabled]            Determines whether or not a button is enabled.
  * @param {IconChoice}  [iconName]            Handles the icon to render in the button.
  * @param {boolean}     [largeButton]         Determines whether a large button is required.
- * @param {Event}       [onClick]             Handles its behavior when the button is clicked.
  * @param {boolean}     [shiftIconLeft]       Determines if a rendered icon should render on the left side.
  * @param {string}      [target]              Specifies a name or a keyword that indicates where to display the response that is received after clicking the button.
  * @param {string}      [tooltipPosition]     Determines the position of the tooltip.
