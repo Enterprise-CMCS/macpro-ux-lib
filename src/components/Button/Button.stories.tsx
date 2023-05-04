@@ -67,20 +67,36 @@ PrimaryButton.args = {
 
 export const PrimaryButtonWithIcon = Template.bind({});
 PrimaryButtonWithIcon.args = { buttonVariation: "primary", iconName: "add" };
+
 export const SecondaryButton = Template.bind({});
 SecondaryButton.args = { buttonVariation: "secondary" };
+
 export const SecondaryOutlineButton = Template.bind({});
 SecondaryOutlineButton.args = { buttonVariation: "secondary-outline" };
 SecondaryOutlineButton.parameters = { backgrounds: { default: "dark" } };
+
 export const ErrorButton = Template.bind({});
 ErrorButton.args = { buttonVariation: "error" };
+
 export const SuccessButton = Template.bind({});
 SuccessButton.args = { buttonVariation: "success" };
+
 export const InverseButton = Template.bind({});
 InverseButton.args = { buttonVariation: "inverse" };
+
 export const BaseButton = Template.bind({});
 BaseButton.args = { buttonVariation: "base" };
+
 export const LinkButton = Template.bind({});
 LinkButton.args = { buttonVariation: "link" };
+
 export const BigButton = Template.bind({});
 BigButton.args = { largeButton: true };
+
+export const WithTooltip = Template.bind({});
+WithTooltip.args = {
+  buttonVariation: "primary",
+  withTooltip: true,
+  tooltipText: "Tooltip text",
+  tooltipPosition: "right",
+};
