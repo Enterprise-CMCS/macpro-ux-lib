@@ -16,10 +16,6 @@ export default {
       control: "boolean",
       description: "Determines whether or not a button is disabled",
     },
-    onClick: {
-      description: "Handles button behavior when clicked",
-      action: "clicked",
-    },
     iconName: {
       description:
         "Determines which icon that needs to be rendered from: https://designsystem.digital.gov/components/icon/. Use the icon's listed name, for example: 'accessibility_new'",
@@ -51,7 +47,6 @@ export default {
     buttonText: "Button",
     buttonVariation: "primary",
     disabled: false,
-    onClick: undefined,
     iconName: undefined,
     shiftIconLeft: false,
     type: "button",
