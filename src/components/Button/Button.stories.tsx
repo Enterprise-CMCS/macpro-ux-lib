@@ -60,7 +60,9 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = ({ buttonText, ...rest }) => (
-  <Button buttonText={buttonText} {...rest} />
+  <div className="padding-2">
+    <Button buttonText={buttonText} {...rest} />
+  </div>
 );
 
 export const PrimaryButton = Template.bind({});
