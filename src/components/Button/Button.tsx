@@ -2,9 +2,9 @@ import React, { useLayoutEffect, useRef } from "react";
 import { Icon, IconChoice } from "../Icon/Icon";
 import tooltip from "../../../node_modules/@uswds/uswds/packages/usa-tooltip/src";
 
-type IntrinsicElements = JSX.IntrinsicElements["button"];
+type ButtonElements = JSX.IntrinsicElements["button"];
 
-interface Props extends IntrinsicElements {
+interface Props extends ButtonElements {
   buttonText: string;
   buttonVariation?: ButtonVariation;
   disabled?: boolean;
