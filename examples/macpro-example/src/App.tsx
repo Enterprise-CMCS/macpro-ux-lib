@@ -399,13 +399,6 @@ function App() {
           </tbody>
         </UX.Table>
       </div>
-      <div className="padding-left-3">
-        <UX.Tooltip
-          title="ToolTip"
-          position="right"
-          children={[<h1 key="test">Hover me</h1>]}
-        />
-      </div>
       <UX.Footer emailAddress="jhechter@fearless.tech" />
     </div>
   );

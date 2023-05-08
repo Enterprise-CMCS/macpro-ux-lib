@@ -29,7 +29,7 @@ export const CardChoiceGroup: React.FC<PropsWithChildren<Props>> = ({
       <span className="gradient-cap"></span>
       {Children.map(arrayChildren, (child, idx) => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(child, {
+          return React.cloneElement(child as React.ReactElement, {
             bordered: child.props.bordered ?? bordered,
             darkBG: child.props.darkBG ?? (alternatingBG && idx % 2),
           });

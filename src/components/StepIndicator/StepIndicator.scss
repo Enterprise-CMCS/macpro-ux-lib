@@ -1,4 +1,4 @@
-@use "../../assets/theme/macbis-colors" as c;
+@use "../../sass/macbis-colors" as c;
 
 .usa-step-indicator {
   .usa-step-indicator__segment--current::before,

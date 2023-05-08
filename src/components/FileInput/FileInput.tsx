@@ -54,12 +54,12 @@ export const FileInput: React.FC<Props> = ({
 }) => {
   const fileInputRef = useRef<HTMLSpanElement>(null);
   useLayoutEffect(() => {
-    const tooltipElement = fileInputRef.current;
-    if (typeof fileInput.off === "function") fileInput.off(tooltipElement);
-    if (typeof fileInput.on === "function") fileInput.on(tooltipElement);
+    const fileInputElement = fileInputRef.current;
+    if (typeof fileInput.off === "function") fileInput.off(fileInputElement);
+    if (typeof fileInput.on === "function") fileInput.on(fileInputElement);
 
     return () => {
-      if (typeof fileInput.off === "function") fileInput.off(tooltipElement);
+      if (typeof fileInput.off === "function") fileInput.off(fileInputElement);
     };
   });
 

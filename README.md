@@ -5,7 +5,7 @@ SHIFT + CMD/CTRL + V
 -->
 
 <h1 align="center" style="border-bottom: none;"> macpro-ux-lib</h1>
-<h3 align="center">Common UI/UX Library built on USWDS 3.0 and packaged for easier distribution throughout CMS.</h3>
+<h3 align="center">Common UI/UX Library built on USWDS 3.4.1 and packaged for easier distribution throughout CMS.</h3>
 <p align="center">
   <a href="https://enterprise-cmcs.github.io/macpro-ux-lib/">
     <img alt="Storybook" src="https://img.shields.io/badge/Storybook-Docs-pink.svg">
@@ -41,7 +41,7 @@ SHIFT + CMD/CTRL + V
 
 ## Overview
 
-This is a React implementation of USWDS 3.0 in conjuction with some MACPRO theming. This library is meant to be consumed for implementing a USWDS compliant web application in React. For more information about USWDS and their design principles refer to the below link.
+This is a React implementation of USWDS 3.4.1 in conjuction with some MACPRO theming. This library is meant to be consumed for implementing a USWDS compliant web application in React. For more information about USWDS and their design principles refer to the below link.
 
 [USWDS Design Standards](https://designsystem.digital.gov/design-principles/)
 

@@ -58,7 +58,7 @@ export const AccordionGroup: React.FC<PropsWithChildren<Props>> = ({
     >
       {Children.map(arrayChildren, (child, idx) => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(child, {
+          return React.cloneElement(child as React.ReactElement, {
             hidden: contentHidden[idx],
             onClick: () => {
               const stateArray = multiSelect
