@@ -24,11 +24,11 @@ uswds.paths.src.img = "./node_modules/@uswds/uswds/dist/img";
 uswds.paths.src.projectSass = "./src/sass";
 
 // uswds.paths.dist is where Gulp will put assets in the project
-uswds.paths.dist.theme = "./src/sass";
-uswds.paths.dist.img = "./src/assets/uswds/img";
-uswds.paths.dist.fonts = "./src/assets/uswds/fonts";
-uswds.paths.dist.js = "./src/assets/uswds/js";
-uswds.paths.dist.css = "./src/assets/uswds/css";
+uswds.paths.dist.theme = "./sass";
+uswds.paths.dist.img = "./assets/uswds/img";
+uswds.paths.dist.fonts = "./assets/uswds/fonts";
+uswds.paths.dist.js = "./assets/uswds/js";
+uswds.paths.dist.css = "./assets/uswds/css";
 
 /**
  * Exports
