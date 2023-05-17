@@ -8,15 +8,13 @@
 }
 
 .usa-alert--info:before {
-  -webkit-mask: url("../assets/img/usa-icons/info_alt.svg") no-repeat
-    center/contain;
-  mask: url("../assets/img/usa-icons/info_alt.svg") no-repeat center/contain;
+  -webkit-mask: url("../../img/usa-icons/info_alt.svg") no-repeat center/contain;
+  mask: url("../../img/usa-icons/info_alt.svg") no-repeat center/contain;
 }
 
 .usa-alert--success:before {
-  -webkit-mask: url("../assets/img/usa-icons/success.svg") no-repeat
-    center/contain;
-  mask: url("../assets/img/usa-icons/success.svg") no-repeat center/contain;
+  -webkit-mask: url("../../img/usa-icons/success.svg") no-repeat center/contain;
+  mask: url("../../img/usa-icons/success.svg") no-repeat center/contain;
 }
 
 .usa-alert--warning {
