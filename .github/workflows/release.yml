@@ -45,4 +45,4 @@ jobs:
           SLACK_ICON: https://github.com/Enterprise-CMCS.png?size=48
           SLACK_TITLE: Failure
           SLACK_USERNAME: ${{ github.repository }} ${{job.status}}
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
