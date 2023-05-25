@@ -9,11 +9,13 @@
   .usa-alert__body {
     background-color: transparent;
   }
-}
 
-.usa-alert--success:before {
-  -webkit-mask: url("../../img/usa-icons/success.svg") no-repeat center/contain;
-  mask: url("../../img/usa-icons/success.svg") no-repeat center/contain;
+  .grid-col {
+    flex: 1 1 0%;
+    width: auto;
+    max-width: 100%;
+    min-width: 1px;
+  }
 }
 
 .usa-alert--warning {
