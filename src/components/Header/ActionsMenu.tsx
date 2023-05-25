@@ -41,8 +41,9 @@ export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
           color="#fff"
         />
       </button>
-      <menu
-        className="user-actions-menu usa-nav__secondary-links"
+
+      <ul
+        className="user-actions-menu usa-nav__submenu"
         {...rest}
         hidden={!isOpen} // TODO: This cannot say "hidden" when expanded in mobile
       >
@@ -57,7 +58,7 @@ export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
             </li>
           );
         })}
-      </menu>
+      </ul>
     </div>
   );
 };
