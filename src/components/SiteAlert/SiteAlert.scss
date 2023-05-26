@@ -5,6 +5,10 @@
     border: none;
     background-color: transparent;
   }
+
+  .usa-alert {
+    border: none;
+  }
 }
 
 .usa-site-alert--info,
@@ -14,6 +18,20 @@
   .usa-alert__text {
     color: c.$primary-darker;
   }
+}
+
+.usa-site-alert--emergency {
+  .usa-alert {
+    background-color: c.$error-dark;
+
+    .usa-alert__body .usa-link {
+      color: white;
+    }
+  }
+}
+
+.usa-site-alert .usa-alert .usa-alert__body {
+  background-color: transparent;
 }
 
 .usa-site-alert--emergency,
