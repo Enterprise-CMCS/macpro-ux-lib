@@ -7,7 +7,6 @@ interface Props extends IntrinsicElements {
   fieldName: string;
   id: string;
   inputError?: boolean;
-  inputFilter?: RegExp;
   inputSuccess?: boolean;
   label: string;
   prefix?: string;
@@ -21,7 +20,6 @@ interface Props extends IntrinsicElements {
  * @param {string}  id             A unique identifier for the input.
  * @param {string}  [errorMessage] Error message text displayed when inputError === true.
  * @param {boolean} [inputError]   Triggers error message and error styling.
- * @param {RegExp}  [inputFilter]  Used to limit input values. If a RegExp is not provided, all input types are allowed.
  * @param {boolean} [inputSuccess] Trigger success styling.
  * @param {string}  [prefix]       Text to be displayed at the front of input field. Not stored in value. Ex: currency indicator.
  * @param {boolean} [required]     Adds semantic required attr and appends an * to the end of the input label.
@@ -43,14 +41,6 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
     suffix,
     ...otherProps
   } = props;
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (inputFilter && inputFilter.test(e.target.value)) {
-      setInputValue(e.target.value);
-    } else if (!inputFilter) {
-      setInputValue(e.target.value);
-    }
-  };
 
   return (
     <div
