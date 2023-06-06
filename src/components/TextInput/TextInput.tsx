@@ -16,6 +16,7 @@ interface Props extends InputElements {
 /**
  * TextInput Component
  * @param {string}  id             A unique identifier for the input.
+ * @param {string}  label          Field label text.
  * @param {string}  [errorMessage] Error message text displayed when inputError === true.
  * @param {boolean} [inputError]   Triggers error message and error styling.
  * @param {boolean} [inputSuccess] Trigger success styling.
@@ -75,18 +76,9 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
             {prefix}
           </span>
         )}
-        <input
-          aria-describedby={`${inputError ? "input-error-message" : ""}`}
-          className={`usa-input`}
-          id={`input-type-text-${id}`}
-          name={fieldName}
-          onBlur={() => setFocused(false)}
-          onChange={handleChange}
-          onFocus={() => setFocused(true)}
-          required={required}
-          value={inputValue}
-          {...rest}
-        />
+
+        <input className={"usa-input"} id={id} ref={ref} {...otherProps} />
+
         {suffix && (
           <span className="usa-input-suffix" aria-hidden="true">
             {suffix}
@@ -95,4 +87,4 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
       </div>
     </div>
   );
-};
+});
