@@ -1,101 +1,104 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 
-type IntrinsicElements = JSX.IntrinsicElements["textarea"];
+type TextAreaElements = JSX.IntrinsicElements["textarea"];
 
-interface Props extends IntrinsicElements {
+interface Props extends TextAreaElements {
+  id: string;
+  label: string;
+  name: string;
   characterCountMessage?: string;
   errorMessage?: string;
-  fieldName: string;
-  id: string;
   inputError?: boolean;
-  inputFilter?: RegExp;
   inputSuccess?: boolean;
-  label: string;
   maxLength?: number;
-  showCharacterCount?: boolean;
   required?: boolean;
+  showCharacterCount?: boolean;
 }
+
 /**
  * TextArea Component
- * @param {string}  label                   Field label.
- * @param {string}  fieldName               Name of the input field.
- * @param {string}  id                      A unique identifier for the input.
+ * @param {string}  id                      A unique identifier that associates the label and accessability.
+ * @param {string}  label                   Field label text.
+ * @param {string}  [name]                  Name of the textarea field. Maps to the standard HTML `name` attribute.
  * @param {string}  [characterCountMessage] Sets a message preceding the character count when showCharacterCount === true.
- * @param {string}  [errorMessage]          Error message text displayed when inputError === true.
- * @param {boolean} [inputError]            Triggers error message and error styling.
- * @param {RegExp}  [inputFilter]           Used to limit input values. If a RegExp is not provided, all input types are allowed.
+ * @param {string}  [errorMessage]          Error message text to display. Triggers error styling.
+ * @param {boolean} [inputError]            Triggers error styling.
  * @param {boolean} [inputSuccess]          Trigger success styling.
  * @param {number}  [maxLength]             Maximum number of characters the textarea can receive.
- * @param {boolean} [showCharacterCount]    Shows the character counter. If maxlength is set, character count is shown as a fraction.
  * @param {boolean} [required]              Adds semantic required attr and appends an * to the end of the input label.
+ * @param {boolean} [showCharacterCount]    Shows the character counter. If maxlength is set, character count is shown as a fraction.
  */
-export const TextArea: React.FC<Props> = ({
-  label,
-  fieldName,
-  characterCountMessage,
-  errorMessage,
-  id,
-  inputError = false,
-  inputFilter,
-  inputSuccess = false,
-  maxLength,
-  showCharacterCount = false,
-  required = false,
-  ...rest
-}) => {
-  const [focused, setFocused] = useState<boolean>(false);
-  const [inputValue, setInputValue] = useState<string>("");
 
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    if (inputFilter && inputFilter.test(e.target.value)) {
-      setInputValue(e.target.value);
-    } else if (!inputFilter) {
-      setInputValue(e.target.value);
-    }
-  };
+export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
+  function TextArea({ onChange, ...props }, ref) {
+    const {
+      id,
+      label,
+      name,
+      characterCountMessage,
+      errorMessage,
+      inputError = false,
+      inputSuccess = false,
+      maxLength,
+      required = false,
+      showCharacterCount = false,
+      ...otherProps
+    } = props;
 
-  return (
-    <div
-      className={`usa-form-group${inputError ? " usa-form-group--error" : ""}`}
-    >
-      <label
-        className={`usa-label${inputError ? " usa-label--error" : ""}`}
-        htmlFor={`input-type-textarea-${id}`}
+    const [charCount, setCharCount] = useState<string>("0");
+
+    const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+      // Execute the parent form's onChange event if it exists:
+      if (onChange) {
+        onChange(e);
+      }
+
+      setCharCount(e.target.value.length.toString());
+    };
+
+    const isError = errorMessage || inputError;
+
+    return (
+      <div
+        className={"usa-form-group" + (isError ? " usa-form-group--error" : "")}
       >
-        {label}
-        {required && <span style={{ color: "#E51C3E" }}>*</span>}
-      </label>
-      {inputError && (
-        <span
-          className="usa-error-message"
-          id="input-error-message"
-          role="alert"
+        <label
+          className={"usa-label" + (isError ? " usa-label--error" : "")}
+          htmlFor={`input-type-textarea-${id}`}
         >
-          {errorMessage}
-        </span>
-      )}
-      {showCharacterCount && (
-        <span className="usa-hint">
-          {characterCountMessage ? `${characterCountMessage} ` : ""}
-          {inputValue.length}
-          {maxLength !== undefined && ` / ${maxLength}`}
-        </span>
-      )}
-      <textarea
-        aria-describedby={`${inputError ? "input-error-message" : ""}`}
-        className={`usa-textarea${inputError ? " usa-input-group--error" : ""}${
-          inputSuccess ? " usa-input--success" : ""
-        }${focused ? " usa-focus" : ""}`}
-        id={`input-type-textarea-${id}`}
-        maxLength={maxLength}
-        name={fieldName}
-        onBlur={() => setFocused(false)}
-        onChange={handleChange}
-        onFocus={() => setFocused(true)}
-        required={required}
-        value={inputValue}
-        {...rest}
-      ></textarea>
-    </div>
-  );
-};
+          {label}
+          {required && <span className="required-star">*</span>}
+        </label>
+
+        {errorMessage && (
+          <span className="usa-error-message" role="alert">
+            {errorMessage}
+          </span>
+        )}
+
+        {showCharacterCount && (
+          <span className="usa-hint">
+            {characterCountMessage ? `${characterCountMessage} ` : ""}
+            {charCount}
+            {maxLength !== undefined && ` / ${maxLength}`}
+          </span>
+        )}
+
+        <textarea
+          className={
+            "usa-textarea" +
+            (isError ? " usa-input-group--error" : "") +
+            (inputSuccess ? " usa-input--success" : "")
+          }
+          id={id}
+          maxLength={maxLength}
+          name={name}
+          onChange={handleChange}
+          ref={ref}
+          required={required}
+          {...otherProps}
+        ></textarea>
+      </div>
+    );
+  }
+);
