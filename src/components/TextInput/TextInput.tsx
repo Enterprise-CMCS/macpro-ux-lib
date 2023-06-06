@@ -1,22 +1,19 @@
 import React, { forwardRef } from "react";
 
-type IntrinsicElements = JSX.IntrinsicElements["input"];
+type InputElements = JSX.IntrinsicElements["input"];
 
-interface Props extends IntrinsicElements {
-  errorMessage?: string;
-  fieldName: string;
+interface Props extends InputElements {
   id: string;
+  label: string;
   inputError?: boolean;
   inputSuccess?: boolean;
-  label: string;
   prefix?: string;
   required?: boolean;
   suffix?: string;
 }
+
 /**
  * TextInput Component
- * @param {string}  label          Field label.
- * @param {string}  fieldName      Name of the input field.
  * @param {string}  id             A unique identifier for the input.
  * @param {string}  [errorMessage] Error message text displayed when inputError === true.
  * @param {boolean} [inputError]   Triggers error message and error styling.
