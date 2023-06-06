@@ -17,8 +17,8 @@ interface Props extends InputElements {
  * TextInput Component
  * @param {string}  id             A unique identifier for the input.
  * @param {string}  label          Field label text.
- * @param {string}  [errorMessage] Error message text displayed when inputError === true.
- * @param {boolean} [inputError]   Triggers error message and error styling.
+ * @param {string}  [errorMessage] Error message text to display. When a string is proivded, it triggers error styling.
+ * @param {boolean} [inputError]   Triggers error styling.
  * @param {boolean} [inputSuccess] Trigger success styling.
  * @param {string}  [prefix]       Text to be displayed at the front of input field. Not stored in value. Ex: currency indicator.
  * @param {boolean} [required]     Adds semantic required attr and appends an * to the end of the input label.
@@ -41,17 +41,14 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
     ...otherProps
   } = props;
 
+  const isError = errorMessage || inputError;
+
   return (
     <div
-      className={
-        "usa-form-group " +
-        (errorMessage || inputError ? "usa-form-group--error" : "")
-      }
+      className={"usa-form-group " + (isError ? "usa-form-group--error" : "")}
     >
       <label
-        className={
-          "usa-label " + (errorMessage || inputError ? "usa-label--error" : "")
-        }
+        className={"usa-label " + (isError ? "usa-label--error" : "")}
         htmlFor={id}
       >
         {label}
@@ -67,7 +64,7 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
       <div
         className={
           "usa-input-group" +
-          (errorMessage || inputError ? " usa-input-group--error" : "") +
+          (isError ? " usa-input-group--error" : "") +
           (inputSuccess ? " usa-input--success" : "")
         }
       >
