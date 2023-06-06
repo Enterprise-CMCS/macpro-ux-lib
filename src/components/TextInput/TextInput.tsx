@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { forwardRef } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
@@ -27,21 +27,22 @@ interface Props extends IntrinsicElements {
  * @param {boolean} [required]     Adds semantic required attr and appends an * to the end of the input label.
  * @param {string}  [suffix]       Text to be displayed at the end of input field. Not stored in value. Ex: mass indicator (lbs, fl oz)
  */
-export const TextInput: React.FC<Props> = ({
-  label,
-  errorMessage,
-  fieldName,
-  id,
-  inputError = false,
-  inputFilter,
-  inputSuccess = false,
-  prefix,
-  required = false,
-  suffix,
-  ...rest
-}) => {
-  const [focused, setFocused] = useState<boolean>(false);
-  const [inputValue, setInputValue] = useState<string>("");
+
+export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
+  props,
+  ref
+) {
+  const {
+    id,
+    label,
+    errorMessage,
+    inputError = false,
+    inputSuccess = false,
+    prefix,
+    required = false,
+    suffix,
+    ...otherProps
+  } = props;
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (inputFilter && inputFilter.test(e.target.value)) {
