@@ -5,6 +5,7 @@ type InputElements = JSX.IntrinsicElements["input"];
 interface Props extends InputElements {
   id: string;
   label: string;
+  errorMessage?: string;
   inputError?: boolean;
   inputSuccess?: boolean;
   prefix?: string;
@@ -41,30 +42,33 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
 
   return (
     <div
-      className={`usa-form-group${inputError ? " usa-form-group--error" : ""}`}
+      className={
+        "usa-form-group " +
+        (errorMessage || inputError ? "usa-form-group--error" : "")
+      }
     >
       <label
-        className={`usa-label${inputError ? " usa-label--error" : ""}`}
-        htmlFor={`input-type-text-${id}`}
+        className={
+          "usa-label " + (errorMessage || inputError ? "usa-label--error" : "")
+        }
+        htmlFor={id}
       >
         {label}
         {required && <span style={{ color: "#E51C3E" }}>*</span>}
       </label>
-      {inputError && (
-        <span
-          className="usa-error-message"
-          id="input-error-message"
-          role="alert"
-        >
+
+      {errorMessage && (
+        <span className="usa-error-message" role="alert">
           {errorMessage}
         </span>
       )}
+
       <div
-        className={`usa-input-group${
-          inputError ? " usa-input-group--error" : ""
-        }${inputSuccess ? " usa-input--success" : ""}${
-          focused ? " usa-focus" : ""
-        }`}
+        className={
+          "usa-input-group" +
+          (errorMessage || inputError ? " usa-input-group--error" : "") +
+          (inputSuccess ? " usa-input--success" : "")
+        }
       >
         {prefix && (
           <span className="usa-input-prefix" aria-hidden="true">
