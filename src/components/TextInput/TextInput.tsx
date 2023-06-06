@@ -54,7 +54,7 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
         htmlFor={id}
       >
         {label}
-        {required && <span style={{ color: "#E51C3E" }}>*</span>}
+        {required && <span className="required-star">*</span>}
       </label>
 
       {errorMessage && (
