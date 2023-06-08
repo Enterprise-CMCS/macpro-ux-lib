@@ -8,17 +8,17 @@ export default {
   component: TextInput,
   args: {
     label: "Input Label",
-    fieldName: "input-type-text",
+    name: "input-type-text",
     inputError: false,
     inputSuccess: false,
     required: false,
   },
   argTypes: {
-    label: {
-      description: "Field label.",
+    id: {
+      description: "A unique identifier for the TextInput.",
     },
-    fieldName: {
-      description: "Name of the input field.",
+    label: {
+      description: "Field label text.",
     },
     errorMessage: {
       description: "Error message text displayed when inputError === true.",
@@ -26,12 +26,12 @@ export default {
     inputError: {
       description: "Triggers error message and error styling.",
     },
-    inputFilter: {
-      description:
-        "Used to limit input values. If a RegExp is not provided, all input types are allowed.",
-    },
     inputSuccess: {
       description: "Trigger success styling.",
+    },
+    name: {
+      description:
+        "Name of the input field. Maps to the standard HTML `name` attribute.",
     },
     prefix: {
       description:
@@ -39,7 +39,7 @@ export default {
     },
     required: {
       description:
-        "Adds semantic required attr and appends an * to the end of the input label.",
+        'Adds semantic `required` attribute and appends a "*" to the end of the input label.',
     },
     suffix: {
       description:
@@ -53,28 +53,36 @@ const Template: StoryFn<typeof TextInput> = ({ ...rest }) => (
 );
 
 export const Default = Template.bind({});
-export const PrefixSuffixAndFilter = Template.bind({});
-export const RequiredAndError = Template.bind({});
+
+export const Error = Template.bind({});
+export const PrefixSuffix = Template.bind({});
+export const Required = Template.bind({});
 export const Success = Template.bind({});
+
 Default.args = {};
 
-PrefixSuffixAndFilter.args = {
-  inputFilter: /^-?\d*$/i,
-  label: "This Field Only Accepts Numbers",
+Error.args = {
+  errorMessage: "Helpful Error Message",
+  id: "error-textinput",
+  inputError: true,
+  label: "Field with Error Indicator",
+};
+
+PrefixSuffix.args = {
+  id: "prefix-suffix-textinput",
+  label: "This field has a prefix and suffix",
   prefix: "#",
   suffix: "lbs.",
 };
 
-RequiredAndError.args = {
-  errorMessage: "Helpful Error Message",
-  inputError: true,
+Required.args = {
+  id: "required-textinput",
   label: "Required Input Field",
   required: true,
-  id: "required-and-error-textarea",
 };
 
 Success.args = {
-  label: "Field with Success Indicator",
+  id: "success-textinput",
   inputSuccess: true,
-  id: "success-textarea",
+  label: "Field with Success Indicator",
 };
