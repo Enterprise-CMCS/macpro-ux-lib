@@ -17,16 +17,16 @@ interface Props extends TextAreaElements {
 
 /**
  * TextArea Component
- * @param {string}  id                      A unique identifier that associates the label and accessability.
+ * @param {string}  id                      A unique identifier that associates the label with the TextArea.
  * @param {string}  label                   Field label text.
  * @param {string}  [name]                  Name of the textarea field. Maps to the standard HTML `name` attribute.
- * @param {string}  [characterCountMessage] Sets a message preceding the character count when showCharacterCount === true.
- * @param {string}  [errorMessage]          Error message text to display. Triggers error styling.
- * @param {boolean} [inputError]            Triggers error styling.
+ * @param {string}  [characterCountMessage] Text to be displayed before the character count.
+ * @param {string}  [errorMessage]          Error message text displayed when inputError === true.
+ * @param {boolean} [inputError]            Triggers error message and error styling.
  * @param {boolean} [inputSuccess]          Trigger success styling.
  * @param {number}  [maxLength]             Maximum number of characters the textarea can receive.
  * @param {boolean} [required]              Adds semantic required attr and appends an * to the end of the input label.
- * @param {boolean} [showCharacterCount]    Shows the character counter. If maxlength is set, character count is shown as a fraction.
+ * @param {boolean} [showCharacterCount]    Show the character count. If maxLength is set, character count will appear as a fraction.
  */
 
 export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
@@ -56,14 +56,14 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
       setCharCount(e.target.value.length.toString());
     };
 
-    const isError = errorMessage || inputError;
-
     return (
       <div
-        className={"usa-form-group" + (isError ? " usa-form-group--error" : "")}
+        className={
+          "usa-form-group" + (inputError ? " usa-form-group--error" : "")
+        }
       >
         <label
-          className={"usa-label" + (isError ? " usa-label--error" : "")}
+          className={"usa-label" + (inputError ? " usa-label--error" : "")}
           htmlFor={`input-type-textarea-${id}`}
         >
           {label}
@@ -87,7 +87,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
         <textarea
           className={
             "usa-textarea" +
-            (isError ? " usa-input-group--error" : "") +
+            (inputError ? " usa-input-group--error" : "") +
             (inputSuccess ? " usa-input--success" : "")
           }
           id={id}
