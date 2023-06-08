@@ -15,11 +15,12 @@ interface Props extends InputElements {
 
 /**
  * TextInput Component
- * @param {string}  id             A unique identifier for the input.
+ * @param {string}  id             A unique identifier for the TextInput.
  * @param {string}  label          Field label text.
- * @param {string}  [errorMessage] Error message text to display. When a string is proivded, it triggers error styling.
+ * @param {string}  [errorMessage] Error message text displayed when inputError === true.
  * @param {boolean} [inputError]   Triggers error styling.
  * @param {boolean} [inputSuccess] Trigger success styling.
+ * @param {string}  [name]         Name of the input field. Maps to the standard HTML `name` attribute.
  * @param {string}  [prefix]       Text to be displayed at the front of input field. Not stored in value. Ex: currency indicator.
  * @param {boolean} [required]     Adds semantic required attr and appends an * to the end of the input label.
  * @param {string}  [suffix]       Text to be displayed at the end of input field. Not stored in value. Ex: mass indicator (lbs, fl oz)
