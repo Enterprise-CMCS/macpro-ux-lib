@@ -52,13 +52,13 @@ const Template: ComponentStory<typeof TextArea> = ({ ...rest }) => (
 );
 
 export const Default = Template.bind({});
-export const CharachterCount = Template.bind({});
+export const CharacterCount = Template.bind({});
 export const RequiredAndError = Template.bind({});
 export const Success = Template.bind({});
 export const InputFilter = Template.bind({});
 Default.args = {};
 
-CharachterCount.args = {
+CharacterCount.args = {
   characterCountMessage: "Available remaining characters:",
   showCharacterCount: true,
   maxLength: 500,
