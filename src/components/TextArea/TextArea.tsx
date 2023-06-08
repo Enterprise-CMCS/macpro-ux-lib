@@ -64,7 +64,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
       >
         <label
           className={"usa-label" + (inputError ? " usa-label--error" : "")}
-          htmlFor={`input-type-textarea-${id}`}
+          htmlFor={id}
         >
           {label}
           {required && <span className="required-star">*</span>}
