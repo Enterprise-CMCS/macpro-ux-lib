@@ -42,21 +42,21 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
     ...otherProps
   } = props;
 
-  const isError = errorMessage || inputError;
-
   return (
     <div
-      className={"usa-form-group " + (isError ? "usa-form-group--error" : "")}
+      className={
+        "usa-form-group " + (inputError ? "usa-form-group--error" : "")
+      }
     >
       <label
-        className={"usa-label " + (isError ? "usa-label--error" : "")}
+        className={"usa-label " + (inputError ? "usa-label--error" : "")}
         htmlFor={id}
       >
         {label}
         {required && <span className="required-star">*</span>}
       </label>
 
-      {errorMessage && (
+      {errorMessage && inputError && (
         <span className="usa-error-message" role="alert">
           {errorMessage}
         </span>
@@ -65,7 +65,7 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
       <div
         className={
           "usa-input-group" +
-          (isError ? " usa-input-group--error" : "") +
+          (inputError ? " usa-input-group--error" : "") +
           (inputSuccess ? " usa-input--success" : "")
         }
       >
