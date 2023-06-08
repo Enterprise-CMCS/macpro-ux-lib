@@ -70,7 +70,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
           {required && <span className="required-star">*</span>}
         </label>
 
-        {errorMessage && (
+        {inputError && errorMessage && (
           <span className="usa-error-message" role="alert">
             {errorMessage}
           </span>
