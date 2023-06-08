@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { TextInput } from "./TextInput";
 
@@ -46,9 +46,9 @@ export default {
         "Text to be displayed at the end of input field. Not stored in value. Ex: mass indicator (lbs, fl oz)",
     },
   },
-} as ComponentMeta<typeof TextInput>;
+} as Meta<typeof TextInput>;
 
-const Template: ComponentStory<typeof TextInput> = ({ ...rest }) => (
+const Template: StoryFn<typeof TextInput> = ({ ...rest }) => (
   <TextInput {...rest} />
 );
 

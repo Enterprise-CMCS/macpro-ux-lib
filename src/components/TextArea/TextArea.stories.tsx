@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { TextArea } from "./TextArea";
 
@@ -45,9 +45,9 @@ export default {
         "Adds semantic required attr and appends an * to the end of the input label.",
     },
   },
-} as ComponentMeta<typeof TextArea>;
+} as Meta<typeof TextArea>;
 
-const Template: ComponentStory<typeof TextArea> = ({ ...rest }) => (
+const Template: StoryFn<typeof TextArea> = ({ ...rest }) => (
   <TextArea {...rest} />
 );
 
