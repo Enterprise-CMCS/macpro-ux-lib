@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 
-type IntrinsicElements = JSX.IntrinsicElements["input"];
+type InputElements = JSX.IntrinsicElements["input"];
 
-interface Props extends IntrinsicElements {
+interface Props extends InputElements {
   checked?: boolean;
   children?: JSX.Element[];
   disabled?: boolean;
@@ -26,20 +26,32 @@ interface Props extends IntrinsicElements {
  * @param {string}  [tileDescription] Text that can be used to describe the label in more detail. Activates the tile variation automatically.
  * @param {string}  [value]           Value of the input element.
  */
-export const Checkbox: React.FC<Props> = ({
-  checked = false,
-  children,
-  disabled = false,
-  id,
-  isTile = false,
-  label,
-  name,
-  tileDescription,
-  value,
-  ...rest
-}) => {
+
+export const Checkbox = forwardRef<HTMLInputElement, Props>(function Checkbox(
+  { onChange, ...props },
+  ref
+) {
+  const {
+    checked = false,
+    children,
+    disabled = false,
+    id,
+    isTile = false,
+    label,
+    name,
+    tileDescription,
+    value,
+    ...otherProps
+  } = props;
+
   const [isChecked, setChecked] = useState(checked);
-  const handleChange = () => {
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Execute the parent form's onChange event if it exists:
+    if (onChange) {
+      onChange(e);
+    }
+
     setChecked(!isChecked);
   };
 
@@ -54,12 +66,14 @@ export const Checkbox: React.FC<Props> = ({
         }
         disabled={disabled}
         id={id}
-        onChange={handleChange}
-        type="checkbox"
         name={name}
+        onChange={handleChange}
+        ref={ref}
+        type="checkbox"
         value={value}
-        {...rest}
+        {...otherProps}
       />
+
       <label className="usa-checkbox__label" htmlFor={id}>
         {label}
         {isTile && tileDescription && (
@@ -68,6 +82,7 @@ export const Checkbox: React.FC<Props> = ({
           </span>
         )}
       </label>
+
       {isChecked && children?.length && !isTile && (
         <div className="border-left-05 border-primary margin-left-1 padding-left-205">
           {children}
@@ -75,4 +90,4 @@ export const Checkbox: React.FC<Props> = ({
       )}
     </div>
   );
-};
+});
