@@ -1,3 +1,18 @@
+# [1.23.0](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.22.1...v1.23.0) (2023-06-29)
+
+
+### Bug Fixes
+
+* **Datefield:** Ensure [@import](https://github.com/import) comes first in file ([b17640a](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/b17640a7088291509777658be00d61c60a8c2f72))
+* **span:** Add span in typography comp ([#206](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/206)) ([d700bde](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/d700bde77e4595e264e2bb657dc0c8999d818a18))
+* **update-org:** Update GitHub organization ([#211](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/211)) ([c850b97](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/c850b975c77fa3c6578c7bf67551b720aaf98ba8))
+
+
+### Features
+
+* **slack-notifications:** Created webhook and slack channel for repo notifications ([9c8ae68](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/9c8ae68a6169c36ee9dbbe128d097248a453d018))
+* **update:** Updates dependencies, USWDS version, and moves Tooltip into the Button component ([#212](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/212)) ([7a326fc](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/7a326fc37d1d28a60d159cb0ed1cbd07e7ff50c8))
+
 ## [1.22.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.22.0...v1.22.1) (2023-01-13)
 
 
