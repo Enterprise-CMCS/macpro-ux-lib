@@ -4,7 +4,7 @@ import React from "react";
 
 type ModalType = "default" | "large" | "forcedAction";
 
-interface Props {
+export interface ModalProps {
   description: string;
   heading: string;
   id: string;

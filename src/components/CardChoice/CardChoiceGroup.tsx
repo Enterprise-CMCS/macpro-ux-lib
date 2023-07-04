@@ -2,7 +2,7 @@ import React, { Children, PropsWithChildren } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
 
-interface Props extends IntrinsicElements {
+export interface CardChoiceGroupProps extends IntrinsicElements {
   alternatingBG?: boolean;
   bordered?: boolean;
 }

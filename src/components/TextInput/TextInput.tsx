@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
-interface Props extends IntrinsicElements {
+export interface TextInputProps extends IntrinsicElements {
   errorMessage?: string;
   fieldName: string;
   id: string;

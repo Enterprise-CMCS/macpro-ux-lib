@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 
-interface Props {
+export interface CardProps {
   alignContent?: "left" | "right" | "center";
   altText?: string;
   bodyText?: string;

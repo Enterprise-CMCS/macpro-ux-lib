@@ -4,7 +4,7 @@ type IntrinsicElements = JSX.IntrinsicElements["p"];
 
 type Step = { label: string; order: number };
 
-interface Props extends IntrinsicElements {
+export interface StepIndicatorProps extends IntrinsicElements {
   headingText: string;
   currentProgress: number;
   steps: Step[];

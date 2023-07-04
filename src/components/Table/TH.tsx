@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["th"];
 
-interface Props extends IntrinsicElements {
+export interface THProps extends IntrinsicElements {
   dataSortable?: boolean;
   sorted?: boolean;
   rowHeader?: boolean;

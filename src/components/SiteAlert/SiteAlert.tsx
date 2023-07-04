@@ -3,7 +3,7 @@ import { Icon } from "../Icon/Icon";
 
 type IntrinsicElements = JSX.IntrinsicElements["section"];
 
-interface Props extends IntrinsicElements {
+export interface SiteAlertProps extends IntrinsicElements {
   alertHeading?: string;
   alertBody: string | React.ReactNode;
   emergency?: boolean;

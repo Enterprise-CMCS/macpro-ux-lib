@@ -3,7 +3,7 @@ import React from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["button"];
 
-interface Props extends IntrinsicElements {
+export interface FilterChipProps extends IntrinsicElements {
   text: string;
 }
 

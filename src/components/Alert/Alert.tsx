@@ -3,7 +3,7 @@ import React from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
 
-interface Props extends IntrinsicElements {
+export interface AlertProps extends IntrinsicElements {
   alertHeading: string;
   alertBody: string | React.ReactNode;
   variation: "info" | "warning" | "error" | "success";

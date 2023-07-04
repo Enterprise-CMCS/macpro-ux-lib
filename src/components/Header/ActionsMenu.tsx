@@ -3,11 +3,11 @@ import { Icon, IconChoice } from "../Icon/Icon";
 import { Link, LinkProps } from "../Link/Link";
 import { useOutsideClick } from "hooks/useOutsideClick";
 
-interface ActionsMenuLink extends LinkProps {
+export interface ActionsMenuLink extends LinkProps {
   iconName?: IconChoice;
 }
 
-interface Props {
+export interface ActionMenuProps {
   name: string;
   links: ActionsMenuLink[];
 }

@@ -3,7 +3,7 @@ import { Icon } from "components/Icon/Icon";
 
 type IntrinsicElements = JSX.IntrinsicElements["a"];
 
-interface Props extends IntrinsicElements {
+export interface CardChoiceProps extends IntrinsicElements {
   actionText?: string;
   ariaLabel?: string;
   bodyText?: string;

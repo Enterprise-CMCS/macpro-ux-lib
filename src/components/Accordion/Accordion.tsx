@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["h4"];
 
-interface Props extends IntrinsicElements {
+export interface AccordionProps extends IntrinsicElements {
   className?: string;
   label: string;
   id: string;

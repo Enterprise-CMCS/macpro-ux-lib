@@ -15,7 +15,7 @@ interface Link {
   target?: string;
 }
 
-interface Props extends IntrinsicElements {
+export interface FooterProps extends IntrinsicElements {
   emailAddress: string;
   address?: string;
   altFooter?: boolean;

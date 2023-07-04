@@ -3,7 +3,7 @@ import spyGlass from "../../assets/uswds/img/usa-icons-bg/search--white.svg";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
-interface Props extends IntrinsicElements {
+export interface SearchProps extends IntrinsicElements {
   variation?: SearchVariation;
   onSearch: EventHandler<any>;
   onInput?: FormEventHandler<HTMLInputElement>;

@@ -5,7 +5,7 @@ import {
 } from "./VerticalNavigationItem";
 type IntrinsicElements = JSX.IntrinsicElements["nav"];
 
-interface Props extends IntrinsicElements {
+export interface VerticalNavigationProps extends IntrinsicElements {
   items: IVerticalNavigationItem[];
   selectedId?: string;
 }

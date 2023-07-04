@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { Radio, RadioProps } from "../Radio/Radio";
 
-interface Props {
+export interface RadioGroupProps {
   groupName: string;
   radioProps: RadioProps[];
 }

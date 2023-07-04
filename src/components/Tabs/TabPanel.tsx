@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["h4"];
 
-interface Props extends IntrinsicElements {
+export interface TabPanelProps extends IntrinsicElements {
   disabled?: boolean;
   id: string;
   tabLabel: string;

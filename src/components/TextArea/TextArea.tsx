@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["textarea"];
 
-interface Props extends IntrinsicElements {
+export interface TextAreaProps extends IntrinsicElements {
   characterCountMessage?: string;
   errorMessage?: string;
   fieldName: string;

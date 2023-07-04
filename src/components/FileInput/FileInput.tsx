@@ -3,7 +3,7 @@ import fileInput from "../../../node_modules/@uswds/uswds/packages/usa-file-inpu
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
-interface Props extends IntrinsicElements {
+export interface FileInputProps extends IntrinsicElements {
   id: string;
   name: string;
   multipleFiles?: boolean;

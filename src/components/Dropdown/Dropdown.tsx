@@ -8,7 +8,7 @@ interface DropdownData {
   displayString: string;
 }
 
-interface DropdownProps extends IntrinsicElements {
+export interface DropdownProps extends IntrinsicElements {
   data: DropdownData[];
   label: string;
   readOnly?: boolean;

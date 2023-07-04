@@ -5,7 +5,7 @@ import sprite from "../../assets/img/sprite.svg";
 export type IconChoice = typeof iconChoices[number];
 type IntrinsicElements = JSX.IntrinsicElements["svg"];
 
-interface Props extends IntrinsicElements {
+export interface IconProps extends IntrinsicElements {
   name: IconChoice;
   iconSize?: IconSize;
   ariaHidden?: boolean;

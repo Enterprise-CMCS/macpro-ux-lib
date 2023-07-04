@@ -81,7 +81,7 @@ const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
 
 type IntrinsicElements = JSX.IntrinsicElements["nav"];
 
-interface HeaderProps extends IntrinsicElements {
+export interface HeaderProps extends IntrinsicElements {
   headerLogo?: React.ReactNode;
   secondaryComponent?: React.ReactNode;
   navData?: NavSection[];

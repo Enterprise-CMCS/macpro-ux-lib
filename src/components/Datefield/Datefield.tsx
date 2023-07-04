@@ -10,7 +10,7 @@ import {
 import datePicker from "../../../node_modules/@uswds/uswds/packages/usa-date-picker/src";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
-export interface Props extends IntrinsicElements {
+export interface DatefieldProps extends IntrinsicElements {
   id: string;
   name: string;
   label: string;

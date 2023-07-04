@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["td"];
 
-interface Props extends IntrinsicElements {
+export interface TDProps extends IntrinsicElements {
   dataSortValue?: string;
 }
 

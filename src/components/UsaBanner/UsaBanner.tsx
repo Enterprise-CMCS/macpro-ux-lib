@@ -4,7 +4,7 @@ import flag from "../../assets/img/us_flag_small.png";
 import gov from "../../assets/img/icon-dot-gov.svg";
 import lock from "../../assets/img/icon-https.svg";
 
-interface Props {
+export interface UsaBannerProps {
   className?: string;
   id?: string;
   locale?: "en" | "es";

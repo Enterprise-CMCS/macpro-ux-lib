@@ -13,7 +13,7 @@ type Family =
 
 type IntrinsicElements = JSX.IntrinsicElements["p"];
 
-interface Props extends IntrinsicElements {
+export interface TypographyProps extends IntrinsicElements {
   size?: Size;
   family?: Family;
   children: React.ReactNode;

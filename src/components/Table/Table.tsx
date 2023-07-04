@@ -3,7 +3,7 @@ import table from "../../../node_modules/@uswds/uswds/packages/usa-table/src";
 
 type IntrinsicElements = JSX.IntrinsicElements["table"];
 
-interface Props extends IntrinsicElements {
+export interface TableProps extends IntrinsicElements {
   borderless?: boolean;
   caption?: string;
   compact?: boolean;

@@ -4,7 +4,7 @@ import tooltip from "../../../node_modules/@uswds/uswds/packages/usa-tooltip/src
 
 type ButtonElements = JSX.IntrinsicElements["button"];
 
-interface Props extends ButtonElements {
+export interface ButtonProps extends ButtonElements {
   ariaLabel?: string;
   buttonText: string;
   buttonVariation?: ButtonVariation;

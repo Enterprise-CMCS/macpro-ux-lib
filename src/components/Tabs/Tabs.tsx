@@ -3,7 +3,7 @@ import { Tab } from "./Tab";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
 
-interface Props extends IntrinsicElements {
+export interface TabsProps extends IntrinsicElements {
   initialTab?: number;
 }
 

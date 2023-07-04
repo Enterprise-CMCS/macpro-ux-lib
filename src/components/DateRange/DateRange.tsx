@@ -4,7 +4,7 @@ import { Datefield } from "components/Datefield/Datefield";
 import dateRange from "../../../node_modules/@uswds/uswds/packages/usa-date-range-picker/src";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
-export interface Props extends IntrinsicElements {
+export interface DateRangeProps extends IntrinsicElements {
   minDate?: string;
   maxDate?: string;
   startDate?: string;

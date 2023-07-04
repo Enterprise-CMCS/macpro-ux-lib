@@ -2,7 +2,7 @@ import React, { Children, PropsWithChildren, useState } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
 
-interface Props extends IntrinsicElements {
+export interface AccordionGroupProps extends IntrinsicElements {
   bordered?: boolean;
   className?: string;
   multiSelect?: boolean;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
-interface Props extends IntrinsicElements {
+export interface CheckboxProps extends IntrinsicElements {
   checked?: boolean;
   children?: JSX.Element[];
   disabled?: boolean;
