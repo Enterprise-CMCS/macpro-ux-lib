@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "gulp compile && storybook build",
+    "build-storybook": "storybook build",
     "test": "jest",
     "coverage": "jest --coverage",
     "build": "tsc && rollup -c",
