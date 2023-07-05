@@ -27,7 +27,7 @@ export interface AccordionGroupProps extends IntrinsicElements {
  * @param {string}           id           Unique identifier that will be applied to the AccordionGroup root div.
  * @param {boolean}          multiSelect  Determines whether or not multiple Accordion items can be expanded at the same time.
  */
-export const AccordionGroup: React.FC<PropsWithChildren<Props>> = ({
+export const AccordionGroup: React.FC<PropsWithChildren<AccordionGroupProps>> = ({
   bordered = false,
   className,
   children,
