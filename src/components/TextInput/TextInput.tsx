@@ -56,7 +56,7 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(function TextInput(
         {required && <span className="required-star">*</span>}
       </label>
 
-      {errorMessage && (
+      {inputError && errorMessage && (
         <span className="usa-error-message" role="alert">
           {errorMessage}
         </span>
