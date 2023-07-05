@@ -25,7 +25,7 @@ type SearchVariation = "default" | "big" | "small";
  * @param {string}            [labelText]           Label text for screen reader.
  */
 
-export const Search: React.FC<Props> = ({
+export const Search: React.FC<SearchProps> = ({
   variation = "default",
   disabled = false,
   onSearch,

@@ -30,7 +30,7 @@ export interface FooterProps extends IntrinsicElements {
  * @param {Link[]}                        [navigationLinks]  Array of navigation links to render in the alternative footer.
  */
 
-export const Footer: React.FC<Props> = ({
+export const Footer: React.FC<FooterProps> = ({
   altFooter = false,
   emailAddress,
   address = "7500 Security Boulevard Baltimore, MD 21244",

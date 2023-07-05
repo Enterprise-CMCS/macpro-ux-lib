@@ -26,7 +26,7 @@ export interface CheckboxProps extends IntrinsicElements {
  * @param {string}  [tileDescription] Text that can be used to describe the label in more detail. Activates the tile variation automatically.
  * @param {string}  [value]           Value of the input element.
  */
-export const Checkbox: React.FC<Props> = ({
+export const Checkbox: React.FC<CheckboxProps> = ({
   checked = false,
   children,
   disabled = false,

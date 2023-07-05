@@ -19,7 +19,7 @@ export interface UsaBannerProps {
  * @param {string}  variant       Indicates which color variant of the banner to display.
  */
 
-export const UsaBanner: React.FC<Props> = ({
+export const UsaBanner: React.FC<UsaBannerProps> = ({
   className,
   variant,
   id,

@@ -29,7 +29,7 @@ export interface TextAreaProps extends IntrinsicElements {
  * @param {boolean} [showCharacterCount]    Shows the character counter. If maxlength is set, character count is shown as a fraction.
  * @param {boolean} [required]              Adds semantic required attr and appends an * to the end of the input label.
  */
-export const TextArea: React.FC<Props> = ({
+export const TextArea: React.FC<TextAreaProps> = ({
   label,
   fieldName,
   characterCountMessage,

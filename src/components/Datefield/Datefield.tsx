@@ -35,7 +35,7 @@ export interface DatefieldProps extends IntrinsicElements {
  * @param {boolean} [required]             The date picker component will be required in terms of native form validation.
  */
 
-export const Datefield: React.FC<Props> = ({
+export const Datefield: React.FC<DatefieldProps> = ({
   id,
   name,
   label,

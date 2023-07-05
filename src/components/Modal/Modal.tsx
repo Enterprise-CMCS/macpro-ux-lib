@@ -31,7 +31,7 @@ export interface ModalProps {
  * @param {string}     secondaryButtonText  Text shown on the secondary button.
  */
 
-export const Modal: React.FC<Props> = ({
+export const Modal: React.FC<ModalProps> = ({
   description,
   heading,
   id,

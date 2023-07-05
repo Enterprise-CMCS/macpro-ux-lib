@@ -6,7 +6,7 @@ export interface RadioGroupProps {
   radioProps: RadioProps[];
 }
 
-export const RadioGroup: React.FC<Props> = ({ groupName, radioProps }) => {
+export const RadioGroup: React.FC<RadioGroupProps> = ({ groupName, radioProps }) => {
   // Track which Radio is currently selected in order to show/hide child elements:
   const [selected, setSelected] = React.useState("");
   const handleChange = (e: React.ChangeEvent) => {

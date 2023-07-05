@@ -32,7 +32,7 @@ export interface FileInputProps extends IntrinsicElements {
  *
  */
 
-export const FileInput: React.FC<Props> = ({
+export const FileInput: React.FC<FileInputProps> = ({
   id,
   multipleFiles = false,
   label,

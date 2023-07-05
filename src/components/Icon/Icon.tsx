@@ -26,7 +26,7 @@ type IconSize = 3 | 4 | 5 | 6 | 7 | 8 | 9;
  * @param {color}   [string]              Color of Icon that is rendered, defaults to black.
  */
 
-export const Icon: React.FC<Props> = ({
+export const Icon: React.FC<IconProps> = ({
   name,
   iconSize = 3,
   role = "img",

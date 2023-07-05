@@ -12,7 +12,7 @@ export interface FilterChipProps extends IntrinsicElements {
  *
  * @param {string}    text  Text content to be displayed within the FilterChip.
  */
-export const FilterChip: React.FC<Props> = ({ text, ...rest }) => {
+export const FilterChip: React.FC<FilterChipProps> = ({ text, ...rest }) => {
   return (
     <Button
       buttonVariation="primary"

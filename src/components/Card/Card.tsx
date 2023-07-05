@@ -25,7 +25,7 @@ export interface CardProps {
  * @param {boolean}   [insetMedia]    Set a border of whitespace around card content.
  */
 
-export const Card: React.FC<PropsWithChildren<Props>> = ({
+export const Card: React.FC<PropsWithChildren<CardProps>> = ({
   alignContent,
   altText,
   bodyText,

@@ -20,7 +20,7 @@ export interface TypographyProps extends IntrinsicElements {
   as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";
 }
 
-export const Typography: React.FC<Props> = ({
+export const Typography: React.FC<TypographyProps> = ({
   size = "2xl",
   family = "sans",
   as = "p",

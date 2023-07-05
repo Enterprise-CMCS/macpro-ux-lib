@@ -27,7 +27,7 @@ export interface TextInputProps extends IntrinsicElements {
  * @param {boolean} [required]     Adds semantic required attr and appends an * to the end of the input label.
  * @param {string}  [suffix]       Text to be displayed at the end of input field. Not stored in value. Ex: mass indicator (lbs, fl oz)
  */
-export const TextInput: React.FC<Props> = ({
+export const TextInput: React.FC<TextInputProps> = ({
   label,
   errorMessage,
   fieldName,

@@ -28,7 +28,7 @@ export interface CardChoiceProps extends IntrinsicElements {
  * @param {string}             [href]           href provided to the anchor.
  * @param {callback}           [onClick]        onClick provided to the anchor.
  */
-export const CardChoice: React.FC<PropsWithChildren<Props>> = ({
+export const CardChoice: React.FC<PropsWithChildren<CardChoiceProps>> = ({
   actionText,
   ariaLabel,
   bodyText,

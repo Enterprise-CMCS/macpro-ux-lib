@@ -37,7 +37,7 @@ export interface DateRangeProps extends IntrinsicElements {
  * @param {boolean} [required]             The date picker component will be required in terms of native form validation.
  */
 
-export const DateRange: React.FC<Props> = ({
+export const DateRange: React.FC<DateRangeProps> = ({
   minDate,
   maxDate,
   hint,

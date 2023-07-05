@@ -30,7 +30,7 @@ export interface AccordionProps extends IntrinsicElements {
  * @param {boolean}          hidden       Determines if the Accordion content will be visible or not on initial render. Defaults to true.
  * @param {string}           id           Unique identifier required for each Accordion item used for form control.
  */
-export const Accordion: React.FC<PropsWithChildren<Props>> = ({
+export const Accordion: React.FC<PropsWithChildren<AccordionProps>> = ({
   className,
   children,
   label,

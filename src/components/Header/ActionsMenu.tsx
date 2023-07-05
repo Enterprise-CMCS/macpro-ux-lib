@@ -19,7 +19,7 @@ export interface ActionMenuProps {
  * @param {ActionsMenuLink[]} links  List of links to display in the menu.
  */
 
-export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
+export const ActionsMenu: React.FC<ActionMenuProps> = ({ name, links, ...rest }) => {
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef(null);
   useOutsideClick(wrapperRef, () => {

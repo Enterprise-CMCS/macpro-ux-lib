@@ -13,7 +13,7 @@ export interface CardChoiceGroupProps extends IntrinsicElements {
  * @param {boolean}            [bordered]         All CardChoice children are displayed with a gray border. The bordered property on an individual CardChoice will override this property.
  * @param {React.ReactNode}    [children]         CardChoice children to be rendered.
  */
-export const CardChoiceGroup: React.FC<PropsWithChildren<Props>> = ({
+export const CardChoiceGroup: React.FC<PropsWithChildren<CardChoiceGroupProps>> = ({
   alternatingBG = false,
   bordered = false,
   children,

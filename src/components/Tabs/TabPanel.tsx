@@ -26,7 +26,7 @@ export interface TabPanelProps extends IntrinsicElements {
  * @param {string}        tabLabel  Text label for each tab.
  *
  */
-export const TabPanel: React.FC<PropsWithChildren<Props>> = ({
+export const TabPanel: React.FC<PropsWithChildren<TabPanelProps>> = ({
   children,
   id,
   tabLabel,

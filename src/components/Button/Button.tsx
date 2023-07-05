@@ -57,7 +57,7 @@ const ButtonVariationConversion: { [key: string]: string } = {
   link: "usa-button--unstyled",
 };
 
-export const Button: React.FC<Props> = ({
+export const Button: React.FC<ButtonProps> = ({
   ariaLabel,
   buttonText,
   buttonVariation = "primary",
