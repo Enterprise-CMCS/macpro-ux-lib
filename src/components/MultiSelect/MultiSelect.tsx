@@ -9,7 +9,7 @@ interface DropdownData {
   displayString: string;
 }
 
-interface MultiSelelctProps extends IntrinsicElements {
+export interface MultiSelelctProps extends IntrinsicElements {
   data: DropdownData[];
   defaultValues?: string[];
   label: string;

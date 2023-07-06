@@ -1,12 +1,12 @@
 import React, { ReactElement } from "react";
 import { Radio, RadioProps } from "../Radio/Radio";
 
-interface Props {
+export interface RadioGroupProps {
   groupName: string;
   radioProps: RadioProps[];
 }
 
-export const RadioGroup: React.FC<Props> = ({ groupName, radioProps }) => {
+export const RadioGroup: React.FC<RadioGroupProps> = ({ groupName, radioProps }) => {
   // Track which Radio is currently selected in order to show/hide child elements:
   const [selected, setSelected] = React.useState("");
   const handleChange = (e: React.ChangeEvent) => {

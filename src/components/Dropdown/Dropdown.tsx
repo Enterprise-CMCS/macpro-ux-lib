@@ -13,7 +13,7 @@ interface DropdownData {
   displayString: string;
 }
 
-interface DropdownProps extends IntrinsicElements {
+export interface DropdownProps extends IntrinsicElements {
   data: DropdownData[];
   label: string;
   onChange?: ChangeEventHandler<HTMLSelectElement> | undefined;

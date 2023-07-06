@@ -2,7 +2,7 @@ import React, { forwardRef, useState } from "react";
 
 type TextAreaElements = JSX.IntrinsicElements["textarea"];
 
-interface Props extends TextAreaElements {
+export interface TextAreaProps extends TextAreaElements {
   id: string;
   label: string;
   name: string;
@@ -29,7 +29,7 @@ interface Props extends TextAreaElements {
  * @param {boolean} [showCharacterCount]    Show the character count. If maxLength is set, character count will appear as a fraction.
  */
 
-export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
+export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
   function TextArea({ onChange, ...props }, ref) {
     const {
       id,

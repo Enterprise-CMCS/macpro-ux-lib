@@ -5,7 +5,7 @@ import {
 } from "./VerticalNavigationItem";
 type IntrinsicElements = JSX.IntrinsicElements["nav"];
 
-interface Props extends IntrinsicElements {
+export interface VerticalNavigationProps extends IntrinsicElements {
   items: IVerticalNavigationItem[];
   selectedId?: string;
 }
@@ -24,7 +24,7 @@ export interface IVerticalNavigationItem {
  * @param {string}                        selectedId       Selected id of section that is currently active.
  */
 
-export const VerticalNavigation: React.FC<Props> = ({
+export const VerticalNavigation: React.FC<VerticalNavigationProps> = ({
   selectedId,
   items,
   ...rest
