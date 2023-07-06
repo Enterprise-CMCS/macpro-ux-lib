@@ -1,3 +1,10 @@
+## [1.23.1](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.23.0...v1.23.1) (2023-07-06)
+
+
+### Bug Fixes
+
+* **export props:** made changes to export all props ([#235](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/235)) ([531ca01](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/531ca01f1f996d9dd6e301a5eae0e7eeded0c58f))
+
 # [1.23.0](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.22.1...v1.23.0) (2023-06-29)
 
 
