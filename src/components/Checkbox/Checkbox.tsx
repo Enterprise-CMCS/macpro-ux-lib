@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { forwardRef, useState } from "react";
 
-type IntrinsicElements = JSX.IntrinsicElements["input"];
+type InputElements = JSX.IntrinsicElements["input"];
 
-export interface CheckboxProps extends IntrinsicElements {
+export interface CheckboxProps extends InputElements {
   checked?: boolean;
   children?: JSX.Element[];
   disabled?: boolean;
@@ -26,53 +26,67 @@ export interface CheckboxProps extends IntrinsicElements {
  * @param {string}  [tileDescription] Text that can be used to describe the label in more detail. Activates the tile variation automatically.
  * @param {string}  [value]           Value of the input element.
  */
-export const Checkbox: React.FC<CheckboxProps> = ({
-  checked = false,
-  children,
-  disabled = false,
-  id,
-  isTile = false,
-  label,
-  name,
-  tileDescription,
-  value,
-  ...rest
-}) => {
-  const [isChecked, setChecked] = useState(checked);
-  const handleChange = () => {
-    setChecked(!isChecked);
-  };
 
-  return (
-    <div className="usa-checkbox">
-      <input
-        checked={isChecked}
-        className={
-          isTile
-            ? "usa-checkbox__input usa-checkbox__input--tile"
-            : "usa-checkbox__input"
-        }
-        disabled={disabled}
-        id={id}
-        onChange={handleChange}
-        type="checkbox"
-        name={name}
-        value={value}
-        {...rest}
-      />
-      <label className="usa-checkbox__label" htmlFor={id}>
-        {label}
-        {isTile && tileDescription && (
-          <span className="usa-checkbox__label-description">
-            {tileDescription}
-          </span>
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
+  function Checkbox({ onChange, ...props }, ref) {
+    const {
+      checked = false,
+      children,
+      disabled = false,
+      id,
+      isTile = false,
+      label,
+      name,
+      tileDescription,
+      value,
+      ...otherProps
+    } = props;
+
+    const [isChecked, setChecked] = useState(checked);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      // Execute the parent form's onChange event if it exists:
+      if (onChange) {
+        onChange(e);
+      }
+
+      setChecked(!isChecked);
+    };
+
+    return (
+      <div className="usa-checkbox">
+        <input
+          checked={isChecked}
+          className={
+            isTile
+              ? "usa-checkbox__input usa-checkbox__input--tile"
+              : "usa-checkbox__input"
+          }
+          disabled={disabled}
+          id={id}
+          name={name}
+          onChange={handleChange}
+          ref={ref}
+          type="checkbox"
+          value={value}
+          {...otherProps}
+        />
+
+        <label className="usa-checkbox__label" htmlFor={id}>
+          {label}
+          {isTile && tileDescription && (
+            <span className="usa-checkbox__label-description">
+              {tileDescription}
+            </span>
+          )}
+        </label>
+
+        {isChecked && children?.length && !isTile && (
+          <div className="border-left-05 border-primary margin-left-1 padding-left-205">
+            {children}
+          </div>
         )}
-      </label>
-      {isChecked && children?.length && !isTile && (
-        <div className="border-left-05 border-primary margin-left-1 padding-left-205">
-          {children}
-        </div>
-      )}
-    </div>
-  );
-};
+      </div>
+    );
+  }
+);

@@ -1,5 +1,10 @@
 import { DropdownInput } from "../DropdownInput/DropdownInput";
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React, {
+  ChangeEventHandler,
+  Dispatch,
+  SetStateAction,
+  useState,
+} from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["select"];
 
@@ -11,6 +16,7 @@ interface DropdownData {
 export interface DropdownProps extends IntrinsicElements {
   data: DropdownData[];
   label: string;
+  onChange?: ChangeEventHandler<HTMLSelectElement> | undefined;
   readOnly?: boolean;
   setValue?: Dispatch<SetStateAction<any>>;
   value?: string | number | undefined;
@@ -35,6 +41,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
   data,
   id,
   label,
+  onChange,
   name,
   placeholder,
   readOnly = false,
@@ -61,7 +68,7 @@ export const Dropdown: React.FC<DropdownProps> = ({
         id={id}
         label={label}
         readOnly={readOnly}
-        setValue={setValue}
+        setValue={onChange ? onChange : setValue}
         value={value}
       >
         <select
@@ -74,11 +81,9 @@ export const Dropdown: React.FC<DropdownProps> = ({
           {...rest}
         >
           <option value={undefined}></option>
+
           {data.map((itm, idx) => (
-            <option
-              key={`usa-combo-box--option--${id}-${idx}`}
-              value={itm.value}
-            >
+            <option key={itm.value} value={itm.value}>
               {itm.displayString}
             </option>
           ))}

@@ -18,6 +18,16 @@ export const RadioGroup: React.FC<RadioGroupProps> = ({ groupName, radioProps })
     let radios: ReactElement[] = [];
 
     for (var props of radioProps) {
+      // If custom onChange behavior exists, capture it here:
+      const customOnChange = props.onChange;
+
+      props.onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        // Set the selected ID to show/hide children
+        setSelected(e.target.id);
+        // Apply any custom onChange behavior:
+        customOnChange && customOnChange(e);
+      };
+
       radios.push(
         <div key={`${groupName}-${props.id}`}>
           <Radio

@@ -32,7 +32,7 @@ export default {
     postcss({
       extract: true,
       // Or with custom file name
-      extract: path.resolve("build/assets/css/index.css"),
+      extract: path.resolve("build/assets/uswds/css/index.css"),
     }),
 
     copy({
