@@ -1,3 +1,10 @@
+# [1.24.0](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.23.1...v1.24.0) (2023-07-07)
+
+
+### Features
+
+* **ux-lib:** USWDS update fixes and React Hook Form compatibility ([#236](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/236)) ([32de247](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/32de247925af872657ac05acd9c699ac1f5927a1))
+
 ## [1.23.1](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.23.0...v1.23.1) (2023-07-06)
 
 
