@@ -1,4 +1,12 @@
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, {
+  ChangeEventHandler,
+  Dispatch,
+  SetStateAction,
+  forwardRef,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { DropdownInput } from "../DropdownInput/DropdownInput";
 import { FilterChip } from "../FilterChip/FilterChip";
 
@@ -13,6 +21,7 @@ export interface MultiSelelctProps extends IntrinsicElements {
   data: DropdownData[];
   defaultValues?: string[];
   label: string;
+  onChange?: ChangeEventHandler<HTMLSelectElement> | undefined;
   placeholder?: string;
   readOnly?: boolean;
   setValue?: Dispatch<SetStateAction<any>>;
@@ -33,96 +42,118 @@ export interface MultiSelelctProps extends IntrinsicElements {
  * @param {string}    setValue       Optionally manage state in this component from a parent by passing state params to `value` and `setValue`.
  * @param {string}    value          Optionally manage state in this component from a parent by passing state params to `value` and `setValue`.
  */
-export const MultiSelect: React.FC<MultiSelelctProps> = ({
-  className,
-  data,
-  defaultValues,
-  label,
-  id,
-  name,
-  placeholder,
-  readOnly,
-  setValue,
-  value,
-  ...rest
-}) => {
-  const [dropdownData, setDropdownData] = useState(data);
-  const [dropdownValue, setDropdownValue] =
-    useState<string | number | undefined>("");
 
-  if (value === undefined && setValue === undefined)
-    [value, setValue] = useState<string[]>(defaultValues ?? []);
+export const MultiSelect = forwardRef<HTMLSelectElement, MultiSelelctProps>(
+  function MultiSelect(
+    {
+      className,
+      data,
+      defaultValues,
+      label,
+      onChange,
+      id,
+      name,
+      placeholder,
+      readOnly,
+      value,
+      setValue,
+      ...rest
+    },
+    ref
+  ) {
+    const [dropdownData, setDropdownData] = useState(data);
 
-  // return the item with the corresponding provided value
-  const findInDropdownData = (val: string | number) => {
-    return data.find((item) => item.value === val);
-  };
+    // This is the value of the input field, not to be confused with the value of the MultiSelect
+    const [dropdownValue, setDropdownValue] = useState<
+      string | number | undefined
+    >("");
 
-  // add a clicked item's value to the array of value
-  const addValue = (val: string | number | undefined) => {
-    const item = dropdownData.find((itm) => itm.value === val);
-    if (item?.value !== undefined)
-      setValue && setValue([...value!, item.value]);
-    setDropdownValue("");
-  };
+    if (value === undefined && setValue === undefined)
+      [value, setValue] = useState<string[]>(defaultValues ?? []);
 
-  const removeValue = (val: string | number) => {
-    setValue && setValue(value!.filter((item) => item !== val));
-  };
+    // return the item with the corresponding provided value
+    const findInDropdownData = (val: string | number) => {
+      return data.find((item) => item.value === val);
+    };
 
-  // displayed data should be dropdownData - value
-  // update whenever a change is made to value
-  useEffect(() => {
-    setDropdownData(
-      data.filter((item) => value && !value.includes(item.value))
-    );
-  }, [value]);
+    // add a clicked item's value to the array of value
+    const addValue = (val: string | number | undefined) => {
+      console.log("in addValue", val);
 
-  return (
-    <div className="multiselect">
-      <DropdownInput
-        data={dropdownData}
-        id={id}
-        label={label}
-        placeholder={placeholder}
-        readOnly={readOnly}
-        setValue={addValue}
-        value={dropdownValue}
-      >
-        <select
-          aria-hidden={true}
-          className="usa-select usa-sr-only usa-combo-box__select"
-          multiple
-          name={name}
-          onChange={(e) => {
-            const options = [...e.target.options];
-            const selectedOptions = options.filter((option) => option.selected);
-            setValue && setValue(selectedOptions.map((option) => option.value));
-          }}
-          tabIndex={-1}
-          value={value}
+      const item = dropdownData.find((itm) => itm.value === val);
+      if (item?.value !== undefined)
+        setValue && setValue([...value!, item.value]);
+      setDropdownValue("");
+    };
+
+    const removeValue = (val: string | number) => {
+      setValue && setValue(value!.filter((item) => item !== val));
+    };
+
+    // displayed data should be dropdownData - value
+    // update whenever a change is made to value
+    useEffect(() => {
+      console.log("in useEffect");
+      console.log("value", value);
+
+      setDropdownData(
+        data.filter((item) => value && !value.includes(item.value))
+      );
+    }, [value]);
+
+    return (
+      <div className="multiselect">
+        <DropdownInput
+          data={dropdownData}
+          id={id}
+          label={label}
+          placeholder={placeholder}
+          readOnly={readOnly}
+          setValue={onChange ? onChange : addValue}
+          value={dropdownValue}
           {...rest}
         >
-          {data.map((itm, idx) => (
-            <option key={`${id}-${idx}`} value={itm.value}>
-              {itm.displayString}
-            </option>
-          ))}
-        </select>
-      </DropdownInput>
-      <div className="filter-chip-wrapper">
-        {value &&
-          value.map((val, idx) => {
-            const item = findInDropdownData(val);
-            return (
-              <FilterChip
-                text={item?.displayString ?? ""}
-                key={`${id}-filterchip-${idx}`}
-                onClick={() => removeValue(val)}
-              />
-            );
-          })}
+          <select
+            aria-hidden={true}
+            // className="usa-select usa-sr-only usa-combo-box__select"
+            className="usa-select usa-combo-box__select"
+            multiple
+            name={name}
+            onChange={(e) => {
+              const options = [...e.target.options];
+              const selectedOptions = options.filter(
+                (option) => option.selected
+              );
+              setValue &&
+                setValue(selectedOptions.map((option) => option.value));
+            }}
+            ref={ref}
+            tabIndex={-1}
+            value={value}
+            {...rest}
+          >
+            {data.map((itm, idx) => (
+              <option key={`${id}-${idx}`} value={itm.value}>
+                {itm.displayString}
+              </option>
+            ))}
+          </select>
+          <p>Value: {value}</p>
+        </DropdownInput>
+        <div className="filter-chip-wrapper">
+          {value &&
+            value.map((val, idx) => {
+              const item = findInDropdownData(val);
+              return (
+                <FilterChip
+                  text={item?.displayString ?? ""}
+                  key={`${id}-filterchip-${idx}`}
+                  onClick={() => removeValue(val)}
+                />
+              );
+            })}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+);
