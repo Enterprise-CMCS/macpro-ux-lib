@@ -109,9 +109,8 @@ export const MultiSelect = forwardRef<HTMLSelectElement, MultiSelelctProps>(
           label={label}
           placeholder={placeholder}
           readOnly={readOnly}
-          setValue={onChange ? onChange : addValue}
+          setValue={addValue}
           value={dropdownValue}
-          {...rest}
         >
           <select
             aria-hidden={true}
