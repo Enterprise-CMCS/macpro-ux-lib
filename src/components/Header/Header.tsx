@@ -56,7 +56,11 @@ const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
           aria-controls={`extended-mega-nav-section-${index}`}
           onClick={() => setExpanded(!expanded)}
         >
-          {buttonText}
+          { section.columns.length === 1 // if we have onlyone array inside ur main array
+           && // and
+           section.columns[0].length === 1 ? // we only have one item inside that array
+           <a style ={{color:'inherit'}} href={section.columns[0][0].href}> {buttonText} </a> : // tag to redirect to the provided link
+           buttonText}
         </button>
         <div
           id={`extended-mega-nav-section-${index}`}

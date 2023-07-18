@@ -12,7 +12,7 @@ import pngLogo from "../../assets/img/logos/cms_logo.png";
 const navData = [
   {
     buttonText: "Current Section",
-    current: true,
+    //current: true,
     columns: [
       [
         { text: "Navigational Link", href: "", target: "_blank" },
@@ -43,6 +43,21 @@ const navData = [
         { text: "Navigational Link", href: "" },
         { text: "Navigational Link", href: "" },
         { text: "Navigational Link", href: "" },
+      ],
+    ],
+  },{
+    buttonText: "Section 2",
+    current: true,
+    columns: [
+      [
+        { text: "google Link", href: "www.google.com" }
+       /* { text: "Navigational Link", href: "" },
+        { text: "Navigational Link", href: "" },
+        { text: "Navigational Link", href: "" },
+        { text: "Navigational Link", href: "" },
+        { text: "Navigational Link", href: "" },
+        { text: "Navigational Link", href: "" },
+        { text: "Navigational Link", href: "" }, */
       ],
     ],
   },
