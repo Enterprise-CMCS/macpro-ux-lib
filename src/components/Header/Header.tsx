@@ -28,9 +28,9 @@ const SubMenuColumn: React.FC<SubMenuColumnProps> = ({ links }) => {
 };
 
 interface NavSection {
-  buttonText: string;
+  buttonComp: React.ReactNode;  // instead of text we are using button component 
   current?: boolean;
-  columns: { text: string; href?: string; onClick?: () => any }[][];
+  columns: { text?: string; href?: string; onClick?: () => any }[][]; // i have make text part optional because we dont need that in cace of one element(nav link) in a 2da rray
 }
 
 interface NavSectionProps {
@@ -40,7 +40,7 @@ interface NavSectionProps {
 
 const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
   const [expanded, setExpanded] = useState(false);
-  const { buttonText, current } = section;
+  const { buttonComp, current } = section;
   const wrapperRef = useRef(null);
   useOutsideClick(wrapperRef, () => {
     setExpanded(false);
@@ -54,13 +54,21 @@ const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
           }`}
           aria-expanded={expanded}
           aria-controls={`extended-mega-nav-section-${index}`}
-          onClick={() => setExpanded(!expanded)}
+          onClick={() => { //onClick function
+            
+            if (section.columns.length === 1 && section.columns[0].length === 1) { // // the case for section 2/  where we only have one element (nav link ) in 2d array [ [ {test:"", href:"", onClick:()=>{}} ] ]
+
+              if (section.columns[0][0].onClick != undefined) { // as the onClick function is optional -> so we have to check if its not undefined only then call the function, else dont call.
+                section.columns[0][0].onClick()
+              }
+              
+            }else{ // else expand the menu
+              setExpanded(!expanded) // this will only expand the columns with elements greater then 1
+            }
+            
+          }}
         >
-          { section.columns.length === 1 // if we have onlyone array inside ur main array
-           && // and
-           section.columns[0].length === 1 ? // we only have one item inside that array
-           <a style ={{color:'inherit'}} href={section.columns[0][0].href}> {buttonText} </a> : // tag to redirect to the provided link
-           buttonText}
+        {buttonComp}
         </button>
         <div
           id={`extended-mega-nav-section-${index}`}
