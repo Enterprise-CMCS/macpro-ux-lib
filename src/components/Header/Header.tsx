@@ -28,9 +28,9 @@ const SubMenuColumn: React.FC<SubMenuColumnProps> = ({ links }) => {
 };
 
 interface NavSection {
-  buttonComp: React.ReactNode;  // instead of text we are using button component 
+  buttonComp: React.ReactNode;
   current?: boolean;
-  columns: { text?: string; href?: string; onClick?: () => any }[][]; // i have make text part optional because we dont need that in cace of one element(nav link) in a 2da rray
+  columns: { text?: string; href?: string; onClick?: () => any }[][];
 }
 
 interface NavSectionProps {
@@ -54,18 +54,15 @@ const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
           }`}
           aria-expanded={expanded}
           aria-controls={`extended-mega-nav-section-${index}`}
-          onClick={() => { //onClick function
+          onClick={() => {
             
-            if (section.columns.length === 1 && section.columns[0].length === 1) { // // the case for section 2/  where we only have one element (nav link ) in 2d array [ [ {test:"", href:"", onClick:()=>{}} ] ]
-
-              if (section.columns[0][0].onClick != undefined) { // as the onClick function is optional -> so we have to check if its not undefined only then call the function, else dont call.
+            if (section.columns.length === 1 && section.columns[0].length === 1) {
+              if (section.columns[0][0].onClick != undefined) {
                 section.columns[0][0].onClick()
               }
-              
-            }else{ // else expand the menu
-              setExpanded(!expanded) // this will only expand the columns with elements greater then 1
+            } else {
+              setExpanded(!expanded)
             }
-            
           }}
         >
         {buttonComp}
