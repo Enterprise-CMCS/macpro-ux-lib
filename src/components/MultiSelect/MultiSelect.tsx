@@ -103,6 +103,32 @@ export const MultiSelect = forwardRef<HTMLSelectElement, MultiSelelctProps>(
 
     return (
       <div className="multiselect">
+        {/* The native select element is hidden and handles reporting the
+        value (as an array) to the parent */}
+        <select
+          aria-hidden={true}
+          className="usa-select usa-sr-only usa-combo-box__select"
+          multiple
+          name={name}
+          onChange={(e) => {
+            const options = [...e.target.options];
+            const selectedOptions = options.filter((option) => option.selected);
+            setValue && setValue(selectedOptions.map((option) => option.value));
+          }}
+          ref={ref}
+          tabIndex={-1}
+          value={value}
+          {...rest}
+        >
+          {data.map((itm, idx) => (
+            <option key={`${id}-${idx}`} value={itm.value}>
+              {itm.displayString}
+            </option>
+          ))}
+        </select>
+
+        {/* DropdownInput is a custom-designed dropdown menu. Changes here update
+        the value in the select element above */}
         <DropdownInput
           data={dropdownData}
           id={id}
@@ -111,34 +137,8 @@ export const MultiSelect = forwardRef<HTMLSelectElement, MultiSelelctProps>(
           readOnly={readOnly}
           setValue={addValue}
           value={dropdownValue}
-        >
-          <select
-            aria-hidden={true}
-            // className="usa-select usa-sr-only usa-combo-box__select"
-            className="usa-select usa-combo-box__select"
-            multiple
-            name={name}
-            onChange={(e) => {
-              const options = [...e.target.options];
-              const selectedOptions = options.filter(
-                (option) => option.selected
-              );
-              setValue &&
-                setValue(selectedOptions.map((option) => option.value));
-            }}
-            ref={ref}
-            tabIndex={-1}
-            value={value}
-            {...rest}
-          >
-            {data.map((itm, idx) => (
-              <option key={`${id}-${idx}`} value={itm.value}>
-                {itm.displayString}
-              </option>
-            ))}
-          </select>
-          <p>Value: {value}</p>
-        </DropdownInput>
+        />
+
         <div className="filter-chip-wrapper">
           {value &&
             value.map((val, idx) => {
