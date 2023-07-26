@@ -54,11 +54,12 @@ export const MultiSelect = forwardRef<HTMLSelectElement, MultiSelelctProps>(
 
     const [dropdownData, setDropdownData] = useState(data);
 
-    // This is the value of the input field, not to be confused with the value of the MultiSelect
+    // This is value currently displayed in DropdownInput
     const [dropdownValue, setDropdownValue] = useState<
       string | number | undefined
     >("");
 
+    // Manage state internally if no state params are passed
     if (value === undefined && setValue === undefined)
       [value, setValue] = useState<string[]>(defaultValues ?? []);
 
