@@ -1,10 +1,8 @@
 import React, {
-  ChangeEventHandler,
   Dispatch,
   SetStateAction,
   forwardRef,
   useEffect,
-  useRef,
   useState,
 } from "react";
 import { DropdownInput } from "../DropdownInput/DropdownInput";
@@ -21,7 +19,6 @@ export interface MultiSelelctProps extends IntrinsicElements {
   data: DropdownData[];
   defaultValues?: string[];
   label: string;
-  onChange?: ChangeEventHandler<HTMLSelectElement> | undefined;
   placeholder?: string;
   readOnly?: boolean;
   setValue?: Dispatch<SetStateAction<any>>;
@@ -31,7 +28,6 @@ export interface MultiSelelctProps extends IntrinsicElements {
 /**
  * **MultiSelect Component**
  *
- * @param {string}    className      A class name that will be applied on the component wrapper `div`.
  * @param {string}    data           An array of objects used to populate the dropdown. Each object should appear as follows:\n\n `{ value : string, displayString: string }`\n\nUnlike the regular Dropdown, values must be strings.
  * @param {string}    defaultValues  An array of strings used as default selected values.
  * @param {string}    label          String used to label the dropdown in the UI.
@@ -44,23 +40,18 @@ export interface MultiSelelctProps extends IntrinsicElements {
  */
 
 export const MultiSelect = forwardRef<HTMLSelectElement, MultiSelelctProps>(
-  function MultiSelect(
-    {
-      className,
+  function MultiSelect({ setValue, value, ...props }, ref) {
+    const {
       data,
       defaultValues,
       label,
-      onChange,
       id,
       name,
       placeholder,
       readOnly,
-      value,
-      setValue,
       ...rest
-    },
-    ref
-  ) {
+    } = props;
+
     const [dropdownData, setDropdownData] = useState(data);
 
     // This is the value of the input field, not to be confused with the value of the MultiSelect
@@ -78,8 +69,6 @@ export const MultiSelect = forwardRef<HTMLSelectElement, MultiSelelctProps>(
 
     // add a clicked item's value to the array of value
     const addValue = (val: string | number | undefined) => {
-      console.log("in addValue", val);
-
       const item = dropdownData.find((itm) => itm.value === val);
       if (item?.value !== undefined)
         setValue && setValue([...value!, item.value]);
@@ -93,9 +82,6 @@ export const MultiSelect = forwardRef<HTMLSelectElement, MultiSelelctProps>(
     // displayed data should be dropdownData - value
     // update whenever a change is made to value
     useEffect(() => {
-      console.log("in useEffect");
-      console.log("value", value);
-
       setDropdownData(
         data.filter((item) => value && !value.includes(item.value))
       );
