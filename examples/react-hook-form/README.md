@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# React Hook Form example app
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This example app serves as a guide to using the macpro-ux-lib components with [React Hook Form](https://react-hook-form.com/).
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+1. Run `npm install` (or `npm clean-install` for a first-run clean installation of the dependencies).
+2. Run `npm run start`.
+3. The application will run at http://localhost:3000/ by default.
 
-### `npm start`
+## The Components
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The following components use React's [`forwardRef`](https://react.dev/reference/react/forwardRef) to expose the component to React Hook Form. Refer to `App.tsx` for living code samples. (Components marked with 🚧 are still in development.)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### [Checkbox](#checkbox)
 
-### `npm test`
+Register each `Checkbox` component in a collection with the its corresponding collection name. You may also pass JSX or TSX components as children to appear when a checkbox is selected.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```tsx
+<UX.Checkbox
+  id="checkbox-1"
+  key="checkbox-1"
+  label="Checkbox 1"
+  value="Checkbox 1"
+  {...register("checkboxCollection")}
+/>
+<UX.Checkbox
+  id="checkbox-2"
+  key="checkbox-2"
+  label="Checkbox 2"
+  value="Checkbox 2"
+  {...register("checkboxCollection")}
+/>
+<UX.Checkbox
+  id="checkbox-3"
+  key="checkbox-3"
+  label="Checkbox with Children"
+  value="Checkbox with Children"
+  children={[
+    <UX.Checkbox
+      id="checkbox-3-child-1"
+      key="checkbox-3-child-1"
+      label="Checkbox 3, Child 1"
+      value="Checkbox 3, Child 1"
+      {...register("checkbox3Children")}
+    />,
+    <UX.Checkbox
+      id="checkbox-3-child-2"
+      key="checkbox-3-child-2"
+      label="Checkbox 3, Child 2"
+      value="Checkbox 3, Child 2"
+      {...register("checkbox3Children")}
+    />,
+  ]}
+  {...register("checkboxCollection")}
+/>
+```
 
-### `npm run build`
+### 🚧 Datefield
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🚧 DateRange
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Dropdown
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🚧 FileInput
 
-### `npm run eject`
+### MultiSelect
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Radio
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### TextArea
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### TextInput
