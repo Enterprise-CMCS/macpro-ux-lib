@@ -37,7 +37,7 @@ export interface DropdownProps extends IntrinsicElements {
  * @param {string}        [placeholder]  Placeholder text to be displayed in the input.
  * @param {boolean}       readOnly       Sets input field to read-only. Effectively disables type-ahead search.
  */
-// export const Dropdown: React.FC<DropdownProps> = ({
+
 export const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>(
   function Dropdown({ setValue, value, ...props }, ref) {
     const {
