@@ -195,9 +195,7 @@ export default function App() {
               id: "option-2",
               label: "Option 2",
               value: "option-2",
-              ...register("radio-group", {
-                // onChange: (e) => console.log("custom onChange", e),
-              }),
+              ...register("radio-group", {}),
               children: [
                 <p key="paragraph">A child may be any JSX element.</p>,
                 <UX.TextArea
