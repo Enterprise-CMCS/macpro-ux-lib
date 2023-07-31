@@ -10,7 +10,7 @@ This example app serves as a guide to using the macpro-ux-lib components with [R
 
 ## The Components
 
-The following components use React's [`forwardRef`](https://react.dev/reference/react/forwardRef) to expose the component to RHF. Refer to `App.tsx` for living code samples. (Components marked with 🚧 are still in development.)
+The following components use React's [`forwardRef`](https://react.dev/reference/react/forwardRef) to expose the component to RHF. Refer to `App.tsx` for living code samples. (Components marked with 🚧 are still in development for use with RHF.)
 
 ### [Checkbox](#checkbox)
 
