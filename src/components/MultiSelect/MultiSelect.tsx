@@ -1,5 +1,6 @@
 import React, {
   Dispatch,
+  ReactNode,
   SetStateAction,
   forwardRef,
   useEffect,
@@ -88,6 +89,28 @@ export const MultiSelect = forwardRef<HTMLSelectElement, MultiSelelctProps>(
         setSelectedValues(selectedValues.filter((item) => item !== val));
       }
     };
+
+    const handleOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      const options = [...e.target.options];
+      const selectedOptions = options.filter((option) => option.selected);
+      if (setValue) {
+        setValue(selectedOptions.map((option) => option.value));
+      } else {
+        setSelectedValues(selectedOptions.map((option) => option.value));
+      }
+    };
+
+    const filterChips = (chipValues: string[]): ReactNode[] => {
+      return chipValues.map((val, idx) => {
+        const item = findInDropdownData(val);
+        return (
+          <FilterChip
+            text={item?.displayString ?? ""}
+            key={`${id}-filterchip-${idx}`}
+            onClick={() => removeValue(val)}
+          />
+        );
+      });
     };
 
     // displayed data should be dropdownData - value
@@ -108,11 +131,7 @@ export const MultiSelect = forwardRef<HTMLSelectElement, MultiSelelctProps>(
           className="usa-select usa-sr-only usa-combo-box__select"
           multiple
           name={name}
-          onChange={(e) => {
-            const options = [...e.target.options];
-            const selectedOptions = options.filter((option) => option.selected);
-            setValue && setValue(selectedOptions.map((option) => option.value));
-          }}
+          onChange={handleOnChange}
           ref={ref}
           tabIndex={-1}
           value={value ?? selectedValues}
@@ -138,17 +157,7 @@ export const MultiSelect = forwardRef<HTMLSelectElement, MultiSelelctProps>(
         />
 
         <div className="filter-chip-wrapper">
-          {value &&
-            value.map((val, idx) => {
-              const item = findInDropdownData(val);
-              return (
-                <FilterChip
-                  text={item?.displayString ?? ""}
-                  key={`${id}-filterchip-${idx}`}
-                  onClick={() => removeValue(val)}
-                />
-              );
-            })}
+          {filterChips(value ?? selectedValues)}
         </div>
       </div>
     );
