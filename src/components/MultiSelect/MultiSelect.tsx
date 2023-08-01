@@ -59,9 +59,10 @@ export const MultiSelect = forwardRef<HTMLSelectElement, MultiSelelctProps>(
       string | number | undefined
     >("");
 
-    // Manage state internally if no state params are passed
-    if (value === undefined && setValue === undefined)
-      [value, setValue] = useState<string[]>(defaultValues ?? []);
+    // If value and setValue are not passed into the component, use local state:
+    const [selectedValues, setSelectedValues] = useState<string[]>(
+      defaultValues ?? []
+    );
 
     // return the item with the corresponding provided value
     const findInDropdownData = (val: string | number) => {
@@ -72,21 +73,31 @@ export const MultiSelect = forwardRef<HTMLSelectElement, MultiSelelctProps>(
     const addValue = (val: string | number | undefined) => {
       const item = dropdownData.find((itm) => itm.value === val);
       if (item?.value !== undefined)
-        setValue && setValue([...value!, item.value]);
+        if (setValue && value) {
+          setValue([...value!, item.value]);
+        } else {
+          setSelectedValues([...selectedValues, item.value]);
+        }
       setDropdownValue("");
     };
 
     const removeValue = (val: string | number) => {
-      setValue && setValue(value!.filter((item) => item !== val));
+      if (setValue && value) {
+        setValue(value!.filter((item) => item !== val));
+      } else {
+        setSelectedValues(selectedValues.filter((item) => item !== val));
+      }
+    };
     };
 
     // displayed data should be dropdownData - value
     // update whenever a change is made to value
     useEffect(() => {
+      const currentlySelected = value ?? selectedValues;
       setDropdownData(
-        data.filter((item) => value && !value.includes(item.value))
+        data.filter((item) => !currentlySelected.includes(item.value))
       );
-    }, [value]);
+    }, [value, selectedValues]);
 
     return (
       <div className="multiselect">
@@ -104,7 +115,7 @@ export const MultiSelect = forwardRef<HTMLSelectElement, MultiSelelctProps>(
           }}
           ref={ref}
           tabIndex={-1}
-          value={value}
+          value={value ?? selectedValues}
           {...rest}
         >
           {data.map((itm, idx) => (
