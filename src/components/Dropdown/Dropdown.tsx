@@ -52,17 +52,14 @@ export const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>(
       ...rest
     } = props;
 
-    /*
-    Possible TODO:
-    These items are outside scope of design, but might be nice to have
-    - Error State
-    - Default Value
-    - Disabled
-    - Simple Dropdown - Render without custom styles
-  */
+    const [selectedValue, setSelectedValue] = useState<
+      string | number | undefined
+    >("");
 
-    if (value === undefined && setValue === undefined)
-      [value, setValue] = useState<string | number | undefined>("");
+    const handleOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      if (setValue) setValue(e.target.value);
+      else setSelectedValue(e.target.value);
+    };
 
     return (
       <div className={className}>
@@ -72,16 +69,16 @@ export const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>(
           label={label}
           readOnly={readOnly}
           ref={ref}
-          setValue={onChange ? onChange : setValue}
-          value={value}
+          setValue={setValue ?? setSelectedValue}
+          value={value ?? selectedValue}
         >
           <select
             aria-hidden={true}
             className="usa-select usa-sr-only usa-combo-box__select"
             name={name}
-            onChange={(e) => setValue && setValue(e.target.value)}
+            onChange={handleOnChange}
             tabIndex={-1}
-            value={value}
+            value={value ?? selectedValue}
             {...rest}
           >
             <option value={undefined}></option>
