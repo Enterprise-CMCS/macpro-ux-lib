@@ -5,21 +5,21 @@ SHIFT + CMD/CTRL + V
 -->
 
 <h1 align="center" style="border-bottom: none;"> macpro-ux-lib</h1>
-<h3 align="center">Common UI/UX Library built on USWDS 3.0 and packaged for easier distribution throughout CMS.</h3>
+<h3 align="center">Common UI/UX Library built on USWDS 3.4.1 and packaged for easier distribution throughout CMS.</h3>
 <p align="center">
-  <a href="https://cmsgov.github.io/macpro-ux-lib/">
+  <a href="https://enterprise-cmcs.github.io/macpro-ux-lib/">
     <img alt="Storybook" src="https://img.shields.io/badge/Storybook-Docs-pink.svg">
   </a>
-  <a href="https://github.com/cmsgov/macpro-ux-lib/releases/latest">
-    <img alt="latest release" src="https://img.shields.io/github/release/cmsgov/macpro-ux-lib.svg">
+  <a href="https://github.com/Enterprise-CMCS/macpro-ux-lib/releases/latest">
+    <img alt="latest release" src="https://img.shields.io/github/release/Enterprise-CMCS/macpro-ux-lib.svg">
   </a>
   <a href="https://www.npmjs.com/package/@enterprise-cmcs/macpro-ux-lib">
     <img alt="npm latest version" src="https://img.shields.io/npm/v/@enterprise-cmcs/macpro-ux-lib/latest.svg">
   </a>
-  <a href="https://codeclimate.com/github/CMSgov/macpro-ux-lib/maintainability">
+  <a href="https://codeclimate.com/github/Enterprise-CMCS/macpro-ux-lib/maintainability">
     <img src="https://api.codeclimate.com/v1/badges/7aa40b9f69c550a8cf72/maintainability" />
   </a>
-  <a href="https://codeclimate.com/github/CMSgov/macpro-ux-lib/test_coverage">
+  <a href="https://codeclimate.com/github/Enterprise-CMCS/macpro-ux-lib/test_coverage">
     <img src="https://api.codeclimate.com/v1/badges/7aa40b9f69c550a8cf72/test_coverage" />
   </a>
   <a href="https://github.com/semantic-release/semantic-release">
@@ -35,13 +35,13 @@ SHIFT + CMD/CTRL + V
 
 ---
 
-### See the [Storybook](https://cmsgov.github.io/macpro-ux-lib/) for a preview of the component library.
+### See the [Storybook](https://enterprise-cmcs.github.io/macpro-ux-lib/) for a preview of the component library.
 
 ---
 
 ## Overview
 
-This is a React implementation of USWDS 3.0 in conjuction with some MACPRO theming. This library is meant to be consumed for implementing a USWDS compliant web application in React. For more information about USWDS and their design principles refer to the below link.
+This is a React implementation of USWDS 3.4.1 in conjuction with some MACPRO theming. This library is meant to be consumed for implementing a USWDS compliant web application in React. For more information about USWDS and their design principles refer to the below link.
 
 [USWDS Design Standards](https://designsystem.digital.gov/design-principles/)
 
@@ -67,15 +67,11 @@ import "@enterprise-cmcs/macpro-ux-lib/build/assets/css/index.css";
 
 This will include the css required for the styles to be applied to any components that are used.
 
-With the project now set up you can import any of the components in your code and use them. Refer to the [StoryBook](https://cmsgov.github.io/macpro-ux-lib/) for implementation details on each component.
+With the project now set up you can import any of the components in your code and use them. Refer to the [StoryBook](https://enterprise-cmcs.github.io/macpro-ux-lib/) for implementation details on each component.
 
 ## Contributing
 
 Found a bug, want to help with updating the docs or maybe you want to help add a feature. Refer to our contribution documentation for more information: [Documentation](./docs/CONTRIBUTING.MD)
-
-## Examples
-
-You can view and example implementation of the app [here](./examples/create-react-app/)
 
 ## License
 

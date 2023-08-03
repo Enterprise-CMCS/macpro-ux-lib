@@ -38,15 +38,9 @@ exports[`Test the Header component component snapshots default 1`] = `
           </a>
         </div>
         <button
-          aria-label="Menu button"
           class="usa-menu-btn"
-          formtarget="_self"
         >
-          <span
-            class="padding-x-05"
-          >
-            Menu
-          </span>
+          Menu
         </button>
         <div
           class="usa-nav__secondary usa-header--extended"
@@ -61,27 +55,20 @@ exports[`Test the Header component component snapshots default 1`] = `
         class="usa-nav__inner"
       >
         <button
-          aria-label=" button"
           class="usa-nav__close"
-          formtarget="_self"
         >
-          <span
-            class="padding-x-05 padding-top-05"
-          />
-          <div>
-            <svg
-              aria-hidden="true"
-              aria-label="close icon"
-              class="usa-icon--size-3"
-              color="curentColor"
-              fill="currentColor"
-              role="img"
-            >
-              <use
-                href="[object Object]#close"
-              />
-            </svg>
-          </div>
+          <svg
+            aria-hidden="true"
+            aria-label="close icon"
+            class="usa-icon--size-3"
+            color="black"
+            fill="currentColor"
+            role="img"
+          >
+            <use
+              href="[object Object]#close"
+            />
+          </svg>
         </button>
         <ul
           class="usa-nav__primary usa-accordion"
@@ -130,15 +117,9 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
           </a>
         </div>
         <button
-          aria-label="Menu button"
           class="usa-menu-btn"
-          formtarget="_self"
         >
-          <span
-            class="padding-x-05"
-          >
-            Menu
-          </span>
+          Menu
         </button>
         <div
           class="usa-nav__secondary usa-header--extended"
@@ -163,8 +144,8 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                 />
               </svg>
             </button>
-            <menu
-              class="user-actions-menu usa-nav__secondary-links"
+            <ul
+              class="user-actions-menu usa-nav__submenu"
               hidden=""
             >
               <li>
@@ -230,7 +211,7 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                   Log Out
                 </a>
               </li>
-            </menu>
+            </ul>
           </div>
         </div>
       </div>
@@ -243,27 +224,20 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
         class="usa-nav__inner"
       >
         <button
-          aria-label=" button"
           class="usa-nav__close"
-          formtarget="_self"
         >
-          <span
-            class="padding-x-05 padding-top-05"
-          />
-          <div>
-            <svg
-              aria-hidden="true"
-              aria-label="close icon"
-              class="usa-icon--size-3"
-              color="curentColor"
-              fill="currentColor"
-              role="img"
-            >
-              <use
-                href="[object Object]#close"
-              />
-            </svg>
-          </div>
+          <svg
+            aria-hidden="true"
+            aria-label="close icon"
+            class="usa-icon--size-3"
+            color="black"
+            fill="currentColor"
+            role="img"
+          >
+            <use
+              href="[object Object]#close"
+            />
+          </svg>
         </button>
         <ul
           class="usa-nav__primary usa-accordion"
@@ -274,15 +248,9 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
             <button
               aria-controls="extended-mega-nav-section-0"
               aria-expanded="false"
-              aria-label="Current Section button"
               class="usa-accordion__button usa-nav__link usa-current"
-              formtarget="_self"
             >
-              <span
-                class="padding-x-05"
-              >
-                Current Section
-              </span>
+              Current Section
             </button>
             <div
               class="usa-nav__submenu usa-megamenu"
@@ -453,15 +421,9 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
             <button
               aria-controls="extended-mega-nav-section-1"
               aria-expanded="false"
-              aria-label="Section button"
               class="usa-accordion__button usa-nav__link "
-              formtarget="_self"
             >
-              <span
-                class="padding-x-05"
-              >
-                Section
-              </span>
+              Section
             </button>
             <div
               class="usa-nav__submenu usa-megamenu"
@@ -611,15 +573,9 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
           </a>
         </div>
         <button
-          aria-label="Menu button"
           class="usa-menu-btn"
-          formtarget="_self"
         >
-          <span
-            class="padding-x-05"
-          >
-            Menu
-          </span>
+          Menu
         </button>
         <div
           class="usa-nav__secondary usa-header--extended"
@@ -634,27 +590,20 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
         class="usa-nav__inner"
       >
         <button
-          aria-label=" button"
           class="usa-nav__close"
-          formtarget="_self"
         >
-          <span
-            class="padding-x-05 padding-top-05"
-          />
-          <div>
-            <svg
-              aria-hidden="true"
-              aria-label="close icon"
-              class="usa-icon--size-3"
-              color="curentColor"
-              fill="currentColor"
-              role="img"
-            >
-              <use
-                href="[object Object]#close"
-              />
-            </svg>
-          </div>
+          <svg
+            aria-hidden="true"
+            aria-label="close icon"
+            class="usa-icon--size-3"
+            color="black"
+            fill="currentColor"
+            role="img"
+          >
+            <use
+              href="[object Object]#close"
+            />
+          </svg>
         </button>
         <ul
           class="usa-nav__primary usa-accordion"
@@ -665,15 +614,9 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
             <button
               aria-controls="extended-mega-nav-section-0"
               aria-expanded="false"
-              aria-label="Current Section button"
               class="usa-accordion__button usa-nav__link usa-current"
-              formtarget="_self"
             >
-              <span
-                class="padding-x-05"
-              >
-                Current Section
-              </span>
+              Current Section
             </button>
             <div
               class="usa-nav__submenu usa-megamenu"
@@ -844,15 +787,9 @@ exports[`Test the Header component component snapshots with navigation 1`] = `
             <button
               aria-controls="extended-mega-nav-section-1"
               aria-expanded="false"
-              aria-label="Section button"
               class="usa-accordion__button usa-nav__link "
-              formtarget="_self"
             >
-              <span
-                class="padding-x-05"
-              >
-                Section
-              </span>
+              Section
             </button>
             <div
               class="usa-nav__submenu usa-megamenu"

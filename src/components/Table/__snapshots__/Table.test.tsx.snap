@@ -1,0 +1,555 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshots for Table component Basic table 1`] = `
+<div>
+  <div
+    class="usa-table-container"
+    tabindex="0"
+  >
+    <table
+      class="usa-table"
+    >
+      <thead>
+        <tr>
+          <th
+            role="columnheader"
+            scope="col"
+          >
+            Document title
+          </th>
+          <th
+            role="columnheader"
+            scope="col"
+          >
+            Description
+          </th>
+          <th
+            role="columnheader"
+            scope="col"
+          >
+            Year
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th
+            role="rowheader"
+            scope="row"
+          >
+            Declaration of Independence
+          </th>
+          <td>
+            Statement adopted by the Continental Congress declaring independence from the British Empire.
+          </td>
+          <td>
+            1776
+          </td>
+        </tr>
+        <tr>
+          <th
+            role="rowheader"
+            scope="row"
+          >
+            Bill of Rights
+          </th>
+          <td>
+            The first ten amendments of the U.S. Constitution guaranteeing rights and freedoms.
+          </td>
+          <td>
+            1791
+          </td>
+        </tr>
+        <tr>
+          <th
+            role="rowheader"
+            scope="row"
+          >
+            Declaration of Sentiments
+          </th>
+          <td>
+            A document written during the Seneca Falls Convention outlining the rights that American women should be entitled to as citizens.
+          </td>
+          <td>
+            1848
+          </td>
+        </tr>
+        <tr>
+          <th
+            role="rowheader"
+            scope="row"
+          >
+            Emancipation Proclamation
+          </th>
+          <td>
+            An executive order granting freedom to slaves in designated southern states.
+          </td>
+          <td>
+            1863
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      aria-live="polite"
+      class="usa-sr-only usa-table__announcement-region"
+    />
+  </div>
+</div>
+`;
+
+exports[`snapshots for Table component Scrollable table 1`] = `
+<div>
+  <div
+    class="usa-table-container usa-table-container--scrollable"
+    tabindex="0"
+  >
+    <table
+      class="usa-table"
+    >
+      <caption>
+        This text should appear in the caption
+      </caption>
+      <colgroup>
+        <col />
+      </colgroup>
+      <colgroup
+        span="2"
+      />
+      <colgroup
+        span="2"
+      />
+      <thead>
+        <tr>
+          <th
+            role="columnheader"
+            rowspan="2"
+            scope="col"
+          >
+            Federal Budget
+            <br />
+            Baseline Projections
+          </th>
+          <th
+            class="text-center"
+            colspan="2"
+            role="columnheader"
+            scope="colgroup"
+          >
+            2017
+          </th>
+          <th
+            class="text-center"
+            colspan="2"
+            role="columnheader"
+            scope="colgroup"
+          >
+            2018
+          </th>
+          <th
+            class="text-center"
+            colspan="2"
+            role="columnheader"
+            scope="colgroup"
+          >
+            2019
+          </th>
+          <th
+            class="text-center"
+            colspan="2"
+            role="columnheader"
+            scope="colgroup"
+          >
+            2020
+          </th>
+          <th
+            class="text-center"
+            colspan="2"
+            role="columnheader"
+            scope="colgroup"
+          >
+            2021
+          </th>
+          <th
+            class="text-center"
+            colspan="2"
+            role="columnheader"
+            scope="colgroup"
+          >
+            Hist. Avg.
+          </th>
+        </tr>
+        <tr>
+          <th
+            class="text-right"
+            role="columnheader"
+            scope="col"
+          >
+            %GDP
+          </th>
+          <th
+            class="text-right"
+            role="columnheader"
+            scope="col"
+          >
+            USD*
+          </th>
+          <th
+            class="text-right"
+            role="columnheader"
+            scope="col"
+          >
+            %GDP
+          </th>
+          <th
+            class="text-right"
+            role="columnheader"
+            scope="col"
+          >
+            USD*
+          </th>
+          <th
+            class="text-right"
+            role="columnheader"
+            scope="col"
+          >
+            %GDP
+          </th>
+          <th
+            class="text-right"
+            role="columnheader"
+            scope="col"
+          >
+            USD*
+          </th>
+          <th
+            class="text-right"
+            role="columnheader"
+            scope="col"
+          >
+            %GDP
+          </th>
+          <th
+            class="text-right"
+            role="columnheader"
+            scope="col"
+          >
+            USD*
+          </th>
+          <th
+            class="text-right"
+            role="columnheader"
+            scope="col"
+          >
+            %GDP
+          </th>
+          <th
+            class="text-right"
+            role="columnheader"
+            scope="col"
+          >
+            USD*
+          </th>
+          <th
+            class="text-right"
+            role="columnheader"
+            scope="col"
+          >
+            %GDP
+          </th>
+          <th
+            class="text-right"
+            role="columnheader"
+            scope="col"
+          >
+            USD*
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th
+            role="rowheader"
+            scope="row"
+          >
+            Revenue
+          </th>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            17.2%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            3,316
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            16.4%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            3,338
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            16.3%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            3,490
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            16.7%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            3,678
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            16.7%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            3,827
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            17.4%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            3,381
+          </td>
+        </tr>
+        <tr>
+          <th
+            role="rowheader"
+            scope="row"
+          >
+            Outlays
+          </th>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            20.6%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            3,982
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            20.2%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            4,142
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            21.0%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            4,470
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            21.3%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            4,685
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            21.6%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            4,949
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            20.3%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            4,198
+          </td>
+        </tr>
+        <tr>
+          <th
+            role="rowheader"
+            scope="row"
+          >
+            Budget Deficit
+          </th>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            -3.5%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            -665
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            -3.8%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            -804
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            -4.6%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            -981
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            -4.6%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            -1,008
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            -4.9%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            -1,123
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            -2.9%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            -483
+          </td>
+        </tr>
+        <tr>
+          <th
+            role="rowheader"
+            scope="row"
+          >
+            Debt Held by Public
+          </th>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            76.0%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            14,665
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            77.4%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            15,688
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            79.2%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            16,762
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            80.9%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            17,872
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            83.1%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            18,998
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            41.7%
+          </td>
+          <td
+            class="font-mono-sm text-tabular text-right"
+          >
+            8,065
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div
+      aria-live="polite"
+      class="usa-sr-only usa-table__announcement-region"
+    />
+    <p
+      class="margin-bottom-3 usa-table__footnote"
+    >
+      This text should appear in the footnote
+    </p>
+  </div>
+</div>
+`;

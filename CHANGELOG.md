@@ -1,3 +1,145 @@
+# [1.25.0](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.24.1...v1.25.0) (2023-08-03)
+
+
+### Features
+
+* **MultiSelect:** Enable React Hook Form support ([#248](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/248)) ([244cdb6](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/244cdb6d6f56e901338c90e6e1497826ba7935ef))
+
+## [1.24.1](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.24.0...v1.24.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* **Componet Update:** made changes to the header component to not show list when only one item is available and header background on mobile" ([#245](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/245)) ([7a4e9c4](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/7a4e9c45b52c8a6a73d64f0cbb1c2522ad01ada8))
+
+# [1.24.0](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.23.1...v1.24.0) (2023-07-07)
+
+
+### Features
+
+* **ux-lib:** USWDS update fixes and React Hook Form compatibility ([#236](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/236)) ([32de247](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/32de247925af872657ac05acd9c699ac1f5927a1))
+
+## [1.23.1](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.23.0...v1.23.1) (2023-07-06)
+
+
+### Bug Fixes
+
+* **export props:** made changes to export all props ([#235](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/235)) ([531ca01](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/531ca01f1f996d9dd6e301a5eae0e7eeded0c58f))
+
+# [1.23.0](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.22.1...v1.23.0) (2023-06-29)
+
+
+### Bug Fixes
+
+* **Datefield:** Ensure [@import](https://github.com/import) comes first in file ([b17640a](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/b17640a7088291509777658be00d61c60a8c2f72))
+* **span:** Add span in typography comp ([#206](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/206)) ([d700bde](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/d700bde77e4595e264e2bb657dc0c8999d818a18))
+* **update-org:** Update GitHub organization ([#211](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/211)) ([c850b97](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/c850b975c77fa3c6578c7bf67551b720aaf98ba8))
+
+
+### Features
+
+* **slack-notifications:** Created webhook and slack channel for repo notifications ([9c8ae68](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/9c8ae68a6169c36ee9dbbe128d097248a453d018))
+* **update:** Updates dependencies, USWDS version, and moves Tooltip into the Button component ([#212](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/212)) ([7a326fc](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/7a326fc37d1d28a60d159cb0ed1cbd07e7ff50c8))
+
+## [1.22.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.22.0...v1.22.1) (2023-01-13)
+
+
+### Bug Fixes
+
+* **update-actions:** update github action library versions ([#188](https://github.com/cmsgov/macpro-ux-lib/issues/188)) ([4def8fc](https://github.com/cmsgov/macpro-ux-lib/commit/4def8fcf6eccade1fc350d946e80581ac8e2bbce))
+
+# [1.22.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.21.2...v1.22.0) (2022-10-26)
+
+
+### Features
+
+* **MultiSelect:** add MultiSelect component ([0a95093](https://github.com/cmsgov/macpro-ux-lib/commit/0a9509388130735afaf52f394fc4448998c004cb))
+
+## [1.21.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.21.1...v1.21.2) (2022-10-24)
+
+
+### Reverts
+
+* Revert "chore(deps-dev): bump rollup from 2.79.1 to 3.2.3" (#173) ([034121f](https://github.com/cmsgov/macpro-ux-lib/commit/034121f7affcb8da099dcb50146340e811815de7)), closes [#173](https://github.com/cmsgov/macpro-ux-lib/issues/173) [#164](https://github.com/cmsgov/macpro-ux-lib/issues/164)
+* Revert "chore(deps-dev): bump @rollup/plugin-commonjs from 23.0.0 to 23.0.2" (#170) ([6a45aaa](https://github.com/cmsgov/macpro-ux-lib/commit/6a45aaa1976423d51262b5d2a7bebf5af91afe33)), closes [#170](https://github.com/cmsgov/macpro-ux-lib/issues/170) [#168](https://github.com/cmsgov/macpro-ux-lib/issues/168)
+
+## [1.21.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.21.0...v1.21.1) (2022-10-20)
+
+
+### Bug Fixes
+
+* **DateRange:** add key navigation & accessibility to Datefield and Date Range components  ([558c812](https://github.com/cmsgov/macpro-ux-lib/commit/558c8129fa55b0dbbd8083c8326423498ddcd6c8))
+
+# [1.21.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.20.3...v1.21.0) (2022-10-20)
+
+
+### Features
+
+* **FilterChip:** add FilterChip component ([ff47b5c](https://github.com/cmsgov/macpro-ux-lib/commit/ff47b5c5b00de80e29a2a697799e1890bc7f711d))
+
+## [1.20.3](https://github.com/cmsgov/macpro-ux-lib/compare/v1.20.2...v1.20.3) (2022-10-17)
+
+
+### Reverts
+
+* Revert "chore(deps-dev): bump rollup from 2.79.1 to 3.1.0" (#159) ([1433f18](https://github.com/cmsgov/macpro-ux-lib/commit/1433f1801f580d162cc166009df6447fbda8e1c9)), closes [#159](https://github.com/cmsgov/macpro-ux-lib/issues/159) [#157](https://github.com/cmsgov/macpro-ux-lib/issues/157)
+
+## [1.20.2](https://github.com/cmsgov/macpro-ux-lib/compare/v1.20.1...v1.20.2) (2022-10-13)
+
+
+### Reverts
+
+* Revert "chore(deps-dev): bump rollup from 2.79.1 to 3.1.0" (#153) ([778fc3c](https://github.com/cmsgov/macpro-ux-lib/commit/778fc3c063766f851617096ffaba8a4dbb417d13)), closes [#153](https://github.com/cmsgov/macpro-ux-lib/issues/153) [#150](https://github.com/cmsgov/macpro-ux-lib/issues/150)
+
+## [1.20.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.20.0...v1.20.1) (2022-10-13)
+
+
+### Bug Fixes
+
+* **general:** upgrade package versions ([a6fbbf9](https://github.com/cmsgov/macpro-ux-lib/commit/a6fbbf9019e326d0450ee2ebe13c3bf6e5825fa3))
+
+# [1.20.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.19.0...v1.20.0) (2022-10-13)
+
+
+### Features
+
+* **FileInput:** add File Input component to library ([6db3c5c](https://github.com/cmsgov/macpro-ux-lib/commit/6db3c5cefcfac4febe1655df7cf6149547e4f2d4))
+
+# [1.19.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.18.0...v1.19.0) (2022-10-12)
+
+
+### Features
+
+* **Table:** add Table component ([60360dc](https://github.com/cmsgov/macpro-ux-lib/commit/60360dc4db254714b7b762780c3b60f945fb04a6))
+
+# [1.18.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.17.0...v1.18.0) (2022-10-12)
+
+
+### Features
+
+* **Tooltip:** Add Tooltip component ([1cabd4a](https://github.com/cmsgov/macpro-ux-lib/commit/1cabd4a8b083d1cf9a8d7371daeb86f887a7390a))
+
+# [1.17.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.16.1...v1.17.0) (2022-10-05)
+
+
+### Features
+
+* **Step Indicator:** Added step indicator to track user progress  ([fafa982](https://github.com/cmsgov/macpro-ux-lib/commit/fafa982dac6e16cbae13b0d494281185c562f88f))
+
+## [1.16.1](https://github.com/cmsgov/macpro-ux-lib/compare/v1.16.0...v1.16.1) (2022-10-04)
+
+
+### Bug Fixes
+
+* **Dropdown:** Updates to Dropdown to reduce reliance on USWDS ([d5ac320](https://github.com/cmsgov/macpro-ux-lib/commit/d5ac32060dbec2e02111330a051629bd0cd89402))
+
+# [1.16.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.15.0...v1.16.0) (2022-09-28)
+
+
+### Features
+
+* **USA Header Dark Variant:** Add UsaBanner dark variant ([ea3b073](https://github.com/cmsgov/macpro-ux-lib/commit/ea3b073857f9d0a091feeff5e005f37834561fe1))
+
 # [1.15.0](https://github.com/cmsgov/macpro-ux-lib/compare/v1.14.1...v1.15.0) (2022-09-28)
 
 

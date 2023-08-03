@@ -1,5 +1,4 @@
-import React from "react";
-import "@enterprise-cmcs/macpro-ux-lib/build/assets/css/index.css";
+import "@enterprise-cmcs/macpro-ux-lib/build/assets/uswds/css/index.css";
 import * as UX from "@enterprise-cmcs/macpro-ux-lib";
 import "./App.css";
 import logo from "./logo.svg";
@@ -198,6 +197,14 @@ function App() {
             { displayString: "GHI", value: "ghi" },
           ]}
         ></UX.Dropdown>
+        <UX.MultiSelect
+          label="My MultiSelect Dropdown"
+          data={[
+            { displayString: "ABC", value: "abc" },
+            { displayString: "DEF", value: "def" },
+            { displayString: "GHI", value: "ghi" },
+          ]}
+        ></UX.MultiSelect>
         <UX.Icon name="accessibility_new" color="#000" />
         <UX.Link>Log Out</UX.Link>
         <UX.RadioGroup
@@ -270,8 +277,8 @@ function App() {
           endInputId="id-2"
           endInputName="react-calendar2"
           endLabel="End Range"
-          defaultStartDate="08/08/2022"
-          hint={true}
+          startDate="08/08/2022"
+          maxDate="09/09/2022"
         />
         <UX.Alert
           alertHeading="Alert Heading"
@@ -283,7 +290,6 @@ function App() {
           alertBody="Alert Body"
           emergency
         />
-        <UX.Datefield id="1" name="react-calendar" label="Calendar example" />
         <UX.Tabs>
           <UX.TabPanel tabLabel="Summary" id="tab-panel--summary">
             The Bill of Rights is the first ten amendments to the United States
@@ -333,6 +339,64 @@ function App() {
           </UX.TabPanel>
           <UX.TabPanel tabLabel="Disabled" disabled id="tab-panel--disabled" />
         </UX.Tabs>
+        <div className="margin-5">
+          <UX.StepIndicator
+            currentProgress={3}
+            headingText="This is the Step Indicator"
+            steps={[
+              { label: "Personal information", order: 1 },
+              { label: "Household status", order: 2 },
+              { label: "Supporting documents", order: 3 },
+              { label: "Signature", order: 4 },
+              { label: "Review and submit", order: 5 },
+            ]}
+          />
+        </div>
+
+        <UX.Table>
+          <thead key="BasicTableChildren__thead">
+            <tr>
+              <UX.TH>Document title</UX.TH>
+              <UX.TH>Description</UX.TH>
+              <UX.TH>Year</UX.TH>
+            </tr>
+          </thead>
+          <tbody key="BasicTableChildren__tbody">
+            <tr>
+              <UX.TH rowHeader>Declaration of Independence</UX.TH>
+              <UX.TD>
+                Statement adopted by the Continental Congress declaring
+                independence from the British Empire.
+              </UX.TD>
+              <UX.TD>1776</UX.TD>
+            </tr>
+            <tr>
+              <UX.TH rowHeader>Bill of Rights</UX.TH>
+              <UX.TD>
+                The first ten amendments of the U.S. Constitution guaranteeing
+                rights and freedoms.
+              </UX.TD>
+              <UX.TD>1791</UX.TD>
+            </tr>
+            <tr>
+              <UX.TH rowHeader>Declaration of Sentiments</UX.TH>
+              <UX.TD>
+                A document written during the Seneca Falls Convention outlining
+                the rights that American women should be entitled to as
+                citizens.
+              </UX.TD>
+              <UX.TD>1848</UX.TD>
+            </tr>
+            <tr>
+              <UX.TH rowHeader>Emancipation Proclamation</UX.TH>
+              <UX.TD>
+                An executive order granting freedom to slaves in designated
+                southern states.
+              </UX.TD>
+              <UX.TD>1863</UX.TD>
+            </tr>
+          </tbody>
+        </UX.Table>
       </div>
       <UX.Footer emailAddress="jhechter@fearless.tech" />
     </div>

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Dropdown } from "./Dropdown";
-import data from "./data.json";
+import data from "../DropdownInput/data.json";
 
 export default {
   title: "COMPONENTS/Dropdown",
@@ -10,6 +10,11 @@ export default {
     data,
   },
   argTypes: {
+    className: {
+      description:
+        "A class name that will be applied on the component wrapper `div`.",
+      type: { name: "string" },
+    },
     data: {
       control: false,
       description:
@@ -20,20 +25,34 @@ export default {
       type: { name: "string", required: true },
     },
     label: {
-      description: "String used to label the drodown in the UI.",
+      description: "String used to label the dropdown in the UI.",
     },
     name: {
       description:
         "Name of the dropdown used to identify it in the context of a form.",
       type: { name: "string", required: true },
     },
+    readOnly: {
+      description:
+        "Sets input field to read-only. Effectively disables type-ahead search.",
+    },
+    setValue: {
+      description:
+        "Optionally manage state in this component from a parent by passing state params to `value` and `setValue`",
+      control: false,
+    },
+    value: {
+      description:
+        "Optionally manage state in this component from a parent by passing state params to `value` and `setValue`",
+      control: false,
+    },
   },
 } as ComponentMeta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof Dropdown> = ({ ...rest }) => (
-  <Dropdown {...rest} />
-);
-
+const Template: ComponentStory<typeof Dropdown> = ({ ...rest }) => {
+  const [value, setValue] = useState("");
+  return <Dropdown {...rest} value={value} setValue={setValue} />;
+};
 export const Default = Template.bind({});
 
 Default.args = {

@@ -1,44 +1,48 @@
-import React, { useEffect, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
+import { formatPropDates } from "../../utils";
 import { Datefield } from "components/Datefield/Datefield";
+import dateRange from "../../../node_modules/@uswds/uswds/packages/usa-date-range-picker/src";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
-export interface Props extends IntrinsicElements {
-  defaultStartDate?: string;
+export interface DateRangeProps extends IntrinsicElements {
+  minDate?: string;
+  maxDate?: string;
   startDate?: string;
   startInputId: string;
   startInputName: string;
   startLabel: string;
-  defaultEndDate?: string;
   endDate?: string;
   endInputId: string;
   endInputName: string;
   endLabel: string;
   disabled?: boolean;
   hint?: boolean;
+  required?: boolean;
 }
 
 /**
  * DateRange Component
- * @param {string}  [defaultStartDate]     The start date picker input will set this value by default if it is a valid date. The date should be in the format mm/dd/yyyy.
+ * @param {string}  [minDate]              The date picker will not allow a date selection before this date. The date should be in the format mm/dd/yyyy
+ * @param {string}  [maxDate]              The date picker will not allow a date selection after this date. The date should be in the format mm/dd/yyyy.
  * @param {string}  [startDate]            The value given to the start date input. The date should be in the format mm/dd/yyyy.
  * @param {string}  startInputId           A unique identifier for the start date input.
  * @param {string}  startInputName         Name of the start date input field.
  * @param {string}  startLabel             The label of the start date input.
- * @param {string}  [defaultEndDate]       The end date picker input will set this value by default if it is a valid date. The date should be in the format mm/dd/yyyy.
  * @param {string}  [endDate]              The value given to the end date input. The date should be in the format mm/dd/yyyy.
  * @param {string}  endInputId             A unique identifier for the end date input.
  * @param {string}  endInputName           Name of the end date input field.
  * @param {string}  endLabel               The label of the end date input.
- * @param {string}  [disabled]             Controls whether or not the date range pickers are disabled to the user.
+ * @param {boolean} [disabled]             Controls whether or not the date range pickers are disabled to the user.
  * @param {boolean} [hint]                 Boolean that shows or hide the date format hint for both inputs, in the format mm/dd/yyyy.
+ * @param {boolean} [required]             The date picker component will be required in terms of native form validation.
  */
 
-export const DateRange: React.FC<Props> = ({
+export const DateRange: React.FC<DateRangeProps> = ({
+  minDate,
+  maxDate,
   hint,
   startDate,
   endDate,
-  defaultStartDate,
-  defaultEndDate,
   disabled,
   startLabel,
   endLabel,
@@ -46,74 +50,49 @@ export const DateRange: React.FC<Props> = ({
   startInputName,
   endInputId,
   endInputName,
+  required,
   ...rest
 }) => {
-  const [currentStartDate, setStartDate] = useState(
-    startDate || defaultStartDate
-  );
-  const [currentEndDate, setEndDate] = useState(endDate || defaultEndDate);
-  const [startCalendarOpen, setStartCalendarOpen] = useState(false);
-  const [endCalendarOpen, setEndCalendarOpen] = useState(false);
+  const dateRangeRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    setStartDate(startDate || defaultStartDate);
-    setEndDate(endDate || defaultEndDate);
-  }, [startDate, endDate, defaultStartDate, defaultEndDate]);
+  useLayoutEffect(() => {
+    const datePickerElement = dateRangeRef.current;
 
-  const toggleRangeCalendars = (startCalendar: boolean) => {
-    if (startCalendar) {
-      setStartCalendarOpen(!startCalendarOpen);
-      if (endCalendarOpen) setEndCalendarOpen(false);
-    } else {
-      setEndCalendarOpen(!endCalendarOpen);
-      if (startCalendarOpen) setStartCalendarOpen(false);
+    if (typeof dateRange.on === "function") {
+      dateRange.on(datePickerElement);
     }
-  };
-
-  const applyRangeClassName = (dateToCheck: Date): string => {
-    if (currentStartDate && currentEndDate) {
-      let dateStart = new Date(currentStartDate);
-      let dateEnd = new Date(currentEndDate);
-
-      if (dateToCheck > dateStart && dateToCheck < dateEnd) {
-        return "range-selected";
-      } else if (dateToCheck >= dateStart && dateToCheck <= dateEnd) {
-        return "range-start-end";
+    return () => {
+      if (typeof dateRange.off === "function") {
+        dateRange.off(datePickerElement);
       }
-    }
-
-    return "";
-  };
+    };
+  }, []);
 
   return (
-    <div {...rest}>
+    <div
+      ref={dateRangeRef}
+      className="usa-date-range-picker"
+      data-min-date={formatPropDates(minDate)}
+      data-max-date={formatPropDates(maxDate)}
+      {...rest}
+    >
       <Datefield
-        disabled={disabled}
-        name={startInputName}
-        id={startInputId}
         hint={hint}
-        defaultDate={defaultStartDate}
-        maxDate={currentEndDate}
+        id={startInputId}
+        name={startInputName}
         label={startLabel}
-        value={currentStartDate}
-        dateRangeChange={setStartDate}
-        toggleRangeCalendars={() => toggleRangeCalendars(true)}
-        rangeCalendarOpen={startCalendarOpen}
-        selectedRangeClassName={applyRangeClassName}
+        disabled={disabled}
+        required={required}
+        value={startDate}
       />
       <Datefield
-        value={currentEndDate}
-        disabled={disabled}
-        name={endInputName}
-        id={endInputId}
-        label={endLabel}
         hint={hint}
-        defaultDate={defaultEndDate}
-        minDate={currentStartDate}
-        dateRangeChange={setEndDate}
-        rangeCalendarOpen={endCalendarOpen}
-        selectedRangeClassName={applyRangeClassName}
-        toggleRangeCalendars={() => toggleRangeCalendars(false)}
+        id={endInputId}
+        name={endInputName}
+        label={endLabel}
+        disabled={disabled}
+        required={required}
+        value={endDate}
       />
     </div>
   );

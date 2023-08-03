@@ -51,28 +51,20 @@ exports[`Modal Snapshot tests renders default Modal as expected 1`] = `
                 >
                   <button
                     aria-label="Continue without saving button"
-                    class="display-flex usa-button usa-button-- cms-primary-background "
+                    class="display-flex flex-align-center usa-button cms-primary-background"
                     formtarget="_self"
                   >
-                    <span
-                      class="padding-x-05"
-                    >
-                      Continue without saving
-                    </span>
+                    Continue without saving
                   </button>
                 </li>
                 <li>
                   <button
                     aria-label="Go back button"
-                    class="usa-button--unstyled padding-105"
+                    class="display-flex flex-align-center usa-button usa-button--unstyled usa-button--unstyled padding-105"
                     formtarget="_self"
                     type="button"
                   >
-                    <span
-                      class="padding-x-05"
-                    >
-                      Go back
-                    </span>
+                    Go back
                   </button>
                 </li>
               </ul>
@@ -155,28 +147,20 @@ exports[`Modal Snapshot tests renders forced-action Modal as expected 1`] = `
                 >
                   <button
                     aria-label="Continue without saving button"
-                    class="display-flex usa-button usa-button-- cms-primary-background "
+                    class="display-flex flex-align-center usa-button cms-primary-background"
                     formtarget="_self"
                   >
-                    <span
-                      class="padding-x-05"
-                    >
-                      Continue without saving
-                    </span>
+                    Continue without saving
                   </button>
                 </li>
                 <li>
                   <button
                     aria-label="Go back button"
-                    class="usa-button--unstyled padding-105"
+                    class="display-flex flex-align-center usa-button usa-button--unstyled usa-button--unstyled padding-105"
                     formtarget="_self"
                     type="button"
                   >
-                    <span
-                      class="padding-x-05"
-                    >
-                      Go back
-                    </span>
+                    Go back
                   </button>
                 </li>
               </ul>
@@ -240,28 +224,20 @@ exports[`Modal Snapshot tests renders large Modal as expected 1`] = `
                 >
                   <button
                     aria-label="Continue without saving button"
-                    class="display-flex usa-button usa-button-- cms-primary-background "
+                    class="display-flex flex-align-center usa-button cms-primary-background"
                     formtarget="_self"
                   >
-                    <span
-                      class="padding-x-05"
-                    >
-                      Continue without saving
-                    </span>
+                    Continue without saving
                   </button>
                 </li>
                 <li>
                   <button
                     aria-label="Go back button"
-                    class="usa-button--unstyled padding-105"
+                    class="display-flex flex-align-center usa-button usa-button--unstyled usa-button--unstyled padding-105"
                     formtarget="_self"
                     type="button"
                   >
-                    <span
-                      class="padding-x-05"
-                    >
-                      Go back
-                    </span>
+                    Go back
                   </button>
                 </li>
               </ul>

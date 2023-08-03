@@ -1,9 +1,5 @@
-import React, { useEffect, useState } from "react";
 /* istanbul ignore file */
 // Ignoring this file from testing as we are going to be deleting/not using these functions
-export const generateId = (digits: number = 6): number => {
-  return Math.trunc(Math.random() * Math.pow(10, digits));
-};
 
 // Regex
 export const completeDateFilter = new RegExp(/^\d{2}\/\d{2}\/\d{4}$/);
@@ -39,4 +35,16 @@ export const checkValidMonthDays = (
 
 export const splitDateIntoVariables = (date: string): string[] => {
   return date ? date.split("/") : [];
+};
+
+// Returns a date in yyyy-mm-dd format
+export const formatPropDates = (date: string | undefined) => {
+  let [month, day, year] = splitDateIntoVariables(date || "");
+  if (
+    date &&
+    completeDateFilter.test(date) &&
+    checkValidMonthDays(parseInt(month), parseInt(year), parseInt(day))
+  ) {
+    return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+  }
 };

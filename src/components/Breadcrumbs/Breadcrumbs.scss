@@ -1,0 +1,20 @@
+@use "../../sass/macbis-colors" as c;
+
+.usa-breadcrumb {
+  a, a:visited {
+    color: c.$primary;
+  }
+}
+
+.usa-breadcrumb__list-item:not(:last-child)::after {
+  margin: 0 0.5rem;
+  background-color: c.$gray;}
+
+.parent-only {
+  display: inline-flex;
+}
+
+.arrow-back {
+  margin-right: 0.5rem;
+  color: c.$gray;
+}
