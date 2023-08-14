@@ -10,12 +10,12 @@ import React, {
 
 type IntrinsicElements = JSX.IntrinsicElements["select"];
 
-interface DropdownData {
+export interface DropdownData {
   value: string | number;
   displayString: string;
 }
 
-interface DropdownProps extends IntrinsicElements {
+export interface DropdownProps extends IntrinsicElements {
   data: DropdownData[];
   label: string;
   readOnly?: boolean;
