@@ -1,0 +1,9 @@
+@use "../../sass/macbis-colors" as c;
+
+.required-star {
+  color: c.$error;
+}
+
+.usa-input-group input:focus {
+  outline: 0.25rem solid c.$focus;
+}

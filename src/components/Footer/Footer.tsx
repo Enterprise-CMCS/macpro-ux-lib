@@ -15,7 +15,7 @@ interface Link {
   target?: string;
 }
 
-interface Props extends IntrinsicElements {
+export interface FooterProps extends IntrinsicElements {
   emailAddress: string;
   address?: string;
   altFooter?: boolean;
@@ -30,7 +30,7 @@ interface Props extends IntrinsicElements {
  * @param {Link[]}                        [navigationLinks]  Array of navigation links to render in the alternative footer.
  */
 
-export const Footer: React.FC<Props> = ({
+export const Footer: React.FC<FooterProps> = ({
   altFooter = false,
   emailAddress,
   address = "7500 Security Boulevard Baltimore, MD 21244",

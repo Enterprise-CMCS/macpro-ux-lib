@@ -22,8 +22,8 @@ exports[`Test the Header component menu should open on click 1`] = `
         />
       </svg>
     </button>
-    <menu
-      class="user-actions-menu usa-nav__secondary-links"
+    <ul
+      class="user-actions-menu usa-nav__submenu"
       hidden=""
     >
       <li>
@@ -92,7 +92,7 @@ exports[`Test the Header component menu should open on click 1`] = `
           Log Out
         </a>
       </li>
-    </menu>
+    </ul>
   </div>
 </div>
 `;
@@ -119,8 +119,8 @@ exports[`Test the Header component menu should open on click 2`] = `
         />
       </svg>
     </button>
-    <menu
-      class="user-actions-menu usa-nav__secondary-links"
+    <ul
+      class="user-actions-menu usa-nav__submenu"
     >
       <li>
         <a
@@ -188,7 +188,7 @@ exports[`Test the Header component menu should open on click 2`] = `
           Log Out
         </a>
       </li>
-    </menu>
+    </ul>
   </div>
 </div>
 `;

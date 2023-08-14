@@ -2,7 +2,7 @@ import React from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["button"];
 
-interface TabProps extends IntrinsicElements {
+export interface TabProps extends IntrinsicElements {
   disabled?: boolean;
   tabLabel: string;
 }
