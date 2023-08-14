@@ -1,4 +1,4 @@
-@use "../../assets/theme/macbis-colors" as c;
+@use "../../sass/macbis-colors" as c;
 
 .usa-checkbox__input--tile+[class*=__label] {
   border: 1px solid c.$gray-lighter;

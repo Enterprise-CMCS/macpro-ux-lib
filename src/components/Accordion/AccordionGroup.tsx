@@ -2,7 +2,7 @@ import React, { Children, PropsWithChildren, useState } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
 
-interface Props extends IntrinsicElements {
+export interface AccordionGroupProps extends IntrinsicElements {
   bordered?: boolean;
   className?: string;
   multiSelect?: boolean;
@@ -27,7 +27,7 @@ interface Props extends IntrinsicElements {
  * @param {string}           id           Unique identifier that will be applied to the AccordionGroup root div.
  * @param {boolean}          multiSelect  Determines whether or not multiple Accordion items can be expanded at the same time.
  */
-export const AccordionGroup: React.FC<PropsWithChildren<Props>> = ({
+export const AccordionGroup: React.FC<PropsWithChildren<AccordionGroupProps>> = ({
   bordered = false,
   className,
   children,
@@ -58,7 +58,7 @@ export const AccordionGroup: React.FC<PropsWithChildren<Props>> = ({
     >
       {Children.map(arrayChildren, (child, idx) => {
         if (React.isValidElement(child)) {
-          return React.cloneElement(child, {
+          return React.cloneElement(child as React.ReactElement, {
             hidden: contentHidden[idx],
             onClick: () => {
               const stateArray = multiSelect

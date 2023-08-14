@@ -2,7 +2,7 @@ import React, { PropsWithChildren } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["th"];
 
-interface Props extends IntrinsicElements {
+export interface THProps extends IntrinsicElements {
   dataSortable?: boolean;
   sorted?: boolean;
   rowHeader?: boolean;
@@ -18,7 +18,7 @@ interface Props extends IntrinsicElements {
  * @param {string}      scope         Sets the scope prop. Defaults to "col".
  * @param {boolean}     sorted        Requires dataSortable. Sorts the row and applies sorted styling on component render.
  */
-export const TH: React.FC<PropsWithChildren<Props>> = ({
+export const TH: React.FC<PropsWithChildren<THProps>> = ({
   children,
   dataSortable,
   role,

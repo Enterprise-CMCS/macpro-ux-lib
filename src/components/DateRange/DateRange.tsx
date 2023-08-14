@@ -4,7 +4,7 @@ import { Datefield } from "components/Datefield/Datefield";
 import dateRange from "../../../node_modules/@uswds/uswds/packages/usa-date-range-picker/src";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
-export interface Props extends IntrinsicElements {
+export interface DateRangeProps extends IntrinsicElements {
   minDate?: string;
   maxDate?: string;
   startDate?: string;
@@ -37,7 +37,7 @@ export interface Props extends IntrinsicElements {
  * @param {boolean} [required]             The date picker component will be required in terms of native form validation.
  */
 
-export const DateRange: React.FC<Props> = ({
+export const DateRange: React.FC<DateRangeProps> = ({
   minDate,
   maxDate,
   hint,
