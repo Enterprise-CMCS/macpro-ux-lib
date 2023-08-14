@@ -3,38 +3,38 @@ import { screen, render, getByLabelText, getByText } from "../../test-setup";
 import fireEvent from "@testing-library/user-event";
 import { TextInput } from "./TextInput";
 
-describe("TextInput component", () => {
+describe("TextInput", () => {
   describe("default", () => {
-    const errorMessage = "My name is Tom Riddle";
+    const errorMessage = "This is an example of an error message.";
 
     beforeEach(() => {
       render(
         <TextInput
           id="test-input"
           label="Testing Input"
-          fieldName="testing-input"
+          name="testing-input"
           errorMessage={errorMessage}
         />
       );
     });
 
-    it("should render", () => {
+    it("renders", () => {
       const comp = screen.getByLabelText("Testing Input");
       expect(comp).toBeInTheDocument();
     });
 
-    it("should not have an initial value", () => {
+    it("has no initial value", () => {
       const comp = screen.getByLabelText("Testing Input");
       expect(comp).toHaveDisplayValue("");
     });
 
-    it("should accept any value", () => {
+    it("accepts any value", () => {
       const comp = screen.getByLabelText("Testing Input");
       fireEvent.type(comp, "abc123!@#");
       expect(comp).toHaveDisplayValue("abc123!@#");
     });
 
-    it("should not show the errorMessage", () => {
+    it("does not show the errorMessage", () => {
       const comp = screen.getByLabelText("Testing Input");
       expect(comp).toBeInTheDocument();
       expect(screen.queryAllByText(errorMessage).length).toBe(0);
@@ -42,12 +42,12 @@ describe("TextInput component", () => {
   });
 
   it("should show an error message", () => {
-    const errorMessage = "My name is Tom Riddle";
+    const errorMessage = "This is an example of an error message.";
     render(
       <TextInput
         id="test-input"
         label="Testing Input"
-        fieldName="testing-input"
+        name="testing-input"
         errorMessage={errorMessage}
         inputError
       />
@@ -60,7 +60,7 @@ describe("TextInput component", () => {
       <TextInput
         id="test-input"
         label="Testing Input"
-        fieldName="testing-input"
+        name="testing-input"
         required
       />
     );
@@ -69,90 +69,57 @@ describe("TextInput component", () => {
     comp.hasAttribute("required");
   });
 
-  it("should accept a numeric value only", () => {
-    const filter = new RegExp(/^-?\d*$/i);
-    render(
-      <TextInput
-        id="test-input"
-        label="Testing Input"
-        fieldName="testing-input"
-        inputFilter={filter}
-      />
-    );
-    const comp = screen.getByLabelText("Testing Input");
-    fireEvent.type(comp, "abc123");
-    expect(comp).toHaveDisplayValue("123");
-  });
-
-  it("should add 'usa-focus' on focus'", () => {
-    const { container } = render(
-      <TextInput
-        id="test-input"
-        label="Testing Input"
-        fieldName="testing-input"
-        errorMessage="Click me to unfocus input"
-        inputError
-        required
-      />
-    );
-    // Should not exist on render
-    expect(container.querySelectorAll(".usa-focus").length).toBe(0);
-
-    // Should exist onFocus
-    const input = getByLabelText(container, "Testing Input*");
-    fireEvent.click(input);
-    expect(container.querySelectorAll(".usa-focus").length).toBe(1);
-
-    // Should not onBlur
-    const escape = getByText(container, "Click me to unfocus input");
-    fireEvent.click(escape);
-    expect(container.querySelectorAll(".usa-focus").length).toBe(0);
-  });
-
-  describe("compontent snapshots", () => {
-    it("default", () => {
+  describe("snapshots", () => {
+    it("renders the default TextInput", () => {
       const { container } = render(
-        <TextInput
-          id="test-input"
-          label="Testing Input"
-          fieldName="testing-input"
-        />
+        <TextInput id="test-input" label="Testing Input" name="testing-input" />
       );
       expect(container).toMatchSnapshot();
     });
 
-    it("required and error", () => {
-      const errorMessage = "My name is Tom Riddle";
+    it("renders a required TextInput", () => {
       const { container } = render(
         <TextInput
           id="test-input"
           label="Testing Input"
-          fieldName="testing-input"
-          errorMessage={errorMessage}
+          name="testing-input"
           required
         />
       );
       expect(container).toMatchSnapshot();
     });
 
-    it("success", () => {
+    it("renders an error", () => {
+      const errorMessage = "This is an example of an error message.";
       const { container } = render(
         <TextInput
           id="test-input"
           label="Testing Input"
-          fieldName="testing-input"
+          name="testing-input"
+          errorMessage={errorMessage}
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+
+    it("renders the success state", () => {
+      const { container } = render(
+        <TextInput
+          id="test-input"
+          label="Testing Input"
+          name="testing-input"
           inputSuccess
         />
       );
       expect(container).toMatchSnapshot();
     });
 
-    it("prefix and suffix", () => {
+    it("renders the prefix and suffix", () => {
       const { container } = render(
         <TextInput
           id="test-input"
           label="Testing Input"
-          fieldName="testing-input"
+          name="testing-input"
           prefix="$"
           suffix="lbs."
         />

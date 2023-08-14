@@ -11,8 +11,8 @@ import pngLogo from "../../assets/img/logos/cms_logo.png";
 
 const navData = [
   {
-    buttonText: "Current Section",
-    current: true,
+    buttonComp: "Current Section",
+    //current: true,
     columns: [
       [
         { text: "Navigational Link", href: "", target: "_blank" },
@@ -33,7 +33,7 @@ const navData = [
     ],
   },
   {
-    buttonText: "Section",
+    buttonComp: "Section",
     columns: [
       [
         { text: "Navigational Link", href: "" },
@@ -43,6 +43,21 @@ const navData = [
         { text: "Navigational Link", href: "" },
         { text: "Navigational Link", href: "" },
         { text: "Navigational Link", href: "" },
+      ],
+    ],
+  },{
+    buttonComp: "Section 2",
+    current: true,
+    columns: [
+      [
+        { onClick: () => { console.log("onclick function invoked"); }}, // onclick function
+       /* { text: "Navigational Link", href: "" },
+        { text: "Navigational Link", href: "" },
+        { text: "Navigational Link", href: "" },
+        { text: "Navigational Link", href: "" },
+        { text: "Navigational Link", href: "" },
+        { text: "Navigational Link", href: "" },
+        { text: "Navigational Link", href: "" }, */
       ],
     ],
   },

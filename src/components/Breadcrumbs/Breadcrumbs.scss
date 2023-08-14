@@ -1,4 +1,4 @@
-@use "../../assets/theme/macbis-colors" as c;
+@use "../../sass/macbis-colors" as c;
 
 .usa-breadcrumb {
   a, a:visited {
@@ -8,8 +8,7 @@
 
 .usa-breadcrumb__list-item:not(:last-child)::after {
   margin: 0 0.5rem;
-  background-color: c.$gray;
-}
+  background-color: c.$gray;}
 
 .parent-only {
   display: inline-flex;

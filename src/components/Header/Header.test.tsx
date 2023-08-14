@@ -9,14 +9,14 @@ import { Logo } from "../Logo/Logo";
 const testOnClick = jest.fn();
 
 let navData: {
-  buttonText: string;
+  buttonComp: React.ReactNode;
   current?: boolean;
   columns: { text: string; href?: string; onClick?: () => any }[][];
 }[];
 const setNavData = () => {
   navData = [
     {
-      buttonText: "Current Section",
+      buttonComp: "Current Section",
       current: true,
       columns: [
         [
@@ -38,7 +38,7 @@ const setNavData = () => {
       ],
     },
     {
-      buttonText: "Section",
+      buttonComp: "Section",
       columns: [
         [
           { text: "Navigational Link", href: "" },
