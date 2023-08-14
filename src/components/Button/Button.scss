@@ -1,4 +1,4 @@
-@use "../../assets/theme/macbis-colors" as c;
+@use "../../sass/macbis-colors" as c;
 
 .usa-button:disabled {
   cursor: default;
@@ -54,4 +54,8 @@
     background-color: #5b616a;
     color: black;
   }
+}
+
+.usa-button {
+  gap: 0.4rem;
 }

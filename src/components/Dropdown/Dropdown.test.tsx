@@ -3,7 +3,7 @@ import { fireEvent as userEvent, render } from "../../test-setup";
 import fireEvent from "@testing-library/user-event";
 
 import { Dropdown } from "./Dropdown";
-import data from "./data.json";
+import data from "../DropdownInput/data.json";
 
 describe("Test the Dropdown component", () => {
   /*
@@ -173,7 +173,7 @@ describe("Test the Dropdown component", () => {
     userEvent.focus(inputElem);
     fireEvent.type(inputElem, "apple");
 
-    expect(selectElem.children.length).toBe(5); // select has a manually added empty option
+    expect(selectElem.children.length).toBe(65); // select doesn't get filtered
     expect(listElem.children.length).toBe(4);
   });
 

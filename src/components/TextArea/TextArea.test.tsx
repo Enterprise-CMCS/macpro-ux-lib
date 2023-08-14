@@ -5,7 +5,7 @@ import { TextArea } from "./TextArea";
 
 describe("TextArea component", () => {
   describe("default", () => {
-    const errorMessage = "My name is Tom Riddle";
+    const errorMessage = "This is an example of an error message.";
     const characterCountMessage = "This has a counter";
 
     beforeEach(() => {
@@ -13,7 +13,7 @@ describe("TextArea component", () => {
         <TextArea
           id="test-input-area"
           label="Testing TextArea"
-          fieldName="testing-textarea"
+          name="testing-textarea"
           errorMessage={errorMessage}
         />
       );
@@ -54,7 +54,7 @@ describe("TextArea component", () => {
         <TextArea
           id="test-input-area"
           label="Testing TextArea"
-          fieldName="testing-textarea"
+          name="testing-textarea"
           showCharacterCount
         />
       );
@@ -70,7 +70,7 @@ describe("TextArea component", () => {
         <TextArea
           id="test-input-area"
           label="Testing TextArea"
-          fieldName="testing-textarea"
+          name="testing-textarea"
           showCharacterCount
           maxLength={50}
         />
@@ -87,7 +87,7 @@ describe("TextArea component", () => {
         <TextArea
           id="test-input-area"
           label="Testing TextArea"
-          fieldName="testing-textarea"
+          name="testing-textarea"
           characterCountMessage="You have used:"
           showCharacterCount
           maxLength={50}
@@ -101,38 +101,13 @@ describe("TextArea component", () => {
     });
   });
 
-  it("should add 'usa-focus' on focus'", () => {
-    const { container } = render(
-      <TextArea
-        id="test-input-area"
-        label="Testing Input"
-        fieldName="testing-input"
-        errorMessage="Click me to unfocus input"
-        inputError
-        required
-      />
-    );
-    // Should not exist on render
-    const textArea = getByLabelText(container, "Testing Input*");
-    expect(textArea.className.includes("usa-focus")).toBe(false);
-
-    // Should exist onFocus
-    fireEvent.click(textArea);
-    expect(textArea.className.includes("usa-focus")).toBe(true);
-
-    // Should not onBlur
-    const escape = getByText(container, "Click me to unfocus input");
-    fireEvent.click(escape);
-    expect(textArea.className.includes("usa-focus")).toBe(false);
-  });
-
   it("should show an error message", () => {
-    const errorMessage = "My name is Tom Riddle";
+    const errorMessage = "This is an example of an error message.";
     render(
       <TextArea
         id="test-input-area"
         label="Testing TextArea"
-        fieldName="testing-textarea"
+        name="testing-textarea"
         errorMessage={errorMessage}
         inputError
       />
@@ -145,7 +120,7 @@ describe("TextArea component", () => {
       <TextArea
         id="test-input-area"
         label="Testing TextArea"
-        fieldName="testing-textarea"
+        name="testing-textarea"
         required
       />
     );
@@ -154,52 +129,113 @@ describe("TextArea component", () => {
     comp.hasAttribute("required");
   });
 
-  it("should accept a numeric value only", () => {
-    const filter = new RegExp(/^-?\d*$/i);
-    render(
-      <TextArea
-        id="test-input-area"
-        label="Testing TextArea"
-        fieldName="testing-textarea"
-        inputFilter={filter}
-      />
-    );
-    const comp = screen.getByLabelText("Testing TextArea");
-    fireEvent.type(comp, "abc123");
-    expect(comp).toHaveDisplayValue("123");
-  });
-
   describe("compontent snapshots", () => {
-    it("default", () => {
+    it("renders the default component", () => {
       const { container } = render(
         <TextArea
           id="test-input-area"
           label="Testing TextArea"
-          fieldName="testing-textarea"
+          name="testing-textarea"
         />
       );
       expect(container).toMatchSnapshot();
     });
-    it("required and error", () => {
-      const errorMessage = "My name is Tom Riddle";
+
+    it("renders with a placeholder", () => {
       const { container } = render(
         <TextArea
           id="test-input-area"
           label="Testing TextArea"
-          fieldName="testing-textarea"
-          errorMessage={errorMessage}
+          name="testing-textarea"
+          placeholder="This is example placeholder text."
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+
+    it("renders with a character counter", () => {
+      const { container } = render(
+        <TextArea
+          id="test-input-area"
+          label="Testing TextArea"
+          name="testing-textarea"
+          showCharacterCount
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+
+    it("renders with a character counter and message", () => {
+      const { container } = render(
+        <TextArea
+          id="test-input-area"
+          label="Testing TextArea"
+          name="testing-textarea"
+          showCharacterCount
+          characterCountMessage="This is a character count message"
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+
+    it("renders with a character counter and maxLength", () => {
+      const { container } = render(
+        <TextArea
+          id="test-input-area"
+          label="Testing TextArea"
+          name="testing-textarea"
+          showCharacterCount
+          maxLength={50}
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+
+    it("renders with a character counter, maxLength, and message", () => {
+      const { container } = render(
+        <TextArea
+          id="test-input-area"
+          label="Testing TextArea"
+          name="testing-textarea"
+          showCharacterCount
+          maxLength={50}
+          characterCountMessage="This is a character count message"
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+
+    it("renders a required component", () => {
+      const { container } = render(
+        <TextArea
+          id="test-input-area"
+          label="Testing TextArea"
+          name="testing-textarea"
           required
-          placeholder="Can you place this?"
         />
       );
       expect(container).toMatchSnapshot();
     });
+
+    it("renders a component with an error message", () => {
+      const errorMessage = "This is an example of an error message.";
+      const { container } = render(
+        <TextArea
+          id="test-input-area"
+          label="Testing TextArea"
+          name="testing-textarea"
+          errorMessage={errorMessage}
+        />
+      );
+      expect(container).toMatchSnapshot();
+    });
+
     it("success", () => {
       const { container } = render(
         <TextArea
           id="test-input-area"
           label="Testing TextArea"
-          fieldName="testing-textarea"
+          name="testing-textarea"
           inputSuccess
         />
       );

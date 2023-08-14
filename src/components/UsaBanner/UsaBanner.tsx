@@ -4,7 +4,7 @@ import flag from "../../assets/img/us_flag_small.png";
 import gov from "../../assets/img/icon-dot-gov.svg";
 import lock from "../../assets/img/icon-https.svg";
 
-interface Props {
+export interface UsaBannerProps {
   className?: string;
   id?: string;
   locale?: "en" | "es";
@@ -19,7 +19,7 @@ interface Props {
  * @param {string}  variant       Indicates which color variant of the banner to display.
  */
 
-export const UsaBanner: React.FC<Props> = ({
+export const UsaBanner: React.FC<UsaBannerProps> = ({
   className,
   variant,
   id,
