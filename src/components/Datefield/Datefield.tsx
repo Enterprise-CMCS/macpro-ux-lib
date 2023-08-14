@@ -10,7 +10,7 @@ import {
 import datePicker from "../../../node_modules/@uswds/uswds/packages/usa-date-picker/src";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
-export interface Props extends IntrinsicElements {
+export interface DatefieldProps extends IntrinsicElements {
   id: string;
   name: string;
   label: string;
@@ -35,7 +35,7 @@ export interface Props extends IntrinsicElements {
  * @param {boolean} [required]             The date picker component will be required in terms of native form validation.
  */
 
-export const Datefield: React.FC<Props> = ({
+export const Datefield: React.FC<DatefieldProps> = ({
   id,
   name,
   label,

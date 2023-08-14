@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react";
 
 import { TextArea } from "./TextArea";
 
@@ -8,31 +8,29 @@ export default {
   component: TextArea,
   args: {
     label: "Input Label",
-    fieldName: "input-type-text",
+    name: "input-type-text",
     inputError: false,
     inputSuccess: false,
     required: false,
   },
   argTypes: {
+    id: {
+      description: "Unique ID for the input field.",
+    },
     label: {
       description: "Field label.",
     },
-    fieldName: {
+    name: {
       description: "Name of the input field.",
     },
     characterCountMessage: {
-      description:
-        "Sets a message preceding the character count when showCharacterCount === true.",
+      description: "Text to be displayed before the character count.",
     },
     errorMessage: {
       description: "Error message text displayed when inputError === true.",
     },
     inputError: {
       description: "Triggers error message and error styling.",
-    },
-    inputFilter: {
-      description:
-        "Used to limit input values. If a RegExp is not provided, all input types are allowed.",
     },
     inputSuccess: {
       description: "Trigger success styling.",
@@ -44,32 +42,42 @@ export default {
       description:
         "Adds semantic required attr and appends an * to the end of the input label.",
     },
+    showCharacterCount: {
+      description:
+        "Show the character count. If maxLength is set, character count will appear as a fraction.",
+    },
   },
-} as ComponentMeta<typeof TextArea>;
+} as Meta<typeof TextArea>;
 
-const Template: ComponentStory<typeof TextArea> = ({ ...rest }) => (
+const Template: StoryFn<typeof TextArea> = ({ ...rest }) => (
   <TextArea {...rest} />
 );
 
 export const Default = Template.bind({});
-export const CharachterCount = Template.bind({});
-export const RequiredAndError = Template.bind({});
+export const CharacterCount = Template.bind({});
+export const Required = Template.bind({});
+export const WithError = Template.bind({});
 export const Success = Template.bind({});
-export const InputFilter = Template.bind({});
 Default.args = {};
 
-CharachterCount.args = {
+CharacterCount.args = {
+  label: "TextArea with Character Count",
   characterCountMessage: "Available remaining characters:",
   showCharacterCount: true,
   maxLength: 500,
   id: "character-count-textarea",
 };
 
-RequiredAndError.args = {
+Required.args = {
+  label: "Required TextArea",
+  required: true,
+  id: "required-textarea",
+};
+
+WithError.args = {
   errorMessage: "Helpful Error Message",
   inputError: true,
-  label: "Required Input Field",
-  required: true,
+  label: "TextArea with Error Message",
   id: "required-and-error-textarea",
 };
 
@@ -78,10 +86,4 @@ Success.args = {
   initialValue: "This is a good value!",
   inputSuccess: true,
   id: "success-textarea",
-};
-
-InputFilter.args = {
-  label: "This field only accepts a numerical input",
-  inputFilter: /^-?\d*$/i,
-  id: "filter-textarea",
 };

@@ -1,5 +1,4 @@
-import React from "react";
-import "@enterprise-cmcs/macpro-ux-lib/build/assets/css/index.css";
+import "@enterprise-cmcs/macpro-ux-lib/build/assets/uswds/css/index.css";
 import * as UX from "@enterprise-cmcs/macpro-ux-lib";
 import "./App.css";
 import logo from "./logo.svg";
@@ -198,6 +197,14 @@ function App() {
             { displayString: "GHI", value: "ghi" },
           ]}
         ></UX.Dropdown>
+        <UX.MultiSelect
+          label="My MultiSelect Dropdown"
+          data={[
+            { displayString: "ABC", value: "abc" },
+            { displayString: "DEF", value: "def" },
+            { displayString: "GHI", value: "ghi" },
+          ]}
+        ></UX.MultiSelect>
         <UX.Icon name="accessibility_new" color="#000" />
         <UX.Link>Log Out</UX.Link>
         <UX.RadioGroup
@@ -390,13 +397,6 @@ function App() {
             </tr>
           </tbody>
         </UX.Table>
-      </div>
-      <div className="padding-left-3">
-        <UX.Tooltip
-          title="ToolTip"
-          position="right"
-          children={[<h1 key="test">Hover me</h1>]}
-        />
       </div>
       <UX.Footer emailAddress="jhechter@fearless.tech" />
     </div>

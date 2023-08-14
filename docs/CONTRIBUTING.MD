@@ -13,7 +13,7 @@ We love your input! We want to make contributing to this project as easy and tra
 We use [Storybook](https://storybook.js.org/) to build, organize, and document the components in this library. To get started, clone the repository:
 
 ```
-git clone https://github.com/CMSgov/macpro-ux-lib macpro-ux-lib
+git clone https://github.com/Enterprise-CMCS/macpro-ux-lib macpro-ux-lib
 ```
 
 Create a branch describing the issue or feature you are contributing:
@@ -67,13 +67,13 @@ Finally, add your new component to `src/index.tsx` in order to appear in Storybo
 
 We use pull request to drive a variety of actions and workflows in the project.
 
-Be sure to follow the template when creating your [pull request on GitHub](https://github.com/CMSgov/macpro-ux-lib/pulls). Upon doing this, and provided all of the additional checks pass, your code will be reviewed and approved if the changes are in line with the projects plans.
+Be sure to follow the template when creating your [pull request on GitHub](https://github.com/Enterprise-CMCS/macpro-ux-lib/pulls). Upon doing this, and provided all of the additional checks pass, your code will be reviewed and approved if the changes are in line with the projects plans.
 
 ## Deployment
 
 The short version of the CICD Pipeline is `Pull Request → Github Actions → AWS Amplify Temporary Environments → Accessible Application → Pull Request Approval → Master deployment & New Version `
 
-All of the deployments start with new code on a branch. A branch environment is created and this is where automated and manual testing occurs. Once all of the checks have been passed on a branch, it is pulled into the Master branch. The master branch specifically lives in the git-hub actions branch `gha-pages` and serves as our most up to date deployment environment. It is where live users have access to the new features and new components. It is available to view at [https://cmsgov.github.io/macpro-ux-lib](https://cmsgov.github.io/macpro-ux-lib).
+All of the deployments start with new code on a branch. A branch environment is created and this is where automated and manual testing occurs. Once all of the checks have been passed on a branch, it is pulled into the Master branch. The master branch specifically lives in the git-hub actions branch `gha-pages` and serves as our most up to date deployment environment. It is where live users have access to the new features and new components. It is available to view at [https://enterprise-cmcs.github.io/macpro-ux-lib](https://enterprise-cmcs.github.io/macpro-ux-lib).
 
 ## Testing the NPM Distribution
 
@@ -122,7 +122,7 @@ If your component requires custom styling beyond what is provided by USWDS, you 
 In this new SCSS file, start by importing the MACbis color palette:
 
 ```typescript
-@use "../../assets/theme/macbis-colors" as c;
+@use "../../sass/macbis-colors" as c;
 ```
 
 You may now access the MACbis colors in the format `c.$primary`, `c.$error`, `c.$warn`, etc.
@@ -135,33 +135,35 @@ For examples on how to use custom SCSS files, look at the components listed in `
 
 ## USWDS JavaScript
 
-Some components, such as Tooltip, rely on USWDS JavaScript files. If you are building a library component and would like to leverage the USWDS JavaScript, you will need to import that component's JS directly from the USWDS package.
+Some components, such as FileInput, rely on USWDS JavaScript files. If you are building a library component and would like to leverage the USWDS JavaScript, you will need to import that component's JS directly from the USWDS package.
 
-Currently, the way to import the USWDS's `usa-tooltip` JavaScript is to reference it directly:
+Currently, the way to import the USWDS's `usa-file-input` JavaScript is to reference it directly:
 
 ```typescript
-import tooltip from "../../../node_modules/@uswds/uswds/packages/usa-tooltip/src";
+import tooltip from "../../../node_modules/@uswds/uswds/packages/usa-file-input/src";
 ```
 
 **Note:** The above works with USWDS 3.0. This process may be different for more recent versions.
 
-Once you've imported the JS, you will need to initialize it in your React component. In Tooltip, it is done like this:
+Once you've imported the JS, you will need to initialize it in your React component. In FileInput, it is done like this:
 
 ```typescript
-const tooltipRef = useRef < HTMLSpanElement > null;
+const fileInputRef = useRef<HTMLSpanElement>(null);
 
 useLayoutEffect(() => {
-  const tooltipElement = tooltipRef.current;
-  if (typeof tooltip.on === "function") tooltip.on(tooltipElement);
+  const fileInputElement = fileInputRef.current;
+  if (typeof fileInput.off === "function") fileInput.off(fileInputElement);
+  if (typeof fileInput.on === "function") fileInput.on(fileInputElement);
+
   return () => {
-    if (typeof tooltip.off === "function") tooltip.off(tooltipElement);
+    if (typeof fileInput.off === "function") fileInput.off(fileInputElement);
   };
 });
 ```
 
-We use `useRef` to avoid importing multiple instances of the same JS file. In `useLayoutEffect()`, we ensure that the imported `tooltip` has an `.on` function, and then we call it, passing the ref as a parameter. This will add the necessary `tooltip` JavaScript to the `HTMLSpanElement` created by `useRef`.
+We use `useRef` to avoid importing multiple instances of the same JS file. In `useLayoutEffect()`, we ensure that the imported `fileInput` has an `.on` function, and then we call it, passing the ref as a parameter. This will add the necessary `fileInput` JavaScript to the `HTMLSpanElement` created by `useRef`.
 
-In the `return` block, we will deinitialize the `tooltip` by using its `off` function, removing it at the end of the React component lifecycle.
+In the `return` block, we will deinitialize the `fileInput` by using its `off` function, removing it at the end of the React component lifecycle.
 
 Your component will now be able to take advantage of the USWDS component's JavaScript functionality.
 
@@ -172,3 +174,5 @@ This [discussion topic](https://github.com/uswds/uswds/discussions/4680) on usin
 ## Future Improvements
 
 The MACPro UX library was built using version 3.0 of USWDS. As of this writing (October 19, 2022), USWDS released [version 3.2.0](https://github.com/uswds/uswds). Future maintainers and contributors may want to upgrade the library to use [the latest version of USWDS](https://github.com/uswds/uswds/releases/) before fixing bugs or adding new features.
+
+It may also be worth looking into another way to show users how some components take data objects (such as JSX objects) as parameters. Currently, we hide these data objects in the main Storybook view and users may look at the example code snippets for reference, but it may be worth investigating a more clear way to call this out.

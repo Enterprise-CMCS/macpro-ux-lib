@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
 
@@ -8,6 +8,7 @@ export interface RadioProps extends IntrinsicElements {
   children?: JSX.Element[];
   disabled?: boolean;
   isTile?: boolean;
+  ref?: React.Ref<HTMLInputElement>;
   tileDescription?: string;
   value?: string;
 }
@@ -23,16 +24,22 @@ export interface RadioProps extends IntrinsicElements {
  * @param {string}  [tileDescription] Text that can be used to describe the label in more detail. Activates the tile variation automatically.
  * @param {string}  [value]           Value of the input element.
  */
-export const Radio: React.FC<RadioProps> = ({
-  children,
-  disabled = false,
-  id,
-  isTile = false,
-  label,
-  tileDescription,
-  value,
-  ...rest
-}) => {
+
+export const Radio = forwardRef<HTMLInputElement, RadioProps>(function Radio(
+  props,
+  ref
+) {
+  const {
+    children,
+    disabled = false,
+    id,
+    isTile = false,
+    label,
+    tileDescription,
+    value,
+    ...otherProps
+  } = props;
+
   return (
     <div className="usa-radio">
       <input
@@ -43,9 +50,10 @@ export const Radio: React.FC<RadioProps> = ({
         }
         disabled={disabled}
         id={id}
+        ref={ref}
         type="radio"
         value={value}
-        {...rest}
+        {...otherProps}
       />
       <label className="usa-radio__label" htmlFor={id}>
         {label}
@@ -57,4 +65,4 @@ export const Radio: React.FC<RadioProps> = ({
       </label>
     </div>
   );
-};
+});

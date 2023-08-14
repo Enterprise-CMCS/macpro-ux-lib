@@ -1,9 +1,13 @@
-@use "../../assets/theme/macbis-colors" as c;
+@use "../../sass/macbis-colors" as c;
 
 .usa-site-alert {
   button {
     border: none;
     background-color: transparent;
+  }
+
+  .usa-alert {
+    border: none;
   }
 }
 
@@ -16,11 +20,21 @@
   }
 }
 
+.usa-site-alert--emergency {
+  .usa-alert {
+    background-color: c.$error-dark;
+
+    .usa-alert__body .usa-link {
+      color: white;
+    }
+  }
+}
+
+.usa-site-alert .usa-alert .usa-alert__body {
+  background-color: transparent;
+}
+
 .usa-site-alert--emergency,
 .usa-site-alert--emergency .usa-alert {
   background-color: c.$error-dark;
-
-  .usa-link {
-    color: white;
-  }
 }

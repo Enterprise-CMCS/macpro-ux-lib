@@ -1,5 +1,5 @@
-import "./assets/css/styles.css";
-import "./assets/theme/styles.scss";
+import "./assets/uswds/css/styles.css";
+import "./sass/styles.scss";
 
 import { Accordion } from "./components/Accordion/Accordion";
 import { AccordionGroup } from "./components/Accordion/AccordionGroup";
@@ -22,6 +22,7 @@ import { Icon } from "./components/Icon/Icon";
 import { Link } from "./components/Link/Link";
 import { Logo } from "./components/Logo/Logo";
 import { Modal } from "./components/Modal/Modal";
+import { MultiSelect } from "./components/MultiSelect/MultiSelect";
 import { Radio } from "./components/Radio/Radio";
 import { RadioGroup } from "./components/Radio/RadioGroup";
 import { SiteAlert } from "./components/SiteAlert/SiteAlert";
@@ -34,7 +35,6 @@ import { TextArea } from "./components/TextArea/TextArea";
 import { TextInput } from "./components/TextInput/TextInput";
 import { TD } from "./components/Table/TD";
 import { TH } from "./components/Table/TH";
-import { Tooltip } from "./components/Tooltip/Tooltip";
 import { Typography } from "./components/Typography/Typography";
 import { VerticalNavigation } from "./components/VerticalNavigation/VerticalNavigation";
 import { UsaBanner } from "./components/UsaBanner/UsaBanner";
@@ -61,6 +61,7 @@ export {
   Link,
   Logo,
   Modal,
+  MultiSelect,
   Radio,
   RadioGroup,
   Search,
@@ -73,7 +74,6 @@ export {
   TextInput,
   TD,
   TH,
-  Tooltip,
   Typography,
   UsaBanner,
   VerticalNavigation,

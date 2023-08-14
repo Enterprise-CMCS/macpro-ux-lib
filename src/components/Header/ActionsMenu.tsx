@@ -3,11 +3,11 @@ import { Icon, IconChoice } from "../Icon/Icon";
 import { Link, LinkProps } from "../Link/Link";
 import { useOutsideClick } from "hooks/useOutsideClick";
 
-interface ActionsMenuLink extends LinkProps {
+export interface ActionsMenuLink extends LinkProps {
   iconName?: IconChoice;
 }
 
-interface Props {
+export interface ActionMenuProps {
   name: string;
   links: ActionsMenuLink[];
 }
@@ -19,7 +19,7 @@ interface Props {
  * @param {ActionsMenuLink[]} links  List of links to display in the menu.
  */
 
-export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
+export const ActionsMenu: React.FC<ActionMenuProps> = ({ name, links, ...rest }) => {
   const [isOpen, setIsOpen] = useState(false);
   const wrapperRef = useRef(null);
   useOutsideClick(wrapperRef, () => {
@@ -41,8 +41,9 @@ export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
           color="#fff"
         />
       </button>
-      <menu
-        className="user-actions-menu usa-nav__secondary-links"
+
+      <ul
+        className="user-actions-menu usa-nav__submenu"
         {...rest}
         hidden={!isOpen} // TODO: This cannot say "hidden" when expanded in mobile
       >
@@ -57,7 +58,7 @@ export const ActionsMenu: React.FC<Props> = ({ name, links, ...rest }) => {
             </li>
           );
         })}
-      </menu>
+      </ul>
     </div>
   );
 };

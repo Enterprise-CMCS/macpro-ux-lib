@@ -3,7 +3,7 @@ import { Icon } from "components/Icon/Icon";
 
 type IntrinsicElements = JSX.IntrinsicElements["a"];
 
-interface Props extends IntrinsicElements {
+export interface CardChoiceProps extends IntrinsicElements {
   actionText?: string;
   ariaLabel?: string;
   bodyText?: string;
@@ -28,7 +28,7 @@ interface Props extends IntrinsicElements {
  * @param {string}             [href]           href provided to the anchor.
  * @param {callback}           [onClick]        onClick provided to the anchor.
  */
-export const CardChoice: React.FC<PropsWithChildren<Props>> = ({
+export const CardChoice: React.FC<PropsWithChildren<CardChoiceProps>> = ({
   actionText,
   ariaLabel,
   bodyText,
