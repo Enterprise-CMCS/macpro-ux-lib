@@ -1,5 +1,11 @@
-import React, { forwardRef, useEffect, useRef } from "react";
-import { completeDateFilter, formatPropDates } from "../../utils";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
+import {
+  checkValidMonthDays,
+  completeDateFilter,
+  formatPropDates,
+  numbersAndSlashesFilter,
+  splitDateIntoVariables,
+} from "../../utils";
 import { datePicker } from "@uswds/uswds/js";
 
 type IntrinsicElements = JSX.IntrinsicElements["input"];
@@ -44,7 +50,7 @@ export const Datefield = forwardRef<HTMLInputElement, DatefieldProps>(
     } = props;
 
     value = completeDateFilter.test(value || "") ? value : "";
-    // const [dateError, setDateError] = useState(false);
+    const [dateError, setDateError] = useState(false);
     const datePickerRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
@@ -54,19 +60,16 @@ export const Datefield = forwardRef<HTMLInputElement, DatefieldProps>(
         datePicker.on(datePickerElement as HTMLElement);
       }
 
-      // const dateFieldinput = Array.from(
-      //   document.getElementsByClassName("usa-date-picker__external-input")
-      // ).find((dateField) => dateField.id === id);
+      const dateFieldinput = Array.from(
+        document.getElementsByClassName("usa-date-picker__external-input")
+      ).find((dateField) => dateField.id === id);
 
-      // if (dateFieldinput) {
-      //   dateFieldinput.addEventListener("keydown", (e: any) =>
-      //     filterInput(e)
-      //   );
-      //   dateFieldinput.addEventListener("blur", (e: any) =>
-      //     checkValidDate(e.target.value)
-      //   );
-      // }
-      // }
+      if (dateFieldinput) {
+        dateFieldinput.addEventListener("keydown", (e: any) => filterInput(e));
+        dateFieldinput.addEventListener("blur", (e: any) =>
+          checkValidDate(e.target.value)
+        );
+      }
 
       return () => {
         if (typeof datePicker.off === "function") {
@@ -75,58 +78,43 @@ export const Datefield = forwardRef<HTMLInputElement, DatefieldProps>(
       };
     }, [value]);
 
-    // const filterInput = (typedValue: KeyboardEvent) => {
-    //   if (
-    //     (typedValue && numbersAndSlashesFilter.test(typedValue.key)) ||
-    //     typedValue.key === "Backspace" ||
-    //     typedValue.key === "Tab" ||
-    //     typedValue.metaKey
-    //   ) {
-    //     setDateError(false);
-    //   } else {
-    //     typedValue.preventDefault();
-    //   }
-    // };
-
-    // const checkValidDate = (date: string) => {
-    //   let [month, day, year] = splitDateIntoVariables(date);
-
-    //   if (
-    //     (completeDateFilter.test(date) &&
-    //       checkValidMonthDays(
-    //         parseInt(month),
-    //         parseInt(year),
-    //         parseInt(day)
-    //       )) ||
-    //     date === ""
-    //   ) {
-    //     setDateError(false);
-    //   } else {
-    //     setDateError(true);
-    //   }
-    // };
-
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      console.log("in handleChange"); // This never gets logged. Does the USWDS JS strip the onChange event?
-
-      // Execute the parent form's onChange event if it exists:
-      if (onChange) {
-        onChange(e);
+    const filterInput = (typedValue: KeyboardEvent) => {
+      if (
+        (typedValue && numbersAndSlashesFilter.test(typedValue.key)) ||
+        typedValue.key === "Backspace" ||
+        typedValue.key === "Tab" ||
+        typedValue.metaKey
+      ) {
+        setDateError(false);
+      } else {
+        typedValue.preventDefault();
       }
-
-      // Temporarily disabled to remove complexity while debugging:
-
-      // setCharCount(e.target.value.length.toString());
     };
 
-    console.log(document.getElementById("datefield"));
+    const checkValidDate = (date: string) => {
+      let [month, day, year] = splitDateIntoVariables(date);
+
+      if (
+        (completeDateFilter.test(date) &&
+          checkValidMonthDays(
+            parseInt(month),
+            parseInt(year),
+            parseInt(day)
+          )) ||
+        date === ""
+      ) {
+        setDateError(false);
+      } else {
+        setDateError(true);
+      }
+    };
 
     return (
       <div className="usa-form-group datefield" ref={datePickerRef}>
         <label className="usa-label" id={`${id}-label`} htmlFor={id}>
           {label}
         </label>
-        {/* {(hint || dateError) && (
+        {(hint || dateError) && (
           <div
             className={`usa-hint${dateError ? " input-error" : ""}`}
             id={`${id}-hint`}
@@ -135,7 +123,7 @@ export const Datefield = forwardRef<HTMLInputElement, DatefieldProps>(
               dateError ? "Inputted date must be a valid date in " : ""
             }mm/dd/yyyy`}
           </div>
-        )} */}
+        )}
 
         <div
           className="usa-date-picker"
