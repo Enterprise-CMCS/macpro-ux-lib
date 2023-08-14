@@ -144,8 +144,8 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                 />
               </svg>
             </button>
-            <menu
-              class="user-actions-menu usa-nav__secondary-links"
+            <ul
+              class="user-actions-menu usa-nav__submenu"
               hidden=""
             >
               <li>
@@ -211,7 +211,7 @@ exports[`Test the Header component component snapshots with ActionsMenu 1`] = `
                   Log Out
                 </a>
               </li>
-            </menu>
+            </ul>
           </div>
         </div>
       </div>

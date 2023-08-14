@@ -3,7 +3,7 @@ import { Icon } from "../Icon/Icon";
 
 type IntrinsicElements = JSX.IntrinsicElements["section"];
 
-interface Props extends IntrinsicElements {
+export interface SiteAlertProps extends IntrinsicElements {
   alertHeading?: string;
   alertBody: string | React.ReactNode;
   emergency?: boolean;
@@ -22,7 +22,7 @@ interface Props extends IntrinsicElements {
  * @param {boolean}                    icon           Show/hide the alert icon associated with the variation of the alert.
  * @param {React.MouseEventHandler}    close          Close button that shows when a event handler is passed to the component.
  */
-export const SiteAlert: React.FC<Props> = ({
+export const SiteAlert: React.FC<SiteAlertProps> = ({
   alertHeading,
   alertBody,
   emergency = false,
