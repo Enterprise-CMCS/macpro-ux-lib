@@ -47,6 +47,7 @@
     "@types/jest": "^29.1.2",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
+    "@types/uswds__uswds": "^3.3.0",
     "@uswds/compile": "^1.0.0",
     "@uswds/uswds": "^3.4.1",
     "babel-loader": "^8.2.5",
