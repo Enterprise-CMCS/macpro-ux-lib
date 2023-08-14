@@ -3,6 +3,7 @@ import React, {
   ChangeEventHandler,
   Dispatch,
   SetStateAction,
+  forwardRef,
   useState,
 } from "react";
 
@@ -36,59 +37,60 @@ export interface DropdownProps extends IntrinsicElements {
  * @param {string}        [placeholder]  Placeholder text to be displayed in the input.
  * @param {boolean}       readOnly       Sets input field to read-only. Effectively disables type-ahead search.
  */
-export const Dropdown: React.FC<DropdownProps> = ({
-  className,
-  data,
-  id,
-  label,
-  onChange,
-  name,
-  placeholder,
-  readOnly = false,
-  setValue,
-  value,
-  ...rest
-}) => {
-  /*
-    Possible TODO:
-    These items are outside scope of design, but might be nice to have
-    - Error State
-    - Default Value
-    - Disabled
-    - Simple Dropdown - Render without custom styles
-  */
 
-  if (value === undefined && setValue === undefined)
-    [value, setValue] = useState<string | number | undefined>("");
+export const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>(
+  function Dropdown({ setValue, value, ...props }, ref) {
+    const {
+      className,
+      data,
+      id,
+      label,
+      onChange,
+      name,
+      placeholder,
+      readOnly = false,
+      ...rest
+    } = props;
 
-  return (
-    <div className={className}>
-      <DropdownInput
-        data={data}
-        id={id}
-        label={label}
-        readOnly={readOnly}
-        setValue={onChange ? onChange : setValue}
-        value={value}
-      >
-        <select
-          aria-hidden={true}
-          className="usa-select usa-sr-only usa-combo-box__select"
-          name={name}
-          onChange={(e) => setValue && setValue(e.target.value)}
-          tabIndex={-1}
-          value={value}
-          {...rest}
+    const [selectedValue, setSelectedValue] = useState<
+      string | number | undefined
+    >("");
+
+    const handleOnChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+      if (setValue) setValue(e.target.value);
+      else setSelectedValue(e.target.value);
+    };
+
+    return (
+      <div className={className}>
+        <DropdownInput
+          data={data}
+          id={id}
+          label={label}
+          readOnly={readOnly}
+          ref={ref}
+          setValue={setValue ?? setSelectedValue}
+          value={value ?? selectedValue}
         >
-          <option value={undefined}></option>
+          <select
+            aria-hidden={true}
+            className="usa-select usa-sr-only usa-combo-box__select"
+            name={name}
+            onChange={handleOnChange}
+            tabIndex={-1}
+            value={value ?? selectedValue}
+            {...rest}
+          >
+            <option value={undefined}></option>
 
-          {data.map((itm, idx) => (
-            <option key={itm.value} value={itm.value}>
-              {itm.displayString}
-            </option>
-          ))}
-        </select>
-      </DropdownInput>
-    </div>
-  );
-};
+            {data.map((itm, idx) => (
+              <option key={itm.value} value={itm.value}>
+                {itm.displayString}
+              </option>
+            ))}
+          </select>
+        </DropdownInput>
+      </div>
+    );
+  }
+);

@@ -32,7 +32,25 @@
 
   @media only screen and (max-width: 1023px) {
     .usa-navbar-container {
-      background-color: #fff;
+      background-color: c.$primary;
+      min-height: 70px;
+      .usa-navbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 75px;
+        align-items: center;
+        overflow: visible;
+        .usa-nav__secondary {
+          bottom: unset;
+          margin: 0;
+          position: relative;
+          z-index: 999;
+        }
+      }
+      button {
+        margin-right: 10px;
+      }
     }
     .usa-logo .application-logo-container {
       color: c.$primary;
