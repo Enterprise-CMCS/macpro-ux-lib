@@ -3,7 +3,7 @@ import { Tab } from "./Tab";
 
 type IntrinsicElements = JSX.IntrinsicElements["div"];
 
-interface Props extends IntrinsicElements {
+export interface TabsProps extends IntrinsicElements {
   initialTab?: number;
 }
 
@@ -24,7 +24,7 @@ interface Props extends IntrinsicElements {
  * @param {React.Node}    children    `TabPanel` children to be rendered in the Tabs component.
  * @param {number}        initialTab  Index of the tab to be open when the component renders. Defaults to first non-disabled tab.
  */
-export const Tabs: React.FC<PropsWithChildren<Props>> = ({
+export const Tabs: React.FC<PropsWithChildren<TabsProps>> = ({
   children,
   initialTab,
   ...rest
