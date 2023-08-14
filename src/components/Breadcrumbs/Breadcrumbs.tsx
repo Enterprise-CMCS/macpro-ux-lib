@@ -7,7 +7,7 @@ type BreadcrumbItems = {
   path?: string;
 }[];
 
-interface BreadcrumbProps {
+export interface BreadcrumbProps {
   currentItemName: string;
   items: BreadcrumbItems;
   parentOnly?: boolean;

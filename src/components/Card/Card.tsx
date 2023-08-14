@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from "react";
 
-interface Props {
+export interface CardProps {
   alignContent?: "left" | "right" | "center";
   altText?: string;
   bodyText?: string;
@@ -25,7 +25,7 @@ interface Props {
  * @param {boolean}   [insetMedia]    Set a border of whitespace around card content.
  */
 
-export const Card: React.FC<PropsWithChildren<Props>> = ({
+export const Card: React.FC<PropsWithChildren<CardProps>> = ({
   alignContent,
   altText,
   bodyText,
