@@ -82,4 +82,12 @@ describe("Tests for the MultiSelect component", () => {
     expect(filterChipWrapper.children.length).toBe(10);
     expect(listElem.children.length).toBe(54);
   });
+
+  it("should filter the list when typing", async () => {
+    await fireEvent.type(inputElem, "ap");
+    expect(listElem.children.length).toBe(7);
+
+    await fireEvent.type(inputElem, "p");
+    expect(listElem.children.length).toBe(3);
+  });
 });

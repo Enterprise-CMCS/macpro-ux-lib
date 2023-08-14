@@ -4,3 +4,4 @@ coverage
 build
 .DS_Store
 storybook-static
+migration-storybook.log

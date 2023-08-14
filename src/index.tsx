@@ -1,5 +1,5 @@
-import "./assets/css/styles.css";
-import "./assets/theme/styles.scss";
+import "./assets/uswds/css/styles.css";
+import "./sass/styles.scss";
 
 import { Accordion } from "./components/Accordion/Accordion";
 import { AccordionGroup } from "./components/Accordion/AccordionGroup";
@@ -35,7 +35,6 @@ import { TextArea } from "./components/TextArea/TextArea";
 import { TextInput } from "./components/TextInput/TextInput";
 import { TD } from "./components/Table/TD";
 import { TH } from "./components/Table/TH";
-import { Tooltip } from "./components/Tooltip/Tooltip";
 import { Typography } from "./components/Typography/Typography";
 import { VerticalNavigation } from "./components/VerticalNavigation/VerticalNavigation";
 import { UsaBanner } from "./components/UsaBanner/UsaBanner";
@@ -75,7 +74,6 @@ export {
   TextInput,
   TD,
   TH,
-  Tooltip,
   Typography,
   UsaBanner,
   VerticalNavigation,

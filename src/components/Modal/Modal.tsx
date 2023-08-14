@@ -4,7 +4,7 @@ import React from "react";
 
 type ModalType = "default" | "large" | "forcedAction";
 
-interface Props {
+export interface ModalProps {
   description: string;
   heading: string;
   id: string;
@@ -31,7 +31,7 @@ interface Props {
  * @param {string}     secondaryButtonText  Text shown on the secondary button.
  */
 
-export const Modal: React.FC<Props> = ({
+export const Modal: React.FC<ModalProps> = ({
   description,
   heading,
   id,

@@ -1,0 +1,5 @@
+@use "../../sass/macbis-colors" as c;
+
+.usa-form-group .usa-textarea:focus {
+  outline: 0.25rem solid c.$focus;
+}

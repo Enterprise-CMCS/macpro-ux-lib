@@ -140,7 +140,7 @@ describe("Checkbox", () => {
                 key="textarea-child"
                 id="test-input-area"
                 label="Child TextArea"
-                fieldName="child-textArea"
+                name="child-textArea"
               />,
             ]}
           />
