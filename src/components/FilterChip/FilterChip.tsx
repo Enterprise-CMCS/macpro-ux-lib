@@ -3,7 +3,7 @@ import React from "react";
 
 type IntrinsicElements = JSX.IntrinsicElements["button"];
 
-interface Props extends IntrinsicElements {
+export interface FilterChipProps extends IntrinsicElements {
   text: string;
 }
 
@@ -12,7 +12,7 @@ interface Props extends IntrinsicElements {
  *
  * @param {string}    text  Text content to be displayed within the FilterChip.
  */
-export const FilterChip: React.FC<Props> = ({ text, ...rest }) => {
+export const FilterChip: React.FC<FilterChipProps> = ({ text, ...rest }) => {
   return (
     <Button
       buttonVariation="primary"

@@ -4,7 +4,7 @@ type IntrinsicElements = JSX.IntrinsicElements["p"];
 
 type Step = { label: string; order: number };
 
-interface Props extends IntrinsicElements {
+export interface StepIndicatorProps extends IntrinsicElements {
   headingText: string;
   currentProgress: number;
   steps: Step[];
@@ -25,7 +25,7 @@ interface Props extends IntrinsicElements {
  * @param {boolean}   [showLabels]        Dictates whether or not labels are show under each step.
  * @param {boolean}   [isCentered]        Dictates whether the labels are centered under the steps. Labels must be true.
  */
-export const StepIndicator: React.FC<Props> = ({
+export const StepIndicator: React.FC<StepIndicatorProps> = ({
   counters = false,
   smallCounters = false,
   showLabels = true,
