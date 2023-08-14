@@ -3,7 +3,7 @@ import table from "../../../node_modules/@uswds/uswds/packages/usa-table/src";
 
 type IntrinsicElements = JSX.IntrinsicElements["table"];
 
-interface Props extends IntrinsicElements {
+export interface TableProps extends IntrinsicElements {
   borderless?: boolean;
   caption?: string;
   compact?: boolean;
@@ -43,7 +43,7 @@ interface Props extends IntrinsicElements {
  * @param {boolean}     [stackedHeader]   Stacks the table cells on narrow screens and visually promotes the first cell of every row into a “header” for that group. Preferred for directories and other lists where the first cell of every row is a name. If you use this variant, you must ensure there is a data-label attribute on each cell of the table that matches the column header.
  * @param {boolean}     [striped]         Applies alternating horizontal striping to help the eye track across table rows. Pairs well with the scrollable variant for tables with many columns.
  */
-export const Table: React.FC<PropsWithChildren<Props>> = ({
+export const Table: React.FC<PropsWithChildren<TableProps>> = ({
   borderless,
   caption,
   children,
