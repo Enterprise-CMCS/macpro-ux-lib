@@ -1,3 +1,17 @@
+# [1.25.0](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.24.1...v1.25.0) (2023-08-03)
+
+
+### Features
+
+* **MultiSelect:** Enable React Hook Form support ([#248](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/248)) ([244cdb6](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/244cdb6d6f56e901338c90e6e1497826ba7935ef))
+
+## [1.24.1](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.24.0...v1.24.1) (2023-07-26)
+
+
+### Bug Fixes
+
+* **Componet Update:** made changes to the header component to not show list when only one item is available and header background on mobile" ([#245](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/245)) ([7a4e9c4](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/7a4e9c45b52c8a6a73d64f0cbb1c2522ad01ada8))
+
 # [1.24.0](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.23.1...v1.24.0) (2023-07-07)
 
 
