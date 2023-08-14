@@ -1,5 +1,5 @@
 import React from "react";
-import { fireEvent, screen, render } from "../../test-setup";
+import { screen, render } from "../../test-setup";
 import { Alert } from "./Alert";
 
 describe("Tests for the Alert component", () => {

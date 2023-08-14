@@ -1,5 +1,4 @@
-import React from "react";
-import "@enterprise-cmcs/macpro-ux-lib/build/assets/css/index.css";
+import "@enterprise-cmcs/macpro-ux-lib/build/assets/uswds/css/index.css";
 import * as UX from "@enterprise-cmcs/macpro-ux-lib";
 import "./App.css";
 import logo from "./logo.svg";

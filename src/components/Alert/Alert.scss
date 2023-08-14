@@ -5,18 +5,10 @@
     border: none;
     background-color: transparent;
   }
-}
 
-.usa-alert--info:before {
-  -webkit-mask: url("../assets/img/usa-icons/info_alt.svg") no-repeat
-    center/contain;
-  mask: url("../assets/img/usa-icons/info_alt.svg") no-repeat center/contain;
-}
-
-.usa-alert--success:before {
-  -webkit-mask: url("../assets/img/usa-icons/success.svg") no-repeat
-    center/contain;
-  mask: url("../assets/img/usa-icons/success.svg") no-repeat center/contain;
+  .usa-alert__body {
+    background-color: transparent;
+  }
 }
 
 .usa-alert--warning {

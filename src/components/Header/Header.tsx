@@ -28,9 +28,9 @@ const SubMenuColumn: React.FC<SubMenuColumnProps> = ({ links }) => {
 };
 
 interface NavSection {
-  buttonText: string;
+  buttonComp: React.ReactNode;
   current?: boolean;
-  columns: { text: string; href?: string; onClick?: () => any }[][];
+  columns: { text?: string; href?: string; onClick?: () => any }[][];
 }
 
 interface NavSectionProps {
@@ -40,7 +40,7 @@ interface NavSectionProps {
 
 const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
   const [expanded, setExpanded] = useState(false);
-  const { buttonText, current } = section;
+  const { buttonComp, current } = section;
   const wrapperRef = useRef(null);
   useOutsideClick(wrapperRef, () => {
     setExpanded(false);
@@ -54,9 +54,18 @@ const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
           }`}
           aria-expanded={expanded}
           aria-controls={`extended-mega-nav-section-${index}`}
-          onClick={() => setExpanded(!expanded)}
+          onClick={() => {
+            
+            if (section.columns.length === 1 && section.columns[0].length === 1) {
+              if (section.columns[0][0].onClick != undefined) {
+                section.columns[0][0].onClick()
+              }
+            } else {
+              setExpanded(!expanded)
+            }
+          }}
         >
-          {buttonText}
+        {buttonComp}
         </button>
         <div
           id={`extended-mega-nav-section-${index}`}
@@ -81,7 +90,7 @@ const NavSection: React.FC<NavSectionProps> = ({ section, index }) => {
 
 type IntrinsicElements = JSX.IntrinsicElements["nav"];
 
-interface HeaderProps extends IntrinsicElements {
+export interface HeaderProps extends IntrinsicElements {
   headerLogo?: React.ReactNode;
   secondaryComponent?: React.ReactNode;
   navData?: NavSection[];
