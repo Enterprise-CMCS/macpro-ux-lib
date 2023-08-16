@@ -6,7 +6,8 @@ import copy from "rollup-plugin-copy";
 import postcss from "rollup-plugin-postcss";
 import path from "path";
 import image from "@rollup/plugin-image";
-import packageJson from "./package.json" assert { type: "json" };
+
+const packageJson = require("./package.json");
 
 export default {
   external: ["react", "react-dom"],
