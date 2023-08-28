@@ -34,7 +34,7 @@ export const Logo: React.FC<LogoProps> = ({
   height,
   role = "img",
   source,
-  width = 200,
+  width,
   ...rest
 }) => {
   return (
@@ -55,6 +55,7 @@ export const Logo: React.FC<LogoProps> = ({
           height={height}
           src={source}
           width={width}
+          style={{ maxWidth: "100%", maxHeight: "auto", display: "inline" }}
           {...rest}
         />
       )}
