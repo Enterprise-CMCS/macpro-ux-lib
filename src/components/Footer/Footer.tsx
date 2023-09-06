@@ -109,9 +109,9 @@ export const Footer: React.FC<FooterProps> = ({
     </footer>
   ) : (
     <footer className="usa-footer usa-footer--slim" {...rest}>
-      <div className="usa-footer__primary-section bg-accent-cool-lighter flex-justify-end">
+      <div className="usa-footer__primary-section bg-accent-cool-lighter">
         <div className="grid-row padding-x-5 padding-y-2 flex-align-center">
-          <div className="tablet:grid-col mobile-text-center">
+          <div className="grid-col-12  mobile-text-center tablet:grid-col-6 desktop:grid-col-7">
             <Logo
               ariaLabel="Medicaid Logo"
               altText="Medicaid Logo"
@@ -119,20 +119,22 @@ export const Footer: React.FC<FooterProps> = ({
             />
           </div>
 
-          <div className="grid-row tablet:grid-col-5 flex-align-center">
-            <Logo
-              ariaLabel="Department of Health and Human Services"
-              altText="Department of Health and Human Services Logo"
-              source={depHealthHumanServicesBlack}
-              className="grid-col tablet:grid-col-3 text-center"
-              height={80}
-            />
+          <div className="grid-row grid-gap flex-align-center tablet:grid-col-6 desktop:grid-col-5">
+            <div className="grid-col-12 text-center tablet:grid-col-auto">
+              <Logo
+                ariaLabel="Department of Health and Human Services"
+                altText="Department of Health and Human Services Logo"
+                source={depHealthHumanServicesBlack}
+                height={80}
+              />
+            </div>
             <p className="grid-col-12 font-sans-xs tablet:grid-col">
               {footerText}
             </p>
           </div>
         </div>
       </div>
+
       <div className="usa-footer__secondary-section bg-primary text-white font-sans-2xs padding-x-4">
         <div className="grid-row">
           <p className="tablet:grid-col-9 mobile-text-center">
@@ -144,7 +146,9 @@ export const Footer: React.FC<FooterProps> = ({
             }{" "}
             for help or feedback.
           </p>
-          <p className="tablet:grid-col-3 mobile-text-center">{address}</p>
+          <p className="tablet:grid-col-3 mobile-text-center text-right">
+            {address}
+          </p>
         </div>
       </div>
     </footer>
