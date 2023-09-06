@@ -30,6 +30,9 @@ export interface FooterProps extends IntrinsicElements {
  * @param {Link[]}                        [navigationLinks]  Array of navigation links to render in the alternative footer.
  */
 
+const footerText =
+  "A federal government website managed and paid for by the U.S. Centers for Medicare and Medicaid Services and part of the MACPro suite.";
+
 export const Footer: React.FC<FooterProps> = ({
   altFooter = false,
   emailAddress,
@@ -84,11 +87,7 @@ export const Footer: React.FC<FooterProps> = ({
                 height={80}
               />
             </div>
-            <div className="font-sans-xs">
-              A federal government website managed and paid for by the U.S.
-              Centers for Medicare and Medicaid Services and part of the MACPro
-              suite.
-            </div>
+            <div className="font-sans-xs">{footerText}</div>
           </div>
         </div>
       </div>
@@ -128,10 +127,8 @@ export const Footer: React.FC<FooterProps> = ({
               className="grid-col tablet:grid-col-3 text-center"
               height={80}
             />
-            <p className="grid-col-12 tablet:grid-col-9 font-sans-xs">
-              A federal government website managed and paid for by the U.S.
-              Centers for Medicare and Medicaid Services and part of the MACPro
-              suite.
+            <p className="grid-col-12 font-sans-xs tablet:grid-col">
+              {footerText}
             </p>
           </div>
         </div>
