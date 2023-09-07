@@ -1,4 +1,14 @@
 .usa-footer {
+  &.usa-footer__secondary-section,
+  &.usa-footer--slim {
+    font-family: inherit;
+    font-size: inherit;
+  }
+
+  .font-sans-2xs {
+    font-family: inherit;
+  }
+
   a {
     color: white;
 
