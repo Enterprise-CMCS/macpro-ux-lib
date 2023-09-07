@@ -137,7 +137,7 @@ export const Footer: React.FC<FooterProps> = ({
 
       <div className="usa-footer__secondary-section bg-primary text-white font-sans-2xs padding-x-4">
         <div className="grid-row">
-          <p className="tablet:grid-col-9 mobile-text-center">
+          <p className="tablet:grid-col-6 mobile-text-center">
             Email{" "}
             {
               <a href={`mailto:${emailAddress}`}>
@@ -146,7 +146,7 @@ export const Footer: React.FC<FooterProps> = ({
             }{" "}
             for help or feedback.
           </p>
-          <p className="tablet:grid-col-3 mobile-text-center text-right">
+          <p className="tablet:grid-col-6 mobile-text-center text-right">
             {address}
           </p>
         </div>
