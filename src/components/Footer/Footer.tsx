@@ -110,8 +110,8 @@ export const Footer: React.FC<FooterProps> = ({
   ) : (
     <footer className="usa-footer usa-footer--slim" {...rest}>
       <div className="usa-footer__primary-section bg-accent-cool-lighter">
-        <div className="grid-row padding-x-5 padding-y-2 flex-align-center">
-          <div className="grid-col-12  mobile-text-center tablet:grid-col-6 desktop:grid-col-7">
+        <div className="grid-row grid-gap padding-x-5 padding-y-2 flex-align-center flex-justify-center">
+          <div className="grid-col-auto tablet:grid-col-6">
             <Logo
               ariaLabel="Medicaid Logo"
               altText="Medicaid Logo"
@@ -119,25 +119,27 @@ export const Footer: React.FC<FooterProps> = ({
             />
           </div>
 
-          <div className="grid-row grid-gap flex-align-center tablet:grid-col-6 desktop:grid-col-5">
-            <div className="grid-col-12 text-center tablet:grid-col-auto">
-              <Logo
-                ariaLabel="Department of Health and Human Services"
-                altText="Department of Health and Human Services Logo"
-                source={depHealthHumanServicesBlack}
-                height={80}
-              />
+          <div className="grid-col-auto tablet:grid-col-6">
+            <div className="grid-row flex-align-center flex-justify-center tablet:grid-gap-lg">
+              <div className="grid-col-auto">
+                <Logo
+                  ariaLabel="Department of Health and Human Services"
+                  altText="Department of Health and Human Services Logo"
+                  source={depHealthHumanServicesBlack}
+                  height={80}
+                />
+              </div>
+              <p className="grid-col-auto font-sans-xs tablet:grid-col">
+                {footerText}
+              </p>
             </div>
-            <p className="grid-col-12 font-sans-xs tablet:grid-col">
-              {footerText}
-            </p>
           </div>
         </div>
       </div>
 
       <div className="usa-footer__secondary-section bg-primary text-white font-sans-2xs padding-x-4">
         <div className="grid-row">
-          <p className="tablet:grid-col-6 mobile-text-center">
+          <p className="mobile-text-center margin-y-1 tablet:grid-col-6">
             Email{" "}
             {
               <a href={`mailto:${emailAddress}`}>
@@ -146,7 +148,7 @@ export const Footer: React.FC<FooterProps> = ({
             }{" "}
             for help or feedback.
           </p>
-          <p className="tablet:grid-col-6 mobile-text-center text-right">
+          <p className="mobile-text-center margin-y-1 tablet:grid-col-6 text-right">
             {address}
           </p>
         </div>
