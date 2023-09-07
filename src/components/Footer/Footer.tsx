@@ -110,7 +110,7 @@ export const Footer: React.FC<FooterProps> = ({
   ) : (
     <footer className="usa-footer usa-footer--slim" {...rest}>
       <div className="usa-footer__primary-section bg-accent-cool-lighter">
-        <div className="grid-row grid-gap padding-x-5 padding-y-2 flex-align-center flex-justify-center">
+        <div className="grid-row padding-x-5 padding-y-2 flex-align-center flex-justify-center">
           <div className="grid-col-auto tablet:grid-col-6">
             <Logo
               ariaLabel="Medicaid Logo"
