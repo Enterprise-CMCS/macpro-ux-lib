@@ -66,7 +66,6 @@ exports[`compontent snapshots Alternative Footer 1`] = `
                 alt="Medicaid Logo"
                 aria-hidden="false"
                 src="[object Object]"
-                width="200"
               />
             </div>
             <div
@@ -79,7 +78,6 @@ exports[`compontent snapshots Alternative Footer 1`] = `
                 aria-hidden="false"
                 height="80"
                 src="[object Object]"
-                width="200"
               />
             </div>
           </div>
@@ -129,13 +127,13 @@ exports[`compontent snapshots Basic Footer 1`] = `
     class="usa-footer usa-footer--slim"
   >
     <div
-      class="usa-footer__primary-section bg-accent-cool-lighter flex-justify-end"
+      class="usa-footer__primary-section bg-accent-cool-lighter"
     >
       <div
-        class="grid-row padding-x-5 padding-y-2 flex-align-center"
+        class="grid-row padding-x-5 padding-y-2 flex-align-center flex-justify-center"
       >
         <div
-          class="tablet:grid-col mobile-text-center"
+          class="grid-col-auto tablet:grid-col-6"
         >
           <div
             aria-label="Medicaid Logo"
@@ -146,31 +144,37 @@ exports[`compontent snapshots Basic Footer 1`] = `
               alt="Medicaid Logo"
               aria-hidden="false"
               src="[object Object]"
-              width="200"
             />
           </div>
         </div>
         <div
-          class="grid-row tablet:grid-col-5 flex-align-center"
+          class="grid-col-auto tablet:grid-col-6"
         >
           <div
-            aria-label="Department of Health and Human Services"
-            class="application-logo-container grid-col tablet:grid-col-3 text-center"
-            role="img"
+            class="grid-row flex-align-center flex-justify-center tablet:grid-gap-lg"
           >
-            <img
-              alt="Department of Health and Human Services Logo"
-              aria-hidden="false"
-              height="80"
-              src="[object Object]"
-              width="200"
-            />
+            <div
+              class="grid-col-auto"
+            >
+              <div
+                aria-label="Department of Health and Human Services"
+                class="application-logo-container "
+                role="img"
+              >
+                <img
+                  alt="Department of Health and Human Services Logo"
+                  aria-hidden="false"
+                  height="80"
+                  src="[object Object]"
+                />
+              </div>
+            </div>
+            <p
+              class="grid-col-auto font-sans-xs tablet:grid-col"
+            >
+              A federal government website managed and paid for by the U.S. Centers for Medicare and Medicaid Services and part of the MACPro suite.
+            </p>
           </div>
-          <p
-            class="grid-col-12 tablet:grid-col-9 font-sans-xs"
-          >
-            A federal government website managed and paid for by the U.S. Centers for Medicare and Medicaid Services and part of the MACPro suite.
-          </p>
         </div>
       </div>
     </div>
@@ -181,7 +185,7 @@ exports[`compontent snapshots Basic Footer 1`] = `
         class="grid-row"
       >
         <p
-          class="tablet:grid-col-9 mobile-text-center"
+          class="mobile-text-center margin-y-1 tablet:grid-col-6"
         >
           Email
            
@@ -196,7 +200,7 @@ exports[`compontent snapshots Basic Footer 1`] = `
           for help or feedback.
         </p>
         <p
-          class="tablet:grid-col-3 mobile-text-center"
+          class="mobile-text-center margin-y-1 tablet:grid-col-6 text-right"
         >
           7500 Security Boulevard Baltimore, MD 21244
         </p>
