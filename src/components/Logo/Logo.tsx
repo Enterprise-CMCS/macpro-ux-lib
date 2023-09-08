@@ -34,7 +34,7 @@ export const Logo: React.FC<LogoProps> = ({
   height,
   role = "img",
   source,
-  width = 200,
+  width,
   ...rest
 }) => {
   return (
