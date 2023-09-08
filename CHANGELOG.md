@@ -1,3 +1,10 @@
+## [1.25.1](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.25.0...v1.25.1) (2023-09-08)
+
+
+### Bug Fixes
+
+* **footer:** Fix layout issues with Footer in Mako (part 1 of 2) ([#269](https://github.com/Enterprise-CMCS/macpro-ux-lib/issues/269)) ([aa42e89](https://github.com/Enterprise-CMCS/macpro-ux-lib/commit/aa42e89023856e34fe53af8ebf0b72015b9283aa))
+
 # [1.25.0](https://github.com/Enterprise-CMCS/macpro-ux-lib/compare/v1.24.1...v1.25.0) (2023-08-03)
 
 
